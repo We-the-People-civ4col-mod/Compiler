@@ -127,7 +127,7 @@ typedef int pid_t;
 /* define some ANSI types that are not defined in earlier Win headers */
 #if defined(_MSC_VER) && _MSC_VER >= 1200
 /* This file only exists in VC 6.0 or higher */
-#include <basetsd.h>
+#include <BaseTsd.h>
 #endif
 
 /* ------------------------------------------------------------------------*/
@@ -277,7 +277,7 @@ Py_NO_ENABLE_SHARED to find out.  Also support MS_NO_COREDLL for b/w compat */
 #if _MSC_VER > 1200
 #define HAVE_UINTPTR_T 1
 #define HAVE_INTPTR_T 1
-#endif  /* _MSC_VER > 1200  */ 
+#endif  /* _MSC_VER > 1200  */
 #endif  /* _MSC_VER */
 
 #endif
