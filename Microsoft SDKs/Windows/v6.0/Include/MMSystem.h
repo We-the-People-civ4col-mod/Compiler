@@ -31,7 +31,7 @@
 
 
 #ifdef _WIN32
-#include <pshpack1.h>
+#include <PshPack1.h>
 #else
 #ifndef RC_INVOKED
 #pragma pack(1)
@@ -4075,7 +4075,7 @@ typedef struct tagMCI_OVLY_LOAD_PARMS {
 #endif  /* __cplusplus */
 
 #ifdef _WIN32
-#include <poppack.h>
+#include <PopPack.h>
 #else
 #ifndef RC_INVOKED
 #pragma pack()
@@ -4083,6 +4083,3 @@ typedef struct tagMCI_OVLY_LOAD_PARMS {
 #endif
 
 #endif  /* _INC_MMSYSTEM */
-
-
-

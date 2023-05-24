@@ -34,7 +34,7 @@
 #pragma once
 #endif
 
-#include <pshpack1.h>   /* Assume byte packing throughout */
+#include <PshPack1.h>   /* Assume byte packing throughout */
 
 #ifdef __cplusplus
 extern "C" {            /* Assume C declarations for C++ */
@@ -191,7 +191,6 @@ void WINAPI ScreenSaverChangePassword( HWND hParent );
 }
 #endif	/* __cplusplus */
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #endif  /* !_INC_SCRNSAVE */
-

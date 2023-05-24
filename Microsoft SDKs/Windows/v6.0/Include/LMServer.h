@@ -31,7 +31,7 @@ Notes:
 #pragma once
 #endif
 
-#include <winsvc.h>     // SERVICE_STATUS_HANDLE
+#include <WinSvc.h>     // SERVICE_STATUS_HANDLE
 
 #ifdef __cplusplus
 extern "C" {
@@ -432,7 +432,7 @@ typedef struct _SERVER_INFO_598 {
     GUID            sv598_serverguid;
     DWORD           sv598_ConnectionNoSessionsTimeout;
     DWORD           sv598_IdleThreadTimeOut;
-    BOOL            sv598_enableW9xsecuritysignature;    
+    BOOL            sv598_enableW9xsecuritysignature;
     BOOL            sv598_enforcekerberosreauthentication;
     BOOL            sv598_disabledos;
     DWORD           sv598_lowdiskspaceminimum;
@@ -1362,5 +1362,3 @@ typedef struct _SERVER_TRANSPORT_INFO_3 {
 #endif
 
 #endif // _LMSERVER_
-
-

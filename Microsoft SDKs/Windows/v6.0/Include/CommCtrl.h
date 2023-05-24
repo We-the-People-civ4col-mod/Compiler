@@ -5046,7 +5046,7 @@ typedef struct tagLVDISPINFOW {
 #endif
 
 #ifdef _WIN32
-#include <pshpack1.h>
+#include <PshPack1.h>
 #endif
 
 typedef struct tagLVKEYDOWN
@@ -5057,7 +5057,7 @@ typedef struct tagLVKEYDOWN
 } NMLVKEYDOWN, *LPNMLVKEYDOWN;
 
 #ifdef _WIN32
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 #if (_WIN32_IE >= 0x0300)
@@ -6035,7 +6035,7 @@ typedef struct tagTVDISPINFOEXW {
 #endif
 
 #ifdef _WIN32
-#include <pshpack1.h>
+#include <PshPack1.h>
 #endif
 
 typedef struct tagTVKEYDOWN {
@@ -6045,7 +6045,7 @@ typedef struct tagTVKEYDOWN {
 } NMTVKEYDOWN, *LPNMTVKEYDOWN;
 
 #ifdef _WIN32
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 
@@ -6770,7 +6770,7 @@ typedef struct tagTCHITTESTINFO
 #endif
 
 #ifdef _WIN32
-#include <pshpack1.h>
+#include <PshPack1.h>
 #endif
 
 typedef struct tagTCKEYDOWN
@@ -6781,7 +6781,7 @@ typedef struct tagTCKEYDOWN
 } NMTCKEYDOWN;
 
 #ifdef _WIN32
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 #define TCN_SELCHANGE           (TCN_FIRST - 1)
@@ -7679,7 +7679,7 @@ typedef struct tagNMIPADDRESS
 
 
 #ifdef _WIN32
-#include <pshpack1.h>
+#include <PshPack1.h>
 #endif
 
 // This structure is sent along with PGN_SCROLL notifications
@@ -7694,7 +7694,7 @@ typedef struct {
 }NMPGSCROLL, *LPNMPGSCROLL;
 
 #ifdef _WIN32
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 // PGN_CALCSIZE Notification Message
@@ -8105,7 +8105,7 @@ typedef struct _tagEDITBALLOONTIP
 #ifndef NOTASKDIALOG
 
 #ifdef _WIN32
-#include <pshpack1.h>
+#include <PshPack1.h>
 #endif
 
 typedef HRESULT (CALLBACK *PFTASKDIALOGCALLBACK)(__in HWND hwnd, __in UINT msg, __in WPARAM wParam, __in LPARAM lParam, __in LONG_PTR lpRefData);
@@ -8242,7 +8242,7 @@ WINCOMMCTRLAPI HRESULT WINAPI TaskDialogIndirect(const TASKDIALOGCONFIG *pTaskCo
 WINCOMMCTRLAPI HRESULT WINAPI TaskDialog(__in_opt HWND hwndParent, __in_opt HINSTANCE hInstance, __in_opt PCWSTR pszWindowTitle, __in_opt PCWSTR pszMainInstruction, __in_opt PCWSTR pszContent, TASKDIALOG_COMMON_BUTTON_FLAGS dwCommonButtons, __in_opt PCWSTR pszIcon, __out_opt int *pnButton);
 
 #ifdef _WIN32
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 #endif // NOTASKDIALOG
@@ -8666,5 +8666,3 @@ int WINAPI DrawShadowText(HDC hdc, __in_ecount(cch) LPCWSTR pszText, UINT cch, R
 #endif
 
 #endif  // _INC_COMMCTRL
-
-

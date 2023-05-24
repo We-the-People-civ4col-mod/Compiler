@@ -1,11 +1,11 @@
 /*
  *	RICHEDIT.H
- *	
+ *
  *	Purpose:
  *		RICHEDIT v2.0/3.0/4.0 public definitions
  *		functionality available for v2.0 and 3.0 that is not in the original
  *		Windows 95 release.
- *	
+ *
  *	Copyright (c) Microsoft Corporation. All rights reserved.
  */
 
@@ -14,7 +14,7 @@
 #pragma once
 
 #ifdef _WIN32
-#include <pshpack4.h>
+#include <PshPack4.h>
 #elif !defined(RC_INVOKED)
 #pragma pack(4)
 #endif
@@ -24,9 +24,9 @@ extern "C" {
 #endif // __cplusplus
 
 // To mimic older RichEdit behavior, set _RICHEDIT_VER to appropriate value
-//		Version 1.0		0x0100	
-//		Version 2.0		0x0200	
-//		Version 2.1		0x0210	
+//		Version 1.0		0x0100
+//		Version 2.0		0x0200
+//		Version 2.1		0x0210
 #ifndef _RICHEDIT_VER
 #define _RICHEDIT_VER	0x0300
 #endif
@@ -37,9 +37,9 @@ extern "C" {
 // NOTE:  MSFTEDIT.DLL only registers MSFTEDIT_CLASS.  If an application wants
 // to use the following Richedit classes, it needs to load the riched20.dll.
 // Otherwise, CreateWindow with RICHEDIT_CLASS would fail.
-// This also applies to any dialog that uses RICHEDIT_CLASS, 
+// This also applies to any dialog that uses RICHEDIT_CLASS,
 
-// RichEdit 2.0 Window Class 
+// RichEdit 2.0 Window Class
 // On Windows CE, avoid possible conflicts on Win95
 #define CERICHEDIT_CLASSA	"RichEditCEA"
 #define CERICHEDIT_CLASSW	L"RichEditCEW"
@@ -49,21 +49,21 @@ extern "C" {
 
 #ifndef MACPORT
 #define RICHEDIT_CLASSW		L"RichEdit20W"
-#else	//----------------------MACPORT 
-#define RICHEDIT_CLASSW		TEXT("RichEdit20W")	// MACPORT change 
-#endif // MACPORT  
+#else	//----------------------MACPORT
+#define RICHEDIT_CLASSW		TEXT("RichEdit20W")	// MACPORT change
+#endif // MACPORT
 
 #if (_RICHEDIT_VER >= 0x0200 )
 #ifdef UNICODE
 #define RICHEDIT_CLASS		RICHEDIT_CLASSW
 #else
 #define RICHEDIT_CLASS		RICHEDIT_CLASSA
-#endif // UNICODE 
+#endif // UNICODE
 #else
 #define RICHEDIT_CLASS		RICHEDIT_CLASS10A
-#endif // _RICHEDIT_VER >= 0x0200 
+#endif // _RICHEDIT_VER >= 0x0200
 
-// RichEdit messages 
+// RichEdit messages
 
 #ifndef WM_CONTEXTMENU
 #define WM_CONTEXTMENU			0x007B
@@ -81,7 +81,7 @@ extern "C" {
 #define EM_GETLIMITTEXT			(WM_USER + 37)
 #endif
 
-#ifndef EM_POSFROMCHAR	
+#ifndef EM_POSFROMCHAR
 #define EM_POSFROMCHAR			(WM_USER + 38)
 #define EM_CHARFROMPOS			(WM_USER + 39)
 #endif
@@ -124,7 +124,7 @@ extern "C" {
 #define EM_SETWORDBREAKPROCEX	(WM_USER + 81)
 #endif
 
-// RichEdit 2.0 messages 
+// RichEdit 2.0 messages
 #define	EM_SETUNDOLIMIT			(WM_USER + 82)
 #define EM_REDO					(WM_USER + 84)
 #define EM_CANREDO				(WM_USER + 85)
@@ -135,15 +135,15 @@ extern "C" {
 #define EM_SETTEXTMODE			(WM_USER + 89)
 #define EM_GETTEXTMODE			(WM_USER + 90)
 
-// enum for use with EM_GET/SETTEXTMODE 
+// enum for use with EM_GET/SETTEXTMODE
 typedef enum tagTextMode
 {
 	TM_PLAINTEXT			= 1,
-	TM_RICHTEXT				= 2,	// Default behavior 
+	TM_RICHTEXT				= 2,	// Default behavior
 	TM_SINGLELEVELUNDO		= 4,
-	TM_MULTILEVELUNDO		= 8,	// Default behavior 
+	TM_MULTILEVELUNDO		= 8,	// Default behavior
 	TM_SINGLECODEPAGE		= 16,
-	TM_MULTICODEPAGE		= 32	// Default behavior 
+	TM_MULTICODEPAGE		= 32	// Default behavior
 } TEXTMODE;
 
 #define EM_AUTOURLDETECT		(WM_USER + 91)
@@ -154,7 +154,7 @@ typedef enum tagTextMode
 #define EM_SHOWSCROLLBAR		(WM_USER + 96)
 #define EM_SETTEXTEX			(WM_USER + 97)
 
-// East Asia specific messages 
+// East Asia specific messages
 #define EM_SETPUNCTUATION		(WM_USER + 100)
 #define EM_GETPUNCTUATION		(WM_USER + 101)
 #define EM_SETWORDWRAPMODE		(WM_USER + 102)
@@ -172,23 +172,23 @@ typedef enum tagTextMode
 #define EM_FINDTEXTW			(WM_USER + 123)
 #define EM_FINDTEXTEXW			(WM_USER + 124)
 
-// RE3.0 FE messages 
+// RE3.0 FE messages
 #define EM_RECONVERSION			(WM_USER + 125)
-#define EM_SETIMEMODEBIAS		(WM_USER + 126)	
+#define EM_SETIMEMODEBIAS		(WM_USER + 126)
 #define EM_GETIMEMODEBIAS		(WM_USER + 127)
 
-// BiDi specific messages 
+// BiDi specific messages
 #define EM_SETBIDIOPTIONS		(WM_USER + 200)
 #define EM_GETBIDIOPTIONS		(WM_USER + 201)
 
 #define EM_SETTYPOGRAPHYOPTIONS	(WM_USER + 202)
 #define EM_GETTYPOGRAPHYOPTIONS	(WM_USER + 203)
 
-// Extended edit style specific messages 
+// Extended edit style specific messages
 #define EM_SETEDITSTYLE			(WM_USER + 204)
 #define EM_GETEDITSTYLE			(WM_USER + 205)
 
-// Extended edit style masks 
+// Extended edit style masks
 #define	SES_EMULATESYSEDIT		1
 #define SES_BEEPONMAXTEXT		2
 #define	SES_EXTENDBACKCOLOR		4
@@ -217,7 +217,7 @@ typedef enum tagTextMode
 #define SES_CTFALLOWSMARTTAG	0x0400000
 #define SES_CTFALLOWPROOFING	0x0800000
 
-// Options for EM_SETLANGOPTIONS and EM_GETLANGOPTIONS 
+// Options for EM_SETLANGOPTIONS and EM_GETLANGOPTIONS
 #define IMF_AUTOKEYBOARD		0x0001
 #define IMF_AUTOFONT			0x0002
 #define IMF_IMECANCELCOMPLETE	0x0004	// High completes comp string when aborting, low cancels
@@ -226,7 +226,7 @@ typedef enum tagTextMode
 #define IMF_UIFONTS				0x0020
 #define IMF_DUALFONT			0x0080
 
-// Values for EM_GETIMECOMPMODE 
+// Values for EM_GETIMECOMPMODE
 #define ICM_NOTOPEN				0x0000
 #define ICM_LEVEL3				0x0001
 #define ICM_LEVEL2				0x0002
@@ -234,13 +234,13 @@ typedef enum tagTextMode
 #define ICM_LEVEL2_SUI			0x0004
 #define ICM_CTF					0x0005
 
-// Options for EM_SETTYPOGRAPHYOPTIONS 
+// Options for EM_SETTYPOGRAPHYOPTIONS
 #define	TO_ADVANCEDTYPOGRAPHY	1
 #define	TO_SIMPLELINEBREAK		2
 #define TO_DISABLECUSTOMTEXTOUT	4
 #define TO_ADVANCEDLAYOUT		8
 
-// Pegasus outline mode messages (RE 3.0) 
+// Pegasus outline mode messages (RE 3.0)
 
 // Outline mode message
 #define EM_OUTLINE              (WM_USER + 220)
@@ -341,15 +341,15 @@ typedef struct _imecomptext {
 #define VM_OUTLINE				2
 #define VM_PAGE					9		// Screen page view (not print layout)
 
-// New notifications 
+// New notifications
 #define EN_MSGFILTER			0x0700
 #define EN_REQUESTRESIZE		0x0701
 #define EN_SELCHANGE			0x0702
 #define EN_DROPFILES			0x0703
 #define EN_PROTECTED			0x0704
-#define EN_CORRECTTEXT			0x0705			// PenWin specific 
+#define EN_CORRECTTEXT			0x0705			// PenWin specific
 #define EN_STOPNOUNDO			0x0706
-#define EN_IMECHANGE			0x0707			// East Asia specific 
+#define EN_IMECHANGE			0x0707			// East Asia specific
 #define EN_SAVECLIPBOARD		0x0708
 #define EN_OLEOPFAILED			0x0709
 #define EN_OBJECTPOSITIONS		0x070a
@@ -361,7 +361,7 @@ typedef struct _imecomptext {
 #define EN_ALIGNLTR				0x0710			// BiDi specific notification
 #define EN_ALIGNRTL				0x0711			// BiDi specific notification
 
-// Event notification masks 
+// Event notification masks
 #define ENM_NONE				0x00000000
 #define ENM_CHANGE				0x00000001
 #define ENM_UPDATE				0x00000002
@@ -376,7 +376,7 @@ typedef struct _imecomptext {
 #define ENM_SELCHANGE			0x00080000
 #define ENM_DROPFILES			0x00100000
 #define ENM_PROTECTED			0x00200000
-#define ENM_CORRECTTEXT			0x00400000		// PenWin specific 
+#define ENM_CORRECTTEXT			0x00400000		// PenWin specific
 #define ENM_IMECHANGE			0x00800000		// Used by RE1.0 compatibility
 #define ENM_LANGCHANGE			0x01000000
 #define ENM_OBJECTPOSITIONS		0x02000000
@@ -384,30 +384,30 @@ typedef struct _imecomptext {
 #define ENM_LOWFIRTF			0x08000000
 
 
-// New edit control styles 
+// New edit control styles
 #define ES_SAVESEL				0x00008000
 #define ES_SUNKEN				0x00004000
 #define ES_DISABLENOSCROLL		0x00002000
-// Same as WS_MAXIMIZE, but that doesn't make sense so we re-use the value 
+// Same as WS_MAXIMIZE, but that doesn't make sense so we re-use the value
 #define ES_SELECTIONBAR			0x01000000
-// Same as ES_UPPERCASE, but re-used to completely disable OLE drag'n'drop 
+// Same as ES_UPPERCASE, but re-used to completely disable OLE drag'n'drop
 #define ES_NOOLEDRAGDROP		0x00000008
 
-// New edit control extended style 
+// New edit control extended style
 #if (_WIN32_WINNT > 0x0400) || (WINVER > 0x0400)
-#define ES_EX_NOCALLOLEINIT		0x00000000		// Not supported in RE 2.0/3.0 
+#define ES_EX_NOCALLOLEINIT		0x00000000		// Not supported in RE 2.0/3.0
 #else
 #ifdef	_WIN32
 #define ES_EX_NOCALLOLEINIT		0x01000000
-#endif	
+#endif
 #endif
 
-// These flags are used in FE Windows 
-#define ES_VERTICAL				0x00400000		// Not supported in RE 2.0/3.0 
+// These flags are used in FE Windows
+#define ES_VERTICAL				0x00400000		// Not supported in RE 2.0/3.0
 #define	ES_NOIME				0x00080000
 #define ES_SELFIME				0x00040000
 
-// Edit control options 
+// Edit control options
 #define ECO_AUTOWORDSELECTION	0x00000001
 #define ECO_AUTOVSCROLL			0x00000040
 #define ECO_AUTOHSCROLL			0x00000080
@@ -416,23 +416,23 @@ typedef struct _imecomptext {
 #define ECO_WANTRETURN			0x00001000
 #define ECO_SAVESEL				0x00008000
 #define ECO_SELECTIONBAR		0x01000000
-#define ECO_VERTICAL			0x00400000		// FE specific 
+#define ECO_VERTICAL			0x00400000		// FE specific
 
 
-// ECO operations 
+// ECO operations
 #define ECOOP_SET				0x0001
 #define ECOOP_OR				0x0002
 #define ECOOP_AND				0x0003
 #define ECOOP_XOR				0x0004
 
-// New word break function actions 
+// New word break function actions
 #define WB_CLASSIFY			3
 #define WB_MOVEWORDLEFT		4
 #define WB_MOVEWORDRIGHT	5
 #define WB_LEFTBREAK		6
 #define WB_RIGHTBREAK		7
 
-// East Asia specific flags 
+// East Asia specific flags
 #define WB_MOVEWORDPREV		4
 #define WB_MOVEWORDNEXT		5
 #define WB_PREVBREAK		6
@@ -444,12 +444,12 @@ typedef struct _imecomptext {
 #define	PC_DELIMITER		4
 #define WBF_WORDWRAP		0x010
 #define WBF_WORDBREAK		0x020
-#define	WBF_OVERFLOW		0x040	
+#define	WBF_OVERFLOW		0x040
 #define WBF_LEVEL1			0x080
 #define	WBF_LEVEL2			0x100
 #define	WBF_CUSTOM			0x200
 
-// East Asia specific flags 
+// East Asia specific flags
 #define IMF_FORCENONE           0x0001
 #define IMF_FORCEENABLE         0x0002
 #define IMF_FORCEDISABLE        0x0004
@@ -460,21 +460,21 @@ typedef struct _imecomptext {
 #define IMF_FORCEREMEMBER       0x0100
 #define IMF_MULTIPLEEDIT        0x0400
 
-// Word break flags (used with WB_CLASSIFY) 
+// Word break flags (used with WB_CLASSIFY)
 #define WBF_CLASS			((BYTE) 0x0F)
 #define WBF_ISWHITE			((BYTE) 0x10)
 #define WBF_BREAKLINE		((BYTE) 0x20)
 #define WBF_BREAKAFTER		((BYTE) 0x40)
 
 
-// Data types 
+// Data types
 
 #ifdef _WIN32
-// Extended edit word break proc (character set aware) 
+// Extended edit word break proc (character set aware)
 typedef LONG (*EDITWORDBREAKPROCEX)(char *pchText, LONG cchText, BYTE bCharSet, INT action);
 #endif
 
-// All character format measurements are in twips 
+// All character format measurements are in twips
 typedef struct _charformat
 {
 	UINT		cbSize;
@@ -506,12 +506,12 @@ typedef struct _charformatw
 #define CHARFORMAT CHARFORMATW
 #else
 #define CHARFORMAT CHARFORMATA
-#endif // UNICODE 
+#endif // UNICODE
 #else
 #define CHARFORMAT CHARFORMATA
-#endif // _RICHEDIT_VER >= 0x0200 
+#endif // _RICHEDIT_VER >= 0x0200
 
-// CHARFORMAT2 structure 
+// CHARFORMAT2 structure
 
 #ifdef __cplusplus
 
@@ -543,7 +543,7 @@ struct CHARFORMAT2A : _charformat
 	BYTE		bRevAuthor;			// Revision author index
 };
 
-#else	// regular C-style  
+#else	// regular C-style
 
 typedef struct _charformat2w
 {
@@ -551,21 +551,21 @@ typedef struct _charformat2w
 	DWORD		dwMask;
 	DWORD		dwEffects;
 	LONG		yHeight;
-	LONG		yOffset;			// > 0 for superscript, < 0 for subscript 
+	LONG		yOffset;			// > 0 for superscript, < 0 for subscript
 	COLORREF	crTextColor;
 	BYTE		bCharSet;
 	BYTE		bPitchAndFamily;
 	WCHAR		szFaceName[LF_FACESIZE];
-	WORD		wWeight;			// Font weight (LOGFONT value)		
-	SHORT		sSpacing;			// Amount to space between letters	
-	COLORREF	crBackColor;		// Background color					
-	LCID		lcid;				// Locale ID						
-	DWORD		dwReserved;			// Reserved. Must be 0				
-	SHORT		sStyle;				// Style handle						
+	WORD		wWeight;			// Font weight (LOGFONT value)
+	SHORT		sSpacing;			// Amount to space between letters
+	COLORREF	crBackColor;		// Background color
+	LCID		lcid;				// Locale ID
+	DWORD		dwReserved;			// Reserved. Must be 0
+	SHORT		sStyle;				// Style handle
 	WORD		wKerning;			// Twip size above which to kern char pair
-	BYTE		bUnderlineType;		// Underline type					
-	BYTE		bAnimation;			// Animated text like marching ants	
-	BYTE		bRevAuthor;			// Revision author index			
+	BYTE		bUnderlineType;		// Underline type
+	BYTE		bAnimation;			// Animated text like marching ants
+	BYTE		bRevAuthor;			// Revision author index
 	BYTE		bReserved1;
 } CHARFORMAT2W;
 
@@ -575,24 +575,24 @@ typedef struct _charformat2a
 	DWORD		dwMask;
 	DWORD		dwEffects;
 	LONG		yHeight;
-	LONG		yOffset;			// > 0 for superscript, < 0 for subscript 
+	LONG		yOffset;			// > 0 for superscript, < 0 for subscript
 	COLORREF	crTextColor;
 	BYTE		bCharSet;
 	BYTE		bPitchAndFamily;
 	char		szFaceName[LF_FACESIZE];
-	WORD		wWeight;			// Font weight (LOGFONT value)		
-	SHORT		sSpacing;			// Amount to space between letters	
-	COLORREF	crBackColor;		// Background color					
-	LCID		lcid;				// Locale ID						
-	DWORD		dwReserved;			// Reserved. Must be 0				
-	SHORT		sStyle;				// Style handle						
+	WORD		wWeight;			// Font weight (LOGFONT value)
+	SHORT		sSpacing;			// Amount to space between letters
+	COLORREF	crBackColor;		// Background color
+	LCID		lcid;				// Locale ID
+	DWORD		dwReserved;			// Reserved. Must be 0
+	SHORT		sStyle;				// Style handle
 	WORD		wKerning;			// Twip size above which to kern char pair
-	BYTE		bUnderlineType;		// Underline type					
-	BYTE		bAnimation;			// Animated text like marching ants	
-	BYTE		bRevAuthor;			// Revision author index			
+	BYTE		bUnderlineType;		// Underline type
+	BYTE		bAnimation;			// Animated text like marching ants
+	BYTE		bRevAuthor;			// Revision author index
 } CHARFORMAT2A;
 
-#endif // C++ 
+#endif // C++
 
 #ifdef UNICODE
 #define CHARFORMAT2	CHARFORMAT2W
@@ -605,52 +605,52 @@ typedef struct _charformat2a
 
 // CFM_COLOR mirrors CFE_AUTOCOLOR, a little hack to easily deal with autocolor
 
-// CHARFORMAT masks 
+// CHARFORMAT masks
 #define CFM_BOLD		0x00000001
 #define CFM_ITALIC		0x00000002
 #define CFM_UNDERLINE	0x00000004
 #define CFM_STRIKEOUT	0x00000008
 #define CFM_PROTECTED	0x00000010
-#define CFM_LINK		0x00000020			// Exchange hyperlink extension 
+#define CFM_LINK		0x00000020			// Exchange hyperlink extension
 #define CFM_SIZE		0x80000000
 #define CFM_COLOR		0x40000000
 #define CFM_FACE		0x20000000
 #define CFM_OFFSET		0x10000000
 #define CFM_CHARSET		0x08000000
 
-// CHARFORMAT effects 
+// CHARFORMAT effects
 #define CFE_BOLD		0x0001
 #define CFE_ITALIC		0x0002
 #define CFE_UNDERLINE	0x0004
 #define CFE_STRIKEOUT	0x0008
 #define CFE_PROTECTED	0x0010
 #define CFE_LINK		0x0020
-#define CFE_AUTOCOLOR	0x40000000			// NOTE: this corresponds to 
-											// CFM_COLOR, which controls it 
+#define CFE_AUTOCOLOR	0x40000000			// NOTE: this corresponds to
+											// CFM_COLOR, which controls it
 // Masks and effects defined for CHARFORMAT2 -- an (*) indicates
 // that the data is stored by RichEdit 2.0/3.0, but not displayed
-#define CFM_SMALLCAPS		0x0040			// (*)	
-#define	CFM_ALLCAPS			0x0080			// Displayed by 3.0	
-#define	CFM_HIDDEN			0x0100			// Hidden by 3.0 
-#define	CFM_OUTLINE			0x0200			// (*)	
-#define	CFM_SHADOW			0x0400			// (*)	
-#define	CFM_EMBOSS			0x0800			// (*)	
-#define	CFM_IMPRINT			0x1000			// (*)	
+#define CFM_SMALLCAPS		0x0040			// (*)
+#define	CFM_ALLCAPS			0x0080			// Displayed by 3.0
+#define	CFM_HIDDEN			0x0100			// Hidden by 3.0
+#define	CFM_OUTLINE			0x0200			// (*)
+#define	CFM_SHADOW			0x0400			// (*)
+#define	CFM_EMBOSS			0x0800			// (*)
+#define	CFM_IMPRINT			0x1000			// (*)
 #define CFM_DISABLED		0x2000
 #define	CFM_REVISED			0x4000
 
 #define CFM_BACKCOLOR		0x04000000
 #define CFM_LCID			0x02000000
-#define	CFM_UNDERLINETYPE	0x00800000		// Many displayed by 3.0 
+#define	CFM_UNDERLINETYPE	0x00800000		// Many displayed by 3.0
 #define	CFM_WEIGHT			0x00400000
-#define CFM_SPACING			0x00200000		// Displayed by 3.0	
-#define CFM_KERNING			0x00100000		// (*)	
-#define CFM_STYLE			0x00080000		// (*)	
-#define CFM_ANIMATION		0x00040000		// (*)	
+#define CFM_SPACING			0x00200000		// Displayed by 3.0
+#define CFM_KERNING			0x00100000		// (*)
+#define CFM_STYLE			0x00080000		// (*)
+#define CFM_ANIMATION		0x00040000		// (*)
 #define CFM_REVAUTHOR		0x00008000
 
-#define CFE_SUBSCRIPT		0x00010000		// Superscript and subscript are 
-#define CFE_SUPERSCRIPT		0x00020000		//  mutually exclusive			 
+#define CFE_SUBSCRIPT		0x00010000		// Superscript and subscript are
+#define CFE_SUPERSCRIPT		0x00020000		//  mutually exclusive
 
 #define CFM_SUBSCRIPT		(CFE_SUBSCRIPT | CFE_SUPERSCRIPT)
 #define CFM_SUPERSCRIPT		CFM_SUBSCRIPT
@@ -694,7 +694,7 @@ typedef struct _charformat2a
 #define CFU_UNDERLINELONGDASH			13	// (*) display as dash
 #define CFU_UNDERLINEHEAVYWAVE			12	// (*) display as wave
 #define CFU_UNDERLINEDOUBLEWAVE			11	// (*) display as wave
-#define CFU_UNDERLINEHAIRLINE			10	// (*) display as single	
+#define CFU_UNDERLINEHAIRLINE			10	// (*) display as single
 #define CFU_UNDERLINETHICK				9
 #define CFU_UNDERLINEWAVE				8
 #define	CFU_UNDERLINEDASHDOTDOT			7
@@ -702,13 +702,13 @@ typedef struct _charformat2a
 #define	CFU_UNDERLINEDASH				5
 #define	CFU_UNDERLINEDOTTED				4
 #define	CFU_UNDERLINEDOUBLE				3	// (*) display as single
-#define CFU_UNDERLINEWORD				2	// (*) display as single	
+#define CFU_UNDERLINEWORD				2	// (*) display as single
 #define CFU_UNDERLINE					1
 #define CFU_UNDERLINENONE				0
 
 #define yHeightCharPtsMost 1638
 
-// EM_SETCHARFORMAT wParam masks 
+// EM_SETCHARFORMAT wParam masks
 #define SCF_SELECTION		0x0001
 #define SCF_WORD			0x0002
 #define SCF_DEFAULT			0x0000	// Set default charformat or paraformat
@@ -733,13 +733,13 @@ typedef struct _charrange
 typedef struct _textrange
 {
 	CHARRANGE chrg;
-	LPSTR lpstrText;	// Allocated by caller, zero terminated by RichEdit 
+	LPSTR lpstrText;	// Allocated by caller, zero terminated by RichEdit
 } TEXTRANGEA;
 
 typedef struct _textrangew
 {
 	CHARRANGE chrg;
-	LPWSTR lpstrText;	// Allocated by caller, zero terminated by RichEdit 
+	LPWSTR lpstrText;	// Allocated by caller, zero terminated by RichEdit
 } TEXTRANGEW;
 
 #if (_RICHEDIT_VER >= 0x0200)
@@ -747,54 +747,54 @@ typedef struct _textrangew
 #define TEXTRANGE 	TEXTRANGEW
 #else
 #define TEXTRANGE	TEXTRANGEA
-#endif // UNICODE 
+#endif // UNICODE
 #else
 #define TEXTRANGE	TEXTRANGEA
-#endif // _RICHEDIT_VER >= 0x0200 
+#endif // _RICHEDIT_VER >= 0x0200
 
 typedef DWORD (CALLBACK *EDITSTREAMCALLBACK)(DWORD_PTR dwCookie, LPBYTE pbBuff, LONG cb, LONG *pcb);
 
 typedef struct _editstream
 {
-	DWORD_PTR dwCookie;		// User value passed to callback as first parameter 
-	DWORD	  dwError;		// Last error 
+	DWORD_PTR dwCookie;		// User value passed to callback as first parameter
+	DWORD	  dwError;		// Last error
 	EDITSTREAMCALLBACK pfnCallback;
 } EDITSTREAM;
 
 // Stream formats. Flags are all in low word, since high word
-// gives possible codepage choice. 
+// gives possible codepage choice.
 #define SF_TEXT			0x0001
 #define SF_RTF			0x0002
-#define SF_RTFNOOBJS	0x0003		// Write only 
-#define SF_TEXTIZED		0x0004		// Write only 
+#define SF_RTFNOOBJS	0x0003		// Write only
+#define SF_TEXTIZED		0x0004		// Write only
 
-#define SF_UNICODE		0x0010		// Unicode file (UCS2 little endian) 
-#define SF_USECODEPAGE	0x0020		// CodePage given by high word 
-#define SF_NCRFORNONASCII 0x40		// Output /uN for nonASCII 
+#define SF_UNICODE		0x0010		// Unicode file (UCS2 little endian)
+#define SF_USECODEPAGE	0x0020		// CodePage given by high word
+#define SF_NCRFORNONASCII 0x40		// Output /uN for nonASCII
 #define	SFF_WRITEXTRAPAR  0x80		// Output \par at end
 
-// Flag telling stream operations to operate on selection only 
-// EM_STREAMIN  replaces current selection 
-// EM_STREAMOUT streams out current selection 
+// Flag telling stream operations to operate on selection only
+// EM_STREAMIN  replaces current selection
+// EM_STREAMOUT streams out current selection
 #define SFF_SELECTION	0x8000
 
-// Flag telling stream operations to ignore some FE control words 
-// having to do with FE word breaking and horiz vs vertical text. 
-// Not used in RichEdit 2.0 and later	
+// Flag telling stream operations to ignore some FE control words
+// having to do with FE word breaking and horiz vs vertical text.
+// Not used in RichEdit 2.0 and later
 #define SFF_PLAINRTF	0x4000
 
-// Flag telling file stream output (SFF_SELECTION flag not set) to persist 
-// \viewscaleN control word. 
+// Flag telling file stream output (SFF_SELECTION flag not set) to persist
+// \viewscaleN control word.
 #define SFF_PERSISTVIEWSCALE 0x2000
 
-// Flag telling file stream input with SFF_SELECTION flag not set not to 
-// close the document 
+// Flag telling file stream input with SFF_SELECTION flag not set not to
+// close the document
 #define SFF_KEEPDOCINFO	0x1000
 
-// Flag telling stream operations to output in Pocket Word format 
+// Flag telling stream operations to output in Pocket Word format
 #define SFF_PWD			0x0800
 
-// 3-bit field specifying the value of N - 1 to use for \rtfN or \pwdN 
+// 3-bit field specifying the value of N - 1 to use for \rtfN or \pwdN
 #define SF_RTFVAL		0x0700
 
 typedef struct _findtext
@@ -814,10 +814,10 @@ typedef struct _findtextw
 #define FINDTEXT	FINDTEXTW
 #else
 #define FINDTEXT	FINDTEXTA
-#endif	// UNICODE 
+#endif	// UNICODE
 #else
 #define FINDTEXT	FINDTEXTA
-#endif // _RICHEDIT_VER >= 0x0200 
+#endif // _RICHEDIT_VER >= 0x0200
 
 typedef struct _findtextexa
 {
@@ -838,10 +838,10 @@ typedef struct _findtextexw
 #define FINDTEXTEX	FINDTEXTEXW
 #else
 #define FINDTEXTEX	FINDTEXTEXA
-#endif // UNICODE 
+#endif // UNICODE
 #else
 #define FINDTEXTEX	FINDTEXTEXA
-#endif // _RICHEDIT_VER >= 0x0200 
+#endif // _RICHEDIT_VER >= 0x0200
 
 
 typedef struct _formatrange
@@ -853,7 +853,7 @@ typedef struct _formatrange
 	CHARRANGE chrg;
 } FORMATRANGE;
 
-// All paragraph measurements are in twips 
+// All paragraph measurements are in twips
 
 #define MAX_TAB_STOPS 32
 #define lDefaultTab 720
@@ -892,7 +892,7 @@ struct PARAFORMAT2 : _paraformat
 	WORD	wBorders;				// Border styles (nibble/border)
 };
 
-#else	// Regular C-style	
+#else	// Regular C-style
 
 typedef struct _paraformat2
 {
@@ -906,26 +906,26 @@ typedef struct _paraformat2
 	WORD	wAlignment;
 	SHORT	cTabCount;
 	LONG	rgxTabs[MAX_TAB_STOPS];
- 	LONG	dySpaceBefore;			// Vertical spacing before para			
-	LONG	dySpaceAfter;			// Vertical spacing after para			
-	LONG	dyLineSpacing;			// Line spacing depending on Rule		
-	SHORT	sStyle;					// Style handle							
-	BYTE	bLineSpacingRule;		// Rule for line spacing (see tom.doc)	
-	BYTE	bOutlineLevel;			// Outline Level						
-	WORD	wShadingWeight;			// Shading in hundredths of a per cent	
+ 	LONG	dySpaceBefore;			// Vertical spacing before para
+	LONG	dySpaceAfter;			// Vertical spacing after para
+	LONG	dyLineSpacing;			// Line spacing depending on Rule
+	SHORT	sStyle;					// Style handle
+	BYTE	bLineSpacingRule;		// Rule for line spacing (see tom.doc)
+	BYTE	bOutlineLevel;			// Outline Level
+	WORD	wShadingWeight;			// Shading in hundredths of a per cent
 	WORD	wShadingStyle;			// Byte 0: style, nib 2: cfpat, 3: cbpat
-	WORD	wNumberingStart;		// Starting value for numbering				
+	WORD	wNumberingStart;		// Starting value for numbering
 	WORD	wNumberingStyle;		// Alignment, Roman/Arabic, (), ), ., etc.
 	WORD	wNumberingTab;			// Space bet 1st indent and 1st-line text
-	WORD	wBorderSpace;			// Border-text spaces (nbl/bdr in pts)	
-	WORD	wBorderWidth;			// Pen widths (nbl/bdr in half twips)	
-	WORD	wBorders;				// Border styles (nibble/border)		
+	WORD	wBorderSpace;			// Border-text spaces (nbl/bdr in pts)
+	WORD	wBorderWidth;			// Pen widths (nbl/bdr in half twips)
+	WORD	wBorders;				// Border styles (nibble/border)
 } PARAFORMAT2;
 
-#endif // C++	
+#endif // C++
 
 
-// PARAFORMAT mask values 
+// PARAFORMAT mask values
 #define PFM_STARTINDENT			0x00000001
 #define PFM_RIGHTINDENT			0x00000002
 #define PFM_OFFSET				0x00000004
@@ -934,34 +934,34 @@ typedef struct _paraformat2
 #define PFM_NUMBERING			0x00000020
 #define PFM_OFFSETINDENT		0x80000000
 
-// PARAFORMAT 2.0 masks and effects 
+// PARAFORMAT 2.0 masks and effects
 #define PFM_SPACEBEFORE			0x00000040
 #define PFM_SPACEAFTER			0x00000080
 #define PFM_LINESPACING			0x00000100
 #define	PFM_STYLE				0x00000400
-#define PFM_BORDER				0x00000800	// (*)	
-#define PFM_SHADING				0x00001000	// (*)	
-#define PFM_NUMBERINGSTYLE		0x00002000	// RE 3.0	
-#define PFM_NUMBERINGTAB		0x00004000	// RE 3.0	
-#define PFM_NUMBERINGSTART		0x00008000	// RE 3.0	
+#define PFM_BORDER				0x00000800	// (*)
+#define PFM_SHADING				0x00001000	// (*)
+#define PFM_NUMBERINGSTYLE		0x00002000	// RE 3.0
+#define PFM_NUMBERINGTAB		0x00004000	// RE 3.0
+#define PFM_NUMBERINGSTART		0x00008000	// RE 3.0
 
 #define PFM_RTLPARA				0x00010000
-#define PFM_KEEP				0x00020000	// (*)	
-#define PFM_KEEPNEXT			0x00040000	// (*)	
-#define PFM_PAGEBREAKBEFORE		0x00080000	// (*)	
-#define PFM_NOLINENUMBER		0x00100000	// (*)	
-#define PFM_NOWIDOWCONTROL		0x00200000	// (*)	
-#define PFM_DONOTHYPHEN			0x00400000	// (*)	
-#define PFM_SIDEBYSIDE			0x00800000	// (*)	
-#define PFM_TABLE				0x40000000	// RE 3.0 
-#define PFM_TEXTWRAPPINGBREAK	0x20000000	// RE 3.0 
-#define PFM_TABLEROWDELIMITER	0x10000000	// RE 4.0 
+#define PFM_KEEP				0x00020000	// (*)
+#define PFM_KEEPNEXT			0x00040000	// (*)
+#define PFM_PAGEBREAKBEFORE		0x00080000	// (*)
+#define PFM_NOLINENUMBER		0x00100000	// (*)
+#define PFM_NOWIDOWCONTROL		0x00200000	// (*)
+#define PFM_DONOTHYPHEN			0x00400000	// (*)
+#define PFM_SIDEBYSIDE			0x00800000	// (*)
+#define PFM_TABLE				0x40000000	// RE 3.0
+#define PFM_TEXTWRAPPINGBREAK	0x20000000	// RE 3.0
+#define PFM_TABLEROWDELIMITER	0x10000000	// RE 4.0
 
 // The following three properties are read only
-#define PFM_COLLAPSED			0x01000000	// RE 3.0 
-#define PFM_OUTLINELEVEL		0x02000000	// RE 3.0 
-#define PFM_BOX					0x04000000	// RE 3.0 
-#define PFM_RESERVED2			0x08000000	// RE 4.0 
+#define PFM_COLLAPSED			0x01000000	// RE 3.0
+#define PFM_OUTLINELEVEL		0x02000000	// RE 3.0
+#define PFM_BOX					0x04000000	// RE 3.0
+#define PFM_RESERVED2			0x08000000	// RE 4.0
 
 
 // PARAFORMAT "ALL" masks
@@ -980,47 +980,47 @@ typedef struct _paraformat2
 					| PFM_NUMBERINGTAB | PFM_NUMBERINGSTART | PFM_NUMBERINGSTYLE)
 
 #define PFE_RTLPARA				(PFM_RTLPARA		 >> 16)
-#define PFE_KEEP				(PFM_KEEP			 >> 16)	// (*)	
-#define PFE_KEEPNEXT			(PFM_KEEPNEXT		 >> 16)	// (*)	
-#define PFE_PAGEBREAKBEFORE		(PFM_PAGEBREAKBEFORE >> 16)	// (*)	
-#define PFE_NOLINENUMBER		(PFM_NOLINENUMBER	 >> 16)	// (*)	
-#define PFE_NOWIDOWCONTROL		(PFM_NOWIDOWCONTROL	 >> 16)	// (*)	
-#define PFE_DONOTHYPHEN			(PFM_DONOTHYPHEN 	 >> 16)	// (*)	
-#define PFE_SIDEBYSIDE			(PFM_SIDEBYSIDE		 >> 16)	// (*)	
-#define PFE_TEXTWRAPPINGBREAK	(PFM_TEXTWRAPPINGBREAK>>16) // (*)	
+#define PFE_KEEP				(PFM_KEEP			 >> 16)	// (*)
+#define PFE_KEEPNEXT			(PFM_KEEPNEXT		 >> 16)	// (*)
+#define PFE_PAGEBREAKBEFORE		(PFM_PAGEBREAKBEFORE >> 16)	// (*)
+#define PFE_NOLINENUMBER		(PFM_NOLINENUMBER	 >> 16)	// (*)
+#define PFE_NOWIDOWCONTROL		(PFM_NOWIDOWCONTROL	 >> 16)	// (*)
+#define PFE_DONOTHYPHEN			(PFM_DONOTHYPHEN 	 >> 16)	// (*)
+#define PFE_SIDEBYSIDE			(PFM_SIDEBYSIDE		 >> 16)	// (*)
+#define PFE_TEXTWRAPPINGBREAK	(PFM_TEXTWRAPPINGBREAK>>16) // (*)
 
 // The following four effects are read only
-#define PFE_COLLAPSED			(PFM_COLLAPSED		 >> 16)	// (+)	
-#define PFE_BOX					(PFM_BOX			 >> 16)	// (+)	
-#define PFE_TABLE				(PFM_TABLE			 >> 16)	// Inside table row. RE 3.0 
-#define PFE_TABLEROWDELIMITER	(PFM_TABLEROWDELIMITER>>16)	// Table row start. RE 4.0 
+#define PFE_COLLAPSED			(PFM_COLLAPSED		 >> 16)	// (+)
+#define PFE_BOX					(PFM_BOX			 >> 16)	// (+)
+#define PFE_TABLE				(PFM_TABLE			 >> 16)	// Inside table row. RE 3.0
+#define PFE_TABLEROWDELIMITER	(PFM_TABLEROWDELIMITER>>16)	// Table row start. RE 4.0
 
-// PARAFORMAT numbering options 
+// PARAFORMAT numbering options
 #define PFN_BULLET		1		// tomListBullet
 
-// PARAFORMAT2 wNumbering options 
+// PARAFORMAT2 wNumbering options
 #define PFN_ARABIC		2		// tomListNumberAsArabic:   0, 1, 2,	...
 #define PFN_LCLETTER	3		// tomListNumberAsLCLetter: a, b, c,	...
 #define	PFN_UCLETTER	4		// tomListNumberAsUCLetter: A, B, C,	...
 #define	PFN_LCROMAN		5		// tomListNumberAsLCRoman:  i, ii, iii,	...
 #define	PFN_UCROMAN		6		// tomListNumberAsUCRoman:  I, II, III,	...
 
-// PARAFORMAT2 wNumberingStyle options 
-#define PFNS_PAREN		0x000	// default, e.g.,				  1)	
-#define	PFNS_PARENS		0x100	// tomListParentheses/256, e.g., (1)	
-#define PFNS_PERIOD		0x200	// tomListPeriod/256, e.g.,		  1.	
-#define PFNS_PLAIN		0x300	// tomListPlain/256, e.g.,		  1		
+// PARAFORMAT2 wNumberingStyle options
+#define PFNS_PAREN		0x000	// default, e.g.,				  1)
+#define	PFNS_PARENS		0x100	// tomListParentheses/256, e.g., (1)
+#define PFNS_PERIOD		0x200	// tomListPeriod/256, e.g.,		  1.
+#define PFNS_PLAIN		0x300	// tomListPlain/256, e.g.,		  1
 #define PFNS_NONUMBER	0x400	// Used for continuation w/o number
 
-#define PFNS_NEWNUMBER	0x8000	// Start new number with wNumberingStart		
+#define PFNS_NEWNUMBER	0x8000	// Start new number with wNumberingStart
 								// (can be combined with other PFNS_xxx)
-// PARAFORMAT alignment options 
+// PARAFORMAT alignment options
 #define PFA_LEFT			 1
 #define PFA_RIGHT			 2
 #define PFA_CENTER			 3
 
-// PARAFORMAT2 alignment options 
-#define	PFA_JUSTIFY			 4	// New paragraph-alignment option 2.0 (*) 
+// PARAFORMAT2 alignment options
+#define	PFA_JUSTIFY			 4	// New paragraph-alignment option 2.0 (*)
 #define PFA_FULL_INTERWORD	 4	// These are supported in 3.0 with advanced
 #define PFA_FULL_INTERLETTER 5	//  typography enabled
 #define PFA_FULL_SCALED		 6
@@ -1028,7 +1028,7 @@ typedef struct _paraformat2
 #define	PFA_SNAP_GRID		 8
 
 
-// Notification structures 
+// Notification structures
 #ifndef WM_NOTIFY
 #define WM_NOTIFY		0x004E
 
@@ -1038,7 +1038,7 @@ typedef struct _nmhdr
 	UINT	idFrom;
 	UINT	code;
 } NMHDR;
-#endif  // !WM_NOTIFY 
+#endif  // !WM_NOTIFY
 
 typedef struct _msgfilter
 {
@@ -1132,7 +1132,7 @@ typedef struct _enlowfirtf
 	char *szControl;
 } ENLOWFIRTF;
 
-// PenWin specific 
+// PenWin specific
 typedef struct _encorrecttext
 {
 	NMHDR nmhdr;
@@ -1140,14 +1140,14 @@ typedef struct _encorrecttext
 	WORD seltyp;
 } ENCORRECTTEXT;
 
-// East Asia specific 
+// East Asia specific
 typedef struct _punctuation
 {
 	UINT	iSize;
 	LPSTR	szPunctuation;
 } PUNCTUATION;
 
-// East Asia specific 
+// East Asia specific
 typedef struct _compcolor
 {
 	COLORREF crText;
@@ -1156,19 +1156,19 @@ typedef struct _compcolor
 }COMPCOLOR;
 
 
-// Clipboard formats - use as parameter to RegisterClipboardFormat() 
+// Clipboard formats - use as parameter to RegisterClipboardFormat()
 #define CF_RTF 			TEXT("Rich Text Format")
 #define CF_RTFNOOBJS 	TEXT("Rich Text Format Without Objects")
 #define CF_RETEXTOBJ 	TEXT("RichEdit Text and Objects")
 
-// Paste Special 
+// Paste Special
 typedef struct _repastespecial
 {
 	DWORD		dwAspect;
 	DWORD_PTR	dwParam;
 } REPASTESPECIAL;
 
-//	UndoName info 
+//	UndoName info
 typedef enum _undonameid
 {
     UID_UNKNOWN     = 0,
@@ -1180,92 +1180,92 @@ typedef enum _undonameid
 	UID_AUTOCORRECT = 6
 } UNDONAMEID;
 
-// Flags for the SETEXTEX data structure 
+// Flags for the SETEXTEX data structure
 #define ST_DEFAULT		0
 #define ST_KEEPUNDO		1
 #define ST_SELECTION	2
 #define ST_NEWCHARS 	4
 
-// EM_SETTEXTEX info; this struct is passed in the wparam of the message 
+// EM_SETTEXTEX info; this struct is passed in the wparam of the message
 typedef struct _settextex
 {
-	DWORD	flags;			// Flags (see the ST_XXX defines)			
+	DWORD	flags;			// Flags (see the ST_XXX defines)
 	UINT	codepage;		// Code page for translation (CP_ACP for sys default,
-						    //  1200 for Unicode, -1 for control default)	
+						    //  1200 for Unicode, -1 for control default)
 } SETTEXTEX;
 
-// Flags for the GETEXTEX data structure 
+// Flags for the GETEXTEX data structure
 #define GT_DEFAULT		0
 #define GT_USECRLF		1
 #define GT_SELECTION	2
 #define GT_RAWTEXT		4
 #define GT_NOHIDDENTEXT	8
 
-// EM_GETTEXTEX info; this struct is passed in the wparam of the message 
+// EM_GETTEXTEX info; this struct is passed in the wparam of the message
 typedef struct _gettextex
 {
-	DWORD	cb;				// Count of bytes in the string				
-	DWORD	flags;			// Flags (see the GT_XXX defines			
+	DWORD	cb;				// Count of bytes in the string
+	DWORD	flags;			// Flags (see the GT_XXX defines
 	UINT	codepage;		// Code page for translation (CP_ACP for sys default,
-						    //  1200 for Unicode, -1 for control default)	
-	LPCSTR	lpDefaultChar;	// Replacement for unmappable chars			
-	LPBOOL	lpUsedDefChar;	// Pointer to flag set when def char used	
+						    //  1200 for Unicode, -1 for control default)
+	LPCSTR	lpDefaultChar;	// Replacement for unmappable chars
+	LPBOOL	lpUsedDefChar;	// Pointer to flag set when def char used
 } GETTEXTEX;
 
-// Flags for the GETTEXTLENGTHEX data structure							
-#define GTL_DEFAULT		0	// Do default (return # of chars)		
+// Flags for the GETTEXTLENGTHEX data structure
+#define GTL_DEFAULT		0	// Do default (return # of chars)
 #define GTL_USECRLF		1	// Compute answer using CRLFs for paragraphs
-#define GTL_PRECISE		2	// Compute a precise answer					
-#define GTL_CLOSE		4	// Fast computation of a "close" answer		
-#define GTL_NUMCHARS	8	// Return number of characters			
-#define GTL_NUMBYTES	16	// Return number of _bytes_				
+#define GTL_PRECISE		2	// Compute a precise answer
+#define GTL_CLOSE		4	// Fast computation of a "close" answer
+#define GTL_NUMCHARS	8	// Return number of characters
+#define GTL_NUMBYTES	16	// Return number of _bytes_
 
-// EM_GETTEXTLENGTHEX info; this struct is passed in the wparam of the msg 
+// EM_GETTEXTLENGTHEX info; this struct is passed in the wparam of the msg
 typedef struct _gettextlengthex
 {
-	DWORD	flags;			// Flags (see GTL_XXX defines)				
+	DWORD	flags;			// Flags (see GTL_XXX defines)
 	UINT	codepage;		// Code page for translation (CP_ACP for default,
-							//  1200 for Unicode)							
+							//  1200 for Unicode)
 } GETTEXTLENGTHEX;
-	
-// BiDi specific features 
+
+// BiDi specific features
 typedef struct _bidioptions
 {
 	UINT	cbSize;
 	WORD	wMask;
-	WORD	wEffects; 
+	WORD	wEffects;
 } BIDIOPTIONS;
 
-// BIDIOPTIONS masks 
+// BIDIOPTIONS masks
 #if (_RICHEDIT_VER == 0x0100)
-#define BOM_DEFPARADIR			0x0001	// Default paragraph direction (implies alignment) (obsolete) 
-#define BOM_PLAINTEXT			0x0002	// Use plain text layout (obsolete) 
-#endif // _RICHEDIT_VER == 0x0100 
-#define BOM_NEUTRALOVERRIDE		0x0004	// Override neutral layout (obsolete) 
-#define BOM_CONTEXTREADING		0x0008	// Context reading order 
-#define BOM_CONTEXTALIGNMENT	0x0010	// Context alignment 
-#define BOM_LEGACYBIDICLASS		0x0040	// Legacy Bidi classification 
+#define BOM_DEFPARADIR			0x0001	// Default paragraph direction (implies alignment) (obsolete)
+#define BOM_PLAINTEXT			0x0002	// Use plain text layout (obsolete)
+#endif // _RICHEDIT_VER == 0x0100
+#define BOM_NEUTRALOVERRIDE		0x0004	// Override neutral layout (obsolete)
+#define BOM_CONTEXTREADING		0x0008	// Context reading order
+#define BOM_CONTEXTALIGNMENT	0x0010	// Context alignment
+#define BOM_LEGACYBIDICLASS		0x0040	// Legacy Bidi classification
 
-// BIDIOPTIONS effects 
+// BIDIOPTIONS effects
 #if (_RICHEDIT_VER == 0x0100)
-#define BOE_RTLDIR				0x0001	// Default paragraph direction (implies alignment) (obsolete) 
-#define BOE_PLAINTEXT			0x0002	// Use plain text layout (obsolete) 
-#endif // _RICHEDIT_VER == 0x0100 
-#define BOE_NEUTRALOVERRIDE		0x0004	// Override neutral layout (obsolete) 
-#define BOE_CONTEXTREADING		0x0008	// Context reading order 
-#define BOE_CONTEXTALIGNMENT	0x0010	// Context alignment 
-#define BOE_LEGACYBIDICLASS		0x0040	// Legacy Bidi classification 
+#define BOE_RTLDIR				0x0001	// Default paragraph direction (implies alignment) (obsolete)
+#define BOE_PLAINTEXT			0x0002	// Use plain text layout (obsolete)
+#endif // _RICHEDIT_VER == 0x0100
+#define BOE_NEUTRALOVERRIDE		0x0004	// Override neutral layout (obsolete)
+#define BOE_CONTEXTREADING		0x0008	// Context reading order
+#define BOE_CONTEXTALIGNMENT	0x0010	// Context alignment
+#define BOE_LEGACYBIDICLASS		0x0040	// Legacy Bidi classification
 
-// Additional EM_FINDTEXT[EX] flags 
+// Additional EM_FINDTEXT[EX] flags
 #define FR_MATCHDIAC                    0x20000000
 #define FR_MATCHKASHIDA                 0x40000000
 #define FR_MATCHALEFHAMZA               0x80000000
-	
-// UNICODE embedding character 
+
+// UNICODE embedding character
 #ifndef WCH_EMBEDDING
 #define WCH_EMBEDDING (WCHAR)0xFFFC
-#endif // WCH_EMBEDDING 
-		
+#endif // WCH_EMBEDDING
+
 // khyph - Kind of hyphenation
 typedef enum tagKHYPH
 {
@@ -1296,14 +1296,13 @@ typedef struct tagHyphenateInfo
 } HYPHENATEINFO;
 
 #ifdef _WIN32
-#include <poppack.h>
+#include <PopPack.h>
 #elif !defined(RC_INVOKED)
 #pragma pack()
 #endif
 
 #ifdef __cplusplus
 }
-#endif  // __cplusplus 
+#endif  // __cplusplus
 
-#endif // !_RICHEDIT_ 
-
+#endif // !_RICHEDIT_

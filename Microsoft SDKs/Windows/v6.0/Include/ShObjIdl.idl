@@ -227,7 +227,7 @@ cpp_quote("#if (_WIN32_IE >= _WIN32_IE_IE40)")
 cpp_quote("#define CMIC_MASK_PTINVOKE      0x20000000")
 cpp_quote("#endif  // _WIN32_IE_IE40")
 cpp_quote("")
-cpp_quote("#include <pshpack8.h>")
+cpp_quote("#include <PshPack8.h>")
 cpp_quote("")
 
 //NOTE: When SEE_MASK_HMONITOR is set, hIcon is treated as hMonitor
@@ -288,7 +288,7 @@ cpp_quote("#endif   // _WIN32_IE_IE40")
 typedef CMINVOKECOMMANDINFOEX *LPCMINVOKECOMMANDINFOEX;
 typedef const CMINVOKECOMMANDINFOEX *PCCMINVOKECOMMANDINFOEX;
 
-cpp_quote("#include <poppack.h>")
+cpp_quote("#include <PopPack.h>")
 
 // IContextMenu
 [
@@ -526,7 +526,7 @@ cpp_quote("#define CSIDL_FLAG_PFTI_TRACKTARGET CSIDL_FLAG_DONT_VERIFY")
 //        You can also pass CSIDL_FLAG_CREATE to indicate that the target folder
 //        should be created if it does not exist.  No other CSIDL_FLAG_* values are supported.
 
-cpp_quote("#include <pshpack8.h>")
+cpp_quote("#include <PshPack8.h>")
 
 #ifndef MAX_PATH
 #define MAX_PATH 260
@@ -541,7 +541,7 @@ typedef struct _PERSIST_FOLDER_TARGET_INFO
     int              csidl;                         // optional folder index (SHGetFolderPath()) -1 if not used
 } PERSIST_FOLDER_TARGET_INFO;
 
-cpp_quote("#include <poppack.h>")
+cpp_quote("#include <PopPack.h>")
 
 
 // DESCRIPTION: IPersistFolder3
@@ -1376,7 +1376,7 @@ cpp_quote("#define SV2GV_DEFAULTVIEW ((UINT)-2)")
 //  then there will have to be custom [wire_marshal]")
 //  implementation to support it")
 //
-cpp_quote("#include <pshpack8.h>")
+cpp_quote("#include <PshPack8.h>")
 typedef struct _SV2CVW2_PARAMS
 {
     DWORD cbSize;
@@ -1390,7 +1390,7 @@ typedef struct _SV2CVW2_PARAMS
 
 } SV2CVW2_PARAMS, *LPSV2CVW2_PARAMS;
 
-cpp_quote("#include <poppack.h>")   // Return to byte packing
+cpp_quote("#include <PopPack.h>")   // Return to byte packing
 
     HRESULT GetView(
         [in, out] SHELLVIEWID* pvid,
@@ -3585,7 +3585,7 @@ cpp_quote("#if (NTDDI_VERSION >= NTDDI_WIN2K)")
 //     method passing FALSE. After the window is done painting, Show the image
 //     again by passing TRUE.
 
-cpp_quote("#include <pshpack8.h>")
+cpp_quote("#include <PshPack8.h>")
 typedef struct tagSHDRAGIMAGE
 {
     SIZE        sizeDragImage;      // OUT - The length and Width of the rendered image
@@ -3593,7 +3593,7 @@ typedef struct tagSHDRAGIMAGE
     HBITMAP     hbmpDragImage;      // OUT - The Bitmap containing the rendered drag images
     COLORREF    crColorKey;         // OUT - The COLORREF that has been blitted to the background of the images
 } SHDRAGIMAGE, *LPSHDRAGIMAGE;
-cpp_quote("#include <poppack.h> // Return to byte packing")
+cpp_quote("#include <PopPack.h> // Return to byte packing")
 
 // This is sent to a window to get the rendered images to a bitmap
 // Call RegisterWindowMessage to get the ID
@@ -4535,7 +4535,7 @@ cpp_quote("#define DBIM_TITLE      0x0010")
 cpp_quote("#define DBIM_MODEFLAGS  0x0020")
 cpp_quote("#define DBIM_BKCOLOR    0x0040")
 
-cpp_quote("#include <pshpack8.h>")
+cpp_quote("#include <PshPack8.h>")
 
 typedef struct tagDESKBANDINFO
 {
@@ -4549,7 +4549,7 @@ typedef struct tagDESKBANDINFO
     COLORREF    crBkgnd;
 } DESKBANDINFO;
 
-cpp_quote("#include <poppack.h>")   // Return to byte packing
+cpp_quote("#include <PopPack.h>")   // Return to byte packing
 
 // DESKBANDINFO dwModeFlags values
 cpp_quote("#define DBIMF_NORMAL            0x0000")
@@ -5450,7 +5450,7 @@ cpp_quote("#if (_WIN32_IE >= _WIN32_IE_IE40)")
 //
 //-------------------------------------------------------------------------
 
-cpp_quote("#include <pshpack8.h>")
+cpp_quote("#include <PshPack8.h>")
 
 typedef struct tagBANDSITEINFO
 {
@@ -5459,7 +5459,7 @@ typedef struct tagBANDSITEINFO
     DWORD       dwStyle;        // BSIS_* flags
 } BANDSITEINFO;
 
-cpp_quote("#include <poppack.h>")   // Return to byte packing
+cpp_quote("#include <PopPack.h>")   // Return to byte packing
 
 
 enum tagBANDSITECID {
@@ -6331,7 +6331,7 @@ cpp_quote("#endif  // NTDDI_LONGHORN")
 // its pidls using the IMalloc provided by the outer folder via SetItemAlloc()
 // that pidl must conform to the delegate item format.
 //
-cpp_quote("#include <pshpack1.h>")
+cpp_quote("#include <PshPack1.h>")
 
 typedef struct tagDELEGATEITEMID
 {
@@ -6342,7 +6342,7 @@ typedef struct tagDELEGATEITEMID
                                 //   followed by outer folder's data.
 } DELEGATEITEMID;
 
-cpp_quote("#include <poppack.h>")
+cpp_quote("#include <PopPack.h>")
 
 cpp_quote("typedef const UNALIGNED DELEGATEITEMID *PCDELEGATEITEMID;")
 cpp_quote("typedef UNALIGNED DELEGATEITEMID *PDELEGATEITEMID;")
@@ -6591,7 +6591,7 @@ cpp_quote("#endif  // _WIN32_IE_IE60SP2")
 
 cpp_quote("#if (_WIN32_IE >= _WIN32_IE_IE60)")
 
-cpp_quote("#include <pshpack8.h>")
+cpp_quote("#include <PshPack8.h>")
 
 typedef struct tagSMDATA
 {
@@ -6630,7 +6630,7 @@ typedef struct tagSHCSCHANGENOTIFYSTRUCT
     PCIDLIST_ABSOLUTE   pidl2;  // Pidl 2 Passed in from the Change notify
 } SMCSHCHANGENOTIFYSTRUCT, *PSMCSHCHANGENOTIFYSTRUCT;
 
-cpp_quote("#include <poppack.h>") /* Return to byte packing */
+cpp_quote("#include <PopPack.h>") /* Return to byte packing */
 
 // Mask flags
 enum tagSMINFOMASK
@@ -8385,5 +8385,3 @@ typedef int ASSOC_FILTER;
 
 cpp_quote("SHSTDAPI SHAssocEnumHandlers(LPCWSTR pszExtra, ASSOC_FILTER afFilter, __deref_out IEnumAssocHandlers **ppEnumHandler);")
 cpp_quote("#endif  // NTDDI_LONGHORN")
-
-

@@ -4,7 +4,7 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 
 Module Name:
 
-    basetsd.h
+    BaseTsd.h
 
 Abstract:
 
@@ -52,7 +52,7 @@ Revision History:
 // A compiler with support for __sptr and __uptr is in qualification.  To
 // participate in qualification, remove the "0 &&" term below and also
 // enable warning 4826 in warning.w
-// 
+//
 
 #if 0 && (_MSC_FULL_VER >= 140041204) && !defined(MIDL_PASS) && !defined(RC_INVOKED)
 #define POINTER_SIGNED __sptr
@@ -495,4 +495,3 @@ typedef KAFFINITY *PKAFFINITY;
 #endif
 
 #endif // _BASETSD_H_
-

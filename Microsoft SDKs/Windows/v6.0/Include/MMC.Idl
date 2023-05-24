@@ -15,7 +15,7 @@ cpp_quote("#ifndef MMC_VER")
 cpp_quote("#define MMC_VER 0x0210")
 cpp_quote("#endif")
 
-import "basetsd.h";
+import "BaseTsd.h";
 import "oaidl.idl";
 
 
@@ -313,7 +313,7 @@ typedef enum _MMC_CONSOLE_VERB
 cpp_quote("#endif")
 
 // Structure to create buttons on the toolbar
-cpp_quote("#include <pshpack8.h>")
+cpp_quote("#include <PshPack8.h>")
 typedef struct _MMCButton
 {
     int      nBitmap;       // Offset into the bitmap list
@@ -324,7 +324,7 @@ typedef struct _MMCButton
     LPOLESTR     lpTooltipText; // Text value for the tooltip
 
 } MMCBUTTON;
-cpp_quote("#include <poppack.h>")
+cpp_quote("#include <PopPack.h>")
 
 typedef MMCBUTTON* LPMMCBUTTON;
 
@@ -2684,4 +2684,3 @@ const DWORD MMC_ITEM_STATE_MASK = 0x00FF;
 
 
 cpp_quote("#endif // MMC_VER >= 0x0210")
-

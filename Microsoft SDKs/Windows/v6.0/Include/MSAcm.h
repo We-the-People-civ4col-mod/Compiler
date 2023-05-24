@@ -38,7 +38,7 @@
 #define _UNICODE
 #endif
 
-#include "pshpack1.h"   /* Assume byte packing throughout */
+#include "PshPack1.h"   /* Assume byte packing throughout */
 
 #ifdef __cplusplus
 extern "C" {            /* Assume C declarations for C++ */
@@ -190,7 +190,7 @@ typedef UINT                MMRESULT;
 //
 //  acmGetVersion()
 //
-//  the ACM version is a 32 bit number that is broken into three parts as 
+//  the ACM version is a 32 bit number that is broken into three parts as
 //  follows:
 //
 //      bits 24 - 31:   8 bit _major_ version number
@@ -200,7 +200,7 @@ typedef UINT                MMRESULT;
 //  this is then displayed as follows:
 //
 //      bMajor = (BYTE)(dwVersion >> 24)
-//      bMinor = (BYTE)(dwVersion >> 16) & 
+//      bMinor = (BYTE)(dwVersion >> 16) &
 //      wBuild = LOWORD(dwVersion)
 //
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ;
@@ -304,7 +304,7 @@ MMRESULT ACMAPI acmDriverAddA
 (
     LPHACMDRIVERID          phadid,
     HINSTANCE               hinstModule,
-    LPARAM                  lParam, 
+    LPARAM                  lParam,
     DWORD                   dwPriority,
     DWORD                   fdwAdd
 );
@@ -313,7 +313,7 @@ MMRESULT ACMAPI acmDriverAddW
 (
     LPHACMDRIVERID          phadid,
     HINSTANCE               hinstModule,
-    LPARAM                  lParam, 
+    LPARAM                  lParam,
     DWORD                   dwPriority,
     DWORD                   fdwAdd
 );
@@ -328,7 +328,7 @@ MMRESULT ACMAPI acmDriverAdd
 (
     LPHACMDRIVERID          phadid,
     HINSTANCE               hinstModule,
-    LPARAM                  lParam, 
+    LPARAM                  lParam,
     DWORD                   dwPriority,
     DWORD                   fdwAdd
 );
@@ -371,7 +371,7 @@ MMRESULT ACMAPI acmDriverRemove
 
 MMRESULT ACMAPI acmDriverOpen
 (
-    LPHACMDRIVER            phad, 
+    LPHACMDRIVER            phad,
     HACMDRIVERID            hadid,
     DWORD                   fdwOpen
 );
@@ -401,7 +401,7 @@ MMRESULT ACMAPI acmDriverClose
 LRESULT ACMAPI acmDriverMessage
 (
     HACMDRIVER              had,
-    UINT                    uMsg, 
+    UINT                    uMsg,
     LPARAM                  lParam1,
     LPARAM                  lParam2
 );
@@ -648,7 +648,7 @@ MMRESULT ACMAPI acmDriverDetails
 );
 #endif
 
- 
+
 //--------------------------------------------------------------------------;
 //
 //  ACM Format Tags
@@ -773,7 +773,7 @@ MMRESULT ACMAPI acmFormatTagEnumA
     HACMDRIVER              had,
     LPACMFORMATTAGDETAILSA  paftd,
     ACMFORMATTAGENUMCBA     fnCallback,
-    DWORD_PTR               dwInstance, 
+    DWORD_PTR               dwInstance,
     DWORD                   fdwEnum
 );
 typedef BOOL (CALLBACK *ACMFORMATTAGENUMCBW)
@@ -789,7 +789,7 @@ MMRESULT ACMAPI acmFormatTagEnumW
     HACMDRIVER              had,
     LPACMFORMATTAGDETAILSW  paftd,
     ACMFORMATTAGENUMCBW     fnCallback,
-    DWORD_PTR               dwInstance, 
+    DWORD_PTR               dwInstance,
     DWORD                   fdwEnum
 );
 
@@ -814,7 +814,7 @@ MMRESULT ACMAPI acmFormatTagEnum
     HACMDRIVER              had,
     LPACMFORMATTAGDETAILS   paftd,
     ACMFORMATTAGENUMCB      fnCallback,
-    DWORD_PTR               dwInstance, 
+    DWORD_PTR               dwInstance,
     DWORD                   fdwEnum
 );
 #endif
@@ -942,7 +942,7 @@ MMRESULT ACMAPI acmFormatEnumA
     HACMDRIVER              had,
     LPACMFORMATDETAILSA     pafd,
     ACMFORMATENUMCBA        fnCallback,
-    DWORD_PTR               dwInstance, 
+    DWORD_PTR               dwInstance,
     DWORD                   fdwEnum
 );
 
@@ -959,7 +959,7 @@ MMRESULT ACMAPI acmFormatEnumW
     HACMDRIVER              had,
     LPACMFORMATDETAILSW     pafd,
     ACMFORMATENUMCBW        fnCallback,
-    DWORD_PTR               dwInstance, 
+    DWORD_PTR               dwInstance,
     DWORD                   fdwEnum
 );
 
@@ -984,7 +984,7 @@ MMRESULT ACMAPI acmFormatEnum
     HACMDRIVER              had,
     LPACMFORMATDETAILS      pafd,
     ACMFORMATENUMCB         fnCallback,
-    DWORD_PTR               dwInstance, 
+    DWORD_PTR               dwInstance,
     DWORD                   fdwEnum
 );
 #endif
@@ -1106,22 +1106,22 @@ typedef struct tACMFORMATCHOOSEA
 {
     DWORD           cbStruct;           // sizeof(ACMFORMATCHOOSE)
     DWORD           fdwStyle;           // chooser style flags
-    
+
     HWND            hwndOwner;          // caller's window handle
 
     LPWAVEFORMATEX  pwfx;               // ptr to wfx buf to receive choice
     DWORD           cbwfx;              // size of mem buf for pwfx
     LPCSTR          pszTitle;           // dialog box title bar
-    
+
     char            szFormatTag[ACMFORMATTAGDETAILS_FORMATTAG_CHARS];
-    char            szFormat[ACMFORMATDETAILS_FORMAT_CHARS];    
+    char            szFormat[ACMFORMATDETAILS_FORMAT_CHARS];
 
     LPSTR           pszName;            // custom name selection
     DWORD           cchName;            // size in chars of mem buf for pszName
 
     DWORD           fdwEnum;            // format enumeration restrictions
     LPWAVEFORMATEX  pwfxEnum;           // format describing restrictions
-    
+
     HINSTANCE       hInstance;          // app instance containing dlg template
     LPCSTR          pszTemplateName;    // custom template name
     LPARAM          lCustData;          // data passed to hook fn.
@@ -1133,22 +1133,22 @@ typedef struct tACMFORMATCHOOSEW
 {
     DWORD           cbStruct;           // sizeof(ACMFORMATCHOOSE)
     DWORD           fdwStyle;           // chooser style flags
-    
+
     HWND            hwndOwner;          // caller's window handle
 
     LPWAVEFORMATEX  pwfx;               // ptr to wfx buf to receive choice
     DWORD           cbwfx;              // size of mem buf for pwfx
     LPCWSTR         pszTitle;           // dialog box title bar
-    
+
     WCHAR           szFormatTag[ACMFORMATTAGDETAILS_FORMATTAG_CHARS];
-    WCHAR           szFormat[ACMFORMATDETAILS_FORMAT_CHARS];    
+    WCHAR           szFormat[ACMFORMATDETAILS_FORMAT_CHARS];
 
     LPWSTR          pszName;            // custom name selection
     DWORD           cchName;            // size in chars of mem buf for pszName
 
     DWORD           fdwEnum;            // format enumeration restrictions
     LPWAVEFORMATEX  pwfxEnum;           // format describing restrictions
-    
+
     HINSTANCE       hInstance;          // app instance containing dlg template
     LPCWSTR         pszTemplateName;    // custom template name
     LPARAM          lCustData;          // data passed to hook fn.
@@ -1170,22 +1170,22 @@ typedef struct tACMFORMATCHOOSE
 {
     DWORD           cbStruct;           // sizeof(ACMFORMATCHOOSE)
     DWORD           fdwStyle;           // chooser style flags
-    
+
     HWND            hwndOwner;          // caller's window handle
 
     LPWAVEFORMATEX  pwfx;               // ptr to wfx buf to receive choice
     DWORD           cbwfx;              // size of mem buf for pwfx
     LPCSTR          pszTitle;           // dialog box title bar
-    
+
     char            szFormatTag[ACMFORMATTAGDETAILS_FORMATTAG_CHARS];
-    char            szFormat[ACMFORMATDETAILS_FORMAT_CHARS];    
+    char            szFormat[ACMFORMATDETAILS_FORMAT_CHARS];
 
     LPSTR           pszName;            // custom name selection
     DWORD           cchName;            // size in chars of mem buf for pszName
 
     DWORD           fdwEnum;            // format enumeration restrictions
     LPWAVEFORMATEX  pwfxEnum;           // format describing restrictions
-    
+
     HINSTANCE       hInstance;          // app instance containing dlg template
     LPCSTR          pszTemplateName;    // custom template name
     LPARAM          lCustData;          // data passed to hook fn.
@@ -1353,7 +1353,7 @@ MMRESULT ACMAPI acmFilterTagEnumA
     HACMDRIVER              had,
     LPACMFILTERTAGDETAILSA  paftd,
     ACMFILTERTAGENUMCBA     fnCallback,
-    DWORD_PTR               dwInstance, 
+    DWORD_PTR               dwInstance,
     DWORD                   fdwEnum
 );
 
@@ -1370,7 +1370,7 @@ MMRESULT ACMAPI acmFilterTagEnumW
     HACMDRIVER              had,
     LPACMFILTERTAGDETAILSW  paftd,
     ACMFILTERTAGENUMCBW     fnCallback,
-    DWORD_PTR               dwInstance, 
+    DWORD_PTR               dwInstance,
     DWORD                   fdwEnum
 );
 
@@ -1395,7 +1395,7 @@ MMRESULT ACMAPI acmFilterTagEnum
     HACMDRIVER              had,
     LPACMFILTERTAGDETAILS   paftd,
     ACMFILTERTAGENUMCB      fnCallback,
-    DWORD_PTR               dwInstance, 
+    DWORD_PTR               dwInstance,
     DWORD                   fdwEnum
 );
 #endif
@@ -1521,7 +1521,7 @@ MMRESULT ACMAPI acmFilterEnumA
     HACMDRIVER              had,
     LPACMFILTERDETAILSA     pafd,
     ACMFILTERENUMCBA        fnCallback,
-    DWORD_PTR               dwInstance, 
+    DWORD_PTR               dwInstance,
     DWORD                   fdwEnum
 );
 
@@ -1538,7 +1538,7 @@ MMRESULT ACMAPI acmFilterEnumW
     HACMDRIVER              had,
     LPACMFILTERDETAILSW     pafd,
     ACMFILTERENUMCBW        fnCallback,
-    DWORD_PTR               dwInstance, 
+    DWORD_PTR               dwInstance,
     DWORD                   fdwEnum
 );
 
@@ -1563,7 +1563,7 @@ MMRESULT ACMAPI acmFilterEnum
     HACMDRIVER              had,
     LPACMFILTERDETAILS      pafd,
     ACMFILTERENUMCB         fnCallback,
-    DWORD_PTR               dwInstance, 
+    DWORD_PTR               dwInstance,
     DWORD                   fdwEnum
 );
 #endif
@@ -1646,7 +1646,7 @@ typedef struct tACMFILTERCHOOSEA
 
     DWORD           fdwEnum;            // filter enumeration restrictions
     LPWAVEFILTER    pwfltrEnum;         // filter describing restrictions
-    
+
     HINSTANCE       hInstance;          // app instance containing dlg template
     LPCSTR          pszTemplateName;    // custom template name
     LPARAM          lCustData;          // data passed to hook fn.
@@ -1673,7 +1673,7 @@ typedef struct tACMFILTERCHOOSEW
 
     DWORD           fdwEnum;            // filter enumeration restrictions
     LPWAVEFILTER    pwfltrEnum;         // filter describing restrictions
-    
+
     HINSTANCE       hInstance;          // app instance containing dlg template
     LPCWSTR         pszTemplateName;    // custom template name
     LPARAM          lCustData;          // data passed to hook fn.
@@ -1710,7 +1710,7 @@ typedef struct tACMFILTERCHOOSE
 
     DWORD           fdwEnum;            // filter enumeration restrictions
     LPWAVEFILTER    pwfltrEnum;         // filter describing restrictions
-    
+
     HINSTANCE       hInstance;          // app instance containing dlg template
     LPCSTR          pszTemplateName;    // custom template name
     LPARAM          lCustData;          // data passed to hook fn.
@@ -1875,7 +1875,7 @@ MMRESULT ACMAPI acmStreamReset
 MMRESULT ACMAPI acmStreamMessage
 (
     HACMSTREAM              has,
-    UINT                    uMsg, 
+    UINT                    uMsg,
     LPARAM                  lParam1,
     LPARAM                  lParam2
 );
@@ -1891,7 +1891,7 @@ MMRESULT ACMAPI acmStreamMessage
 
 MMRESULT ACMAPI acmStreamConvert
 (
-    HACMSTREAM              has, 
+    HACMSTREAM              has,
     LPACMSTREAMHEADER       pash,
     DWORD                   fdwConvert
 );
@@ -1930,12 +1930,10 @@ MMRESULT ACMAPI acmStreamUnprepareHeader
 );
 
 
-#include "poppack.h"    /* Revert to default packing */
+#include "PopPack.h"    /* Revert to default packing */
 
 #ifdef __cplusplus
 }                       /* End of extern "C" { */
 #endif  /* __cplusplus */
 
 #endif  /* _INC_ACM */
-
-

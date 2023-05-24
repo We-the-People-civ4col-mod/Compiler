@@ -21,7 +21,7 @@ Revision History:
 //
 // Set packing
 //
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 //
 // Only use UNICODE STI interfaces
@@ -231,7 +231,7 @@ typedef struct _STI_DEV_CAPS {
 
 //
 // Subset driver bit.
-// This capability indicates that there is more featured driver exists. All 
+// This capability indicates that there is more featured driver exists. All
 // of inbox driver has this bit set. Fully featured (IHV) driver shouldn't have
 // this bit set.
 //
@@ -843,10 +843,6 @@ DECLARE_INTERFACE_(IStiDevice, IUnknown)
 //
 // Reset packing
 //
-#include <poppack.h>
+#include <PopPack.h>
 
 #endif // _STICOM_
-
-
-
-

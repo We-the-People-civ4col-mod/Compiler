@@ -39,7 +39,7 @@ DEFINE_GUID(IID_IPrintDialogServices, 0x509aaeda, 0x5639, 0x11d1, 0xb6, 0xa1, 0x
 #include <prsht.h>
 
 #if !defined(_WIN64)
-#include <pshpack1.h>         /* Assume byte packing throughout */
+#include <PshPack1.h>         /* Assume byte packing throughout */
 #endif
 
 #ifdef __cplusplus
@@ -1212,9 +1212,7 @@ WINCOMMDLGAPI BOOL APIENTRY PageSetupDlgW( LPPAGESETUPDLGW );
 #endif  /* __cplusplus */
 
 #if !defined(_WIN64)
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 #endif  /* GUID_DEFS_ONLY */
 #endif  /* !_INC_COMMDLG */
-
-

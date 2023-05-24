@@ -22,7 +22,7 @@
 #else // not _MAC
 
 #if !defined(RC_INVOKED)
-#include <pshpack8.h>
+#include <PshPack8.h>
 #endif
 
 #include <ocidl.h>
@@ -472,7 +472,7 @@ WINOLECTLAPI_(HCURSOR) OleIconToCursor(HINSTANCE hinstExe, HICON hIcon);
 #define LP_COLOR        0x04
 
 #if !defined(_MAC) && !defined(RC_INVOKED)
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 #endif // !(defined(__MKTYPLIB__) && !defined(__midl))
@@ -617,4 +617,3 @@ WINOLECTLAPI_(HCURSOR) OleIconToCursor(HINSTANCE hinstExe, HICON hIcon);
 #endif // defined(__MKTYPLIB__) || defined(__midl)
 
 #endif // _OLECTL_H_
-

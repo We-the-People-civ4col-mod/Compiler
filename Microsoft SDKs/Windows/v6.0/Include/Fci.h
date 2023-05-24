@@ -31,7 +31,7 @@ extern "C" {            /* Assume C declarations for C++ */
 //** Specify structure packing explicitly for clients of FDI
 
 #ifndef _WIN64
-#include <pshpack4.h>
+#include <PshPack4.h>
 #endif
 
 
@@ -162,7 +162,7 @@ typedef unsigned short TCOMP; /* tcomp */
 //** Revert to default structure packing
 
 #ifndef _WIN64
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 #ifdef __cplusplus
@@ -199,7 +199,7 @@ typedef unsigned short TCOMP; /* tcomp */
 
 #include <specstrings.h>
 typedef __nullterminated char* LPSTR;
-#include <basetsd.h>
+#include <BaseTsd.h>
 
 #ifdef __cplusplus
 extern "C" {            /* Assume C declarations for C++ */
@@ -208,7 +208,7 @@ extern "C" {            /* Assume C declarations for C++ */
 //** Specify structure packing explicitly for clients of FCI
 
 #ifndef _WIN64
-#include <pshpack4.h>
+#include <PshPack4.h>
 #endif
 
 
@@ -419,7 +419,7 @@ typedef INT_PTR (DIAMONDAPI *PFNFCIGETOPENINFO)(__in char *pszName,
                                                    USHORT *pattribs, \
                                                    int FAR *err, \
                                                    void FAR *pv)
-                            
+
 /***    FNFCISTATUS - Status/Cabinet Size callback
  *
  *  Entry:
@@ -552,7 +552,7 @@ HFCI DIAMONDAPI FCICreate(__in       PERF               perf,
  *
  *  Exit-Failure:
  *      returns FALSE, error filled in
- *    
+ *
  *    This is the main function used to add file(s) to a cabinet
  *    or series of cabinets.  If the current file causes the current
  *    folder/cabinet to overflow the disk image currently being built,
@@ -569,7 +569,7 @@ BOOL DIAMONDAPI FCIAddFile(__in HFCI                        hfci,
                            __callback PFNFCIGETOPENINFO     pfnfcigoi,
                            TCOMP                            typeCompress
                           );
-            
+
 
 /***   FCIFlushCabinet - Complete the current cabinet under construction
  *
@@ -597,7 +597,7 @@ BOOL DIAMONDAPI FCIFlushCabinet(__in HFCI                       hfci,
                                 __callback PFNFCISTATUS         pfnfcis
                                );
 
-                                                                  
+
 /***   FCIFlushFolder - Complete the current folder under construction
  *
  *  This will force the termination of the current folder, which may or
@@ -620,7 +620,7 @@ BOOL DIAMONDAPI FCIFlushFolder(__in HFCI                        hfci,
                                __callback PFNFCISTATUS          pfnfcis
                               );
 
-                                                                  
+
 /***   FCIDestroy - Destroy a FCI context and delete temp files
  *
  *  Entry:
@@ -633,11 +633,11 @@ BOOL DIAMONDAPI FCIFlushFolder(__in HFCI                        hfci,
  *      return code FALSE, error structure filled in
  */
 BOOL DIAMONDAPI FCIDestroy (__in HFCI hfci);
-                                                                  
+
 //** Revert to default structure packing
 
 #ifndef _WIN64
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 #ifdef __cplusplus
@@ -645,4 +645,3 @@ BOOL DIAMONDAPI FCIDestroy (__in HFCI hfci);
 #endif  /* __cplusplus */
 
 #endif // !INCLUDED_FCI
-

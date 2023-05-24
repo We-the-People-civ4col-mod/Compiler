@@ -37,7 +37,7 @@ Revision History:
 #if (_MSC_VER <= 800)
 #pragma pack(1)
 #else
-#include "pshpack1.h"   /* Assume byte packing throughout */
+#include "PshPack1.h"   /* Assume byte packing throughout */
 #endif
 #endif  /* RC_INVOKED */
 
@@ -2407,11 +2407,11 @@ typedef struct adpcmwaveformat_tag {
         WAVEFORMATEX    wfx;
         WORD            wSamplesPerBlock;
         WORD            wNumCoef;
-#if defined( _MSC_VER )        
+#if defined( _MSC_VER )
         ADPCMCOEFSET    aCoef[];
 #else
         ADPCMCOEFSET    aCoef[1];
-#endif        
+#endif
 } ADPCMWAVEFORMAT;
 typedef ADPCMWAVEFORMAT       *PADPCMWAVEFORMAT;
 typedef ADPCMWAVEFORMAT NEAR *NPADPCMWAVEFORMAT;
@@ -2894,8 +2894,8 @@ typedef WMAUDIO2WAVEFORMAT FAR  *LPWMAUDIO2WAVEFORMAT;
 
 typedef struct wmaudio3waveformat_tag {
   WAVEFORMATEX wfx;
-  WORD         wValidBitsPerSample; // bits of precision 
-  DWORD        dwChannelMask;       // which channels are present in stream 
+  WORD         wValidBitsPerSample; // bits of precision
+  DWORD        dwChannelMask;       // which channels are present in stream
   DWORD        dwReserved1;
   DWORD        dwReserved2;
   WORD         wEncodeOptions;
@@ -3365,7 +3365,7 @@ MJPGHDTSEG_STORAGE BYTE MJPGDHTSeg[0x1A4] = {
 #if _MSC_VER <= 800
 #pragma pack(1)
 #else
-#include "poppack.h"    /* Revert to default packing */
+#include "PopPack.h"    /* Revert to default packing */
 #endif
 #endif  /* RC_INVOKED */
 
@@ -3409,5 +3409,3 @@ typedef struct {
 cpp_quote("#endif /* 0 */")
 
 #endif /* __midl */
-
-

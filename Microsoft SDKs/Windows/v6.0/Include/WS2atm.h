@@ -23,7 +23,7 @@ Notes:
 #pragma once
 #endif
 
-#include <pshpack4.h>
+#include <PshPack4.h>
 
 #define ATMPROTO_AALUSER           0x00   /* User-defined AAL */
 #define ATMPROTO_AAL1              0x01   /* AAL 1 */
@@ -458,7 +458,6 @@ typedef struct {
    QOS                 PvcQos;
 } ATM_PVC_PARAMS;
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #endif   /* _WS2ATM_H_ */
-

@@ -88,9 +88,9 @@ typedef struct {
     union {
 #if defined( _KS_NO_ANONYMOUS_STRUCTURES_ )
         struct _IDENTIFIER {
-#else        
+#else
         struct {
-#endif        
+#endif
             GUID    Set;
             ULONG   Id;
             ULONG   Flags;
@@ -237,7 +237,7 @@ typedef union {
     struct _SIGNED {
 #else
     struct {
-#endif    
+#endif
         LONG    SignedMinimum;
         LONG    SignedMaximum;
     };
@@ -245,7 +245,7 @@ typedef union {
     struct _UNSIGNED {
 #else
     struct {
-#endif    
+#endif
         ULONG   UnsignedMinimum;
         ULONG   UnsignedMaximum;
     };
@@ -256,7 +256,7 @@ typedef union {
     struct _SIGNED64 {
 #else
     struct {
-#endif    
+#endif
         LONGLONG    SignedMinimum;
         LONGLONG    SignedMaximum;
     };
@@ -264,7 +264,7 @@ typedef union {
     struct _UNSIGNED64 {
 #else
     struct {
-#endif    
+#endif
 #if defined(_NTDDK_)
         ULONGLONG   UnsignedMinimum;
         ULONGLONG   UnsignedMaximum;
@@ -301,15 +301,15 @@ typedef struct _KSDEVICE_DESCRIPTOR
 KSDEVICE_DESCRIPTOR, *PKSDEVICE_DESCRIPTOR;
 typedef struct _KSDEVICE_DISPATCH
 KSDEVICE_DISPATCH, *PKSDEVICE_DISPATCH;
-typedef struct _KSDEVICE 
+typedef struct _KSDEVICE
 KSDEVICE, *PKSDEVICE;
-typedef struct _KSFILTERFACTORY 
+typedef struct _KSFILTERFACTORY
 KSFILTERFACTORY, *PKSFILTERFACTORY;
 typedef struct _KSFILTER_DESCRIPTOR
 KSFILTER_DESCRIPTOR, *PKSFILTER_DESCRIPTOR;
 typedef struct _KSFILTER_DISPATCH
 KSFILTER_DISPATCH, *PKSFILTER_DISPATCH;
-typedef struct _KSFILTER 
+typedef struct _KSFILTER
 KSFILTER, *PKSFILTER;
 typedef struct _KSPIN_DESCRIPTOR_EX
 KSPIN_DESCRIPTOR_EX, *PKSPIN_DESCRIPTOR_EX;
@@ -319,7 +319,7 @@ typedef struct _KSCLOCK_DISPATCH
 KSCLOCK_DISPATCH, *PKSCLOCK_DISPATCH;
 typedef struct _KSALLOCATOR_DISPATCH
 KSALLOCATOR_DISPATCH, *PKSALLOCATOR_DISPATCH;
-typedef struct _KSPIN 
+typedef struct _KSPIN
 KSPIN, *PKSPIN;
 typedef struct _KSNODE_DESCRIPTOR
 KSNODE_DESCRIPTOR, *PKSNODE_DESCRIPTOR;
@@ -700,7 +700,7 @@ DEFINE_KSPROPERTY_TABLE(TopologySet) {\
 #if defined(_NTDDK_)
 
 #define STATIC_KSPROPSETID_GM \
-    0xAF627536L, 0xE719, 0x11D2, 0x8A, 0x1D, 0x00, 0x60, 0x97, 0xD2, 0xDF, 0x5D    
+    0xAF627536L, 0xE719, 0x11D2, 0x8A, 0x1D, 0x00, 0x60, 0x97, 0xD2, 0xDF, 0x5D
 DEFINE_GUIDSTRUCT("AF627536-E719-11D2-8A1D-006097D2DF5D", KSPROPSETID_GM);
 #define KSPROPSETID_GM DEFINE_GUIDNAMED(KSPROPSETID_GM)
 
@@ -725,10 +725,10 @@ typedef struct _KSPROPERTY_GRAPHMANAGER_INTERFACE {
 // Commands
 //
 typedef enum {
-    KSPROPERTY_GM_GRAPHMANAGER,    
-    KSPROPERTY_GM_TIMESTAMP_CLOCK, 
-    KSPROPERTY_GM_RATEMATCH,       
-    KSPROPERTY_GM_RENDER_CLOCK,    
+    KSPROPERTY_GM_GRAPHMANAGER,
+    KSPROPERTY_GM_TIMESTAMP_CLOCK,
+    KSPROPERTY_GM_RATEMATCH,
+    KSPROPERTY_GM_RENDER_CLOCK,
 } KSPROPERTY_GM;
 
 #endif
@@ -850,7 +850,7 @@ typedef struct {
 DEFINE_GUIDSTRUCT("7b785570-8c82-11cf-bc0c-00aa00ac74f6", KSTIME_FORMAT_FRAME);
 #define KSTIME_FORMAT_FRAME DEFINE_GUIDNAMED(KSTIME_FORMAT_FRAME)
 
-// TIME_FORMAT_BYTE             
+// TIME_FORMAT_BYTE
 #define STATIC_KSTIME_FORMAT_BYTE\
     0x7b785571L, 0x8c82, 0x11cf, 0xbc, 0x0c, 0x00, 0xaa, 0x00, 0xac, 0x74, 0xf6
 DEFINE_GUIDSTRUCT("7b785571-8c82-11cf-bc0c-00aa00ac74f6", KSTIME_FORMAT_BYTE);
@@ -963,7 +963,7 @@ typedef enum {
 #define KSDATARANGE_BIT_REQUIRED_ATTRIBUTES 2
 #define KSDATARANGE_REQUIRED_ATTRIBUTES (1 << KSDATARANGE_BIT_REQUIRED_ATTRIBUTES)
 
-#if !defined( _MSC_VER ) 
+#if !defined( _MSC_VER )
 typedef struct {
     ULONG   FormatSize;
     ULONG   Flags;
@@ -1497,7 +1497,7 @@ enum {
 #define KSALLOCATOR_OPTIONF_COMPATIBLE              0x00000001
 #define KSALLOCATOR_OPTIONF_SYSTEM_MEMORY           0x00000002
 #define KSALLOCATOR_OPTIONF_VALID                   0x00000003
-// 
+//
 // pins extended framing flags
 //
 #define KSALLOCATOR_FLAG_PARTIAL_READ_SUPPORT       0x00000010
@@ -1567,7 +1567,7 @@ VOID
 
 //
 // new Framing structure, eventually will replace KSALLOCATOR_FRAMING.
-// 
+//
 typedef struct {
     ULONG   MinFrameSize;
     ULONG   MaxFrameSize;
@@ -1584,7 +1584,7 @@ typedef struct {
 
 typedef struct {
     ULONG   RatioNumerator;      // compression/expansion ratio
-    ULONG   RatioDenominator; 
+    ULONG   RatioDenominator;
     ULONG   RatioConstantMargin;
 } KS_COMPRESSION, *PKS_COMPRESSION;
 
@@ -1597,13 +1597,13 @@ typedef struct {
     GUID                        MemoryType;
     GUID                        BusType;
     ULONG                       MemoryFlags;
-    ULONG                       BusFlags;   
-    ULONG                       Flags;   
+    ULONG                       BusFlags;
+    ULONG                       Flags;
     ULONG                       Frames;              // total number of allowable outstanding frames
     ULONG                       FileAlignment;
     ULONG                       MemoryTypeWeight;    // this memory type Weight pin-wide
     KS_FRAMING_RANGE            PhysicalRange;
-    KS_FRAMING_RANGE_WEIGHTED   FramingRange; 
+    KS_FRAMING_RANGE_WEIGHTED   FramingRange;
 } KS_FRAMING_ITEM, *PKS_FRAMING_ITEM;
 
 
@@ -1612,7 +1612,7 @@ typedef struct {
     ULONG               PinFlags;
     KS_COMPRESSION      OutputCompression;
     ULONG               PinWeight;          // this pin framing's Weight graph-wide
-    KS_FRAMING_ITEM     FramingItem[1]; 
+    KS_FRAMING_ITEM     FramingItem[1];
 } KSALLOCATOR_FRAMING_EX, *PKSALLOCATOR_FRAMING_EX;
 
 
@@ -1628,7 +1628,7 @@ typedef struct {
 
 #define KS_TYPE_DONT_CARE           GUID_NULL
 #define STATIC_KS_TYPE_DONT_CARE    STATIC_GUID_NULL
-     
+
 #define STATIC_KSMEMORY_TYPE_SYSTEM \
     0x091bb638L, 0x603f, 0x11d1, 0xb0, 0x67, 0x00, 0xa0, 0xc9, 0x06, 0x28, 0x02
 DEFINE_GUIDSTRUCT("091bb638-603f-11d1-b067-00a0c9062802", KSMEMORY_TYPE_SYSTEM);
@@ -1813,7 +1813,7 @@ typedef enum {
         sizeof(KSPROPERTY),\
         sizeof(KSSTREAMALLOCATOR_FUNCTIONTABLE),\
         NULL, NULL, 0, NULL, NULL, 0)
-        
+
 #define DEFINE_KSPROPERTY_ITEM_STREAMALLOCATOR_STATUS(Handler)\
     DEFINE_KSPROPERTY_ITEM(\
         KSPROPERTY_STREAMALLOCATOR_STATUS,\
@@ -1910,7 +1910,7 @@ typedef enum {
         sizeof(KSPROPERTY),\
         sizeof(ULONG),\
         NULL, NULL, 0, NULL, NULL, 0)
-        
+
 #define DEFINE_KSPROPERTY_STREAMINTERFACESET(StreamInterfaceSet,\
     HeaderSizeHandler)\
 DEFINE_KSPROPERTY_TABLE(StreamInterfaceSet) {\
@@ -2487,7 +2487,7 @@ VOID
     IN PFILE_OBJECT FileObject,
     IN struct _KSEVENT_ENTRY* EventEntry
     );
-    
+
 #define DEFINE_KSEVENT_TABLE(tablename)\
     const KSEVENT_ITEM tablename[] =
 
@@ -2714,42 +2714,42 @@ NTSTATUS
     IN PVOID Context
     );
 
-typedef 
-VOID 
-(*PFNREFERENCEDEVICEOBJECT)( 
+typedef
+VOID
+(*PFNREFERENCEDEVICEOBJECT)(
     IN PVOID Context
     );
-    
-typedef 
-VOID 
-(*PFNDEREFERENCEDEVICEOBJECT)( 
+
+typedef
+VOID
+(*PFNDEREFERENCEDEVICEOBJECT)(
     IN PVOID Context
     );
-    
+
 typedef
 NTSTATUS
-(*PFNQUERYREFERENCESTRING)( 
+(*PFNQUERYREFERENCESTRING)(
     IN PVOID Context,
     IN OUT PWCHAR *String
     );
 
 #define BUS_INTERFACE_REFERENCE_VERSION    0x100
-    
+
 typedef struct {
     //
     // Standard interface header
     //
-    
+
     INTERFACE                   Interface;
-    
+
     //
     // Standard bus interfaces
     //
-    
+
     PFNREFERENCEDEVICEOBJECT    ReferenceDeviceObject;
     PFNDEREFERENCEDEVICEOBJECT  DereferenceDeviceObject;
     PFNQUERYREFERENCESTRING     QueryReferenceString;
-    
+
 } BUS_INTERFACE_REFERENCE, *PBUS_INTERFACE_REFERENCE;
 
 #define STATIC_REFERENCE_BUS_INTERFACE STATIC_KSMEDIUMSETID_Standard
@@ -2757,7 +2757,7 @@ typedef struct {
 
 typedef
 NTSTATUS
-(*PFNQUERYMEDIUMSLIST)( 
+(*PFNQUERYMEDIUMSLIST)(
     IN PVOID Context,
     OUT ULONG* MediumsCount,
     OUT PKSPIN_MEDIUM* MediumList
@@ -2767,15 +2767,15 @@ typedef struct {
     //
     // Standard interface header
     //
-    
+
     INTERFACE                   Interface;
-    
+
     //
     // Interface definition
     //
-    
+
     PFNQUERYMEDIUMSLIST         QueryMediumsList;
-    
+
 } BUS_INTERFACE_MEDIUMS, *PBUS_INTERFACE_MEDIUMS;
 
 #define STATIC_GUID_BUS_INTERFACE_MEDIUMS \
@@ -2786,7 +2786,7 @@ DEFINE_GUIDSTRUCT("4EC35C3E-201B-11D2-8745-00A0C9223196", GUID_BUS_INTERFACE_MED
 #endif // defined(_NTDDK_)
 
 #if !defined( PACK_PRAGMAS_NOT_SUPPORTED )
-#include <pshpack1.h>
+#include <PshPack1.h>
 #endif
 
 typedef struct {
@@ -2795,7 +2795,7 @@ typedef struct {
 } KSPROPERTY_SERIALHDR, *PKSPROPERTY_SERIALHDR;
 
 #if !defined( PACK_PRAGMAS_NOT_SUPPORTED )
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 typedef struct {
@@ -2865,7 +2865,7 @@ KsGateCaptureThreshold(
     ASSERT(Gate);
 
     captured = (BOOLEAN)(InterlockedCompareExchange(&Gate->Count,0,1) == 1);
-    
+
     //
     // If we made a transition, it must be propagated.
     //
@@ -3144,7 +3144,7 @@ void
     IN PKSSTREAM_POINTER StreamPointer
     );
 
-typedef struct KSAUTOMATION_TABLE_ 
+typedef struct KSAUTOMATION_TABLE_
 KSAUTOMATION_TABLE, *PKSAUTOMATION_TABLE;
 struct KSAUTOMATION_TABLE_ {
     ULONG PropertySetsCount;
@@ -3279,7 +3279,7 @@ struct _KSDEVICE_DESCRIPTOR {
 
 #if (NTDDI_VERSION >= NTDDI_LONGHORN)
 
-    ULONG Flags; 
+    ULONG Flags;
 #define KSDEVICE_FLAG_ENABLE_REMOTE_WAKEUP	0x00000001
 #define KSDEVICE_FLAG_LOWPOWER_PASSTHROUGH 	0x00000002
 
@@ -3625,7 +3625,7 @@ DECLARE_INTERFACE_(IKsReferenceClock,IUnknown)
 DECLARE_INTERFACE_(IKsDeviceFunctions, IUnknown)
 {
     DEFINE_ABSTRACT_UNKNOWN() // For C
-    
+
     STDMETHOD_(NTSTATUS, RegisterAdapterObjectEx)(THIS_
         IN PADAPTER_OBJECT AdapterObject,
         IN PDEVICE_DESCRIPTION DeviceDescription,
@@ -4050,13 +4050,13 @@ KsHandleSizedListQuery(
 
 // image.c:
 
-#if (!defined( MAKEINTRESOURCE )) 
+#if (!defined( MAKEINTRESOURCE ))
 #define MAKEINTRESOURCE( res ) ((ULONG_PTR) (USHORT) res)
 #endif
 
 #if (!defined( RT_STRING ))
 #define RT_STRING           MAKEINTRESOURCE( 6 )
-#define RT_RCDATA           MAKEINTRESOURCE( 10 ) 
+#define RT_RCDATA           MAKEINTRESOURCE( 10 )
 #endif
 
 KSDDKAPI
@@ -4068,15 +4068,15 @@ KsLoadResource(
     IN ULONG_PTR ResourceName,
     IN ULONG ResourceType,
     OUT PVOID *Resource,
-    OUT PULONG ResourceSize            
+    OUT PULONG ResourceSize
     );
-    
+
 KSDDKAPI
 NTSTATUS
 NTAPI
 KsGetImageNameAndResourceId(
     IN HANDLE RegKey,
-    OUT PUNICODE_STRING ImageName,                
+    OUT PUNICODE_STRING ImageName,
     OUT PULONG_PTR ResourceId,
     OUT PULONG ValueType
 );
@@ -4087,11 +4087,11 @@ NTAPI
 KsMapModuleName(
     IN PDEVICE_OBJECT PhysicalDeviceObject,
     IN PUNICODE_STRING ModuleName,
-    OUT PUNICODE_STRING ImageName,                
+    OUT PUNICODE_STRING ImageName,
     OUT PULONG_PTR ResourceId,
     OUT PULONG ValueType
     );
-    
+
 // irp.c:
 
 KSDDKAPI
@@ -4299,7 +4299,7 @@ DRIVER_CANCEL KsCancelRoutine;
 KSDDKAPI
 VOID
 NTAPI
-KsCancelIo(   
+KsCancelIo(
     IN OUT PLIST_ENTRY  QueueHead,
     IN PKSPIN_LOCK SpinLock
     );
@@ -4387,7 +4387,7 @@ NTAPI
 KsReleaseDeviceSecurityLock(
     IN KSDEVICE_HEADER Header
     );
-    
+
 KSDDKAPI
 NTSTATUS
 NTAPI
@@ -4403,7 +4403,7 @@ KsDefaultDispatchPower(
     IN PDEVICE_OBJECT DeviceObject,
     IN PIRP Irp
     );
-    
+
 KSDDKAPI
 NTSTATUS
 NTAPI
@@ -4875,7 +4875,7 @@ KsPinAddEvent(
 }
 
 KSDDKAPI
-NTSTATUS    
+NTSTATUS
 NTAPI
 KsDefaultAddEventHandler(
     IN PIRP Irp,
@@ -5132,7 +5132,7 @@ KsGetPinFromFileObject(
     )
 {
     return (PKSPIN) KsGetObjectFromFileObject(FileObject);
-}    
+}
 
 KSDDKAPI
 PKSGATE
@@ -5248,7 +5248,7 @@ KsFilterGetParentFilterFactory(
 }
 
 KSDDKAPI
-PKSFILTER 
+PKSFILTER
 NTAPI
 KsPinGetParentFilter(
     IN PKSPIN Pin
@@ -5301,7 +5301,7 @@ KsGetNextSibling(
     );
 
 KSDDKAPI
-PKSPIN 
+PKSPIN
 NTAPI
 KsPinGetNextSiblingPin(
     IN PKSPIN Pin
@@ -5651,7 +5651,7 @@ PUNKNOWN
 NTAPI
 KsRegisterAggregatedClientUnknown(
     IN PVOID Object,
-    IN PUNKNOWN ClientUnknown 
+    IN PUNKNOWN ClientUnknown
     );
 
 KSDDKAPI
@@ -5664,7 +5664,7 @@ KsGetOuterUnknown(
 PUNKNOWN __inline
 KsDeviceRegisterAggregatedClientUnknown(
     IN PKSDEVICE Device,
-    IN PUNKNOWN ClientUnknown 
+    IN PUNKNOWN ClientUnknown
     )
 {
     return KsRegisterAggregatedClientUnknown((PVOID) Device,ClientUnknown);
@@ -5681,7 +5681,7 @@ KsDeviceGetOuterUnknown(
 PUNKNOWN __inline
 KsFilterFactoryRegisterAggregatedClientUnknown(
     IN PKSFILTERFACTORY FilterFactory,
-    IN PUNKNOWN ClientUnknown 
+    IN PUNKNOWN ClientUnknown
     )
 {
     return KsRegisterAggregatedClientUnknown((PVOID) FilterFactory,ClientUnknown);
@@ -5698,7 +5698,7 @@ KsFilterFactoryGetOuterUnknown(
 PUNKNOWN __inline
 KsFilterRegisterAggregatedClientUnknown(
     IN PKSFILTER Filter,
-    IN PUNKNOWN ClientUnknown 
+    IN PUNKNOWN ClientUnknown
     )
 {
     return KsRegisterAggregatedClientUnknown((PVOID) Filter,ClientUnknown);
@@ -5715,7 +5715,7 @@ KsFilterGetOuterUnknown(
 PUNKNOWN __inline
 KsPinRegisterAggregatedClientUnknown(
     IN PKSPIN Pin,
-    IN PUNKNOWN ClientUnknown 
+    IN PUNKNOWN ClientUnknown
     )
 {
     return KsRegisterAggregatedClientUnknown((PVOID) Pin,ClientUnknown);
@@ -5774,7 +5774,7 @@ KsCreateTopologyNode(
     IN ACCESS_MASK DesiredAccess,
     OUT PHANDLE NodeHandle
     );
-    
+
 #endif
 
 #endif // !defined(_NTDDK_)
@@ -5794,5 +5794,3 @@ if ( pIrp->RequestorMode != KernelMode ) { \
 
 
 #endif // !_KS_
-
-

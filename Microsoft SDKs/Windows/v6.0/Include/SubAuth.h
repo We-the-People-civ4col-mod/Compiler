@@ -48,10 +48,10 @@ typedef struct _OLD_LARGE_INTEGER {
 
 #endif
 
-#ifndef _NTSAM_SAM_HANDLE_               
-typedef PVOID SAM_HANDLE, *PSAM_HANDLE;  
-#define _NTSAM_SAM_HANDLE_               
-#endif                                   
+#ifndef _NTSAM_SAM_HANDLE_
+typedef PVOID SAM_HANDLE, *PSAM_HANDLE;
+#define _NTSAM_SAM_HANDLE_
+#endif
 #ifndef _NTSAM_USER_ACCOUNT_FLAGS_
 
 //
@@ -140,7 +140,7 @@ typedef struct _SR_SECURITY_DESCRIPTOR {
 #define _NTSAM_USER_ACCOUNT_FLAG_
 #endif
 #ifndef _NTSAM_USER_ALL_INFO_
-#include "pshpack4.h"
+#include "PshPack4.h"
 typedef struct _USER_ALL_INFORMATION {
     LARGE_INTEGER LastLogon;
     LARGE_INTEGER LastLogoff;
@@ -176,13 +176,13 @@ typedef struct _USER_ALL_INFORMATION {
     BOOLEAN PasswordExpired;
     BOOLEAN PrivateDataSensitive;
 } USER_ALL_INFORMATION,  *PUSER_ALL_INFORMATION;
-#include "poppack.h"
+#include "PopPack.h"
 #define _NTSAM_USER_ALL_INFO_
 #endif
-#ifndef _NTSAM_SAM_USER_PARMS_                 
-#define USER_ALL_PARAMETERS         0x00200000 
-#define _NTSAM_SAM_USER_PARMS_                 
-#endif                                         
+#ifndef _NTSAM_SAM_USER_PARMS_
+#define USER_ALL_PARAMETERS         0x00200000
+#define _NTSAM_SAM_USER_PARMS_
+#endif
 
 #define CLEAR_BLOCK_LENGTH          8
 
@@ -345,25 +345,23 @@ Msv1_0SubAuthenticationFilter(
     OUT PLARGE_INTEGER KickoffTime
 );
 
-#define STATUS_SUCCESS                          ((NTSTATUS)0x00000000L) 
-#define STATUS_INVALID_INFO_CLASS        ((NTSTATUS)0xC0000003L)    
-#define STATUS_NO_SUCH_USER              ((NTSTATUS)0xC0000064L)     
-#define STATUS_WRONG_PASSWORD            ((NTSTATUS)0xC000006AL)     
-#define STATUS_PASSWORD_RESTRICTION      ((NTSTATUS)0xC000006CL)     
-#define STATUS_LOGON_FAILURE             ((NTSTATUS)0xC000006DL)     
-#define STATUS_ACCOUNT_RESTRICTION       ((NTSTATUS)0xC000006EL)     
-#define STATUS_INVALID_LOGON_HOURS       ((NTSTATUS)0xC000006FL)     
-#define STATUS_INVALID_WORKSTATION       ((NTSTATUS)0xC0000070L)     
-#define STATUS_PASSWORD_EXPIRED          ((NTSTATUS)0xC0000071L)     
-#define STATUS_ACCOUNT_DISABLED          ((NTSTATUS)0xC0000072L)     
-#define STATUS_INSUFFICIENT_RESOURCES    ((NTSTATUS)0xC000009AL)     
-#define STATUS_ACCOUNT_EXPIRED           ((NTSTATUS)0xC0000193L)    
-#define STATUS_PASSWORD_MUST_CHANGE      ((NTSTATUS)0xC0000224L)    
-#define STATUS_ACCOUNT_LOCKED_OUT        ((NTSTATUS)0xC0000234L)    
+#define STATUS_SUCCESS                          ((NTSTATUS)0x00000000L)
+#define STATUS_INVALID_INFO_CLASS        ((NTSTATUS)0xC0000003L)
+#define STATUS_NO_SUCH_USER              ((NTSTATUS)0xC0000064L)
+#define STATUS_WRONG_PASSWORD            ((NTSTATUS)0xC000006AL)
+#define STATUS_PASSWORD_RESTRICTION      ((NTSTATUS)0xC000006CL)
+#define STATUS_LOGON_FAILURE             ((NTSTATUS)0xC000006DL)
+#define STATUS_ACCOUNT_RESTRICTION       ((NTSTATUS)0xC000006EL)
+#define STATUS_INVALID_LOGON_HOURS       ((NTSTATUS)0xC000006FL)
+#define STATUS_INVALID_WORKSTATION       ((NTSTATUS)0xC0000070L)
+#define STATUS_PASSWORD_EXPIRED          ((NTSTATUS)0xC0000071L)
+#define STATUS_ACCOUNT_DISABLED          ((NTSTATUS)0xC0000072L)
+#define STATUS_INSUFFICIENT_RESOURCES    ((NTSTATUS)0xC000009AL)
+#define STATUS_ACCOUNT_EXPIRED           ((NTSTATUS)0xC0000193L)
+#define STATUS_PASSWORD_MUST_CHANGE      ((NTSTATUS)0xC0000224L)
+#define STATUS_ACCOUNT_LOCKED_OUT        ((NTSTATUS)0xC0000234L)
 #ifdef __cplusplus
 }
 #endif
 
 #endif /* _NTSUBAUTH_ */
-
-

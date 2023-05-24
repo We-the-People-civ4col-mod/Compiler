@@ -9,10 +9,10 @@ Module Name:
 Abstract:
 
         Winsock 2 Bluetooth Annex definitions.
-        
+
 Notes:
 
-        Change BT_* to BTH_*        
+        Change BT_* to BTH_*
 
 --*/
 
@@ -23,7 +23,7 @@ Notes:
 
 #include <bthdef.h>
 
-#include <pshpack1.h>
+#include <PshPack1.h>
 
 #define BT_PORT_ANY        ((ULONG)-1)
 #define BT_PORT_MIN        0x1
@@ -69,7 +69,7 @@ DEFINE_GUID(SVCID_BTH_PROVIDER, 0x6aa63e0, 0x7d60, 0x41ff, 0xaf, 0xb2, 0x3e, 0xe
 //
 // SOCKET OPTIONS
 //
-#define SO_BTH_AUTHENTICATE 0x80000001  // optlen=sizeof(ULONG), optval = &(ULONG)TRUE/FALSE 
+#define SO_BTH_AUTHENTICATE 0x80000001  // optlen=sizeof(ULONG), optval = &(ULONG)TRUE/FALSE
 #define SO_BTH_ENCRYPT      0x00000002  // optlen=sizeof(ULONG), optval = &(ULONG)TRUE/FALSE
 #define SO_BTH_MTU          0x80000007  // optlen=sizeof(ULONG), optval = &mtu
 #define SO_BTH_MTU_MAX      0x80000008  // optlen=sizeof(ULONG), optval = &max. mtu
@@ -93,10 +93,10 @@ DEFINE_GUID(SVCID_BTH_PROVIDER, 0x6aa63e0, 0x7d60, 0x41ff, 0xaf, 0xb2, 0x3e, 0xe
 //
 // [OPTIONAL] passed in BLOB member of WSAQUERYSET
 // QUERYSET and its lpBlob member are copied & converted
-// to unicode in the system for non-unicode applications.  
-// However, nothing is copied back upon return.  In 
-// order for the system to return data such as pRecordHandle, 
-// it much have an extra level of indirection from lpBlob 
+// to unicode in the system for non-unicode applications.
+// However, nothing is copied back upon return.  In
+// order for the system to return data such as pRecordHandle,
+// it much have an extra level of indirection from lpBlob
 //
 typedef struct _BTH_SET_SERVICE {
 
@@ -108,24 +108,24 @@ typedef struct _BTH_SET_SERVICE {
         PULONG pSdpVersion;
 
         //
-        // Handle to SDP record.  When BTH_SET_SERVICE structure is later 
+        // Handle to SDP record.  When BTH_SET_SERVICE structure is later
         // passed to WSASetService RNRSERVICE_DELETE, this handle identifies the
         // record to delete.
         //
         HANDLE *pRecordHandle;
-                        
-        // 
+
+        //
         // COD_SERVICE_* bit(s) associated with this SDP record, which will be
         // advertised when the local radio is found during device inquiry.
         // When the last SDP record associated with a bit is deleted, that
-        // service bit is no longer reported in repsonse to inquiries 
+        // service bit is no longer reported in repsonse to inquiries
         //
         ULONG fCodService;    // COD_SERVICE_* bits
 
-        ULONG Reserved[5];    // Reserved by system.  Must be zero.                
+        ULONG Reserved[5];    // Reserved by system.  Must be zero.
         ULONG ulRecordLength; // length of pRecord which follows
         UCHAR pRecord[1];     // SDP record as defined by bluetooth spec
-        
+
 } BTH_SET_SERVICE, *PBTH_SET_SERVICE;
 
 //
@@ -136,7 +136,7 @@ typedef struct _BTH_SET_SERVICE {
 // be balanced against the chance that a device that is actually
 // present might not being found by Bluetooth in this time
 //
-// Paging improvements post-1.1 will cause devices to be 
+// Paging improvements post-1.1 will cause devices to be
 // found generally uniformly in the 0-6 sec timeperiod
 //
 #define SDP_DEFAULT_INQUIRY_SECONDS         6
@@ -157,7 +157,7 @@ typedef struct _BTH_SET_SERVICE {
 //
 typedef struct _BTH_QUERY_DEVICE {
     ULONG   LAP;                    // reserved: must be 0 (GIAC inquiry only)
-    UCHAR   length;                 // requested length of inquiry (seconds)       
+    UCHAR   length;                 // requested length of inquiry (seconds)
 } BTH_QUERY_DEVICE, *PBTH_QUERY_DEVICE;
 
 //
@@ -175,7 +175,7 @@ typedef struct _BTH_QUERY_SERVICE {
 //
 // BTHNS_RESULT_*
 //
-// Bluetooth specific flags returned from WSALookupServiceNext 
+// Bluetooth specific flags returned from WSALookupServiceNext
 // in WSAQUERYSET.dwOutputFlags in response to device inquiry
 //
 
@@ -367,9 +367,8 @@ typedef struct _BTH_SET_SERVICE BTHNS_SETBLOB, *PBTHNS_SETBLOB;
 typedef struct _BTH_QUERY_DEVICE BTHNS_INQUIRYBLOB, *PBTHNS_INQUIRYBLOB;
 typedef struct _BTH_QUERY_SERVICE BTHNS_RESTRICTIONBLOB, *PBTHNS_RESTRICTIONBLOB;
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #endif // (NTDDI_VERSION >= NTDDI_WINXPSP2)
 
 #endif // __WS2BTH__H
-

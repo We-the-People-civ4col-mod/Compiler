@@ -4198,7 +4198,7 @@ IsZoomed(
  * The following structures must NOT be DWORD padded because they are
  * followed by strings, etc that do not have to be DWORD aligned.
  */
-#include <pshpack2.h>
+#include <PshPack2.h>
 
 /*
  * original NT 32 bit dialog template:
@@ -4255,7 +4255,7 @@ typedef LPDLGITEMTEMPLATEA LPDLGITEMTEMPLATE;
 #endif // UNICODE
 
 
-#include <poppack.h> /* Resume normal packing */
+#include <PopPack.h> /* Resume normal packing */
 
 WINUSERAPI
 HWND
@@ -10722,7 +10722,7 @@ typedef LPHIGHCONTRASTA LPHIGHCONTRAST;
 #define CDS_RESET                    0x40000000
 #define CDS_NORESET                  0x10000000
 
-#include <tvout.h>
+#include <Tvout.h>
 
 /* Return values for ChangeDisplaySettings */
 #define DISP_CHANGE_SUCCESSFUL       0
@@ -12587,8 +12587,3 @@ ShutdownBlockReasonDestroy(
 #endif  /* __cplusplus */
 
 #endif /* !_WINUSER_ */
-
-
-
-
-

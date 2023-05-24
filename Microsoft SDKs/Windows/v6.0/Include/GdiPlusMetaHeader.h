@@ -40,7 +40,7 @@ typedef struct
 
 // Placeable WMFs
 
-// Placeable Metafiles were created as a non-standard way of specifying how 
+// Placeable Metafiles were created as a non-standard way of specifying how
 // a metafile is mapped and scaled on an output device.
 // Placeable metafiles are quite wide-spread, but not directly supported by
 // the Windows API. To playback a placeable metafile using the Windows API,
@@ -53,7 +53,7 @@ typedef struct
 // Each placeable metafile begins with a 22-byte header,
 //  followed by a standard metafile:
 
-#include <pshpack2.h>   // set structure packing to 2
+#include <PshPack2.h>   // set structure packing to 2
 
 typedef struct
 {
@@ -73,7 +73,7 @@ typedef struct
     INT16           Checksum;       // Checksum value for previous 10 WORDs
 } WmfPlaceableFileHeader;
 
-#include <poppack.h>
+#include <PopPack.h>
 
 // Key contains a special identification value that indicates the presence
 // of a placeable metafile header and is always 0x9AC6CDD7.
@@ -136,11 +136,11 @@ public:
     UINT GetMetafileSize() const { return Size; }
 
     // If IsEmfPlus, this is the EMF+ version; else it is the WMF or EMF ver
-    
+
     UINT GetVersion() const { return Version; }
 
     // Get the EMF+ flags associated with the metafile
-    
+
     UINT GetEmfPlusFlags() const { return EmfPlusFlags; }
 
     REAL GetDpiX() const { return DpiX; }
@@ -154,9 +154,9 @@ public:
         rect->Width = Width;
         rect->Height = Height;
     }
-    
+
     // Is it any type of WMF (standard or Placeable Metafile)?
-    
+
     BOOL IsWmf() const
     {
        return ((Type == MetafileTypeWmf) || (Type == MetafileTypeWmfPlaceable));
@@ -167,27 +167,27 @@ public:
     BOOL IsWmfPlaceable() const { return (Type == MetafileTypeWmfPlaceable); }
 
     // Is this an EMF (not an EMF+)?
-    
+
     BOOL IsEmf() const { return (Type == MetafileTypeEmf); }
 
     // Is this an EMF or EMF+ file?
-    
+
     BOOL IsEmfOrEmfPlus() const { return (Type >= MetafileTypeEmf); }
 
     // Is this an EMF+ file?
-    
+
     BOOL IsEmfPlus() const { return (Type >= MetafileTypeEmfPlusOnly); }
 
     // Is this an EMF+ dual (has dual, down-level records) file?
-    
+
     BOOL IsEmfPlusDual() const { return (Type == MetafileTypeEmfPlusDual); }
 
     // Is this an EMF+ only (no dual records) file?
-    
+
     BOOL IsEmfPlusOnly() const { return (Type == MetafileTypeEmfPlusOnly); }
 
     // If it's an EMF+ file, was it recorded against a display Hdc?
-    
+
     BOOL IsDisplay() const
     {
         return (IsEmfPlus() &&
@@ -195,7 +195,7 @@ public:
     }
 
     // Get the WMF header of the metafile (if it is a WMF)
-    
+
     const METAHEADER * GetWmfHeader() const
     {
         if (IsWmf())
@@ -206,7 +206,7 @@ public:
     }
 
     // Get the EMF header of the metafile (if it is an EMF)
-    
+
     const ENHMETAHEADER3 * GetEmfHeader() const
     {
         if (IsEmfOrEmfPlus())
@@ -218,5 +218,3 @@ public:
 };
 
 #endif
-
-

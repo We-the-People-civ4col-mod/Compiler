@@ -1,12 +1,12 @@
 //$TAG BIZDEV
-//  $IPCategory:     
+//  $IPCategory:
 //  $DealPointID:    8269
 //  $AgreementName:  software license agreement
 //  $AgreementType:  inbound license
 //  $ExternalOrigin: boris nikolaus
 //$ENDTAG
 
-//$TAG ENGR 
+//$TAG ENGR
 //  $Owner:    georgema
 //  $Module:   enduser_published
 //
@@ -20,7 +20,7 @@
 
 #include <msasn1.h>
 
-#include <pshpack8.h> /* Assume 8 byte packing throughout */
+#include <PshPack8.h> /* Assume 8 byte packing throughout */
 
 #ifdef __cplusplus
 extern "C" {
@@ -196,7 +196,6 @@ extern ASN1_PUBLIC int ASN1API ASN1BERDecCharacterString(ASN1decoding_t dec, ASN
 }
 #endif
 
-#include <poppack.h> /* End 8-byte packing */
+#include <PopPack.h> /* End 8-byte packing */
 
 #endif // __MS_BER_H__
-

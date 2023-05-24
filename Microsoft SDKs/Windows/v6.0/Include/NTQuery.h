@@ -53,7 +53,7 @@ STDAPI LoadIFilterEx( PCWSTR pwcsPath,
                       DWORD dwFlags,
                       REFIID riid,
                       __deref_out void ** ppIUnk );
-                      
+
 STDAPI BindIFilterFromStorage(__in IStorage * pStg,
                               __in IUnknown * pUnkOuter,
                               __deref_out void ** ppIUnk );
@@ -252,7 +252,7 @@ STDAPI SetCatalogState ( WCHAR const * pwcsCat,
 
 #ifndef CI_STATE_DEFINED
 #define CI_STATE_DEFINED
-#include <pshpack4.h>
+#include <PshPack4.h>
 typedef struct  _CI_STATE
     {
     DWORD cbStruct;
@@ -272,7 +272,7 @@ typedef struct  _CI_STATE
     DWORD dwPropCacheSize;
     }   CI_STATE;
 
-#include <poppack.h>
+#include <PopPack.h>
 #endif   // CI_STATE_DEFINED
 
 STDAPI CIState( WCHAR const * pwcsCat,
@@ -405,5 +405,3 @@ STDAPI CIRestrictionToFullTree( DBCOMMANDTREE const *pTree,
 #endif
 
 #endif // __NTQUERY_H__
-
-

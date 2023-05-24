@@ -509,7 +509,7 @@ typedef enum _STORAGE_MEDIA_TYPE {
     ADR_1,                     // OnStream ADR Mediatypes
     ADR_2,
     STK_9940,                  // STK 9940
-    SAIT                       // SAIT Tapes    
+    SAIT                       // SAIT Tapes
 }STORAGE_MEDIA_TYPE, *PSTORAGE_MEDIA_TYPE;
 
 #define MEDIA_ERASEABLE         0x00000001
@@ -1042,14 +1042,14 @@ typedef struct _STORAGE_GET_BC_PROPERTIES_OUTPUT {
     // has an outstanding contract.
     //
     DWORD NumOutStandingRequests;
-    
+
     //
-    // Specifies the required size of requests in this 
+    // Specifies the required size of requests in this
     // stream.  This  will  only  be filled in  if the
     // target file has an outstanding contract.
     //
     DWORDLONG RequestSize;
-    
+
 } STORAGE_GET_BC_PROPERTIES_OUTPUT, *PSTORAGE_GET_BC_PROPERTIES_OUTPUT;
 
 
@@ -1786,13 +1786,13 @@ typedef struct _REASSIGN_BLOCKS {
 // request.
 //
 
-#include <pshpack1.h>
+#include <PshPack1.h>
 typedef struct _REASSIGN_BLOCKS_EX {
     WORD   Reserved;
     WORD   Count;
     LARGE_INTEGER BlockNumber[1];
 } REASSIGN_BLOCKS_EX, *PREASSIGN_BLOCKS_EX;
-#include <poppack.h>
+#include <PopPack.h>
 
 
 #if(_WIN32_WINNT >= 0x500)
@@ -2399,7 +2399,7 @@ typedef struct _BIN_RESULTS {
 // Get Driver Version function.
 //
 
-#include <pshpack1.h>
+#include <PshPack1.h>
 typedef struct _GETVERSIONINPARAMS {
         BYTE     bVersion;               // Binary driver version.
         BYTE     bRevision;              // Binary driver revision.
@@ -2408,7 +2408,7 @@ typedef struct _GETVERSIONINPARAMS {
         DWORD   fCapabilities;          // Bit mask of driver capabilities.
         DWORD   dwReserved[4];          // For future use.
 } GETVERSIONINPARAMS, *PGETVERSIONINPARAMS, *LPGETVERSIONINPARAMS;
-#include <poppack.h>
+#include <PopPack.h>
 
 //
 // Bits returned in the fCapabilities member of GETVERSIONINPARAMS
@@ -2422,7 +2422,7 @@ typedef struct _GETVERSIONINPARAMS {
 // IDE registers
 //
 
-#include <pshpack1.h>
+#include <PshPack1.h>
 typedef struct _IDEREGS {
         BYTE     bFeaturesReg;           // Used for specifying SMART "commands".
         BYTE     bSectorCountReg;        // IDE sector count register
@@ -2433,7 +2433,7 @@ typedef struct _IDEREGS {
         BYTE     bCommandReg;            // Actual IDE command.
         BYTE     bReserved;                      // reserved for future use.  Must be zero.
 } IDEREGS, *PIDEREGS, *LPIDEREGS;
-#include <poppack.h>
+#include <PopPack.h>
 
 //
 // Valid values for the bCommandReg member of IDEREGS.
@@ -2458,7 +2458,7 @@ typedef struct _IDEREGS {
 // Send Command to Drive function.
 //
 
-#include <pshpack1.h>
+#include <PshPack1.h>
 typedef struct _SENDCMDINPARAMS {
         DWORD   cBufferSize;            // Buffer size in bytes
         IDEREGS irDriveRegs;            // Structure with drive register values.
@@ -2468,13 +2468,13 @@ typedef struct _SENDCMDINPARAMS {
         DWORD   dwReserved[4];          // For future use.
         BYTE     bBuffer[1];                     // Input buffer.
 } SENDCMDINPARAMS, *PSENDCMDINPARAMS, *LPSENDCMDINPARAMS;
-#include <poppack.h>
+#include <PopPack.h>
 
 //
 // Status returned from driver
 //
 
-#include <pshpack1.h>
+#include <PshPack1.h>
 typedef struct _DRIVERSTATUS {
         BYTE     bDriverError;           // Error code from driver,
                                                                 // or 0 if no error.
@@ -2484,7 +2484,7 @@ typedef struct _DRIVERSTATUS {
         BYTE     bReserved[2];           // Reserved for future expansion.
         DWORD   dwReserved[2];          // Reserved for future expansion.
 } DRIVERSTATUS, *PDRIVERSTATUS, *LPDRIVERSTATUS;
-#include <poppack.h>
+#include <PopPack.h>
 
 //
 // bDriverError values
@@ -2513,13 +2513,13 @@ typedef struct _DRIVERSTATUS {
 #define SMART_EXTENDED_SELFTEST_CAPTIVE     130
 
 
-#include <pshpack1.h>
+#include <PshPack1.h>
 typedef struct _SENDCMDOUTPARAMS {
         DWORD                   cBufferSize;            // Size of bBuffer in bytes
         DRIVERSTATUS            DriverStatus;           // Driver status structure.
         BYTE                    bBuffer[1];             // Buffer of arbitrary length in which to store the data read from the                                                                                  // drive.
 } SENDCMDOUTPARAMS, *PSENDCMDOUTPARAMS, *LPSENDCMDOUTPARAMS;
-#include <poppack.h>
+#include <PopPack.h>
 
 
 #define READ_ATTRIBUTE_BUFFER_SIZE  512
@@ -5278,5 +5278,3 @@ typedef struct _VOLUME_DISK_EXTENTS {
 
 
 #endif // _WINIOCTL_
-
-

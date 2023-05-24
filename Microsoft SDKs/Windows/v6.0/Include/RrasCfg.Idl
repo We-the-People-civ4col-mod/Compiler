@@ -18,7 +18,7 @@ cpp_quote("// PARTICULAR PURPOSE.")
 cpp_quote("//=--------------------------------------------------------------------------=")
 cpp_quote(" ")
 
-import "basetsd.h";
+import "BaseTsd.h";
 import "wtypes.idl";
 
 typedef BYTE *  PBYTE;
@@ -33,8 +33,8 @@ typedef BYTE *  PBYTE;
    local,
    pointer_default(unique),
 ]
-   
-   
+
+
 interface IRouterProtocolConfig :IUnknown
 {
 	import "unknwn.idl";
@@ -46,14 +46,14 @@ interface IRouterProtocolConfig :IUnknown
 					[in] DWORD dwFlags,
 					[in] IUnknown *pRouter,
 					[in] ULONG_PTR uReserved1);
-	
+
 	HRESULT	RemoveProtocol([in,string] LPCOLESTR pszMachineName,
 					  [in] DWORD dwTransportId,
 					  [in] DWORD dwProtocolId,
 					  [in] HWND hWnd,
 					  [in] DWORD dwFlags,
 					  [in] IUnknown *pRouter,
-					  [in] ULONG_PTR uReserved1);	
+					  [in] ULONG_PTR uReserved1);
 };
 
 // a macro to help declare all of the methods
@@ -85,8 +85,8 @@ cpp_quote(" ")
    local,
    pointer_default(unique),
 ]
-   
-   
+
+
 interface IAuthenticationProviderConfig :IUnknown
 {
 	import "unknwn.idl";
@@ -108,7 +108,7 @@ interface IAuthenticationProviderConfig :IUnknown
 	HRESULT		Deactivate([in] ULONG_PTR uConnectionParam,
 						   [in] ULONG_PTR uReserved1,
 						   [in] ULONG_PTR uReserved2);
-	
+
 };
 
 // a macro to help declare all of the methods
@@ -148,8 +148,8 @@ cpp_quote(" ")
    local,
    pointer_default(unique),
 ]
-   
-   
+
+
 interface IAccountingProviderConfig :IUnknown
 {
 	import "unknwn.idl";
@@ -157,7 +157,7 @@ interface IAccountingProviderConfig :IUnknown
 	HRESULT		Initialize([in, string] LPCOLESTR pszMachineName,
 						   [out] ULONG_PTR *puConnectionParam);
 	HRESULT		Uninitialize([in] ULONG_PTR uConnectionParam);
-	
+
 	HRESULT		Configure([in] ULONG_PTR uConnectionParam,
 						  [in] HWND hWnd,
 						  [in] DWORD dwFlags,
@@ -209,8 +209,8 @@ cpp_quote(" ")
    local,
    pointer_default(unique),
 ]
-   
-   
+
+
 interface IEAPProviderConfig :IUnknown
 {
 	import "unknwn.idl";
@@ -233,9 +233,3 @@ cpp_quote("							ULONG_PTR uConnectionParam) IPURE; \\")
 cpp_quote("	STDMETHOD(Configure)(THIS_ ULONG_PTR uConnectionParam, \\")
 cpp_quote("			HWND hWnd, ULONG_PTR dwRes1, ULONG_PTR dwRes2) IPURE; \\")
 cpp_quote(" ")
-
-
-
-
-
-

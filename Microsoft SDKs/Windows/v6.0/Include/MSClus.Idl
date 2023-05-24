@@ -106,7 +106,7 @@
 // 53d51d26-b51b-4a79-b2c3-5048d93a98fc -- interface ISClusPartitionEx
 
 #if WINVER >= 0x0500
-    import "basetsd.h";
+    import "BaseTsd.h";
 #else
     #ifndef _BASETSD_H_
         typedef [public] unsigned long ULONG_PTR;       // this is for the NT4 build
@@ -2156,4 +2156,3 @@ interface ISClusResDependents : IDispatch
     [id(6), helpstring("Removes a resource identified by name or numeric index from the collection, but does not delete it from the cluster.")]
     HRESULT RemoveItem( [in] VARIANT varIndex );
 };
-

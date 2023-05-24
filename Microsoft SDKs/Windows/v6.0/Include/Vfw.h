@@ -421,7 +421,7 @@ typedef struct {
 
     LPBITMAPINFOHEADER  lpbiInput;  // BITMAPINFO of compressed data
                                     // biSizeImage has the chunk size
-    __field_bcount(lpbiInput->biSizeImage) 
+    __field_bcount(lpbiInput->biSizeImage)
     LPVOID              lpInput;    // compressed data
 
     LPBITMAPINFOHEADER  lpbiOutput; // DIB to decompress to
@@ -535,7 +535,7 @@ typedef struct {
 /************************************************************************
 
     ICM function declarations
-	
+
 ************************************************************************/
 
 BOOL
@@ -642,7 +642,7 @@ LRESULT VFWAPIV ICMessage(HIC hic, UINT msg, UINT cb, ...);
 /************************************************************************
 
     get/set state macros
-	
+
 ************************************************************************/
 
 #define ICGetState(hic, pv, cb) \
@@ -670,7 +670,7 @@ static DWORD dwICValue;
 /************************************************************************
 
     draw window macro
-	
+
 ************************************************************************/
 #define ICDrawWindow(hic, prc) \
     ICSendMessage(hic, ICM_DRAW_WINDOW, (DWORD_PTR)(LPVOID)(prc), sizeof(RECT))
@@ -1320,7 +1320,7 @@ typedef HANDLE HDRAWDIB; /* hdd */
 /*********************************************************************
 
     DrawDib functions
-	
+
 *********************************************************************/
 /*							// ;Internal
 **  DrawDibInit()					// ;Internal
@@ -1547,17 +1547,17 @@ DrawDibProfileDisplay(
 #ifdef DRAWDIB_INCLUDE_STRETCHDIB
 void WINAPI StretchDIB(
 	__in  LPBITMAPINFOHEADER biDst,
-	__out LPVOID	lpDst,		
-	__in  int	DstX,		
-	__in  int	DstY,		
-	__in  int	DstXE,		
-	__in  int	DstYE,		
+	__out LPVOID	lpDst,
+	__in  int	DstX,
+	__in  int	DstY,
+	__in  int	DstXE,
+	__in  int	DstYE,
 	__in  LPBITMAPINFOHEADER biSrc,
-	__in  LPVOID	lpSrc,		
-	__in  int	SrcX,		
-	__in  int	SrcY,		
-	__in  int	SrcXE,		
-	__in  int	SrcYE); 	
+	__in  LPVOID	lpSrc,
+	__in  int	SrcX,
+	__in  int	SrcY,
+	__in  int	SrcXE,
+	__in  int	SrcYE);
 #endif
 
 #endif  /* NODRAWDIB */
@@ -1588,11 +1588,11 @@ void WINAPI StretchDIB(
  *                      strh(<Stream header>)
  *                      strf(<Stream format>)
  *                      ... additional header data
- *            LIST('movi'	
+ *            LIST('movi'
  *      	  { LIST('rec'
  *      		      SubChunk...
  *      		   )
- *      	      | SubChunk } ....	
+ *      	      | SubChunk } ....
  *            )
  *            [ <AVIIndex> ]
  *      )
@@ -1714,8 +1714,8 @@ typedef WORD TWOCC;
 
 /*
 ** Main AVI File Header
-*/	
-		
+*/
+
 /* flags for use in <dwFlags> in AVIFileHdr */
 #define AVIF_HASINDEX		0x00000010	// Index at end of file?
 #define AVIF_MUSTUSEINDEX	0x00000020
@@ -1760,7 +1760,7 @@ typedef struct {
     WORD		wPriority;
     WORD		wLanguage;
     DWORD		dwInitialFrames;
-    DWORD		dwScale;	
+    DWORD		dwScale;
     DWORD		dwRate;	/* dwRate / dwScale == samples/second */
     DWORD		dwStart;
     DWORD		dwLength; /* In units above... */
@@ -1815,7 +1815,7 @@ typedef struct
  ***************************************************************************/
 
 #ifndef RC_INVOKED
-#include "pshpack8.h"
+#include "PshPack8.h"
 #endif
 #ifndef NOMMREG
     #include <mmreg.h>
@@ -1956,7 +1956,7 @@ typedef struct _AVIFILEINFOW {
     DWORD		dwWidth;
     DWORD		dwHeight;
 
-    DWORD		dwScale;	
+    DWORD		dwScale;
     DWORD		dwRate;	/* dwRate / dwScale == samples/second */
     DWORD		dwLength;
 
@@ -1975,7 +1975,7 @@ typedef struct _AVIFILEINFOA {
     DWORD		dwWidth;
     DWORD		dwHeight;
 
-    DWORD		dwScale;	
+    DWORD		dwScale;
     DWORD		dwRate;	/* dwRate / dwScale == samples/second */
     DWORD		dwLength;
 
@@ -2268,9 +2268,9 @@ STDAPI AVIFileOpenA       (__deref_out PAVIFILE FAR * ppfile, __in LPCSTR szFile
 STDAPI AVIFileOpenW       (__deref_out PAVIFILE FAR * ppfile, __in LPCWSTR szFile,
 			  UINT uMode, __in_opt LPCLSID lpHandler);
 #ifdef UNICODE
-#define AVIFileOpen	  AVIFileOpenW	
+#define AVIFileOpen	  AVIFileOpenW
 #else
-#define AVIFileOpen	  AVIFileOpenA	
+#define AVIFileOpen	  AVIFileOpenA
 #endif
 #else // win16
 STDAPI AVIFileOpen       (PAVIFILE FAR * ppfile, LPCSTR szFile,
@@ -3809,7 +3809,7 @@ extern "C" {            /* Assume C declarations for C++ */
 #endif // OFN_READONLY
 
 #ifndef RC_INVOKED
-#include "poppack.h"
+#include "PopPack.h"
 #endif
 
 #ifdef __cplusplus
@@ -3817,4 +3817,3 @@ extern "C" {            /* Assume C declarations for C++ */
 #endif  /* __cplusplus */
 
 #endif  /* _INC_VFW */
-

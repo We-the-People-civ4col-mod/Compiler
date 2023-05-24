@@ -109,7 +109,7 @@
 //
 /////////////////////////////////////////////////////////////////////////////
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 typedef struct CRYPTCATSTORE_
 {
@@ -184,7 +184,7 @@ typedef struct CATALOG_INFO_
 typedef HANDLE          HCATADMIN;
 typedef HANDLE          HCATINFO;
 
-#include <poppack.h>
+#include <PopPack.h>
 
 typedef void (WINAPI *PFN_CDF_PARSE_ERROR_CALLBACK)(IN DWORD dwErrorArea,
                                                     IN DWORD dwLocalError,
@@ -368,7 +368,7 @@ extern CRYPTCATMEMBER * WINAPI CryptCATGetMemberInfo(IN HANDLE hCatalog,
 //  Errors:
 //      ERROR_INVALID_PARAMETER:        an input parameter is incorrect
 //
-extern CRYPTCATMEMBER * WINAPI CryptCATAllocSortedMemberInfo(IN HANDLE hCatalog, 
+extern CRYPTCATMEMBER * WINAPI CryptCATAllocSortedMemberInfo(IN HANDLE hCatalog,
                                                      __in LPWSTR pwszReferenceTag);
 
 // 6-Feb-2006 philh: added
@@ -384,7 +384,7 @@ extern CRYPTCATMEMBER * WINAPI CryptCATAllocSortedMemberInfo(IN HANDLE hCatalog,
 //  Errors:
 //      ERROR_INVALID_PARAMETER:        an input parameter is incorrect
 //
-extern void WINAPI CryptCATFreeSortedMemberInfo(IN HANDLE hCatalog, 
+extern void WINAPI CryptCATFreeSortedMemberInfo(IN HANDLE hCatalog,
                                                       IN CRYPTCATMEMBER *pCatMember);
 
 /////////////////////////////////////////////////////////////////////////////
@@ -847,5 +847,3 @@ extern BOOL WINAPI CryptCATAdminPauseServiceForBackup(IN DWORD dwFlags,
 #endif
 
 #endif // MSCAT_H
-
-

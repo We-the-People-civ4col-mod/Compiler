@@ -1,12 +1,12 @@
 //$TAG BIZDEV
-//  $IPCategory:     
+//  $IPCategory:
 //  $DealPointID:    118736
 //  $AgreementName:  berkeley software distribution license
 //  $AgreementType:  oss license
 //  $ExternalOrigin: regents of the university of california
 //$ENDTAG
 
-//$TAG ENGR 
+//$TAG ENGR
 //  $Owner:    vadime
 //  $Module:   published_inc
 //
@@ -33,7 +33,7 @@
 /*
  * Ensure structures are packed consistently.
  * Not necessary for WIN32, it is already packed >=4 and there are
- * no structures in this header that have alignment requirement 
+ * no structures in this header that have alignment requirement
  * higher than 4.
  * For WIN64 we do not have compatibility requirement because it is
  * not possible to mix 32/16 bit code with 64 bit code in the same
@@ -41,8 +41,8 @@
  */
 
 #if (!defined(_WIN64) && !defined(WIN32))
-#include <pshpack4.h>
-/* WIN32 can be defined between here and the required poppack 
+#include <PshPack4.h>
+/* WIN32 can be defined between here and the required poppack
    so define this special macro to ensure poppack */
 #define _NEED_POPPACK
 #endif
@@ -1297,7 +1297,7 @@ typedef struct _WSAQuerySet2A
     DWORD           dwNumberOfCsAddrs;
     LPCSADDR_INFO   lpcsaBuffer;
     DWORD           dwOutputFlags;
-    LPBLOB          lpBlob;   
+    LPBLOB          lpBlob;
 } WSAQUERYSET2A, *PWSAQUERYSET2A, *LPWSAQUERYSET2A;
 typedef struct _WSAQuerySet2W
 {
@@ -1314,7 +1314,7 @@ typedef struct _WSAQuerySet2W
     DWORD           dwNumberOfCsAddrs;
     __field_ecount(dwNumberOfCsAddrs) LPCSADDR_INFO   lpcsaBuffer;
     DWORD           dwOutputFlags;
-    LPBLOB          lpBlob;   
+    LPBLOB          lpBlob;
 } WSAQUERYSET2W, *PWSAQUERYSET2W, *LPWSAQUERYSET2W;
 
 #ifdef UNICODE
@@ -3082,8 +3082,8 @@ int
 #if(_WIN32_WINNT >= 0x0600)
 #if INCL_WINSOCK_API_PROTOTYPES
 WINSOCK_API_LINKAGE
-int 
-WSAAPI 
+int
+WSAAPI
 WSASendMsg(
     IN SOCKET Handle,
     IN LPWSAMSG lpMsg,
@@ -3911,7 +3911,7 @@ typedef struct timeval FAR *LPTIMEVAL;
 #endif
 
 #ifdef _NEED_POPPACK
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 #if(_WIN32_WINNT >= 0x0501)
@@ -3921,4 +3921,3 @@ typedef struct timeval FAR *LPTIMEVAL;
 #endif //(_WIN32_WINNT >= 0x0501)
 
 #endif  /* _WINSOCK2API_ */
-

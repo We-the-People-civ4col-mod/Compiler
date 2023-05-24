@@ -1,6 +1,6 @@
 /************************************************************************
 *                                                                       *
-*   mcx.h -- This module defines the 32-Bit Windows MCX APIs            *
+*   Mcx.h -- This module defines the 32-Bit Windows MCX APIs            *
 *                                                                       *
 *   Copyright (c) 1990-1999, Microsoft Corp. All rights reserved.       *
 *                                                                       *
@@ -720,4 +720,3 @@ typedef struct _MODEMSETTINGS {
         )
 
 #endif /* _MCX_H_ */
-

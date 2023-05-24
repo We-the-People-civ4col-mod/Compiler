@@ -21,7 +21,7 @@ Abstract:
 #endif
 
 #if defined(__RPC_WIN64__)
-#include <pshpack8.h>
+#include <PshPack8.h>
 #endif
 
 #ifdef __cplusplus
@@ -59,7 +59,7 @@ enum _RPC_ASYNC_EVENT {
     RpcClientDisconnect,
     RpcClientCancel
     } RPC_ASYNC_EVENT;
-    
+
 #else // (NTDDI_VERSION >= NTDDI_LONGHORN)
 
 typedef
@@ -68,7 +68,7 @@ enum _RPC_ASYNC_EVENT {
     RpcSendComplete,
     RpcReceiveComplete,
     RpcClientDisconnect
-    } RPC_ASYNC_EVENT;    
+    } RPC_ASYNC_EVENT;
 #endif // (NTDDI_VERSION >= NTDDI_LONGHORN)
 
 struct _RPC_ASYNC_STATE;
@@ -274,70 +274,70 @@ typedef struct tagRPC_ERROR_ENUM_HANDLE
 } RPC_ERROR_ENUM_HANDLE;
 
 RPCRTAPI
-RPC_STATUS 
+RPC_STATUS
 RPC_ENTRY
 RpcErrorStartEnumeration (
     __inout RPC_ERROR_ENUM_HANDLE *EnumHandle
     );
 
 RPCRTAPI
-RPC_STATUS 
+RPC_STATUS
 RPC_ENTRY
 RpcErrorGetNextRecord (
-    __in RPC_ERROR_ENUM_HANDLE *EnumHandle, 
-    __in BOOL CopyStrings, 
+    __in RPC_ERROR_ENUM_HANDLE *EnumHandle,
+    __in BOOL CopyStrings,
     __out RPC_EXTENDED_ERROR_INFO *ErrorInfo
     );
 
 RPCRTAPI
-RPC_STATUS 
+RPC_STATUS
 RPC_ENTRY
 RpcErrorEndEnumeration (
     __inout RPC_ERROR_ENUM_HANDLE *EnumHandle
     );
 
 RPCRTAPI
-RPC_STATUS 
+RPC_STATUS
 RPC_ENTRY
 RpcErrorResetEnumeration (
     __inout RPC_ERROR_ENUM_HANDLE *EnumHandle
     );
 
 RPCRTAPI
-RPC_STATUS 
+RPC_STATUS
 RPC_ENTRY
 RpcErrorGetNumberOfRecords (
-    __in RPC_ERROR_ENUM_HANDLE *EnumHandle, 
+    __in RPC_ERROR_ENUM_HANDLE *EnumHandle,
     __out int *Records
     );
 
 RPCRTAPI
-RPC_STATUS 
+RPC_STATUS
 RPC_ENTRY
 RpcErrorSaveErrorInfo (
-    __in RPC_ERROR_ENUM_HANDLE *EnumHandle, 
-    __out_bcount(*BlobSize) PVOID *ErrorBlob, 
+    __in RPC_ERROR_ENUM_HANDLE *EnumHandle,
+    __out_bcount(*BlobSize) PVOID *ErrorBlob,
     __out size_t *BlobSize
     );
 
 RPCRTAPI
-RPC_STATUS 
+RPC_STATUS
 RPC_ENTRY
 RpcErrorLoadErrorInfo (
-    __in_bcount(BlobSize) PVOID ErrorBlob, 
-    __in size_t BlobSize, 
+    __in_bcount(BlobSize) PVOID ErrorBlob,
+    __in size_t BlobSize,
     __out RPC_ERROR_ENUM_HANDLE *EnumHandle
     );
 
 RPCRTAPI
-RPC_STATUS 
+RPC_STATUS
 RPC_ENTRY
 RpcErrorAddRecord (
     __in RPC_EXTENDED_ERROR_INFO *ErrorInfo
     );
 
 RPCRTAPI
-void 
+void
 RPC_ENTRY
 RpcErrorClearInformation (
     void
@@ -367,7 +367,7 @@ RpcGetAuthorizationContextForClient (
     );
 
 RPCRTAPI
-RPC_STATUS 
+RPC_STATUS
 RPC_ENTRY
 RpcFreeAuthorizationContext (
     __deref PVOID *pAuthzClientContext
@@ -483,14 +483,14 @@ typedef struct tagRPC_CALL_ATTRIBUTES_V2_W
     BOOL KernelModeCaller;
     unsigned long ProtocolSequence;
     RpcCallClientLocality IsClientLocal;
-    HANDLE ClientPID; 
+    HANDLE ClientPID;
     unsigned long CallStatus;
     RpcCallType CallType;
     RPC_CALL_LOCAL_ADDRESS_V1 *CallLocalAddress;	// one of the CallLocalAddress flavors
     unsigned short OpNum;
-    UUID InterfaceUuid;        
+    UUID InterfaceUuid;
 } RPC_CALL_ATTRIBUTES_V2_W;
-    
+
 typedef struct tagRPC_CALL_ATTRIBUTES_V2_A
 {
     unsigned int Version;
@@ -505,12 +505,12 @@ typedef struct tagRPC_CALL_ATTRIBUTES_V2_A
     BOOL KernelModeCaller;
     unsigned long ProtocolSequence;
     unsigned long IsClientLocal;
-    HANDLE ClientPID; 
+    HANDLE ClientPID;
     unsigned long CallStatus;
     RpcCallType CallType;
     RPC_CALL_LOCAL_ADDRESS_V1 *CallLocalAddress;	// one of the CallLocalAddress flavors
     unsigned short OpNum;
-    UUID InterfaceUuid;    
+    UUID InterfaceUuid;
 } RPC_CALL_ATTRIBUTES_V2_A;
 #endif // (NTDDI_VERSION >= NTDDI_LONGHORN)
 
@@ -546,7 +546,7 @@ RpcServerInqCallAttributesA (
 
 #if (NTDDI_VERSION >= NTDDI_LONGHORN)
 typedef RPC_CALL_ATTRIBUTES_V2 RPC_CALL_ATTRIBUTES;
-#else 
+#else
 typedef RPC_CALL_ATTRIBUTES_V1 RPC_CALL_ATTRIBUTES;
 #endif // (NTDDI_VERSION >= NTDDI_LONGHORN)
 
@@ -562,8 +562,8 @@ typedef enum _RPC_NOTIFICATIONS
 #define RpcNotificationCallStatusChange    RpcNotificationClientDisconnect
 
 RPCRTAPI
-RPC_STATUS 
-RPC_ENTRY 
+RPC_STATUS
+RPC_ENTRY
 RpcServerSubscribeForNotification (
     __in_opt RPC_BINDING_HANDLE Binding,
     __in RPC_NOTIFICATIONS Notification,
@@ -572,8 +572,8 @@ RpcServerSubscribeForNotification (
     );
 
 RPCRTAPI
-RPC_STATUS 
-RPC_ENTRY 
+RPC_STATUS
+RPC_ENTRY
 RpcServerUnsubscribeForNotification (
     __in_opt RPC_BINDING_HANDLE Binding,
     __in RPC_NOTIFICATIONS Notification,
@@ -582,20 +582,20 @@ RpcServerUnsubscribeForNotification (
 
 #endif // (NTDDI_VERSION >= NTDDI_LONGHORN)
 #endif // _KRPCENV_
- 
-#if (NTDDI_VERSION >= NTDDI_LONGHORN)  
+
+#if (NTDDI_VERSION >= NTDDI_LONGHORN)
 RPCRTAPI
-RPC_STATUS 
-RPC_ENTRY 
+RPC_STATUS
+RPC_ENTRY
 RpcBindingBind (
     __in_opt PRPC_ASYNC_STATE pAsync,
     __in RPC_BINDING_HANDLE Binding,
-    __in RPC_IF_HANDLE IfSpec    
+    __in RPC_IF_HANDLE IfSpec
     );
 
 RPCRTAPI
-RPC_STATUS 
-RPC_ENTRY 
+RPC_STATUS
+RPC_ENTRY
 RpcBindingUnbind (
     __in RPC_BINDING_HANDLE Binding
     );
@@ -603,13 +603,13 @@ RpcBindingUnbind (
 #define RPC_DE_USE_CURRENT_EEINFO              (1)
 
 RPCRTAPI
-RPC_STATUS 
-RPC_ENTRY 
+RPC_STATUS
+RPC_ENTRY
 RpcDiagnoseError (
-    __in RPC_BINDING_HANDLE BindingHandle, 
-    __in RPC_IF_HANDLE IfSpec, 
-    __in RPC_STATUS RpcStatus, 
-    __in_opt RPC_ERROR_ENUM_HANDLE *EnumHandle, 
+    __in RPC_BINDING_HANDLE BindingHandle,
+    __in RPC_IF_HANDLE IfSpec,
+    __in RPC_STATUS RpcStatus,
+    __in_opt RPC_ERROR_ENUM_HANDLE *EnumHandle,
     __in ULONG Options,
     __in_opt HWND ParentWindow
     );
@@ -632,7 +632,7 @@ I_RpcAsyncAbortCall (
     ) ;
 
 #if (NTDDI_VERSION >= NTDDI_WXP)
-int 
+int
 RPC_ENTRY
 I_RpcExceptionFilter (
     __in unsigned long ExceptionCode
@@ -644,9 +644,7 @@ I_RpcExceptionFilter (
 #endif
 
 #if defined(__RPC_WIN64__)
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 #endif /* __RPCASYNC_H__ */
-
-

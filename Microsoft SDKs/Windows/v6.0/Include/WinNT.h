@@ -22,8 +22,8 @@ Revision History:
 extern "C" {
 #endif
 
-#include <ctype.h>  
-#define ANYSIZE_ARRAY 1       
+#include <ctype.h>
+#define ANYSIZE_ARRAY 1
 
 #include <specstrings.h>
 
@@ -102,7 +102,7 @@ extern "C" {
 #define C_ASSERT(e) /* nothing */
 #endif
 
-#include <basetsd.h>
+#include <BaseTsd.h>
 
 
 #if (defined(_M_IX86) || defined(_M_IA64) || defined(_M_AMD64)) && !defined(MIDL_PASS)
@@ -395,8 +395,8 @@ typedef LPCSTR PCTSTR, LPCTSTR, PCUTSTR, LPCUTSTR;
 #define TEXT(quote) __TEXT(quote)   // r_winnt
 
 
-typedef SHORT *PSHORT;  
-typedef LONG *PLONG;    
+typedef SHORT *PSHORT;
+typedef LONG *PLONG;
 
 #ifdef STRICT
 typedef void *HANDLE;
@@ -483,10 +483,10 @@ typedef __success(return >= 0) long HRESULT;
 #define IFACEMETHODIMPV          __override STDMETHODIMPV
 #define IFACEMETHODIMPV_(type)   __override STDMETHODIMPV_(type)
 
-typedef char CCHAR;          
-typedef DWORD LCID;         
-typedef PDWORD PLCID;       
-typedef WORD   LANGID;      
+typedef char CCHAR;
+typedef DWORD LCID;
+typedef PDWORD PLCID;
+typedef WORD   LANGID;
 #define APPLICATION_ERROR_MASK       0x20000000
 #define ERROR_SEVERITY_SUCCESS       0x00000000
 #define ERROR_SEVERITY_INFORMATIONAL 0x40000000
@@ -833,12 +833,12 @@ _rotr64 (
 }
 #endif
 
-#define ANSI_NULL ((CHAR)0)     
-#define UNICODE_NULL ((WCHAR)0) 
-#define UNICODE_STRING_MAX_BYTES ((WORD  ) 65534) 
-#define UNICODE_STRING_MAX_CHARS (32767) 
-typedef BYTE  BOOLEAN;           
-typedef BOOLEAN *PBOOLEAN;       
+#define ANSI_NULL ((CHAR)0)
+#define UNICODE_NULL ((WCHAR)0)
+#define UNICODE_STRING_MAX_BYTES ((WORD  ) 65534)
+#define UNICODE_STRING_MAX_CHARS (32767)
+typedef BYTE  BOOLEAN;
+typedef BOOLEAN *PBOOLEAN;
 //
 //  Doubly linked list structure.  Can be used as either a list head, or
 //  as link words.
@@ -875,7 +875,7 @@ typedef struct LIST_ENTRY64 {
 typedef LIST_ENTRY64 *PLIST_ENTRY64;
 
 
-#include <guiddef.h>
+#include <Guiddef.h>
 
 #ifndef __OBJECTID_DEFINED
 #define __OBJECTID_DEFINED
@@ -886,15 +886,15 @@ typedef struct  _OBJECTID {     // size is 20
 } OBJECTID;
 #endif // !_OBJECTID_DEFINED
 
-#define MINCHAR     0x80        
-#define MAXCHAR     0x7f        
-#define MINSHORT    0x8000      
-#define MAXSHORT    0x7fff      
-#define MINLONG     0x80000000  
-#define MAXLONG     0x7fffffff  
-#define MAXBYTE     0xff        
-#define MAXWORD     0xffff      
-#define MAXDWORD    0xffffffff  
+#define MINCHAR     0x80
+#define MAXCHAR     0x7f
+#define MINSHORT    0x8000
+#define MAXSHORT    0x7fff
+#define MINLONG     0x80000000
+#define MAXLONG     0x7fffffff
+#define MAXBYTE     0xff
+#define MAXWORD     0xffff
+#define MAXDWORD    0xffffffff
 //
 // Calculate the byte offset of a field in a structure of type type.
 //
@@ -1716,55 +1716,55 @@ char (*RtlpNumberOf( UNALIGNED T (&)[N] ))[N];
 
 #endif
 
-#ifndef WIN32_NO_STATUS 
-/*lint -save -e767 */  
-#define STATUS_WAIT_0                    ((DWORD   )0x00000000L)    
-#define STATUS_ABANDONED_WAIT_0          ((DWORD   )0x00000080L)    
-#define STATUS_USER_APC                  ((DWORD   )0x000000C0L)    
-#define STATUS_TIMEOUT                   ((DWORD   )0x00000102L)    
-#define STATUS_PENDING                   ((DWORD   )0x00000103L)    
-#define DBG_EXCEPTION_HANDLED            ((DWORD   )0x00010001L)    
-#define DBG_CONTINUE                     ((DWORD   )0x00010002L)    
-#define STATUS_SEGMENT_NOTIFICATION      ((DWORD   )0x40000005L)    
-#define DBG_TERMINATE_THREAD             ((DWORD   )0x40010003L)    
-#define DBG_TERMINATE_PROCESS            ((DWORD   )0x40010004L)    
-#define DBG_CONTROL_C                    ((DWORD   )0x40010005L)    
-#define DBG_CONTROL_BREAK                ((DWORD   )0x40010008L)    
-#define DBG_COMMAND_EXCEPTION            ((DWORD   )0x40010009L)    
-#define STATUS_GUARD_PAGE_VIOLATION      ((DWORD   )0x80000001L)    
-#define STATUS_DATATYPE_MISALIGNMENT     ((DWORD   )0x80000002L)    
-#define STATUS_BREAKPOINT                ((DWORD   )0x80000003L)    
-#define STATUS_SINGLE_STEP               ((DWORD   )0x80000004L)    
-#define DBG_EXCEPTION_NOT_HANDLED        ((DWORD   )0x80010001L)    
-#define STATUS_ACCESS_VIOLATION          ((DWORD   )0xC0000005L)    
-#define STATUS_IN_PAGE_ERROR             ((DWORD   )0xC0000006L)    
-#define STATUS_INVALID_HANDLE            ((DWORD   )0xC0000008L)    
-#define STATUS_NO_MEMORY                 ((DWORD   )0xC0000017L)    
-#define STATUS_ILLEGAL_INSTRUCTION       ((DWORD   )0xC000001DL)    
-#define STATUS_NONCONTINUABLE_EXCEPTION  ((DWORD   )0xC0000025L)    
-#define STATUS_INVALID_DISPOSITION       ((DWORD   )0xC0000026L)    
-#define STATUS_ARRAY_BOUNDS_EXCEEDED     ((DWORD   )0xC000008CL)    
-#define STATUS_FLOAT_DENORMAL_OPERAND    ((DWORD   )0xC000008DL)    
-#define STATUS_FLOAT_DIVIDE_BY_ZERO      ((DWORD   )0xC000008EL)    
-#define STATUS_FLOAT_INEXACT_RESULT      ((DWORD   )0xC000008FL)    
-#define STATUS_FLOAT_INVALID_OPERATION   ((DWORD   )0xC0000090L)    
-#define STATUS_FLOAT_OVERFLOW            ((DWORD   )0xC0000091L)    
-#define STATUS_FLOAT_STACK_CHECK         ((DWORD   )0xC0000092L)    
-#define STATUS_FLOAT_UNDERFLOW           ((DWORD   )0xC0000093L)    
-#define STATUS_INTEGER_DIVIDE_BY_ZERO    ((DWORD   )0xC0000094L)    
-#define STATUS_INTEGER_OVERFLOW          ((DWORD   )0xC0000095L)    
-#define STATUS_PRIVILEGED_INSTRUCTION    ((DWORD   )0xC0000096L)    
-#define STATUS_STACK_OVERFLOW            ((DWORD   )0xC00000FDL)    
-#define STATUS_CONTROL_C_EXIT            ((DWORD   )0xC000013AL)    
-#define STATUS_FLOAT_MULTIPLE_FAULTS     ((DWORD   )0xC00002B4L)    
-#define STATUS_FLOAT_MULTIPLE_TRAPS      ((DWORD   )0xC00002B5L)    
-#define STATUS_REG_NAT_CONSUMPTION       ((DWORD   )0xC00002C9L)    
-#if defined(STATUS_SUCCESS) || (_WIN32_WINNT > 0x0500) || (_WIN32_FUSION >= 0x0100) 
-#define STATUS_SXS_EARLY_DEACTIVATION    ((DWORD   )0xC015000FL)    
-#define STATUS_SXS_INVALID_DEACTIVATION  ((DWORD   )0xC0150010L)    
-#endif 
-/*lint -restore */  
-#endif 
+#ifndef WIN32_NO_STATUS
+/*lint -save -e767 */
+#define STATUS_WAIT_0                    ((DWORD   )0x00000000L)
+#define STATUS_ABANDONED_WAIT_0          ((DWORD   )0x00000080L)
+#define STATUS_USER_APC                  ((DWORD   )0x000000C0L)
+#define STATUS_TIMEOUT                   ((DWORD   )0x00000102L)
+#define STATUS_PENDING                   ((DWORD   )0x00000103L)
+#define DBG_EXCEPTION_HANDLED            ((DWORD   )0x00010001L)
+#define DBG_CONTINUE                     ((DWORD   )0x00010002L)
+#define STATUS_SEGMENT_NOTIFICATION      ((DWORD   )0x40000005L)
+#define DBG_TERMINATE_THREAD             ((DWORD   )0x40010003L)
+#define DBG_TERMINATE_PROCESS            ((DWORD   )0x40010004L)
+#define DBG_CONTROL_C                    ((DWORD   )0x40010005L)
+#define DBG_CONTROL_BREAK                ((DWORD   )0x40010008L)
+#define DBG_COMMAND_EXCEPTION            ((DWORD   )0x40010009L)
+#define STATUS_GUARD_PAGE_VIOLATION      ((DWORD   )0x80000001L)
+#define STATUS_DATATYPE_MISALIGNMENT     ((DWORD   )0x80000002L)
+#define STATUS_BREAKPOINT                ((DWORD   )0x80000003L)
+#define STATUS_SINGLE_STEP               ((DWORD   )0x80000004L)
+#define DBG_EXCEPTION_NOT_HANDLED        ((DWORD   )0x80010001L)
+#define STATUS_ACCESS_VIOLATION          ((DWORD   )0xC0000005L)
+#define STATUS_IN_PAGE_ERROR             ((DWORD   )0xC0000006L)
+#define STATUS_INVALID_HANDLE            ((DWORD   )0xC0000008L)
+#define STATUS_NO_MEMORY                 ((DWORD   )0xC0000017L)
+#define STATUS_ILLEGAL_INSTRUCTION       ((DWORD   )0xC000001DL)
+#define STATUS_NONCONTINUABLE_EXCEPTION  ((DWORD   )0xC0000025L)
+#define STATUS_INVALID_DISPOSITION       ((DWORD   )0xC0000026L)
+#define STATUS_ARRAY_BOUNDS_EXCEEDED     ((DWORD   )0xC000008CL)
+#define STATUS_FLOAT_DENORMAL_OPERAND    ((DWORD   )0xC000008DL)
+#define STATUS_FLOAT_DIVIDE_BY_ZERO      ((DWORD   )0xC000008EL)
+#define STATUS_FLOAT_INEXACT_RESULT      ((DWORD   )0xC000008FL)
+#define STATUS_FLOAT_INVALID_OPERATION   ((DWORD   )0xC0000090L)
+#define STATUS_FLOAT_OVERFLOW            ((DWORD   )0xC0000091L)
+#define STATUS_FLOAT_STACK_CHECK         ((DWORD   )0xC0000092L)
+#define STATUS_FLOAT_UNDERFLOW           ((DWORD   )0xC0000093L)
+#define STATUS_INTEGER_DIVIDE_BY_ZERO    ((DWORD   )0xC0000094L)
+#define STATUS_INTEGER_OVERFLOW          ((DWORD   )0xC0000095L)
+#define STATUS_PRIVILEGED_INSTRUCTION    ((DWORD   )0xC0000096L)
+#define STATUS_STACK_OVERFLOW            ((DWORD   )0xC00000FDL)
+#define STATUS_CONTROL_C_EXIT            ((DWORD   )0xC000013AL)
+#define STATUS_FLOAT_MULTIPLE_FAULTS     ((DWORD   )0xC00002B4L)
+#define STATUS_FLOAT_MULTIPLE_TRAPS      ((DWORD   )0xC00002B5L)
+#define STATUS_REG_NAT_CONSUMPTION       ((DWORD   )0xC00002C9L)
+#if defined(STATUS_SUCCESS) || (_WIN32_WINNT > 0x0500) || (_WIN32_FUSION >= 0x0100)
+#define STATUS_SXS_EARLY_DEACTIVATION    ((DWORD   )0xC015000FL)
+#define STATUS_SXS_INVALID_DEACTIVATION  ((DWORD   )0xC0150010L)
+#endif
+/*lint -restore */
+#endif
 #define MAXIMUM_WAIT_OBJECTS 64     // Maximum number of wait objects
 
 #define MAXIMUM_SUSPEND_COUNT MAXCHAR // Maximum times thread can be suspended
@@ -2180,7 +2180,7 @@ InterlockedAnd16(
     __inout SHORT volatile *Destination,
     __in SHORT Value
     );
-    
+
 SHORT
 InterlockedOr16(
     __inout SHORT volatile *Destination,
@@ -2256,9 +2256,9 @@ _mm_pause (
     VOID
     );
 
-VOID 
+VOID
 _mm_prefetch (
-    __in CHAR CONST *a, 
+    __in CHAR CONST *a,
     __in int sel
     );
 
@@ -2595,12 +2595,12 @@ UnsignedMultiplyExtract128 (
 // Define functions to read and write the uer TEB and the system PCR/PRCB.
 //
 
-BYTE 
+BYTE
 __readgsbyte (
     IN DWORD Offset
     );
 
-WORD  
+WORD
 __readgsword (
     IN DWORD Offset
     );
@@ -2654,40 +2654,40 @@ VOID
 __incgsbyte (
     DWORD Offset
     );
- 
+
 VOID
 __addgsbyte (
     DWORD Offset,
     BYTE  Value
     );
- 
+
 VOID
 __incgsword (
     DWORD Offset
     );
- 
+
 VOID
 __addgsword (
     DWORD Offset,
     WORD   Value
     );
- 
+
 VOID
 __incgsdword (
     DWORD Offset
     );
- 
+
 VOID
 __addgsdword (
     DWORD Offset,
     DWORD Value
     );
- 
+
 VOID
 __incgsqword (
     DWORD Offset
     );
- 
+
 VOID
 __addgsqword (
     DWORD Offset,
@@ -2709,7 +2709,7 @@ __addgsqword (
 
 #ifdef __cplusplus
 }
-#endif 
+#endif
 
 #endif // defined(_M_AMD64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
@@ -2972,7 +2972,7 @@ PRUNTIME_FUNCTION
 
 
 typedef
-DWORD   
+DWORD
 (*POUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK) (
     IN HANDLE Process,
     IN PVOID TableAddress,
@@ -3234,33 +3234,33 @@ InterlockedBitTestAndComplement (
 // Define FS referencing intrinsics
 //
 
-BYTE 
+BYTE
 __readfsbyte (
     IN DWORD Offset
     );
- 
-WORD  
+
+WORD
 __readfsword (
     IN DWORD Offset
     );
- 
+
 DWORD
 __readfsdword (
     IN DWORD Offset
     );
- 
+
 VOID
 __writefsbyte (
     IN DWORD Offset,
     IN BYTE  Data
     );
- 
+
 VOID
 __writefsword (
     IN DWORD Offset,
     IN WORD   Data
     );
- 
+
 VOID
 __writefsdword (
     IN DWORD Offset,
@@ -3284,35 +3284,35 @@ VOID
 __incfsbyte (
     DWORD Offset
     );
- 
+
 VOID
 __addfsbyte (
     DWORD Offset,
     BYTE  Value
     );
- 
+
 VOID
 __incfsword (
     DWORD Offset
     );
- 
+
 VOID
 __addfsword (
     DWORD Offset,
     WORD   Value
     );
- 
+
 VOID
 __incfsdword (
     DWORD Offset
     );
- 
+
 VOID
 __addfsdword (
     DWORD Offset,
     DWORD Value
     );
- 
+
 #if 0
 #pragma intrinsic(__incfsbyte)
 #pragma intrinsic(__addfsbyte)
@@ -3382,7 +3382,7 @@ MemoryBarrier (
 // PreFetchCacheLine level defines.
 //
 
-#define PF_TEMPORAL_LEVEL_1 
+#define PF_TEMPORAL_LEVEL_1
 #define PF_NON_TEMPORAL_LEVEL_ALL
 
 //
@@ -3483,7 +3483,7 @@ DbgRaiseAssertionFailure (
 
 #endif
 
-// end_wdm 
+// end_wdm
 
 #if (_MSC_FULL_VER >= 13012035)
 
@@ -3514,7 +3514,7 @@ __inline PVOID GetCurrentFiber( void ) { __asm mov eax, fs:[0x10] }
 // end_ntddk
 
 //
-// The following values specify the type of failing access when the status is 
+// The following values specify the type of failing access when the status is
 // STATUS_ACCESS_VIOLATION and the first parameter in the execpetion record.
 //
 
@@ -3523,7 +3523,7 @@ __inline PVOID GetCurrentFiber( void ) { __asm mov eax, fs:[0x10] }
 #define EXCEPTION_EXECUTE_FAULT       8 // Access violation was caused by an instruction fetch
 
 // begin_wx86
-// begin_ntddk                                                                  
+// begin_ntddk
 
 //
 //  Define the size of the 80387 save area, which is in the context frame.
@@ -3965,7 +3965,7 @@ InterlockedAddRelease (
     LONG volatile *Addend,
     LONG Value
     );
-    
+
 LONGLONG
 __cdecl
 InterlockedAdd64 (
@@ -4258,7 +4258,7 @@ InterlockedOrAcquire (
     IN OUT LONG volatile *Destination,
     IN LONG Value
     );
-    
+
 LONG
 __cdecl
 InterlockedOrRelease (
@@ -4293,7 +4293,7 @@ InterlockedOr16(
     IN OUT SHORT volatile *Destination,
     IN SHORT Value
     );
-    
+
 SHORT
 __cdecl
 InterlockedOr16Acquire (
@@ -4321,7 +4321,7 @@ InterlockedOr64Acquire (
     IN OUT LONGLONG volatile *Destination,
     IN LONGLONG Value
     );
-    
+
 LONGLONG
 __cdecl
 InterlockedOr64Release (
@@ -4342,7 +4342,7 @@ InterlockedXorAcquire (
     IN OUT LONG volatile *Destination,
     IN LONG Value
     );
-    
+
 LONG
 __cdecl
 InterlockedXorRelease (
@@ -4377,7 +4377,7 @@ InterlockedXor16(
     IN OUT SHORT volatile *Destination,
     IN SHORT Value
     );
-    
+
 SHORT
 __cdecl
 InterlockedXor16Acquire (
@@ -4405,7 +4405,7 @@ InterlockedXor64Acquire (
     IN OUT LONGLONG volatile *Destination,
     IN LONGLONG Value
     );
-    
+
 LONGLONG
 __cdecl
 InterlockedXor64Release (
@@ -4426,7 +4426,7 @@ InterlockedAndAcquire (
     IN OUT LONG volatile *Destination,
     IN LONG Value
     );
-    
+
 LONG
 __cdecl
 InterlockedAndRelease (
@@ -4461,7 +4461,7 @@ InterlockedAnd16(
     IN OUT SHORT volatile *Destination,
     IN SHORT Value
     );
-    
+
 SHORT
 __cdecl
 InterlockedAnd16Acquire (
@@ -4489,7 +4489,7 @@ InterlockedAnd64Acquire (
     IN OUT LONGLONG volatile *Destination,
     IN LONGLONG Value
     );
-    
+
 LONGLONG
 __cdecl
 InterlockedAnd64Release (
@@ -4793,7 +4793,7 @@ void * _cdecl _rdtebex(void);
 #define GetFiberData() (*(PVOID *)(GetCurrentFiber()))
 
 
-// begin_ntddk 
+// begin_ntddk
 
 #ifdef __cplusplus
 extern "C" {
@@ -4803,8 +4803,8 @@ extern "C" {
 
 #if defined(_IA64_) && defined(_M_IA64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
-void 
-__break( 
+void
+__break(
     int
     );
 
@@ -4819,7 +4819,7 @@ __break(
 
 // end_wdm
 
-void 
+void
 __yield(
    void
    );
@@ -4829,27 +4829,27 @@ __mf(
     void
     );
 
-void 
+void
 __lfetch(
-    int Level, 
+    int Level,
     __in volatile VOID CONST *Address
     );
 
-void 
+void
 __lfetchfault(
-    __in int Level, 
+    __in int Level,
     __in volatile VOID CONST *Address
     );
 
-void 
+void
 __lfetch_excl(
-    __in int Level, 
+    __in int Level,
     __in volatile VOID CONST *Address
     );
 
 void
 __lfetchfault_excl(
-    __in int Level, 
+    __in int Level,
     __in volatile VOID CONST *Address
     );
 
@@ -4919,7 +4919,7 @@ UnsignedMultiplyHigh (
 }
 #endif
 
-// end_ntddk 
+// end_ntddk
 
 #else
 struct _TEB *
@@ -4930,10 +4930,10 @@ NtCurrentTeb(void);
 
 #ifdef _IA64_
 
-// begin_ntddk 
+// begin_ntddk
 
 //
-// The following values specify the type of failing access when the status is 
+// The following values specify the type of failing access when the status is
 // STATUS_ACCESS_VIOLATION and the first parameter in the exception record.
 //
 
@@ -5305,7 +5305,7 @@ PRUNTIME_FUNCTION
     );
 
 typedef
-DWORD   
+DWORD
 (*POUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK) (
     IN HANDLE Process,
     IN PVOID TableAddress,
@@ -5544,9 +5544,9 @@ typedef struct _EXCEPTION_POINTERS {
     PEXCEPTION_RECORD ExceptionRecord;
     PCONTEXT ContextRecord;
 } EXCEPTION_POINTERS, *PEXCEPTION_POINTERS;
-typedef PVOID PACCESS_TOKEN;            
-typedef PVOID PSECURITY_DESCRIPTOR;     
-typedef PVOID PSID;     
+typedef PVOID PACCESS_TOKEN;
+typedef PVOID PSECURITY_DESCRIPTOR;
+typedef PVOID PSID;
 ////////////////////////////////////////////////////////////////////////
 //                                                                    //
 //                             ACCESS MASK                            //
@@ -5663,7 +5663,7 @@ typedef GENERIC_MAPPING *PGENERIC_MAPPING;
 //
 
 
-#include <pshpack4.h>
+#include <PshPack4.h>
 
 typedef struct _LUID_AND_ATTRIBUTES {
     LUID Luid;
@@ -5672,7 +5672,7 @@ typedef struct _LUID_AND_ATTRIBUTES {
 typedef LUID_AND_ATTRIBUTES LUID_AND_ATTRIBUTES_ARRAY[ANYSIZE_ARRAY];
 typedef LUID_AND_ATTRIBUTES_ARRAY *PLUID_AND_ATTRIBUTES_ARRAY;
 
-#include <poppack.h>
+#include <PopPack.h>
 
 
 ////////////////////////////////////////////////////////////////////////
@@ -7121,10 +7121,10 @@ typedef struct _SE_IMPERSONATION_STATE {
     SECURITY_IMPERSONATION_LEVEL Level;
 } SE_IMPERSONATION_STATE, *PSE_IMPERSONATION_STATE;
 
-#define DISABLE_MAX_PRIVILEGE   0x1 
-#define SANDBOX_INERT           0x2 
-#define LUA_TOKEN               0x4 
-#define WRITE_RESTRICTED        0x8 
+#define DISABLE_MAX_PRIVILEGE   0x1
+#define SANDBOX_INERT           0x2
+#define LUA_TOKEN               0x4
+#define WRITE_RESTRICTED        0x8
 
 typedef DWORD SECURITY_INFORMATION, *PSECURITY_INFORMATION;
 
@@ -7139,19 +7139,19 @@ typedef DWORD SECURITY_INFORMATION, *PSECURITY_INFORMATION;
 #define UNPROTECTED_DACL_SECURITY_INFORMATION   (0x20000000L)
 #define UNPROTECTED_SACL_SECURITY_INFORMATION   (0x10000000L)
 
-#define PROCESS_TERMINATE                  (0x0001)  
-#define PROCESS_CREATE_THREAD              (0x0002)  
-#define PROCESS_SET_SESSIONID              (0x0004)  
-#define PROCESS_VM_OPERATION               (0x0008)  
-#define PROCESS_VM_READ                    (0x0010)  
-#define PROCESS_VM_WRITE                   (0x0020)  
-#define PROCESS_DUP_HANDLE                 (0x0040)  
-#define PROCESS_CREATE_PROCESS             (0x0080)  
-#define PROCESS_SET_QUOTA                  (0x0100)  
-#define PROCESS_SET_INFORMATION            (0x0200)  
-#define PROCESS_QUERY_INFORMATION          (0x0400)  
-#define PROCESS_SUSPEND_RESUME             (0x0800)  
-#define PROCESS_QUERY_LIMITED_INFORMATION  (0x1000)  
+#define PROCESS_TERMINATE                  (0x0001)
+#define PROCESS_CREATE_THREAD              (0x0002)
+#define PROCESS_SET_SESSIONID              (0x0004)
+#define PROCESS_VM_OPERATION               (0x0008)
+#define PROCESS_VM_READ                    (0x0010)
+#define PROCESS_VM_WRITE                   (0x0020)
+#define PROCESS_DUP_HANDLE                 (0x0040)
+#define PROCESS_CREATE_PROCESS             (0x0080)
+#define PROCESS_SET_QUOTA                  (0x0100)
+#define PROCESS_SET_INFORMATION            (0x0200)
+#define PROCESS_QUERY_INFORMATION          (0x0400)
+#define PROCESS_SUSPEND_RESUME             (0x0800)
+#define PROCESS_QUERY_LIMITED_INFORMATION  (0x1000)
 #if (NTDDI_VERSION >= NTDDI_LONGHORN)
 #define PROCESS_ALL_ACCESS        (STANDARD_RIGHTS_REQUIRED | SYNCHRONIZE | \
                                    0xFFFF)
@@ -7170,12 +7170,12 @@ typedef DWORD SECURITY_INFORMATION, *PSECURITY_INFORMATION;
 
 #endif
 
-#define THREAD_TERMINATE                 (0x0001)  
-#define THREAD_SUSPEND_RESUME            (0x0002)  
-#define THREAD_GET_CONTEXT               (0x0008)  
-#define THREAD_SET_CONTEXT               (0x0010)  
-#define THREAD_QUERY_INFORMATION         (0x0040)  
-#define THREAD_SET_INFORMATION           (0x0020)  
+#define THREAD_TERMINATE                 (0x0001)
+#define THREAD_SUSPEND_RESUME            (0x0002)
+#define THREAD_GET_CONTEXT               (0x0008)
+#define THREAD_SET_CONTEXT               (0x0010)
+#define THREAD_QUERY_INFORMATION         (0x0040)
+#define THREAD_SET_INFORMATION           (0x0020)
 #define THREAD_SET_THREAD_TOKEN          (0x0080)
 #define THREAD_IMPERSONATE               (0x0100)
 #define THREAD_DIRECT_IMPERSONATION      (0x0200)
@@ -7203,8 +7203,8 @@ typedef struct _JOB_SET_ARRAY {
     DWORD Flags;        // Unused. Must be zero
 } JOB_SET_ARRAY, *PJOB_SET_ARRAY;
 
-#define FLS_MAXIMUM_AVAILABLE 128   
-#define TLS_MINIMUM_AVAILABLE 64    
+#define FLS_MAXIMUM_AVAILABLE 128
+#define TLS_MINIMUM_AVAILABLE 64
 
 typedef struct _NT_TIB {
     struct _EXCEPTION_REGISTRATION_RECORD *ExceptionList;
@@ -7482,14 +7482,14 @@ typedef enum _JOBOBJECTINFOCLASS {
     MaxJobObjectInfoClass
     } JOBOBJECTINFOCLASS;
 //
-#define EVENT_MODIFY_STATE      0x0002  
-#define EVENT_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED|SYNCHRONIZE|0x3) 
+#define EVENT_MODIFY_STATE      0x0002
+#define EVENT_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED|SYNCHRONIZE|0x3)
 #define MUTANT_QUERY_STATE      0x0001
 
 #define MUTANT_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED|SYNCHRONIZE|\
                           MUTANT_QUERY_STATE)
-#define SEMAPHORE_MODIFY_STATE      0x0002  
-#define SEMAPHORE_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED|SYNCHRONIZE|0x3) 
+#define SEMAPHORE_MODIFY_STATE      0x0002
+#define SEMAPHORE_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED|SYNCHRONIZE|0x3)
 //
 // Timer Specific Access Rights.
 //
@@ -7584,23 +7584,23 @@ typedef struct _SYSTEM_LOGICAL_PROCESSOR_INFORMATION {
 
 #define PROCESSOR_ARCHITECTURE_UNKNOWN 0xFFFF
 
-#define PF_FLOATING_POINT_PRECISION_ERRATA  0   
-#define PF_FLOATING_POINT_EMULATED          1   
-#define PF_COMPARE_EXCHANGE_DOUBLE          2   
-#define PF_MMX_INSTRUCTIONS_AVAILABLE       3   
-#define PF_PPC_MOVEMEM_64BIT_OK             4   
-#define PF_ALPHA_BYTE_INSTRUCTIONS          5   
-#define PF_XMMI_INSTRUCTIONS_AVAILABLE      6   
-#define PF_3DNOW_INSTRUCTIONS_AVAILABLE     7   
-#define PF_RDTSC_INSTRUCTION_AVAILABLE      8   
-#define PF_PAE_ENABLED                      9   
-#define PF_XMMI64_INSTRUCTIONS_AVAILABLE   10   
-#define PF_SSE_DAZ_MODE_AVAILABLE          11   
-#define PF_NX_ENABLED                      12   
-#define PF_SSE3_INSTRUCTIONS_AVAILABLE     13   
-#define PF_COMPARE_EXCHANGE128             14   
-#define PF_COMPARE64_EXCHANGE128           15   
-#define PF_CHANNELS_ENABLED                16   
+#define PF_FLOATING_POINT_PRECISION_ERRATA  0
+#define PF_FLOATING_POINT_EMULATED          1
+#define PF_COMPARE_EXCHANGE_DOUBLE          2
+#define PF_MMX_INSTRUCTIONS_AVAILABLE       3
+#define PF_PPC_MOVEMEM_64BIT_OK             4
+#define PF_ALPHA_BYTE_INSTRUCTIONS          5
+#define PF_XMMI_INSTRUCTIONS_AVAILABLE      6
+#define PF_3DNOW_INSTRUCTIONS_AVAILABLE     7
+#define PF_RDTSC_INSTRUCTION_AVAILABLE      8
+#define PF_PAE_ENABLED                      9
+#define PF_XMMI64_INSTRUCTIONS_AVAILABLE   10
+#define PF_SSE_DAZ_MODE_AVAILABLE          11
+#define PF_NX_ENABLED                      12
+#define PF_SSE3_INSTRUCTIONS_AVAILABLE     13
+#define PF_COMPARE_EXCHANGE128             14
+#define PF_COMPARE64_EXCHANGE128           15
+#define PF_CHANNELS_ENABLED                16
 
 typedef struct _MEMORY_BASIC_INFORMATION {
     PVOID BaseAddress;
@@ -7654,41 +7654,41 @@ typedef struct DECLSPEC_ALIGN(16) _MEMORY_BASIC_INFORMATION64 {
                             SESSION_QUERY_ACCESS |             \
                             SESSION_MODIFY_ACCESS)
 
-#define PAGE_NOACCESS          0x01     
-#define PAGE_READONLY          0x02     
-#define PAGE_READWRITE         0x04     
-#define PAGE_WRITECOPY         0x08     
-#define PAGE_EXECUTE           0x10     
-#define PAGE_EXECUTE_READ      0x20     
-#define PAGE_EXECUTE_READWRITE 0x40     
-#define PAGE_EXECUTE_WRITECOPY 0x80     
-#define PAGE_GUARD            0x100     
-#define PAGE_NOCACHE          0x200     
-#define PAGE_WRITECOMBINE     0x400     
-#define MEM_COMMIT           0x1000     
-#define MEM_RESERVE          0x2000     
-#define MEM_DECOMMIT         0x4000     
-#define MEM_RELEASE          0x8000     
-#define MEM_FREE            0x10000     
-#define MEM_PRIVATE         0x20000     
-#define MEM_MAPPED          0x40000     
-#define MEM_RESET           0x80000     
-#define MEM_TOP_DOWN       0x100000     
-#define MEM_WRITE_WATCH    0x200000     
-#define MEM_PHYSICAL       0x400000     
-#define MEM_ROTATE         0x800000     
-#define MEM_LARGE_PAGES  0x20000000     
-#define MEM_4MB_PAGES    0x80000000     
-#define SEC_FILE           0x800000     
-#define SEC_IMAGE         0x1000000     
-#define SEC_PROTECTED_IMAGE  0x2000000     
-#define SEC_RESERVE       0x4000000     
-#define SEC_COMMIT        0x8000000     
-#define SEC_NOCACHE      0x10000000     
-#define SEC_WRITECOMBINE 0x40000000     
-#define SEC_LARGE_PAGES  0x80000000     
-#define MEM_IMAGE         SEC_IMAGE     
-#define WRITE_WATCH_FLAG_RESET 0x01     
+#define PAGE_NOACCESS          0x01
+#define PAGE_READONLY          0x02
+#define PAGE_READWRITE         0x04
+#define PAGE_WRITECOPY         0x08
+#define PAGE_EXECUTE           0x10
+#define PAGE_EXECUTE_READ      0x20
+#define PAGE_EXECUTE_READWRITE 0x40
+#define PAGE_EXECUTE_WRITECOPY 0x80
+#define PAGE_GUARD            0x100
+#define PAGE_NOCACHE          0x200
+#define PAGE_WRITECOMBINE     0x400
+#define MEM_COMMIT           0x1000
+#define MEM_RESERVE          0x2000
+#define MEM_DECOMMIT         0x4000
+#define MEM_RELEASE          0x8000
+#define MEM_FREE            0x10000
+#define MEM_PRIVATE         0x20000
+#define MEM_MAPPED          0x40000
+#define MEM_RESET           0x80000
+#define MEM_TOP_DOWN       0x100000
+#define MEM_WRITE_WATCH    0x200000
+#define MEM_PHYSICAL       0x400000
+#define MEM_ROTATE         0x800000
+#define MEM_LARGE_PAGES  0x20000000
+#define MEM_4MB_PAGES    0x80000000
+#define SEC_FILE           0x800000
+#define SEC_IMAGE         0x1000000
+#define SEC_PROTECTED_IMAGE  0x2000000
+#define SEC_RESERVE       0x4000000
+#define SEC_COMMIT        0x8000000
+#define SEC_NOCACHE      0x10000000
+#define SEC_WRITECOMBINE 0x40000000
+#define SEC_LARGE_PAGES  0x80000000
+#define MEM_IMAGE         SEC_IMAGE
+#define WRITE_WATCH_FLAG_RESET 0x01
 
 //
 // Define access rights to files and directories
@@ -7748,55 +7748,55 @@ typedef struct DECLSPEC_ALIGN(16) _MEMORY_BASIC_INFORMATION64 {
                                    FILE_EXECUTE             |\
                                    SYNCHRONIZE)
 
-#define FILE_SHARE_READ                 0x00000001  
-#define FILE_SHARE_WRITE                0x00000002  
-#define FILE_SHARE_DELETE               0x00000004  
-#define FILE_ATTRIBUTE_READONLY             0x00000001  
-#define FILE_ATTRIBUTE_HIDDEN               0x00000002  
-#define FILE_ATTRIBUTE_SYSTEM               0x00000004  
-#define FILE_ATTRIBUTE_DIRECTORY            0x00000010  
-#define FILE_ATTRIBUTE_ARCHIVE              0x00000020  
-#define FILE_ATTRIBUTE_DEVICE               0x00000040  
-#define FILE_ATTRIBUTE_NORMAL               0x00000080  
-#define FILE_ATTRIBUTE_TEMPORARY            0x00000100  
-#define FILE_ATTRIBUTE_SPARSE_FILE          0x00000200  
-#define FILE_ATTRIBUTE_REPARSE_POINT        0x00000400  
-#define FILE_ATTRIBUTE_COMPRESSED           0x00000800  
-#define FILE_ATTRIBUTE_OFFLINE              0x00001000  
-#define FILE_ATTRIBUTE_NOT_CONTENT_INDEXED  0x00002000  
-#define FILE_ATTRIBUTE_ENCRYPTED            0x00004000  
-#define FILE_ATTRIBUTE_VIRTUAL              0x00010000  
-#define FILE_NOTIFY_CHANGE_FILE_NAME    0x00000001   
-#define FILE_NOTIFY_CHANGE_DIR_NAME     0x00000002   
-#define FILE_NOTIFY_CHANGE_ATTRIBUTES   0x00000004   
-#define FILE_NOTIFY_CHANGE_SIZE         0x00000008   
-#define FILE_NOTIFY_CHANGE_LAST_WRITE   0x00000010   
-#define FILE_NOTIFY_CHANGE_LAST_ACCESS  0x00000020   
-#define FILE_NOTIFY_CHANGE_CREATION     0x00000040   
-#define FILE_NOTIFY_CHANGE_SECURITY     0x00000100   
-#define FILE_ACTION_ADDED                   0x00000001   
-#define FILE_ACTION_REMOVED                 0x00000002   
-#define FILE_ACTION_MODIFIED                0x00000003   
-#define FILE_ACTION_RENAMED_OLD_NAME        0x00000004   
-#define FILE_ACTION_RENAMED_NEW_NAME        0x00000005   
-#define MAILSLOT_NO_MESSAGE             ((DWORD)-1) 
-#define MAILSLOT_WAIT_FOREVER           ((DWORD)-1) 
-#define FILE_CASE_SENSITIVE_SEARCH      0x00000001  
-#define FILE_CASE_PRESERVED_NAMES       0x00000002  
-#define FILE_UNICODE_ON_DISK            0x00000004  
-#define FILE_PERSISTENT_ACLS            0x00000008  
-#define FILE_FILE_COMPRESSION           0x00000010  
-#define FILE_VOLUME_QUOTAS              0x00000020  
-#define FILE_SUPPORTS_SPARSE_FILES      0x00000040  
-#define FILE_SUPPORTS_REPARSE_POINTS    0x00000080  
-#define FILE_SUPPORTS_REMOTE_STORAGE    0x00000100  
-#define FILE_VOLUME_IS_COMPRESSED       0x00008000  
-#define FILE_SUPPORTS_OBJECT_IDS        0x00010000  
-#define FILE_SUPPORTS_ENCRYPTION        0x00020000  
-#define FILE_NAMED_STREAMS              0x00040000  
-#define FILE_READ_ONLY_VOLUME           0x00080000  
-#define FILE_SEQUENTIAL_WRITE_ONCE      0x00100000  
-#define FILE_SUPPORTS_TRANSACTIONS      0x00200000  
+#define FILE_SHARE_READ                 0x00000001
+#define FILE_SHARE_WRITE                0x00000002
+#define FILE_SHARE_DELETE               0x00000004
+#define FILE_ATTRIBUTE_READONLY             0x00000001
+#define FILE_ATTRIBUTE_HIDDEN               0x00000002
+#define FILE_ATTRIBUTE_SYSTEM               0x00000004
+#define FILE_ATTRIBUTE_DIRECTORY            0x00000010
+#define FILE_ATTRIBUTE_ARCHIVE              0x00000020
+#define FILE_ATTRIBUTE_DEVICE               0x00000040
+#define FILE_ATTRIBUTE_NORMAL               0x00000080
+#define FILE_ATTRIBUTE_TEMPORARY            0x00000100
+#define FILE_ATTRIBUTE_SPARSE_FILE          0x00000200
+#define FILE_ATTRIBUTE_REPARSE_POINT        0x00000400
+#define FILE_ATTRIBUTE_COMPRESSED           0x00000800
+#define FILE_ATTRIBUTE_OFFLINE              0x00001000
+#define FILE_ATTRIBUTE_NOT_CONTENT_INDEXED  0x00002000
+#define FILE_ATTRIBUTE_ENCRYPTED            0x00004000
+#define FILE_ATTRIBUTE_VIRTUAL              0x00010000
+#define FILE_NOTIFY_CHANGE_FILE_NAME    0x00000001
+#define FILE_NOTIFY_CHANGE_DIR_NAME     0x00000002
+#define FILE_NOTIFY_CHANGE_ATTRIBUTES   0x00000004
+#define FILE_NOTIFY_CHANGE_SIZE         0x00000008
+#define FILE_NOTIFY_CHANGE_LAST_WRITE   0x00000010
+#define FILE_NOTIFY_CHANGE_LAST_ACCESS  0x00000020
+#define FILE_NOTIFY_CHANGE_CREATION     0x00000040
+#define FILE_NOTIFY_CHANGE_SECURITY     0x00000100
+#define FILE_ACTION_ADDED                   0x00000001
+#define FILE_ACTION_REMOVED                 0x00000002
+#define FILE_ACTION_MODIFIED                0x00000003
+#define FILE_ACTION_RENAMED_OLD_NAME        0x00000004
+#define FILE_ACTION_RENAMED_NEW_NAME        0x00000005
+#define MAILSLOT_NO_MESSAGE             ((DWORD)-1)
+#define MAILSLOT_WAIT_FOREVER           ((DWORD)-1)
+#define FILE_CASE_SENSITIVE_SEARCH      0x00000001
+#define FILE_CASE_PRESERVED_NAMES       0x00000002
+#define FILE_UNICODE_ON_DISK            0x00000004
+#define FILE_PERSISTENT_ACLS            0x00000008
+#define FILE_FILE_COMPRESSION           0x00000010
+#define FILE_VOLUME_QUOTAS              0x00000020
+#define FILE_SUPPORTS_SPARSE_FILES      0x00000040
+#define FILE_SUPPORTS_REPARSE_POINTS    0x00000080
+#define FILE_SUPPORTS_REMOTE_STORAGE    0x00000100
+#define FILE_VOLUME_IS_COMPRESSED       0x00008000
+#define FILE_SUPPORTS_OBJECT_IDS        0x00010000
+#define FILE_SUPPORTS_ENCRYPTION        0x00020000
+#define FILE_NAMED_STREAMS              0x00040000
+#define FILE_READ_ONLY_VOLUME           0x00080000
+#define FILE_SEQUENTIAL_WRITE_ONCE      0x00100000
+#define FILE_SUPPORTS_TRANSACTIONS      0x00200000
 
 //
 // Define the file notification information structure
@@ -7903,26 +7903,26 @@ typedef struct _REPARSE_GUID_DATA_BUFFER {
                            ((_tag) & 0x20000000)   \
                            )
 
-#define IO_REPARSE_TAG_MOUNT_POINT              (0xA0000003L)       
-#define IO_REPARSE_TAG_HSM                      (0xC0000004L)       
-#define IO_REPARSE_TAG_SIS                      (0x80000007L)       
-#define IO_REPARSE_TAG_DFS                      (0x8000000AL)       
-#define IO_REPARSE_TAG_SYMLINK                  (0xA000000CL)       
-#define IO_REPARSE_TAG_DFSR                     (0x80000012L)       
+#define IO_REPARSE_TAG_MOUNT_POINT              (0xA0000003L)
+#define IO_REPARSE_TAG_HSM                      (0xC0000004L)
+#define IO_REPARSE_TAG_SIS                      (0x80000007L)
+#define IO_REPARSE_TAG_DFS                      (0x8000000AL)
+#define IO_REPARSE_TAG_SYMLINK                  (0xA000000CL)
+#define IO_REPARSE_TAG_DFSR                     (0x80000012L)
 
 //
 // I/O Completion Specific Access Rights.
 //
 
-#define IO_COMPLETION_MODIFY_STATE  0x0002  
-#define IO_COMPLETION_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED|SYNCHRONIZE|0x3) 
+#define IO_COMPLETION_MODIFY_STATE  0x0002
+#define IO_COMPLETION_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED|SYNCHRONIZE|0x3)
 
 //
 // Object Manager Symbolic Link Specific Access Rights.
 //
 
-#define DUPLICATE_CLOSE_SOURCE      0x00000001  
-#define DUPLICATE_SAME_ACCESS       0x00000002  
+#define DUPLICATE_CLOSE_SOURCE      0x00000001
+#define DUPLICATE_SAME_ACCESS       0x00000002
 
 //
 // =========================================
@@ -7993,7 +7993,7 @@ DEFINE_GUID( ALL_POWERSCHEMES_GUID, 0x68A1E95E, 0x13EA, 0x41E1, 0x80, 0x11, 0x0C
 //       available for setting1.
 //    C. UserB logs out
 //    D. UserA logs in and his active power scheme is some custom scheme that was derived from
-//       the GUID_TYPICAL_POWER_SAVINGS.  But remember that UserA has no setting1 in his 
+//       the GUID_TYPICAL_POWER_SAVINGS.  But remember that UserA has no setting1 in his
 //       private power key.
 //    E. When activating UserA's selected power scheme, all power settings in the system power key will
 //       be enumerated (including Setting1).
@@ -8085,7 +8085,7 @@ DEFINE_GUID( GUID_SLEEP_SUBGROUP, 0x238C9FA8, 0x0AAD, 0x41ED, 0x83, 0xF4, 0x97, 
 // over a period of time in order to idle to sleep.
 //
 DEFINE_GUID( GUID_SLEEP_IDLE_THRESHOLD, 0x81cd32e0, 0x7833, 0x44f3, 0x87, 0x37, 0x70, 0x81, 0xf3, 0x8d, 0x1f, 0x70 );
-                                  
+
 //
 // Specifies (in seconds) how long we wait after the system is deemed
 // "idle" before moving to standby (S1, S2 or S3).
@@ -8119,7 +8119,7 @@ DEFINE_GUID( GUID_CRITICAL_POWER_TRANSITION,  0xB7A27025, 0xE569, 0x46c2, 0xA5, 
 //
 DEFINE_GUID( GUID_SYSTEM_AWAYMODE, 0x98A7F580, 0x01F7, 0x48AA, 0x9C, 0x0F, 0x44, 0x35, 0x2C, 0x29, 0xE5, 0xC0 );
 
-// Specify whether away mode is allowed 
+// Specify whether away mode is allowed
 //
 // {25DFA149-5DD1-4736-B5AB-E8A37B5B8187}
 //
@@ -8227,9 +8227,9 @@ DEFINE_GUID( GUID_PROCESSOR_THROTTLE_POLICY, 0x57027304, 0x4AF6, 0x4104, 0x92, 0
 //
 // Specifies a percentage (between 0 and 100) that the processor frequency
 // should never go above.  For example, if this value is set to 80, then
-// the processor frequency will never be throttled above 80 percent of its 
+// the processor frequency will never be throttled above 80 percent of its
 // maximum frequency by the system.
-// 
+//
 DEFINE_GUID( GUID_PROCESSOR_THROTTLE_MAXIMUM, 0xBC5038F7, 0x23E0, 0x4960, 0x96, 0xDA, 0x33, 0xAB, 0xAF, 0x59, 0x35, 0xEC );
 
 //
@@ -8318,7 +8318,7 @@ DEFINE_GUID( GUID_LIDSWITCH_STATE_CHANGE,  0xBA3E0F4D, 0xB817, 0x4094, 0xA2, 0xD
 //
 // Once registered, the consumer can expect to be notified as the battery
 // life percentage changes.
-// 
+//
 // The consumer will recieve a value between 0 and 100 (inclusive) which
 // indicates percent battery life remaining.
 //
@@ -8353,9 +8353,9 @@ DEFINE_GUID( GUID_APPLAUNCH_BUTTON, 0x1A689231, 0x7399, 0x4E9A, 0x8F, 0x99, 0xB7
 
 // Specifies the subgroup which will contain all of the PCI Express
 // settings for a single policy.
-// 
+//
 // {501a4d13-42af-4429-9fd1-a8218c268e20}
-// 
+//
 DEFINE_GUID( GUID_PCIEXPRESS_SETTINGS_SUBGROUP, 0x501a4d13, 0x42af,0x4429, 0x9f, 0xd1, 0xa8, 0x21, 0x8c, 0x26, 0x8e, 0x20 );
 
 // Specifies the PCI Express ASPM power policy.
@@ -8413,7 +8413,7 @@ typedef enum {
     LT_LOWEST_LATENCY
 } LATENCY_TIME;
 
-// end_ntminiport 
+// end_ntminiport
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
 
@@ -8500,7 +8500,7 @@ typedef enum {
 
 #define PO_TRANSITION_VETO_TYPE_ALL     \
     (PO_TRANSITION_VETO_TYPE_WINDOW | PO_TRANSITION_VETO_TYPE_SERVICE)
-    
+
 typedef struct _PO_TRANSITION_VETO_REASON {
     DWORD ResourceId;
     DWORD ModuleNameOffset;
@@ -8526,7 +8526,7 @@ typedef struct _PO_TRANSITION_VETO_DRIVER {
 typedef struct _PO_TRANSITION_VETO {
     DWORD Type;
     PO_TRANSITION_VETO_REASON Reason;
-    DWORD ProcessId;    
+    DWORD ProcessId;
 
     union {
         PO_TRANSITION_VETO_WINDOW Window;
@@ -8552,34 +8552,34 @@ typedef enum {
 } SYSTEM_POWER_CONDITION;
 
 typedef struct {
-    
+
     //
     // Version of this structure.  Currently should be set to
     // POWER_SETTING_VALUE_VERSION.
     //
     DWORD       Version;
-    
-    
+
+
     //
     // GUID representing the power setting being applied.
     //
     GUID        Guid;
-    
-    
+
+
     //
     // What power state should this setting be applied to?  E.g.
     // AC, DC, thermal, ...
     //
     SYSTEM_POWER_CONDITION PowerCondition;
-    
+
     //
     // Length (in bytes) of the 'Data' member.
     //
     DWORD       DataLength;
-    
+
     //
     // Data which contains the actual setting value.
-    // 
+    //
     BYTE    Data[ANYSIZE_ARRAY];
 } SET_POWER_SETTING_VALUE, *PSET_POWER_SETTING_VALUE;
 
@@ -8599,9 +8599,9 @@ typedef struct _APPLICATIONLAUNCH_SETTING_VALUE {
     //
     // System time when the most recent button press ocurred.  Note that this is
     // specified in 100ns internvals since January 1, 1601.
-    //    
+    //
     LARGE_INTEGER       ActivationTime;
-    
+
     //
     // Reserved for internal use.
     //
@@ -8803,7 +8803,7 @@ typedef struct {
 //
 
 // {A5B32DDD-7F39-4abc-B892-900E43B59EBB}
-DEFINE_GUID(PPM_PERFSTATE_CHANGE_GUID, 
+DEFINE_GUID(PPM_PERFSTATE_CHANGE_GUID,
 0xa5b32ddd, 0x7f39, 0x4abc, 0xb8, 0x92, 0x90, 0xe, 0x43, 0xb5, 0x9e, 0xbb);
 
 // {995e6b7f-d653-497a-b978-36a30c29bf01}
@@ -8811,31 +8811,31 @@ DEFINE_GUID(PPM_PERFSTATE_DOMAIN_CHANGE_GUID,
 0x995e6b7f, 0xd653, 0x497a, 0xb9, 0x78, 0x36, 0xa3, 0xc, 0x29, 0xbf, 0x1);
 
 // {4838fe4f-f71c-4e51-9ecc-8430a7ac4c6c}
-DEFINE_GUID(PPM_IDLESTATE_CHANGE_GUID, 
+DEFINE_GUID(PPM_IDLESTATE_CHANGE_GUID,
 0x4838fe4f, 0xf71c, 0x4e51, 0x9e, 0xcc, 0x84, 0x30, 0xa7, 0xac, 0x4c, 0x6c);
 
 // {5708cc20-7d40-4bf4-b4aa-2b01338d0126}
-DEFINE_GUID(PPM_PERFSTATES_DATA_GUID, 
+DEFINE_GUID(PPM_PERFSTATES_DATA_GUID,
 0x5708cc20, 0x7d40, 0x4bf4, 0xb4, 0xaa, 0x2b, 0x01, 0x33, 0x8d, 0x01, 0x26);
 
 // {ba138e10-e250-4ad7-8616-cf1a7ad410e7}
-DEFINE_GUID(PPM_IDLESTATES_DATA_GUID, 
+DEFINE_GUID(PPM_IDLESTATES_DATA_GUID,
 0xba138e10, 0xe250, 0x4ad7, 0x86, 0x16, 0xcf, 0x1a, 0x7a, 0xd4, 0x10, 0xe7);
 
 // {e2a26f78-ae07-4ee0-a30f-ce354f5a94cd}
-DEFINE_GUID(PPM_IDLE_ACCOUNTING_GUID, 
+DEFINE_GUID(PPM_IDLE_ACCOUNTING_GUID,
 0xe2a26f78, 0xae07, 0x4ee0, 0xa3, 0x0f, 0xce, 0x54, 0xf5, 0x5a, 0x94, 0xcd);
 
 // {a852c2c8-1a4c-423b-8c2c-f30d82931a88}
-DEFINE_GUID(PPM_THERMALCONSTRAINT_GUID, 
+DEFINE_GUID(PPM_THERMALCONSTRAINT_GUID,
 0xa852c2c8, 0x1a4c, 0x423b, 0x8c, 0x2c, 0xf3, 0x0d, 0x82, 0x93, 0x1a, 0x88);
 
 // {7fd18652-0cfe-40d2-b0a1-0b066a87759e}
-DEFINE_GUID(PPM_PERFMON_PERFSTATE_GUID, 
+DEFINE_GUID(PPM_PERFMON_PERFSTATE_GUID,
 0x7fd18652, 0xcfe, 0x40d2, 0xb0, 0xa1, 0xb, 0x6, 0x6a, 0x87, 0x75, 0x9e);
 
 // {48f377b8-6880-4c7b-8bdc-380176c6654d}
-DEFINE_GUID(PPM_THERMAL_POLICY_CHANGE_GUID, 
+DEFINE_GUID(PPM_THERMAL_POLICY_CHANGE_GUID,
 0x48f377b8, 0x6880, 0x4c7b, 0x8b, 0xdc, 0x38, 0x1, 0x76, 0xc6, 0x65, 0x4d);
 
 
@@ -8874,7 +8874,7 @@ typedef struct {
 } PPM_THERMAL_POLICY_EVENT, *PPPM_THERMAL_POLICY_EVENT;
 
 #pragma warning(pop)
-       
+
 // Power Policy Management interfaces
 //
 
@@ -9010,8 +9010,8 @@ typedef struct {
 } PROCESSOR_IDLESTATE_POLICY, *PPROCESSOR_IDLESTATE_POLICY;
 
 //
-// Legacy Processor Policy.  This is only provided to allow legacy 
-// applications to compile.  New applications must use 
+// Legacy Processor Policy.  This is only provided to allow legacy
+// applications to compile.  New applications must use
 // PROCESSOR_IDLESTATE_POLICY.
 //
 
@@ -9087,7 +9087,7 @@ typedef struct {
             };
         } Flags;
     };
-    
+
     DWORD TimeCheck;
     DWORD IncreaseTime;
     DWORD DecreaseTime;
@@ -9134,7 +9134,7 @@ typedef struct {
     BOOLEAN             ThermalControl;
     BOOLEAN             ProcessorThrottle;
     BYTE                ProcessorMinThrottle;
-    
+
 #if (NTDDI_VERSION < NTDDI_WINXP)
     BYTE                ProcessorThrottleScale;
     BYTE                spare2[4];
@@ -9186,7 +9186,7 @@ typedef struct {
 
 #ifndef _MAC
 
-#include "pshpack4.h"                   // 4 byte packing is the default
+#include "PshPack4.h"                   // 4 byte packing is the default
 
 #define IMAGE_DOS_SIGNATURE                 0x5A4D      // MZ
 #define IMAGE_OS2_SIGNATURE                 0x454E      // NE
@@ -9194,11 +9194,11 @@ typedef struct {
 #define IMAGE_VXD_SIGNATURE                 0x454C      // LE
 #define IMAGE_NT_SIGNATURE                  0x00004550  // PE00
 
-#include "pshpack2.h"                   // 16 bit headers are 2 byte packed
+#include "PshPack2.h"                   // 16 bit headers are 2 byte packed
 
 #else
 
-#include "pshpack1.h"
+#include "PshPack1.h"
 
 #define IMAGE_DOS_SIGNATURE                 0x4D5A      // MZ
 #define IMAGE_OS2_SIGNATURE                 0x4E45      // NE
@@ -9316,7 +9316,7 @@ typedef struct _IMAGE_VXD_HEADER {      // Windows VXD header
   } IMAGE_VXD_HEADER, *PIMAGE_VXD_HEADER;
 
 #ifndef _MAC
-#include "poppack.h"                    // Back to 4 byte packing
+#include "PopPack.h"                    // Back to 4 byte packing
 #endif
 
 //
@@ -9700,7 +9700,7 @@ typedef struct _IMAGE_SECTION_HEADER {
 #define IMAGE_SCN_SCALE_INDEX                0x00000001  // Tls index is scaled
 
 #ifndef _MAC
-#include "pshpack2.h"                       // Symbols, relocs, and linenumbers are 2 byte packed
+#include "PshPack2.h"                       // Symbols, relocs, and linenumbers are 2 byte packed
 #endif
 
 //
@@ -9889,7 +9889,7 @@ typedef enum IMAGE_AUX_SYMBOL_TYPE {
     IMAGE_AUX_SYMBOL_TYPE_TOKEN_DEF = 1,
 } IMAGE_AUX_SYMBOL_TYPE;
 
-#include <pshpack2.h>
+#include <PshPack2.h>
 
 typedef struct IMAGE_AUX_SYMBOL_TOKEN_DEF {
     BYTE  bAuxType;                  // IMAGE_AUX_SYMBOL_TYPE
@@ -9900,7 +9900,7 @@ typedef struct IMAGE_AUX_SYMBOL_TOKEN_DEF {
 
 typedef IMAGE_AUX_SYMBOL_TOKEN_DEF UNALIGNED *PIMAGE_AUX_SYMBOL_TOKEN_DEF;
 
-#include <poppack.h>
+#include <PopPack.h>
 
 //
 // Communal selection types.
@@ -10303,7 +10303,7 @@ typedef struct _IMAGE_LINENUMBER {
 typedef IMAGE_LINENUMBER UNALIGNED *PIMAGE_LINENUMBER;
 
 #ifndef _MAC
-#include "poppack.h"                        // Back to 4 byte packing
+#include "PopPack.h"                        // Back to 4 byte packing
 #endif
 
 //
@@ -10386,11 +10386,11 @@ typedef struct _IMAGE_IMPORT_BY_NAME {
     BYTE    Name[1];
 } IMAGE_IMPORT_BY_NAME, *PIMAGE_IMPORT_BY_NAME;
 
-#include "pshpack8.h"                       // Use align 8 for the 64-bit IAT.
+#include "PshPack8.h"                       // Use align 8 for the 64-bit IAT.
 
 typedef struct _IMAGE_THUNK_DATA64 {
     union {
-        ULONGLONG ForwarderString;  // PBYTE 
+        ULONGLONG ForwarderString;  // PBYTE
         ULONGLONG Function;         // PDWORD
         ULONGLONG Ordinal;
         ULONGLONG AddressOfData;    // PIMAGE_IMPORT_BY_NAME
@@ -10398,11 +10398,11 @@ typedef struct _IMAGE_THUNK_DATA64 {
 } IMAGE_THUNK_DATA64;
 typedef IMAGE_THUNK_DATA64 * PIMAGE_THUNK_DATA64;
 
-#include "poppack.h"                        // Back to 4 byte packing
+#include "PopPack.h"                        // Back to 4 byte packing
 
 typedef struct _IMAGE_THUNK_DATA32 {
     union {
-        DWORD ForwarderString;      // PBYTE 
+        DWORD ForwarderString;      // PBYTE
         DWORD Function;             // PDWORD
         DWORD Ordinal;
         DWORD AddressOfData;        // PIMAGE_IMPORT_BY_NAME
@@ -10895,7 +10895,7 @@ typedef struct _ImageArchitectureEntry {
     DWORD NewInst;                              // fixup instruction (see alphaops.h)
 } IMAGE_ARCHITECTURE_ENTRY, *PIMAGE_ARCHITECTURE_ENTRY;
 
-#include "poppack.h"                // Back to the initial value
+#include "PopPack.h"                // Back to the initial value
 
 // The following structure defines the new import object.  Note the values of the first two fields,
 // which must be set as stated in order to differentiate old and new import members.
@@ -11137,7 +11137,7 @@ RtlInterlockedFlushSList (
     );
 
 NTSYSAPI
-WORD  
+WORD
 NTAPI
 RtlQueryDepthSList (
     IN PSLIST_HEADER ListHead
@@ -11169,9 +11169,9 @@ RtlQueryDepthSList (
 
 #define RTL_RUN_ONCE_CTX_RESERVED_BITS 2
 
-typedef union _RTL_RUN_ONCE {       
-    PVOID Ptr;                      
-} RTL_RUN_ONCE, *PRTL_RUN_ONCE;     
+typedef union _RTL_RUN_ONCE {
+    PVOID Ptr;
+} RTL_RUN_ONCE, *PRTL_RUN_ONCE;
 
 typedef
 DWORD /* LOGICAL */
@@ -11193,7 +11193,7 @@ RtlRunOnceInitialize (
 
 #endif // !defined(MIDL_PASS) && !defined(SORTPP_PASS)
 
-DWORD   
+DWORD
 RtlRunOnceExecuteOnce (
     __inout PRTL_RUN_ONCE RunOnce,
     __in __callback PRTL_RUN_ONCE_INIT_FN InitFn,
@@ -11201,34 +11201,34 @@ RtlRunOnceExecuteOnce (
     __deref_opt_out_opt PVOID *Context
     );
 
-DWORD   
+DWORD
 RtlRunOnceBeginInitialize (
     __inout PRTL_RUN_ONCE RunOnce,
     __in DWORD Flags,
     __deref_opt_out_opt PVOID *Context
     );
 
-DWORD   
+DWORD
 RtlRunOnceComplete (
     __inout PRTL_RUN_ONCE RunOnce,
     __in DWORD Flags,
     __in_opt PVOID Context
     );
 
-#define HEAP_NO_SERIALIZE               0x00000001      
-#define HEAP_GROWABLE                   0x00000002      
-#define HEAP_GENERATE_EXCEPTIONS        0x00000004      
-#define HEAP_ZERO_MEMORY                0x00000008      
-#define HEAP_REALLOC_IN_PLACE_ONLY      0x00000010      
-#define HEAP_TAIL_CHECKING_ENABLED      0x00000020      
-#define HEAP_FREE_CHECKING_ENABLED      0x00000040      
-#define HEAP_DISABLE_COALESCE_ON_FREE   0x00000080      
-#define HEAP_CREATE_ALIGN_16            0x00010000      
-#define HEAP_CREATE_ENABLE_TRACING      0x00020000      
-#define HEAP_CREATE_ENABLE_EXECUTE      0x00040000      
-#define HEAP_MAXIMUM_TAG                0x0FFF              
-#define HEAP_PSEUDO_TAG_FLAG            0x8000              
-#define HEAP_TAG_SHIFT                  18                  
+#define HEAP_NO_SERIALIZE               0x00000001
+#define HEAP_GROWABLE                   0x00000002
+#define HEAP_GENERATE_EXCEPTIONS        0x00000004
+#define HEAP_ZERO_MEMORY                0x00000008
+#define HEAP_REALLOC_IN_PLACE_ONLY      0x00000010
+#define HEAP_TAIL_CHECKING_ENABLED      0x00000020
+#define HEAP_FREE_CHECKING_ENABLED      0x00000040
+#define HEAP_DISABLE_COALESCE_ON_FREE   0x00000080
+#define HEAP_CREATE_ALIGN_16            0x00010000
+#define HEAP_CREATE_ENABLE_TRACING      0x00020000
+#define HEAP_CREATE_ENABLE_EXECUTE      0x00040000
+#define HEAP_MAXIMUM_TAG                0x0FFF
+#define HEAP_PSEUDO_TAG_FLAG            0x8000
+#define HEAP_TAG_SHIFT                  18
 #if !defined(MIDL_PASS)
 FORCEINLINE
 DWORD
@@ -11245,7 +11245,7 @@ HEAP_MAKE_TAG_FLAGS (
 
 #if (NTDDI_VERSION > NTDDI_WINXP)
 NTSYSAPI
-WORD  
+WORD
 NTAPI
 RtlCaptureStackBackTrace(
     __in DWORD FramesToSkip,
@@ -11287,12 +11287,12 @@ RtlCaptureContext (
 #define IS_TEXT_UNICODE_NOT_UNICODE_MASK      0x0F00
 #define IS_TEXT_UNICODE_NOT_ASCII_MASK        0xF000
 
-#define COMPRESSION_FORMAT_NONE          (0x0000)   
-#define COMPRESSION_FORMAT_DEFAULT       (0x0001)   
-#define COMPRESSION_FORMAT_LZNT1         (0x0002)   
-#define COMPRESSION_ENGINE_STANDARD      (0x0000)   
-#define COMPRESSION_ENGINE_MAXIMUM       (0x0100)   
-#define COMPRESSION_ENGINE_HIBER         (0x0200)   
+#define COMPRESSION_FORMAT_NONE          (0x0000)
+#define COMPRESSION_FORMAT_DEFAULT       (0x0001)
+#define COMPRESSION_FORMAT_LZNT1         (0x0002)
+#define COMPRESSION_ENGINE_STANDARD      (0x0000)
+#define COMPRESSION_ENGINE_MAXIMUM       (0x0100)
+#define COMPRESSION_ENGINE_HIBER         (0x0200)
 
 #if _DBG_MEMCPY_INLINE_ && !defined(MIDL_PASS) && !defined(_MEMCPY_INLINE_) && !defined(_CRTBLD)
 #define _MEMCPY_INLINE_
@@ -11601,15 +11601,15 @@ typedef struct _RTL_CRITICAL_SECTION {
 
 #pragma pack(pop)
 
-typedef struct _RTL_SRWLOCK {                            
-        PVOID Ptr;                                       
-} RTL_SRWLOCK, *PRTL_SRWLOCK;                            
-#define RTL_SRWLOCK_INIT {0}                            
-typedef struct _RTL_CONDITION_VARIABLE {                    
-        PVOID Ptr;                                       
-} RTL_CONDITION_VARIABLE, *PRTL_CONDITION_VARIABLE;      
-#define RTL_CONDITION_VARIABLE_INIT {0}                 
-#define RTL_CONDITION_VARIABLE_LOCKMODE_SHARED  0x1     
+typedef struct _RTL_SRWLOCK {
+        PVOID Ptr;
+} RTL_SRWLOCK, *PRTL_SRWLOCK;
+#define RTL_SRWLOCK_INIT {0}
+typedef struct _RTL_CONDITION_VARIABLE {
+        PVOID Ptr;
+} RTL_CONDITION_VARIABLE, *PRTL_CONDITION_VARIABLE;
+#define RTL_CONDITION_VARIABLE_INIT {0}
+#define RTL_CONDITION_VARIABLE_LOCKMODE_SHARED  0x1
 typedef LONG (NTAPI *PVECTORED_EXCEPTION_HANDLER)(
     struct _EXCEPTION_POINTERS *ExceptionInfo
     );
@@ -11623,27 +11623,27 @@ typedef enum _HEAP_INFORMATION_CLASS {
 } HEAP_INFORMATION_CLASS;
 
 
-#define WT_EXECUTEDEFAULT       0x00000000                           
-#define WT_EXECUTEINIOTHREAD    0x00000001                           
-#define WT_EXECUTEINUITHREAD    0x00000002                           
-#define WT_EXECUTEINWAITTHREAD  0x00000004                           
-#define WT_EXECUTEONLYONCE      0x00000008                           
-#define WT_EXECUTEINTIMERTHREAD 0x00000020                           
-#define WT_EXECUTELONGFUNCTION  0x00000010                           
-#define WT_EXECUTEINPERSISTENTIOTHREAD  0x00000040                   
-#define WT_EXECUTEINPERSISTENTTHREAD 0x00000080                      
-#define WT_TRANSFER_IMPERSONATION 0x00000100                         
-#define WT_SET_MAX_THREADPOOL_THREADS(Flags, Limit)  ((Flags) |= (Limit)<<16) 
-typedef VOID (NTAPI * WAITORTIMERCALLBACKFUNC) (PVOID, BOOLEAN );   
-typedef VOID (NTAPI * WORKERCALLBACKFUNC) (PVOID );                 
-typedef VOID (NTAPI * APC_CALLBACK_FUNCTION) (DWORD   , PVOID, PVOID); 
+#define WT_EXECUTEDEFAULT       0x00000000
+#define WT_EXECUTEINIOTHREAD    0x00000001
+#define WT_EXECUTEINUITHREAD    0x00000002
+#define WT_EXECUTEINWAITTHREAD  0x00000004
+#define WT_EXECUTEONLYONCE      0x00000008
+#define WT_EXECUTEINTIMERTHREAD 0x00000020
+#define WT_EXECUTELONGFUNCTION  0x00000010
+#define WT_EXECUTEINPERSISTENTIOTHREAD  0x00000040
+#define WT_EXECUTEINPERSISTENTTHREAD 0x00000080
+#define WT_TRANSFER_IMPERSONATION 0x00000100
+#define WT_SET_MAX_THREADPOOL_THREADS(Flags, Limit)  ((Flags) |= (Limit)<<16)
+typedef VOID (NTAPI * WAITORTIMERCALLBACKFUNC) (PVOID, BOOLEAN );
+typedef VOID (NTAPI * WORKERCALLBACKFUNC) (PVOID );
+typedef VOID (NTAPI * APC_CALLBACK_FUNCTION) (DWORD   , PVOID, PVOID);
 typedef
 VOID
 (NTAPI *PFLS_CALLBACK_FUNCTION) (
     IN PVOID lpFlsData
     );
-#define WT_EXECUTEINLONGTHREAD  0x00000010                           
-#define WT_EXECUTEDELETEWAIT    0x00000008                           
+#define WT_EXECUTEINLONGTHREAD  0x00000010
+#define WT_EXECUTEDELETEWAIT    0x00000008
 
 typedef enum _ACTIVATION_CONTEXT_INFO_CLASS {
     ActivationContextBasicInformation                       = 1,
@@ -11756,10 +11756,10 @@ typedef struct _ACTIVATION_CONTEXT_DETAILED_INFORMATION {
 
 typedef const struct _ACTIVATION_CONTEXT_DETAILED_INFORMATION *PCACTIVATION_CONTEXT_DETAILED_INFORMATION;
 
-#define DLL_PROCESS_ATTACH   1    
-#define DLL_THREAD_ATTACH    2    
-#define DLL_THREAD_DETACH    3    
-#define DLL_PROCESS_DETACH   0    
+#define DLL_PROCESS_ATTACH   1
+#define DLL_THREAD_ATTACH    2
+#define DLL_THREAD_DETACH    3
+#define DLL_PROCESS_DETACH   0
 
 //
 // Defines for the READ flags for Eventlogging
@@ -11858,7 +11858,7 @@ typedef struct _PACKEDEVENTINFO{
 //SS: end of changes to support clustering
 //
 
-// begin_wdm 
+// begin_wdm
 //
 // Registry Specific Access Rights.
 //
@@ -11978,8 +11978,8 @@ typedef struct _PACKEDEVENTINFO{
                  REG_NOTIFY_CHANGE_ATTRIBUTES    |\
                  REG_NOTIFY_CHANGE_LAST_SET      |\
                  REG_NOTIFY_CHANGE_SECURITY)
- 
-// end_wdm 
+
+// end_wdm
 
 //
 //
@@ -12508,7 +12508,7 @@ extern "C" {
 //
 // Transaction outcomes.
 //
-// TODO: warning, must match values in KTRANSACTION_OUTCOME duplicated def 
+// TODO: warning, must match values in KTRANSACTION_OUTCOME duplicated def
 // in tm.h.
 //
 
@@ -12690,19 +12690,19 @@ typedef struct _KTMOBJECT_CURSOR {
 
     //
     // The last GUID enumerated; zero if beginning enumeration.
-    // 
+    //
 
     GUID    LastQuery;
 
     //
     // A count of GUIDs filled in by this last enumeration.
-    // 
+    //
 
     DWORD   ObjectIdCount;
 
     //
     // ObjectIdCount GUIDs from the namespace specified.
-    // 
+    //
 
     GUID    ObjectIds[1];
 
@@ -12715,7 +12715,7 @@ typedef struct _KTMOBJECT_CURSOR {
 #endif
 
 #endif // _NTTMAPI_
-typedef DWORD TP_VERSION, *PTP_VERSION; 
+typedef DWORD TP_VERSION, *PTP_VERSION;
 
 typedef struct _TP_CALLBACK_INSTANCE TP_CALLBACK_INSTANCE, *PTP_CALLBACK_INSTANCE;
 
@@ -12724,8 +12724,8 @@ typedef VOID (NTAPI *PTP_SIMPLE_CALLBACK)(
     __inout_opt PVOID                 Context
     );
 
-typedef struct _TP_POOL TP_POOL, *PTP_POOL; 
-typedef struct _TP_CLEANUP_GROUP TP_CLEANUP_GROUP, *PTP_CLEANUP_GROUP; 
+typedef struct _TP_POOL TP_POOL, *PTP_POOL;
+typedef struct _TP_CLEANUP_GROUP TP_CLEANUP_GROUP, *PTP_CLEANUP_GROUP;
 
 typedef VOID (NTAPI *PTP_CLEANUP_GROUP_CANCEL_CALLBACK)(
     __inout_opt PVOID ObjectContext,
@@ -12853,7 +12853,7 @@ TpDestroyCallbackEnviron(
     // need to be taken to tear down an initialized structure.  This
     // may change in a future release.
     //
-    
+
     UNREFERENCED_PARAMETER(CallbackEnviron);
 }
 
@@ -12972,5 +12972,3 @@ __inline struct _TEB * NtCurrentTeb( void ) { __asm mov eax, fs:[PcTeb] }
 #endif
 
 #endif /* _WINNT_ */
-
-

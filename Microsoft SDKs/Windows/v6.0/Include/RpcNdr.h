@@ -35,8 +35,8 @@ Abstract:
 #endif
 
 
-#include <pshpack8.h>
-#include <basetsd.h>
+#include <PshPack8.h>
+#include <BaseTsd.h>
 #if !defined(_KRPCENV_)
 #include <rpcnsip.h>
 #endif
@@ -197,12 +197,12 @@ typedef unsigned int     size_t;
 #endif
 
 __post __maybenull
-__post __writableTo(byteCount(size))  
+__post __writableTo(byteCount(size))
 void  * __RPC_USER MIDL_user_allocate(size_t size);
 void             __RPC_USER MIDL_user_free( __inout void  * );
 
 __post __maybenull
-__post __writableTo(pre byteCount(size))  
+__post __writableTo(pre byteCount(size))
 void * __RPC_USER I_RpcDefaultAllocate(
          handle_t bh, size_t size, void * (* RealAlloc)(size_t) );
 
@@ -754,10 +754,10 @@ typedef struct _MIDL_STUB_MESSAGE
      *  Reserved fields up to this point present since Windows 2000 release.
      *  Fields added for NT5.1
      *
-     *  pUserMarshalList is used to keep a linked list of nodes pointing to 
+     *  pUserMarshalList is used to keep a linked list of nodes pointing to
      *  marshalled data to be freed.  This list can contain (as the name
      *  implies) User Marshalled data, but also can contain Interface Pointer
-     *  data.   
+     *  data.
      */
 
     void *                             ContextHandleHash;
@@ -1145,7 +1145,7 @@ typedef struct _FULL_PTR_XLAT_TABLES
 {
     void * RefIdToPointer;
     void * PointerToRefId;
-    unsigned long           NextRefId;   
+    unsigned long           NextRefId;
     XLAT_SIDE               XlatSide;
 } FULL_PTR_XLAT_TABLES, *PFULL_PTR_XLAT_TABLES;
 
@@ -2858,7 +2858,7 @@ NdrOleFree (
 #endif
 
 /****************************************************************************
- * VC COM support 
+ * VC COM support
  ****************************************************************************/
 
 #ifndef DECLSPEC_SELECTANY
@@ -3093,8 +3093,6 @@ RpcUserFree( handle_t AsyncHandle, void * pBuffer );
 }
 #endif
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #endif /* __RPCNDR_H__ */
-
-

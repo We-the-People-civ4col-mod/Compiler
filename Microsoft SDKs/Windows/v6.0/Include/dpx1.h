@@ -7,8 +7,8 @@
 /* Compiler settings for dpx1.idl:
     Oicf, W1, Zp8, env=Win32 (32b run)
     protocol : dce , ms_ext, c_ext, robust
-    error checks: allocation ref bounds_check enum stub_data 
-    VC __declspec() decoration level: 
+    error checks: allocation ref bounds_check enum stub_data
+    VC __declspec() decoration level:
          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
          DECLSPEC_UUID(), MIDL_INTERFACE()
 */
@@ -46,7 +46,7 @@
 #pragma once
 #endif
 
-/* Forward Declarations */ 
+/* Forward Declarations */
 
 #ifndef __IDpxJob_FWD_DEFINED__
 #define __IDpxJob_FWD_DEFINED__
@@ -108,15 +108,15 @@ typedef interface IEnumDpxContainerDirectoryEntries IEnumDpxContainerDirectoryEn
 
 #ifdef __cplusplus
 extern "C"{
-#endif 
+#endif
 
 
 /* interface __MIDL_itf_dpx1_0000_0000 */
-/* [local] */ 
+/* [local] */
 
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 
-#include <SpecStrings.h>
+#include <specstrings.h>
 typedef unsigned int ALG_ID;
 
 
@@ -128,7 +128,7 @@ typedef unsigned int ALG_ID;
 
 
 
-typedef /* [public][public] */ 
+typedef /* [public][public] */
 enum __MIDL___MIDL_itf_dpx1_0000_0000_0001
     {	DPX_RESUME_AND_DOWNLOAD	= 0,
 	DPX_RESUME_UNTIL_DOWNLOAD	= 0x1,
@@ -149,7 +149,7 @@ typedef /* [public][public][public][public][public] */ struct __MIDL___MIDL_itf_
     UINT64 Length;
     } 	DPX_BYTE_RANGE;
 
-typedef /* [public][public][public] */ 
+typedef /* [public][public][public] */
 enum __MIDL___MIDL_itf_dpx1_0000_0000_0004
     {	DPX_PHASE_JOB_IDLE	= 0,
 	DPX_PHASE_DOWNLOAD_INDEX	= 0x10,
@@ -187,142 +187,142 @@ extern RPC_IF_HANDLE __MIDL_itf_dpx1_0000_0000_v0_0_s_ifspec;
 #define __IDpxJob_INTERFACE_DEFINED__
 
 /* interface IDpxJob */
-/* [nocode][unique][object][uuid] */ 
+/* [nocode][unique][object][uuid] */
 
 
 EXTERN_C const IID IID_IDpxJob;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("ddc1b711-0e55-452f-838e-d1505b866e2b")
     IDpxJob : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE GetTargetPath( 
+        virtual HRESULT STDMETHODCALLTYPE GetTargetPath(
             /* [out] */ __RPC__deref_out_opt LPWSTR *TargetPath) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE AddContainer( 
+
+        virtual HRESULT STDMETHODCALLTYPE AddContainer(
             /* [in] */ __RPC__in LPCWSTR ContainerPath,
             /* [out] */ __RPC__deref_out_opt IDpxContainer **ppContainer) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE EnumContainers( 
+
+        virtual HRESULT STDMETHODCALLTYPE EnumContainers(
             /* [out] */ __RPC__deref_out_opt IEnumDpxContainers **ppEnumContainers) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetDownloadProvider( 
+
+        virtual HRESULT STDMETHODCALLTYPE SetDownloadProvider(
             /* [unique][in] */ __RPC__in_opt IDpxDownloadProvider *pDownloadProvider) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetDownloadProvider( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetDownloadProvider(
             /* [out] */ __RPC__deref_out_opt IDpxDownloadProvider **ppDownloadProvider) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Resume( 
+
+        virtual HRESULT STDMETHODCALLTYPE Resume(
             DPX_RESUME_TYPE eResumeType) = 0;
-        
+
         virtual HRESULT STDMETHODCALLTYPE Suspend( void) = 0;
-        
+
         virtual HRESULT STDMETHODCALLTYPE Cancel( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetProgress( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetProgress(
             /* [out] */ __RPC__out DPX_PROGRESS *pProgress) = 0;
-        
+
         virtual HRESULT STDMETHODCALLTYPE SaveJobState( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetUserValue( 
+
+        virtual HRESULT STDMETHODCALLTYPE SetUserValue(
             /* [in] */ UINT64 UserValue) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetUserValue( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetUserValue(
             /* [out] */ __RPC__out UINT64 *pUserValue) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetOptionValue( 
+
+        virtual HRESULT STDMETHODCALLTYPE SetOptionValue(
             /* [in] */ __RPC__in LPCWSTR OptionName,
             /* [unique][in] */ __RPC__in_opt LPCWSTR OptionValue) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetOptionValue( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetOptionValue(
             /* [in] */ __RPC__in LPCWSTR OptionName,
             /* [out] */ __RPC__deref_out_opt LPWSTR *pOptionValue) = 0;
-        
-        virtual /* [local] */ void STDMETHODCALLTYPE FreeMemory( 
+
+        virtual /* [local] */ void STDMETHODCALLTYPE FreeMemory(
             /* [in] */ void *Allocation) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IDpxJobVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IDpxJob * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IDpxJob * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IDpxJob * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTargetPath )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetTargetPath )(
             IDpxJob * This,
             /* [out] */ __RPC__deref_out_opt LPWSTR *TargetPath);
-        
-        HRESULT ( STDMETHODCALLTYPE *AddContainer )( 
+
+        HRESULT ( STDMETHODCALLTYPE *AddContainer )(
             IDpxJob * This,
             /* [in] */ __RPC__in LPCWSTR ContainerPath,
             /* [out] */ __RPC__deref_out_opt IDpxContainer **ppContainer);
-        
-        HRESULT ( STDMETHODCALLTYPE *EnumContainers )( 
+
+        HRESULT ( STDMETHODCALLTYPE *EnumContainers )(
             IDpxJob * This,
             /* [out] */ __RPC__deref_out_opt IEnumDpxContainers **ppEnumContainers);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetDownloadProvider )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetDownloadProvider )(
             IDpxJob * This,
             /* [unique][in] */ __RPC__in_opt IDpxDownloadProvider *pDownloadProvider);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetDownloadProvider )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetDownloadProvider )(
             IDpxJob * This,
             /* [out] */ __RPC__deref_out_opt IDpxDownloadProvider **ppDownloadProvider);
-        
-        HRESULT ( STDMETHODCALLTYPE *Resume )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Resume )(
             IDpxJob * This,
             DPX_RESUME_TYPE eResumeType);
-        
-        HRESULT ( STDMETHODCALLTYPE *Suspend )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Suspend )(
             IDpxJob * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Cancel )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Cancel )(
             IDpxJob * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetProgress )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetProgress )(
             IDpxJob * This,
             /* [out] */ __RPC__out DPX_PROGRESS *pProgress);
-        
-        HRESULT ( STDMETHODCALLTYPE *SaveJobState )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SaveJobState )(
             IDpxJob * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetUserValue )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetUserValue )(
             IDpxJob * This,
             /* [in] */ UINT64 UserValue);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetUserValue )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetUserValue )(
             IDpxJob * This,
             /* [out] */ __RPC__out UINT64 *pUserValue);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetOptionValue )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetOptionValue )(
             IDpxJob * This,
             /* [in] */ __RPC__in LPCWSTR OptionName,
             /* [unique][in] */ __RPC__in_opt LPCWSTR OptionValue);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetOptionValue )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetOptionValue )(
             IDpxJob * This,
             /* [in] */ __RPC__in LPCWSTR OptionName,
             /* [out] */ __RPC__deref_out_opt LPWSTR *pOptionValue);
-        
-        /* [local] */ void ( STDMETHODCALLTYPE *FreeMemory )( 
+
+        /* [local] */ void ( STDMETHODCALLTYPE *FreeMemory )(
             IDpxJob * This,
             /* [in] */ void *Allocation);
-        
+
         END_INTERFACE
     } IDpxJobVtbl;
 
@@ -331,65 +331,65 @@ EXTERN_C const IID IID_IDpxJob;
         CONST_VTBL struct IDpxJobVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IDpxJob_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IDpxJob_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IDpxJob_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IDpxJob_GetTargetPath(This,TargetPath)	\
-    ( (This)->lpVtbl -> GetTargetPath(This,TargetPath) ) 
+    ( (This)->lpVtbl -> GetTargetPath(This,TargetPath) )
 
 #define IDpxJob_AddContainer(This,ContainerPath,ppContainer)	\
-    ( (This)->lpVtbl -> AddContainer(This,ContainerPath,ppContainer) ) 
+    ( (This)->lpVtbl -> AddContainer(This,ContainerPath,ppContainer) )
 
 #define IDpxJob_EnumContainers(This,ppEnumContainers)	\
-    ( (This)->lpVtbl -> EnumContainers(This,ppEnumContainers) ) 
+    ( (This)->lpVtbl -> EnumContainers(This,ppEnumContainers) )
 
 #define IDpxJob_SetDownloadProvider(This,pDownloadProvider)	\
-    ( (This)->lpVtbl -> SetDownloadProvider(This,pDownloadProvider) ) 
+    ( (This)->lpVtbl -> SetDownloadProvider(This,pDownloadProvider) )
 
 #define IDpxJob_GetDownloadProvider(This,ppDownloadProvider)	\
-    ( (This)->lpVtbl -> GetDownloadProvider(This,ppDownloadProvider) ) 
+    ( (This)->lpVtbl -> GetDownloadProvider(This,ppDownloadProvider) )
 
 #define IDpxJob_Resume(This,eResumeType)	\
-    ( (This)->lpVtbl -> Resume(This,eResumeType) ) 
+    ( (This)->lpVtbl -> Resume(This,eResumeType) )
 
 #define IDpxJob_Suspend(This)	\
-    ( (This)->lpVtbl -> Suspend(This) ) 
+    ( (This)->lpVtbl -> Suspend(This) )
 
 #define IDpxJob_Cancel(This)	\
-    ( (This)->lpVtbl -> Cancel(This) ) 
+    ( (This)->lpVtbl -> Cancel(This) )
 
 #define IDpxJob_GetProgress(This,pProgress)	\
-    ( (This)->lpVtbl -> GetProgress(This,pProgress) ) 
+    ( (This)->lpVtbl -> GetProgress(This,pProgress) )
 
 #define IDpxJob_SaveJobState(This)	\
-    ( (This)->lpVtbl -> SaveJobState(This) ) 
+    ( (This)->lpVtbl -> SaveJobState(This) )
 
 #define IDpxJob_SetUserValue(This,UserValue)	\
-    ( (This)->lpVtbl -> SetUserValue(This,UserValue) ) 
+    ( (This)->lpVtbl -> SetUserValue(This,UserValue) )
 
 #define IDpxJob_GetUserValue(This,pUserValue)	\
-    ( (This)->lpVtbl -> GetUserValue(This,pUserValue) ) 
+    ( (This)->lpVtbl -> GetUserValue(This,pUserValue) )
 
 #define IDpxJob_SetOptionValue(This,OptionName,OptionValue)	\
-    ( (This)->lpVtbl -> SetOptionValue(This,OptionName,OptionValue) ) 
+    ( (This)->lpVtbl -> SetOptionValue(This,OptionName,OptionValue) )
 
 #define IDpxJob_GetOptionValue(This,OptionName,pOptionValue)	\
-    ( (This)->lpVtbl -> GetOptionValue(This,OptionName,pOptionValue) ) 
+    ( (This)->lpVtbl -> GetOptionValue(This,OptionName,pOptionValue) )
 
 #define IDpxJob_FreeMemory(This,Allocation)	\
-    ( (This)->lpVtbl -> FreeMemory(This,Allocation) ) 
+    ( (This)->lpVtbl -> FreeMemory(This,Allocation) )
 
 #endif /* COBJMACROS */
 
@@ -406,148 +406,148 @@ EXTERN_C const IID IID_IDpxJob;
 #define __IDpxContainer_INTERFACE_DEFINED__
 
 /* interface IDpxContainer */
-/* [nocode][unique][object][uuid] */ 
+/* [nocode][unique][object][uuid] */
 
 
 EXTERN_C const IID IID_IDpxContainer;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("ddc1b712-0e55-452f-838e-d1505b866e2b")
     IDpxContainer : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE SetContainerPath( 
+        virtual HRESULT STDMETHODCALLTYPE SetContainerPath(
             /* [in] */ __RPC__in LPCWSTR ContainerPath) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetContainerPath( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetContainerPath(
             /* [out] */ __RPC__deref_out_opt LPWSTR *pContainerPath) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE AddFileToExtract( 
+
+        virtual HRESULT STDMETHODCALLTYPE AddFileToExtract(
             /* [in] */ __RPC__in LPCWSTR SourceFileName,
             /* [unique][in] */ __RPC__in_opt LPCWSTR TargetFileName,
             /* [unique][in] */ __RPC__in_opt DPX_HASH *TargetFileHash) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE AddFileToExtract2( 
+
+        virtual HRESULT STDMETHODCALLTYPE AddFileToExtract2(
             /* [in] */ __RPC__in LPCWSTR SourceFileName,
             /* [unique][in] */ __RPC__in_opt LPCWSTR TargetFileName,
             /* [out] */ __RPC__deref_out_opt IDpxFile **ppFile) = 0;
-        
+
         virtual HRESULT STDMETHODCALLTYPE ExtractAllFiles( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE EnumFilesToExtract( 
+
+        virtual HRESULT STDMETHODCALLTYPE EnumFilesToExtract(
             /* [out] */ __RPC__deref_out_opt IEnumDpxFiles **ppEnumFiles) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetExpectedContainerIndexHash( 
+
+        virtual HRESULT STDMETHODCALLTYPE SetExpectedContainerIndexHash(
             /* [in] */ __RPC__in DPX_HASH *pExpectedHash) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetExpectedContainerIndexHash( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetExpectedContainerIndexHash(
             /* [out] */ __RPC__deref_out_opt DPX_HASH **ppExpectedHash) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE ProvideContainerIndex( 
+
+        virtual HRESULT STDMETHODCALLTYPE ProvideContainerIndex(
             /* [in] */ UINT IndexSize,
             /* [size_is][in] */ __RPC__in_ecount_full(IndexSize) BYTE IndexData[  ]) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE ProvideContainerIndexByFile( 
+
+        virtual HRESULT STDMETHODCALLTYPE ProvideContainerIndexByFile(
             /* [in] */ __RPC__in LPCWSTR IndexFileName) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE EnumDirectoryEntries( 
+
+        virtual HRESULT STDMETHODCALLTYPE EnumDirectoryEntries(
             /* [out] */ __RPC__deref_out_opt IEnumDpxContainerDirectoryEntries **ppEnumEntries) = 0;
-        
+
         virtual HRESULT STDMETHODCALLTYPE Remove( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetUserValue( 
+
+        virtual HRESULT STDMETHODCALLTYPE SetUserValue(
             /* [in] */ UINT64 UserValue) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetUserValue( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetUserValue(
             /* [out] */ __RPC__out UINT64 *pUserValue) = 0;
-        
-        virtual /* [local] */ void STDMETHODCALLTYPE FreeMemory( 
+
+        virtual /* [local] */ void STDMETHODCALLTYPE FreeMemory(
             /* [in] */ void *Allocation) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IDpxContainerVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IDpxContainer * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IDpxContainer * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IDpxContainer * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetContainerPath )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetContainerPath )(
             IDpxContainer * This,
             /* [in] */ __RPC__in LPCWSTR ContainerPath);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetContainerPath )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetContainerPath )(
             IDpxContainer * This,
             /* [out] */ __RPC__deref_out_opt LPWSTR *pContainerPath);
-        
-        HRESULT ( STDMETHODCALLTYPE *AddFileToExtract )( 
+
+        HRESULT ( STDMETHODCALLTYPE *AddFileToExtract )(
             IDpxContainer * This,
             /* [in] */ __RPC__in LPCWSTR SourceFileName,
             /* [unique][in] */ __RPC__in_opt LPCWSTR TargetFileName,
             /* [unique][in] */ __RPC__in_opt DPX_HASH *TargetFileHash);
-        
-        HRESULT ( STDMETHODCALLTYPE *AddFileToExtract2 )( 
+
+        HRESULT ( STDMETHODCALLTYPE *AddFileToExtract2 )(
             IDpxContainer * This,
             /* [in] */ __RPC__in LPCWSTR SourceFileName,
             /* [unique][in] */ __RPC__in_opt LPCWSTR TargetFileName,
             /* [out] */ __RPC__deref_out_opt IDpxFile **ppFile);
-        
-        HRESULT ( STDMETHODCALLTYPE *ExtractAllFiles )( 
+
+        HRESULT ( STDMETHODCALLTYPE *ExtractAllFiles )(
             IDpxContainer * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *EnumFilesToExtract )( 
+
+        HRESULT ( STDMETHODCALLTYPE *EnumFilesToExtract )(
             IDpxContainer * This,
             /* [out] */ __RPC__deref_out_opt IEnumDpxFiles **ppEnumFiles);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetExpectedContainerIndexHash )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetExpectedContainerIndexHash )(
             IDpxContainer * This,
             /* [in] */ __RPC__in DPX_HASH *pExpectedHash);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetExpectedContainerIndexHash )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetExpectedContainerIndexHash )(
             IDpxContainer * This,
             /* [out] */ __RPC__deref_out_opt DPX_HASH **ppExpectedHash);
-        
-        HRESULT ( STDMETHODCALLTYPE *ProvideContainerIndex )( 
+
+        HRESULT ( STDMETHODCALLTYPE *ProvideContainerIndex )(
             IDpxContainer * This,
             /* [in] */ UINT IndexSize,
             /* [size_is][in] */ __RPC__in_ecount_full(IndexSize) BYTE IndexData[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *ProvideContainerIndexByFile )( 
+
+        HRESULT ( STDMETHODCALLTYPE *ProvideContainerIndexByFile )(
             IDpxContainer * This,
             /* [in] */ __RPC__in LPCWSTR IndexFileName);
-        
-        HRESULT ( STDMETHODCALLTYPE *EnumDirectoryEntries )( 
+
+        HRESULT ( STDMETHODCALLTYPE *EnumDirectoryEntries )(
             IDpxContainer * This,
             /* [out] */ __RPC__deref_out_opt IEnumDpxContainerDirectoryEntries **ppEnumEntries);
-        
-        HRESULT ( STDMETHODCALLTYPE *Remove )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Remove )(
             IDpxContainer * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetUserValue )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetUserValue )(
             IDpxContainer * This,
             /* [in] */ UINT64 UserValue);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetUserValue )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetUserValue )(
             IDpxContainer * This,
             /* [out] */ __RPC__out UINT64 *pUserValue);
-        
-        /* [local] */ void ( STDMETHODCALLTYPE *FreeMemory )( 
+
+        /* [local] */ void ( STDMETHODCALLTYPE *FreeMemory )(
             IDpxContainer * This,
             /* [in] */ void *Allocation);
-        
+
         END_INTERFACE
     } IDpxContainerVtbl;
 
@@ -556,65 +556,65 @@ EXTERN_C const IID IID_IDpxContainer;
         CONST_VTBL struct IDpxContainerVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IDpxContainer_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IDpxContainer_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IDpxContainer_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IDpxContainer_SetContainerPath(This,ContainerPath)	\
-    ( (This)->lpVtbl -> SetContainerPath(This,ContainerPath) ) 
+    ( (This)->lpVtbl -> SetContainerPath(This,ContainerPath) )
 
 #define IDpxContainer_GetContainerPath(This,pContainerPath)	\
-    ( (This)->lpVtbl -> GetContainerPath(This,pContainerPath) ) 
+    ( (This)->lpVtbl -> GetContainerPath(This,pContainerPath) )
 
 #define IDpxContainer_AddFileToExtract(This,SourceFileName,TargetFileName,TargetFileHash)	\
-    ( (This)->lpVtbl -> AddFileToExtract(This,SourceFileName,TargetFileName,TargetFileHash) ) 
+    ( (This)->lpVtbl -> AddFileToExtract(This,SourceFileName,TargetFileName,TargetFileHash) )
 
 #define IDpxContainer_AddFileToExtract2(This,SourceFileName,TargetFileName,ppFile)	\
-    ( (This)->lpVtbl -> AddFileToExtract2(This,SourceFileName,TargetFileName,ppFile) ) 
+    ( (This)->lpVtbl -> AddFileToExtract2(This,SourceFileName,TargetFileName,ppFile) )
 
 #define IDpxContainer_ExtractAllFiles(This)	\
-    ( (This)->lpVtbl -> ExtractAllFiles(This) ) 
+    ( (This)->lpVtbl -> ExtractAllFiles(This) )
 
 #define IDpxContainer_EnumFilesToExtract(This,ppEnumFiles)	\
-    ( (This)->lpVtbl -> EnumFilesToExtract(This,ppEnumFiles) ) 
+    ( (This)->lpVtbl -> EnumFilesToExtract(This,ppEnumFiles) )
 
 #define IDpxContainer_SetExpectedContainerIndexHash(This,pExpectedHash)	\
-    ( (This)->lpVtbl -> SetExpectedContainerIndexHash(This,pExpectedHash) ) 
+    ( (This)->lpVtbl -> SetExpectedContainerIndexHash(This,pExpectedHash) )
 
 #define IDpxContainer_GetExpectedContainerIndexHash(This,ppExpectedHash)	\
-    ( (This)->lpVtbl -> GetExpectedContainerIndexHash(This,ppExpectedHash) ) 
+    ( (This)->lpVtbl -> GetExpectedContainerIndexHash(This,ppExpectedHash) )
 
 #define IDpxContainer_ProvideContainerIndex(This,IndexSize,IndexData)	\
-    ( (This)->lpVtbl -> ProvideContainerIndex(This,IndexSize,IndexData) ) 
+    ( (This)->lpVtbl -> ProvideContainerIndex(This,IndexSize,IndexData) )
 
 #define IDpxContainer_ProvideContainerIndexByFile(This,IndexFileName)	\
-    ( (This)->lpVtbl -> ProvideContainerIndexByFile(This,IndexFileName) ) 
+    ( (This)->lpVtbl -> ProvideContainerIndexByFile(This,IndexFileName) )
 
 #define IDpxContainer_EnumDirectoryEntries(This,ppEnumEntries)	\
-    ( (This)->lpVtbl -> EnumDirectoryEntries(This,ppEnumEntries) ) 
+    ( (This)->lpVtbl -> EnumDirectoryEntries(This,ppEnumEntries) )
 
 #define IDpxContainer_Remove(This)	\
-    ( (This)->lpVtbl -> Remove(This) ) 
+    ( (This)->lpVtbl -> Remove(This) )
 
 #define IDpxContainer_SetUserValue(This,UserValue)	\
-    ( (This)->lpVtbl -> SetUserValue(This,UserValue) ) 
+    ( (This)->lpVtbl -> SetUserValue(This,UserValue) )
 
 #define IDpxContainer_GetUserValue(This,pUserValue)	\
-    ( (This)->lpVtbl -> GetUserValue(This,pUserValue) ) 
+    ( (This)->lpVtbl -> GetUserValue(This,pUserValue) )
 
 #define IDpxContainer_FreeMemory(This,Allocation)	\
-    ( (This)->lpVtbl -> FreeMemory(This,Allocation) ) 
+    ( (This)->lpVtbl -> FreeMemory(This,Allocation) )
 
 #endif /* COBJMACROS */
 
@@ -631,98 +631,98 @@ EXTERN_C const IID IID_IDpxContainer;
 #define __IDpxFile_INTERFACE_DEFINED__
 
 /* interface IDpxFile */
-/* [nocode][unique][object][uuid] */ 
+/* [nocode][unique][object][uuid] */
 
 
 EXTERN_C const IID IID_IDpxFile;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("ddc1b713-0e55-452f-838e-d1505b866e2b")
     IDpxFile : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE GetSourceFileName( 
+        virtual HRESULT STDMETHODCALLTYPE GetSourceFileName(
             /* [out] */ __RPC__deref_out_opt LPWSTR *pSourceFileName) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetTargetFileName( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetTargetFileName(
             /* [out] */ __RPC__deref_out_opt LPWSTR *pTargetFileName) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetExpectedHash( 
+
+        virtual HRESULT STDMETHODCALLTYPE SetExpectedHash(
             /* [in] */ __RPC__in DPX_HASH *pExpectedHash) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetExpectedHash( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetExpectedHash(
             /* [out] */ __RPC__deref_out_opt DPX_HASH **ppExpectedHash) = 0;
-        
+
         virtual HRESULT STDMETHODCALLTYPE Remove( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetUserValue( 
+
+        virtual HRESULT STDMETHODCALLTYPE SetUserValue(
             /* [in] */ UINT64 UserValue) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetUserValue( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetUserValue(
             /* [out] */ __RPC__out UINT64 *pUserValue) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetStatus( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetStatus(
             /* [out] */ __RPC__out HRESULT *pStatus) = 0;
-        
-        virtual /* [local] */ void STDMETHODCALLTYPE FreeMemory( 
+
+        virtual /* [local] */ void STDMETHODCALLTYPE FreeMemory(
             /* [in] */ void *Allocation) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IDpxFileVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IDpxFile * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IDpxFile * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IDpxFile * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetSourceFileName )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetSourceFileName )(
             IDpxFile * This,
             /* [out] */ __RPC__deref_out_opt LPWSTR *pSourceFileName);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTargetFileName )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetTargetFileName )(
             IDpxFile * This,
             /* [out] */ __RPC__deref_out_opt LPWSTR *pTargetFileName);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetExpectedHash )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetExpectedHash )(
             IDpxFile * This,
             /* [in] */ __RPC__in DPX_HASH *pExpectedHash);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetExpectedHash )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetExpectedHash )(
             IDpxFile * This,
             /* [out] */ __RPC__deref_out_opt DPX_HASH **ppExpectedHash);
-        
-        HRESULT ( STDMETHODCALLTYPE *Remove )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Remove )(
             IDpxFile * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetUserValue )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetUserValue )(
             IDpxFile * This,
             /* [in] */ UINT64 UserValue);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetUserValue )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetUserValue )(
             IDpxFile * This,
             /* [out] */ __RPC__out UINT64 *pUserValue);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetStatus )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetStatus )(
             IDpxFile * This,
             /* [out] */ __RPC__out HRESULT *pStatus);
-        
-        /* [local] */ void ( STDMETHODCALLTYPE *FreeMemory )( 
+
+        /* [local] */ void ( STDMETHODCALLTYPE *FreeMemory )(
             IDpxFile * This,
             /* [in] */ void *Allocation);
-        
+
         END_INTERFACE
     } IDpxFileVtbl;
 
@@ -731,47 +731,47 @@ EXTERN_C const IID IID_IDpxFile;
         CONST_VTBL struct IDpxFileVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IDpxFile_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IDpxFile_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IDpxFile_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IDpxFile_GetSourceFileName(This,pSourceFileName)	\
-    ( (This)->lpVtbl -> GetSourceFileName(This,pSourceFileName) ) 
+    ( (This)->lpVtbl -> GetSourceFileName(This,pSourceFileName) )
 
 #define IDpxFile_GetTargetFileName(This,pTargetFileName)	\
-    ( (This)->lpVtbl -> GetTargetFileName(This,pTargetFileName) ) 
+    ( (This)->lpVtbl -> GetTargetFileName(This,pTargetFileName) )
 
 #define IDpxFile_SetExpectedHash(This,pExpectedHash)	\
-    ( (This)->lpVtbl -> SetExpectedHash(This,pExpectedHash) ) 
+    ( (This)->lpVtbl -> SetExpectedHash(This,pExpectedHash) )
 
 #define IDpxFile_GetExpectedHash(This,ppExpectedHash)	\
-    ( (This)->lpVtbl -> GetExpectedHash(This,ppExpectedHash) ) 
+    ( (This)->lpVtbl -> GetExpectedHash(This,ppExpectedHash) )
 
 #define IDpxFile_Remove(This)	\
-    ( (This)->lpVtbl -> Remove(This) ) 
+    ( (This)->lpVtbl -> Remove(This) )
 
 #define IDpxFile_SetUserValue(This,UserValue)	\
-    ( (This)->lpVtbl -> SetUserValue(This,UserValue) ) 
+    ( (This)->lpVtbl -> SetUserValue(This,UserValue) )
 
 #define IDpxFile_GetUserValue(This,pUserValue)	\
-    ( (This)->lpVtbl -> GetUserValue(This,pUserValue) ) 
+    ( (This)->lpVtbl -> GetUserValue(This,pUserValue) )
 
 #define IDpxFile_GetStatus(This,pStatus)	\
-    ( (This)->lpVtbl -> GetStatus(This,pStatus) ) 
+    ( (This)->lpVtbl -> GetStatus(This,pStatus) )
 
 #define IDpxFile_FreeMemory(This,Allocation)	\
-    ( (This)->lpVtbl -> FreeMemory(This,Allocation) ) 
+    ( (This)->lpVtbl -> FreeMemory(This,Allocation) )
 
 #endif /* COBJMACROS */
 
@@ -788,72 +788,72 @@ EXTERN_C const IID IID_IDpxFile;
 #define __IDpxContainerDirectoryEntry_INTERFACE_DEFINED__
 
 /* interface IDpxContainerDirectoryEntry */
-/* [nocode][unique][object][uuid] */ 
+/* [nocode][unique][object][uuid] */
 
 
 EXTERN_C const IID IID_IDpxContainerDirectoryEntry;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("ddc1b715-0e55-452f-838e-d1505b866e2b")
     IDpxContainerDirectoryEntry : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE GetName( 
+        virtual HRESULT STDMETHODCALLTYPE GetName(
             /* [out] */ __RPC__deref_out_opt LPWSTR *pDirEntryName) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetHash( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetHash(
             /* [out] */ __RPC__deref_out_opt DPX_HASH **pDirEntryHash) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetSize( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetSize(
             /* [out] */ __RPC__out UINT64 *pDirEntrySize) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetTime( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetTime(
             /* [out] */ __RPC__out FILETIME *pDirEntryTime) = 0;
-        
-        virtual /* [local] */ void STDMETHODCALLTYPE FreeMemory( 
+
+        virtual /* [local] */ void STDMETHODCALLTYPE FreeMemory(
             /* [in] */ void *Allocation) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IDpxContainerDirectoryEntryVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IDpxContainerDirectoryEntry * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IDpxContainerDirectoryEntry * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IDpxContainerDirectoryEntry * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetName )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetName )(
             IDpxContainerDirectoryEntry * This,
             /* [out] */ __RPC__deref_out_opt LPWSTR *pDirEntryName);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetHash )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetHash )(
             IDpxContainerDirectoryEntry * This,
             /* [out] */ __RPC__deref_out_opt DPX_HASH **pDirEntryHash);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetSize )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetSize )(
             IDpxContainerDirectoryEntry * This,
             /* [out] */ __RPC__out UINT64 *pDirEntrySize);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTime )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetTime )(
             IDpxContainerDirectoryEntry * This,
             /* [out] */ __RPC__out FILETIME *pDirEntryTime);
-        
-        /* [local] */ void ( STDMETHODCALLTYPE *FreeMemory )( 
+
+        /* [local] */ void ( STDMETHODCALLTYPE *FreeMemory )(
             IDpxContainerDirectoryEntry * This,
             /* [in] */ void *Allocation);
-        
+
         END_INTERFACE
     } IDpxContainerDirectoryEntryVtbl;
 
@@ -862,35 +862,35 @@ EXTERN_C const IID IID_IDpxContainerDirectoryEntry;
         CONST_VTBL struct IDpxContainerDirectoryEntryVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IDpxContainerDirectoryEntry_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IDpxContainerDirectoryEntry_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IDpxContainerDirectoryEntry_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IDpxContainerDirectoryEntry_GetName(This,pDirEntryName)	\
-    ( (This)->lpVtbl -> GetName(This,pDirEntryName) ) 
+    ( (This)->lpVtbl -> GetName(This,pDirEntryName) )
 
 #define IDpxContainerDirectoryEntry_GetHash(This,pDirEntryHash)	\
-    ( (This)->lpVtbl -> GetHash(This,pDirEntryHash) ) 
+    ( (This)->lpVtbl -> GetHash(This,pDirEntryHash) )
 
 #define IDpxContainerDirectoryEntry_GetSize(This,pDirEntrySize)	\
-    ( (This)->lpVtbl -> GetSize(This,pDirEntrySize) ) 
+    ( (This)->lpVtbl -> GetSize(This,pDirEntrySize) )
 
 #define IDpxContainerDirectoryEntry_GetTime(This,pDirEntryTime)	\
-    ( (This)->lpVtbl -> GetTime(This,pDirEntryTime) ) 
+    ( (This)->lpVtbl -> GetTime(This,pDirEntryTime) )
 
 #define IDpxContainerDirectoryEntry_FreeMemory(This,Allocation)	\
-    ( (This)->lpVtbl -> FreeMemory(This,Allocation) ) 
+    ( (This)->lpVtbl -> FreeMemory(This,Allocation) )
 
 #endif /* COBJMACROS */
 
@@ -907,143 +907,143 @@ EXTERN_C const IID IID_IDpxContainerDirectoryEntry;
 #define __IDpxDownloadProvider_INTERFACE_DEFINED__
 
 /* interface IDpxDownloadProvider */
-/* [nocode][unique][object][uuid] */ 
+/* [nocode][unique][object][uuid] */
 
 
 EXTERN_C const IID IID_IDpxDownloadProvider;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("ddc1b716-0e55-452f-838e-d1505b866e2b")
     IDpxDownloadProvider : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE SetProvideDataCallback( 
+        virtual HRESULT STDMETHODCALLTYPE SetProvideDataCallback(
             /* [in] */ __RPC__in_opt IDpxDownloadCallback *pProvideData) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetProvideDataCallback( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetProvideDataCallback(
             /* [out] */ __RPC__deref_out_opt IDpxDownloadCallback **ppProvideData) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE AddContainer( 
+
+        virtual HRESULT STDMETHODCALLTYPE AddContainer(
             /* [in] */ __RPC__in LPCWSTR ContainerFilePath,
             /* [in] */ UINT64 ContainerId) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE AddRanges( 
+
+        virtual HRESULT STDMETHODCALLTYPE AddRanges(
             /* [in] */ UINT64 ContainerId,
             /* [in] */ UINT RangeCount,
             /* [size_is][in] */ __RPC__in_ecount_full(RangeCount) DPX_BYTE_RANGE RangeList[  ]) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetContainers( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetContainers(
             /* [out] */ __RPC__out UINT *ContainerCount,
             /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*ContainerCount) UINT64 **ppContainerIdArray) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetContainerPath( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetContainerPath(
             /* [in] */ UINT64 ContainerId,
             /* [out] */ __RPC__deref_out_opt LPWSTR *ContainerPath) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetRanges( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetRanges(
             /* [in] */ UINT64 ContainerId,
             /* [in] */ BOOL IncludeCompletedRanges,
             /* [out] */ __RPC__out UINT *RangeCount,
             /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*RangeCount) DPX_BYTE_RANGE **ppRangeArray) = 0;
-        
+
         virtual HRESULT STDMETHODCALLTYPE Resume( void) = 0;
-        
+
         virtual HRESULT STDMETHODCALLTYPE Suspend( void) = 0;
-        
+
         virtual HRESULT STDMETHODCALLTYPE Cancel( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE WaitForCompletion( 
+
+        virtual HRESULT STDMETHODCALLTYPE WaitForCompletion(
             /* [in] */ DWORD TimeoutMilliseconds) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetProgress( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetProgress(
             /* [out] */ __RPC__out DPX_PROGRESS_REMAIN *pDownloadProgress) = 0;
-        
+
         virtual HRESULT STDMETHODCALLTYPE ClearRequest( void) = 0;
-        
-        virtual /* [local] */ void STDMETHODCALLTYPE FreeMemory( 
+
+        virtual /* [local] */ void STDMETHODCALLTYPE FreeMemory(
             /* [in] */ void *Allocation) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IDpxDownloadProviderVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IDpxDownloadProvider * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IDpxDownloadProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IDpxDownloadProvider * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetProvideDataCallback )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetProvideDataCallback )(
             IDpxDownloadProvider * This,
             /* [in] */ __RPC__in_opt IDpxDownloadCallback *pProvideData);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetProvideDataCallback )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetProvideDataCallback )(
             IDpxDownloadProvider * This,
             /* [out] */ __RPC__deref_out_opt IDpxDownloadCallback **ppProvideData);
-        
-        HRESULT ( STDMETHODCALLTYPE *AddContainer )( 
+
+        HRESULT ( STDMETHODCALLTYPE *AddContainer )(
             IDpxDownloadProvider * This,
             /* [in] */ __RPC__in LPCWSTR ContainerFilePath,
             /* [in] */ UINT64 ContainerId);
-        
-        HRESULT ( STDMETHODCALLTYPE *AddRanges )( 
+
+        HRESULT ( STDMETHODCALLTYPE *AddRanges )(
             IDpxDownloadProvider * This,
             /* [in] */ UINT64 ContainerId,
             /* [in] */ UINT RangeCount,
             /* [size_is][in] */ __RPC__in_ecount_full(RangeCount) DPX_BYTE_RANGE RangeList[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetContainers )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetContainers )(
             IDpxDownloadProvider * This,
             /* [out] */ __RPC__out UINT *ContainerCount,
             /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*ContainerCount) UINT64 **ppContainerIdArray);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetContainerPath )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetContainerPath )(
             IDpxDownloadProvider * This,
             /* [in] */ UINT64 ContainerId,
             /* [out] */ __RPC__deref_out_opt LPWSTR *ContainerPath);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRanges )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetRanges )(
             IDpxDownloadProvider * This,
             /* [in] */ UINT64 ContainerId,
             /* [in] */ BOOL IncludeCompletedRanges,
             /* [out] */ __RPC__out UINT *RangeCount,
             /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*RangeCount) DPX_BYTE_RANGE **ppRangeArray);
-        
-        HRESULT ( STDMETHODCALLTYPE *Resume )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Resume )(
             IDpxDownloadProvider * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Suspend )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Suspend )(
             IDpxDownloadProvider * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Cancel )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Cancel )(
             IDpxDownloadProvider * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *WaitForCompletion )( 
+
+        HRESULT ( STDMETHODCALLTYPE *WaitForCompletion )(
             IDpxDownloadProvider * This,
             /* [in] */ DWORD TimeoutMilliseconds);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetProgress )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetProgress )(
             IDpxDownloadProvider * This,
             /* [out] */ __RPC__out DPX_PROGRESS_REMAIN *pDownloadProgress);
-        
-        HRESULT ( STDMETHODCALLTYPE *ClearRequest )( 
+
+        HRESULT ( STDMETHODCALLTYPE *ClearRequest )(
             IDpxDownloadProvider * This);
-        
-        /* [local] */ void ( STDMETHODCALLTYPE *FreeMemory )( 
+
+        /* [local] */ void ( STDMETHODCALLTYPE *FreeMemory )(
             IDpxDownloadProvider * This,
             /* [in] */ void *Allocation);
-        
+
         END_INTERFACE
     } IDpxDownloadProviderVtbl;
 
@@ -1052,62 +1052,62 @@ EXTERN_C const IID IID_IDpxDownloadProvider;
         CONST_VTBL struct IDpxDownloadProviderVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IDpxDownloadProvider_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IDpxDownloadProvider_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IDpxDownloadProvider_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IDpxDownloadProvider_SetProvideDataCallback(This,pProvideData)	\
-    ( (This)->lpVtbl -> SetProvideDataCallback(This,pProvideData) ) 
+    ( (This)->lpVtbl -> SetProvideDataCallback(This,pProvideData) )
 
 #define IDpxDownloadProvider_GetProvideDataCallback(This,ppProvideData)	\
-    ( (This)->lpVtbl -> GetProvideDataCallback(This,ppProvideData) ) 
+    ( (This)->lpVtbl -> GetProvideDataCallback(This,ppProvideData) )
 
 #define IDpxDownloadProvider_AddContainer(This,ContainerFilePath,ContainerId)	\
-    ( (This)->lpVtbl -> AddContainer(This,ContainerFilePath,ContainerId) ) 
+    ( (This)->lpVtbl -> AddContainer(This,ContainerFilePath,ContainerId) )
 
 #define IDpxDownloadProvider_AddRanges(This,ContainerId,RangeCount,RangeList)	\
-    ( (This)->lpVtbl -> AddRanges(This,ContainerId,RangeCount,RangeList) ) 
+    ( (This)->lpVtbl -> AddRanges(This,ContainerId,RangeCount,RangeList) )
 
 #define IDpxDownloadProvider_GetContainers(This,ContainerCount,ppContainerIdArray)	\
-    ( (This)->lpVtbl -> GetContainers(This,ContainerCount,ppContainerIdArray) ) 
+    ( (This)->lpVtbl -> GetContainers(This,ContainerCount,ppContainerIdArray) )
 
 #define IDpxDownloadProvider_GetContainerPath(This,ContainerId,ContainerPath)	\
-    ( (This)->lpVtbl -> GetContainerPath(This,ContainerId,ContainerPath) ) 
+    ( (This)->lpVtbl -> GetContainerPath(This,ContainerId,ContainerPath) )
 
 #define IDpxDownloadProvider_GetRanges(This,ContainerId,IncludeCompletedRanges,RangeCount,ppRangeArray)	\
-    ( (This)->lpVtbl -> GetRanges(This,ContainerId,IncludeCompletedRanges,RangeCount,ppRangeArray) ) 
+    ( (This)->lpVtbl -> GetRanges(This,ContainerId,IncludeCompletedRanges,RangeCount,ppRangeArray) )
 
 #define IDpxDownloadProvider_Resume(This)	\
-    ( (This)->lpVtbl -> Resume(This) ) 
+    ( (This)->lpVtbl -> Resume(This) )
 
 #define IDpxDownloadProvider_Suspend(This)	\
-    ( (This)->lpVtbl -> Suspend(This) ) 
+    ( (This)->lpVtbl -> Suspend(This) )
 
 #define IDpxDownloadProvider_Cancel(This)	\
-    ( (This)->lpVtbl -> Cancel(This) ) 
+    ( (This)->lpVtbl -> Cancel(This) )
 
 #define IDpxDownloadProvider_WaitForCompletion(This,TimeoutMilliseconds)	\
-    ( (This)->lpVtbl -> WaitForCompletion(This,TimeoutMilliseconds) ) 
+    ( (This)->lpVtbl -> WaitForCompletion(This,TimeoutMilliseconds) )
 
 #define IDpxDownloadProvider_GetProgress(This,pDownloadProgress)	\
-    ( (This)->lpVtbl -> GetProgress(This,pDownloadProgress) ) 
+    ( (This)->lpVtbl -> GetProgress(This,pDownloadProgress) )
 
 #define IDpxDownloadProvider_ClearRequest(This)	\
-    ( (This)->lpVtbl -> ClearRequest(This) ) 
+    ( (This)->lpVtbl -> ClearRequest(This) )
 
 #define IDpxDownloadProvider_FreeMemory(This,Allocation)	\
-    ( (This)->lpVtbl -> FreeMemory(This,Allocation) ) 
+    ( (This)->lpVtbl -> FreeMemory(This,Allocation) )
 
 #endif /* COBJMACROS */
 
@@ -1124,74 +1124,74 @@ EXTERN_C const IID IID_IDpxDownloadProvider;
 #define __IDpxDownloadCallback_INTERFACE_DEFINED__
 
 /* interface IDpxDownloadCallback */
-/* [nocode][unique][object][uuid] */ 
+/* [nocode][unique][object][uuid] */
 
 
 EXTERN_C const IID IID_IDpxDownloadCallback;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("ddc1b717-0e55-452f-838e-d1505b866e2b")
     IDpxDownloadCallback : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE ProvideRequestedData( 
+        virtual HRESULT STDMETHODCALLTYPE ProvideRequestedData(
             /* [in] */ UINT64 ContainerId,
             /* [in] */ UINT RangeCount,
             /* [size_is][in] */ __RPC__in_ecount_full(RangeCount) DPX_BYTE_RANGE RangeList[  ],
             /* [size_is][in] */ __RPC__in_ecount_full(RangeCount) const BYTE *RangeData[  ]) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE ProvideRequestedDataByFile( 
+
+        virtual HRESULT STDMETHODCALLTYPE ProvideRequestedDataByFile(
             /* [in] */ UINT64 ContainerId,
             /* [in] */ __RPC__in LPCWSTR ResponseFilePath,
             /* [in] */ UINT RangeCount,
             /* [size_is][in] */ __RPC__in_ecount_full(RangeCount) DPX_BYTE_RANGE RangeArray[  ],
             /* [size_is][in] */ __RPC__in_ecount_full(RangeCount) UINT64 OffsetInResponseFile[  ]) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE ProvideRequestedDataByPackedRangeFile( 
+
+        virtual HRESULT STDMETHODCALLTYPE ProvideRequestedDataByPackedRangeFile(
             /* [in] */ UINT64 ContainerId,
             /* [in] */ __RPC__in LPCWSTR ResponseFilePath) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IDpxDownloadCallbackVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IDpxDownloadCallback * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IDpxDownloadCallback * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IDpxDownloadCallback * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *ProvideRequestedData )( 
+
+        HRESULT ( STDMETHODCALLTYPE *ProvideRequestedData )(
             IDpxDownloadCallback * This,
             /* [in] */ UINT64 ContainerId,
             /* [in] */ UINT RangeCount,
             /* [size_is][in] */ __RPC__in_ecount_full(RangeCount) DPX_BYTE_RANGE RangeList[  ],
             /* [size_is][in] */ __RPC__in_ecount_full(RangeCount) const BYTE *RangeData[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *ProvideRequestedDataByFile )( 
+
+        HRESULT ( STDMETHODCALLTYPE *ProvideRequestedDataByFile )(
             IDpxDownloadCallback * This,
             /* [in] */ UINT64 ContainerId,
             /* [in] */ __RPC__in LPCWSTR ResponseFilePath,
             /* [in] */ UINT RangeCount,
             /* [size_is][in] */ __RPC__in_ecount_full(RangeCount) DPX_BYTE_RANGE RangeArray[  ],
             /* [size_is][in] */ __RPC__in_ecount_full(RangeCount) UINT64 OffsetInResponseFile[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *ProvideRequestedDataByPackedRangeFile )( 
+
+        HRESULT ( STDMETHODCALLTYPE *ProvideRequestedDataByPackedRangeFile )(
             IDpxDownloadCallback * This,
             /* [in] */ UINT64 ContainerId,
             /* [in] */ __RPC__in LPCWSTR ResponseFilePath);
-        
+
         END_INTERFACE
     } IDpxDownloadCallbackVtbl;
 
@@ -1200,29 +1200,29 @@ EXTERN_C const IID IID_IDpxDownloadCallback;
         CONST_VTBL struct IDpxDownloadCallbackVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IDpxDownloadCallback_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IDpxDownloadCallback_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IDpxDownloadCallback_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IDpxDownloadCallback_ProvideRequestedData(This,ContainerId,RangeCount,RangeList,RangeData)	\
-    ( (This)->lpVtbl -> ProvideRequestedData(This,ContainerId,RangeCount,RangeList,RangeData) ) 
+    ( (This)->lpVtbl -> ProvideRequestedData(This,ContainerId,RangeCount,RangeList,RangeData) )
 
 #define IDpxDownloadCallback_ProvideRequestedDataByFile(This,ContainerId,ResponseFilePath,RangeCount,RangeArray,OffsetInResponseFile)	\
-    ( (This)->lpVtbl -> ProvideRequestedDataByFile(This,ContainerId,ResponseFilePath,RangeCount,RangeArray,OffsetInResponseFile) ) 
+    ( (This)->lpVtbl -> ProvideRequestedDataByFile(This,ContainerId,ResponseFilePath,RangeCount,RangeArray,OffsetInResponseFile) )
 
 #define IDpxDownloadCallback_ProvideRequestedDataByPackedRangeFile(This,ContainerId,ResponseFilePath)	\
-    ( (This)->lpVtbl -> ProvideRequestedDataByPackedRangeFile(This,ContainerId,ResponseFilePath) ) 
+    ( (This)->lpVtbl -> ProvideRequestedDataByPackedRangeFile(This,ContainerId,ResponseFilePath) )
 
 #endif /* COBJMACROS */
 
@@ -1239,74 +1239,74 @@ EXTERN_C const IID IID_IDpxDownloadCallback;
 #define __IEnumDpxContainers_INTERFACE_DEFINED__
 
 /* interface IEnumDpxContainers */
-/* [nocode][unique][object][uuid] */ 
+/* [nocode][unique][object][uuid] */
 
 
 EXTERN_C const IID IID_IEnumDpxContainers;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("ddc1b722-0e55-452f-838e-d1505b866e2b")
     IEnumDpxContainers : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE Next( 
+        virtual HRESULT STDMETHODCALLTYPE Next(
             /* [in] */ UINT ItemCount,
             /* [length_is][size_is][out] */ __RPC__out_ecount_part(ItemCount, *pFetchedCount) IDpxContainer **ppContainers,
             /* [out] */ __RPC__out UINT *pFetchedCount) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Skip( 
+
+        virtual HRESULT STDMETHODCALLTYPE Skip(
             /* [in] */ UINT ItemCount) = 0;
-        
+
         virtual HRESULT STDMETHODCALLTYPE Reset( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Clone( 
+
+        virtual HRESULT STDMETHODCALLTYPE Clone(
             /* [out] */ __RPC__deref_out_opt IEnumDpxContainers **ppEnum) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetCount( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetCount(
             /* [out] */ __RPC__out UINT *pItemCount) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IEnumDpxContainersVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IEnumDpxContainers * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IEnumDpxContainers * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IEnumDpxContainers * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Next )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Next )(
             IEnumDpxContainers * This,
             /* [in] */ UINT ItemCount,
             /* [length_is][size_is][out] */ __RPC__out_ecount_part(ItemCount, *pFetchedCount) IDpxContainer **ppContainers,
             /* [out] */ __RPC__out UINT *pFetchedCount);
-        
-        HRESULT ( STDMETHODCALLTYPE *Skip )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Skip )(
             IEnumDpxContainers * This,
             /* [in] */ UINT ItemCount);
-        
-        HRESULT ( STDMETHODCALLTYPE *Reset )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Reset )(
             IEnumDpxContainers * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Clone )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Clone )(
             IEnumDpxContainers * This,
             /* [out] */ __RPC__deref_out_opt IEnumDpxContainers **ppEnum);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetCount )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetCount )(
             IEnumDpxContainers * This,
             /* [out] */ __RPC__out UINT *pItemCount);
-        
+
         END_INTERFACE
     } IEnumDpxContainersVtbl;
 
@@ -1315,35 +1315,35 @@ EXTERN_C const IID IID_IEnumDpxContainers;
         CONST_VTBL struct IEnumDpxContainersVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IEnumDpxContainers_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IEnumDpxContainers_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IEnumDpxContainers_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IEnumDpxContainers_Next(This,ItemCount,ppContainers,pFetchedCount)	\
-    ( (This)->lpVtbl -> Next(This,ItemCount,ppContainers,pFetchedCount) ) 
+    ( (This)->lpVtbl -> Next(This,ItemCount,ppContainers,pFetchedCount) )
 
 #define IEnumDpxContainers_Skip(This,ItemCount)	\
-    ( (This)->lpVtbl -> Skip(This,ItemCount) ) 
+    ( (This)->lpVtbl -> Skip(This,ItemCount) )
 
 #define IEnumDpxContainers_Reset(This)	\
-    ( (This)->lpVtbl -> Reset(This) ) 
+    ( (This)->lpVtbl -> Reset(This) )
 
 #define IEnumDpxContainers_Clone(This,ppEnum)	\
-    ( (This)->lpVtbl -> Clone(This,ppEnum) ) 
+    ( (This)->lpVtbl -> Clone(This,ppEnum) )
 
 #define IEnumDpxContainers_GetCount(This,pItemCount)	\
-    ( (This)->lpVtbl -> GetCount(This,pItemCount) ) 
+    ( (This)->lpVtbl -> GetCount(This,pItemCount) )
 
 #endif /* COBJMACROS */
 
@@ -1360,74 +1360,74 @@ EXTERN_C const IID IID_IEnumDpxContainers;
 #define __IEnumDpxFiles_INTERFACE_DEFINED__
 
 /* interface IEnumDpxFiles */
-/* [nocode][unique][object][uuid] */ 
+/* [nocode][unique][object][uuid] */
 
 
 EXTERN_C const IID IID_IEnumDpxFiles;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("ddc1b723-0e55-452f-838e-d1505b866e2b")
     IEnumDpxFiles : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE Next( 
+        virtual HRESULT STDMETHODCALLTYPE Next(
             /* [in] */ UINT ItemCount,
             /* [length_is][size_is][out] */ __RPC__out_ecount_part(ItemCount, *pFetchedCount) IDpxFile **ppFiles,
             /* [out] */ __RPC__out UINT *pFetchedCount) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Skip( 
+
+        virtual HRESULT STDMETHODCALLTYPE Skip(
             /* [in] */ UINT ItemCount) = 0;
-        
+
         virtual HRESULT STDMETHODCALLTYPE Reset( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Clone( 
+
+        virtual HRESULT STDMETHODCALLTYPE Clone(
             /* [out] */ __RPC__deref_out_opt IEnumDpxFiles **ppEnum) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetCount( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetCount(
             /* [out] */ __RPC__out UINT *pItemCount) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IEnumDpxFilesVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IEnumDpxFiles * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IEnumDpxFiles * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IEnumDpxFiles * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Next )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Next )(
             IEnumDpxFiles * This,
             /* [in] */ UINT ItemCount,
             /* [length_is][size_is][out] */ __RPC__out_ecount_part(ItemCount, *pFetchedCount) IDpxFile **ppFiles,
             /* [out] */ __RPC__out UINT *pFetchedCount);
-        
-        HRESULT ( STDMETHODCALLTYPE *Skip )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Skip )(
             IEnumDpxFiles * This,
             /* [in] */ UINT ItemCount);
-        
-        HRESULT ( STDMETHODCALLTYPE *Reset )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Reset )(
             IEnumDpxFiles * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Clone )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Clone )(
             IEnumDpxFiles * This,
             /* [out] */ __RPC__deref_out_opt IEnumDpxFiles **ppEnum);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetCount )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetCount )(
             IEnumDpxFiles * This,
             /* [out] */ __RPC__out UINT *pItemCount);
-        
+
         END_INTERFACE
     } IEnumDpxFilesVtbl;
 
@@ -1436,35 +1436,35 @@ EXTERN_C const IID IID_IEnumDpxFiles;
         CONST_VTBL struct IEnumDpxFilesVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IEnumDpxFiles_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IEnumDpxFiles_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IEnumDpxFiles_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IEnumDpxFiles_Next(This,ItemCount,ppFiles,pFetchedCount)	\
-    ( (This)->lpVtbl -> Next(This,ItemCount,ppFiles,pFetchedCount) ) 
+    ( (This)->lpVtbl -> Next(This,ItemCount,ppFiles,pFetchedCount) )
 
 #define IEnumDpxFiles_Skip(This,ItemCount)	\
-    ( (This)->lpVtbl -> Skip(This,ItemCount) ) 
+    ( (This)->lpVtbl -> Skip(This,ItemCount) )
 
 #define IEnumDpxFiles_Reset(This)	\
-    ( (This)->lpVtbl -> Reset(This) ) 
+    ( (This)->lpVtbl -> Reset(This) )
 
 #define IEnumDpxFiles_Clone(This,ppEnum)	\
-    ( (This)->lpVtbl -> Clone(This,ppEnum) ) 
+    ( (This)->lpVtbl -> Clone(This,ppEnum) )
 
 #define IEnumDpxFiles_GetCount(This,pItemCount)	\
-    ( (This)->lpVtbl -> GetCount(This,pItemCount) ) 
+    ( (This)->lpVtbl -> GetCount(This,pItemCount) )
 
 #endif /* COBJMACROS */
 
@@ -1481,74 +1481,74 @@ EXTERN_C const IID IID_IEnumDpxFiles;
 #define __IEnumDpxContainerDirectoryEntries_INTERFACE_DEFINED__
 
 /* interface IEnumDpxContainerDirectoryEntries */
-/* [nocode][unique][object][uuid] */ 
+/* [nocode][unique][object][uuid] */
 
 
 EXTERN_C const IID IID_IEnumDpxContainerDirectoryEntries;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("ddc1b725-0e55-452f-838e-d1505b866e2b")
     IEnumDpxContainerDirectoryEntries : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE Next( 
+        virtual HRESULT STDMETHODCALLTYPE Next(
             /* [in] */ UINT ItemCount,
             /* [length_is][size_is][out] */ __RPC__out_ecount_part(ItemCount, *pFetchedCount) IDpxContainerDirectoryEntry **ppDirectoryEntries,
             /* [out] */ __RPC__out UINT *pFetchedCount) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Skip( 
+
+        virtual HRESULT STDMETHODCALLTYPE Skip(
             /* [in] */ UINT ItemCount) = 0;
-        
+
         virtual HRESULT STDMETHODCALLTYPE Reset( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Clone( 
+
+        virtual HRESULT STDMETHODCALLTYPE Clone(
             /* [out] */ __RPC__deref_out_opt IEnumDpxContainerDirectoryEntries **ppEnum) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetCount( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetCount(
             /* [out] */ __RPC__out UINT *pItemCount) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IEnumDpxContainerDirectoryEntriesVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IEnumDpxContainerDirectoryEntries * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IEnumDpxContainerDirectoryEntries * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IEnumDpxContainerDirectoryEntries * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Next )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Next )(
             IEnumDpxContainerDirectoryEntries * This,
             /* [in] */ UINT ItemCount,
             /* [length_is][size_is][out] */ __RPC__out_ecount_part(ItemCount, *pFetchedCount) IDpxContainerDirectoryEntry **ppDirectoryEntries,
             /* [out] */ __RPC__out UINT *pFetchedCount);
-        
-        HRESULT ( STDMETHODCALLTYPE *Skip )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Skip )(
             IEnumDpxContainerDirectoryEntries * This,
             /* [in] */ UINT ItemCount);
-        
-        HRESULT ( STDMETHODCALLTYPE *Reset )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Reset )(
             IEnumDpxContainerDirectoryEntries * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Clone )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Clone )(
             IEnumDpxContainerDirectoryEntries * This,
             /* [out] */ __RPC__deref_out_opt IEnumDpxContainerDirectoryEntries **ppEnum);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetCount )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetCount )(
             IEnumDpxContainerDirectoryEntries * This,
             /* [out] */ __RPC__out UINT *pItemCount);
-        
+
         END_INTERFACE
     } IEnumDpxContainerDirectoryEntriesVtbl;
 
@@ -1557,35 +1557,35 @@ EXTERN_C const IID IID_IEnumDpxContainerDirectoryEntries;
         CONST_VTBL struct IEnumDpxContainerDirectoryEntriesVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IEnumDpxContainerDirectoryEntries_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IEnumDpxContainerDirectoryEntries_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IEnumDpxContainerDirectoryEntries_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IEnumDpxContainerDirectoryEntries_Next(This,ItemCount,ppDirectoryEntries,pFetchedCount)	\
-    ( (This)->lpVtbl -> Next(This,ItemCount,ppDirectoryEntries,pFetchedCount) ) 
+    ( (This)->lpVtbl -> Next(This,ItemCount,ppDirectoryEntries,pFetchedCount) )
 
 #define IEnumDpxContainerDirectoryEntries_Skip(This,ItemCount)	\
-    ( (This)->lpVtbl -> Skip(This,ItemCount) ) 
+    ( (This)->lpVtbl -> Skip(This,ItemCount) )
 
 #define IEnumDpxContainerDirectoryEntries_Reset(This)	\
-    ( (This)->lpVtbl -> Reset(This) ) 
+    ( (This)->lpVtbl -> Reset(This) )
 
 #define IEnumDpxContainerDirectoryEntries_Clone(This,ppEnum)	\
-    ( (This)->lpVtbl -> Clone(This,ppEnum) ) 
+    ( (This)->lpVtbl -> Clone(This,ppEnum) )
 
 #define IEnumDpxContainerDirectoryEntries_GetCount(This,pItemCount)	\
-    ( (This)->lpVtbl -> GetCount(This,pItemCount) ) 
+    ( (This)->lpVtbl -> GetCount(This,pItemCount) )
 
 #endif /* COBJMACROS */
 
@@ -1607,6 +1607,3 @@ EXTERN_C const IID IID_IEnumDpxContainerDirectoryEntries;
 #endif
 
 #endif
-
-
-

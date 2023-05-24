@@ -83,10 +83,10 @@ extern "C" {
 // Observant readers may notice that 2 new fields,
 // 'fReadOnly' and 'Version' have been added to
 // the LOADED_IMAGE structure after 'fDOSImage'.
-// This does not change the size of the structure 
-// from previous headers.  That is because while 
-// 'fDOSImage' is a byte, it is padded by the 
-// compiler to 4 bytes.  So the 2 new fields are 
+// This does not change the size of the structure
+// from previous headers.  That is because while
+// 'fDOSImage' is a byte, it is padded by the
+// compiler to 4 bytes.  So the 2 new fields are
 // slipped into the extra space.
 
 typedef struct _LOADED_IMAGE {
@@ -567,7 +567,7 @@ SymFindExecutableImage(
     __in PFIND_EXE_FILE_CALLBACK Callback,
     __in PVOID CallerData
     );
-    
+
 typedef BOOL
 (CALLBACK *PFIND_EXE_FILE_CALLBACKW)(
     __in HANDLE FileHandle,
@@ -806,7 +806,7 @@ IMAGEAPI
 WINAPI
 UnDecorateSymbolName(
     __in PCSTR name,
-    __out_ecount(maxStringLength) PSTR outputString,    
+    __out_ecount(maxStringLength) PSTR outputString,
     __in DWORD maxStringLength,
     __in DWORD flags
     );
@@ -816,7 +816,7 @@ IMAGEAPI
 WINAPI
 UnDecorateSymbolNameW(
     __in PCWSTR name,
-    __out_ecount(maxStringLength) PWSTR outputString,   
+    __out_ecount(maxStringLength) PWSTR outputString,
     __in DWORD maxStringLength,
     __in DWORD flags
     );
@@ -1413,7 +1413,7 @@ enum SymTagEnum
 // this resets SymNext/Prev to the beginning
 // of the module passed in the address field
 
-#define SYMFLAG_RESET            0x80000000  
+#define SYMFLAG_RESET            0x80000000
 
 //
 // symbol type enumeration
@@ -1951,7 +1951,7 @@ EnumerateLoadedModules64(
     __in PENUMLOADED_MODULES_CALLBACK64 EnumLoadedModulesCallback,
     __in_opt PVOID UserContext
     );
-    
+
 BOOL
 IMAGEAPI
 EnumerateLoadedModulesW64(
@@ -3095,7 +3095,7 @@ SymSrvGetFileIndexStringW(
     __in_opt PCWSTR SrvPath,
     __in PCWSTR File,
     __out_ecount(Size) PWSTR Index,
-    __in size_t Size,                                                                        
+    __in size_t Size,
     __in DWORD Flags
     );
 
@@ -3365,7 +3365,7 @@ typedef BOOL (CALLBACK WINAPI *PSYMBOLSERVERMESSAGEPROC)(UINT_PTR action, ULONG6
 #define SSRVOPT_PROXYW              0x040000
 #define SSRVOPT_MESSAGE             0x080000
 #define SSRVOPT_SERVICE             0x100000   // deprecated
-#define SSRVOPT_FAVOR_COMPRESSED    0x200000  
+#define SSRVOPT_FAVOR_COMPRESSED    0x200000
 
 #define SSRVOPT_MAX                 0x40000
 
@@ -3447,7 +3447,7 @@ typedef BOOL (CALLBACK WINAPI *PSYMBOLSERVERMESSAGEPROC)(UINT_PTR action, ULONG6
  #define SymGetSymbolFile                  SymGetSymbolFileW
  #define EnumerateLoadedModules64      EnumerateLoadedModulesW64
  #define SymSrvGetFileIndexInfo            SymSrvGetFileIndexInfoW
- 
+
  #define IMAGEHLP_LINE64                   IMAGEHLP_LINEW64
  #define PIMAGEHLP_LINE64                  PIMAGEHLP_LINEW64
  #define SYMBOL_INFO                       SYMBOL_INFOW
@@ -3702,7 +3702,7 @@ SymGetSymPrevW(
 #define IMAGEHLP_SYMBOL_INFO_TLSRELATIVE           SYMF_TLSREL          // 0x4000
 
 
-#include <pshpack4.h>
+#include <PshPack4.h>
 
 #if defined(_MSC_VER)
 #if _MSC_VER >= 800
@@ -3760,7 +3760,7 @@ typedef struct _MINIDUMP_HEADER {
 } MINIDUMP_HEADER, *PMINIDUMP_HEADER;
 
 //
-// The MINIDUMP_HEADER field StreamDirectoryRva points to 
+// The MINIDUMP_HEADER field StreamDirectoryRva points to
 // an array of MINIDUMP_DIRECTORY structures.
 //
 
@@ -3812,12 +3812,12 @@ typedef enum _MINIDUMP_STREAM_TYPE {
     ceStreamException           = 0x8002,
     ceStreamModuleList          = 0x8003,
     ceStreamProcessList         = 0x8004,
-    ceStreamThreadList          = 0x8005, 
+    ceStreamThreadList          = 0x8005,
     ceStreamThreadContextList   = 0x8006,
     ceStreamThreadCallStackList = 0x8007,
     ceStreamMemoryVirtualList   = 0x8008,
     ceStreamMemoryPhysicalList  = 0x8009,
-    ceStreamBucketParameters    = 0x800A,     
+    ceStreamBucketParameters    = 0x800A,
 
     LastReservedStream          = 0xffff
 
@@ -3827,7 +3827,7 @@ typedef enum _MINIDUMP_STREAM_TYPE {
 //
 // The minidump system information contains processor and
 // Operating System specific information.
-// 
+//
 
 //
 // CPU information is obtained from one of two places.
@@ -3845,34 +3845,34 @@ typedef union _CPU_INFORMATION {
     //
     // X86 platforms use CPUID function to obtain processor information.
     //
-    
+
     struct {
 
         //
         // CPUID Subfunction 0, register EAX (VendorId [0]),
         // EBX (VendorId [1]) and ECX (VendorId [2]).
         //
-        
+
         ULONG32 VendorId [ 3 ];
-        
+
         //
         // CPUID Subfunction 1, register EAX
         //
-        
+
         ULONG32 VersionInformation;
 
         //
         // CPUID Subfunction 1, register EDX
         //
-        
+
         ULONG32 FeatureInformation;
-        
+
 
         //
         // CPUID, Subfunction 80000001, register EBX. This will only
         // be obtained if the vendor id is "AuthenticAMD".
         //
-        
+
         ULONG32 AMDExtendedCpuFeatures;
 
     } X86CpuInfo;
@@ -3880,22 +3880,22 @@ typedef union _CPU_INFORMATION {
     //
     // Non-x86 platforms use processor feature flags.
     //
-    
+
     struct {
 
         ULONG64 ProcessorFeatures [ 2 ];
-        
+
     } OtherCpuInfo;
 
 } CPU_INFORMATION, *PCPU_INFORMATION;
-        
+
 typedef struct _MINIDUMP_SYSTEM_INFO {
 
     //
     // ProcessorArchitecture, ProcessorLevel and ProcessorRevision are all
     // taken from the SYSTEM_INFO structure obtained by GetSystemInfo( ).
     //
-    
+
     USHORT ProcessorArchitecture;
     USHORT ProcessorLevel;
     USHORT ProcessorRevision;
@@ -3913,7 +3913,7 @@ typedef struct _MINIDUMP_SYSTEM_INFO {
     // CSDVersion are all taken from the OSVERSIONINFO structure
     // returned by GetVersionEx( ).
     //
-    
+
     ULONG32 MajorVersion;
     ULONG32 MinorVersion;
     ULONG32 BuildNumber;
@@ -3922,7 +3922,7 @@ typedef struct _MINIDUMP_SYSTEM_INFO {
     //
     // RVA to a CSDVersion string in the string table.
     //
-    
+
     RVA CSDVersionRva;
 
     union {
@@ -3940,7 +3940,7 @@ typedef struct _MINIDUMP_SYSTEM_INFO {
 
 //
 // The minidump thread contains standard thread
-// information plus an RVA to the memory for this 
+// information plus an RVA to the memory for this
 // thread and an RVA to the CONTEXT structure for
 // this thread.
 //
@@ -4041,7 +4041,7 @@ typedef struct _MINIDUMP_MODULE {
     MINIDUMP_LOCATION_DESCRIPTOR MiscRecord;
     ULONG64 Reserved0;                          // Reserved for future use.
     ULONG64 Reserved1;                          // Reserved for future use.
-} MINIDUMP_MODULE, *PMINIDUMP_MODULE;   
+} MINIDUMP_MODULE, *PMINIDUMP_MODULE;
 
 
 //
@@ -4274,7 +4274,7 @@ typedef struct _MINIDUMP_MEMORY_INFO_LIST {
     ULONG64 NumberOfEntries;
 } MINIDUMP_MEMORY_INFO_LIST, *PMINIDUMP_MEMORY_INFO_LIST;
 
-    
+
 //
 // The memory information stream contains memory region
 // description information.  This stream corresponds to
@@ -4401,7 +4401,7 @@ typedef struct _MINIDUMP_MODULE_CALLBACK {
     ULONG CheckSum;
     ULONG TimeDateStamp;
     VS_FIXEDFILEINFO VersionInfo;
-    PVOID CvRecord; 
+    PVOID CvRecord;
     ULONG SizeOfCvRecord;
     PVOID MiscRecord;
     ULONG SizeOfMiscRecord;
@@ -4480,7 +4480,7 @@ typedef struct _MINIDUMP_CALLBACK_OUTPUT {
     };
 } MINIDUMP_CALLBACK_OUTPUT, *PMINIDUMP_CALLBACK_OUTPUT;
 
-        
+
 //
 // A normal minidump contains just the information
 // necessary to capture stack traces for all of the
@@ -4574,7 +4574,7 @@ typedef enum _MINIDUMP_TYPE {
     MiniDumpWithCodeSegs                   = 0x00002000,
     MiniDumpWithoutAuxiliaryState          = 0x00004000,
     MiniDumpWithFullAuxiliaryState         = 0x00008000,
-    
+
     MiniDumpValidTypeFlags                 = 0x0000ffff,
 } MINIDUMP_TYPE;
 
@@ -4588,7 +4588,7 @@ typedef enum _MINIDUMP_TYPE {
 // query that retrieves processor power information for
 // MINIDUMP_MISC_INFO.
 //
-    
+
 typedef enum _MINIDUMP_SECONDARY_FLAGS {
     MiniSecondaryWithoutPowerInfo = 0x00000001,
 
@@ -4677,7 +4677,7 @@ MiniDumpReadDumpStream(
 #endif
 #endif
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #ifdef __cplusplus
 }
@@ -4685,4 +4685,3 @@ MiniDumpReadDumpStream(
 
 
 #endif // _IMAGEHLP_
-

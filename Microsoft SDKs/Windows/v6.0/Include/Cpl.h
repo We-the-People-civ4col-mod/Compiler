@@ -25,10 +25,10 @@
 *
 */
 #ifndef _INC_CPL
-#define _INC_CPL 
+#define _INC_CPL
 
 
-#include <pshpack1.h>   /* Assume byte packing throughout */
+#include <PshPack1.h>   /* Assume byte packing throughout */
 
 #ifdef __cplusplus
 extern "C" {            /* Assume C declarations for C++ */
@@ -185,8 +185,6 @@ typedef LPNEWCPLINFOA LPNEWCPLINFO;
 }
 #endif    /* __cplusplus */
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #endif  /* _INC_CPL */
-
-

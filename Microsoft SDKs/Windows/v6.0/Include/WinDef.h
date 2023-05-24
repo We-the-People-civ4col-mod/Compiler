@@ -174,7 +174,7 @@ typedef unsigned int        UINT;
 typedef unsigned int        *PUINT;
 
 #ifndef NT_INCLUDED
-#include <winnt.h>
+#include <WinNT.h>
 #endif /* NT_INCLUDED */
 
 #include <specstrings.h>
@@ -414,5 +414,3 @@ typedef struct _FILETIME {
 #endif
 
 #endif /* _WINDEF_ */
-
-

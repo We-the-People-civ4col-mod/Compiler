@@ -61,13 +61,13 @@ cpp_quote("// SHITEMID -- Item ID  (mkid)")
 cpp_quote("//     USHORT      cb;             // Size of the ID (including cb itself)")
 cpp_quote("//     BYTE        abID[];         // The item ID (variable length)")
 cpp_quote("//")
-cpp_quote("#include <pshpack1.h>")
+cpp_quote("#include <PshPack1.h>")
 typedef struct _SHITEMID
 {
     USHORT      cb;
     BYTE        abID[];
 } SHITEMID;
-cpp_quote("#include <poppack.h>")
+cpp_quote("#include <PopPack.h>")
 
 cpp_quote("#if defined(_M_IX86)")
 cpp_quote("#define __unaligned")
@@ -80,7 +80,7 @@ typedef const SHITEMID __unaligned *LPCSHITEMID;
 cpp_quote("//")
 cpp_quote("// ITEMIDLIST -- List if item IDs (combined with 0-terminator)")
 cpp_quote("//")
-cpp_quote("#include <pshpack1.h>")
+cpp_quote("#include <PshPack1.h>")
 
 // variable count list of contiguous SHITEMIDs
 // terminated with a zero-length SHITEMID
@@ -118,7 +118,7 @@ typedef ITEMIDLIST ITEMIDLIST_ABSOLUTE;
 
 cpp_quote("#endif // defined(STRICT_TYPED_ITEMIDS) && defined(__cplusplus)")
 
-cpp_quote("#include <poppack.h>")
+cpp_quote("#include <PopPack.h>")
 
 typedef [unique] BYTE_BLOB * wirePIDL;
 typedef [wire_marshal(wirePIDL)] ITEMIDLIST __unaligned * LPITEMIDLIST;
@@ -233,7 +233,7 @@ cpp_quote("#pragma warning(disable:4201) /* nonstandard extension used : nameles
 cpp_quote("#pragma once")
 cpp_quote("#endif")
 
-cpp_quote("#include <pshpack8.h>")
+cpp_quote("#include <PshPack8.h>")
 typedef struct _STRRET
 {
     UINT uType;
@@ -244,7 +244,7 @@ typedef struct _STRRET
     [case(STRRET_CSTR)]            char      cStr[MAX_PATH];
     } DUMMYUNIONNAME;
 } STRRET;
-cpp_quote("#include <poppack.h>")
+cpp_quote("#include <PopPack.h>")
 
 cpp_quote("#if defined(_MSC_VER) && (_MSC_VER >= 1200)")
 cpp_quote("#pragma warning(pop)")
@@ -265,14 +265,14 @@ cpp_quote("//  fmt;            // LVCFMT_* value (header only)")
 cpp_quote("//  cxChar;         // Number of 'average' characters (header only)")
 cpp_quote("//  str;            // String information")
 cpp_quote("//")
-cpp_quote("#include <pshpack1.h>")
+cpp_quote("#include <PshPack1.h>")
 typedef struct _SHELLDETAILS
 {
     int     fmt;            // LVCFMT_* value (header only)
     int     cxChar;         // Number of "average" characters (header only)
     STRRET  str;            // String information
 } SHELLDETAILS, *LPSHELLDETAILS;
-cpp_quote("#include <poppack.h>")
+cpp_quote("#include <PopPack.h>")
 
 cpp_quote("")
 cpp_quote("#if (_WIN32_IE >= _WIN32_IE_IE60SP2)")
@@ -371,7 +371,7 @@ cpp_quote("#define REFTASKOWNERID const TASKOWNERID * __MIDL_CONST")
 cpp_quote("#endif // __cplusplus")
 
 cpp_quote( "#ifndef LF_FACESIZE")
-// Logical Font 
+// Logical Font
 #define LF_FACESIZE         32
 
 typedef struct tagLOGFONTA
@@ -444,6 +444,3 @@ typedef DWORD SHCOLSTATEF;
 
 typedef PROPERTYKEY SHCOLUMNID;
 typedef const SHCOLUMNID* LPCSHCOLUMNID;
-
-
-

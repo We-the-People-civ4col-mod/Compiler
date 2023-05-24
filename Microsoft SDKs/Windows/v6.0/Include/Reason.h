@@ -3,7 +3,7 @@
 //  Microsoft Windows
 //  Copyright (c) Microsoft Corporation. All rights reserved.
 //
-//  File:        reason.h
+//  File:        Reason.h
 //
 //  Contents:    Shutdown reason code values.
 //
@@ -60,7 +60,7 @@
 #define SHTDN_REASON_MINOR_SECURITYFIX          0x00000012
 #define SHTDN_REASON_MINOR_SECURITY             0x00000013
 #define SHTDN_REASON_MINOR_NETWORK_CONNECTIVITY 0x00000014
-#define SHTDN_REASON_MINOR_WMI                  0x00000015 
+#define SHTDN_REASON_MINOR_WMI                  0x00000015
 #define SHTDN_REASON_MINOR_SERVICEPACK_UNINSTALL 0x00000016
 #define SHTDN_REASON_MINOR_HOTFIX_UNINSTALL     0x00000017
 #define SHTDN_REASON_MINOR_SECURITYFIX_UNINSTALL 0x00000018
@@ -115,4 +115,3 @@
 #define MAX_NUM_REASONS 256
 
 #endif // !defined SENTINEL_Reason
-

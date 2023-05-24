@@ -37,12 +37,12 @@ extern "C" {
 #define __RPC_MAC__
 // Set the packing level for RPC structures.
 
-#include <pshpack2.h>
+#include <PshPack2.h>
 
 //-------------------  WIN32 ---------------------------
 #else // win32 platforms
 
-#include <basetsd.h>
+#include <BaseTsd.h>
 
 #if defined(_M_IA64) || defined(_M_AMD64)
 #define __RPC_WIN64__
@@ -53,7 +53,7 @@ extern "C" {
 #endif
 
 #if defined(__RPC_WIN64__)
-#include <pshpack8.h>
+#include <PshPack8.h>
 #endif
 
 #ifndef __MIDL_USER_DEFINED
@@ -136,7 +136,7 @@ RpcMacSetYieldInfo(
 #define UNALIGNED
 #endif
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #else // __RPC_MAC__
 
@@ -195,7 +195,7 @@ RpcMacSetYieldInfo(
 #endif // RPC_NO_WINDOWS_H
 
 #if defined(__RPC_WIN64__)
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 #ifdef __cplusplus
@@ -203,5 +203,3 @@ RpcMacSetYieldInfo(
 #endif
 
 #endif // __RPC_H__
-
-

@@ -7,8 +7,8 @@
 /* Compiler settings for shtypes.idl:
     Oicf, W1, Zp8, env=Win32 (32b run)
     protocol : dce , ms_ext, c_ext, robust
-    error checks: allocation ref bounds_check enum stub_data 
-    VC __declspec() decoration level: 
+    error checks: allocation ref bounds_check enum stub_data
+    VC __declspec() decoration level:
          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
          DECLSPEC_UUID(), MIDL_INTERFACE()
 */
@@ -42,18 +42,18 @@
 #pragma once
 #endif
 
-/* Forward Declarations */ 
+/* Forward Declarations */
 
 /* header files for imported files */
 #include "wtypes.h"
 
 #ifdef __cplusplus
 extern "C"{
-#endif 
+#endif
 
 
 /* interface __MIDL_itf_shtypes_0000_0000 */
-/* [local] */ 
+/* [local] */
 
 //+-------------------------------------------------------------------------
 //
@@ -100,14 +100,14 @@ extern "C"{
 //     USHORT      cb;             // Size of the ID (including cb itself)
 //     BYTE        abID[];         // The item ID (variable length)
 //
-#include <pshpack1.h>
+#include <PshPack1.h>
 typedef struct _SHITEMID
     {
     USHORT cb;
     BYTE abID[ 1 ];
     } 	SHITEMID;
 
-#include <poppack.h>
+#include <PopPack.h>
 #if defined(_M_IX86)
 #define __unaligned
 #endif // __unaligned
@@ -118,7 +118,7 @@ typedef const SHITEMID __unaligned *LPCSHITEMID;
 //
 // ITEMIDLIST -- List if item IDs (combined with 0-terminator)
 //
-#include <pshpack1.h>
+#include <PshPack1.h>
 typedef struct _ITEMIDLIST
     {
     SHITEMID mkid;
@@ -136,7 +136,7 @@ typedef ITEMIDLIST ITEMID_CHILD;
 typedef ITEMIDLIST ITEMIDLIST_ABSOLUTE;
 
 #endif // defined(STRICT_TYPED_ITEMIDS) && defined(__cplusplus)
-#include <poppack.h>
+#include <PopPack.h>
 typedef /* [unique] */  __RPC_unique_pointer BYTE_BLOB *wirePIDL;
 
 typedef /* [wire_marshal] */ ITEMIDLIST __unaligned *LPITEMIDLIST;
@@ -237,12 +237,12 @@ typedef struct _WIN32_FIND_DATAW *LPWIN32_FIND_DATAW;
 //
 //-------------------------------------------------------------------------
 //
-//  uType indicate which union member to use 
+//  uType indicate which union member to use
 //    STRRET_WSTR    Use STRRET.pOleStr     must be freed by caller of GetDisplayNameOf
-//    STRRET_OFFSET  Use STRRET.uOffset     Offset into SHITEMID for ANSI string 
+//    STRRET_OFFSET  Use STRRET.uOffset     Offset into SHITEMID for ANSI string
 //    STRRET_CSTR    Use STRRET.cStr        ANSI Buffer
 //
-typedef /* [v1_enum] */ 
+typedef /* [v1_enum] */
 enum tagSTRRET_TYPE
     {	STRRET_WSTR	= 0,
 	STRRET_OFFSET	= 0x1,
@@ -254,11 +254,11 @@ enum tagSTRRET_TYPE
 #pragma warning(disable:4201) /* nonstandard extension used : nameless struct/union */
 #pragma once
 #endif
-#include <pshpack8.h>
+#include <PshPack8.h>
 typedef struct _STRRET
     {
     UINT uType;
-    union 
+    union
         {
         LPWSTR pOleStr;
         UINT uOffset;
@@ -266,7 +266,7 @@ typedef struct _STRRET
         } 	DUMMYUNIONNAME;
     } 	STRRET;
 
-#include <poppack.h>
+#include <PopPack.h>
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma warning(pop)
 #endif
@@ -284,7 +284,7 @@ typedef STRRET *LPSTRRET;
 //  cxChar;         // Number of 'average' characters (header only)
 //  str;            // String information
 //
-#include <pshpack1.h>
+#include <PshPack1.h>
 typedef struct _SHELLDETAILS
     {
     int fmt;
@@ -294,10 +294,10 @@ typedef struct _SHELLDETAILS
 
 typedef struct _SHELLDETAILS *LPSHELLDETAILS;
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #if (_WIN32_IE >= _WIN32_IE_IE60SP2)
-typedef /* [v1_enum] */ 
+typedef /* [v1_enum] */
 enum tagPERCEIVED
     {	PERCEIVED_TYPE_FIRST	= -3,
 	PERCEIVED_TYPE_CUSTOM	= -3,
@@ -420,7 +420,7 @@ typedef struct tagLOGFONTW
 typedef LOGFONTA LOGFONT;
 
 #endif // LF_FACESIZE
-typedef /* [v1_enum] */ 
+typedef /* [v1_enum] */
 enum tagSHCOLSTATE
     {	SHCOLSTATE_TYPE_STR	= 0x1,
 	SHCOLSTATE_TYPE_INT	= 0x2,
@@ -463,6 +463,3 @@ extern RPC_IF_HANDLE __MIDL_itf_shtypes_0000_0000_v0_0_s_ifspec;
 #endif
 
 #endif
-
-
-

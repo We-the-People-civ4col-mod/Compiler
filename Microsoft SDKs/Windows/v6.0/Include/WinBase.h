@@ -12853,7 +12853,7 @@ GetProductInfo(
 // API functions.
 //
 
-#include <winerror.h>
+#include <WinError.h>
 
 /* Abnormal termination codes */
 
@@ -14039,5 +14039,3 @@ QueryActCtxSettingsW(
 
 
 #endif // _WINBASE_
-
-

@@ -1,12 +1,12 @@
 //$TAG BIZDEV
-//  $IPCategory:     
+//  $IPCategory:
 //  $DealPointID:    8269
 //  $AgreementName:  software license agreement
 //  $AgreementType:  inbound license
 //  $ExternalOrigin: boris nikolaus
 //$ENDTAG
 
-//$TAG ENGR 
+//$TAG ENGR
 //  $Owner:    georgema
 //  $Module:   enduser_published
 //
@@ -18,7 +18,7 @@
 #ifndef __MS_ASN1_H__
 #define __MS_ASN1_H__
 
-#include <pshpack8.h> /* Assume 8 byte packing throughout */
+#include <PshPack8.h> /* Assume 8 byte packing throughout */
 
 #ifdef __cplusplus
 extern "C" {
@@ -777,7 +777,6 @@ extern ASN1_PUBLIC void ASN1API ASN1characterstring_free(ASN1characterstring_t *
 }
 #endif
 
-#include <poppack.h> /* End 8-byte packing */
+#include <PopPack.h> /* End 8-byte packing */
 
 #endif // __MS_ASN1_H__
-

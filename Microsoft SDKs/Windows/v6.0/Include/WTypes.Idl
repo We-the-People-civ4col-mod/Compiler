@@ -22,7 +22,7 @@ cpp_quote("#endif")
 //
 // Import definitions of the base types related to the 64b porting effort.
 //
-import "basetsd.h";
+import "BaseTsd.h";
 import "guiddef.h";
 
 [ uuid(D3980A60-910C-1068-9341-00DD010F2F1C),
@@ -205,7 +205,7 @@ cpp_quote("#endif // !_LPCOLORREF_DEFINED")
 
 typedef HANDLE *LPHANDLE;
 
-//typedefs for remotable types from wingdi.h
+//typedefs for remotable types from WinGDI.h
 
 typedef struct _RECTL
 {
@@ -610,7 +610,7 @@ cpp_quote("    CLSCTX_ENABLE_CLOAKING | \\")
 cpp_quote("    CLSCTX_ACTIVATE_SBX_SANDBOX | \\")
 #endif
 cpp_quote("    CLSCTX_PS_DLL)")
- 
+
 // marshaling flags; passed to CoMarshalInterface
 typedef enum tagMSHLFLAGS
 {
@@ -1275,7 +1275,7 @@ enum VARENUM
 // VBA reserves 32-35 for future use
     VT_RECORD          = 36,
 	VT_INT_PTR         = 37,
-	VT_UINT_PTR        = 38,	
+	VT_UINT_PTR        = 38,
 
     VT_FILETIME        = 64,
     VT_BLOB            = 65,
@@ -1401,4 +1401,3 @@ cpp_quote( "#endif" )
             GUID     PolicyId;
             } ByObjectId;
     } uCLSSPEC;
-

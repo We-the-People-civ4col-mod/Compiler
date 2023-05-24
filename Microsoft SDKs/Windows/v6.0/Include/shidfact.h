@@ -239,7 +239,7 @@ private:
     // ItemID form is derived from the delegate folder verison, this allows us to easily
     // switch allocators without having to recompute the ItemID structure dynamically.
 
-    #include <pshpack1.h>
+    #include <PshPack1.h>
     typedef struct              // typedef struct
     {                           // {
         // these need to line up -----------------------
@@ -252,7 +252,7 @@ private:
         WORD cbInnerData;                                   // size of the innerData structure
         T innerData;                                        // inner data returned by the client
     } CHILDITEMID;
-    #include <poppack.h>
+    #include <PopPack.h>
 
     typedef UNALIGNED CHILDITEMID * PITEM;
     typedef const UNALIGNED CHILDITEMID * PCITEM;
@@ -316,4 +316,3 @@ private:
 #endif  // __cplusplus
 
 #endif  // _INC_SHIDFACT
-

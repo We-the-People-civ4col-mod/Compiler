@@ -7,8 +7,8 @@
 /* Compiler settings for wtypes.idl:
     Oicf, W1, Zp8, env=Win32 (32b run)
     protocol : dce , ms_ext, c_ext, robust
-    error checks: allocation ref bounds_check enum stub_data 
-    VC __declspec() decoration level: 
+    error checks: allocation ref bounds_check enum stub_data
+    VC __declspec() decoration level:
          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
          DECLSPEC_UUID(), MIDL_INTERFACE()
 */
@@ -42,19 +42,19 @@
 #pragma once
 #endif
 
-/* Forward Declarations */ 
+/* Forward Declarations */
 
 /* header files for imported files */
-#include "basetsd.h"
+#include "BaseTsd.h"
 #include "guiddef.h"
 
 #ifdef __cplusplus
 extern "C"{
-#endif 
+#endif
 
 
 /* interface __MIDL_itf_wtypes_0000_0000 */
-/* [local] */ 
+/* [local] */
 
 //+-------------------------------------------------------------------------
 //
@@ -74,7 +74,7 @@ extern RPC_IF_HANDLE __MIDL_itf_wtypes_0000_0000_v0_0_s_ifspec;
 #define __IWinTypes_INTERFACE_DEFINED__
 
 /* interface IWinTypes */
-/* [unique][version][uuid] */ 
+/* [unique][version][uuid] */
 
 typedef struct tagRemHGLOBAL
     {
@@ -553,7 +553,7 @@ typedef CLSID *REFCLSID;
 typedef FMTID *REFFMTID;
 
 #endif // 0
-typedef 
+typedef
 enum tagMEMCTX
     {	MEMCTX_TASK	= 1,
 	MEMCTX_SHARED	= 2,
@@ -584,7 +584,7 @@ enum tagMEMCTX
 #define DCOMSCM_PING_USE_MID_AUTHNSERVICE 0x10
 #define DCOMSCM_PING_DISALLOW_UNSECURE_CALL 0x20
 #endif // !_DCOMSCM_REMOTECALL_FLAGS_DEFINED
-typedef 
+typedef
 enum tagCLSCTX
     {	CLSCTX_INPROC_SERVER	= 0x1,
 	CLSCTX_INPROC_HANDLER	= 0x2,
@@ -627,7 +627,7 @@ enum tagCLSCTX
     CLSCTX_ACTIVATE_64_BIT_SERVER | \
     CLSCTX_ENABLE_CLOAKING | \
     CLSCTX_PS_DLL)
-typedef 
+typedef
 enum tagMSHLFLAGS
     {	MSHLFLAGS_NORMAL	= 0,
 	MSHLFLAGS_TABLESTRONG	= 1,
@@ -639,7 +639,7 @@ enum tagMSHLFLAGS
 	MSHLFLAGS_RESERVED4	= 64
     } 	MSHLFLAGS;
 
-typedef 
+typedef
 enum tagMSHCTX
     {	MSHCTX_LOCAL	= 0,
 	MSHCTX_NOSHAREDMEM	= 1,
@@ -648,7 +648,7 @@ enum tagMSHCTX
 	MSHCTX_CROSSCTX	= 4
     } 	MSHCTX;
 
-typedef 
+typedef
 enum tagDVASPECT
     {	DVASPECT_CONTENT	= 1,
 	DVASPECT_THUMBNAIL	= 2,
@@ -656,7 +656,7 @@ enum tagDVASPECT
 	DVASPECT_DOCPRINT	= 8
     } 	DVASPECT;
 
-typedef 
+typedef
 enum tagSTGC
     {	STGC_DEFAULT	= 0,
 	STGC_OVERWRITE	= 1,
@@ -665,14 +665,14 @@ enum tagSTGC
 	STGC_CONSOLIDATE	= 8
     } 	STGC;
 
-typedef 
+typedef
 enum tagSTGMOVE
     {	STGMOVE_MOVE	= 0,
 	STGMOVE_COPY	= 1,
 	STGMOVE_SHALLOWCOPY	= 2
     } 	STGMOVE;
 
-typedef 
+typedef
 enum tagSTATFLAG
     {	STATFLAG_DEFAULT	= 0,
 	STATFLAG_NONAME	= 1,
@@ -1008,7 +1008,7 @@ extern RPC_IF_HANDLE IWinTypes_v0_1_s_ifspec;
 #endif /* __IWinTypes_INTERFACE_DEFINED__ */
 
 /* interface __MIDL_itf_wtypes_0000_0001 */
-/* [local] */ 
+/* [local] */
 
 #if ( _MSC_VER >= 800 )
 #if _MSC_VER >= 1200
@@ -1206,7 +1206,7 @@ typedef unsigned short VARTYPE;
  *  VT_STREAMED_OBJECT        [P]     Stream contains an object
  *  VT_STORED_OBJECT          [P]     Storage contains an object
  *  VT_VERSIONED_STREAM       [P]     Stream with a GUID version
- *  VT_BLOB_OBJECT            [P]     Blob contains an object 
+ *  VT_BLOB_OBJECT            [P]     Blob contains an object
  *  VT_CF                     [P]     Clipboard format
  *  VT_CLSID                  [P]     A Class ID
  *  VT_VECTOR                 [P]     simple counted array
@@ -1328,7 +1328,7 @@ typedef struct tagQUERYCONTEXT
     DWORD dwVersionLo;
     } 	QUERYCONTEXT;
 
-typedef /* [v1_enum] */ 
+typedef /* [v1_enum] */
 enum tagTYSPEC
     {	TYSPEC_CLSID	= 0,
 	TYSPEC_FILEEXT	= ( TYSPEC_CLSID + 1 ) ,
@@ -1336,7 +1336,7 @@ enum tagTYSPEC
 	TYSPEC_FILENAME	= ( TYSPEC_MIMETYPE + 1 ) ,
 	TYSPEC_PROGID	= ( TYSPEC_FILENAME + 1 ) ,
 	TYSPEC_PACKAGENAME	= ( TYSPEC_PROGID + 1 ) ,
-	TYSPEC_OBJECTID	= ( TYSPEC_PACKAGENAME + 1 ) 
+	TYSPEC_OBJECTID	= ( TYSPEC_PACKAGENAME + 1 )
     } 	TYSPEC;
 
 typedef /* [public] */ struct __MIDL___MIDL_itf_wtypes_0000_0001_0001
@@ -1349,12 +1349,12 @@ typedef /* [public] */ struct __MIDL___MIDL_itf_wtypes_0000_0001_0001
         LPOLESTR pMimeType;
         LPOLESTR pProgId;
         LPOLESTR pFileName;
-        struct 
+        struct
             {
             LPOLESTR pPackageName;
             GUID PolicyId;
             } 	ByName;
-        struct 
+        struct
             {
             GUID ObjectId;
             GUID PolicyId;
@@ -1376,6 +1376,3 @@ extern RPC_IF_HANDLE __MIDL_itf_wtypes_0000_0001_v0_0_s_ifspec;
 #endif
 
 #endif
-
-
-

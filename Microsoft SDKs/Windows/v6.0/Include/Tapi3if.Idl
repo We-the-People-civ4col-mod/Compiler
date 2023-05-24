@@ -7,7 +7,7 @@ cpp_quote("/* Copyright (c) Microsoft Corporation. All rights reserved. */")
 #define __TAPI3IF_IDL__
 
 import "oaidl.idl";
-import "basetsd.h";
+import "BaseTsd.h";
 import "strmif.idl";
 
 midl_pragma warning( disable: 2039 )
@@ -126,7 +126,7 @@ typedef enum CALL_MEDIA_EVENT
     CME_STREAM_ACTIVE,
     CME_STREAM_INACTIVE,
     CME_LASTITEM = CME_STREAM_INACTIVE
-            
+
 } CALL_MEDIA_EVENT;
 
 typedef enum CALL_MEDIA_EVENT_CAUSE
@@ -139,7 +139,7 @@ typedef enum CALL_MEDIA_EVENT_CAUSE
    CMC_MEDIA_TIMEOUT,
    CMC_MEDIA_RECOVERED,
    CMC_QUALITY_OF_SERVICE
-            
+
 } CALL_MEDIA_EVENT_CAUSE;
 
 typedef enum DISCONNECT_CODE
@@ -226,14 +226,14 @@ typedef enum CALLHUB_EVENT
     CHE_CALLHUBNEW,
     CHE_CALLHUBIDLE,
     CHE_LASTITEM = CHE_CALLHUBIDLE
-        
+
 } CALLHUB_EVENT;
 
 typedef enum CALLHUB_STATE
 {
     CHS_ACTIVE,
     CHS_IDLE
-            
+
 } CALLHUB_STATE;
 
 
@@ -276,7 +276,7 @@ typedef enum QOS_EVENT
     QE_POLICYFAILURE = 3,
     QE_GENERICERROR = 4,
     QE_LASTITEM = QE_GENERICERROR
-            
+
 } QOS_EVENT;
 
 typedef enum CALLINFOCHANGE_CAUSE
@@ -437,7 +437,7 @@ typedef enum ADDRESS_CAPABILITY_STRING
     ACS_PROVIDERSPECIFIC,
     ACS_SWITCHSPECIFIC,
     ACS_PERMANENTDEVICEGUID
-            
+
 } ADDRESS_CAPABILITY_STRING;
 
 
@@ -473,7 +473,7 @@ typedef enum PHONE_HOOK_SWITCH_DEVICE
     PHSD_HANDSET             = 0x00000001,
     PHSD_SPEAKERPHONE        = 0x00000002,
     PHSD_HEADSET             = 0x00000004
-            
+
 } PHONE_HOOK_SWITCH_DEVICE;
 
 //
@@ -486,7 +486,7 @@ typedef enum PHONE_HOOK_SWITCH_STATE
     PHSS_OFFHOOK_MIC_ONLY     = 0x00000002,
     PHSS_OFFHOOK_SPEAKER_ONLY = 0x00000004,
     PHSS_OFFHOOK              = 0x00000008
-            
+
 } PHONE_HOOK_SWITCH_STATE;
 
 //
@@ -523,7 +523,7 @@ typedef enum PHONECAPS_LONG
     PCL_NUMRINGMODES,
     PCL_NUMBUTTONLAMPS,
     PCL_GENERICPHONE
-    
+
 } PHONECAPS_LONG;
 
 //
@@ -559,7 +559,7 @@ typedef enum PHONE_BUTTON_STATE
     PBS_DOWN                = 0x00000002,
     PBS_UNKNOWN             = 0x00000004,
     PBS_UNAVAIL             = 0x00000008
-            
+
 } PHONE_BUTTON_STATE;
 
 //
@@ -574,7 +574,7 @@ typedef enum PHONE_BUTTON_MODE
     PBM_KEYPAD,
     PBM_LOCAL,
     PBM_DISPLAY
-            
+
 } PHONE_BUTTON_MODE;
 
 //
@@ -685,13 +685,13 @@ typedef enum PHONE_EVENT
     PE_ANSWER,
     PE_DISCONNECT,
     PE_LASTITEM = PE_DISCONNECT
-            
+
 } PHONE_EVENT;
 
 // Dispach ID mapping constants
 const DISPID  INTERFACEMASK                     = 0x00FF0000;
 const DISPID  DISPIDMASK                        = 0x0000FFFF;
-                               
+
 // Tapi Object Interfaces
 const DISPID  IDISPTAPI                         = 0x00010000;
 const DISPID  IDISPTAPICALLCENTER               = 0x00020000;
@@ -790,7 +790,7 @@ interface ITTAPI : IDispatch
     HRESULT Shutdown();
 
     [propget, id(IDISPTAPI | 1), helpstring("property Addresses")]
-    HRESULT Addresses( 
+    HRESULT Addresses(
             [out, retval] VARIANT * pVariant
             );
 
@@ -813,7 +813,7 @@ interface ITTAPI : IDispatch
     HRESULT UnregisterNotifications(
             [in] long lRegister
             );
-    
+
     [propget, id(IDISPTAPI | 5), helpstring("property CallHubs")]
     HRESULT CallHubs(
                      [out, retval] VARIANT * pVariant
@@ -830,7 +830,7 @@ interface ITTAPI : IDispatch
                                [in] VARIANT_BOOL bTracking
                                );
 
-    
+
     [id(IDISPTAPI | 8), hidden]
     HRESULT EnumeratePrivateTAPIObjects(
             [out] IEnumUnknown ** ppEnumUnknown
@@ -862,12 +862,12 @@ interface ITTAPI : IDispatch
             );
 
     [propput, id(IDISPTAPI | 15), helpstring("property EventFilter")]
-    HRESULT EventFilter( 
+    HRESULT EventFilter(
             [in] long lFilterMask
             );
-            
+
     [propget, id(IDISPTAPI | 15), helpstring("property EventFilter")]
-    HRESULT EventFilter( 
+    HRESULT EventFilter(
             [out, retval] long * plFilterMask
             );
 
@@ -885,7 +885,7 @@ interface ITTAPI2 : ITTAPI
     // returns a collection/enumeration for scripting and c/c++
     //
     [propget, id(IDISPTAPI | 16), helpstring("property Phones")]
-    HRESULT Phones( 
+    HRESULT Phones(
             [out, retval]  VARIANT * pPhones
             );
 
@@ -909,7 +909,7 @@ interface ITTAPI2 : ITTAPI
 interface ITMediaSupport : IDispatch
 {
     [propget, id(IDISPMEDIASUPPORT | 1), helpstring("property MediaTypes")]
-    HRESULT MediaTypes( 
+    HRESULT MediaTypes(
             [out, retval] long * plMediaTypes
             );
 
@@ -1015,17 +1015,17 @@ interface ITPluggableTerminalSuperclassInfo : IDispatch
 interface ITTerminalSupport : IDispatch
 {
     [propget, id(IDISPAGGREGATEDMSPADDRESSOBJ | 1), helpstring("property StaticTerminals")]
-    HRESULT StaticTerminals( 
+    HRESULT StaticTerminals(
             [out, retval] VARIANT * pVariant
             );
 
     [id(IDISPAGGREGATEDMSPADDRESSOBJ | 2), hidden, helpstring("method EnumerateStaticTerminals")]
-    HRESULT EnumerateStaticTerminals( 
-            [out, retval] IEnumTerminal ** ppTerminalEnumerator 
+    HRESULT EnumerateStaticTerminals(
+            [out, retval] IEnumTerminal ** ppTerminalEnumerator
             );
 
     [propget, id(IDISPAGGREGATEDMSPADDRESSOBJ | 3), helpstring("property DynamicTerminalClasses")]
-    HRESULT DynamicTerminalClasses( 
+    HRESULT DynamicTerminalClasses(
             [out, retval] VARIANT * pVariant
             );
 
@@ -1059,17 +1059,17 @@ interface ITTerminalSupport : IDispatch
 interface ITTerminalSupport2 : ITTerminalSupport
 {
     [propget, id(IDISPAGGREGATEDMSPADDRESSOBJ | 7), helpstring("property PluggableSuperclasses")]
-    HRESULT PluggableSuperclasses( 
+    HRESULT PluggableSuperclasses(
             [out, retval] VARIANT * pVariant
             );
 
     [id(IDISPAGGREGATEDMSPADDRESSOBJ | 8), hidden, helpstring("method EnumeratePluggableSuperclasses")]
-    HRESULT EnumeratePluggableSuperclasses( 
-            [out, retval] IEnumPluggableSuperclassInfo ** ppSuperclassEnumerator 
+    HRESULT EnumeratePluggableSuperclasses(
+            [out, retval] IEnumPluggableSuperclassInfo ** ppSuperclassEnumerator
             );
 
     [propget, id(IDISPAGGREGATEDMSPADDRESSOBJ | 9), helpstring("property PluggableTerminalClasses")]
-    HRESULT PluggableTerminalClasses( 
+    HRESULT PluggableTerminalClasses(
             [in] BSTR bstrTerminalSuperclass,
             [in] long lMediaType,
             [out, retval] VARIANT * pVariant
@@ -1079,7 +1079,7 @@ interface ITTerminalSupport2 : ITTerminalSupport
     HRESULT EnumeratePluggableTerminalClasses(
             [in] CLSID iidTerminalSuperclass,
             [in] long lMediaType,
-            [out, retval] IEnumPluggableTerminalClassInfo ** ppClassEnumerator 
+            [out, retval] IEnumPluggableTerminalClassInfo ** ppClassEnumerator
             );
 }
 
@@ -1092,18 +1092,18 @@ interface ITTerminalSupport2 : ITTerminalSupport
 interface ITAddress : IDispatch
 {
     [propget, id(IDISPADDRESS | 1), helpstring("property State")]
-    HRESULT State( 
-            [out, retval] ADDRESS_STATE * pAddressState 
+    HRESULT State(
+            [out, retval] ADDRESS_STATE * pAddressState
             );
 
     [propget, id(IDISPADDRESS | 2), helpstring("property AddressName")]
-    HRESULT AddressName( 
-            [out, retval] BSTR *  ppName 
+    HRESULT AddressName(
+            [out, retval] BSTR *  ppName
             );
-        
+
     [propget, id(IDISPADDRESS | 3), helpstring("property ServiceProviderName")]
-    HRESULT ServiceProviderName( 
-            [out, retval] BSTR *  ppName 
+    HRESULT ServiceProviderName(
+            [out, retval] BSTR *  ppName
             );
 
     [propget, id(IDISPADDRESS | 4), helpstring("property TAPIObject")]
@@ -1116,7 +1116,7 @@ interface ITAddress : IDispatch
             [in] BSTR pDestAddress,
             [in] long lAddressType,
             [in] long lMediaTypes,
-            [out, retval] ITBasicCallControl ** ppCall 
+            [out, retval] ITBasicCallControl ** ppCall
             );
 
     [propget, id(IDISPADDRESS | 6), helpstring("property Calls")]
@@ -1126,7 +1126,7 @@ interface ITAddress : IDispatch
 
     [id(IDISPADDRESS | 7), hidden, helpstring("method EnumerateCalls")]
     HRESULT EnumerateCalls(
-            [out, retval] IEnumCall ** ppCallEnum 
+            [out, retval] IEnumCall ** ppCallEnum
             );
 
     [propget, id(IDISPADDRESS | 8), helpstring("property DialableAddress")]
@@ -1188,7 +1188,7 @@ interface ITAddress2 : ITAddress
     // returns a collection/enumeration for scripting and c/c++
     //
     [propget, id(IDISPADDRESS | 16), helpstring("property Phones")]
-    HRESULT Phones( 
+    HRESULT Phones(
             [out, retval]  VARIANT * pPhones
             );
 
@@ -1204,7 +1204,7 @@ interface ITAddress2 : ITAddress
             );
 
     [propget, id(IDISPADDRESS | 20), helpstring("property PreferredPhones")]
-    HRESULT PreferredPhones( 
+    HRESULT PreferredPhones(
             [out, retval]  VARIANT * pPhones
             );
 
@@ -1266,8 +1266,8 @@ interface ITAddress2 : ITAddress
 interface ITAddressCapabilities : IDispatch
 {
     [propget, id(IDISPADDRESSCAPABILITIES | 1), helpstring("property AddressCapability")]
-    HRESULT AddressCapability( 
-            [in] ADDRESS_CAPABILITY AddressCap, 
+    HRESULT AddressCapability(
+            [in] ADDRESS_CAPABILITY AddressCap,
             [out, retval] long * plCapability
             );
 
@@ -1403,7 +1403,7 @@ interface ITPhone : IDispatch
     //
     [propput, id(IDISPPHONE | 10), helpstring("property ButtonFunction")]
     HRESULT ButtonFunction(
-            [in] long                  lButtonID, 
+            [in] long                  lButtonID,
             [in] PHONE_BUTTON_FUNCTION ButtonFunction
             );
 
@@ -1460,7 +1460,7 @@ interface ITPhone : IDispatch
     HRESULT RingMode(
         [in] long lRingMode
         );
-    
+
     //
     // get the ring mode for the phone
     //
@@ -1476,7 +1476,7 @@ interface ITPhone : IDispatch
     HRESULT RingVolume(
         [in] long lRingVolume
         );
-    
+
     //
     // get the ring volume for the phone
     //
@@ -1750,7 +1750,7 @@ interface ITAutomatedPhoneControl : IDispatch
     helpstring("TAPI 3.0 ITBasicCallControl interface"),
     dual
 ]
-    
+
 interface ITBasicCallControl : IDispatch
 {
 
@@ -1763,13 +1763,13 @@ interface ITBasicCallControl : IDispatch
     HRESULT Answer();
 
     [id(IDISPBASICCALLCONTROL | 5), helpstring("method Disconnect")]
-    HRESULT Disconnect( 
-            [in] DISCONNECT_CODE code 
+    HRESULT Disconnect(
+            [in] DISCONNECT_CODE code
             );
 
     [id(IDISPBASICCALLCONTROL | 6), helpstring("method Hold")]
-    HRESULT Hold( 
-            [in] VARIANT_BOOL fHold 
+    HRESULT Hold(
+            [in] VARIANT_BOOL fHold
             );
 
     [id(IDISPBASICCALLCONTROL | 7), helpstring("method HandoffDirect")]
@@ -1789,17 +1789,17 @@ interface ITBasicCallControl : IDispatch
             );
 
     [id(IDISPBASICCALLCONTROL | 10), helpstring("method Transfer")]
-    HRESULT Transfer( 
+    HRESULT Transfer(
             [in] ITBasicCallControl * pCall,
             [in] VARIANT_BOOL fSync
             );
 
     [id(IDISPBASICCALLCONTROL | 11), helpstring("method BlindTransfer")]
-    HRESULT BlindTransfer( 
+    HRESULT BlindTransfer(
             [in] BSTR pDestAddress
             );
     [id(IDISPBASICCALLCONTROL | 12), helpstring("method SwapHold")]
-    HRESULT SwapHold( 
+    HRESULT SwapHold(
             [in] ITBasicCallControl * pCall
             );
     [id(IDISPBASICCALLCONTROL | 13), helpstring("method ParkDirect")]
@@ -1844,7 +1844,7 @@ interface ITBasicCallControl : IDispatch
     helpstring("TAPI 3.0 ITCallInfo interface"),
     dual
 ]
-    
+
 interface ITCallInfo : IDispatch
 {
     [propget, id(IDISPCALLINFO | 1), helpstring("property Address")]
@@ -1853,8 +1853,8 @@ interface ITCallInfo : IDispatch
             );
 
     [propget, id(IDISPCALLINFO | 2), helpstring("property CallState")]
-    HRESULT CallState( 
-            [out, retval] CALL_STATE * pCallState 
+    HRESULT CallState(
+            [out, retval] CALL_STATE * pCallState
             );
 
     [propget, id(IDISPCALLINFO | 3), helpstring("property Privilege")]
@@ -1961,8 +1961,8 @@ interface ITTerminal : IDispatch
             );
 
     [propget, id(2), helpstring("property State")]
-    HRESULT State( 
-            [out, retval] TERMINAL_STATE * pTerminalState 
+    HRESULT State(
+            [out, retval] TERMINAL_STATE * pTerminalState
             );
 
     [propget, id(3), helpstring("property TerminalType")]
@@ -1971,7 +1971,7 @@ interface ITTerminal : IDispatch
             );
 
     // terminal class is actually a guid
-    [propget, id(4), helpstring("property TerminalClass")] 
+    [propget, id(4), helpstring("property TerminalClass")]
     HRESULT TerminalClass(
             [out, retval] BSTR * ppTerminalClass
             );
@@ -2027,7 +2027,7 @@ interface ITMultiTrackTerminal : IDispatch
     HRESULT DirectionsInUse(
             [out, retval] TERMINAL_DIRECTION *plDirectionsInUsed
             );
-    
+
     [id(IDISPMULTITRACK | 6), helpstring("method RemoveTrackTerminal")]
     HRESULT RemoveTrackTerminal(
             [in] ITTerminal *pTrackTerminalToRemove
@@ -2113,12 +2113,12 @@ interface ITFileTrack  : IDispatch
 
 interface ITMediaPlayback : IDispatch
 {
-    [propput, id(IDISPMEDIAPLAYBACK | 1), helpstring("property PlayList")] 
+    [propput, id(IDISPMEDIAPLAYBACK | 1), helpstring("property PlayList")]
     HRESULT PlayList(
         [in] VARIANTARG PlayListVariant
         );
 
-    [propget, id(IDISPMEDIAPLAYBACK | 1), helpstring("property PlayList")] 
+    [propget, id(IDISPMEDIAPLAYBACK | 1), helpstring("property PlayList")]
     HRESULT PlayList(
         [out, retval] VARIANTARG* pPlayListVariant
         );
@@ -2140,7 +2140,7 @@ interface ITMediaRecord : IDispatch
         [in] BSTR bstrFileName
     );
 
-    [propget, id(IDISPMEDIARECORD | 1), helpstring("property FileName")] 
+    [propget, id(IDISPMEDIARECORD | 1), helpstring("property FileName")]
     HRESULT FileName(
         [out, retval] BSTR *pbstrFileName
         );
@@ -2157,16 +2157,16 @@ interface ITMediaRecord : IDispatch
 
 interface ITMediaControl : IDispatch
 {
-    [id(IDISPMEDIACONTROL | 1), helpstring("method Start")] 
+    [id(IDISPMEDIACONTROL | 1), helpstring("method Start")]
     HRESULT Start();
 
-    [id(IDISPMEDIACONTROL | 2), helpstring("method Stop")] 
+    [id(IDISPMEDIACONTROL | 2), helpstring("method Stop")]
     HRESULT Stop();
 
-    [id(IDISPMEDIACONTROL | 3), helpstring("method Pause")] 
+    [id(IDISPMEDIACONTROL | 3), helpstring("method Pause")]
     HRESULT Pause();
 
-    [propget, id(IDISPMEDIACONTROL | 4), helpstring("property MediaState")] 
+    [propget, id(IDISPMEDIACONTROL | 4), helpstring("property MediaState")]
     HRESULT MediaState(
         [out, retval] TERMINAL_MEDIA_STATE *pTerminalMediaState
         );
@@ -2178,7 +2178,7 @@ interface ITMediaControl : IDispatch
     helpstring("TAPI 3.0 ITBasicAudioTerminal interface"),
     dual
 ]
-    
+
 interface ITBasicAudioTerminal : IDispatch
 {
     [propput, id(1), helpstring("property Volume")]
@@ -2210,7 +2210,7 @@ interface ITBasicAudioTerminal : IDispatch
     uuid( A86B7871-D14C-48e6-922E-A8D15F984800 ),
     helpstring("TAPI 3.1 ITStaticAudioTerminal Interface"),
     dual
-]   
+]
 interface ITStaticAudioTerminal : IDispatch
 {
     [propget, id(1), helpstring("property WaveId")]
@@ -2230,8 +2230,8 @@ interface ITCallHub : IDispatch
     HRESULT Clear();
 
     [id(2), hidden, helpstring("method EnumerateCalls")]
-    HRESULT EnumerateCalls( 
-        [out, retval] IEnumCall ** ppEnumCall 
+    HRESULT EnumerateCalls(
+        [out, retval] IEnumCall ** ppEnumCall
         );
     [propget, id(3), helpstring("property Calls")]
     HRESULT Calls(
@@ -2289,23 +2289,23 @@ interface ITPrivateEvent : IDispatch
     [propget, id(1), helpstring("property Address")]
     HRESULT Address(
         [out, retval] ITAddress ** ppAddress
-        );        
+        );
 
     [propget, id(2), helpstring("property Call")]
     HRESULT Call(
         [out, retval] ITCallInfo ** ppCallInfo
         );
-        
+
     [propget, id(3), helpstring("property CallHub")]
     HRESULT CallHub(
         [out, retval] ITCallHub ** ppCallHub
         );
-        
+
     [propget, id(4), helpstring("property EventCode")]
     HRESULT EventCode(
         [out, retval] long * plEventCode
         );
-    
+
     [propget, id(5), helpstring("property EventInterface")]
     HRESULT EventInterface(
         [out, retval] IDispatch ** pEventInterface
@@ -2450,33 +2450,33 @@ interface ITLegacyCallMediaControl2 : ITLegacyCallMediaControl
 ]
 interface ITDetectTone : IDispatch
 {
-    [propget, id(1), helpstring("property AppSpecific")] 
+    [propget, id(1), helpstring("property AppSpecific")]
     HRESULT AppSpecific(
         [out, retval] long * plAppSpecific
         );
 
-    [propput, id(1), helpstring("property AppSpecific")] 
+    [propput, id(1), helpstring("property AppSpecific")]
     HRESULT AppSpecific(
         [in] long  lAppSpecific
         );
 
-    [propget, id(2), helpstring("property Duration")] 
+    [propget, id(2), helpstring("property Duration")]
     HRESULT Duration(
         [out, retval] long * plDuration
         );
 
-    [propput, id(2), helpstring("property Duration")] 
+    [propput, id(2), helpstring("property Duration")]
     HRESULT Duration(
         [in] long  lDuration
         );
 
-    [propget, id(3), helpstring("property Frequency")] 
+    [propget, id(3), helpstring("property Frequency")]
     HRESULT Frequency(
         [in] long Index,
         [out, retval] long * plFrequency
         );
 
-    [propput, id(3), helpstring("property Frequency")] 
+    [propput, id(3), helpstring("property Frequency")]
     HRESULT Frequency(
         [in] long Index,
         [in] long lFrequency
@@ -2491,42 +2491,42 @@ interface ITDetectTone : IDispatch
 ]
 interface ITCustomTone : IDispatch
 {
-    [propget, id(1), helpstring("property Frequency")] 
+    [propget, id(1), helpstring("property Frequency")]
     HRESULT Frequency(
         [out, retval] long * plFrequency
         );
 
-    [propput, id(1), helpstring("property Frequency")] 
+    [propput, id(1), helpstring("property Frequency")]
     HRESULT Frequency(
         [in] long  lFrequency
         );
 
-    [propget, id(2), helpstring("property CadenceOn")] 
+    [propget, id(2), helpstring("property CadenceOn")]
     HRESULT CadenceOn(
         [out, retval] long * plCadenceOn
         );
 
-    [propput, id(2), helpstring("property CadenceOn")] 
+    [propput, id(2), helpstring("property CadenceOn")]
     HRESULT CadenceOn(
         [in] long  CadenceOn
         );
 
-    [propget, id(3), helpstring("property CadenceOff")] 
+    [propget, id(3), helpstring("property CadenceOff")]
     HRESULT CadenceOff(
         [out, retval] long * plCadenceOff
         );
 
-    [propput, id(3), helpstring("property CadenceOff")] 
+    [propput, id(3), helpstring("property CadenceOff")]
     HRESULT CadenceOff(
         [in] long lCadenceOff
         );
 
-    [propget, id(4), helpstring("property Volume")] 
+    [propget, id(4), helpstring("property Volume")]
     HRESULT Volume(
         [out, retval] long * plVolume
         );
 
-    [propput, id(4), helpstring("property Volume")] 
+    [propput, id(4), helpstring("property Volume")]
     HRESULT Volume(
         [in] long lVolume
         );
@@ -2541,7 +2541,7 @@ interface ITCustomTone : IDispatch
     helpstring("TAPI 3.1 IEnumPhone Interface"),
     hidden,
     pointer_default(unique)
-]  
+]
 interface IEnumPhone : IUnknown
 {
 
@@ -2568,7 +2568,7 @@ interface IEnumPhone : IUnknown
     hidden,
     pointer_default(unique)
 ]
-    
+
 interface IEnumTerminal : IUnknown
 {
 
@@ -2596,7 +2596,7 @@ interface IEnumTerminal : IUnknown
     hidden,
     pointer_default(unique)
 ]
-    
+
 interface IEnumTerminalClass : IUnknown
 {
 
@@ -2624,7 +2624,7 @@ interface IEnumTerminalClass : IUnknown
     hidden,
     pointer_default(unique)
 ]
-    
+
 interface IEnumCall : IUnknown
 {
 
@@ -2653,7 +2653,7 @@ interface IEnumCall : IUnknown
     hidden,
     pointer_default(unique)
 ]
-    
+
 interface IEnumAddress : IUnknown
 {
     HRESULT Next(
@@ -2730,7 +2730,7 @@ interface IEnumBstr : IUnknown
     hidden,
     pointer_default(unique)
 ]
-    
+
 interface IEnumPluggableTerminalClassInfo : IUnknown
 {
 
@@ -2757,7 +2757,7 @@ interface IEnumPluggableTerminalClassInfo : IUnknown
     hidden,
     pointer_default(unique)
 ]
-    
+
 interface IEnumPluggableSuperclassInfo : IUnknown
 {
 
@@ -2792,7 +2792,7 @@ interface ITPhoneEvent : IDispatch
 {
     [propget, id(1), helpstring("property Phone")]
     HRESULT Phone( [out, retval] ITPhone ** ppPhone );
-    
+
     [propget, id(2), helpstring("property Event")]
     HRESULT Event( [out, retval] PHONE_EVENT * pEvent );
 
@@ -2856,7 +2856,7 @@ interface ITPhoneDeviceSpecificEvent : IDispatch
 {
     [propget, id(1), helpstring("property Phone")]
     HRESULT Phone( [out, retval] ITPhone ** ppPhone );
-    
+
     [propget, id(2), helpstring("property lParam1")]
     HRESULT lParam1( [out, retval] long *pParam1);
 
@@ -2879,12 +2879,12 @@ interface ITCallMediaEvent : IDispatch
     HRESULT Call(
             [out, retval] ITCallInfo ** ppCallInfo
             );
-    
+
     [propget, id(2), helpstring("property Event")]
     HRESULT Event(
             [out, retval] CALL_MEDIA_EVENT * pCallMediaEvent
             );
-    
+
     [propget, id(3), helpstring("property Error")]
     HRESULT Error(
             [out, retval] HRESULT * phrError
@@ -3079,7 +3079,7 @@ interface ITAddressEvent : IDispatch
 {
     [propget, id(1), helpstring("property Address")]
     HRESULT Address( [out, retval] ITAddress ** ppAddress );
-    
+
     [propget, id(2), helpstring("property Event")]
     HRESULT Event( [out, retval] ADDRESS_EVENT * pEvent );
 
@@ -3097,7 +3097,7 @@ interface ITAddressDeviceSpecificEvent : IDispatch
 {
     [propget, id(1), helpstring("property Address")]
     HRESULT Address( [out, retval] ITAddress ** ppAddress );
-    
+
     [propget, id(2), helpstring("property Call")]
     HRESULT Call( [out, retval] ITCallInfo ** ppCall );
 
@@ -3122,7 +3122,7 @@ interface ITFileTerminalEvent : IDispatch
 {
     [propget, id(1), helpstring("property Terminal")]
     HRESULT Terminal( [out, retval] ITTerminal ** ppTerminal );
-    
+
     [propget, id(2), helpstring("property Track")]
     HRESULT Track( [out, retval] ITFileTrack ** ppTrackTerminal );
 
@@ -3148,7 +3148,7 @@ interface ITTTSTerminalEvent : IDispatch
 {
     [propget, id(1), helpstring("property Terminal")]
     HRESULT Terminal( [out, retval] ITTerminal ** ppTerminal );
-    
+
     [propget, id(2), helpstring("property Call") ]
     HRESULT Call( [out, retval] ITCallInfo ** ppCall );
 
@@ -3165,7 +3165,7 @@ interface ITASRTerminalEvent : IDispatch
 {
     [propget, id(1), helpstring("property Terminal")]
     HRESULT Terminal( [out, retval] ITTerminal ** ppTerminal );
-    
+
     [propget, id(2), helpstring("property Call") ]
     HRESULT Call( [out, retval] ITCallInfo ** ppCall );
 
@@ -3182,7 +3182,7 @@ interface ITToneTerminalEvent : IDispatch
 {
     [propget, id(1), helpstring("property Terminal")]
     HRESULT Terminal( [out, retval] ITTerminal ** ppTerminal );
-    
+
     [propget, id(2), helpstring("property Call") ]
     HRESULT Call( [out, retval] ITCallInfo ** ppCall );
 
@@ -3282,10 +3282,10 @@ interface ITCollection : IDispatch
             [out, retval] long * lCount
             );
 
-    [propget, id(DISPID_VALUE), 
+    [propget, id(DISPID_VALUE),
         helpstring("Given an index, returns an item in the collection.")]
     HRESULT Item(
-            [in] long Index, 
+            [in] long Index,
             [out, retval] VARIANT * pVariant
             );
 
@@ -3325,28 +3325,28 @@ interface ITCollection2 : ITCollection
 interface ITForwardInformation : IDispatch
 {
     [propput, id(1), helpstring("property NumRingsNoAnswer")]
-    HRESULT NumRingsNoAnswer( 
-        [in] long lNumRings 
+    HRESULT NumRingsNoAnswer(
+        [in] long lNumRings
         );
     [propget, id(1), helpstring("property NumRingsNoAnswer")]
-    HRESULT NumRingsNoAnswer( 
-        [out, retval] long * plNumRings 
+    HRESULT NumRingsNoAnswer(
+        [out, retval] long * plNumRings
         );
     [id(2), helpstring("method SetForwardType")]
-    HRESULT SetForwardType( 
-        [in] long ForwardType, 
+    HRESULT SetForwardType(
+        [in] long ForwardType,
         [in] BSTR pDestAddress,
         [in] BSTR pCallerAddress
         );
     [propget, id(3), helpstring("property ForwardTypeDestination")]
-    HRESULT ForwardTypeDestination( 
-        [in] long ForwardType, 
-        [out, retval] BSTR * ppDestAddress 
+    HRESULT ForwardTypeDestination(
+        [in] long ForwardType,
+        [out, retval] BSTR * ppDestAddress
         );
-    [propget, id(4), helpstring("property ForwardTypeCaller")]    
-    HRESULT ForwardTypeCaller( 
-        [in] long Forwardtype, 
-        [out, retval] BSTR * ppCallerAddress 
+    [propget, id(4), helpstring("property ForwardTypeCaller")]
+    HRESULT ForwardTypeCaller(
+        [in] long Forwardtype,
+        [out, retval] BSTR * ppCallerAddress
         );
     [id(5),hidden]
     HRESULT GetForwardType(
@@ -3366,8 +3366,8 @@ interface ITForwardInformation : IDispatch
 interface ITForwardInformation2 : ITForwardInformation
 {
     [id(7), helpstring("method SetForwardType2")]
-    HRESULT SetForwardType2( 
-        [in] long ForwardType, 
+    HRESULT SetForwardType2(
+        [in] long ForwardType,
         [in] BSTR pDestAddress,
         [in] long DestAddressType,
         [in] BSTR pCallerAddress,
@@ -3382,13 +3382,13 @@ interface ITForwardInformation2 : ITForwardInformation
         [out] long * pCallerAddressType
         );
     [propget, id(9), helpstring("property ForwardTypeDestinationAddressType")]
-    HRESULT ForwardTypeDestinationAddressType( 
-        [in] long ForwardType, 
+    HRESULT ForwardTypeDestinationAddressType(
+        [in] long ForwardType,
         [out, retval] long * pDestAddressType
         );
-    [propget, id(10), helpstring("property ForwardTypeCallerAddressType")]    
-    HRESULT ForwardTypeCallerAddressType( 
-        [in] long Forwardtype, 
+    [propget, id(10), helpstring("property ForwardTypeCallerAddressType")]
+    HRESULT ForwardTypeCallerAddressType(
+        [in] long Forwardtype,
         [out, retval] long * pCallerAddressType
         );
 }
@@ -3420,15 +3420,15 @@ interface ITAddressTranslation : IDispatch
             [out, retval] IEnumLocation ** ppEnumLocation
             );
     [propget, id(IDISPADDRESSTRANSLATION | 4), helpstring("property Locations")]
-    HRESULT Locations( 
+    HRESULT Locations(
             [out, retval] VARIANT * pVariant
             );
     [id(IDISPADDRESSTRANSLATION | 5), hidden, helpstring("method EnumerateCallingCards")]
     HRESULT EnumerateCallingCards(
-            [out, retval] IEnumCallingCard ** ppEnumCallingCard 
+            [out, retval] IEnumCallingCard ** ppEnumCallingCard
             );
     [propget, id(IDISPADDRESSTRANSLATION | 6), helpstring("property CallingCards")]
-    HRESULT CallingCards( 
+    HRESULT CallingCards(
             [out, retval] VARIANT * pVariant
             );
 }
@@ -3443,23 +3443,23 @@ interface ITAddressTranslation : IDispatch
 interface ITAddressTranslationInfo : IDispatch
 {
     [propget, id(1), helpstring("property Dialable String")]
-    HRESULT DialableString( 
-        [out, retval] BSTR * ppDialableString 
+    HRESULT DialableString(
+        [out, retval] BSTR * ppDialableString
         );
     [propget, id(2), helpstring("property Displayable String")]
-    HRESULT DisplayableString( 
-        [out, retval] BSTR * ppDisplayableString 
+    HRESULT DisplayableString(
+        [out, retval] BSTR * ppDisplayableString
         );
-    [propget, id(3), helpstring("property Current Country Code")]    
-    HRESULT CurrentCountryCode( 
+    [propget, id(3), helpstring("property Current Country Code")]
+    HRESULT CurrentCountryCode(
         [out, retval] long * CountryCode
         );
-    [propget, id(4), helpstring("property Destination Country Code")]    
-    HRESULT DestinationCountryCode( 
+    [propget, id(4), helpstring("property Destination Country Code")]
+    HRESULT DestinationCountryCode(
         [out, retval] long * CountryCode
         );
-    [propget, id(5), helpstring("property Translation Results")]    
-    HRESULT TranslationResults( 
+    [propget, id(5), helpstring("property Translation Results")]
+    HRESULT TranslationResults(
         [out, retval] long * plResults
         );
 }
@@ -3471,49 +3471,49 @@ interface ITAddressTranslationInfo : IDispatch
 ]
 interface ITLocationInfo : IDispatch
 {
-    [propget, id(1), helpstring("property Permanent Location ID")]    
-    HRESULT PermanentLocationID( 
+    [propget, id(1), helpstring("property Permanent Location ID")]
+    HRESULT PermanentLocationID(
         [out, retval] long * plLocationID
         );
-    [propget, id(2), helpstring("property Country Code")]    
-    HRESULT CountryCode( 
+    [propget, id(2), helpstring("property Country Code")]
+    HRESULT CountryCode(
         [out, retval] long * plCountryCode
         );
-    [propget, id(3), helpstring("property Country ID")]    
-    HRESULT CountryID( 
+    [propget, id(3), helpstring("property Country ID")]
+    HRESULT CountryID(
         [out, retval] long * plCountryID
         );
-    [propget, id(4), helpstring("property Options")]    
-    HRESULT Options( 
+    [propget, id(4), helpstring("property Options")]
+    HRESULT Options(
         [out, retval] long * plOptions
         );
-    [propget, id(5), helpstring("property Preferred Credit Card ID")]    
-    HRESULT PreferredCardID( 
+    [propget, id(5), helpstring("property Preferred Credit Card ID")]
+    HRESULT PreferredCardID(
         [out, retval] long * plCardID
         );
     [propget, id(6), helpstring("property Location Name")]
-    HRESULT LocationName( 
-        [out, retval] BSTR * ppLocationName 
+    HRESULT LocationName(
+        [out, retval] BSTR * ppLocationName
         );
     [propget, id(7), helpstring("property City/Area Code")]
-    HRESULT CityCode( 
-        [out, retval] BSTR * ppCode 
+    HRESULT CityCode(
+        [out, retval] BSTR * ppCode
         );
     [propget, id(8), helpstring("property Local Access Code")]
-    HRESULT LocalAccessCode( 
-        [out, retval] BSTR * ppCode 
+    HRESULT LocalAccessCode(
+        [out, retval] BSTR * ppCode
         );
     [propget, id(9), helpstring("property Long Distance Access Code")]
-    HRESULT LongDistanceAccessCode( 
-        [out, retval] BSTR * ppCode 
+    HRESULT LongDistanceAccessCode(
+        [out, retval] BSTR * ppCode
         );
     [propget, id(10), helpstring("property Toll Prefix List")]
-    HRESULT TollPrefixList( 
+    HRESULT TollPrefixList(
         [out, retval] BSTR * ppTollList
         );
     [propget, id(11), helpstring("property Cancel Call Waiting Code")]
-    HRESULT CancelCallWaitingCode( 
-        [out, retval] BSTR * ppCode 
+    HRESULT CancelCallWaitingCode(
+        [out, retval] BSTR * ppCode
         );
 }
 
@@ -3523,7 +3523,7 @@ interface ITLocationInfo : IDispatch
     hidden,
     pointer_default(unique)
 ]
-    
+
 interface IEnumLocation : IUnknown
 {
 
@@ -3551,33 +3551,33 @@ interface IEnumLocation : IUnknown
 ]
 interface ITCallingCard : IDispatch
 {
-    [propget, id(1), helpstring("property Permanent Card ID")]    
-    HRESULT PermanentCardID( 
+    [propget, id(1), helpstring("property Permanent Card ID")]
+    HRESULT PermanentCardID(
         [out, retval] long * plCardID
         );
-    [propget, id(2), helpstring("property Number Of Digits")]    
-    HRESULT NumberOfDigits( 
+    [propget, id(2), helpstring("property Number Of Digits")]
+    HRESULT NumberOfDigits(
         [out, retval] long * plDigits
         );
-    [propget, id(3), helpstring("property Options")]    
-    HRESULT Options( 
+    [propget, id(3), helpstring("property Options")]
+    HRESULT Options(
         [out, retval] long * plOptions
         );
     [propget, id(4), helpstring("property Card Name")]
-    HRESULT CardName( 
-        [out, retval] BSTR * ppCardName 
+    HRESULT CardName(
+        [out, retval] BSTR * ppCardName
         );
     [propget, id(5), helpstring("property Same Area Dialing Rule")]
-    HRESULT SameAreaDialingRule( 
-        [out, retval] BSTR * ppRule 
+    HRESULT SameAreaDialingRule(
+        [out, retval] BSTR * ppRule
         );
     [propget, id(6), helpstring("property Long Distance Dialing Rule")]
-    HRESULT LongDistanceDialingRule( 
-        [out, retval] BSTR * ppRule 
+    HRESULT LongDistanceDialingRule(
+        [out, retval] BSTR * ppRule
         );
     [propget, id(7), helpstring("property International Dialing Rule")]
-    HRESULT InternationalDialingRule( 
-        [out, retval] BSTR * ppRule 
+    HRESULT InternationalDialingRule(
+        [out, retval] BSTR * ppRule
         );
 }
 
@@ -3587,7 +3587,7 @@ interface ITCallingCard : IDispatch
     hidden,
     pointer_default(unique)
 ]
-    
+
 interface IEnumCallingCard : IUnknown
 {
 
@@ -3882,7 +3882,7 @@ interface ITLegacyWaveSupport : IDispatch
     helpstring("TAPI 3.0 ITBasicCallControl2 interface"),
     dual
 ]
-    
+
 interface ITBasicCallControl2 : ITBasicCallControl
 {
     [id(IDISPBASICCALLCONTROL | 23), helpstring("method RequestTerminal")]
@@ -4032,4 +4032,3 @@ cpp_quote("#define __TapiConstants_MODULE_DEFINED__")
 
 
 #endif // __TAPI3IF_IDL__
-

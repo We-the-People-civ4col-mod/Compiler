@@ -37,7 +37,7 @@ Abstract:
 #pragma once
 #endif
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 //  Data structure definitions.
 
@@ -669,7 +669,6 @@ typedef DWORD (APIENTRY PM_QUERY_PROC) (LPDWORD, LPVOID *, LPDWORD, LPDWORD);
 #define     MAX_PERF_OBJECTS_IN_QUERY_FUNCTION      (8L)
 #endif
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #endif // _WINPERF_
-

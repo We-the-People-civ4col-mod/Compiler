@@ -24,7 +24,7 @@
 // Assume packing on DWORD boundary
 //
 
-#include <pshpack4.h>
+#include <PshPack4.h>
 
 
 //
@@ -48,7 +48,7 @@
 
 #define WPF_NO_UI						WPF_NO_WIZARD | \
 										WPF_NO_PROGRESS_DLGS
- 
+
 #define WPF_SHOWPAGE_ALL				WPF_SHOWPAGE_WELCOME | \
 										WPF_SHOWPAGE_SRCFILE | \
 										WPF_SHOWPAGE_DESTSITE | \
@@ -70,13 +70,13 @@
 extern "C" {
 #endif
 
-DWORD WINAPI WpPostW(	HWND hwnd, 
+DWORD WINAPI WpPostW(	HWND hwnd,
 						DWORD dwNumLocalPaths,
-						LPWSTR *pwsLocalPaths, 
+						LPWSTR *pwsLocalPaths,
 						LPDWORD pdwSiteNameBufLen,
 						LPWSTR wsSiteName,
 						LPDWORD pdwDestURLBufLen,
-						LPWSTR wsDestURL, 
+						LPWSTR wsDestURL,
 						DWORD dwFlag);
 
 DWORD WINAPI WpListSitesW(	LPDWORD pdwSitesBufLen,
@@ -115,11 +115,11 @@ DWORD WINAPI WpGetErrorStringW(	UINT uErrCode,
 
 DWORD WINAPI WpPostA(	HWND hwnd,
 						DWORD dwNumLocalPaths,
-						LPSTR *psLocalPaths, 
+						LPSTR *psLocalPaths,
 						LPDWORD pdwSiteNameBufLen,
 						LPSTR sSiteName,
 						LPDWORD pdwDestURLBufLen,
-						LPSTR sDestURLBufLen, 
+						LPSTR sDestURLBufLen,
 						DWORD dwFlag);
 
 DWORD WINAPI WpListSitesA(	LPDWORD pdwSitesBufLen,
@@ -183,7 +183,7 @@ DWORD WINAPI WpGetErrorStringA(	UINT uErrCode,
 #endif
 
 
-#include <poppack.h>
+#include <PopPack.h>
 
 
 #endif // __WP15API_H__

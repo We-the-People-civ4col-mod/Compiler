@@ -39,7 +39,7 @@ extern "C"
 #   undef   WT_DEFINE_ALL_APIS
 #endif
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -268,7 +268,7 @@ typedef struct WINTRUST_CERT_INFO_
 
 } WINTRUST_CERT_INFO, *PWINTRUST_CERT_INFO;
 
-#include <poppack.h>
+#include <PopPack.h>
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -366,7 +366,7 @@ extern LONG WINAPI WinVerifyTrust(HWND hwnd, GUID *pgActionID,
 //      *** DO NOT USE ***
 //
 //
-extern HRESULT WINAPI WinVerifyTrustEx(HWND hwnd, GUID *pgActionID, 
+extern HRESULT WINAPI WinVerifyTrustEx(HWND hwnd, GUID *pgActionID,
                                        WINTRUST_DATA *pWinTrustData);
 
 
@@ -581,7 +581,7 @@ typedef BOOL        (*PFN_PROVIDER_CERTCHKPOLICY_CALL)( IN          struct _CRYP
 #define WVT_IS_CBSTRUCT_GT_MEMBEROFFSET(structtypedef, structpassedsize, member) \
                     WVT_ISINSTRUCT(structtypedef, structpassedsize, member)
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -950,7 +950,7 @@ typedef struct _CRYPT_PROVIDER_DEFUSAGE
 
 } CRYPT_PROVIDER_DEFUSAGE, *PCRYPT_PROVIDER_DEFUSAGE;
 
-#include <poppack.h>
+#include <PopPack.h>
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -1066,7 +1066,7 @@ extern HRESULT WINAPI                   WTHelperCertCheckValidSignature(CRYPT_PR
 // Supported ASN structures contained in WINTRUST.DLL
 //----------------------------------------------------------------------------
 //
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 //
 //  CTL Trusted CA Lists
@@ -1242,7 +1242,7 @@ typedef struct _CAT_MEMBERINFO
 
 } CAT_MEMBERINFO, *PCAT_MEMBERINFO;
 
-#include <poppack.h>
+#include <PopPack.h>
 
 
 
@@ -1441,7 +1441,7 @@ typedef struct _WIN_SPUB_TRUSTED_PUBLISHER_DATA
 //      under a single registry subkey.
 //
 //      Note, initially all certs are removed from the above store.
-//          
+//
 extern BOOL WINAPI OpenPersonalTrustDBDialogEx(
     IN OPTIONAL HWND hwndParent,
     IN DWORD dwFlags,
@@ -1489,4 +1489,3 @@ WintrustSetDefaultIncludePEPageHashes(
 #endif
 
 #endif // WINTRUST_H
-

@@ -18,7 +18,7 @@
 #endif
 
 #ifdef WIN16
-#include <pshpack1.h>   /* Assume byte packing throughout */
+#include <PshPack1.h>   /* Assume byte packing throughout */
 #endif
 
 #ifdef __cplusplus
@@ -501,8 +501,7 @@ typedef struct _OLESERVERDOC
 #endif  /* __cplusplus */
 
 #ifdef WIN16
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 #endif  /* !_INC_OLE */
-

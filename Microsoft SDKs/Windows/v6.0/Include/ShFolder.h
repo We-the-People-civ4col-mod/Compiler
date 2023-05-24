@@ -9,7 +9,7 @@
 #ifndef _SHFOLDER_H_
 #define _SHFOLDER_H_
 
-#include <SpecStrings.h>
+#include <specstrings.h>
 
 #ifndef SHFOLDERAPI
 #if defined(_SHFOLDER_)
@@ -42,7 +42,7 @@
 #define CSIDL_SYSTEM                    0x0025      // GetSystemDirectory()
 #define CSIDL_PROGRAM_FILES             0x0026      // C:\Program Files
 #define CSIDL_MYPICTURES                0x0027      // My Pictures, new for Win2K
-#define CSIDL_PROGRAM_FILES_COMMON      0x002b      // C:\Program Files\Common 
+#define CSIDL_PROGRAM_FILES_COMMON      0x002b      // C:\Program Files\Common
 #define CSIDL_COMMON_DOCUMENTS          0x002e      // All Users\Documents
 #define CSIDL_RESOURCES                 0x0038      // %windir%\Resources\, For theme and other windows resources.
 #define CSIDL_RESOURCES_LOCALIZED       0x0039      // %windir%\Resources\<LangID>, for theme and other windows specific resources.
@@ -73,4 +73,3 @@ typedef HRESULT (__stdcall * PFNSHGETFOLDERPATHW)(HWND, int, HANDLE, DWORD, LPWS
 #endif
 
 #endif //  _SHFOLDER_H_
-

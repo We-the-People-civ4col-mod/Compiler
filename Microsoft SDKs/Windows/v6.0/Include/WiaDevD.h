@@ -24,7 +24,7 @@
 extern "C" {
 #endif
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 #if (_WIN32_WINNT >= 0x0600) // Windows Vista and later
 
@@ -58,7 +58,7 @@ DECLARE_INTERFACE_IID_(IWiaUIExtension2, IUnknown, "305600d7-5088-46d7-9a15-b77b
 // {305600d7-5088-46d7-9a15-b77b09cdba7a}
 DEFINE_GUID(IID_IWiaUIExtension2, 0x305600D7, 0x5088, 0x46D7, 0x9A, 0x15, 0xB7, 0x7B, 0x09, 0xCD, 0xBA, 0x7A);
 
-#endif //#if (_WIN32_WINNT >= 0x0600) 
+#endif //#if (_WIN32_WINNT >= 0x0600)
 
 typedef struct tagDEVICEDIALOGDATA
 {
@@ -102,7 +102,7 @@ typedef HRESULT (WINAPI *DeviceDialogFunction)(PDEVICEDIALOGDATA);
 #define CFSTR_WIAITEMNAMES TEXT("WIAItemNames")
 #define CFSTR_WIAITEMPTR   TEXT("WIAItemPointer")
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #if defined(__cplusplus)
 };
@@ -111,4 +111,3 @@ typedef HRESULT (WINAPI *DeviceDialogFunction)(PDEVICEDIALOGDATA);
 #endif // !_WIADEVD_H_INCLUDED
 
 #endif //#if (_WIN32_WINNT >= 0x0501)
-

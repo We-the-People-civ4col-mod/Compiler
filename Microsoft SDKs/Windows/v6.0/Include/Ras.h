@@ -33,7 +33,7 @@ extern "C" {
 #include <lmcons.h>
 #endif
 
-// To use Quarantine APIs, applications should explicitly 
+// To use Quarantine APIs, applications should explicitly
 // define USES_RAS_QUARANTINE_APIS.
 #ifdef USES_RAS_QUARANTINE_APIS
 #include <naptypes.h>
@@ -49,7 +49,7 @@ typedef struct _tagRasNapState
 } RASNAPSTATE, *LPRASNAPSTATE;
 #endif // USES_RAS_QUARANTINE_APIS
 
-#include <pshpack4.h>
+#include <PshPack4.h>
 #include <in6addr.h>
 
 
@@ -600,7 +600,7 @@ RASPPPIPV6
 
 #define LPRASPPPIPV6  RASPPPIPV6*
 #endif
-  
+
 
 /* Describes the results of a PPP LCP/multi-link negotiation.
 */
@@ -1543,10 +1543,10 @@ typedef  DWORD (WINAPI *RasCustomScriptExecuteFn) (
                             RASDIALPARAMS *pRasDialParams,
                             PVOID pvReserved
                             );
-                            
-                            
-                            
-                            
+
+
+
+
 
 #endif // (WINVER >= 0x500)
 
@@ -1681,7 +1681,7 @@ DWORD APIENTRY RasGetSubEntryPropertiesA( LPCSTR, LPCSTR, DWORD,
 DWORD APIENTRY RasGetSubEntryPropertiesW( LPCWSTR, LPCWSTR, DWORD,
                     LPRASSUBENTRYW, LPDWORD, LPBYTE, LPDWORD );
 
-DWORD APIENTRY RasSetSubEntryPropertiesA( LPCSTR, LPCSTR, DWORD, 
+DWORD APIENTRY RasSetSubEntryPropertiesA( LPCSTR, LPCSTR, DWORD,
                     LPRASSUBENTRYA, DWORD, LPBYTE, DWORD );
 
 DWORD APIENTRY RasSetSubEntryPropertiesW( LPCWSTR, LPCWSTR, DWORD,
@@ -1880,7 +1880,7 @@ DWORD APIENTRY  RasDeleteSubEntryW(
                 DWORD   dwSubEntryId );
 
 
-// To use Quarantine APIs, applications should explicitly 
+// To use Quarantine APIs, applications should explicitly
 // define USES_RAS_QUARANTINE_APIS.
 
 #ifdef USES_RAS_QUARANTINE_APIS
@@ -1891,7 +1891,7 @@ RasGetNapStatus(
         LPRASNAPSTATE pRasNapState);
 
 #endif //USES_RAS_QUARANTINE_APIS
-                
+
 
 #endif
 
@@ -1991,7 +1991,6 @@ RasGetNapStatus(
 }
 #endif
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #endif // _RAS_H_
-

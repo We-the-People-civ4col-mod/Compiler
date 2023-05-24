@@ -31,7 +31,7 @@ extern "C" {            /* Assume C declarations for C++ */
 //** Specify structure packing explicitly for clients of FDI
 
 #ifndef _WIN64
-#include <pshpack4.h>
+#include <PshPack4.h>
 #endif
 
 
@@ -162,7 +162,7 @@ typedef unsigned short TCOMP; /* tcomp */
 //** Revert to default structure packing
 
 #ifndef _WIN64
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 #ifdef __cplusplus
@@ -171,7 +171,7 @@ typedef unsigned short TCOMP; /* tcomp */
 
 #endif // !INCLUDED_TYPES_FCI_FDI
 /***    fdi_int.h - Diamond File Decompression Interface definitions
- *                      
+ *
  *      Copyright (C) Microsoft Corporation 1993-1997
  *      All Rights Reserved.
  *
@@ -243,12 +243,12 @@ typedef unsigned short TCOMP; /* tcomp */
  *
  *      main(...)
  *      {
- *          // Read INF file to construct list of desired files.   
+ *          // Read INF file to construct list of desired files.
  *          //  Ideally, these would be sorted in the same order as the
  *          //  files appear in the cabinets, so that you can just walk
  *          //  down the list in response to fdintCOPY_FILE notifications.
  *
- *          // Construct list of required cabinets. 
+ *          // Construct list of required cabinets.
  *
  *          hfdi = FDICreate(...);          // Create FDI context
  *          For (cabinet in List of Cabinets) {
@@ -258,7 +258,7 @@ typedef unsigned short TCOMP; /* tcomp */
  *          ...
  *      }
  *
- *      // Notification callback function 
+ *      // Notification callback function
  *      fdiNotify(fdint,...)
  *      {
  *          If (User Aborted)               // Permit cancellation
@@ -267,7 +267,7 @@ typedef unsigned short TCOMP; /* tcomp */
  *              return -1;
  *          switch (fdint) {
  *              case fdintCOPY_FILE:        // File to copy, maybe
- *                  // Check file against list of desired files 
+ *                  // Check file against list of desired files
  *                  if want to copy file
  *                      open destination file and return handle
  *                  else
@@ -351,7 +351,7 @@ typedef unsigned short TCOMP; /* tcomp */
  *      FDI just for progess indication.
  */
 
-#include <basetsd.h>
+#include <BaseTsd.h>
 
 #ifndef INCLUDED_FDI
 #define INCLUDED_FDI    1
@@ -366,7 +366,7 @@ extern "C" {            /* Assume C declarations for C++ */
 //** Specify structure packing explicitly for clients of FDI
 
 #ifndef _WIN64
-#include <pshpack4.h>
+#include <PshPack4.h>
 #endif
 
 
@@ -1226,7 +1226,7 @@ BOOL FAR DIAMONDAPI FDITruncateCabinet(__in HFDI    hfdi,
 
 //** Revert to default structure packing
 #ifndef _WIN64
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 #ifdef __cplusplus
@@ -1234,4 +1234,3 @@ BOOL FAR DIAMONDAPI FDITruncateCabinet(__in HFDI    hfdi,
 #endif  /* __cplusplus */
 
 #endif //!INCLUDED_FDI
-

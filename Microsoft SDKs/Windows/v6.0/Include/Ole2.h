@@ -18,7 +18,7 @@
 
 #ifndef _MAC
 // Set packing to 8
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 // Make 100% sure WIN32 is defined
 #ifndef WIN32
@@ -398,7 +398,7 @@ WINOLEAPI OleConvertOLESTREAMToIStorageEx
 
 #ifndef _MAC
 #ifndef RC_INVOKED
-#include <poppack.h>
+#include <PopPack.h>
 #endif // RC_INVOKED
 
 #else // _MAC
@@ -408,4 +408,3 @@ WINOLEAPI OleConvertOLESTREAMToIStorageEx
 
 
 #endif     // __OLE2_H__
-

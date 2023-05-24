@@ -1,5 +1,5 @@
 /**********************************************************************/
-/*      imm.h - Input Method Manager definitions                      */
+/*      Imm.h - Input Method Manager definitions                      */
 /*                                                                    */
 /*      Copyright (c) Microsoft Corporation. All rights reserved.     */
 /**********************************************************************/
@@ -716,4 +716,3 @@ BOOL WINAPI ImmDisableTextFrameService(DWORD idThread);
 #endif
 
 #endif  // _IMM_
-

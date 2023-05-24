@@ -16,7 +16,7 @@ Abstract:
 
 
 #if !defined(_WININET_)
-#include <SpecStrings.h>
+#include <specstrings.h>
 #define _WININET_
 
 
@@ -25,9 +25,9 @@ Abstract:
  * for all wininet structures
  */
 #if defined(_WIN64)
-#include <pshpack8.h>
+#include <PshPack8.h>
 #else
-#include <pshpack4.h>
+#include <PshPack4.h>
 #endif
 
 
@@ -1417,7 +1417,7 @@ IncomingCookieState;
 
 typedef struct {
 
-    int     cSent;           
+    int     cSent;
     int     cSuppressed;
 
     const char *pszLocation;        // Optional: URL associated with reported cookie events
@@ -3663,12 +3663,12 @@ typedef struct AutoProxyHelperVtbl
            LPSTR   lpszIPAddress,
            LPDWORD lpdwIPAddressSize);
 
-    DWORD ( __stdcall *ResolveHostName )( 
+    DWORD ( __stdcall *ResolveHostName )(
            LPSTR   lpszHostName,
            LPSTR   lpszIPAddress,
            LPDWORD lpdwIPAddressSize);
 
-    BOOL ( __stdcall *IsInNet )( 
+    BOOL ( __stdcall *IsInNet )(
             LPSTR   lpszIPAddress,
             LPSTR   lpszDest,
             LPSTR   lpszMask);
@@ -3725,7 +3725,7 @@ typedef BOOL (CALLBACK *pfnInternetDeInitializeAutoProxyDll)(LPSTR lpszMime,
                            DWORD dwReserved);
 
 typedef BOOL (CALLBACK *pfnInternetGetProxyInfo)(LPCSTR lpszUrl,
-                           DWORD dwUrlLength, 
+                           DWORD dwUrlLength,
                            LPSTR lpszUrlHostName,
                            DWORD dwUrlHostNameLength,
                            LPSTR* lplpszProxyHostName,
@@ -3743,7 +3743,7 @@ INTERNETAPI_(BOOL) DetectAutoProxyUrl(
     __in DWORD dwDetectFlags
     );
 
-INTERNETAPI_(BOOL) CreateMD5SSOHash ( 
+INTERNETAPI_(BOOL) CreateMD5SSOHash (
     __in PWSTR    pszChallengeInfo,
     __in PWSTR    pwszRealm,
     __in PWSTR    pwszTarget,
@@ -3871,7 +3871,7 @@ INTERNETAPI_(BOOL) InternetEnumPerSiteCookieDecisionW(
 #define InternetEnumPerSiteCookieDecision  InternetEnumPerSiteCookieDecisionA
 #endif // !UNICODE
 
-    
+
 #define INTERNET_IDENTITY_FLAG_PRIVATE_CACHE        0x01
 #define INTERNET_IDENTITY_FLAG_SHARED_CACHE         0x02
 #define INTERNET_IDENTITY_FLAG_CLEAR_DATA           0x04
@@ -3903,7 +3903,7 @@ INTERNETAPI_(BOOL) InternetEnumPerSiteCookieDecisionW(
 
 INTERNETAPI_(DWORD)
 PrivacySetZonePreferenceW(
-    __in DWORD       dwZone, 
+    __in DWORD       dwZone,
     __in DWORD       dwType,
     __in DWORD       dwTemplate,
     __in_opt LPCWSTR     pszPreference
@@ -3929,9 +3929,7 @@ PrivacyGetZonePreferenceW(
  * Return packing to whatever it was before we
  * entered this file
  */
-#include <poppack.h>
+#include <PopPack.h>
 
 
 #endif // !defined(_WININET_)
-
-

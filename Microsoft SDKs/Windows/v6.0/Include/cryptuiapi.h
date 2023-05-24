@@ -24,7 +24,7 @@
 extern "C" {
 #endif
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 //+----------------------------------------------------------------------------
 //  Dialog viewer of a certificate, CTL or CRL context.
@@ -115,7 +115,7 @@ typedef BOOL (WINAPI * PFNCFILTERPROC) (
 //
 // CRYPTUI_CERT_MGR_STRUCT
 //
-// dwSize               IN Required: Should be set to 
+// dwSize               IN Required: Should be set to
 //                                   sizeof(CRYPTUI_CERT_MGR_STRUCT)
 //
 // hwndParent           IN Optional: Parent of this dialog.
@@ -133,11 +133,11 @@ typedef BOOL (WINAPI * PFNCFILTERPROC) (
 //
 // pwszTitle            IN Optional: Title of the dialog.
 //
-// pszInitUsageOID      IN Optional: The enhanced key usage object identifier 
-//                                   (OID). Certificates with this OID will 
+// pszInitUsageOID      IN Optional: The enhanced key usage object identifier
+//                                   (OID). Certificates with this OID will
 //                                   initially be shown as a default. User
-//                                   can then choose different OIDs. NULL 
-//                                   means all certificates will be shown 
+//                                   can then choose different OIDs. NULL
+//                                   means all certificates will be shown
 //                                   initially.
 //
 //-----------------------------------------------------------------------------
@@ -159,7 +159,7 @@ typedef const CRYPTUI_CERT_MGR_STRUCT *PCCRYPTUI_CERT_MGR_STRUCT;
 //
 // The wizard to manage certificates in store.
 //
-// pCryptUICertMgr      IN  Required: Poitner to CRYPTUI_CERT_MGR_STRUCT 
+// pCryptUICertMgr      IN  Required: Poitner to CRYPTUI_CERT_MGR_STRUCT
 //                                    structure.
 //
 //-----------------------------------------------------------------------------
@@ -168,12 +168,12 @@ WINAPI
 CryptUIDlgCertMgr(
     IN                  PCCRYPTUI_CERT_MGR_STRUCT pCryptUICertMgr
     );
-        
+
 //+----------------------------------------------------------------------------
 //
 // CRYPTUI_WIZ_DIGITAL_SIGN_BLOB_INFO
 //
-// dwSize               IN Required: Should be set to 
+// dwSize               IN Required: Should be set to
 //                                   sizeof(CRYPTUI_WIZ_DIGITAL_SIGN_BLOB_INFO)
 //
 // pGuidSubject         IN Required: Idenfity the sip functions to load
@@ -185,10 +185,10 @@ CryptUIDlgCertMgr(
 //-----------------------------------------------------------------------------
 typedef struct _CRYPTUI_WIZ_DIGITAL_SIGN_BLOB_INFO
 {
-    DWORD               dwSize;			
+    DWORD               dwSize;
     GUID                *pGuidSubject;
-    DWORD               cbBlob;				
-    BYTE                *pbBlob;			
+    DWORD               cbBlob;
+    BYTE                *pbBlob;
     LPCWSTR             pwszDisplayName;
 } CRYPTUI_WIZ_DIGITAL_SIGN_BLOB_INFO, *PCRYPTUI_WIZ_DIGITAL_SIGN_BLOB_INFO;
 
@@ -198,16 +198,16 @@ typedef const CRYPTUI_WIZ_DIGITAL_SIGN_BLOB_INFO *PCCRYPTUI_WIZ_DIGITAL_SIGN_BLO
 //
 // CRYPTUI_WIZ_DIGITAL_SIGN_STORE_INFO
 //
-// dwSize               IN Required: Should be set to 
+// dwSize               IN Required: Should be set to
 //                                   sizeof(CRYPTUI_WIZ_DIGITAL_SIGN_STORE_INFO)
 //
 // cCertStore           IN Required: The acount of certificate store array that
 //                                   includes potentical sining certs
 //
-// rghCertStore         IN Required: The certificate store array that includes 
+// rghCertStore         IN Required: The certificate store array that includes
 //                                   potential signing certs
 //
-// pFilterCallback      IN Optional: The filter call back function for display 
+// pFilterCallback      IN Optional: The filter call back function for display
 //                                   the certificate
 //
 // pvCallbackData       IN Optional: The call back data
@@ -215,8 +215,8 @@ typedef const CRYPTUI_WIZ_DIGITAL_SIGN_BLOB_INFO *PCCRYPTUI_WIZ_DIGITAL_SIGN_BLO
 //-----------------------------------------------------------------------------
 typedef struct _CRYPTUI_WIZ_DIGITAL_SIGN_STORE_INFO
 {
-    DWORD               dwSize;	
-    DWORD               cCertStore;			
+    DWORD               dwSize;
+    DWORD               cCertStore;
     HCERTSTORE          *rghCertStore;
     PFNCFILTERPROC      pFilterCallback;
     void *              pvCallbackData;
@@ -228,7 +228,7 @@ typedef const CRYPTUI_WIZ_DIGITAL_SIGN_STORE_INFO *PCCRYPTUI_WIZ_DIGITAL_SIGN_ST
 //
 // CRYPTUI_WIZ_DIGITAL_SIGN_PVK_FILE_INFO
 //
-// dwSize               IN Required: Should be set to 
+// dwSize               IN Required: Should be set to
 //                                   sizeof(CRYPT_WIZ_DIGITAL_SIGN_PVK_FILE_INFO)
 //
 // pwszPvkFileName      IN Required: The PVK file name
@@ -249,7 +249,7 @@ typedef struct _CRYPTUI_WIZ_DIGITAL_SIGN_PVK_FILE_INFO
 typedef const CRYPTUI_WIZ_DIGITAL_SIGN_PVK_FILE_INFO *PCCRYPTUI_WIZ_DIGITAL_SIGN_PVK_FILE_INFO;
 
 //+----------------------------------------------------------------------------
-// Valid values for dwPvkChoice in CRYPTUI_WIZ_DIGITAL_SIGN_CERT_PVK_INFO 
+// Valid values for dwPvkChoice in CRYPTUI_WIZ_DIGITAL_SIGN_CERT_PVK_INFO
 // struct.
 //-----------------------------------------------------------------------------
 #define CRYPTUI_WIZ_DIGITAL_SIGN_PVK_FILE                0x01
@@ -259,13 +259,13 @@ typedef const CRYPTUI_WIZ_DIGITAL_SIGN_PVK_FILE_INFO *PCCRYPTUI_WIZ_DIGITAL_SIGN
 //
 // CRYPTUI_WIZ_DIGITAL_SIGN_CERT_PVK_INFO
 //
-// dwSize                   IN Required: Should be set to 
+// dwSize                   IN Required: Should be set to
 //                                       sizeof(CRYPTUI_WIZ_DIGITAL_SIGN_STORE_INFO)
 //
-// pwszSigningCertFileName  IN Required: The file name that contains the 
+// pwszSigningCertFileName  IN Required: The file name that contains the
 //                                       signing cert(s)
 //
-// dwPvkChoice              IN Required: Indicate the private key type. 
+// dwPvkChoice              IN Required: Indicate the private key type.
 //                                       It can be one of the following:
 //                                           CRYPTUI_WIZ_DIGITAL_SIGN_PVK_FILE
 //                                           CRYPTUI_WIZ_DIGITAL_SIGN_PVK_PROV
@@ -279,7 +279,7 @@ typedef struct _CRYPTUI_WIZ_DIGITAL_SIGN_CERT_PVK_INFO
 {
     DWORD                                         dwSize;
     LPWSTR                                        pwszSigningCertFileName;
-    DWORD                                         dwPvkChoice;		
+    DWORD                                         dwPvkChoice;
     union
     {
         PCCRYPTUI_WIZ_DIGITAL_SIGN_PVK_FILE_INFO  pPvkFileInfo;
@@ -291,7 +291,7 @@ typedef struct _CRYPTUI_WIZ_DIGITAL_SIGN_CERT_PVK_INFO
 typedef const CRYPTUI_WIZ_DIGITAL_SIGN_CERT_PVK_INFO *PCCRYPTUI_WIZ_DIGITAL_SIGN_CERT_PVK_INFO;
 
 //+----------------------------------------------------------------------------
-// Valid values for dwAttrFlags in CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO 
+// Valid values for dwAttrFlags in CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO
 // struct.
 //-----------------------------------------------------------------------------
 #define CRYPTUI_WIZ_DIGITAL_SIGN_COMMERCIAL              0x0001
@@ -301,7 +301,7 @@ typedef const CRYPTUI_WIZ_DIGITAL_SIGN_CERT_PVK_INFO *PCCRYPTUI_WIZ_DIGITAL_SIGN
 //
 // CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO
 //
-// dwSize                       IN Required: Should be set to 
+// dwSize                       IN Required: Should be set to
 //                                           sizeof(CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO)
 //
 // dwAttrFlags                  IN Required: Flag to indicate signing options.
@@ -309,46 +309,46 @@ typedef const CRYPTUI_WIZ_DIGITAL_SIGN_CERT_PVK_INFO *PCCRYPTUI_WIZ_DIGITAL_SIGN
 //                                               CRYPTUI_WIZ_DIGITAL_SIGN_COMMERCIAL
 //                                               CRYPTUI_WIZ_DIGITAL_SIGN_INDIVIDUAL
 //
-// pwszDescription              IN Optional: The description of the signing 
+// pwszDescription              IN Optional: The description of the signing
 //                                           subject.
 
-// pwszMoreInfoLocation         IN Optional: The localtion to get more 
-//                                           information about file this 
-//                                           information will be shown upon 
+// pwszMoreInfoLocation         IN Optional: The localtion to get more
+//                                           information about file this
+//                                           information will be shown upon
 //                                           download time.
 //
-// pszHashAlg                   IN Optional: The hashing algorithm for the 
-//                                           signature. NULL means using SHA1 
+// pszHashAlg                   IN Optional: The hashing algorithm for the
+//                                           signature. NULL means using SHA1
 //                                           hashing algorithm.
 //
-// pwszSigningCertDisplayString IN Optional: The display string to be 
-//                                           displayed on the signing 
-//                                           certificate wizard page. The 
-//                                           string should prompt user to 
-//                                           select a certificate for a 
+// pwszSigningCertDisplayString IN Optional: The display string to be
+//                                           displayed on the signing
+//                                           certificate wizard page. The
+//                                           string should prompt user to
+//                                           select a certificate for a
 //                                           particular purpose.
 //
 // hAddtionalCertStores         IN Optional: The addtional cert store to add to
 //                                           the signature.
 //
-// psAuthenticated              IN Optional: User supplied authenticated 
+// psAuthenticated              IN Optional: User supplied authenticated
 //                                           attributes added to the signature.
 //
-// psUnauthenticated	        IN Optional: User supplied unauthenticated 
+// psUnauthenticated	        IN Optional: User supplied unauthenticated
 //                                           attributes added to the signature.
 //
 //-----------------------------------------------------------------------------
 typedef struct _CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO
 {
-    DWORD                   dwSize;			
+    DWORD                   dwSize;
     DWORD                   dwAttrFlags;
     LPCWSTR                 pwszDescription;
-    LPCWSTR                 pwszMoreInfoLocation;		
+    LPCWSTR                 pwszMoreInfoLocation;
     LPCSTR                  pszHashAlg;
     LPCWSTR                 pwszSigningCertDisplayString;
     HCERTSTORE              hAdditionalCertStore;
-    PCRYPT_ATTRIBUTES       psAuthenticated;	
-    PCRYPT_ATTRIBUTES       psUnauthenticated;	
+    PCRYPT_ATTRIBUTES       psAuthenticated;
+    PCRYPT_ATTRIBUTES       psUnauthenticated;
 } CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO, *PCRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO;
 
 typedef const CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO *PCCRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO;
@@ -360,7 +360,7 @@ typedef const CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO *PCCRYPTUI_WIZ_DIGITAL_SIGN
 #define CRYPTUI_WIZ_DIGITAL_SIGN_SUBJECT_BLOB            0x02
 
 //+----------------------------------------------------------------------------
-// Valid values for dwSigningCertChoice in CRYPTUI_WIZ_DIGITAL_SIGN_INFO 
+// Valid values for dwSigningCertChoice in CRYPTUI_WIZ_DIGITAL_SIGN_INFO
 // struct.
 //-----------------------------------------------------------------------------
 #define CRYPTUI_WIZ_DIGITAL_SIGN_CERT                    0x01
@@ -368,7 +368,7 @@ typedef const CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO *PCCRYPTUI_WIZ_DIGITAL_SIGN
 #define CRYPTUI_WIZ_DIGITAL_SIGN_PVK                     0x03
 
 //+----------------------------------------------------------------------------
-// Valid values for dwAddtionalCertChoice in CRYPTUI_WIZ_DIGITAL_SIGN_INFO 
+// Valid values for dwAddtionalCertChoice in CRYPTUI_WIZ_DIGITAL_SIGN_INFO
 // struct.
 //-----------------------------------------------------------------------------
 #define CRYPTUI_WIZ_DIGITAL_SIGN_ADD_CHAIN               0x00000001
@@ -378,18 +378,18 @@ typedef const CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO *PCCRYPTUI_WIZ_DIGITAL_SIGN
 //
 // CRYPTUI_WIZ_DIGITAL_SIGN_INFO
 //
-// dwSize                   IN Required: Should be set to 
+// dwSize                   IN Required: Should be set to
 //                                       sizeof(CRYPTUI_WIZ_DIGITAL_SIGN_INFO)
 //
-// dwSubjectChoice          IN Required: If CRYPTUI_WIZ_NO_UI is set in dwFlags 
+// dwSubjectChoice          IN Required: If CRYPTUI_WIZ_NO_UI is set in dwFlags
 //                                       of the CryptUIWizDigitalSign call.
 //
-//                             Optional: If CRYPTUI_WIZ_NO_UI is not set in 
+//                             Optional: If CRYPTUI_WIZ_NO_UI is not set in
 //                                       dwFlags of the CryptUIWizDigitalSign
 //                                       call.
 //
-//                                       Indicate whether to sign a file or to 
-//                                       sign a memory blob. 0 means promting 
+//                                       Indicate whether to sign a file or to
+//                                       sign a memory blob. 0 means promting
 //                                       user for the file to sign.
 //
 //                                       It can be one of the following:
@@ -409,8 +409,8 @@ typedef const CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO *PCCRYPTUI_WIZ_DIGITAL_SIGN
 //                                           CRYPTUI_WIZ_DIGITAL_SIGN_STORE
 //                                           CRYPTUI_WIZ_DIGITAL_SIGN_PVK
 //
-//                                       If CRYPTUI_WIZ_NO_UI is set in dwFlags 
-//                                       of the CryptUIWizDigitalSign call, 
+//                                       If CRYPTUI_WIZ_NO_UI is set in dwFlags
+//                                       of the CryptUIWizDigitalSign call,
 //                                       dwSigningCertChoice has to be
 //                                       CRYPTUI_WIZ_DIGITAL_SIGN_CERT or
 //                                       CRYPTUI_WIZ_DIGITAL_SIGN_PVK
@@ -424,10 +424,10 @@ typedef const CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO *PCCRYPTUI_WIZ_DIGITAL_SIGN
 // pwszTimestampURL         IN Optional: The timestamp URL address.
 //
 // dwAdditionalCertChoice   IN Optional: Indicate additional certificates to be
-//                                       included in the signature. 0 means no 
+//                                       included in the signature. 0 means no
 //                                       addtional certificates will be added.
 //
-//                                       The following flags are mutually 
+//                                       The following flags are mutually
 //                                       exclusive.
 //                                       Only one of them can be set:
 //                                           CRYPTUI_WIZ_DIGITAL_SIGN_ADD_CHAIN
@@ -438,12 +438,12 @@ typedef const CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO *PCCRYPTUI_WIZ_DIGITAL_SIGN
 //-----------------------------------------------------------------------------
 typedef struct _CRYPTUI_WIZ_DIGITAL_SIGN_INFO
 {
-    DWORD                                           dwSize;			
-    DWORD                                           dwSubjectChoice;	
+    DWORD                                           dwSize;
+    DWORD                                           dwSubjectChoice;
     union
     {
-        LPCWSTR                                     pwszFileName;	
-        PCCRYPTUI_WIZ_DIGITAL_SIGN_BLOB_INFO        pSignBlobInfo;	
+        LPCWSTR                                     pwszFileName;
+        PCCRYPTUI_WIZ_DIGITAL_SIGN_BLOB_INFO        pSignBlobInfo;
     };
     DWORD                                           dwSigningCertChoice;
     union
@@ -463,7 +463,7 @@ typedef const CRYPTUI_WIZ_DIGITAL_SIGN_INFO *PCCRYPTUI_WIZ_DIGITAL_SIGN_INFO;
 //
 // CRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT
 //
-// dwSize               IN Required: Should be set to 
+// dwSize               IN Required: Should be set to
 //                                   sizeof(CRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT)
 //
 // cbBlob               IN Required: The size of pbBlob in bytes.
@@ -474,9 +474,9 @@ typedef const CRYPTUI_WIZ_DIGITAL_SIGN_INFO *PCCRYPTUI_WIZ_DIGITAL_SIGN_INFO;
 
 typedef struct _CRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT
 {
-    DWORD               dwSize;			
-    DWORD               cbBlob;				
-    BYTE                *pbBlob;			
+    DWORD               dwSize;
+    DWORD               cbBlob;
+    BYTE                *pbBlob;
 } CRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT, *PCRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT;
 
 typedef const CRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT *PCCRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT;
@@ -508,7 +508,7 @@ typedef const CRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT *PCCRYPTUI_WIZ_DIGITAL_SIGN_CONTE
 //
 // pDigitalSignInfo     IN Required: The information about the signing process.
 //
-// ppSignContext        OUT Optional: The context pointer points to the signed 
+// ppSignContext        OUT Optional: The context pointer points to the signed
 //                                    blob.
 //
 //-----------------------------------------------------------------------------
@@ -528,7 +528,7 @@ WINAPI
 CryptUIWizFreeDigitalSignContext(
     IN                  PCCRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT  pSignContext
     );
-     
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -597,12 +597,12 @@ CryptUIWizFreeDigitalSignContext(
 #define CRYPTUI_WARN_REMOTE_TRUST           0x00001000
 #define CRYPTUI_DISABLE_EXPORT              0x00002000  // If this flag is set, then the "Copy to file" button will be
                                                         // disabled on the Detail page.
-                                                                
+
 // Revocation flags is only valid if pCryptProviderData/hWVTStateData is not passed in.
 #define CRYPTUI_ENABLE_REVOCATION_CHECK_END_CERT           0x00004000
 #define CRYPTUI_ENABLE_REVOCATION_CHECK_CHAIN              0x00008000
 #define CRYPTUI_ENABLE_REVOCATION_CHECK_CHAIN_EXCLUDE_ROOT CRYPTUI_ENABLE_REVOCATION_CHECKING // Changed the default behavior
-        
+
                                                                                               // to not check root.
 #define CRYPTUI_DISABLE_HTMLLINK                           0x00010000   // to disable helplink in viewing certificate
 //
@@ -865,7 +865,7 @@ typedef struct _CRYPTUI_WIZ_IMPORT_SUBJECT_INFO
                                                 //          CRYPTUI_WIZ_IMPORT_SUBJECT_CERT_STORE
     union
 	{
-		LPCWSTR          	pwszFileName;	
+		LPCWSTR          	pwszFileName;
         PCCERT_CONTEXT      pCertContext;
         PCCTL_CONTEXT       pCTLContext;
         PCCRL_CONTEXT       pCRLContext;
@@ -970,11 +970,10 @@ CryptUIWizImport(
      HCERTSTORE                          hDestCertStore
 );
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #ifdef __cplusplus
 }       // Balance extern "C" above
 #endif
 
 #endif // _CRYPTUIAPI_H_
-

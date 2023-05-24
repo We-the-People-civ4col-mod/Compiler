@@ -4,7 +4,7 @@ Copyright (c) 2000  Microsoft Corporation
 
 Module Name:
 
-    stralign.h
+    StrAlign.h
 
 Abstract:
 
@@ -299,7 +299,7 @@ ua_lstrlenW(
 // the prototypes in string.h.
 //
 
-#if defined(_WConst_return) 
+#if defined(_WConst_return)
 typedef _WConst_return WCHAR UNALIGNED *PUWSTR_C;
 #else
 typedef WCHAR UNALIGNED *PUWSTR_C;
@@ -413,7 +413,7 @@ ua_wcscpy(
 #pragma warning(disable:4995)
 #pragma warning(disable:4996)
         return wcscpy( (PWSTR)Destination, (PCWSTR)Source );
-#pragma warning(pop)	
+#pragma warning(pop)
     } else {
         return uaw_wcscpy( Destination, Source );
     }
@@ -526,14 +526,14 @@ ua_wcsicmp(
 //        SomeSystemFunction(AlignedString);
 //        ...
 //    }
-//        
-//        
+//
+//
 //--
 
 //
 // __UA_WSTRSIZE returns the number of bytes required to store the
 // supplied null-terminated UNICODE string.
-//        
+//
 // __UA_LOCALCOPY accepts a pointer to unaligned data and a size.  It
 // allocates an aligned buffer on the stack and copies the data into
 // it, returning a pointer to the buffer.
@@ -589,7 +589,7 @@ ua_wcsicmp(
 //     IN <type name>,
 //     IN PVOID Struc OPTIONAL
 //     )
-// 
+//
 // Routine Description:
 //
 //    This macro returns an aligned pointer to Struc, creating a local
@@ -607,7 +607,7 @@ ua_wcsicmp(
 //
 // Return Value:
 //
-//    Returns a const pointer to Struc if it is properly aligned, or a pointer 
+//    Returns a const pointer to Struc if it is properly aligned, or a pointer
 //    to a stack-allocated copy of Struc if it is not.
 //
 //--
@@ -665,12 +665,3 @@ ua_wcsicmp(
 #endif
 
 #endif  // __STRALIGN_H_
-
-    
-
-                                         
-
-
-
-                                                      
-

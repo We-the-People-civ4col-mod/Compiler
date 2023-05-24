@@ -189,7 +189,7 @@ typedef  ULONG             REGDISPOSITION;
 //
 // use 1 byte packing for the data structures
 //
-#include "pshpack1.h"
+#include "PshPack1.h"
 
 //--------------------------------------------------------------
 // Memory resource
@@ -730,7 +730,7 @@ typedef PHWPROFILEINFO_A  PHWPROFILEINFO;
 //
 // revert back to normal default packing
 //
-#include "poppack.h"
+#include "PopPack.h"
 
 //--------------------------------------------------------------
 // Miscellaneous
@@ -749,10 +749,10 @@ typedef PHWPROFILEINFO_A  PHWPROFILEINFO;
 #define ResType_BusNumber     (0x00000006)   // bus number resource
 #define ResType_MAX           (0x00000006)   // Maximum known (arbitrated) ResType
 
-// 
-// This resource type is currently only supported in Kernel Mode as 
+//
+// This resource type is currently only supported in Kernel Mode as
 // CmResourceTypeMemoryLarge.  It is shown here as ResType_MemLarge
-// for completeness and will eventually be fully implemented in user mode 
+// for completeness and will eventually be fully implemented in user mode
 //
 #define ResType_MemLarge      (0x00000007)   // Memory resources >= 4GB
 
@@ -3222,7 +3222,7 @@ CONFIGRET
 CM_Apply_PowerScheme(
     VOID
     );
-    
+
 CONFIGRET
 CM_Write_UserPowerKey(
     __in_opt CONST GUID *SchemeGuid,
@@ -3234,38 +3234,38 @@ CM_Write_UserPowerKey(
     __in DWORD BufferSize,
     __out PDWORD Error
     );
-    
+
 
 CONFIGRET
 CM_Set_ActiveScheme(
     __in CONST GUID *SchemeGuid,
     __out PDWORD Error
     );
-    
+
 CONFIGRET
 CM_Restore_DefaultPowerScheme(
     __in CONST GUID *SchemeGuid,
     __out PDWORD Error
     );
-    
+
 CONFIGRET
 CM_RestoreAll_DefaultPowerSchemes(
     __out PDWORD Error
     );
-    
+
 CONFIGRET
 CM_Duplicate_PowerScheme (
     __in CONST GUID *SourceSchemeGuid,
     __in GUID **DestinationSchemeGuid,
     __out PDWORD Error
     );
-    
+
 CONFIGRET
 CM_Delete_PowerScheme (
     __in CONST GUID *SchemeGuid,
     __out PDWORD Error
     );
-    
+
 CONFIGRET
 CM_Import_PowerScheme (
     __in LPCWSTR ImportFileNamePath,
@@ -3481,5 +3481,3 @@ CM_WaitNoPendingInstallEvents(
 #endif
 
 #endif // _CFGMGR32_H_
-
-

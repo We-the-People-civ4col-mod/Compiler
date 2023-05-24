@@ -10,7 +10,7 @@
 #define _UXTHEME_H_
 
 #include <commctrl.h>
-#include <SpecStrings.h>
+#include <specstrings.h>
 
 #ifndef THEMEAPI
 #if !defined(_UXTHEME_)
@@ -28,38 +28,38 @@ typedef HANDLE HTHEME;          // handle to a section of theme data for class
 #define MAX_THEMESIZE   64
 
 //---------------------------------------------------------------------------
-// NOTE: PartId's and StateId's used in the theme API are defined in the 
+// NOTE: PartId's and StateId's used in the theme API are defined in the
 //       hdr file <vssym32.h> using the TM_PART and TM_STATE macros.  For
 //       example, "TM_PART(BP, PUSHBUTTON)" defines the PartId "BP_PUSHBUTTON".
 
 //---------------------------------------------------------------------------
-//  OpenThemeData()     - Open the theme data for the specified HWND and 
-//                        semi-colon separated list of class names. 
-// 
-//                        OpenThemeData() will try each class name, one at 
+//  OpenThemeData()     - Open the theme data for the specified HWND and
+//                        semi-colon separated list of class names.
+//
+//                        OpenThemeData() will try each class name, one at
 //                        a time, and use the first matching theme info
 //                        found.  If a match is found, a theme handle
 //                        to the data is returned.  If no match is found,
-//                        a "NULL" handle is returned. 
+//                        a "NULL" handle is returned.
 //
 //                        When the window is destroyed or a WM_THEMECHANGED
-//                        msg is received, "CloseThemeData()" should be 
+//                        msg is received, "CloseThemeData()" should be
 //                        called to close the theme handle.
 //
 //  hwnd                - window handle of the control/window to be themed
 //
 //  pszClassList        - class name (or list of names) to match to theme data
-//                        section.  if the list contains more than one name, 
-//                        the names are tested one at a time for a match.  
-//                        If a match is found, OpenThemeData() returns a 
-//                        theme handle associated with the matching class. 
-//                        This param is a list (instead of just a single 
-//                        class name) to provide the class an opportunity 
-//                        to get the "best" match between the class and 
+//                        section.  if the list contains more than one name,
+//                        the names are tested one at a time for a match.
+//                        If a match is found, OpenThemeData() returns a
+//                        theme handle associated with the matching class.
+//                        This param is a list (instead of just a single
+//                        class name) to provide the class an opportunity
+//                        to get the "best" match between the class and
 //                        the current theme.  For example, a button might
-//                        pass L"OkButton, Button" if its ID=ID_OK.  If 
-//                        the current theme has an entry for OkButton, 
-//                        that will be used.  Otherwise, we fall back on 
+//                        pass L"OkButton, Button" if its ID=ID_OK.  If
+//                        the current theme has an entry for OkButton,
+//                        that will be used.  Otherwise, we fall back on
 //                        the normal Button entry.
 //---------------------------------------------------------------------------
 THEMEAPI_(HTHEME)
@@ -74,33 +74,33 @@ OpenThemeData(
                                  OTD_NONCLIENT)
 
 //---------------------------------------------------------------------------
-//  OpenThemeDataEx     - Open the theme data for the specified HWND and 
-//                        semi-colon separated list of class names. 
-// 
-//                        OpenThemeData() will try each class name, one at 
+//  OpenThemeDataEx     - Open the theme data for the specified HWND and
+//                        semi-colon separated list of class names.
+//
+//                        OpenThemeData() will try each class name, one at
 //                        a time, and use the first matching theme info
 //                        found.  If a match is found, a theme handle
 //                        to the data is returned.  If no match is found,
-//                        a "NULL" handle is returned. 
+//                        a "NULL" handle is returned.
 //
 //                        When the window is destroyed or a WM_THEMECHANGED
-//                        msg is received, "CloseThemeData()" should be 
+//                        msg is received, "CloseThemeData()" should be
 //                        called to close the theme handle.
 //
 //  hwnd                - window handle of the control/window to be themed
 //
 //  pszClassList        - class name (or list of names) to match to theme data
-//                        section.  if the list contains more than one name, 
-//                        the names are tested one at a time for a match.  
-//                        If a match is found, OpenThemeData() returns a 
-//                        theme handle associated with the matching class. 
-//                        This param is a list (instead of just a single 
-//                        class name) to provide the class an opportunity 
-//                        to get the "best" match between the class and 
+//                        section.  if the list contains more than one name,
+//                        the names are tested one at a time for a match.
+//                        If a match is found, OpenThemeData() returns a
+//                        theme handle associated with the matching class.
+//                        This param is a list (instead of just a single
+//                        class name) to provide the class an opportunity
+//                        to get the "best" match between the class and
 //                        the current theme.  For example, a button might
-//                        pass L"OkButton, Button" if its ID=ID_OK.  If 
-//                        the current theme has an entry for OkButton, 
-//                        that will be used.  Otherwise, we fall back on 
+//                        pass L"OkButton, Button" if its ID=ID_OK.  If
+//                        the current theme has an entry for OkButton,
+//                        that will be used.  Otherwise, we fall back on
 //                        the normal Button entry.
 //
 //  dwFlags              - allows certain overrides of std features
@@ -114,10 +114,10 @@ OpenThemeDataEx(
     );
 
 //---------------------------------------------------------------------------
-//  CloseThemeData()    - closes the theme data handle.  This should be done 
+//  CloseThemeData()    - closes the theme data handle.  This should be done
 //                        when the window being themed is destroyed or
-//                        whenever a WM_THEMECHANGED msg is received 
-//                        (followed by an attempt to create a new Theme data 
+//                        whenever a WM_THEMECHANGED msg is received
+//                        (followed by an attempt to create a new Theme data
 //                        handle).
 //
 //  hTheme              - open theme data handle (returned from prior call
@@ -129,31 +129,31 @@ CloseThemeData(
     );
 
 //---------------------------------------------------------------------------
-//    functions for basic drawing support 
+//    functions for basic drawing support
 //---------------------------------------------------------------------------
 // The following methods are the theme-aware drawing services.
-// Controls/Windows are defined in drawable "parts" by their author: a 
-// parent part and 0 or more child parts.  Each of the parts can be 
-// described in "states" (ex: disabled, hot, pressed).  
+// Controls/Windows are defined in drawable "parts" by their author: a
+// parent part and 0 or more child parts.  Each of the parts can be
+// described in "states" (ex: disabled, hot, pressed).
 //---------------------------------------------------------------------------
 // For the list of all themed classes and the definition of all
 // parts and states, see the file "tmschmea.h".
 //---------------------------------------------------------------------------
-// Each of the below methods takes a "iPartId" param to specify the 
-// part and a "iStateId" to specify the state of the part.  
-// "iStateId=0" refers to the root part.  "iPartId" = "0" refers to 
-// the root class.  
+// Each of the below methods takes a "iPartId" param to specify the
+// part and a "iStateId" to specify the state of the part.
+// "iStateId=0" refers to the root part.  "iPartId" = "0" refers to
+// the root class.
 //-----------------------------------------------------------------------
-// Note: draw operations are always scaled to fit (and not to exceed)  
+// Note: draw operations are always scaled to fit (and not to exceed)
 // the specified "Rect".
 //-----------------------------------------------------------------------
 
 //------------------------------------------------------------------------
-//  DrawThemeBackground()   
-//                      - draws the theme-specified border and fill for 
-//                        the "iPartId" and "iStateId".  This could be 
-//                        based on a bitmap file, a border and fill, or 
-//                        other image description.  
+//  DrawThemeBackground()
+//                      - draws the theme-specified border and fill for
+//                        the "iPartId" and "iStateId".  This could be
+//                        based on a bitmap file, a border and fill, or
+//                        other image description.
 //
 //  hTheme              - theme data handle
 //  hdc                 - HDC to draw into
@@ -180,9 +180,9 @@ DrawThemeBackground(
 #define DTBG_OMITCONTENT        0x00000008  // don't draw content area of part
 #define DTBG_COMPUTINGREGION    0x00000010  // TRUE if calling to compute region
 #define DTBG_MIRRORDC           0x00000020  // assume the hdc is mirrorred and
-                                            // flip images as appropriate (currently 
+                                            // flip images as appropriate (currently
                                             // only supported for bgtype=imagefile)
-#define DTBG_NOMIRROR           0x00000040  // don't mirror the output, overrides everything else 
+#define DTBG_NOMIRROR           0x00000040  // don't mirror the output, overrides everything else
 #define DTBG_VALIDBITS          (DTBG_CLIPRECT | \
                                  DTBG_DRAWSOLID | \
                                  DTBG_OMITBORDER | \
@@ -199,12 +199,12 @@ typedef struct _DTBGOPTS
 } DTBGOPTS, *PDTBGOPTS;
 
 //------------------------------------------------------------------------
-//  DrawThemeBackgroundEx()   
-//                      - draws the theme-specified border and fill for 
-//                        the "iPartId" and "iStateId".  This could be 
-//                        based on a bitmap file, a border and fill, or 
+//  DrawThemeBackgroundEx()
+//                      - draws the theme-specified border and fill for
+//                        the "iPartId" and "iStateId".  This could be
+//                        based on a bitmap file, a border and fill, or
 //                        other image description.  NOTE: This will be
-//                        merged back into DrawThemeBackground() after 
+//                        merged back into DrawThemeBackground() after
 //                        BETA 2.
 //
 //  hTheme              - theme data handle
@@ -230,9 +230,9 @@ DrawThemeBackgroundEx(
 #define DTT_FLAGS2VALIDBITS     (DTT_GRAYED)
 
 //-------------------------------------------------------------------------
-//  DrawThemeText()     - draws the text using the theme-specified 
-//                        color and font for the "iPartId" and 
-//                        "iStateId".  
+//  DrawThemeText()     - draws the text using the theme-specified
+//                        color and font for the "iPartId" and
+//                        "iStateId".
 //
 //  hTheme              - theme data handle
 //  hdc                 - HDC to draw into
@@ -241,7 +241,7 @@ DrawThemeBackgroundEx(
 //  pszText             - actual text to draw
 //  dwCharCount         - number of chars to draw (-1 for all)
 //  dwTextFlags         - same as DrawText() "uFormat" param
-//  dwTextFlags2        - additional drawing options 
+//  dwTextFlags2        - additional drawing options
 //  pRect               - defines the size/location of the part
 //-------------------------------------------------------------------------
 THEMEAPI
@@ -264,7 +264,7 @@ DrawThemeText(
 //
 
 // Callback function used by DrawTextWithGlow instead of DrawTextW
-typedef 
+typedef
 int
 (WINAPI *DTT_CALLBACK_PROC)
 (
@@ -321,7 +321,7 @@ typedef struct _DTTOPTS
     int               iGlowSize;           // Glow radious around text
     DTT_CALLBACK_PROC pfnDrawTextCallback; // Callback for DrawText
     LPARAM            lParam;              // Parameter for callback
-} DTTOPTS, *PDTTOPTS; 
+} DTTOPTS, *PDTTOPTS;
 
 THEMEAPI
 DrawThemeTextEx(
@@ -338,9 +338,9 @@ DrawThemeTextEx(
 
 //-------------------------------------------------------------------------
 //  GetThemeBackgroundContentRect()
-//                      - gets the size of the content for the theme-defined 
+//                      - gets the size of the content for the theme-defined
 //                        background.  This is usually the area inside
-//                        the borders or Margins.  
+//                        the borders or Margins.
 //
 //      hTheme          - theme data handle
 //      hdc             - (optional) device content to be used for drawing
@@ -361,7 +361,7 @@ GetThemeBackgroundContentRect(
 
 //-------------------------------------------------------------------------
 //  GetThemeBackgroundExtent() - calculates the size/location of the theme-
-//                               specified background based on the 
+//                               specified background based on the
 //                               "pContentRect".
 //
 //      hTheme          - theme data handle
@@ -383,16 +383,16 @@ GetThemeBackgroundExtent(
 
 //-------------------------------------------------------------------------
 //  GetThemeBackgroundRegion()
-//                      - computes the region for a regular or partially 
-//                        transparent theme-specified background that is 
+//                      - computes the region for a regular or partially
+//                        transparent theme-specified background that is
 //                        bound by the specified "pRect".
-//                        If the rectangle is empty, sets the HRGN to NULL 
+//                        If the rectangle is empty, sets the HRGN to NULL
 //                        and return S_FALSE.
 //
 //  hTheme              - theme data handle
 //  hdc                 - optional HDC to draw into (DPI scaling)
 //  iPartId             - part number to draw
-//  iStateId            - state number (of the part) 
+//  iStateId            - state number (of the part)
 //  pRect               - the RECT used to draw the part
 //  pRegion             - receives handle to calculated region
 //-------------------------------------------------------------------------
@@ -419,10 +419,10 @@ enum THEMESIZE
 //  hTheme              - theme data handle
 //  hdc                 - HDC to select font into & measure against
 //  iPartId             - part number to retrieve size for
-//  iStateId            - state number (of the part) 
+//  iStateId            - state number (of the part)
 //  prc                 - (optional) rect for part drawing destination
 //  eSize               - the type of size to be retreived
-//  psz                 - receives the specified size of the part 
+//  psz                 - receives the specified size of the part
 //-------------------------------------------------------------------------
 THEMEAPI
 GetThemePartSize(
@@ -436,13 +436,13 @@ GetThemePartSize(
     );
 
 //-------------------------------------------------------------------------
-//  GetThemeTextExtent() - calculates the size/location of the specified 
-//                         text when rendered in the Theme Font. 
+//  GetThemeTextExtent() - calculates the size/location of the specified
+//                         text when rendered in the Theme Font.
 //
 //  hTheme              - theme data handle
 //  hdc                 - HDC to select font & measure into
 //  iPartId             - part number to draw
-//  iStateId            - state number (of the part) 
+//  iStateId            - state number (of the part)
 //  pszText             - the text to be measured
 //  dwCharCount         - number of chars to draw (-1 for all)
 //  dwTextFlags         - same as DrawText() "uFormat" param
@@ -470,7 +470,7 @@ GetThemeTextExtent(
 //  hTheme              - theme data handle
 //  hdc                 - optional: HDC for screen context
 //  iPartId             - part number to draw
-//  iStateId            - state number (of the part) 
+//  iStateId            - state number (of the part)
 //  ptm                 - receives the font info
 //-------------------------------------------------------------------------
 THEMEAPI
@@ -492,7 +492,7 @@ GetThemeTextMetrics(
 //  Fixed border hit test option.  possible return values are:
 //  HTCLIENT: hit test succeeded in the middle background segment
 //  HTBORDER: hit test succeeded in any other background segment
-#define HTTB_FIXEDBORDER            0x00000002      // Return code may be either HTCLIENT or HTBORDER. 
+#define HTTB_FIXEDBORDER            0x00000002      // Return code may be either HTCLIENT or HTBORDER.
 //  Caption hit test option.  Possible return values are:
 //  HTCAPTION: hit test succeeded in the top, top left, or top right background segments
 //  HTNOWHERE or another return code, depending on absence or presence of accompanying flags, resp.
@@ -501,7 +501,7 @@ GetThemeTextMetrics(
 //  HTCLIENT: hit test succeeded in middle background segment
 //  HTTOP, HTTOPLEFT, HTLEFT, HTRIGHT, etc:    hit test succeeded in the respective system resizing zone
 //  HTBORDER: hit test failed in middle segment and resizing zones, but succeeded in a background border segment
-#define HTTB_RESIZINGBORDER_LEFT    0x00000010      // Hit test left resizing border, 
+#define HTTB_RESIZINGBORDER_LEFT    0x00000010      // Hit test left resizing border,
 #define HTTB_RESIZINGBORDER_TOP     0x00000020      // Hit test top resizing border
 #define HTTB_RESIZINGBORDER_RIGHT   0x00000040      // Hit test right resizing border
 #define HTTB_RESIZINGBORDER_BOTTOM  0x00000080      // Hit test bottom resizing border
@@ -510,32 +510,32 @@ GetThemeTextMetrics(
                                      HTTB_RESIZINGBORDER_RIGHT | \
                                      HTTB_RESIZINGBORDER_BOTTOM)
 // Resizing border is specified as a template, not just window edges.
-// This option is mutually exclusive with HTTB_SYSTEMSIZINGWIDTH; HTTB_SIZINGTEMPLATE takes precedence  
+// This option is mutually exclusive with HTTB_SYSTEMSIZINGWIDTH; HTTB_SIZINGTEMPLATE takes precedence
 #define HTTB_SIZINGTEMPLATE         0x00000100
-// Use system resizing border width rather than theme content margins.   
+// Use system resizing border width rather than theme content margins.
 // This option is mutually exclusive with HTTB_SIZINGTEMPLATE, which takes precedence.
 #define HTTB_SYSTEMSIZINGMARGINS    0x00000200
 
 //-------------------------------------------------------------------------
 //  HitTestThemeBackground()
-//                      - returns a HitTestCode (a subset of the values 
-//                        returned by WM_NCHITTEST) for the point "ptTest" 
+//                      - returns a HitTestCode (a subset of the values
+//                        returned by WM_NCHITTEST) for the point "ptTest"
 //                        within the theme-specified background
-//                        (bound by pRect).  "pRect" and "ptTest" should 
-//                        both be in the same coordinate system 
+//                        (bound by pRect).  "pRect" and "ptTest" should
+//                        both be in the same coordinate system
 //                        (client, screen, etc).
 //
 //      hTheme          - theme data handle
 //      hdc             - HDC to draw into
 //      iPartId         - part number to test against
-//      iStateId        - state number (of the part) 
+//      iStateId        - state number (of the part)
 //      pRect           - the RECT used to draw the part
 //      hrgn            - optional region to use; must be in same coordinates as
 //                      -    pRect and pTest.
 //      ptTest          - the hit point to be tested
 //      dwOptions       - HTTB_xxx constants
 //      pwHitTestCode   - receives the returned hit test code - one of:
-//  
+//
 //                        HTNOWHERE, HTLEFT, HTTOPLEFT, HTBOTTOMLEFT,
 //                        HTRIGHT, HTTOPRIGHT, HTBOTTOMRIGHT,
 //                        HTTOP, HTBOTTOM, HTCLIENT
@@ -578,15 +578,15 @@ DrawThemeEdge(
     );
 
 //------------------------------------------------------------------------
-//  DrawThemeIcon()     - draws an image within an imagelist based on 
-//                        a (possible) theme-defined effect. 
+//  DrawThemeIcon()     - draws an image within an imagelist based on
+//                        a (possible) theme-defined effect.
 //
 //  hTheme              - theme data handle
 //  hdc                 - HDC to draw into
 //  iPartId             - part number to draw
 //  iStateId            - state number of part
 //  pRect               - the RECT to draw the image within
-//  himl                - handle to IMAGELIST 
+//  himl                - handle to IMAGELIST
 //  iImageIndex         - index into IMAGELIST (which icon to draw)
 //------------------------------------------------------------------------
 THEMEAPI
@@ -617,12 +617,12 @@ IsThemePartDefined(
 
 //---------------------------------------------------------------------------
 //  IsThemeBackgroundPartiallyTransparent()
-//                      - returns TRUE if the theme specified background for 
-//                        the part/state has transparent pieces or 
+//                      - returns TRUE if the theme specified background for
+//                        the part/state has transparent pieces or
 //                        alpha-blended pieces.
 //
 //  hTheme              - theme data handle
-//  iPartId             - part number 
+//  iPartId             - part number
 //  iStateId            - state number of part
 //---------------------------------------------------------------------------
 THEMEAPI_(BOOL)
@@ -636,16 +636,16 @@ IsThemeBackgroundPartiallyTransparent(
 //    lower-level theme information services
 //---------------------------------------------------------------------------
 // The following methods are getter routines for each of the Theme Data types.
-// Controls/Windows are defined in drawable "parts" by their author: a 
-// parent part and 0 or more child parts.  Each of the parts can be 
-// described in "states" (ex: disabled, hot, pressed).  
+// Controls/Windows are defined in drawable "parts" by their author: a
+// parent part and 0 or more child parts.  Each of the parts can be
+// described in "states" (ex: disabled, hot, pressed).
 //---------------------------------------------------------------------------
-// Each of the below methods takes a "iPartId" param to specify the 
-// part and a "iStateId" to specify the state of the part.  
-// "iStateId=0" refers to the root part.  "iPartId" = "0" refers to 
-// the root class.  
+// Each of the below methods takes a "iPartId" param to specify the
+// part and a "iStateId" to specify the state of the part.
+// "iStateId=0" refers to the root part.  "iPartId" = "0" refers to
+// the root class.
 //-----------------------------------------------------------------------
-// Each method also take a "iPropId" param because multiple instances of 
+// Each method also take a "iPropId" param because multiple instances of
 // the same primitive type can be defined in the theme schema.
 //-----------------------------------------------------------------------
 
@@ -653,7 +653,7 @@ IsThemeBackgroundPartiallyTransparent(
 //  GetThemeColor()     - Get the value for the specified COLOR property
 //
 //  hTheme              - theme data handle
-//  iPartId             - part number 
+//  iPartId             - part number
 //  iStateId            - state number of part
 //  iPropId             - the property number to get the value for
 //  pColor              - receives the value of the property
@@ -673,7 +673,7 @@ GetThemeColor(
 //
 //  hTheme              - theme data handle
 //  hdc                 - (optional) hdc to be drawn into (DPI scaling)
-//  iPartId             - part number 
+//  iPartId             - part number
 //  iStateId            - state number of part
 //  iPropId             - the property number to get the value for
 //  piVal               - receives the value of the property
@@ -692,7 +692,7 @@ GetThemeMetric(
 //  GetThemeString()    - Get the value for the specified string property
 //
 //  hTheme              - theme data handle
-//  iPartId             - part number 
+//  iPartId             - part number
 //  iStateId            - state number of part
 //  iPropId             - the property number to get the value for
 //  pszBuff             - receives the string property value
@@ -712,7 +712,7 @@ GetThemeString(
 //  GetThemeBool()      - Get the value for the specified BOOL property
 //
 //  hTheme              - theme data handle
-//  iPartId             - part number 
+//  iPartId             - part number
 //  iStateId            - state number of part
 //  iPropId             - the property number to get the value for
 //  pfVal               - receives the value of the property
@@ -730,7 +730,7 @@ GetThemeBool(
 //  GetThemeInt()       - Get the value for the specified int property
 //
 //  hTheme              - theme data handle
-//  iPartId             - part number 
+//  iPartId             - part number
 //  iStateId            - state number of part
 //  iPropId             - the property number to get the value for
 //  piVal               - receives the value of the property
@@ -748,7 +748,7 @@ GetThemeInt(
 //  GetThemeEnumValue() - Get the value for the specified ENUM property
 //
 //  hTheme              - theme data handle
-//  iPartId             - part number 
+//  iPartId             - part number
 //  iStateId            - state number of part
 //  iPropId             - the property number to get the value for
 //  piVal               - receives the value of the enum (cast to int*)
@@ -767,7 +767,7 @@ GetThemeEnumValue(
 //                        property
 //
 //  hTheme              - theme data handle
-//  iPartId             - part number 
+//  iPartId             - part number
 //  iStateId            - state number of part
 //  iPropId             - the property number to get the value for
 //  pPoint              - receives the value of the position property
@@ -786,11 +786,11 @@ GetThemePosition(
 //
 //  hTheme              - theme data handle
 //  hdc                 - (optional) hdc to be drawn to (DPI scaling)
-//  iPartId             - part number 
+//  iPartId             - part number
 //  iStateId            - state number of part
 //  iPropId             - the property number to get the value for
 //  pFont               - receives the value of the LOGFONT property
-//                        (scaled for the current logical screen dpi) 
+//                        (scaled for the current logical screen dpi)
 //-----------------------------------------------------------------------
 THEMEAPI
 GetThemeFont(
@@ -806,7 +806,7 @@ GetThemeFont(
 //  GetThemeRect()      - Get the value for the specified RECT property
 //
 //  hTheme              - theme data handle
-//  iPartId             - part number 
+//  iPartId             - part number
 //  iStateId            - state number of part
 //  iPropId             - the property number to get the value for
 //  pRect               - receives the value of the RECT property
@@ -833,7 +833,7 @@ typedef struct _MARGINS
 //
 //      hTheme          - theme data handle
 //      hdc             - (optional) hdc to be used for drawing
-//      iPartId         - part number 
+//      iPartId         - part number
 //      iStateId        - state number of part
 //      iPropId         - the property number to get the value for
 //      prc             - RECT for area to be drawn into
@@ -866,7 +866,7 @@ typedef struct _INTLIST
 //  GetThemeIntList()   - Get the value for the specified INTLIST struct
 //
 //      hTheme          - theme data handle
-//      iPartId         - part number 
+//      iPartId         - part number
 //      iStateId        - state number of part
 //      iPropId         - the property number to get the value for
 //      pIntList        - receives the value of the INTLIST property
@@ -892,11 +892,11 @@ enum PROPERTYORIGIN
 //-----------------------------------------------------------------------
 //  GetThemePropertyOrigin()
 //                      - searches for the specified theme property
-//                        and sets "pOrigin" to indicate where it was 
+//                        and sets "pOrigin" to indicate where it was
 //                        found (or not found)
 //
 //  hTheme              - theme data handle
-//  iPartId             - part number 
+//  iPartId             - part number
 //  iStateId            - state number of part
 //  iPropId             - the property number to search for
 //  pOrigin             - receives the value of the property origin
@@ -912,30 +912,30 @@ GetThemePropertyOrigin(
 
 //---------------------------------------------------------------------------
 //  SetWindowTheme()
-//                      - redirects an existing Window to use a different 
-//                        section of the current theme information than its 
+//                      - redirects an existing Window to use a different
+//                        section of the current theme information than its
 //                        class normally asks for.
 //
 //  hwnd                - the handle of the window (cannot be NULL)
 //
 //  pszSubAppName       - app (group) name to use in place of the calling
-//                        app's name.  If NULL, the actual calling app 
+//                        app's name.  If NULL, the actual calling app
 //                        name will be used.
 //
-//  pszSubIdList        - semicolon separated list of class Id names to 
-//                        use in place of actual list passed by the 
-//                        window's class.  if NULL, the id list from the 
+//  pszSubIdList        - semicolon separated list of class Id names to
+//                        use in place of actual list passed by the
+//                        window's class.  if NULL, the id list from the
 //                        calling class is used.
 //---------------------------------------------------------------------------
 // The Theme Manager will remember the "pszSubAppName" and the
-// "pszSubIdList" associations thru the lifetime of the window (even 
-// if themes are subsequently changed).  The window is sent a 
+// "pszSubIdList" associations thru the lifetime of the window (even
+// if themes are subsequently changed).  The window is sent a
 // "WM_THEMECHANGED" msg at the end of this call, so that the new
 // theme can be found and applied.
 //---------------------------------------------------------------------------
-// When "pszSubAppName" or "pszSubIdList" are NULL, the Theme Manager 
-// removes the previously remember association.  To turn off theme-ing for 
-// the specified window, you can pass an empty string (L"") so it 
+// When "pszSubAppName" or "pszSubIdList" are NULL, the Theme Manager
+// removes the previously remember association.  To turn off theme-ing for
+// the specified window, you can pass an empty string (L"") so it
 // won't match any section entries.
 //---------------------------------------------------------------------------
 THEMEAPI
@@ -974,7 +974,7 @@ SetWindowThemeAttribute(
     DWORD cbAttribute
     );
 
-__inline HRESULT SetWindowThemeNonClientAttributes(HWND hwnd, DWORD dwMask, DWORD dwAttributes)    
+__inline HRESULT SetWindowThemeNonClientAttributes(HWND hwnd, DWORD dwMask, DWORD dwAttributes)
 {
     WTA_OPTIONS wta;
     wta.dwFlags = dwAttributes;
@@ -987,7 +987,7 @@ __inline HRESULT SetWindowThemeNonClientAttributes(HWND hwnd, DWORD dwMask, DWOR
 //  GetThemeFilename()  - Get the value for the specified FILENAME property.
 //
 //  hTheme              - theme data handle
-//  iPartId             - part number 
+//  iPartId             - part number
 //  iStateId            - state number of part
 //  iPropId             - the property number to search for
 //  pszThemeFileName    - output buffer to receive the filename
@@ -1004,7 +1004,7 @@ GetThemeFilename(
     );
 
 //---------------------------------------------------------------------------
-//  GetThemeSysColor()  - Get the value of the specified System color. 
+//  GetThemeSysColor()  - Get the value of the specified System color.
 //
 //  hTheme              - the theme data handle.  if non-NULL, will return
 //                        color from [SysMetrics] section of theme.
@@ -1019,11 +1019,11 @@ GetThemeSysColor(
     );
 
 //---------------------------------------------------------------------------
-//  GetThemeSysColorBrush() 
-//                      - Get the brush for the specified System color. 
+//  GetThemeSysColorBrush()
+//                      - Get the brush for the specified System color.
 //
 //  hTheme              - the theme data handle.  if non-NULL, will return
-//                        brush matching color from [SysMetrics] section of 
+//                        brush matching color from [SysMetrics] section of
 //                        theme.  if NULL, will return the brush matching
 //                        global system color.
 //
@@ -1036,7 +1036,7 @@ GetThemeSysColorBrush(
     );
 
 //---------------------------------------------------------------------------
-//  GetThemeSysBool()   - Get the boolean value of specified System metric. 
+//  GetThemeSysBool()   - Get the boolean value of specified System metric.
 //
 //  hTheme              - the theme data handle.  if non-NULL, will return
 //                        BOOL from [SysMetrics] section of theme.
@@ -1052,14 +1052,14 @@ GetThemeSysBool(
     );
 
 //---------------------------------------------------------------------------
-//  GetThemeSysSize()   - Get the value of the specified System size metric. 
-//                        (scaled for the current logical screen dpi) 
+//  GetThemeSysSize()   - Get the value of the specified System size metric.
+//                        (scaled for the current logical screen dpi)
 //
 //  hTheme              - the theme data handle.  if non-NULL, will return
 //                        size from [SysMetrics] section of theme.
 //                        if NULL, will return the global system metric.
 //
-//  iSizeId             - the following values are supported when 
+//  iSizeId             - the following values are supported when
 //                        hTheme is non-NULL:
 //
 //                          SM_CXBORDER       (border width)
@@ -1083,7 +1083,7 @@ GetThemeSysSize(
     );
 
 //---------------------------------------------------------------------------
-//  GetThemeSysFont()   - Get the LOGFONT for the specified System font. 
+//  GetThemeSysFont()   - Get the LOGFONT for the specified System font.
 //
 //  hTheme              - the theme data handle.  if non-NULL, will return
 //                        font from [SysMetrics] section of theme.
@@ -1093,7 +1093,7 @@ GetThemeSysSize(
 //                        is TMT_CAPTIONFONT)
 //
 //  plf                 - ptr to LOGFONT to receive the font value.
-//                        (scaled for the current logical screen dpi) 
+//                        (scaled for the current logical screen dpi)
 //---------------------------------------------------------------------------
 THEMEAPI
 GetThemeSysFont(
@@ -1103,7 +1103,7 @@ GetThemeSysFont(
     );
 
 //---------------------------------------------------------------------------
-//  GetThemeSysString() - Get the value of specified System string metric. 
+//  GetThemeSysString() - Get the value of specified System string metric.
 //
 //  hTheme              - the theme data handle (required)
 //
@@ -1146,7 +1146,7 @@ GetThemeSysInt(
 
 //---------------------------------------------------------------------------
 //  IsThemeActive()     - can be used to test if a system theme is active
-//                        for the current user session.  
+//                        for the current user session.
 //
 //                        use the API "IsAppThemed()" to test if a theme is
 //                        active for the calling process.
@@ -1184,28 +1184,28 @@ GetWindowTheme(
 
 #define ETDT_ENABLETAB              (ETDT_ENABLE | \
                                      ETDT_USETABTEXTURE)
-        
+
 #define ETDT_ENABLEAEROWIZARDTAB    (ETDT_ENABLE | \
                                      ETDT_USEAEROWIZARDTABTEXTURE)
-                             
+
 #define ETDT_VALIDBITS              (ETDT_DISABLE | \
                                      ETDT_ENABLE | \
                                      ETDT_USETABTEXTURE | \
                                      ETDT_USEAEROWIZARDTABTEXTURE)
 
 //---------------------------------------------------------------------------
-//  EnableThemeDialogTexture() 
+//  EnableThemeDialogTexture()
 //
-//  - Enables/disables dialog background theme.  This method can be used to 
-//    tailor dialog compatibility with child windows and controls that 
-//    may or may not coordinate the rendering of their client area backgrounds 
-//    with that of their parent dialog in a manner that supports seamless 
+//  - Enables/disables dialog background theme.  This method can be used to
+//    tailor dialog compatibility with child windows and controls that
+//    may or may not coordinate the rendering of their client area backgrounds
+//    with that of their parent dialog in a manner that supports seamless
 //    background texturing.
 //
 //      hdlg         - the window handle of the target dialog
 //      dwFlags      - ETDT_ENABLE to enable the theme-defined dialog background texturing,
 //                     ETDT_DISABLE to disable background texturing,
-//                     ETDT_ENABLETAB to enable the theme-defined background 
+//                     ETDT_ENABLETAB to enable the theme-defined background
 //                          texturing using the Tab texture
 //---------------------------------------------------------------------------
 THEMEAPI
@@ -1215,7 +1215,7 @@ EnableThemeDialogTexture(
     );
 
 //---------------------------------------------------------------------------
-//  IsThemeDialogTextureEnabled() 
+//  IsThemeDialogTextureEnabled()
 //
 //  - Reports whether the dialog supports background texturing.
 //
@@ -1258,8 +1258,8 @@ SetThemeAppProperties(
 
 //---------------------------------------------------------------------------
 //  GetCurrentThemeName()
-//                      - Get the name of the current theme in-use.  
-//                        Optionally, return the ColorScheme name and the 
+//                      - Get the name of the current theme in-use.
+//                        Optionally, return the ColorScheme name and the
 //                        Size name of the theme.
 //
 //  pszThemeFileName    - receives the theme path & filename
@@ -1269,7 +1269,7 @@ SetThemeAppProperties(
 //                        (not the display name)
 //  cchMaxColorChars    - max chars allowed in pszColorBuff
 //
-//  pszSizeBuff         - (optional) receives the canonical size name 
+//  pszSizeBuff         - (optional) receives the canonical size name
 //                        (not the display name)
 //  cchMaxSizeChars     - max chars allowed in pszSizeBuff
 //---------------------------------------------------------------------------
@@ -1298,11 +1298,11 @@ GetThemeDocumentationProperty(
 //---------------------------------------------------------------------------
 //  Theme API Error Handling
 //
-//      All functions in the Theme API not returning an HRESULT (THEMEAPI_) 
-//      use the WIN32 function "SetLastError()" to record any call failures.  
+//      All functions in the Theme API not returning an HRESULT (THEMEAPI_)
+//      use the WIN32 function "SetLastError()" to record any call failures.
 //
 //      To retreive the error code of the last failure on the
-//      current thread for these type of API's, use the WIN32 function 
+//      current thread for these type of API's, use the WIN32 function
 //      "GetLastError()".
 //
 //      All Theme API error codes (HRESULT's and GetLastError() values)
@@ -1320,7 +1320,7 @@ GetThemeDocumentationProperty(
 //
 //  hdc                 - hdc of the child control
 //
-//  prc                 - (optional) rect that defines the area to be 
+//  prc                 - (optional) rect that defines the area to be
 //                        drawn (CHILD coordinates)
 //---------------------------------------------------------------------------
 THEMEAPI
@@ -1346,18 +1346,18 @@ DrawThemeParentBackground(
 //
 //  hdc                 - hdc of the child control
 //
-//  dwFlags             - if 0, only returns S_OK if the parent handled 
+//  dwFlags             - if 0, only returns S_OK if the parent handled
 //                        WM_PRINTCLIENT.
 //                      - if DTPB_WINDOWDC is set, hdc is assumed to be a window DC,
 //                        not a client DC.
-//                      - if DTPB_USEERASEBKGND is set, the function will return S_OK 
-//                        without sending a WM_CTLCOLORSTATIC message if the parent 
+//                      - if DTPB_USEERASEBKGND is set, the function will return S_OK
+//                        without sending a WM_CTLCOLORSTATIC message if the parent
 //                        actually painted on WM_ERASEBKGND.
 //                      - if DTPB_CTLCOLORSTATIC is set, the function will send
-//                        a WM_CTLCOLORSTATIC message to the parent and use the 
+//                        a WM_CTLCOLORSTATIC message to the parent and use the
 //                        brush if one is provided, else COLOR_BTNFACE.
 //
-//  prc                 - (optional) rect that defines the area to be 
+//  prc                 - (optional) rect that defines the area to be
 //                        drawn (CHILD coordinates)
 //
 //  Return value        - S_OK if something was painted, S_FALSE if not.
@@ -1404,13 +1404,13 @@ GetThemeBitmap(
 //  GetThemeStream() - Get the value for the specified STREAM property
 //
 //      hTheme      - theme data handle
-//      iPartId     - part number 
+//      iPartId     - part number
 //      iStateId    - state number of part
 //      iPropId     - the property number to get the value for
 //      ppvStream   - if non-null receives the value of the STREAM property (not to be freed)
 //      pcbStream   - if non-null receives the size of the STREAM property
-//      hInst       - NULL when iPropId==TMT_STREAM, HINSTANCE of a loaded msstyles 
-//                    file when iPropId==TMT_DISKSTREAM (use GetCurrentThemeName 
+//      hInst       - NULL when iPropId==TMT_STREAM, HINSTANCE of a loaded msstyles
+//                    file when iPropId==TMT_DISKSTREAM (use GetCurrentThemeName
 //                    and LoadLibraryEx(LOAD_LIBRARY_AS_DATAFILE)
 //-----------------------------------------------------------------------
 THEMEAPI
@@ -1496,7 +1496,7 @@ typedef struct _BP_ANIMATIONPARAMS
 #define BPPF_NOCLIP              0x0002 // Don't apply the target DC's clip region to the double buffer
 #define BPPF_NONCLIENT           0x0004 // Using a non-client DC
 
-                                        
+
 // BP_PAINTPARAMS
 typedef struct _BP_PAINTPARAMS
 {
@@ -1639,10 +1639,10 @@ BufferedPaintRenderAnimation(
     HWND hwnd,
     HDC hdcTarget
     );
-    
+
 //----------------------------------------------------------------------------
-// Tells if the DWM is running, and composition effects are possible for this 
-// process (themes are active). 
+// Tells if the DWM is running, and composition effects are possible for this
+// process (themes are active).
 // Roughly equivalent to "DwmIsCompositionEnabled() && IsAppthemed()"
 //----------------------------------------------------------------------------
 THEMEAPI_(BOOL) IsCompositionActive();
@@ -1652,10 +1652,10 @@ THEMEAPI_(BOOL) IsCompositionActive();
 //                      - Gets the duration for the specified transition
 //
 //  hTheme              - theme data handle
-//  iPartId             - part number 
+//  iPartId             - part number
 //  iStateIdFrom        - starting state number of part
 //  iStateIdTo          - ending state number of part
-//  iPropId             - property id 
+//  iPropId             - property id
 //  pdwDuration         - receives the transition duration
 //------------------------------------------------------------------------
 THEMEAPI
@@ -1666,8 +1666,6 @@ GetThemeTransitionDuration(
     int iStateIdTo,
     int iPropId,
     __out DWORD *pdwDuration
-    );  
+    );
 
 #endif /* _UXTHEME_H_ */
-
-

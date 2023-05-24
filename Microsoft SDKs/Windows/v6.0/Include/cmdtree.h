@@ -7,8 +7,8 @@
 /* Compiler settings for cmdtree.idl:
     Oicf, W1, ..., env=Win32 (32b run)
     protocol : dce , ms_ext, c_ext, robust
-    error checks: allocation ref bounds_check enum stub_data 
-    VC __declspec() decoration level: 
+    error checks: allocation ref bounds_check enum stub_data
+    VC __declspec() decoration level:
          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
          DECLSPEC_UUID(), MIDL_INTERFACE()
 */
@@ -46,7 +46,7 @@
 #pragma once
 #endif
 
-/* Forward Declarations */ 
+/* Forward Declarations */
 
 #ifndef __ICommandTree_FWD_DEFINED__
 #define __ICommandTree_FWD_DEFINED__
@@ -65,11 +65,11 @@ typedef interface IQuery IQuery;
 
 #ifdef __cplusplus
 extern "C"{
-#endif 
+#endif
 
 
 /* interface __MIDL_itf_cmdtree_0000_0000 */
-/* [local] */ 
+/* [local] */
 
 //+---------------------------------------------------------------------------
 //
@@ -79,9 +79,9 @@ extern "C"{
 //----------------------------------------------------------------------------
 
 #ifdef _WIN64
-#include <pshpack8.h>	// 8-byte structure packing
+#include <PshPack8.h>	// 8-byte structure packing
 #else
-#include <pshpack2.h>	// 2-byte structure packing
+#include <PshPack2.h>	// 2-byte structure packing
 #endif
 
 
@@ -93,7 +93,7 @@ extern RPC_IF_HANDLE __MIDL_itf_cmdtree_0000_0000_v0_0_s_ifspec;
 #define __CommandTreeStructureDefinitions_INTERFACE_DEFINED__
 
 /* interface CommandTreeStructureDefinitions */
-/* [unique][uuid] */ 
+/* [unique][uuid] */
 
 typedef WORD DBCOMMANDOP;
 
@@ -342,7 +342,7 @@ enum DBCOMMANDOPENUM
 	DBOP_unique_key	= ( DBOP_schema_authorization + 1 ) ,
 	DBOP_scope_list_anchor	= ( DBOP_unique_key + 1 ) ,
 	DBOP_scope_list_element	= ( DBOP_scope_list_anchor + 1 ) ,
-	DBOP_content_table	= ( DBOP_scope_list_element + 1 ) 
+	DBOP_content_table	= ( DBOP_scope_list_element + 1 )
     } ;
 #ifdef DBINITCONSTANTS
 extern const OLEDBDECLSPEC GUID DBGUID_LIKE_SQL                        = {0xc8b521f6,0x5cf3,0x11ce,{0xad,0xe5,0x00,0xaa,0x00,0x44,0x77,0x3d}};
@@ -365,7 +365,7 @@ extern RPC_IF_HANDLE CommandTreeStructureDefinitions_v0_0_s_ifspec;
 #define __ICommandTree_INTERFACE_DEFINED__
 
 /* interface ICommandTree */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 typedef DWORD DBCOMMANDREUSE;
 
@@ -559,7 +559,7 @@ typedef struct tagDBCOMMANDTREE
     WORD wKind;
     struct tagDBCOMMANDTREE *pctFirstChild;
     struct tagDBCOMMANDTREE *pctNextSibling;
-    union 
+    union
         {
         __int64 llValue;
         unsigned __int64 ullValue;
@@ -618,67 +618,67 @@ typedef struct tagDBCOMMANDTREE
 EXTERN_C const IID IID_ICommandTree;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a87-2a1c-11ce-ade5-00aa0044773d")
     ICommandTree : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE FindErrorNodes( 
+        virtual HRESULT STDMETHODCALLTYPE FindErrorNodes(
             /* [in] */ const DBCOMMANDTREE *pRoot,
             /* [out] */ ULONG *pcErrorNodes,
             /* [out] */ DBCOMMANDTREE ***prgErrorNodes) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE FreeCommandTree( 
+
+        virtual HRESULT STDMETHODCALLTYPE FreeCommandTree(
             /* [in] */ DBCOMMANDTREE **ppRoot) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetCommandTree( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetCommandTree(
             /* [out] */ DBCOMMANDTREE **ppRoot) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetCommandTree( 
+
+        virtual HRESULT STDMETHODCALLTYPE SetCommandTree(
             /* [in] */ DBCOMMANDTREE **ppRoot,
             /* [in] */ DBCOMMANDREUSE dwCommandReuse,
             /* [in] */ BOOL fCopy) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ICommandTreeVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ICommandTree * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ICommandTree * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ICommandTree * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *FindErrorNodes )( 
+
+        HRESULT ( STDMETHODCALLTYPE *FindErrorNodes )(
             ICommandTree * This,
             /* [in] */ const DBCOMMANDTREE *pRoot,
             /* [out] */ ULONG *pcErrorNodes,
             /* [out] */ DBCOMMANDTREE ***prgErrorNodes);
-        
-        HRESULT ( STDMETHODCALLTYPE *FreeCommandTree )( 
+
+        HRESULT ( STDMETHODCALLTYPE *FreeCommandTree )(
             ICommandTree * This,
             /* [in] */ DBCOMMANDTREE **ppRoot);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetCommandTree )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetCommandTree )(
             ICommandTree * This,
             /* [out] */ DBCOMMANDTREE **ppRoot);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetCommandTree )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetCommandTree )(
             ICommandTree * This,
             /* [in] */ DBCOMMANDTREE **ppRoot,
             /* [in] */ DBCOMMANDREUSE dwCommandReuse,
             /* [in] */ BOOL fCopy);
-        
+
         END_INTERFACE
     } ICommandTreeVtbl;
 
@@ -687,32 +687,32 @@ EXTERN_C const IID IID_ICommandTree;
         CONST_VTBL struct ICommandTreeVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ICommandTree_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ICommandTree_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ICommandTree_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ICommandTree_FindErrorNodes(This,pRoot,pcErrorNodes,prgErrorNodes)	\
-    ( (This)->lpVtbl -> FindErrorNodes(This,pRoot,pcErrorNodes,prgErrorNodes) ) 
+    ( (This)->lpVtbl -> FindErrorNodes(This,pRoot,pcErrorNodes,prgErrorNodes) )
 
 #define ICommandTree_FreeCommandTree(This,ppRoot)	\
-    ( (This)->lpVtbl -> FreeCommandTree(This,ppRoot) ) 
+    ( (This)->lpVtbl -> FreeCommandTree(This,ppRoot) )
 
 #define ICommandTree_GetCommandTree(This,ppRoot)	\
-    ( (This)->lpVtbl -> GetCommandTree(This,ppRoot) ) 
+    ( (This)->lpVtbl -> GetCommandTree(This,ppRoot) )
 
 #define ICommandTree_SetCommandTree(This,ppRoot,dwCommandReuse,fCopy)	\
-    ( (This)->lpVtbl -> SetCommandTree(This,ppRoot,dwCommandReuse,fCopy) ) 
+    ( (This)->lpVtbl -> SetCommandTree(This,ppRoot,dwCommandReuse,fCopy) )
 
 #endif /* COBJMACROS */
 
@@ -729,73 +729,73 @@ EXTERN_C const IID IID_ICommandTree;
 #define __IQuery_INTERFACE_DEFINED__
 
 /* interface IQuery */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IQuery;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a51-2a1c-11ce-ade5-00aa0044773d")
     IQuery : public ICommandTree
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE AddPostProcessing( 
+        virtual HRESULT STDMETHODCALLTYPE AddPostProcessing(
             /* [in] */ DBCOMMANDTREE **ppRoot,
             /* [in] */ BOOL fCopy) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetCardinalityEstimate( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetCardinalityEstimate(
             /* [out] */ DBORDINAL *pulCardinality) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IQueryVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IQuery * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IQuery * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IQuery * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *FindErrorNodes )( 
+
+        HRESULT ( STDMETHODCALLTYPE *FindErrorNodes )(
             IQuery * This,
             /* [in] */ const DBCOMMANDTREE *pRoot,
             /* [out] */ ULONG *pcErrorNodes,
             /* [out] */ DBCOMMANDTREE ***prgErrorNodes);
-        
-        HRESULT ( STDMETHODCALLTYPE *FreeCommandTree )( 
+
+        HRESULT ( STDMETHODCALLTYPE *FreeCommandTree )(
             IQuery * This,
             /* [in] */ DBCOMMANDTREE **ppRoot);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetCommandTree )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetCommandTree )(
             IQuery * This,
             /* [out] */ DBCOMMANDTREE **ppRoot);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetCommandTree )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetCommandTree )(
             IQuery * This,
             /* [in] */ DBCOMMANDTREE **ppRoot,
             /* [in] */ DBCOMMANDREUSE dwCommandReuse,
             /* [in] */ BOOL fCopy);
-        
-        HRESULT ( STDMETHODCALLTYPE *AddPostProcessing )( 
+
+        HRESULT ( STDMETHODCALLTYPE *AddPostProcessing )(
             IQuery * This,
             /* [in] */ DBCOMMANDTREE **ppRoot,
             /* [in] */ BOOL fCopy);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetCardinalityEstimate )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetCardinalityEstimate )(
             IQuery * This,
             /* [out] */ DBORDINAL *pulCardinality);
-        
+
         END_INTERFACE
     } IQueryVtbl;
 
@@ -804,39 +804,39 @@ EXTERN_C const IID IID_IQuery;
         CONST_VTBL struct IQueryVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IQuery_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IQuery_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IQuery_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IQuery_FindErrorNodes(This,pRoot,pcErrorNodes,prgErrorNodes)	\
-    ( (This)->lpVtbl -> FindErrorNodes(This,pRoot,pcErrorNodes,prgErrorNodes) ) 
+    ( (This)->lpVtbl -> FindErrorNodes(This,pRoot,pcErrorNodes,prgErrorNodes) )
 
 #define IQuery_FreeCommandTree(This,ppRoot)	\
-    ( (This)->lpVtbl -> FreeCommandTree(This,ppRoot) ) 
+    ( (This)->lpVtbl -> FreeCommandTree(This,ppRoot) )
 
 #define IQuery_GetCommandTree(This,ppRoot)	\
-    ( (This)->lpVtbl -> GetCommandTree(This,ppRoot) ) 
+    ( (This)->lpVtbl -> GetCommandTree(This,ppRoot) )
 
 #define IQuery_SetCommandTree(This,ppRoot,dwCommandReuse,fCopy)	\
-    ( (This)->lpVtbl -> SetCommandTree(This,ppRoot,dwCommandReuse,fCopy) ) 
+    ( (This)->lpVtbl -> SetCommandTree(This,ppRoot,dwCommandReuse,fCopy) )
 
 
 #define IQuery_AddPostProcessing(This,ppRoot,fCopy)	\
-    ( (This)->lpVtbl -> AddPostProcessing(This,ppRoot,fCopy) ) 
+    ( (This)->lpVtbl -> AddPostProcessing(This,ppRoot,fCopy) )
 
 #define IQuery_GetCardinalityEstimate(This,pulCardinality)	\
-    ( (This)->lpVtbl -> GetCardinalityEstimate(This,pulCardinality) ) 
+    ( (This)->lpVtbl -> GetCardinalityEstimate(This,pulCardinality) )
 
 #endif /* COBJMACROS */
 
@@ -850,9 +850,9 @@ EXTERN_C const IID IID_IQuery;
 
 
 /* interface __MIDL_itf_cmdtree_0000_0003 */
-/* [local] */ 
+/* [local] */
 
-#include <poppack.h>     // restore original structure packing
+#include <PopPack.h>     // restore original structure packing
 
 
 extern RPC_IF_HANDLE __MIDL_itf_cmdtree_0000_0003_v0_0_c_ifspec;
@@ -867,6 +867,3 @@ extern RPC_IF_HANDLE __MIDL_itf_cmdtree_0000_0003_v0_0_s_ifspec;
 #endif
 
 #endif
-
-
-

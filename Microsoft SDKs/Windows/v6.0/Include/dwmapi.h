@@ -23,7 +23,7 @@
 #endif /* _DWMAPI_ */
 #endif /* DWMAPI */
 
-#include <pshpack1.h>
+#include <PshPack1.h>
 
 #ifdef __cplusplus
 extern "C"
@@ -119,14 +119,14 @@ typedef  struct _DWM_TIMING_INFO
     UINT32          cbSize;
 
     // Data on DWM composition overall
-    
+
     // Monitor refresh rate
     UNSIGNED_RATIO  rateRefresh;
 
     // Actual period
     QPC_TIME        qpcRefreshPeriod;
 
-    // composition rate     
+    // composition rate
     UNSIGNED_RATIO  rateCompose;
 
     // QPC time at a VSync interupt
@@ -138,7 +138,7 @@ typedef  struct _DWM_TIMING_INFO
     DWM_FRAME_COUNT cRefresh;
 
     // DX refresh count at the last Vsync Interupt
-    // DX refresh count is a 32bit number with zero 
+    // DX refresh count is a 32bit number with zero
     // being the first refresh after the card was initialized
     // DX increments a counter when ever a VSync ISR is processed
     // It is possible for DX to miss VSyncs
@@ -147,7 +147,7 @@ typedef  struct _DWM_TIMING_INFO
     // because the DX will rollover and may miss VSync interupts
     UINT cDXRefresh;
 
-    // QPC time at a compose time.  
+    // QPC time at a compose time.
     QPC_TIME        qpcCompose;
 
     // Frame number that was composed at qpcCompose
@@ -182,8 +182,8 @@ typedef  struct _DWM_TIMING_INFO
     // Number of frames the DWM presented late
     // AKA Glitches
     DWM_FRAME_COUNT          cFramesLate;
-    
-    // the number of composition frames that 
+
+    // the number of composition frames that
     // have been issued but not confirmed completed
     UINT          cFramesOutstanding;
 
@@ -196,7 +196,7 @@ typedef  struct _DWM_TIMING_INFO
     DWM_FRAME_COUNT cFrameDisplayed;
 
     // QPC time of the composition pass when the frame was displayed
-    QPC_TIME        qpcFrameDisplayed; 
+    QPC_TIME        qpcFrameDisplayed;
 
     // Count of the VSync when the frame should have become visible
     DWM_FRAME_COUNT cRefreshFrameDisplayed;
@@ -211,7 +211,7 @@ typedef  struct _DWM_TIMING_INFO
 
     // Pending frames:
     // The application has been submitted to DX but not completed by the GPU
- 
+
     // ID of the the last frame marked pending (starts at 0)
     DWM_FRAME_COUNT cFramePending;
 
@@ -233,17 +233,17 @@ typedef  struct _DWM_TIMING_INFO
     // number of rendered frames that were never
     // displayed because composition occured too late
     DWM_FRAME_COUNT cFramesDropped;
-    
-    // number of times an old frame was composed 
+
+    // number of times an old frame was composed
     // when a new frame should have been used
     // but was not available
     DWM_FRAME_COUNT cFramesMissed;
-    
+
     // the refresh at which the next frame is
     // scheduled to be displayed
     DWM_FRAME_COUNT cRefreshNextDisplayed;
 
-    // the refresh at which the next DX present is 
+    // the refresh at which the next DX present is
     // scheduled to be displayed
     DWM_FRAME_COUNT cRefreshNextPresented;
 
@@ -251,7 +251,7 @@ typedef  struct _DWM_TIMING_INFO
     // for this HWND that have been displayed by the DWM
     // since DwmSetPresentParameters was called
     DWM_FRAME_COUNT cRefreshesDisplayed;
-	
+
     // The total number of refreshes worth of content
     // that have been presented by the application
     // since DwmSetPresentParameters was called
@@ -268,35 +268,35 @@ typedef  struct _DWM_TIMING_INFO
     // to the DWM.
     // If Queueing is used the full buffer
     // is transfered on each present.
-    // If not queuing it is possible only 
+    // If not queuing it is possible only
     // a dirty region is updated
     ULONGLONG  cPixelsReceived;
 
     // Total number of pixels drawn.
     // Does not take into account if
     // if the window is only partial drawn
-    // do to clipping or dirty rect management 
+    // do to clipping or dirty rect management
     ULONGLONG  cPixelsDrawn;
 
     // The number of buffers in the flipchain
-    // that are empty.   An application can 
-    // present that number of times and guarantee 
-    // it won't be blocked waiting for a buffer to 
+    // that are empty.   An application can
+    // present that number of times and guarantee
+    // it won't be blocked waiting for a buffer to
     // become empty to present to
     DWM_FRAME_COUNT      cBuffersEmpty;
 
 } DWM_TIMING_INFO;
 
 
-typedef enum 
+typedef enum
 {
-    // Use the first source frame that 
+    // Use the first source frame that
     // includes the first refresh of the output frame
     DWM_SOURCE_FRAME_SAMPLING_POINT,
 
-    // use the source frame that includes the most 
+    // use the source frame that includes the most
     // refreshes of out the output frame
-    // in case of multiple source frames with the 
+    // in case of multiple source frames with the
     // same coverage the last will be used
     DWM_SOURCE_FRAME_SAMPLING_COVERAGE,
 
@@ -336,9 +336,9 @@ DwmDefWindowProc(
     __out LRESULT *plResult
     );
 
-DWMAPI 
+DWMAPI
 DwmEnableBlurBehindWindow(
-    HWND hWnd, 
+    HWND hWnd,
     __in const DWM_BLURBEHIND* pBlurBehind
     );
 
@@ -346,22 +346,22 @@ DwmEnableBlurBehindWindow(
 #define DWM_EC_ENABLECOMPOSITION          1
 
 
-DWMAPI 
+DWMAPI
 DwmEnableComposition(
     UINT uCompositionAction
     );
 
-DWMAPI  
+DWMAPI
 DwmEnableMMCSS(
     BOOL fEnableMMCSS
     );
 
-DWMAPI 
+DWMAPI
 DwmExtendFrameIntoClientArea(
     HWND hWnd,
     __in const MARGINS* pMarInset
     );
-    
+
 DWMAPI
 DwmGetColorizationColor(
     __out DWORD* pcrColorization,
@@ -381,38 +381,38 @@ DWMAPI
 DwmGetWindowAttribute(
     HWND hwnd,
     DWORD dwAttribute,
-    __out_bcount(cbAttribute) PVOID pvAttribute, 
+    __out_bcount(cbAttribute) PVOID pvAttribute,
     DWORD cbAttribute
     );
 
-DWMAPI 
+DWMAPI
 DwmIsCompositionEnabled(
     __out BOOL* pfEnabled
     );
 
 DWMAPI
 DwmModifyPreviousDxFrameDuration(
-    HWND hwnd, 
+    HWND hwnd,
     INT cRefreshes,
     BOOL fRelative
     );
 
 DWMAPI
 DwmQueryThumbnailSourceSize(
-    HTHUMBNAIL hThumbnail, 
+    HTHUMBNAIL hThumbnail,
     __out PSIZE pSize
     );
 
 DWMAPI
 DwmRegisterThumbnail(
-    HWND hwndDestination, 
-    HWND hwndSource, 
+    HWND hwndDestination,
+    HWND hwndSource,
     __out PHTHUMBNAIL phThumbnailId
     );
 
 DWMAPI
 DwmSetDxFrameDuration(
-    HWND hwnd, 
+    HWND hwnd,
     INT cRefreshes
     );
 
@@ -426,7 +426,7 @@ DWMAPI
 DwmSetWindowAttribute(
     HWND hwnd,
     DWORD dwAttribute,
-    __in_bcount(cbAttribute) LPCVOID pvAttribute, 
+    __in_bcount(cbAttribute) LPCVOID pvAttribute,
     DWORD cbAttribute
     );
 
@@ -437,7 +437,7 @@ DwmUnregisterThumbnail(
 
 DWMAPI
 DwmUpdateThumbnailProperties(
-    HTHUMBNAIL hThumbnailId, 
+    HTHUMBNAIL hThumbnailId,
     __in const DWM_THUMBNAIL_PROPERTIES* ptnProperties
     );
 
@@ -497,9 +497,7 @@ DwmGetTransportAttributes(
 }
 #endif
 
-#include <poppack.h>
+#include <PopPack.h>
 
 
 #endif // _DWMAPI_H_
-
-

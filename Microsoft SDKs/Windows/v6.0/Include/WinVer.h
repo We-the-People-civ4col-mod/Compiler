@@ -13,12 +13,12 @@
 #ifndef VER_H
 #define VER_H
 
-#include <SpecStrings.h>
+#include <specstrings.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-    
+
 /* ----- Symbols ----- */
 #define VS_FILE_INFO            RT_VERSION
 #define VS_VERSION_INFO         1
@@ -129,8 +129,8 @@ extern "C" {
 
 #ifndef RC_INVOKED              /* RC doesn't need to see the rest of this */
 
-/* 
-    FILE_VER_GET_... flags are for use by 
+/*
+    FILE_VER_GET_... flags are for use by
     GetFileVersionInfoSizeEx
     GetFileVersionInfoExW
 */
@@ -224,14 +224,14 @@ APIENTRY
 GetFileVersionInfoSizeA(
         __in        LPCSTR lptstrFilename, /* Filename of version stamped file */
         __out_opt LPDWORD lpdwHandle       /* Information for use by GetFileVersionInfo */
-        );                      
+        );
 /* Returns size of version info in bytes */
 DWORD
 APIENTRY
 GetFileVersionInfoSizeW(
         __in        LPCWSTR lptstrFilename, /* Filename of version stamped file */
         __out_opt LPDWORD lpdwHandle       /* Information for use by GetFileVersionInfo */
-        );                      
+        );
 #ifdef UNICODE
 #define GetFileVersionInfoSize  GetFileVersionInfoSizeW
 #else
@@ -246,7 +246,7 @@ GetFileVersionInfoA(
         __reserved          DWORD dwHandle,          /* Information from GetFileVersionSize */
         __in                DWORD dwLen,             /* Length of buffer for info */
         __out_bcount(dwLen) LPVOID lpData            /* Buffer to place the data structure */
-        );                      
+        );
 /* Read version info into buffer */
 BOOL
 APIENTRY
@@ -255,7 +255,7 @@ GetFileVersionInfoW(
         __reserved          DWORD dwHandle,          /* Information from GetFileVersionSize */
         __in                DWORD dwLen,             /* Length of buffer for info */
         __out_bcount(dwLen) LPVOID lpData            /* Buffer to place the data structure */
-        );                      
+        );
 #ifdef UNICODE
 #define GetFileVersionInfo  GetFileVersionInfoW
 #else
@@ -335,5 +335,3 @@ VerQueryValueW(
 #endif
 
 #endif  /* !VER_H */
-
-

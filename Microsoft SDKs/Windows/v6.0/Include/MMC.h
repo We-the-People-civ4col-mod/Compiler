@@ -7,8 +7,8 @@
 /* Compiler settings for mmc.idl:
     Oicf, W1, Zp8, env=Win32 (32b run)
     protocol : dce , ms_ext, c_ext, robust
-    error checks: allocation ref bounds_check enum stub_data 
-    VC __declspec() decoration level: 
+    error checks: allocation ref bounds_check enum stub_data
+    VC __declspec() decoration level:
          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
          DECLSPEC_UUID(), MIDL_INTERFACE()
 */
@@ -46,7 +46,7 @@
 #pragma once
 #endif
 
-/* Forward Declarations */ 
+/* Forward Declarations */
 
 #ifndef __IComponentData_FWD_DEFINED__
 #define __IComponentData_FWD_DEFINED__
@@ -349,16 +349,16 @@ typedef interface IResultData2 IResultData2;
 
 
 /* header files for imported files */
-#include "basetsd.h"
+#include "BaseTsd.h"
 #include "oaidl.h"
 
 #ifdef __cplusplus
 extern "C"{
-#endif 
+#endif
 
 
 /* interface __MIDL_itf_mmc_0000_0000 */
-/* [local] */ 
+/* [local] */
 
 #ifndef MMC_VER
 #define MMC_VER 0x0210
@@ -567,17 +567,17 @@ typedef LONG_PTR HRESULTITEM;
 
 #define	RDI_INDENT	( 0x40 )
 
-typedef enum _MMC_RESULT_VIEW_STYLE      
-{                                        
-    MMC_SINGLESEL           = 0x0001,    
-    MMC_SHOWSELALWAYS       = 0x0002,    
-    MMC_NOSORTHEADER        = 0x0004,    
-#if (MMC_VER >= 0x0120)                  
-    MMC_ENSUREFOCUSVISIBLE  = 0x0008     
-#endif // MMC_VER >= 0x0120              
-} MMC_RESULT_VIEW_STYLE;                 
+typedef enum _MMC_RESULT_VIEW_STYLE
+{
+    MMC_SINGLESEL           = 0x0001,
+    MMC_SHOWSELALWAYS       = 0x0002,
+    MMC_NOSORTHEADER        = 0x0004,
+#if (MMC_VER >= 0x0120)
+    MMC_ENSUREFOCUSVISIBLE  = 0x0008
+#endif // MMC_VER >= 0x0120
+} MMC_RESULT_VIEW_STYLE;
 #if 0
-typedef 
+typedef
 enum _MMC_RESULT_VIEW_STYLE
     {	_MMC_VIEW_STYLE__dummy_	= 0
     } 	MMC_RESULT_VIEW_STYLE;
@@ -613,42 +613,42 @@ enum _MMC_RESULT_VIEW_STYLE
 
 #define	MMC_PSO_NO_PROPTITLE	( 0x8 )
 
-typedef 
+typedef
 enum _MMC_CONTROL_TYPE
     {	TOOLBAR	= 0,
 	MENUBUTTON	= ( TOOLBAR + 1 ) ,
-	COMBOBOXBAR	= ( MENUBUTTON + 1 ) 
+	COMBOBOXBAR	= ( MENUBUTTON + 1 )
     } 	MMC_CONTROL_TYPE;
 
-typedef enum _MMC_CONSOLE_VERB                               
-{                                                            
-    MMC_VERB_NONE            = 0x0000,                       
-    MMC_VERB_OPEN            = 0x8000,                       
-    MMC_VERB_COPY            = 0x8001,                       
-    MMC_VERB_PASTE           = 0x8002,                       
-    MMC_VERB_DELETE          = 0x8003,                       
-    MMC_VERB_PROPERTIES      = 0x8004,                       
-    MMC_VERB_RENAME          = 0x8005,                       
-    MMC_VERB_REFRESH         = 0x8006,                       
-    MMC_VERB_PRINT           = 0x8007,                       
-#if (MMC_VER >= 0x0110)                                      
+typedef enum _MMC_CONSOLE_VERB
+{
+    MMC_VERB_NONE            = 0x0000,
+    MMC_VERB_OPEN            = 0x8000,
+    MMC_VERB_COPY            = 0x8001,
+    MMC_VERB_PASTE           = 0x8002,
+    MMC_VERB_DELETE          = 0x8003,
+    MMC_VERB_PROPERTIES      = 0x8004,
+    MMC_VERB_RENAME          = 0x8005,
+    MMC_VERB_REFRESH         = 0x8006,
+    MMC_VERB_PRINT           = 0x8007,
+#if (MMC_VER >= 0x0110)
     MMC_VERB_CUT             = 0x8008,  // Used only to explicitly disable/hide
                                         // the cut verb, when copy & paste are enabled.
-                                                             
-    // must be last                                          
-    MMC_VERB_MAX,                                            
-    MMC_VERB_FIRST           = MMC_VERB_OPEN,                
-    MMC_VERB_LAST            = MMC_VERB_MAX - 1              
-#endif // MMC_VER >= 0x0110                                  
-} MMC_CONSOLE_VERB;                                          
+
+    // must be last
+    MMC_VERB_MAX,
+    MMC_VERB_FIRST           = MMC_VERB_OPEN,
+    MMC_VERB_LAST            = MMC_VERB_MAX - 1
+#endif // MMC_VER >= 0x0110
+} MMC_CONSOLE_VERB;
 #if 0
-typedef 
+typedef
 enum _MMC_CONSOLE_VERB
     {	MMC_VERB__dummy_	= 0
     } 	MMC_CONSOLE_VERB;
 
 #endif
-#include <pshpack8.h>
+#include <PshPack8.h>
 typedef struct _MMCButton
     {
     int nBitmap;
@@ -659,10 +659,10 @@ typedef struct _MMCButton
     LPOLESTR lpTooltipText;
     } 	MMCBUTTON;
 
-#include <poppack.h>
+#include <PopPack.h>
 typedef MMCBUTTON *LPMMCBUTTON;
 
-typedef 
+typedef
 enum _MMC_BUTTON_STATE
     {	ENABLED	= 0x1,
 	CHECKED	= 0x2,
@@ -739,7 +739,7 @@ typedef struct _SCOPEDATAITEM
 
 typedef SCOPEDATAITEM *LPSCOPEDATAITEM;
 
-typedef 
+typedef
 enum _MMC_SCOPE_ITEM_STATE
     {	MMC_SCOPE_ITEM_STATE_NORMAL	= 0x1,
 	MMC_SCOPE_ITEM_STATE_BOLD	= 0x2,
@@ -758,7 +758,7 @@ typedef struct _CONTEXTMENUITEM
 
 typedef CONTEXTMENUITEM *LPCONTEXTMENUITEM;
 
-typedef 
+typedef
 enum _MMC_MENU_COMMAND_IDS
     {	MMCC_STANDARD_VIEW_SELECT	= -1
     } 	MMC_MENU_COMMAND_IDS;
@@ -783,7 +783,7 @@ typedef LONG_PTR MMC_COOKIE;
 
 #define	SPECIAL_COOKIE_MAX	( -1 )
 
-typedef 
+typedef
 enum _MMC_FILTER_TYPE
     {	MMC_STRING_FILTER	= 0,
 	MMC_INT_FILTER	= 0x1,
@@ -797,7 +797,7 @@ typedef struct _MMC_FILTERDATA
     LONG lValue;
     } 	MMC_FILTERDATA;
 
-typedef 
+typedef
 enum _MMC_FILTER_CHANGE_CODE
     {	MFCC_DISABLE	= 0,
 	MFCC_ENABLE	= 1,
@@ -828,58 +828,58 @@ typedef struct _MMC_VISIBLE_COLUMNS
     } 	MMC_VISIBLE_COLUMNS;
 
 #endif // MMC_VER >= 0x0120
-typedef enum _MMC_NOTIFY_TYPE                                
-{                                                            
-    MMCN_ACTIVATE           = 0x8001,                        
-    MMCN_ADD_IMAGES         = 0x8002,                        
-    MMCN_BTN_CLICK          = 0x8003,                        
-    MMCN_CLICK              = 0x8004,   // NOT USED          
-    MMCN_COLUMN_CLICK       = 0x8005,                        
-    MMCN_CONTEXTMENU        = 0x8006,   // NOT USED          
-    MMCN_CUTORMOVE          = 0x8007,                        
-    MMCN_DBLCLICK           = 0x8008,                        
-    MMCN_DELETE             = 0x8009,                        
-    MMCN_DESELECT_ALL       = 0x800A,                        
-    MMCN_EXPAND             = 0x800B,                        
-    MMCN_HELP               = 0x800C,   // NOT USED          
-    MMCN_MENU_BTNCLICK      = 0x800D,                        
-    MMCN_MINIMIZED          = 0x800E,                        
-    MMCN_PASTE              = 0x800F,                        
-    MMCN_PROPERTY_CHANGE    = 0x8010,                        
-    MMCN_QUERY_PASTE        = 0x8011,                        
-    MMCN_REFRESH            = 0x8012,                        
-    MMCN_REMOVE_CHILDREN    = 0x8013,                        
-    MMCN_RENAME             = 0x8014,                        
-    MMCN_SELECT             = 0x8015,                        
-    MMCN_SHOW               = 0x8016,                        
-    MMCN_VIEW_CHANGE        = 0x8017,                        
-    MMCN_SNAPINHELP         = 0x8018,                        
-    MMCN_CONTEXTHELP        = 0x8019,                        
-    MMCN_INITOCX            = 0x801A,                        
-#if (MMC_VER >= 0x0110)                                      
-    MMCN_FILTER_CHANGE      = 0x801B,                        
-    MMCN_FILTERBTN_CLICK    = 0x801C,                        
-    MMCN_RESTORE_VIEW       = 0x801D,                        
-    MMCN_PRINT              = 0x801E,                        
-    MMCN_PRELOAD            = 0x801F,                        
-    MMCN_LISTPAD            = 0x8020,                        
-    MMCN_EXPANDSYNC         = 0x8021,                        
-#if (MMC_VER >= 0x0120)                                      
-    MMCN_COLUMNS_CHANGED    = 0x8022,                        
-#if (MMC_VER >= 0x0200)                                      
-    MMCN_CANPASTE_OUTOFPROC = 0x8023,                        
-#endif // MMC_VER >= 0x0200                                  
-#endif // MMC_VER >= 0x0120                                  
-#endif // MMC_VER >= 0x0110                                  
-} MMC_NOTIFY_TYPE;                                           
+typedef enum _MMC_NOTIFY_TYPE
+{
+    MMCN_ACTIVATE           = 0x8001,
+    MMCN_ADD_IMAGES         = 0x8002,
+    MMCN_BTN_CLICK          = 0x8003,
+    MMCN_CLICK              = 0x8004,   // NOT USED
+    MMCN_COLUMN_CLICK       = 0x8005,
+    MMCN_CONTEXTMENU        = 0x8006,   // NOT USED
+    MMCN_CUTORMOVE          = 0x8007,
+    MMCN_DBLCLICK           = 0x8008,
+    MMCN_DELETE             = 0x8009,
+    MMCN_DESELECT_ALL       = 0x800A,
+    MMCN_EXPAND             = 0x800B,
+    MMCN_HELP               = 0x800C,   // NOT USED
+    MMCN_MENU_BTNCLICK      = 0x800D,
+    MMCN_MINIMIZED          = 0x800E,
+    MMCN_PASTE              = 0x800F,
+    MMCN_PROPERTY_CHANGE    = 0x8010,
+    MMCN_QUERY_PASTE        = 0x8011,
+    MMCN_REFRESH            = 0x8012,
+    MMCN_REMOVE_CHILDREN    = 0x8013,
+    MMCN_RENAME             = 0x8014,
+    MMCN_SELECT             = 0x8015,
+    MMCN_SHOW               = 0x8016,
+    MMCN_VIEW_CHANGE        = 0x8017,
+    MMCN_SNAPINHELP         = 0x8018,
+    MMCN_CONTEXTHELP        = 0x8019,
+    MMCN_INITOCX            = 0x801A,
+#if (MMC_VER >= 0x0110)
+    MMCN_FILTER_CHANGE      = 0x801B,
+    MMCN_FILTERBTN_CLICK    = 0x801C,
+    MMCN_RESTORE_VIEW       = 0x801D,
+    MMCN_PRINT              = 0x801E,
+    MMCN_PRELOAD            = 0x801F,
+    MMCN_LISTPAD            = 0x8020,
+    MMCN_EXPANDSYNC         = 0x8021,
+#if (MMC_VER >= 0x0120)
+    MMCN_COLUMNS_CHANGED    = 0x8022,
+#if (MMC_VER >= 0x0200)
+    MMCN_CANPASTE_OUTOFPROC = 0x8023,
+#endif // MMC_VER >= 0x0200
+#endif // MMC_VER >= 0x0120
+#endif // MMC_VER >= 0x0110
+} MMC_NOTIFY_TYPE;
 #if 0
-typedef 
+typedef
 enum _MMC_NOTIFY_TYPE
     {	MMCN__dummy_	= 0
     } 	MMC_NOTIFY_TYPE;
 
 #endif
-typedef 
+typedef
 enum _DATA_OBJECT_TYPES
     {	CCT_SCOPE	= 0x8000,
 	CCT_RESULT	= 0x8001,
@@ -1019,96 +1019,96 @@ extern RPC_IF_HANDLE __MIDL_itf_mmc_0000_0000_v0_0_s_ifspec;
 #define __IComponentData_INTERFACE_DEFINED__
 
 /* interface IComponentData */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IComponentData;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("955AB28A-5218-11D0-A985-00C04FD8D565")
     IComponentData : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Initialize( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Initialize(
             /* [in] */ __RPC__in_opt LPUNKNOWN pUnknown) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE CreateComponent( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE CreateComponent(
             /* [out] */ __RPC__deref_out_opt LPCOMPONENT *ppComponent) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Notify( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Notify(
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObject,
             /* [in] */ MMC_NOTIFY_TYPE event,
             /* [in] */ LPARAM arg,
             /* [in] */ LPARAM param) = 0;
-        
+
         virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Destroy( void) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryDataObject( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryDataObject(
             /* [in] */ MMC_COOKIE cookie,
             /* [in] */ DATA_OBJECT_TYPES type,
             /* [out] */ __RPC__deref_out_opt LPDATAOBJECT *ppDataObject) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetDisplayInfo( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetDisplayInfo(
             /* [out][in] */ __RPC__inout SCOPEDATAITEM *pScopeDataItem) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE CompareObjects( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE CompareObjects(
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObjectA,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObjectB) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IComponentDataVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IComponentData * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IComponentData * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IComponentData * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Initialize )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Initialize )(
             IComponentData * This,
             /* [in] */ __RPC__in_opt LPUNKNOWN pUnknown);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CreateComponent )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CreateComponent )(
             IComponentData * This,
             /* [out] */ __RPC__deref_out_opt LPCOMPONENT *ppComponent);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Notify )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Notify )(
             IComponentData * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObject,
             /* [in] */ MMC_NOTIFY_TYPE event,
             /* [in] */ LPARAM arg,
             /* [in] */ LPARAM param);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Destroy )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Destroy )(
             IComponentData * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryDataObject )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryDataObject )(
             IComponentData * This,
             /* [in] */ MMC_COOKIE cookie,
             /* [in] */ DATA_OBJECT_TYPES type,
             /* [out] */ __RPC__deref_out_opt LPDATAOBJECT *ppDataObject);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetDisplayInfo )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetDisplayInfo )(
             IComponentData * This,
             /* [out][in] */ __RPC__inout SCOPEDATAITEM *pScopeDataItem);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CompareObjects )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CompareObjects )(
             IComponentData * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObjectA,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObjectB);
-        
+
         END_INTERFACE
     } IComponentDataVtbl;
 
@@ -1117,41 +1117,41 @@ EXTERN_C const IID IID_IComponentData;
         CONST_VTBL struct IComponentDataVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IComponentData_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IComponentData_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IComponentData_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IComponentData_Initialize(This,pUnknown)	\
-    ( (This)->lpVtbl -> Initialize(This,pUnknown) ) 
+    ( (This)->lpVtbl -> Initialize(This,pUnknown) )
 
 #define IComponentData_CreateComponent(This,ppComponent)	\
-    ( (This)->lpVtbl -> CreateComponent(This,ppComponent) ) 
+    ( (This)->lpVtbl -> CreateComponent(This,ppComponent) )
 
 #define IComponentData_Notify(This,lpDataObject,event,arg,param)	\
-    ( (This)->lpVtbl -> Notify(This,lpDataObject,event,arg,param) ) 
+    ( (This)->lpVtbl -> Notify(This,lpDataObject,event,arg,param) )
 
 #define IComponentData_Destroy(This)	\
-    ( (This)->lpVtbl -> Destroy(This) ) 
+    ( (This)->lpVtbl -> Destroy(This) )
 
 #define IComponentData_QueryDataObject(This,cookie,type,ppDataObject)	\
-    ( (This)->lpVtbl -> QueryDataObject(This,cookie,type,ppDataObject) ) 
+    ( (This)->lpVtbl -> QueryDataObject(This,cookie,type,ppDataObject) )
 
 #define IComponentData_GetDisplayInfo(This,pScopeDataItem)	\
-    ( (This)->lpVtbl -> GetDisplayInfo(This,pScopeDataItem) ) 
+    ( (This)->lpVtbl -> GetDisplayInfo(This,pScopeDataItem) )
 
 #define IComponentData_CompareObjects(This,lpDataObjectA,lpDataObjectB)	\
-    ( (This)->lpVtbl -> CompareObjects(This,lpDataObjectA,lpDataObjectB) ) 
+    ( (This)->lpVtbl -> CompareObjects(This,lpDataObjectA,lpDataObjectB) )
 
 #endif /* COBJMACROS */
 
@@ -1168,102 +1168,102 @@ EXTERN_C const IID IID_IComponentData;
 #define __IComponent_INTERFACE_DEFINED__
 
 /* interface IComponent */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IComponent;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("43136EB2-D36C-11CF-ADBC-00AA00A80033")
     IComponent : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Initialize( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Initialize(
             /* [in] */ __RPC__in_opt LPCONSOLE lpConsole) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Notify( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Notify(
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObject,
             /* [in] */ MMC_NOTIFY_TYPE event,
             /* [in] */ LPARAM arg,
             /* [in] */ LPARAM param) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Destroy( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Destroy(
             /* [in] */ MMC_COOKIE cookie) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryDataObject( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryDataObject(
             /* [in] */ MMC_COOKIE cookie,
             /* [in] */ DATA_OBJECT_TYPES type,
             /* [out] */ __RPC__deref_out_opt LPDATAOBJECT *ppDataObject) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetResultViewType( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetResultViewType(
             /* [in] */ MMC_COOKIE cookie,
             /* [out] */ __RPC__deref_out_opt LPOLESTR *ppViewType,
             /* [out] */ __RPC__out long *pViewOptions) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetDisplayInfo( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetDisplayInfo(
             /* [out][in] */ __RPC__inout RESULTDATAITEM *pResultDataItem) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE CompareObjects( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE CompareObjects(
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObjectA,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObjectB) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IComponentVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IComponent * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IComponent * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IComponent * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Initialize )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Initialize )(
             IComponent * This,
             /* [in] */ __RPC__in_opt LPCONSOLE lpConsole);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Notify )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Notify )(
             IComponent * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObject,
             /* [in] */ MMC_NOTIFY_TYPE event,
             /* [in] */ LPARAM arg,
             /* [in] */ LPARAM param);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Destroy )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Destroy )(
             IComponent * This,
             /* [in] */ MMC_COOKIE cookie);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryDataObject )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryDataObject )(
             IComponent * This,
             /* [in] */ MMC_COOKIE cookie,
             /* [in] */ DATA_OBJECT_TYPES type,
             /* [out] */ __RPC__deref_out_opt LPDATAOBJECT *ppDataObject);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetResultViewType )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetResultViewType )(
             IComponent * This,
             /* [in] */ MMC_COOKIE cookie,
             /* [out] */ __RPC__deref_out_opt LPOLESTR *ppViewType,
             /* [out] */ __RPC__out long *pViewOptions);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetDisplayInfo )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetDisplayInfo )(
             IComponent * This,
             /* [out][in] */ __RPC__inout RESULTDATAITEM *pResultDataItem);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CompareObjects )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CompareObjects )(
             IComponent * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObjectA,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObjectB);
-        
+
         END_INTERFACE
     } IComponentVtbl;
 
@@ -1272,41 +1272,41 @@ EXTERN_C const IID IID_IComponent;
         CONST_VTBL struct IComponentVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IComponent_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IComponent_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IComponent_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IComponent_Initialize(This,lpConsole)	\
-    ( (This)->lpVtbl -> Initialize(This,lpConsole) ) 
+    ( (This)->lpVtbl -> Initialize(This,lpConsole) )
 
 #define IComponent_Notify(This,lpDataObject,event,arg,param)	\
-    ( (This)->lpVtbl -> Notify(This,lpDataObject,event,arg,param) ) 
+    ( (This)->lpVtbl -> Notify(This,lpDataObject,event,arg,param) )
 
 #define IComponent_Destroy(This,cookie)	\
-    ( (This)->lpVtbl -> Destroy(This,cookie) ) 
+    ( (This)->lpVtbl -> Destroy(This,cookie) )
 
 #define IComponent_QueryDataObject(This,cookie,type,ppDataObject)	\
-    ( (This)->lpVtbl -> QueryDataObject(This,cookie,type,ppDataObject) ) 
+    ( (This)->lpVtbl -> QueryDataObject(This,cookie,type,ppDataObject) )
 
 #define IComponent_GetResultViewType(This,cookie,ppViewType,pViewOptions)	\
-    ( (This)->lpVtbl -> GetResultViewType(This,cookie,ppViewType,pViewOptions) ) 
+    ( (This)->lpVtbl -> GetResultViewType(This,cookie,ppViewType,pViewOptions) )
 
 #define IComponent_GetDisplayInfo(This,pResultDataItem)	\
-    ( (This)->lpVtbl -> GetDisplayInfo(This,pResultDataItem) ) 
+    ( (This)->lpVtbl -> GetDisplayInfo(This,pResultDataItem) )
 
 #define IComponent_CompareObjects(This,lpDataObjectA,lpDataObjectB)	\
-    ( (This)->lpVtbl -> CompareObjects(This,lpDataObjectA,lpDataObjectB) ) 
+    ( (This)->lpVtbl -> CompareObjects(This,lpDataObjectA,lpDataObjectB) )
 
 #endif /* COBJMACROS */
 
@@ -1323,50 +1323,50 @@ EXTERN_C const IID IID_IComponent;
 #define __IResultDataCompare_INTERFACE_DEFINED__
 
 /* interface IResultDataCompare */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IResultDataCompare;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("E8315A52-7A1A-11D0-A2D2-00C04FD909DD")
     IResultDataCompare : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Compare( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Compare(
             /* [in] */ LPARAM lUserParam,
             /* [in] */ MMC_COOKIE cookieA,
             /* [in] */ MMC_COOKIE cookieB,
             /* [out][in] */ __RPC__inout int *pnResult) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IResultDataCompareVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IResultDataCompare * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IResultDataCompare * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IResultDataCompare * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Compare )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Compare )(
             IResultDataCompare * This,
             /* [in] */ LPARAM lUserParam,
             /* [in] */ MMC_COOKIE cookieA,
             /* [in] */ MMC_COOKIE cookieB,
             /* [out][in] */ __RPC__inout int *pnResult);
-        
+
         END_INTERFACE
     } IResultDataCompareVtbl;
 
@@ -1375,23 +1375,23 @@ EXTERN_C const IID IID_IResultDataCompare;
         CONST_VTBL struct IResultDataCompareVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IResultDataCompare_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IResultDataCompare_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IResultDataCompare_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IResultDataCompare_Compare(This,lUserParam,cookieA,cookieB,pnResult)	\
-    ( (This)->lpVtbl -> Compare(This,lUserParam,cookieA,cookieB,pnResult) ) 
+    ( (This)->lpVtbl -> Compare(This,lUserParam,cookieA,cookieB,pnResult) )
 
 #endif /* COBJMACROS */
 
@@ -1408,66 +1408,66 @@ EXTERN_C const IID IID_IResultDataCompare;
 #define __IResultOwnerData_INTERFACE_DEFINED__
 
 /* interface IResultOwnerData */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IResultOwnerData;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("9CB396D8-EA83-11d0-AEF1-00C04FB6DD2C")
     IResultOwnerData : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE FindItem( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE FindItem(
             /* [in] */ __RPC__in LPRESULTFINDINFO pFindInfo,
             /* [out] */ __RPC__out int *pnFoundIndex) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE CacheHint( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE CacheHint(
             /* [in] */ int nStartIndex,
             /* [in] */ int nEndIndex) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SortItems( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SortItems(
             /* [in] */ int nColumn,
             /* [in] */ DWORD dwSortOptions,
             /* [in] */ LPARAM lUserParam) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IResultOwnerDataVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IResultOwnerData * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IResultOwnerData * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IResultOwnerData * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *FindItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *FindItem )(
             IResultOwnerData * This,
             /* [in] */ __RPC__in LPRESULTFINDINFO pFindInfo,
             /* [out] */ __RPC__out int *pnFoundIndex);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CacheHint )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CacheHint )(
             IResultOwnerData * This,
             /* [in] */ int nStartIndex,
             /* [in] */ int nEndIndex);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SortItems )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SortItems )(
             IResultOwnerData * This,
             /* [in] */ int nColumn,
             /* [in] */ DWORD dwSortOptions,
             /* [in] */ LPARAM lUserParam);
-        
+
         END_INTERFACE
     } IResultOwnerDataVtbl;
 
@@ -1476,29 +1476,29 @@ EXTERN_C const IID IID_IResultOwnerData;
         CONST_VTBL struct IResultOwnerDataVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IResultOwnerData_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IResultOwnerData_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IResultOwnerData_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IResultOwnerData_FindItem(This,pFindInfo,pnFoundIndex)	\
-    ( (This)->lpVtbl -> FindItem(This,pFindInfo,pnFoundIndex) ) 
+    ( (This)->lpVtbl -> FindItem(This,pFindInfo,pnFoundIndex) )
 
 #define IResultOwnerData_CacheHint(This,nStartIndex,nEndIndex)	\
-    ( (This)->lpVtbl -> CacheHint(This,nStartIndex,nEndIndex) ) 
+    ( (This)->lpVtbl -> CacheHint(This,nStartIndex,nEndIndex) )
 
 #define IResultOwnerData_SortItems(This,nColumn,dwSortOptions,lUserParam)	\
-    ( (This)->lpVtbl -> SortItems(This,nColumn,dwSortOptions,lUserParam) ) 
+    ( (This)->lpVtbl -> SortItems(This,nColumn,dwSortOptions,lUserParam) )
 
 #endif /* COBJMACROS */
 
@@ -1515,126 +1515,126 @@ EXTERN_C const IID IID_IResultOwnerData;
 #define __IConsole_INTERFACE_DEFINED__
 
 /* interface IConsole */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IConsole;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("43136EB1-D36C-11CF-ADBC-00AA00A80033")
     IConsole : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetHeader( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetHeader(
             /* [in] */ __RPC__in_opt LPHEADERCTRL pHeader) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetToolbar( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetToolbar(
             /* [in] */ __RPC__in_opt LPTOOLBAR pToolbar) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryResultView( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryResultView(
             /* [out] */ __RPC__deref_out_opt LPUNKNOWN *pUnknown) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryScopeImageList( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryScopeImageList(
             /* [out] */ __RPC__deref_out_opt LPIMAGELIST *ppImageList) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryResultImageList( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryResultImageList(
             /* [out] */ __RPC__deref_out_opt LPIMAGELIST *ppImageList) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE UpdateAllViews( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE UpdateAllViews(
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObject,
             /* [in] */ LPARAM data,
             /* [in] */ LONG_PTR hint) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE MessageBox( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE MessageBox(
             /* [in] */ __RPC__in LPCWSTR lpszText,
             /* [in] */ __RPC__in LPCWSTR lpszTitle,
             /* [in] */ UINT fuStyle,
             /* [out] */ __RPC__out int *piRetval) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryConsoleVerb( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryConsoleVerb(
             /* [out] */ __RPC__deref_out_opt LPCONSOLEVERB *ppConsoleVerb) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SelectScopeItem( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SelectScopeItem(
             /* [in] */ HSCOPEITEM hScopeItem) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetMainWindow( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetMainWindow(
             /* [out] */ __RPC__deref_out_opt HWND *phwnd) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE NewWindow( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE NewWindow(
             /* [in] */ HSCOPEITEM hScopeItem,
             /* [in] */ unsigned long lOptions) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IConsoleVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IConsole * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IConsole * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IConsole * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetHeader )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetHeader )(
             IConsole * This,
             /* [in] */ __RPC__in_opt LPHEADERCTRL pHeader);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetToolbar )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetToolbar )(
             IConsole * This,
             /* [in] */ __RPC__in_opt LPTOOLBAR pToolbar);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryResultView )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryResultView )(
             IConsole * This,
             /* [out] */ __RPC__deref_out_opt LPUNKNOWN *pUnknown);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryScopeImageList )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryScopeImageList )(
             IConsole * This,
             /* [out] */ __RPC__deref_out_opt LPIMAGELIST *ppImageList);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryResultImageList )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryResultImageList )(
             IConsole * This,
             /* [out] */ __RPC__deref_out_opt LPIMAGELIST *ppImageList);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *UpdateAllViews )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *UpdateAllViews )(
             IConsole * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObject,
             /* [in] */ LPARAM data,
             /* [in] */ LONG_PTR hint);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *MessageBox )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *MessageBox )(
             IConsole * This,
             /* [in] */ __RPC__in LPCWSTR lpszText,
             /* [in] */ __RPC__in LPCWSTR lpszTitle,
             /* [in] */ UINT fuStyle,
             /* [out] */ __RPC__out int *piRetval);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryConsoleVerb )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryConsoleVerb )(
             IConsole * This,
             /* [out] */ __RPC__deref_out_opt LPCONSOLEVERB *ppConsoleVerb);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SelectScopeItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SelectScopeItem )(
             IConsole * This,
             /* [in] */ HSCOPEITEM hScopeItem);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetMainWindow )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetMainWindow )(
             IConsole * This,
             /* [out] */ __RPC__deref_out_opt HWND *phwnd);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *NewWindow )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *NewWindow )(
             IConsole * This,
             /* [in] */ HSCOPEITEM hScopeItem,
             /* [in] */ unsigned long lOptions);
-        
+
         END_INTERFACE
     } IConsoleVtbl;
 
@@ -1643,53 +1643,53 @@ EXTERN_C const IID IID_IConsole;
         CONST_VTBL struct IConsoleVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IConsole_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IConsole_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IConsole_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IConsole_SetHeader(This,pHeader)	\
-    ( (This)->lpVtbl -> SetHeader(This,pHeader) ) 
+    ( (This)->lpVtbl -> SetHeader(This,pHeader) )
 
 #define IConsole_SetToolbar(This,pToolbar)	\
-    ( (This)->lpVtbl -> SetToolbar(This,pToolbar) ) 
+    ( (This)->lpVtbl -> SetToolbar(This,pToolbar) )
 
 #define IConsole_QueryResultView(This,pUnknown)	\
-    ( (This)->lpVtbl -> QueryResultView(This,pUnknown) ) 
+    ( (This)->lpVtbl -> QueryResultView(This,pUnknown) )
 
 #define IConsole_QueryScopeImageList(This,ppImageList)	\
-    ( (This)->lpVtbl -> QueryScopeImageList(This,ppImageList) ) 
+    ( (This)->lpVtbl -> QueryScopeImageList(This,ppImageList) )
 
 #define IConsole_QueryResultImageList(This,ppImageList)	\
-    ( (This)->lpVtbl -> QueryResultImageList(This,ppImageList) ) 
+    ( (This)->lpVtbl -> QueryResultImageList(This,ppImageList) )
 
 #define IConsole_UpdateAllViews(This,lpDataObject,data,hint)	\
-    ( (This)->lpVtbl -> UpdateAllViews(This,lpDataObject,data,hint) ) 
+    ( (This)->lpVtbl -> UpdateAllViews(This,lpDataObject,data,hint) )
 
 #define IConsole_MessageBox(This,lpszText,lpszTitle,fuStyle,piRetval)	\
-    ( (This)->lpVtbl -> MessageBox(This,lpszText,lpszTitle,fuStyle,piRetval) ) 
+    ( (This)->lpVtbl -> MessageBox(This,lpszText,lpszTitle,fuStyle,piRetval) )
 
 #define IConsole_QueryConsoleVerb(This,ppConsoleVerb)	\
-    ( (This)->lpVtbl -> QueryConsoleVerb(This,ppConsoleVerb) ) 
+    ( (This)->lpVtbl -> QueryConsoleVerb(This,ppConsoleVerb) )
 
 #define IConsole_SelectScopeItem(This,hScopeItem)	\
-    ( (This)->lpVtbl -> SelectScopeItem(This,hScopeItem) ) 
+    ( (This)->lpVtbl -> SelectScopeItem(This,hScopeItem) )
 
 #define IConsole_GetMainWindow(This,phwnd)	\
-    ( (This)->lpVtbl -> GetMainWindow(This,phwnd) ) 
+    ( (This)->lpVtbl -> GetMainWindow(This,phwnd) )
 
 #define IConsole_NewWindow(This,hScopeItem,lOptions)	\
-    ( (This)->lpVtbl -> NewWindow(This,hScopeItem,lOptions) ) 
+    ( (This)->lpVtbl -> NewWindow(This,hScopeItem,lOptions) )
 
 #endif /* COBJMACROS */
 
@@ -1706,7 +1706,7 @@ EXTERN_C const IID IID_IConsole;
 #define __IHeaderCtrl_INTERFACE_DEFINED__
 
 /* interface IHeaderCtrl */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 #define	AUTO_WIDTH	( -1 )
 
@@ -1718,87 +1718,87 @@ EXTERN_C const IID IID_IConsole;
 EXTERN_C const IID IID_IHeaderCtrl;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("43136EB3-D36C-11CF-ADBC-00AA00A80033")
     IHeaderCtrl : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE InsertColumn( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE InsertColumn(
             /* [in] */ int nCol,
             /* [in] */ __RPC__in LPCWSTR title,
             /* [in] */ int nFormat,
             /* [in] */ int nWidth) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE DeleteColumn( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE DeleteColumn(
             /* [in] */ int nCol) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetColumnText( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetColumnText(
             /* [in] */ int nCol,
             /* [in] */ __RPC__in LPCWSTR title) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetColumnText( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetColumnText(
             /* [in] */ int nCol,
             /* [out] */ __RPC__deref_out_opt LPOLESTR *pText) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetColumnWidth( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetColumnWidth(
             /* [in] */ int nCol,
             /* [in] */ int nWidth) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetColumnWidth( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetColumnWidth(
             /* [in] */ int nCol,
             /* [out] */ __RPC__out int *pWidth) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IHeaderCtrlVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IHeaderCtrl * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IHeaderCtrl * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IHeaderCtrl * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *InsertColumn )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *InsertColumn )(
             IHeaderCtrl * This,
             /* [in] */ int nCol,
             /* [in] */ __RPC__in LPCWSTR title,
             /* [in] */ int nFormat,
             /* [in] */ int nWidth);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteColumn )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteColumn )(
             IHeaderCtrl * This,
             /* [in] */ int nCol);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetColumnText )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetColumnText )(
             IHeaderCtrl * This,
             /* [in] */ int nCol,
             /* [in] */ __RPC__in LPCWSTR title);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetColumnText )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetColumnText )(
             IHeaderCtrl * This,
             /* [in] */ int nCol,
             /* [out] */ __RPC__deref_out_opt LPOLESTR *pText);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetColumnWidth )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetColumnWidth )(
             IHeaderCtrl * This,
             /* [in] */ int nCol,
             /* [in] */ int nWidth);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetColumnWidth )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetColumnWidth )(
             IHeaderCtrl * This,
             /* [in] */ int nCol,
             /* [out] */ __RPC__out int *pWidth);
-        
+
         END_INTERFACE
     } IHeaderCtrlVtbl;
 
@@ -1807,38 +1807,38 @@ EXTERN_C const IID IID_IHeaderCtrl;
         CONST_VTBL struct IHeaderCtrlVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IHeaderCtrl_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IHeaderCtrl_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IHeaderCtrl_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IHeaderCtrl_InsertColumn(This,nCol,title,nFormat,nWidth)	\
-    ( (This)->lpVtbl -> InsertColumn(This,nCol,title,nFormat,nWidth) ) 
+    ( (This)->lpVtbl -> InsertColumn(This,nCol,title,nFormat,nWidth) )
 
 #define IHeaderCtrl_DeleteColumn(This,nCol)	\
-    ( (This)->lpVtbl -> DeleteColumn(This,nCol) ) 
+    ( (This)->lpVtbl -> DeleteColumn(This,nCol) )
 
 #define IHeaderCtrl_SetColumnText(This,nCol,title)	\
-    ( (This)->lpVtbl -> SetColumnText(This,nCol,title) ) 
+    ( (This)->lpVtbl -> SetColumnText(This,nCol,title) )
 
 #define IHeaderCtrl_GetColumnText(This,nCol,pText)	\
-    ( (This)->lpVtbl -> GetColumnText(This,nCol,pText) ) 
+    ( (This)->lpVtbl -> GetColumnText(This,nCol,pText) )
 
 #define IHeaderCtrl_SetColumnWidth(This,nCol,nWidth)	\
-    ( (This)->lpVtbl -> SetColumnWidth(This,nCol,nWidth) ) 
+    ( (This)->lpVtbl -> SetColumnWidth(This,nCol,nWidth) )
 
 #define IHeaderCtrl_GetColumnWidth(This,nCol,pWidth)	\
-    ( (This)->lpVtbl -> GetColumnWidth(This,nCol,pWidth) ) 
+    ( (This)->lpVtbl -> GetColumnWidth(This,nCol,pWidth) )
 
 #endif /* COBJMACROS */
 
@@ -1852,7 +1852,7 @@ EXTERN_C const IID IID_IHeaderCtrl;
 
 
 /* interface __MIDL_itf_mmc_0000_0006 */
-/* [local] */ 
+/* [local] */
 
 
 enum __MIDL___MIDL_itf_mmc_0000_0006_0001
@@ -1877,7 +1877,7 @@ enum __MIDL___MIDL_itf_mmc_0000_0006_0002
     {	CCM_INSERTIONALLOWED_TOP	= ( 1L << (( CCM_INSERTIONPOINTID_PRIMARY_TOP & CCM_INSERTIONPOINTID_MASK_FLAGINDEX ) ) ) ,
 	CCM_INSERTIONALLOWED_NEW	= ( 1L << (( CCM_INSERTIONPOINTID_PRIMARY_NEW & CCM_INSERTIONPOINTID_MASK_FLAGINDEX ) ) ) ,
 	CCM_INSERTIONALLOWED_TASK	= ( 1L << (( CCM_INSERTIONPOINTID_PRIMARY_TASK & CCM_INSERTIONPOINTID_MASK_FLAGINDEX ) ) ) ,
-	CCM_INSERTIONALLOWED_VIEW	= ( 1L << (( CCM_INSERTIONPOINTID_PRIMARY_VIEW & CCM_INSERTIONPOINTID_MASK_FLAGINDEX ) ) ) 
+	CCM_INSERTIONALLOWED_VIEW	= ( 1L << (( CCM_INSERTIONPOINTID_PRIMARY_VIEW & CCM_INSERTIONPOINTID_MASK_FLAGINDEX ) ) )
     } ;
 
 enum __MIDL___MIDL_itf_mmc_0000_0006_0003
@@ -1900,44 +1900,44 @@ extern RPC_IF_HANDLE __MIDL_itf_mmc_0000_0006_v0_0_s_ifspec;
 #define __IContextMenuCallback_INTERFACE_DEFINED__
 
 /* interface IContextMenuCallback */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IContextMenuCallback;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("43136EB7-D36C-11CF-ADBC-00AA00A80033")
     IContextMenuCallback : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddItem( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddItem(
             /* [in] */ __RPC__in CONTEXTMENUITEM *pItem) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IContextMenuCallbackVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IContextMenuCallback * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IContextMenuCallback * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IContextMenuCallback * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddItem )(
             IContextMenuCallback * This,
             /* [in] */ __RPC__in CONTEXTMENUITEM *pItem);
-        
+
         END_INTERFACE
     } IContextMenuCallbackVtbl;
 
@@ -1946,23 +1946,23 @@ EXTERN_C const IID IID_IContextMenuCallback;
         CONST_VTBL struct IContextMenuCallbackVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IContextMenuCallback_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IContextMenuCallback_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IContextMenuCallback_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IContextMenuCallback_AddItem(This,pItem)	\
-    ( (This)->lpVtbl -> AddItem(This,pItem) ) 
+    ( (This)->lpVtbl -> AddItem(This,pItem) )
 
 #endif /* COBJMACROS */
 
@@ -1979,75 +1979,75 @@ EXTERN_C const IID IID_IContextMenuCallback;
 #define __IContextMenuProvider_INTERFACE_DEFINED__
 
 /* interface IContextMenuProvider */
-/* [unique][helpstring][object][uuid][object] */ 
+/* [unique][helpstring][object][uuid][object] */
 
 
 EXTERN_C const IID IID_IContextMenuProvider;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("43136EB6-D36C-11CF-ADBC-00AA00A80033")
     IContextMenuProvider : public IContextMenuCallback
     {
     public:
         virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE EmptyMenuList( void) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddPrimaryExtensionItems( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddPrimaryExtensionItems(
             /* [in] */ __RPC__in_opt LPUNKNOWN piExtension,
             /* [in] */ __RPC__in_opt LPDATAOBJECT piDataObject) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddThirdPartyExtensionItems( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddThirdPartyExtensionItems(
             /* [in] */ __RPC__in_opt LPDATAOBJECT piDataObject) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE ShowContextMenu( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE ShowContextMenu(
             /* [in] */ __RPC__in HWND hwndParent,
             /* [in] */ long xPos,
             /* [in] */ long yPos,
             /* [retval][out] */ __RPC__out long *plSelected) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IContextMenuProviderVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IContextMenuProvider * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IContextMenuProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IContextMenuProvider * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddItem )(
             IContextMenuProvider * This,
             /* [in] */ __RPC__in CONTEXTMENUITEM *pItem);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *EmptyMenuList )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *EmptyMenuList )(
             IContextMenuProvider * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddPrimaryExtensionItems )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddPrimaryExtensionItems )(
             IContextMenuProvider * This,
             /* [in] */ __RPC__in_opt LPUNKNOWN piExtension,
             /* [in] */ __RPC__in_opt LPDATAOBJECT piDataObject);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddThirdPartyExtensionItems )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddThirdPartyExtensionItems )(
             IContextMenuProvider * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT piDataObject);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ShowContextMenu )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ShowContextMenu )(
             IContextMenuProvider * This,
             /* [in] */ __RPC__in HWND hwndParent,
             /* [in] */ long xPos,
             /* [in] */ long yPos,
             /* [retval][out] */ __RPC__out long *plSelected);
-        
+
         END_INTERFACE
     } IContextMenuProviderVtbl;
 
@@ -2056,36 +2056,36 @@ EXTERN_C const IID IID_IContextMenuProvider;
         CONST_VTBL struct IContextMenuProviderVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IContextMenuProvider_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IContextMenuProvider_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IContextMenuProvider_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IContextMenuProvider_AddItem(This,pItem)	\
-    ( (This)->lpVtbl -> AddItem(This,pItem) ) 
+    ( (This)->lpVtbl -> AddItem(This,pItem) )
 
 
 #define IContextMenuProvider_EmptyMenuList(This)	\
-    ( (This)->lpVtbl -> EmptyMenuList(This) ) 
+    ( (This)->lpVtbl -> EmptyMenuList(This) )
 
 #define IContextMenuProvider_AddPrimaryExtensionItems(This,piExtension,piDataObject)	\
-    ( (This)->lpVtbl -> AddPrimaryExtensionItems(This,piExtension,piDataObject) ) 
+    ( (This)->lpVtbl -> AddPrimaryExtensionItems(This,piExtension,piDataObject) )
 
 #define IContextMenuProvider_AddThirdPartyExtensionItems(This,piDataObject)	\
-    ( (This)->lpVtbl -> AddThirdPartyExtensionItems(This,piDataObject) ) 
+    ( (This)->lpVtbl -> AddThirdPartyExtensionItems(This,piDataObject) )
 
 #define IContextMenuProvider_ShowContextMenu(This,hwndParent,xPos,yPos,plSelected)	\
-    ( (This)->lpVtbl -> ShowContextMenu(This,hwndParent,xPos,yPos,plSelected) ) 
+    ( (This)->lpVtbl -> ShowContextMenu(This,hwndParent,xPos,yPos,plSelected) )
 
 #endif /* COBJMACROS */
 
@@ -2102,57 +2102,57 @@ EXTERN_C const IID IID_IContextMenuProvider;
 #define __IExtendContextMenu_INTERFACE_DEFINED__
 
 /* interface IExtendContextMenu */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IExtendContextMenu;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("4F3B7A4F-CFAC-11CF-B8E3-00C04FD8D5B0")
     IExtendContextMenu : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddMenuItems( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddMenuItems(
             /* [in] */ __RPC__in_opt LPDATAOBJECT piDataObject,
             /* [in] */ __RPC__in_opt LPCONTEXTMENUCALLBACK piCallback,
             /* [out][in] */ __RPC__inout long *pInsertionAllowed) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Command( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Command(
             /* [in] */ long lCommandID,
             /* [in] */ __RPC__in_opt LPDATAOBJECT piDataObject) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IExtendContextMenuVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IExtendContextMenu * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IExtendContextMenu * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IExtendContextMenu * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddMenuItems )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddMenuItems )(
             IExtendContextMenu * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT piDataObject,
             /* [in] */ __RPC__in_opt LPCONTEXTMENUCALLBACK piCallback,
             /* [out][in] */ __RPC__inout long *pInsertionAllowed);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Command )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Command )(
             IExtendContextMenu * This,
             /* [in] */ long lCommandID,
             /* [in] */ __RPC__in_opt LPDATAOBJECT piDataObject);
-        
+
         END_INTERFACE
     } IExtendContextMenuVtbl;
 
@@ -2161,26 +2161,26 @@ EXTERN_C const IID IID_IExtendContextMenu;
         CONST_VTBL struct IExtendContextMenuVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IExtendContextMenu_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IExtendContextMenu_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IExtendContextMenu_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IExtendContextMenu_AddMenuItems(This,piDataObject,piCallback,pInsertionAllowed)	\
-    ( (This)->lpVtbl -> AddMenuItems(This,piDataObject,piCallback,pInsertionAllowed) ) 
+    ( (This)->lpVtbl -> AddMenuItems(This,piDataObject,piCallback,pInsertionAllowed) )
 
 #define IExtendContextMenu_Command(This,lCommandID,piDataObject)	\
-    ( (This)->lpVtbl -> Command(This,lCommandID,piDataObject) ) 
+    ( (This)->lpVtbl -> Command(This,lCommandID,piDataObject) )
 
 #endif /* COBJMACROS */
 
@@ -2194,7 +2194,7 @@ EXTERN_C const IID IID_IExtendContextMenu;
 
 
 /* interface __MIDL_itf_mmc_0000_0009 */
-/* [local] */ 
+/* [local] */
 
 #if (MMC_VER >= 0x0120)
 #define ILSIF_LEAVE_LARGE_ICON  0x40000000
@@ -2212,59 +2212,59 @@ extern RPC_IF_HANDLE __MIDL_itf_mmc_0000_0009_v0_0_s_ifspec;
 #define __IImageList_INTERFACE_DEFINED__
 
 /* interface IImageList */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IImageList;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("43136EB8-D36C-11CF-ADBC-00AA00A80033")
     IImageList : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE ImageListSetIcon( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE ImageListSetIcon(
             /* [in] */ __RPC__in LONG_PTR *pIcon,
             /* [in] */ long nLoc) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE ImageListSetStrip( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE ImageListSetStrip(
             /* [in] */ __RPC__in LONG_PTR *pBMapSm,
             /* [in] */ __RPC__in LONG_PTR *pBMapLg,
             /* [in] */ long nStartLoc,
             /* [in] */ COLORREF cMask) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IImageListVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IImageList * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IImageList * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IImageList * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ImageListSetIcon )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ImageListSetIcon )(
             IImageList * This,
             /* [in] */ __RPC__in LONG_PTR *pIcon,
             /* [in] */ long nLoc);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ImageListSetStrip )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ImageListSetStrip )(
             IImageList * This,
             /* [in] */ __RPC__in LONG_PTR *pBMapSm,
             /* [in] */ __RPC__in LONG_PTR *pBMapLg,
             /* [in] */ long nStartLoc,
             /* [in] */ COLORREF cMask);
-        
+
         END_INTERFACE
     } IImageListVtbl;
 
@@ -2273,26 +2273,26 @@ EXTERN_C const IID IID_IImageList;
         CONST_VTBL struct IImageListVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IImageList_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IImageList_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IImageList_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IImageList_ImageListSetIcon(This,pIcon,nLoc)	\
-    ( (This)->lpVtbl -> ImageListSetIcon(This,pIcon,nLoc) ) 
+    ( (This)->lpVtbl -> ImageListSetIcon(This,pIcon,nLoc) )
 
 #define IImageList_ImageListSetStrip(This,pBMapSm,pBMapLg,nStartLoc,cMask)	\
-    ( (This)->lpVtbl -> ImageListSetStrip(This,pBMapSm,pBMapLg,nStartLoc,cMask) ) 
+    ( (This)->lpVtbl -> ImageListSetStrip(This,pBMapSm,pBMapLg,nStartLoc,cMask) )
 
 #endif /* COBJMACROS */
 
@@ -2309,158 +2309,158 @@ EXTERN_C const IID IID_IImageList;
 #define __IResultData_INTERFACE_DEFINED__
 
 /* interface IResultData */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IResultData;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("31DA5FA0-E0EB-11cf-9F21-00AA003CA9F6")
     IResultData : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE InsertItem( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE InsertItem(
             /* [out][in] */ __RPC__inout LPRESULTDATAITEM item) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE DeleteItem( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE DeleteItem(
             /* [in] */ HRESULTITEM itemID,
             /* [in] */ int nCol) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE FindItemByLParam( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE FindItemByLParam(
             /* [in] */ LPARAM lParam,
             /* [out] */ __RPC__out HRESULTITEM *pItemID) = 0;
-        
+
         virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE DeleteAllRsltItems( void) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetItem( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetItem(
             /* [in] */ __RPC__in LPRESULTDATAITEM item) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetItem( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetItem(
             /* [out][in] */ __RPC__inout LPRESULTDATAITEM item) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetNextItem( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetNextItem(
             /* [out][in] */ __RPC__inout LPRESULTDATAITEM item) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE ModifyItemState( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE ModifyItemState(
             /* [in] */ int nIndex,
             /* [in] */ HRESULTITEM itemID,
             /* [in] */ UINT uAdd,
             /* [in] */ UINT uRemove) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE ModifyViewStyle( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE ModifyViewStyle(
             /* [in] */ MMC_RESULT_VIEW_STYLE add,
             /* [in] */ MMC_RESULT_VIEW_STYLE remove) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetViewMode( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetViewMode(
             /* [in] */ long lViewMode) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetViewMode( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetViewMode(
             /* [out] */ __RPC__out long *lViewMode) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE UpdateItem( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE UpdateItem(
             /* [in] */ HRESULTITEM itemID) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Sort( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Sort(
             /* [in] */ int nColumn,
             /* [in] */ DWORD dwSortOptions,
             /* [in] */ LPARAM lUserParam) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetDescBarText( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetDescBarText(
             /* [in] */ __RPC__in LPOLESTR DescText) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetItemCount( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetItemCount(
             /* [in] */ int nItemCount,
             /* [in] */ DWORD dwOptions) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IResultDataVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IResultData * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IResultData * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IResultData * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *InsertItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *InsertItem )(
             IResultData * This,
             /* [out][in] */ __RPC__inout LPRESULTDATAITEM item);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteItem )(
             IResultData * This,
             /* [in] */ HRESULTITEM itemID,
             /* [in] */ int nCol);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *FindItemByLParam )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *FindItemByLParam )(
             IResultData * This,
             /* [in] */ LPARAM lParam,
             /* [out] */ __RPC__out HRESULTITEM *pItemID);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteAllRsltItems )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteAllRsltItems )(
             IResultData * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetItem )(
             IResultData * This,
             /* [in] */ __RPC__in LPRESULTDATAITEM item);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetItem )(
             IResultData * This,
             /* [out][in] */ __RPC__inout LPRESULTDATAITEM item);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetNextItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetNextItem )(
             IResultData * This,
             /* [out][in] */ __RPC__inout LPRESULTDATAITEM item);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ModifyItemState )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ModifyItemState )(
             IResultData * This,
             /* [in] */ int nIndex,
             /* [in] */ HRESULTITEM itemID,
             /* [in] */ UINT uAdd,
             /* [in] */ UINT uRemove);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ModifyViewStyle )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ModifyViewStyle )(
             IResultData * This,
             /* [in] */ MMC_RESULT_VIEW_STYLE add,
             /* [in] */ MMC_RESULT_VIEW_STYLE remove);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetViewMode )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetViewMode )(
             IResultData * This,
             /* [in] */ long lViewMode);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetViewMode )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetViewMode )(
             IResultData * This,
             /* [out] */ __RPC__out long *lViewMode);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *UpdateItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *UpdateItem )(
             IResultData * This,
             /* [in] */ HRESULTITEM itemID);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Sort )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Sort )(
             IResultData * This,
             /* [in] */ int nColumn,
             /* [in] */ DWORD dwSortOptions,
             /* [in] */ LPARAM lUserParam);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetDescBarText )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetDescBarText )(
             IResultData * This,
             /* [in] */ __RPC__in LPOLESTR DescText);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetItemCount )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetItemCount )(
             IResultData * This,
             /* [in] */ int nItemCount,
             /* [in] */ DWORD dwOptions);
-        
+
         END_INTERFACE
     } IResultDataVtbl;
 
@@ -2469,65 +2469,65 @@ EXTERN_C const IID IID_IResultData;
         CONST_VTBL struct IResultDataVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IResultData_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IResultData_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IResultData_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IResultData_InsertItem(This,item)	\
-    ( (This)->lpVtbl -> InsertItem(This,item) ) 
+    ( (This)->lpVtbl -> InsertItem(This,item) )
 
 #define IResultData_DeleteItem(This,itemID,nCol)	\
-    ( (This)->lpVtbl -> DeleteItem(This,itemID,nCol) ) 
+    ( (This)->lpVtbl -> DeleteItem(This,itemID,nCol) )
 
 #define IResultData_FindItemByLParam(This,lParam,pItemID)	\
-    ( (This)->lpVtbl -> FindItemByLParam(This,lParam,pItemID) ) 
+    ( (This)->lpVtbl -> FindItemByLParam(This,lParam,pItemID) )
 
 #define IResultData_DeleteAllRsltItems(This)	\
-    ( (This)->lpVtbl -> DeleteAllRsltItems(This) ) 
+    ( (This)->lpVtbl -> DeleteAllRsltItems(This) )
 
 #define IResultData_SetItem(This,item)	\
-    ( (This)->lpVtbl -> SetItem(This,item) ) 
+    ( (This)->lpVtbl -> SetItem(This,item) )
 
 #define IResultData_GetItem(This,item)	\
-    ( (This)->lpVtbl -> GetItem(This,item) ) 
+    ( (This)->lpVtbl -> GetItem(This,item) )
 
 #define IResultData_GetNextItem(This,item)	\
-    ( (This)->lpVtbl -> GetNextItem(This,item) ) 
+    ( (This)->lpVtbl -> GetNextItem(This,item) )
 
 #define IResultData_ModifyItemState(This,nIndex,itemID,uAdd,uRemove)	\
-    ( (This)->lpVtbl -> ModifyItemState(This,nIndex,itemID,uAdd,uRemove) ) 
+    ( (This)->lpVtbl -> ModifyItemState(This,nIndex,itemID,uAdd,uRemove) )
 
 #define IResultData_ModifyViewStyle(This,add,remove)	\
-    ( (This)->lpVtbl -> ModifyViewStyle(This,add,remove) ) 
+    ( (This)->lpVtbl -> ModifyViewStyle(This,add,remove) )
 
 #define IResultData_SetViewMode(This,lViewMode)	\
-    ( (This)->lpVtbl -> SetViewMode(This,lViewMode) ) 
+    ( (This)->lpVtbl -> SetViewMode(This,lViewMode) )
 
 #define IResultData_GetViewMode(This,lViewMode)	\
-    ( (This)->lpVtbl -> GetViewMode(This,lViewMode) ) 
+    ( (This)->lpVtbl -> GetViewMode(This,lViewMode) )
 
 #define IResultData_UpdateItem(This,itemID)	\
-    ( (This)->lpVtbl -> UpdateItem(This,itemID) ) 
+    ( (This)->lpVtbl -> UpdateItem(This,itemID) )
 
 #define IResultData_Sort(This,nColumn,dwSortOptions,lUserParam)	\
-    ( (This)->lpVtbl -> Sort(This,nColumn,dwSortOptions,lUserParam) ) 
+    ( (This)->lpVtbl -> Sort(This,nColumn,dwSortOptions,lUserParam) )
 
 #define IResultData_SetDescBarText(This,DescText)	\
-    ( (This)->lpVtbl -> SetDescBarText(This,DescText) ) 
+    ( (This)->lpVtbl -> SetDescBarText(This,DescText) )
 
 #define IResultData_SetItemCount(This,nItemCount,dwOptions)	\
-    ( (This)->lpVtbl -> SetItemCount(This,nItemCount,dwOptions) ) 
+    ( (This)->lpVtbl -> SetItemCount(This,nItemCount,dwOptions) )
 
 #endif /* COBJMACROS */
 
@@ -2544,100 +2544,100 @@ EXTERN_C const IID IID_IResultData;
 #define __IConsoleNameSpace_INTERFACE_DEFINED__
 
 /* interface IConsoleNameSpace */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IConsoleNameSpace;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("BEDEB620-F24D-11cf-8AFC-00AA003CA9F6")
     IConsoleNameSpace : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE InsertItem( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE InsertItem(
             /* [out][in] */ __RPC__inout LPSCOPEDATAITEM item) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE DeleteItem( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE DeleteItem(
             /* [in] */ HSCOPEITEM hItem,
             /* [in] */ long fDeleteThis) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetItem( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetItem(
             /* [in] */ __RPC__in LPSCOPEDATAITEM item) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetItem( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetItem(
             /* [out][in] */ __RPC__inout LPSCOPEDATAITEM item) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetChildItem( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetChildItem(
             /* [in] */ HSCOPEITEM item,
             /* [out] */ __RPC__out HSCOPEITEM *pItemChild,
             /* [out] */ __RPC__out MMC_COOKIE *pCookie) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetNextItem( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetNextItem(
             /* [in] */ HSCOPEITEM item,
             /* [out] */ __RPC__out HSCOPEITEM *pItemNext,
             /* [out] */ __RPC__out MMC_COOKIE *pCookie) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetParentItem( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetParentItem(
             /* [in] */ HSCOPEITEM item,
             /* [out] */ __RPC__out HSCOPEITEM *pItemParent,
             /* [out] */ __RPC__out MMC_COOKIE *pCookie) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IConsoleNameSpaceVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IConsoleNameSpace * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IConsoleNameSpace * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IConsoleNameSpace * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *InsertItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *InsertItem )(
             IConsoleNameSpace * This,
             /* [out][in] */ __RPC__inout LPSCOPEDATAITEM item);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteItem )(
             IConsoleNameSpace * This,
             /* [in] */ HSCOPEITEM hItem,
             /* [in] */ long fDeleteThis);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetItem )(
             IConsoleNameSpace * This,
             /* [in] */ __RPC__in LPSCOPEDATAITEM item);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetItem )(
             IConsoleNameSpace * This,
             /* [out][in] */ __RPC__inout LPSCOPEDATAITEM item);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetChildItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetChildItem )(
             IConsoleNameSpace * This,
             /* [in] */ HSCOPEITEM item,
             /* [out] */ __RPC__out HSCOPEITEM *pItemChild,
             /* [out] */ __RPC__out MMC_COOKIE *pCookie);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetNextItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetNextItem )(
             IConsoleNameSpace * This,
             /* [in] */ HSCOPEITEM item,
             /* [out] */ __RPC__out HSCOPEITEM *pItemNext,
             /* [out] */ __RPC__out MMC_COOKIE *pCookie);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetParentItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetParentItem )(
             IConsoleNameSpace * This,
             /* [in] */ HSCOPEITEM item,
             /* [out] */ __RPC__out HSCOPEITEM *pItemParent,
             /* [out] */ __RPC__out MMC_COOKIE *pCookie);
-        
+
         END_INTERFACE
     } IConsoleNameSpaceVtbl;
 
@@ -2646,41 +2646,41 @@ EXTERN_C const IID IID_IConsoleNameSpace;
         CONST_VTBL struct IConsoleNameSpaceVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IConsoleNameSpace_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IConsoleNameSpace_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IConsoleNameSpace_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IConsoleNameSpace_InsertItem(This,item)	\
-    ( (This)->lpVtbl -> InsertItem(This,item) ) 
+    ( (This)->lpVtbl -> InsertItem(This,item) )
 
 #define IConsoleNameSpace_DeleteItem(This,hItem,fDeleteThis)	\
-    ( (This)->lpVtbl -> DeleteItem(This,hItem,fDeleteThis) ) 
+    ( (This)->lpVtbl -> DeleteItem(This,hItem,fDeleteThis) )
 
 #define IConsoleNameSpace_SetItem(This,item)	\
-    ( (This)->lpVtbl -> SetItem(This,item) ) 
+    ( (This)->lpVtbl -> SetItem(This,item) )
 
 #define IConsoleNameSpace_GetItem(This,item)	\
-    ( (This)->lpVtbl -> GetItem(This,item) ) 
+    ( (This)->lpVtbl -> GetItem(This,item) )
 
 #define IConsoleNameSpace_GetChildItem(This,item,pItemChild,pCookie)	\
-    ( (This)->lpVtbl -> GetChildItem(This,item,pItemChild,pCookie) ) 
+    ( (This)->lpVtbl -> GetChildItem(This,item,pItemChild,pCookie) )
 
 #define IConsoleNameSpace_GetNextItem(This,item,pItemNext,pCookie)	\
-    ( (This)->lpVtbl -> GetNextItem(This,item,pItemNext,pCookie) ) 
+    ( (This)->lpVtbl -> GetNextItem(This,item,pItemNext,pCookie) )
 
 #define IConsoleNameSpace_GetParentItem(This,item,pItemParent,pCookie)	\
-    ( (This)->lpVtbl -> GetParentItem(This,item,pItemParent,pCookie) ) 
+    ( (This)->lpVtbl -> GetParentItem(This,item,pItemParent,pCookie) )
 
 #endif /* COBJMACROS */
 
@@ -2697,88 +2697,88 @@ EXTERN_C const IID IID_IConsoleNameSpace;
 #define __IConsoleNameSpace2_INTERFACE_DEFINED__
 
 /* interface IConsoleNameSpace2 */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IConsoleNameSpace2;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("255F18CC-65DB-11D1-A7DC-00C04FD8D565")
     IConsoleNameSpace2 : public IConsoleNameSpace
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Expand( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Expand(
             /* [in] */ HSCOPEITEM hItem) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddExtension( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddExtension(
             /* [in] */ HSCOPEITEM hItem,
             /* [in] */ __RPC__in LPCLSID lpClsid) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IConsoleNameSpace2Vtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IConsoleNameSpace2 * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IConsoleNameSpace2 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IConsoleNameSpace2 * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *InsertItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *InsertItem )(
             IConsoleNameSpace2 * This,
             /* [out][in] */ __RPC__inout LPSCOPEDATAITEM item);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteItem )(
             IConsoleNameSpace2 * This,
             /* [in] */ HSCOPEITEM hItem,
             /* [in] */ long fDeleteThis);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetItem )(
             IConsoleNameSpace2 * This,
             /* [in] */ __RPC__in LPSCOPEDATAITEM item);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetItem )(
             IConsoleNameSpace2 * This,
             /* [out][in] */ __RPC__inout LPSCOPEDATAITEM item);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetChildItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetChildItem )(
             IConsoleNameSpace2 * This,
             /* [in] */ HSCOPEITEM item,
             /* [out] */ __RPC__out HSCOPEITEM *pItemChild,
             /* [out] */ __RPC__out MMC_COOKIE *pCookie);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetNextItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetNextItem )(
             IConsoleNameSpace2 * This,
             /* [in] */ HSCOPEITEM item,
             /* [out] */ __RPC__out HSCOPEITEM *pItemNext,
             /* [out] */ __RPC__out MMC_COOKIE *pCookie);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetParentItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetParentItem )(
             IConsoleNameSpace2 * This,
             /* [in] */ HSCOPEITEM item,
             /* [out] */ __RPC__out HSCOPEITEM *pItemParent,
             /* [out] */ __RPC__out MMC_COOKIE *pCookie);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Expand )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Expand )(
             IConsoleNameSpace2 * This,
             /* [in] */ HSCOPEITEM hItem);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddExtension )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddExtension )(
             IConsoleNameSpace2 * This,
             /* [in] */ HSCOPEITEM hItem,
             /* [in] */ __RPC__in LPCLSID lpClsid);
-        
+
         END_INTERFACE
     } IConsoleNameSpace2Vtbl;
 
@@ -2787,48 +2787,48 @@ EXTERN_C const IID IID_IConsoleNameSpace2;
         CONST_VTBL struct IConsoleNameSpace2Vtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IConsoleNameSpace2_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IConsoleNameSpace2_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IConsoleNameSpace2_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IConsoleNameSpace2_InsertItem(This,item)	\
-    ( (This)->lpVtbl -> InsertItem(This,item) ) 
+    ( (This)->lpVtbl -> InsertItem(This,item) )
 
 #define IConsoleNameSpace2_DeleteItem(This,hItem,fDeleteThis)	\
-    ( (This)->lpVtbl -> DeleteItem(This,hItem,fDeleteThis) ) 
+    ( (This)->lpVtbl -> DeleteItem(This,hItem,fDeleteThis) )
 
 #define IConsoleNameSpace2_SetItem(This,item)	\
-    ( (This)->lpVtbl -> SetItem(This,item) ) 
+    ( (This)->lpVtbl -> SetItem(This,item) )
 
 #define IConsoleNameSpace2_GetItem(This,item)	\
-    ( (This)->lpVtbl -> GetItem(This,item) ) 
+    ( (This)->lpVtbl -> GetItem(This,item) )
 
 #define IConsoleNameSpace2_GetChildItem(This,item,pItemChild,pCookie)	\
-    ( (This)->lpVtbl -> GetChildItem(This,item,pItemChild,pCookie) ) 
+    ( (This)->lpVtbl -> GetChildItem(This,item,pItemChild,pCookie) )
 
 #define IConsoleNameSpace2_GetNextItem(This,item,pItemNext,pCookie)	\
-    ( (This)->lpVtbl -> GetNextItem(This,item,pItemNext,pCookie) ) 
+    ( (This)->lpVtbl -> GetNextItem(This,item,pItemNext,pCookie) )
 
 #define IConsoleNameSpace2_GetParentItem(This,item,pItemParent,pCookie)	\
-    ( (This)->lpVtbl -> GetParentItem(This,item,pItemParent,pCookie) ) 
+    ( (This)->lpVtbl -> GetParentItem(This,item,pItemParent,pCookie) )
 
 
 #define IConsoleNameSpace2_Expand(This,hItem)	\
-    ( (This)->lpVtbl -> Expand(This,hItem) ) 
+    ( (This)->lpVtbl -> Expand(This,hItem) )
 
 #define IConsoleNameSpace2_AddExtension(This,hItem,lpClsid)	\
-    ( (This)->lpVtbl -> AddExtension(This,hItem,lpClsid) ) 
+    ( (This)->lpVtbl -> AddExtension(This,hItem,lpClsid) )
 
 #endif /* COBJMACROS */
 
@@ -2842,7 +2842,7 @@ EXTERN_C const IID IID_IConsoleNameSpace2;
 
 
 /* interface __MIDL_itf_mmc_0000_0013 */
-/* [local] */ 
+/* [local] */
 
 
 typedef struct _PSP *HPROPSHEETPAGE;
@@ -2856,51 +2856,51 @@ extern RPC_IF_HANDLE __MIDL_itf_mmc_0000_0013_v0_0_s_ifspec;
 #define __IPropertySheetCallback_INTERFACE_DEFINED__
 
 /* interface IPropertySheetCallback */
-/* [unique][helpstring][uuid][object][local] */ 
+/* [unique][helpstring][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IPropertySheetCallback;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("85DE64DD-EF21-11cf-A285-00C04FD8DBE6")
     IPropertySheetCallback : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddPage( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddPage(
             /* [in] */ HPROPSHEETPAGE hPage) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE RemovePage( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE RemovePage(
             /* [in] */ HPROPSHEETPAGE hPage) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IPropertySheetCallbackVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IPropertySheetCallback * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IPropertySheetCallback * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IPropertySheetCallback * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddPage )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddPage )(
             IPropertySheetCallback * This,
             /* [in] */ HPROPSHEETPAGE hPage);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *RemovePage )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *RemovePage )(
             IPropertySheetCallback * This,
             /* [in] */ HPROPSHEETPAGE hPage);
-        
+
         END_INTERFACE
     } IPropertySheetCallbackVtbl;
 
@@ -2909,26 +2909,26 @@ EXTERN_C const IID IID_IPropertySheetCallback;
         CONST_VTBL struct IPropertySheetCallbackVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IPropertySheetCallback_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IPropertySheetCallback_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IPropertySheetCallback_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IPropertySheetCallback_AddPage(This,hPage)	\
-    ( (This)->lpVtbl -> AddPage(This,hPage) ) 
+    ( (This)->lpVtbl -> AddPage(This,hPage) )
 
 #define IPropertySheetCallback_RemovePage(This,hPage)	\
-    ( (This)->lpVtbl -> RemovePage(This,hPage) ) 
+    ( (This)->lpVtbl -> RemovePage(This,hPage) )
 
 #endif /* COBJMACROS */
 
@@ -2945,90 +2945,90 @@ EXTERN_C const IID IID_IPropertySheetCallback;
 #define __IPropertySheetProvider_INTERFACE_DEFINED__
 
 /* interface IPropertySheetProvider */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IPropertySheetProvider;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("85DE64DE-EF21-11cf-A285-00C04FD8DBE6")
     IPropertySheetProvider : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE CreatePropertySheet( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE CreatePropertySheet(
             /* [in] */ __RPC__in LPCWSTR title,
             /* [in] */ boolean type,
             /* [in] */ MMC_COOKIE cookie,
             /* [in] */ __RPC__in_opt LPDATAOBJECT pIDataObjectm,
             /* [in] */ DWORD dwOptions) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE FindPropertySheet( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE FindPropertySheet(
             /* [in] */ HSCOPEITEM hItem,
             /* [in] */ __RPC__in_opt LPCOMPONENT lpComponent,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObject) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddPrimaryPages( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddPrimaryPages(
             __RPC__in_opt LPUNKNOWN lpUnknown,
             BOOL bCreateHandle,
             __RPC__in HWND hNotifyWindow,
             BOOL bScopePane) = 0;
-        
+
         virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddExtensionPages( void) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Show( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Show(
             /* [in] */ LONG_PTR window,
             /* [in] */ int page) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IPropertySheetProviderVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IPropertySheetProvider * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IPropertySheetProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IPropertySheetProvider * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CreatePropertySheet )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CreatePropertySheet )(
             IPropertySheetProvider * This,
             /* [in] */ __RPC__in LPCWSTR title,
             /* [in] */ boolean type,
             /* [in] */ MMC_COOKIE cookie,
             /* [in] */ __RPC__in_opt LPDATAOBJECT pIDataObjectm,
             /* [in] */ DWORD dwOptions);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *FindPropertySheet )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *FindPropertySheet )(
             IPropertySheetProvider * This,
             /* [in] */ HSCOPEITEM hItem,
             /* [in] */ __RPC__in_opt LPCOMPONENT lpComponent,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObject);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddPrimaryPages )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddPrimaryPages )(
             IPropertySheetProvider * This,
             __RPC__in_opt LPUNKNOWN lpUnknown,
             BOOL bCreateHandle,
             __RPC__in HWND hNotifyWindow,
             BOOL bScopePane);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddExtensionPages )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddExtensionPages )(
             IPropertySheetProvider * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Show )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Show )(
             IPropertySheetProvider * This,
             /* [in] */ LONG_PTR window,
             /* [in] */ int page);
-        
+
         END_INTERFACE
     } IPropertySheetProviderVtbl;
 
@@ -3037,35 +3037,35 @@ EXTERN_C const IID IID_IPropertySheetProvider;
         CONST_VTBL struct IPropertySheetProviderVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IPropertySheetProvider_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IPropertySheetProvider_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IPropertySheetProvider_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IPropertySheetProvider_CreatePropertySheet(This,title,type,cookie,pIDataObjectm,dwOptions)	\
-    ( (This)->lpVtbl -> CreatePropertySheet(This,title,type,cookie,pIDataObjectm,dwOptions) ) 
+    ( (This)->lpVtbl -> CreatePropertySheet(This,title,type,cookie,pIDataObjectm,dwOptions) )
 
 #define IPropertySheetProvider_FindPropertySheet(This,hItem,lpComponent,lpDataObject)	\
-    ( (This)->lpVtbl -> FindPropertySheet(This,hItem,lpComponent,lpDataObject) ) 
+    ( (This)->lpVtbl -> FindPropertySheet(This,hItem,lpComponent,lpDataObject) )
 
 #define IPropertySheetProvider_AddPrimaryPages(This,lpUnknown,bCreateHandle,hNotifyWindow,bScopePane)	\
-    ( (This)->lpVtbl -> AddPrimaryPages(This,lpUnknown,bCreateHandle,hNotifyWindow,bScopePane) ) 
+    ( (This)->lpVtbl -> AddPrimaryPages(This,lpUnknown,bCreateHandle,hNotifyWindow,bScopePane) )
 
 #define IPropertySheetProvider_AddExtensionPages(This)	\
-    ( (This)->lpVtbl -> AddExtensionPages(This) ) 
+    ( (This)->lpVtbl -> AddExtensionPages(This) )
 
 #define IPropertySheetProvider_Show(This,window,page)	\
-    ( (This)->lpVtbl -> Show(This,window,page) ) 
+    ( (This)->lpVtbl -> Show(This,window,page) )
 
 #endif /* COBJMACROS */
 
@@ -3082,55 +3082,55 @@ EXTERN_C const IID IID_IPropertySheetProvider;
 #define __IExtendPropertySheet_INTERFACE_DEFINED__
 
 /* interface IExtendPropertySheet */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IExtendPropertySheet;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("85DE64DC-EF21-11cf-A285-00C04FD8DBE6")
     IExtendPropertySheet : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE CreatePropertyPages( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE CreatePropertyPages(
             /* [in] */ __RPC__in_opt LPPROPERTYSHEETCALLBACK lpProvider,
             /* [in] */ LONG_PTR handle,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpIDataObject) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryPagesFor( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryPagesFor(
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObject) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IExtendPropertySheetVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IExtendPropertySheet * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IExtendPropertySheet * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IExtendPropertySheet * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CreatePropertyPages )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CreatePropertyPages )(
             IExtendPropertySheet * This,
             /* [in] */ __RPC__in_opt LPPROPERTYSHEETCALLBACK lpProvider,
             /* [in] */ LONG_PTR handle,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpIDataObject);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryPagesFor )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryPagesFor )(
             IExtendPropertySheet * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObject);
-        
+
         END_INTERFACE
     } IExtendPropertySheetVtbl;
 
@@ -3139,26 +3139,26 @@ EXTERN_C const IID IID_IExtendPropertySheet;
         CONST_VTBL struct IExtendPropertySheetVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IExtendPropertySheet_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IExtendPropertySheet_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IExtendPropertySheet_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IExtendPropertySheet_CreatePropertyPages(This,lpProvider,handle,lpIDataObject)	\
-    ( (This)->lpVtbl -> CreatePropertyPages(This,lpProvider,handle,lpIDataObject) ) 
+    ( (This)->lpVtbl -> CreatePropertyPages(This,lpProvider,handle,lpIDataObject) )
 
 #define IExtendPropertySheet_QueryPagesFor(This,lpDataObject)	\
-    ( (This)->lpVtbl -> QueryPagesFor(This,lpDataObject) ) 
+    ( (This)->lpVtbl -> QueryPagesFor(This,lpDataObject) )
 
 #endif /* COBJMACROS */
 
@@ -3175,64 +3175,64 @@ EXTERN_C const IID IID_IExtendPropertySheet;
 #define __IControlbar_INTERFACE_DEFINED__
 
 /* interface IControlbar */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IControlbar;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("69FB811E-6C1C-11D0-A2CB-00C04FD909DD")
     IControlbar : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Create( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Create(
             /* [in] */ MMC_CONTROL_TYPE nType,
             /* [in] */ __RPC__in_opt LPEXTENDCONTROLBAR pExtendControlbar,
             /* [out] */ __RPC__deref_out_opt LPUNKNOWN *ppUnknown) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Attach( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Attach(
             /* [in] */ MMC_CONTROL_TYPE nType,
             /* [in] */ __RPC__in_opt LPUNKNOWN lpUnknown) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Detach( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Detach(
             /* [in] */ __RPC__in_opt LPUNKNOWN lpUnknown) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IControlbarVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IControlbar * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IControlbar * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IControlbar * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Create )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Create )(
             IControlbar * This,
             /* [in] */ MMC_CONTROL_TYPE nType,
             /* [in] */ __RPC__in_opt LPEXTENDCONTROLBAR pExtendControlbar,
             /* [out] */ __RPC__deref_out_opt LPUNKNOWN *ppUnknown);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Attach )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Attach )(
             IControlbar * This,
             /* [in] */ MMC_CONTROL_TYPE nType,
             /* [in] */ __RPC__in_opt LPUNKNOWN lpUnknown);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Detach )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Detach )(
             IControlbar * This,
             /* [in] */ __RPC__in_opt LPUNKNOWN lpUnknown);
-        
+
         END_INTERFACE
     } IControlbarVtbl;
 
@@ -3241,29 +3241,29 @@ EXTERN_C const IID IID_IControlbar;
         CONST_VTBL struct IControlbarVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IControlbar_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IControlbar_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IControlbar_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IControlbar_Create(This,nType,pExtendControlbar,ppUnknown)	\
-    ( (This)->lpVtbl -> Create(This,nType,pExtendControlbar,ppUnknown) ) 
+    ( (This)->lpVtbl -> Create(This,nType,pExtendControlbar,ppUnknown) )
 
 #define IControlbar_Attach(This,nType,lpUnknown)	\
-    ( (This)->lpVtbl -> Attach(This,nType,lpUnknown) ) 
+    ( (This)->lpVtbl -> Attach(This,nType,lpUnknown) )
 
 #define IControlbar_Detach(This,lpUnknown)	\
-    ( (This)->lpVtbl -> Detach(This,lpUnknown) ) 
+    ( (This)->lpVtbl -> Detach(This,lpUnknown) )
 
 #endif /* COBJMACROS */
 
@@ -3280,55 +3280,55 @@ EXTERN_C const IID IID_IControlbar;
 #define __IExtendControlbar_INTERFACE_DEFINED__
 
 /* interface IExtendControlbar */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IExtendControlbar;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("49506520-6F40-11D0-A98B-00C04FD8D565")
     IExtendControlbar : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetControlbar( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetControlbar(
             /* [in] */ __RPC__in_opt LPCONTROLBAR pControlbar) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE ControlbarNotify( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE ControlbarNotify(
             /* [in] */ MMC_NOTIFY_TYPE event,
             /* [in] */ LPARAM arg,
             /* [in] */ LPARAM param) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IExtendControlbarVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IExtendControlbar * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IExtendControlbar * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IExtendControlbar * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetControlbar )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetControlbar )(
             IExtendControlbar * This,
             /* [in] */ __RPC__in_opt LPCONTROLBAR pControlbar);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ControlbarNotify )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ControlbarNotify )(
             IExtendControlbar * This,
             /* [in] */ MMC_NOTIFY_TYPE event,
             /* [in] */ LPARAM arg,
             /* [in] */ LPARAM param);
-        
+
         END_INTERFACE
     } IExtendControlbarVtbl;
 
@@ -3337,26 +3337,26 @@ EXTERN_C const IID IID_IExtendControlbar;
         CONST_VTBL struct IExtendControlbarVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IExtendControlbar_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IExtendControlbar_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IExtendControlbar_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IExtendControlbar_SetControlbar(This,pControlbar)	\
-    ( (This)->lpVtbl -> SetControlbar(This,pControlbar) ) 
+    ( (This)->lpVtbl -> SetControlbar(This,pControlbar) )
 
 #define IExtendControlbar_ControlbarNotify(This,event,arg,param)	\
-    ( (This)->lpVtbl -> ControlbarNotify(This,event,arg,param) ) 
+    ( (This)->lpVtbl -> ControlbarNotify(This,event,arg,param) )
 
 #endif /* COBJMACROS */
 
@@ -3373,99 +3373,99 @@ EXTERN_C const IID IID_IExtendControlbar;
 #define __IToolbar_INTERFACE_DEFINED__
 
 /* interface IToolbar */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IToolbar;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("43136EB9-D36C-11CF-ADBC-00AA00A80033")
     IToolbar : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddBitmap( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddBitmap(
             /* [in] */ int nImages,
             /* [in] */ __RPC__in HBITMAP hbmp,
             /* [in] */ int cxSize,
             /* [in] */ int cySize,
             /* [in] */ COLORREF crMask) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddButtons( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddButtons(
             /* [in] */ int nButtons,
             /* [in] */ __RPC__in LPMMCBUTTON lpButtons) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE InsertButton( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE InsertButton(
             /* [in] */ int nIndex,
             /* [in] */ __RPC__in LPMMCBUTTON lpButton) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE DeleteButton( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE DeleteButton(
             /* [in] */ int nIndex) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetButtonState( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetButtonState(
             /* [in] */ int idCommand,
             /* [in] */ MMC_BUTTON_STATE nState,
             /* [out] */ __RPC__out BOOL *pState) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetButtonState( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetButtonState(
             /* [in] */ int idCommand,
             /* [in] */ MMC_BUTTON_STATE nState,
             /* [in] */ BOOL bState) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IToolbarVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IToolbar * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IToolbar * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IToolbar * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddBitmap )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddBitmap )(
             IToolbar * This,
             /* [in] */ int nImages,
             /* [in] */ __RPC__in HBITMAP hbmp,
             /* [in] */ int cxSize,
             /* [in] */ int cySize,
             /* [in] */ COLORREF crMask);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddButtons )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddButtons )(
             IToolbar * This,
             /* [in] */ int nButtons,
             /* [in] */ __RPC__in LPMMCBUTTON lpButtons);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *InsertButton )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *InsertButton )(
             IToolbar * This,
             /* [in] */ int nIndex,
             /* [in] */ __RPC__in LPMMCBUTTON lpButton);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteButton )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteButton )(
             IToolbar * This,
             /* [in] */ int nIndex);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetButtonState )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetButtonState )(
             IToolbar * This,
             /* [in] */ int idCommand,
             /* [in] */ MMC_BUTTON_STATE nState,
             /* [out] */ __RPC__out BOOL *pState);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetButtonState )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetButtonState )(
             IToolbar * This,
             /* [in] */ int idCommand,
             /* [in] */ MMC_BUTTON_STATE nState,
             /* [in] */ BOOL bState);
-        
+
         END_INTERFACE
     } IToolbarVtbl;
 
@@ -3474,38 +3474,38 @@ EXTERN_C const IID IID_IToolbar;
         CONST_VTBL struct IToolbarVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IToolbar_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IToolbar_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IToolbar_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IToolbar_AddBitmap(This,nImages,hbmp,cxSize,cySize,crMask)	\
-    ( (This)->lpVtbl -> AddBitmap(This,nImages,hbmp,cxSize,cySize,crMask) ) 
+    ( (This)->lpVtbl -> AddBitmap(This,nImages,hbmp,cxSize,cySize,crMask) )
 
 #define IToolbar_AddButtons(This,nButtons,lpButtons)	\
-    ( (This)->lpVtbl -> AddButtons(This,nButtons,lpButtons) ) 
+    ( (This)->lpVtbl -> AddButtons(This,nButtons,lpButtons) )
 
 #define IToolbar_InsertButton(This,nIndex,lpButton)	\
-    ( (This)->lpVtbl -> InsertButton(This,nIndex,lpButton) ) 
+    ( (This)->lpVtbl -> InsertButton(This,nIndex,lpButton) )
 
 #define IToolbar_DeleteButton(This,nIndex)	\
-    ( (This)->lpVtbl -> DeleteButton(This,nIndex) ) 
+    ( (This)->lpVtbl -> DeleteButton(This,nIndex) )
 
 #define IToolbar_GetButtonState(This,idCommand,nState,pState)	\
-    ( (This)->lpVtbl -> GetButtonState(This,idCommand,nState,pState) ) 
+    ( (This)->lpVtbl -> GetButtonState(This,idCommand,nState,pState) )
 
 #define IToolbar_SetButtonState(This,idCommand,nState,bState)	\
-    ( (This)->lpVtbl -> SetButtonState(This,idCommand,nState,bState) ) 
+    ( (This)->lpVtbl -> SetButtonState(This,idCommand,nState,bState) )
 
 #endif /* COBJMACROS */
 
@@ -3522,73 +3522,73 @@ EXTERN_C const IID IID_IToolbar;
 #define __IConsoleVerb_INTERFACE_DEFINED__
 
 /* interface IConsoleVerb */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IConsoleVerb;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("E49F7A60-74AF-11D0-A286-00C04FD8FE93")
     IConsoleVerb : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetVerbState( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetVerbState(
             /* [in] */ MMC_CONSOLE_VERB eCmdID,
             /* [in] */ MMC_BUTTON_STATE nState,
             /* [out] */ __RPC__out BOOL *pState) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetVerbState( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetVerbState(
             /* [in] */ MMC_CONSOLE_VERB eCmdID,
             /* [in] */ MMC_BUTTON_STATE nState,
             /* [in] */ BOOL bState) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetDefaultVerb( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetDefaultVerb(
             /* [in] */ MMC_CONSOLE_VERB eCmdID) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetDefaultVerb( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetDefaultVerb(
             /* [out] */ __RPC__out MMC_CONSOLE_VERB *peCmdID) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IConsoleVerbVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IConsoleVerb * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IConsoleVerb * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IConsoleVerb * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetVerbState )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetVerbState )(
             IConsoleVerb * This,
             /* [in] */ MMC_CONSOLE_VERB eCmdID,
             /* [in] */ MMC_BUTTON_STATE nState,
             /* [out] */ __RPC__out BOOL *pState);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetVerbState )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetVerbState )(
             IConsoleVerb * This,
             /* [in] */ MMC_CONSOLE_VERB eCmdID,
             /* [in] */ MMC_BUTTON_STATE nState,
             /* [in] */ BOOL bState);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetDefaultVerb )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetDefaultVerb )(
             IConsoleVerb * This,
             /* [in] */ MMC_CONSOLE_VERB eCmdID);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetDefaultVerb )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetDefaultVerb )(
             IConsoleVerb * This,
             /* [out] */ __RPC__out MMC_CONSOLE_VERB *peCmdID);
-        
+
         END_INTERFACE
     } IConsoleVerbVtbl;
 
@@ -3597,32 +3597,32 @@ EXTERN_C const IID IID_IConsoleVerb;
         CONST_VTBL struct IConsoleVerbVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IConsoleVerb_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IConsoleVerb_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IConsoleVerb_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IConsoleVerb_GetVerbState(This,eCmdID,nState,pState)	\
-    ( (This)->lpVtbl -> GetVerbState(This,eCmdID,nState,pState) ) 
+    ( (This)->lpVtbl -> GetVerbState(This,eCmdID,nState,pState) )
 
 #define IConsoleVerb_SetVerbState(This,eCmdID,nState,bState)	\
-    ( (This)->lpVtbl -> SetVerbState(This,eCmdID,nState,bState) ) 
+    ( (This)->lpVtbl -> SetVerbState(This,eCmdID,nState,bState) )
 
 #define IConsoleVerb_SetDefaultVerb(This,eCmdID)	\
-    ( (This)->lpVtbl -> SetDefaultVerb(This,eCmdID) ) 
+    ( (This)->lpVtbl -> SetDefaultVerb(This,eCmdID) )
 
 #define IConsoleVerb_GetDefaultVerb(This,peCmdID)	\
-    ( (This)->lpVtbl -> GetDefaultVerb(This,peCmdID) ) 
+    ( (This)->lpVtbl -> GetDefaultVerb(This,peCmdID) )
 
 #endif /* COBJMACROS */
 
@@ -3639,78 +3639,78 @@ EXTERN_C const IID IID_IConsoleVerb;
 #define __ISnapinAbout_INTERFACE_DEFINED__
 
 /* interface ISnapinAbout */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_ISnapinAbout;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("1245208C-A151-11D0-A7D7-00C04FD909DD")
     ISnapinAbout : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetSnapinDescription( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetSnapinDescription(
             /* [out] */ __RPC__deref_out_opt LPOLESTR *lpDescription) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetProvider( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetProvider(
             /* [out] */ __RPC__deref_out_opt LPOLESTR *lpName) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetSnapinVersion( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetSnapinVersion(
             /* [out] */ __RPC__deref_out_opt LPOLESTR *lpVersion) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetSnapinImage( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetSnapinImage(
             /* [out] */ __RPC__deref_out_opt HICON *hAppIcon) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetStaticFolderImage( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetStaticFolderImage(
             /* [out] */ __RPC__deref_out_opt HBITMAP *hSmallImage,
             /* [out] */ __RPC__deref_out_opt HBITMAP *hSmallImageOpen,
             /* [out] */ __RPC__deref_out_opt HBITMAP *hLargeImage,
             /* [out] */ __RPC__out COLORREF *cMask) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ISnapinAboutVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ISnapinAbout * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ISnapinAbout * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ISnapinAbout * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetSnapinDescription )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetSnapinDescription )(
             ISnapinAbout * This,
             /* [out] */ __RPC__deref_out_opt LPOLESTR *lpDescription);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetProvider )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetProvider )(
             ISnapinAbout * This,
             /* [out] */ __RPC__deref_out_opt LPOLESTR *lpName);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetSnapinVersion )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetSnapinVersion )(
             ISnapinAbout * This,
             /* [out] */ __RPC__deref_out_opt LPOLESTR *lpVersion);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetSnapinImage )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetSnapinImage )(
             ISnapinAbout * This,
             /* [out] */ __RPC__deref_out_opt HICON *hAppIcon);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetStaticFolderImage )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetStaticFolderImage )(
             ISnapinAbout * This,
             /* [out] */ __RPC__deref_out_opt HBITMAP *hSmallImage,
             /* [out] */ __RPC__deref_out_opt HBITMAP *hSmallImageOpen,
             /* [out] */ __RPC__deref_out_opt HBITMAP *hLargeImage,
             /* [out] */ __RPC__out COLORREF *cMask);
-        
+
         END_INTERFACE
     } ISnapinAboutVtbl;
 
@@ -3719,35 +3719,35 @@ EXTERN_C const IID IID_ISnapinAbout;
         CONST_VTBL struct ISnapinAboutVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ISnapinAbout_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ISnapinAbout_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ISnapinAbout_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ISnapinAbout_GetSnapinDescription(This,lpDescription)	\
-    ( (This)->lpVtbl -> GetSnapinDescription(This,lpDescription) ) 
+    ( (This)->lpVtbl -> GetSnapinDescription(This,lpDescription) )
 
 #define ISnapinAbout_GetProvider(This,lpName)	\
-    ( (This)->lpVtbl -> GetProvider(This,lpName) ) 
+    ( (This)->lpVtbl -> GetProvider(This,lpName) )
 
 #define ISnapinAbout_GetSnapinVersion(This,lpVersion)	\
-    ( (This)->lpVtbl -> GetSnapinVersion(This,lpVersion) ) 
+    ( (This)->lpVtbl -> GetSnapinVersion(This,lpVersion) )
 
 #define ISnapinAbout_GetSnapinImage(This,hAppIcon)	\
-    ( (This)->lpVtbl -> GetSnapinImage(This,hAppIcon) ) 
+    ( (This)->lpVtbl -> GetSnapinImage(This,hAppIcon) )
 
 #define ISnapinAbout_GetStaticFolderImage(This,hSmallImage,hSmallImageOpen,hLargeImage,cMask)	\
-    ( (This)->lpVtbl -> GetStaticFolderImage(This,hSmallImage,hSmallImageOpen,hLargeImage,cMask) ) 
+    ( (This)->lpVtbl -> GetStaticFolderImage(This,hSmallImage,hSmallImageOpen,hLargeImage,cMask) )
 
 #endif /* COBJMACROS */
 
@@ -3764,70 +3764,70 @@ EXTERN_C const IID IID_ISnapinAbout;
 #define __IMenuButton_INTERFACE_DEFINED__
 
 /* interface IMenuButton */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IMenuButton;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("951ED750-D080-11d0-B197-000000000000")
     IMenuButton : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddButton( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddButton(
             /* [in] */ int idCommand,
             /* [in] */ __RPC__in LPOLESTR lpButtonText,
             /* [in] */ __RPC__in LPOLESTR lpTooltipText) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetButton( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetButton(
             /* [in] */ int idCommand,
             /* [in] */ __RPC__in LPOLESTR lpButtonText,
             /* [in] */ __RPC__in LPOLESTR lpTooltipText) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetButtonState( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetButtonState(
             /* [in] */ int idCommand,
             /* [in] */ MMC_BUTTON_STATE nState,
             /* [in] */ BOOL bState) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IMenuButtonVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IMenuButton * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IMenuButton * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IMenuButton * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddButton )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddButton )(
             IMenuButton * This,
             /* [in] */ int idCommand,
             /* [in] */ __RPC__in LPOLESTR lpButtonText,
             /* [in] */ __RPC__in LPOLESTR lpTooltipText);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetButton )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetButton )(
             IMenuButton * This,
             /* [in] */ int idCommand,
             /* [in] */ __RPC__in LPOLESTR lpButtonText,
             /* [in] */ __RPC__in LPOLESTR lpTooltipText);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetButtonState )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetButtonState )(
             IMenuButton * This,
             /* [in] */ int idCommand,
             /* [in] */ MMC_BUTTON_STATE nState,
             /* [in] */ BOOL bState);
-        
+
         END_INTERFACE
     } IMenuButtonVtbl;
 
@@ -3836,29 +3836,29 @@ EXTERN_C const IID IID_IMenuButton;
         CONST_VTBL struct IMenuButtonVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IMenuButton_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IMenuButton_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IMenuButton_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IMenuButton_AddButton(This,idCommand,lpButtonText,lpTooltipText)	\
-    ( (This)->lpVtbl -> AddButton(This,idCommand,lpButtonText,lpTooltipText) ) 
+    ( (This)->lpVtbl -> AddButton(This,idCommand,lpButtonText,lpTooltipText) )
 
 #define IMenuButton_SetButton(This,idCommand,lpButtonText,lpTooltipText)	\
-    ( (This)->lpVtbl -> SetButton(This,idCommand,lpButtonText,lpTooltipText) ) 
+    ( (This)->lpVtbl -> SetButton(This,idCommand,lpButtonText,lpTooltipText) )
 
 #define IMenuButton_SetButtonState(This,idCommand,nState,bState)	\
-    ( (This)->lpVtbl -> SetButtonState(This,idCommand,nState,bState) ) 
+    ( (This)->lpVtbl -> SetButtonState(This,idCommand,nState,bState) )
 
 #endif /* COBJMACROS */
 
@@ -3875,44 +3875,44 @@ EXTERN_C const IID IID_IMenuButton;
 #define __ISnapinHelp_INTERFACE_DEFINED__
 
 /* interface ISnapinHelp */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_ISnapinHelp;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("A6B15ACE-DF59-11D0-A7DD-00C04FD909DD")
     ISnapinHelp : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetHelpTopic( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetHelpTopic(
             /* [out] */ __RPC__deref_out_opt LPOLESTR *lpCompiledHelpFile) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ISnapinHelpVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ISnapinHelp * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ISnapinHelp * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ISnapinHelp * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetHelpTopic )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetHelpTopic )(
             ISnapinHelp * This,
             /* [out] */ __RPC__deref_out_opt LPOLESTR *lpCompiledHelpFile);
-        
+
         END_INTERFACE
     } ISnapinHelpVtbl;
 
@@ -3921,23 +3921,23 @@ EXTERN_C const IID IID_ISnapinHelp;
         CONST_VTBL struct ISnapinHelpVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ISnapinHelp_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ISnapinHelp_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ISnapinHelp_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ISnapinHelp_GetHelpTopic(This,lpCompiledHelpFile)	\
-    ( (This)->lpVtbl -> GetHelpTopic(This,lpCompiledHelpFile) ) 
+    ( (This)->lpVtbl -> GetHelpTopic(This,lpCompiledHelpFile) )
 
 #endif /* COBJMACROS */
 
@@ -3951,7 +3951,7 @@ EXTERN_C const IID IID_ISnapinHelp;
 
 
 /* interface __MIDL_itf_mmc_0000_0023 */
-/* [local] */ 
+/* [local] */
 
 #if (MMC_VER >= 0x0110)
 
@@ -3963,62 +3963,62 @@ extern RPC_IF_HANDLE __MIDL_itf_mmc_0000_0023_v0_0_s_ifspec;
 #define __IExtendPropertySheet2_INTERFACE_DEFINED__
 
 /* interface IExtendPropertySheet2 */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IExtendPropertySheet2;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("B7A87232-4A51-11D1-A7EA-00C04FD909DD")
     IExtendPropertySheet2 : public IExtendPropertySheet
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetWatermarks( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetWatermarks(
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpIDataObject,
             /* [out] */ __RPC__deref_out_opt HBITMAP *lphWatermark,
             /* [out] */ __RPC__deref_out_opt HBITMAP *lphHeader,
             /* [out] */ __RPC__deref_out_opt HPALETTE *lphPalette,
             /* [out] */ __RPC__out BOOL *bStretch) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IExtendPropertySheet2Vtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IExtendPropertySheet2 * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IExtendPropertySheet2 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IExtendPropertySheet2 * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CreatePropertyPages )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CreatePropertyPages )(
             IExtendPropertySheet2 * This,
             /* [in] */ __RPC__in_opt LPPROPERTYSHEETCALLBACK lpProvider,
             /* [in] */ LONG_PTR handle,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpIDataObject);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryPagesFor )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryPagesFor )(
             IExtendPropertySheet2 * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObject);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetWatermarks )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetWatermarks )(
             IExtendPropertySheet2 * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpIDataObject,
             /* [out] */ __RPC__deref_out_opt HBITMAP *lphWatermark,
             /* [out] */ __RPC__deref_out_opt HBITMAP *lphHeader,
             /* [out] */ __RPC__deref_out_opt HPALETTE *lphPalette,
             /* [out] */ __RPC__out BOOL *bStretch);
-        
+
         END_INTERFACE
     } IExtendPropertySheet2Vtbl;
 
@@ -4027,30 +4027,30 @@ EXTERN_C const IID IID_IExtendPropertySheet2;
         CONST_VTBL struct IExtendPropertySheet2Vtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IExtendPropertySheet2_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IExtendPropertySheet2_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IExtendPropertySheet2_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IExtendPropertySheet2_CreatePropertyPages(This,lpProvider,handle,lpIDataObject)	\
-    ( (This)->lpVtbl -> CreatePropertyPages(This,lpProvider,handle,lpIDataObject) ) 
+    ( (This)->lpVtbl -> CreatePropertyPages(This,lpProvider,handle,lpIDataObject) )
 
 #define IExtendPropertySheet2_QueryPagesFor(This,lpDataObject)	\
-    ( (This)->lpVtbl -> QueryPagesFor(This,lpDataObject) ) 
+    ( (This)->lpVtbl -> QueryPagesFor(This,lpDataObject) )
 
 
 #define IExtendPropertySheet2_GetWatermarks(This,lpIDataObject,lphWatermark,lphHeader,lphPalette,bStretch)	\
-    ( (This)->lpVtbl -> GetWatermarks(This,lpIDataObject,lphWatermark,lphHeader,lphPalette,bStretch) ) 
+    ( (This)->lpVtbl -> GetWatermarks(This,lpIDataObject,lphWatermark,lphHeader,lphPalette,bStretch) )
 
 #endif /* COBJMACROS */
 
@@ -4067,97 +4067,97 @@ EXTERN_C const IID IID_IExtendPropertySheet2;
 #define __IHeaderCtrl2_INTERFACE_DEFINED__
 
 /* interface IHeaderCtrl2 */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IHeaderCtrl2;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("9757abb8-1b32-11d1-a7ce-00c04fd8d565")
     IHeaderCtrl2 : public IHeaderCtrl
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetChangeTimeOut( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetChangeTimeOut(
             /* [in] */ unsigned long uTimeout) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetColumnFilter( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetColumnFilter(
             /* [in] */ UINT nColumn,
             /* [in] */ DWORD dwType,
             /* [in] */ __RPC__in MMC_FILTERDATA *pFilterData) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetColumnFilter( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetColumnFilter(
             /* [in] */ UINT nColumn,
             /* [out][in] */ __RPC__inout LPDWORD pdwType,
             /* [out][in] */ __RPC__inout MMC_FILTERDATA *pFilterData) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IHeaderCtrl2Vtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IHeaderCtrl2 * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IHeaderCtrl2 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IHeaderCtrl2 * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *InsertColumn )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *InsertColumn )(
             IHeaderCtrl2 * This,
             /* [in] */ int nCol,
             /* [in] */ __RPC__in LPCWSTR title,
             /* [in] */ int nFormat,
             /* [in] */ int nWidth);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteColumn )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteColumn )(
             IHeaderCtrl2 * This,
             /* [in] */ int nCol);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetColumnText )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetColumnText )(
             IHeaderCtrl2 * This,
             /* [in] */ int nCol,
             /* [in] */ __RPC__in LPCWSTR title);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetColumnText )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetColumnText )(
             IHeaderCtrl2 * This,
             /* [in] */ int nCol,
             /* [out] */ __RPC__deref_out_opt LPOLESTR *pText);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetColumnWidth )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetColumnWidth )(
             IHeaderCtrl2 * This,
             /* [in] */ int nCol,
             /* [in] */ int nWidth);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetColumnWidth )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetColumnWidth )(
             IHeaderCtrl2 * This,
             /* [in] */ int nCol,
             /* [out] */ __RPC__out int *pWidth);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetChangeTimeOut )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetChangeTimeOut )(
             IHeaderCtrl2 * This,
             /* [in] */ unsigned long uTimeout);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetColumnFilter )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetColumnFilter )(
             IHeaderCtrl2 * This,
             /* [in] */ UINT nColumn,
             /* [in] */ DWORD dwType,
             /* [in] */ __RPC__in MMC_FILTERDATA *pFilterData);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetColumnFilter )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetColumnFilter )(
             IHeaderCtrl2 * This,
             /* [in] */ UINT nColumn,
             /* [out][in] */ __RPC__inout LPDWORD pdwType,
             /* [out][in] */ __RPC__inout MMC_FILTERDATA *pFilterData);
-        
+
         END_INTERFACE
     } IHeaderCtrl2Vtbl;
 
@@ -4166,48 +4166,48 @@ EXTERN_C const IID IID_IHeaderCtrl2;
         CONST_VTBL struct IHeaderCtrl2Vtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IHeaderCtrl2_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IHeaderCtrl2_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IHeaderCtrl2_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IHeaderCtrl2_InsertColumn(This,nCol,title,nFormat,nWidth)	\
-    ( (This)->lpVtbl -> InsertColumn(This,nCol,title,nFormat,nWidth) ) 
+    ( (This)->lpVtbl -> InsertColumn(This,nCol,title,nFormat,nWidth) )
 
 #define IHeaderCtrl2_DeleteColumn(This,nCol)	\
-    ( (This)->lpVtbl -> DeleteColumn(This,nCol) ) 
+    ( (This)->lpVtbl -> DeleteColumn(This,nCol) )
 
 #define IHeaderCtrl2_SetColumnText(This,nCol,title)	\
-    ( (This)->lpVtbl -> SetColumnText(This,nCol,title) ) 
+    ( (This)->lpVtbl -> SetColumnText(This,nCol,title) )
 
 #define IHeaderCtrl2_GetColumnText(This,nCol,pText)	\
-    ( (This)->lpVtbl -> GetColumnText(This,nCol,pText) ) 
+    ( (This)->lpVtbl -> GetColumnText(This,nCol,pText) )
 
 #define IHeaderCtrl2_SetColumnWidth(This,nCol,nWidth)	\
-    ( (This)->lpVtbl -> SetColumnWidth(This,nCol,nWidth) ) 
+    ( (This)->lpVtbl -> SetColumnWidth(This,nCol,nWidth) )
 
 #define IHeaderCtrl2_GetColumnWidth(This,nCol,pWidth)	\
-    ( (This)->lpVtbl -> GetColumnWidth(This,nCol,pWidth) ) 
+    ( (This)->lpVtbl -> GetColumnWidth(This,nCol,pWidth) )
 
 
 #define IHeaderCtrl2_SetChangeTimeOut(This,uTimeout)	\
-    ( (This)->lpVtbl -> SetChangeTimeOut(This,uTimeout) ) 
+    ( (This)->lpVtbl -> SetChangeTimeOut(This,uTimeout) )
 
 #define IHeaderCtrl2_SetColumnFilter(This,nColumn,dwType,pFilterData)	\
-    ( (This)->lpVtbl -> SetColumnFilter(This,nColumn,dwType,pFilterData) ) 
+    ( (This)->lpVtbl -> SetColumnFilter(This,nColumn,dwType,pFilterData) )
 
 #define IHeaderCtrl2_GetColumnFilter(This,nColumn,pdwType,pFilterData)	\
-    ( (This)->lpVtbl -> GetColumnFilter(This,nColumn,pdwType,pFilterData) ) 
+    ( (This)->lpVtbl -> GetColumnFilter(This,nColumn,pdwType,pFilterData) )
 
 #endif /* COBJMACROS */
 
@@ -4224,48 +4224,48 @@ EXTERN_C const IID IID_IHeaderCtrl2;
 #define __ISnapinHelp2_INTERFACE_DEFINED__
 
 /* interface ISnapinHelp2 */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_ISnapinHelp2;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("4861A010-20F9-11d2-A510-00C04FB6DD2C")
     ISnapinHelp2 : public ISnapinHelp
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetLinkedTopics( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetLinkedTopics(
             /* [out] */ __RPC__deref_out_opt LPOLESTR *lpCompiledHelpFiles) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ISnapinHelp2Vtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ISnapinHelp2 * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ISnapinHelp2 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ISnapinHelp2 * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetHelpTopic )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetHelpTopic )(
             ISnapinHelp2 * This,
             /* [out] */ __RPC__deref_out_opt LPOLESTR *lpCompiledHelpFile);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetLinkedTopics )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetLinkedTopics )(
             ISnapinHelp2 * This,
             /* [out] */ __RPC__deref_out_opt LPOLESTR *lpCompiledHelpFiles);
-        
+
         END_INTERFACE
     } ISnapinHelp2Vtbl;
 
@@ -4274,27 +4274,27 @@ EXTERN_C const IID IID_ISnapinHelp2;
         CONST_VTBL struct ISnapinHelp2Vtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ISnapinHelp2_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ISnapinHelp2_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ISnapinHelp2_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ISnapinHelp2_GetHelpTopic(This,lpCompiledHelpFile)	\
-    ( (This)->lpVtbl -> GetHelpTopic(This,lpCompiledHelpFile) ) 
+    ( (This)->lpVtbl -> GetHelpTopic(This,lpCompiledHelpFile) )
 
 
 #define ISnapinHelp2_GetLinkedTopics(This,lpCompiledHelpFiles)	\
-    ( (This)->lpVtbl -> GetLinkedTopics(This,lpCompiledHelpFiles) ) 
+    ( (This)->lpVtbl -> GetLinkedTopics(This,lpCompiledHelpFiles) )
 
 #endif /* COBJMACROS */
 
@@ -4308,15 +4308,15 @@ EXTERN_C const IID IID_ISnapinHelp2;
 
 
 /* interface __MIDL_itf_mmc_0000_0026 */
-/* [local] */ 
+/* [local] */
 
-typedef 
+typedef
 enum _MMC_TASK_DISPLAY_TYPE
     {	MMC_TASK_DISPLAY_UNINITIALIZED	= 0,
 	MMC_TASK_DISPLAY_TYPE_SYMBOL	= ( MMC_TASK_DISPLAY_UNINITIALIZED + 1 ) ,
 	MMC_TASK_DISPLAY_TYPE_VANILLA_GIF	= ( MMC_TASK_DISPLAY_TYPE_SYMBOL + 1 ) ,
 	MMC_TASK_DISPLAY_TYPE_CHOCOLATE_GIF	= ( MMC_TASK_DISPLAY_TYPE_VANILLA_GIF + 1 ) ,
-	MMC_TASK_DISPLAY_TYPE_BITMAP	= ( MMC_TASK_DISPLAY_TYPE_CHOCOLATE_GIF + 1 ) 
+	MMC_TASK_DISPLAY_TYPE_BITMAP	= ( MMC_TASK_DISPLAY_TYPE_CHOCOLATE_GIF + 1 )
     } 	MMC_TASK_DISPLAY_TYPE;
 
 typedef struct _MMC_TASK_DISPLAY_SYMBOL
@@ -4335,20 +4335,20 @@ typedef struct _MMC_TASK_DISPLAY_BITMAP
 typedef struct _MMC_TASK_DISPLAY_OBJECT
     {
     MMC_TASK_DISPLAY_TYPE eDisplayType;
-    union 
+    union
         {
         MMC_TASK_DISPLAY_BITMAP uBitmap;
         MMC_TASK_DISPLAY_SYMBOL uSymbol;
-         /* Empty union arm */ 
+         /* Empty union arm */
         } 	;
     } 	MMC_TASK_DISPLAY_OBJECT;
 
-typedef 
+typedef
 enum _MMC_ACTION_TYPE
     {	MMC_ACTION_UNINITIALIZED	= -1,
 	MMC_ACTION_ID	= ( MMC_ACTION_UNINITIALIZED + 1 ) ,
 	MMC_ACTION_LINK	= ( MMC_ACTION_ID + 1 ) ,
-	MMC_ACTION_SCRIPT	= ( MMC_ACTION_LINK + 1 ) 
+	MMC_ACTION_SCRIPT	= ( MMC_ACTION_LINK + 1 )
     } 	MMC_ACTION_TYPE;
 
 typedef struct _MMC_TASK
@@ -4357,7 +4357,7 @@ typedef struct _MMC_TASK
     LPOLESTR szText;
     LPOLESTR szHelpString;
     MMC_ACTION_TYPE eActionType;
-    union 
+    union
         {
         LONG_PTR nCommandID;
         LPOLESTR szActionURL;
@@ -4383,67 +4383,67 @@ extern RPC_IF_HANDLE __MIDL_itf_mmc_0000_0026_v0_0_s_ifspec;
 #define __IEnumTASK_INTERFACE_DEFINED__
 
 /* interface IEnumTASK */
-/* [unique][helpstring][uuid][object][local] */ 
+/* [unique][helpstring][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IEnumTASK;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("338698b1-5a02-11d1-9fec-00600832db4a")
     IEnumTASK : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE Next( 
+        virtual HRESULT STDMETHODCALLTYPE Next(
             /* [in] */ ULONG celt,
             /* [length_is][size_is][out] */ MMC_TASK *rgelt,
             /* [out] */ ULONG *pceltFetched) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Skip( 
+
+        virtual HRESULT STDMETHODCALLTYPE Skip(
             /* [in] */ ULONG celt) = 0;
-        
+
         virtual HRESULT STDMETHODCALLTYPE Reset( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Clone( 
+
+        virtual HRESULT STDMETHODCALLTYPE Clone(
             /* [out] */ IEnumTASK **ppenum) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IEnumTASKVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IEnumTASK * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IEnumTASK * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IEnumTASK * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Next )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Next )(
             IEnumTASK * This,
             /* [in] */ ULONG celt,
             /* [length_is][size_is][out] */ MMC_TASK *rgelt,
             /* [out] */ ULONG *pceltFetched);
-        
-        HRESULT ( STDMETHODCALLTYPE *Skip )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Skip )(
             IEnumTASK * This,
             /* [in] */ ULONG celt);
-        
-        HRESULT ( STDMETHODCALLTYPE *Reset )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Reset )(
             IEnumTASK * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Clone )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Clone )(
             IEnumTASK * This,
             /* [out] */ IEnumTASK **ppenum);
-        
+
         END_INTERFACE
     } IEnumTASKVtbl;
 
@@ -4452,32 +4452,32 @@ EXTERN_C const IID IID_IEnumTASK;
         CONST_VTBL struct IEnumTASKVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IEnumTASK_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IEnumTASK_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IEnumTASK_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IEnumTASK_Next(This,celt,rgelt,pceltFetched)	\
-    ( (This)->lpVtbl -> Next(This,celt,rgelt,pceltFetched) ) 
+    ( (This)->lpVtbl -> Next(This,celt,rgelt,pceltFetched) )
 
 #define IEnumTASK_Skip(This,celt)	\
-    ( (This)->lpVtbl -> Skip(This,celt) ) 
+    ( (This)->lpVtbl -> Skip(This,celt) )
 
 #define IEnumTASK_Reset(This)	\
-    ( (This)->lpVtbl -> Reset(This) ) 
+    ( (This)->lpVtbl -> Reset(This) )
 
 #define IEnumTASK_Clone(This,ppenum)	\
-    ( (This)->lpVtbl -> Clone(This,ppenum) ) 
+    ( (This)->lpVtbl -> Clone(This,ppenum) )
 
 #endif /* COBJMACROS */
 
@@ -4494,95 +4494,95 @@ EXTERN_C const IID IID_IEnumTASK;
 #define __IExtendTaskPad_INTERFACE_DEFINED__
 
 /* interface IExtendTaskPad */
-/* [unique][helpstring][uuid][object][local] */ 
+/* [unique][helpstring][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IExtendTaskPad;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("8dee6511-554d-11d1-9fea-00600832db4a")
     IExtendTaskPad : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE TaskNotify( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE TaskNotify(
             /* [in] */ IDataObject *pdo,
             /* [in] */ VARIANT *arg,
             /* [in] */ VARIANT *param) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE EnumTasks( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE EnumTasks(
             /* [in] */ IDataObject *pdo,
             /* [string][in] */ LPOLESTR szTaskGroup,
             /* [out] */ IEnumTASK **ppEnumTASK) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetTitle( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetTitle(
             /* [string][in] */ LPOLESTR pszGroup,
             /* [string][out] */ LPOLESTR *pszTitle) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetDescriptiveText( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetDescriptiveText(
             /* [string][in] */ LPOLESTR pszGroup,
             /* [string][out] */ LPOLESTR *pszDescriptiveText) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetBackground( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetBackground(
             /* [string][in] */ LPOLESTR pszGroup,
             /* [out] */ MMC_TASK_DISPLAY_OBJECT *pTDO) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetListPadInfo( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetListPadInfo(
             /* [string][in] */ LPOLESTR pszGroup,
             /* [out] */ MMC_LISTPAD_INFO *lpListPadInfo) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IExtendTaskPadVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IExtendTaskPad * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IExtendTaskPad * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IExtendTaskPad * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *TaskNotify )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *TaskNotify )(
             IExtendTaskPad * This,
             /* [in] */ IDataObject *pdo,
             /* [in] */ VARIANT *arg,
             /* [in] */ VARIANT *param);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *EnumTasks )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *EnumTasks )(
             IExtendTaskPad * This,
             /* [in] */ IDataObject *pdo,
             /* [string][in] */ LPOLESTR szTaskGroup,
             /* [out] */ IEnumTASK **ppEnumTASK);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetTitle )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetTitle )(
             IExtendTaskPad * This,
             /* [string][in] */ LPOLESTR pszGroup,
             /* [string][out] */ LPOLESTR *pszTitle);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetDescriptiveText )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetDescriptiveText )(
             IExtendTaskPad * This,
             /* [string][in] */ LPOLESTR pszGroup,
             /* [string][out] */ LPOLESTR *pszDescriptiveText);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetBackground )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetBackground )(
             IExtendTaskPad * This,
             /* [string][in] */ LPOLESTR pszGroup,
             /* [out] */ MMC_TASK_DISPLAY_OBJECT *pTDO);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetListPadInfo )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetListPadInfo )(
             IExtendTaskPad * This,
             /* [string][in] */ LPOLESTR pszGroup,
             /* [out] */ MMC_LISTPAD_INFO *lpListPadInfo);
-        
+
         END_INTERFACE
     } IExtendTaskPadVtbl;
 
@@ -4591,38 +4591,38 @@ EXTERN_C const IID IID_IExtendTaskPad;
         CONST_VTBL struct IExtendTaskPadVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IExtendTaskPad_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IExtendTaskPad_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IExtendTaskPad_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IExtendTaskPad_TaskNotify(This,pdo,arg,param)	\
-    ( (This)->lpVtbl -> TaskNotify(This,pdo,arg,param) ) 
+    ( (This)->lpVtbl -> TaskNotify(This,pdo,arg,param) )
 
 #define IExtendTaskPad_EnumTasks(This,pdo,szTaskGroup,ppEnumTASK)	\
-    ( (This)->lpVtbl -> EnumTasks(This,pdo,szTaskGroup,ppEnumTASK) ) 
+    ( (This)->lpVtbl -> EnumTasks(This,pdo,szTaskGroup,ppEnumTASK) )
 
 #define IExtendTaskPad_GetTitle(This,pszGroup,pszTitle)	\
-    ( (This)->lpVtbl -> GetTitle(This,pszGroup,pszTitle) ) 
+    ( (This)->lpVtbl -> GetTitle(This,pszGroup,pszTitle) )
 
 #define IExtendTaskPad_GetDescriptiveText(This,pszGroup,pszDescriptiveText)	\
-    ( (This)->lpVtbl -> GetDescriptiveText(This,pszGroup,pszDescriptiveText) ) 
+    ( (This)->lpVtbl -> GetDescriptiveText(This,pszGroup,pszDescriptiveText) )
 
 #define IExtendTaskPad_GetBackground(This,pszGroup,pTDO)	\
-    ( (This)->lpVtbl -> GetBackground(This,pszGroup,pTDO) ) 
+    ( (This)->lpVtbl -> GetBackground(This,pszGroup,pTDO) )
 
 #define IExtendTaskPad_GetListPadInfo(This,pszGroup,lpListPadInfo)	\
-    ( (This)->lpVtbl -> GetListPadInfo(This,pszGroup,lpListPadInfo) ) 
+    ( (This)->lpVtbl -> GetListPadInfo(This,pszGroup,lpListPadInfo) )
 
 #endif /* COBJMACROS */
 
@@ -4639,108 +4639,108 @@ EXTERN_C const IID IID_IExtendTaskPad;
 #define __IConsole2_INTERFACE_DEFINED__
 
 /* interface IConsole2 */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IConsole2;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("103D842A-AA63-11D1-A7E1-00C04FD8D565")
     IConsole2 : public IConsole
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Expand( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Expand(
             /* [in] */ HSCOPEITEM hItem,
             /* [in] */ BOOL bExpand) = 0;
-        
+
         virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE IsTaskpadViewPreferred( void) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetStatusText( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetStatusText(
             /* [string][in] */ __RPC__in LPOLESTR pszStatusText) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IConsole2Vtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IConsole2 * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IConsole2 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IConsole2 * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetHeader )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetHeader )(
             IConsole2 * This,
             /* [in] */ __RPC__in_opt LPHEADERCTRL pHeader);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetToolbar )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetToolbar )(
             IConsole2 * This,
             /* [in] */ __RPC__in_opt LPTOOLBAR pToolbar);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryResultView )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryResultView )(
             IConsole2 * This,
             /* [out] */ __RPC__deref_out_opt LPUNKNOWN *pUnknown);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryScopeImageList )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryScopeImageList )(
             IConsole2 * This,
             /* [out] */ __RPC__deref_out_opt LPIMAGELIST *ppImageList);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryResultImageList )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryResultImageList )(
             IConsole2 * This,
             /* [out] */ __RPC__deref_out_opt LPIMAGELIST *ppImageList);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *UpdateAllViews )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *UpdateAllViews )(
             IConsole2 * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObject,
             /* [in] */ LPARAM data,
             /* [in] */ LONG_PTR hint);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *MessageBox )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *MessageBox )(
             IConsole2 * This,
             /* [in] */ __RPC__in LPCWSTR lpszText,
             /* [in] */ __RPC__in LPCWSTR lpszTitle,
             /* [in] */ UINT fuStyle,
             /* [out] */ __RPC__out int *piRetval);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryConsoleVerb )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryConsoleVerb )(
             IConsole2 * This,
             /* [out] */ __RPC__deref_out_opt LPCONSOLEVERB *ppConsoleVerb);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SelectScopeItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SelectScopeItem )(
             IConsole2 * This,
             /* [in] */ HSCOPEITEM hScopeItem);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetMainWindow )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetMainWindow )(
             IConsole2 * This,
             /* [out] */ __RPC__deref_out_opt HWND *phwnd);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *NewWindow )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *NewWindow )(
             IConsole2 * This,
             /* [in] */ HSCOPEITEM hScopeItem,
             /* [in] */ unsigned long lOptions);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Expand )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Expand )(
             IConsole2 * This,
             /* [in] */ HSCOPEITEM hItem,
             /* [in] */ BOOL bExpand);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *IsTaskpadViewPreferred )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *IsTaskpadViewPreferred )(
             IConsole2 * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetStatusText )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetStatusText )(
             IConsole2 * This,
             /* [string][in] */ __RPC__in LPOLESTR pszStatusText);
-        
+
         END_INTERFACE
     } IConsole2Vtbl;
 
@@ -4749,63 +4749,63 @@ EXTERN_C const IID IID_IConsole2;
         CONST_VTBL struct IConsole2Vtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IConsole2_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IConsole2_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IConsole2_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IConsole2_SetHeader(This,pHeader)	\
-    ( (This)->lpVtbl -> SetHeader(This,pHeader) ) 
+    ( (This)->lpVtbl -> SetHeader(This,pHeader) )
 
 #define IConsole2_SetToolbar(This,pToolbar)	\
-    ( (This)->lpVtbl -> SetToolbar(This,pToolbar) ) 
+    ( (This)->lpVtbl -> SetToolbar(This,pToolbar) )
 
 #define IConsole2_QueryResultView(This,pUnknown)	\
-    ( (This)->lpVtbl -> QueryResultView(This,pUnknown) ) 
+    ( (This)->lpVtbl -> QueryResultView(This,pUnknown) )
 
 #define IConsole2_QueryScopeImageList(This,ppImageList)	\
-    ( (This)->lpVtbl -> QueryScopeImageList(This,ppImageList) ) 
+    ( (This)->lpVtbl -> QueryScopeImageList(This,ppImageList) )
 
 #define IConsole2_QueryResultImageList(This,ppImageList)	\
-    ( (This)->lpVtbl -> QueryResultImageList(This,ppImageList) ) 
+    ( (This)->lpVtbl -> QueryResultImageList(This,ppImageList) )
 
 #define IConsole2_UpdateAllViews(This,lpDataObject,data,hint)	\
-    ( (This)->lpVtbl -> UpdateAllViews(This,lpDataObject,data,hint) ) 
+    ( (This)->lpVtbl -> UpdateAllViews(This,lpDataObject,data,hint) )
 
 #define IConsole2_MessageBox(This,lpszText,lpszTitle,fuStyle,piRetval)	\
-    ( (This)->lpVtbl -> MessageBox(This,lpszText,lpszTitle,fuStyle,piRetval) ) 
+    ( (This)->lpVtbl -> MessageBox(This,lpszText,lpszTitle,fuStyle,piRetval) )
 
 #define IConsole2_QueryConsoleVerb(This,ppConsoleVerb)	\
-    ( (This)->lpVtbl -> QueryConsoleVerb(This,ppConsoleVerb) ) 
+    ( (This)->lpVtbl -> QueryConsoleVerb(This,ppConsoleVerb) )
 
 #define IConsole2_SelectScopeItem(This,hScopeItem)	\
-    ( (This)->lpVtbl -> SelectScopeItem(This,hScopeItem) ) 
+    ( (This)->lpVtbl -> SelectScopeItem(This,hScopeItem) )
 
 #define IConsole2_GetMainWindow(This,phwnd)	\
-    ( (This)->lpVtbl -> GetMainWindow(This,phwnd) ) 
+    ( (This)->lpVtbl -> GetMainWindow(This,phwnd) )
 
 #define IConsole2_NewWindow(This,hScopeItem,lOptions)	\
-    ( (This)->lpVtbl -> NewWindow(This,hScopeItem,lOptions) ) 
+    ( (This)->lpVtbl -> NewWindow(This,hScopeItem,lOptions) )
 
 
 #define IConsole2_Expand(This,hItem,bExpand)	\
-    ( (This)->lpVtbl -> Expand(This,hItem,bExpand) ) 
+    ( (This)->lpVtbl -> Expand(This,hItem,bExpand) )
 
 #define IConsole2_IsTaskpadViewPreferred(This)	\
-    ( (This)->lpVtbl -> IsTaskpadViewPreferred(This) ) 
+    ( (This)->lpVtbl -> IsTaskpadViewPreferred(This) )
 
 #define IConsole2_SetStatusText(This,pszStatusText)	\
-    ( (This)->lpVtbl -> SetStatusText(This,pszStatusText) ) 
+    ( (This)->lpVtbl -> SetStatusText(This,pszStatusText) )
 
 #endif /* COBJMACROS */
 
@@ -4822,44 +4822,44 @@ EXTERN_C const IID IID_IConsole2;
 #define __IDisplayHelp_INTERFACE_DEFINED__
 
 /* interface IDisplayHelp */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IDisplayHelp;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("cc593830-b926-11d1-8063-0000f875a9ce")
     IDisplayHelp : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE ShowTopic( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE ShowTopic(
             /* [in] */ __RPC__in LPOLESTR pszHelpTopic) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IDisplayHelpVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IDisplayHelp * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IDisplayHelp * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IDisplayHelp * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ShowTopic )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ShowTopic )(
             IDisplayHelp * This,
             /* [in] */ __RPC__in LPOLESTR pszHelpTopic);
-        
+
         END_INTERFACE
     } IDisplayHelpVtbl;
 
@@ -4868,23 +4868,23 @@ EXTERN_C const IID IID_IDisplayHelp;
         CONST_VTBL struct IDisplayHelpVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IDisplayHelp_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IDisplayHelp_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IDisplayHelp_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IDisplayHelp_ShowTopic(This,pszHelpTopic)	\
-    ( (This)->lpVtbl -> ShowTopic(This,pszHelpTopic) ) 
+    ( (This)->lpVtbl -> ShowTopic(This,pszHelpTopic) )
 
 #endif /* COBJMACROS */
 
@@ -4901,56 +4901,56 @@ EXTERN_C const IID IID_IDisplayHelp;
 #define __IRequiredExtensions_INTERFACE_DEFINED__
 
 /* interface IRequiredExtensions */
-/* [unique][helpstring][uuid][object][local] */ 
+/* [unique][helpstring][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IRequiredExtensions;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("72782D7A-A4A0-11d1-AF0F-00C04FB6DD2C")
     IRequiredExtensions : public IUnknown
     {
     public:
         virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE EnableAllExtensions( void) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetFirstExtension( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetFirstExtension(
             /* [out] */ LPCLSID pExtCLSID) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetNextExtension( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetNextExtension(
             /* [out] */ LPCLSID pExtCLSID) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRequiredExtensionsVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRequiredExtensions * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRequiredExtensions * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRequiredExtensions * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *EnableAllExtensions )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *EnableAllExtensions )(
             IRequiredExtensions * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetFirstExtension )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetFirstExtension )(
             IRequiredExtensions * This,
             /* [out] */ LPCLSID pExtCLSID);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetNextExtension )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetNextExtension )(
             IRequiredExtensions * This,
             /* [out] */ LPCLSID pExtCLSID);
-        
+
         END_INTERFACE
     } IRequiredExtensionsVtbl;
 
@@ -4959,29 +4959,29 @@ EXTERN_C const IID IID_IRequiredExtensions;
         CONST_VTBL struct IRequiredExtensionsVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRequiredExtensions_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRequiredExtensions_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRequiredExtensions_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRequiredExtensions_EnableAllExtensions(This)	\
-    ( (This)->lpVtbl -> EnableAllExtensions(This) ) 
+    ( (This)->lpVtbl -> EnableAllExtensions(This) )
 
 #define IRequiredExtensions_GetFirstExtension(This,pExtCLSID)	\
-    ( (This)->lpVtbl -> GetFirstExtension(This,pExtCLSID) ) 
+    ( (This)->lpVtbl -> GetFirstExtension(This,pExtCLSID) )
 
 #define IRequiredExtensions_GetNextExtension(This,pExtCLSID)	\
-    ( (This)->lpVtbl -> GetNextExtension(This,pExtCLSID) ) 
+    ( (This)->lpVtbl -> GetNextExtension(This,pExtCLSID) )
 
 #endif /* COBJMACROS */
 
@@ -4998,96 +4998,96 @@ EXTERN_C const IID IID_IRequiredExtensions;
 #define __IStringTable_INTERFACE_DEFINED__
 
 /* interface IStringTable */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IStringTable;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("DE40B7A4-0F65-11d2-8E25-00C04F8ECD78")
     IStringTable : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddString( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddString(
             /* [in] */ __RPC__in LPCOLESTR pszAdd,
             /* [out] */ __RPC__out MMC_STRING_ID *pStringID) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetString( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetString(
             /* [in] */ MMC_STRING_ID StringID,
             /* [in] */ ULONG cchBuffer,
             /* [size_is][out] */ __RPC__out_ecount_full(cchBuffer) LPOLESTR lpBuffer,
             /* [out] */ __RPC__out ULONG *pcchOut) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetStringLength( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetStringLength(
             /* [in] */ MMC_STRING_ID StringID,
             /* [out] */ __RPC__out ULONG *pcchString) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE DeleteString( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE DeleteString(
             /* [in] */ MMC_STRING_ID StringID) = 0;
-        
+
         virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE DeleteAllStrings( void) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE FindString( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE FindString(
             /* [in] */ __RPC__in LPCOLESTR pszFind,
             /* [out] */ __RPC__out MMC_STRING_ID *pStringID) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Enumerate( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Enumerate(
             /* [out] */ __RPC__deref_out_opt IEnumString **ppEnum) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IStringTableVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IStringTable * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IStringTable * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IStringTable * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddString )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddString )(
             IStringTable * This,
             /* [in] */ __RPC__in LPCOLESTR pszAdd,
             /* [out] */ __RPC__out MMC_STRING_ID *pStringID);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetString )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetString )(
             IStringTable * This,
             /* [in] */ MMC_STRING_ID StringID,
             /* [in] */ ULONG cchBuffer,
             /* [size_is][out] */ __RPC__out_ecount_full(cchBuffer) LPOLESTR lpBuffer,
             /* [out] */ __RPC__out ULONG *pcchOut);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetStringLength )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetStringLength )(
             IStringTable * This,
             /* [in] */ MMC_STRING_ID StringID,
             /* [out] */ __RPC__out ULONG *pcchString);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteString )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteString )(
             IStringTable * This,
             /* [in] */ MMC_STRING_ID StringID);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteAllStrings )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteAllStrings )(
             IStringTable * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *FindString )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *FindString )(
             IStringTable * This,
             /* [in] */ __RPC__in LPCOLESTR pszFind,
             /* [out] */ __RPC__out MMC_STRING_ID *pStringID);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Enumerate )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Enumerate )(
             IStringTable * This,
             /* [out] */ __RPC__deref_out_opt IEnumString **ppEnum);
-        
+
         END_INTERFACE
     } IStringTableVtbl;
 
@@ -5096,41 +5096,41 @@ EXTERN_C const IID IID_IStringTable;
         CONST_VTBL struct IStringTableVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IStringTable_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IStringTable_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IStringTable_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IStringTable_AddString(This,pszAdd,pStringID)	\
-    ( (This)->lpVtbl -> AddString(This,pszAdd,pStringID) ) 
+    ( (This)->lpVtbl -> AddString(This,pszAdd,pStringID) )
 
 #define IStringTable_GetString(This,StringID,cchBuffer,lpBuffer,pcchOut)	\
-    ( (This)->lpVtbl -> GetString(This,StringID,cchBuffer,lpBuffer,pcchOut) ) 
+    ( (This)->lpVtbl -> GetString(This,StringID,cchBuffer,lpBuffer,pcchOut) )
 
 #define IStringTable_GetStringLength(This,StringID,pcchString)	\
-    ( (This)->lpVtbl -> GetStringLength(This,StringID,pcchString) ) 
+    ( (This)->lpVtbl -> GetStringLength(This,StringID,pcchString) )
 
 #define IStringTable_DeleteString(This,StringID)	\
-    ( (This)->lpVtbl -> DeleteString(This,StringID) ) 
+    ( (This)->lpVtbl -> DeleteString(This,StringID) )
 
 #define IStringTable_DeleteAllStrings(This)	\
-    ( (This)->lpVtbl -> DeleteAllStrings(This) ) 
+    ( (This)->lpVtbl -> DeleteAllStrings(This) )
 
 #define IStringTable_FindString(This,pszFind,pStringID)	\
-    ( (This)->lpVtbl -> FindString(This,pszFind,pStringID) ) 
+    ( (This)->lpVtbl -> FindString(This,pszFind,pStringID) )
 
 #define IStringTable_Enumerate(This,ppEnum)	\
-    ( (This)->lpVtbl -> Enumerate(This,ppEnum) ) 
+    ( (This)->lpVtbl -> Enumerate(This,ppEnum) )
 
 #endif /* COBJMACROS */
 
@@ -5144,7 +5144,7 @@ EXTERN_C const IID IID_IStringTable;
 
 
 /* interface __MIDL_itf_mmc_0000_0032 */
-/* [local] */ 
+/* [local] */
 
 #endif // MMC_VER >= 0x0110
 #if (MMC_VER >= 0x0120)
@@ -5188,73 +5188,73 @@ extern RPC_IF_HANDLE __MIDL_itf_mmc_0000_0032_v0_0_s_ifspec;
 #define __IColumnData_INTERFACE_DEFINED__
 
 /* interface IColumnData */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IColumnData;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("547C1354-024D-11d3-A707-00C04F8EF4CB")
     IColumnData : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetColumnConfigData( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetColumnConfigData(
             /* [in] */ __RPC__in SColumnSetID *pColID,
             /* [in] */ __RPC__in MMC_COLUMN_SET_DATA *pColSetData) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetColumnConfigData( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetColumnConfigData(
             /* [in] */ __RPC__in SColumnSetID *pColID,
             /* [out] */ __RPC__deref_out_opt MMC_COLUMN_SET_DATA **ppColSetData) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetColumnSortData( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetColumnSortData(
             /* [in] */ __RPC__in SColumnSetID *pColID,
             /* [in] */ __RPC__in MMC_SORT_SET_DATA *pColSortData) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetColumnSortData( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetColumnSortData(
             /* [in] */ __RPC__in SColumnSetID *pColID,
             /* [out] */ __RPC__deref_out_opt MMC_SORT_SET_DATA **ppColSortData) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IColumnDataVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IColumnData * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IColumnData * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IColumnData * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetColumnConfigData )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetColumnConfigData )(
             IColumnData * This,
             /* [in] */ __RPC__in SColumnSetID *pColID,
             /* [in] */ __RPC__in MMC_COLUMN_SET_DATA *pColSetData);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetColumnConfigData )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetColumnConfigData )(
             IColumnData * This,
             /* [in] */ __RPC__in SColumnSetID *pColID,
             /* [out] */ __RPC__deref_out_opt MMC_COLUMN_SET_DATA **ppColSetData);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetColumnSortData )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetColumnSortData )(
             IColumnData * This,
             /* [in] */ __RPC__in SColumnSetID *pColID,
             /* [in] */ __RPC__in MMC_SORT_SET_DATA *pColSortData);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetColumnSortData )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetColumnSortData )(
             IColumnData * This,
             /* [in] */ __RPC__in SColumnSetID *pColID,
             /* [out] */ __RPC__deref_out_opt MMC_SORT_SET_DATA **ppColSortData);
-        
+
         END_INTERFACE
     } IColumnDataVtbl;
 
@@ -5263,32 +5263,32 @@ EXTERN_C const IID IID_IColumnData;
         CONST_VTBL struct IColumnDataVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IColumnData_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IColumnData_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IColumnData_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IColumnData_SetColumnConfigData(This,pColID,pColSetData)	\
-    ( (This)->lpVtbl -> SetColumnConfigData(This,pColID,pColSetData) ) 
+    ( (This)->lpVtbl -> SetColumnConfigData(This,pColID,pColSetData) )
 
 #define IColumnData_GetColumnConfigData(This,pColID,ppColSetData)	\
-    ( (This)->lpVtbl -> GetColumnConfigData(This,pColID,ppColSetData) ) 
+    ( (This)->lpVtbl -> GetColumnConfigData(This,pColID,ppColSetData) )
 
 #define IColumnData_SetColumnSortData(This,pColID,pColSortData)	\
-    ( (This)->lpVtbl -> SetColumnSortData(This,pColID,pColSortData) ) 
+    ( (This)->lpVtbl -> SetColumnSortData(This,pColID,pColSortData) )
 
 #define IColumnData_GetColumnSortData(This,pColID,ppColSortData)	\
-    ( (This)->lpVtbl -> GetColumnSortData(This,pColID,ppColSortData) ) 
+    ( (This)->lpVtbl -> GetColumnSortData(This,pColID,ppColSortData) )
 
 #endif /* COBJMACROS */
 
@@ -5305,9 +5305,9 @@ EXTERN_C const IID IID_IColumnData;
 #define __IMessageView_INTERFACE_DEFINED__
 
 /* interface IMessageView */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
-typedef 
+typedef
 enum tagIconIdentifier
     {	Icon_None	= 0,
 	Icon_Error	= 32513,
@@ -5322,57 +5322,57 @@ enum tagIconIdentifier
 EXTERN_C const IID IID_IMessageView;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("80F94174-FCCC-11d2-B991-00C04F8ECD78")
     IMessageView : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetTitleText( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetTitleText(
             /* [in] */ __RPC__in LPCOLESTR pszTitleText) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetBodyText( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetBodyText(
             /* [in] */ __RPC__in LPCOLESTR pszBodyText) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetIcon( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetIcon(
             /* [in] */ IconIdentifier id) = 0;
-        
+
         virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IMessageViewVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IMessageView * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IMessageView * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IMessageView * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetTitleText )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetTitleText )(
             IMessageView * This,
             /* [in] */ __RPC__in LPCOLESTR pszTitleText);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetBodyText )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetBodyText )(
             IMessageView * This,
             /* [in] */ __RPC__in LPCOLESTR pszBodyText);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetIcon )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetIcon )(
             IMessageView * This,
             /* [in] */ IconIdentifier id);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Clear )(
             IMessageView * This);
-        
+
         END_INTERFACE
     } IMessageViewVtbl;
 
@@ -5381,32 +5381,32 @@ EXTERN_C const IID IID_IMessageView;
         CONST_VTBL struct IMessageViewVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IMessageView_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IMessageView_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IMessageView_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IMessageView_SetTitleText(This,pszTitleText)	\
-    ( (This)->lpVtbl -> SetTitleText(This,pszTitleText) ) 
+    ( (This)->lpVtbl -> SetTitleText(This,pszTitleText) )
 
 #define IMessageView_SetBodyText(This,pszBodyText)	\
-    ( (This)->lpVtbl -> SetBodyText(This,pszBodyText) ) 
+    ( (This)->lpVtbl -> SetBodyText(This,pszBodyText) )
 
 #define IMessageView_SetIcon(This,id)	\
-    ( (This)->lpVtbl -> SetIcon(This,id) ) 
+    ( (This)->lpVtbl -> SetIcon(This,id) )
 
 #define IMessageView_Clear(This)	\
-    ( (This)->lpVtbl -> Clear(This) ) 
+    ( (This)->lpVtbl -> Clear(This) )
 
 #endif /* COBJMACROS */
 
@@ -5420,7 +5420,7 @@ EXTERN_C const IID IID_IMessageView;
 
 
 /* interface __MIDL_itf_mmc_0000_0034 */
-/* [local] */ 
+/* [local] */
 
 typedef struct _RDCITEMHDR
     {
@@ -5450,46 +5450,46 @@ extern RPC_IF_HANDLE __MIDL_itf_mmc_0000_0034_v0_0_s_ifspec;
 #define __IResultDataCompareEx_INTERFACE_DEFINED__
 
 /* interface IResultDataCompareEx */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IResultDataCompareEx;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("96933476-0251-11d3-AEB0-00C04F8ECD78")
     IResultDataCompareEx : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Compare( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE Compare(
             /* [in] */ __RPC__in RDCOMPARE *prdc,
             /* [out] */ __RPC__out int *pnResult) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IResultDataCompareExVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IResultDataCompareEx * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IResultDataCompareEx * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IResultDataCompareEx * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Compare )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Compare )(
             IResultDataCompareEx * This,
             /* [in] */ __RPC__in RDCOMPARE *prdc,
             /* [out] */ __RPC__out int *pnResult);
-        
+
         END_INTERFACE
     } IResultDataCompareExVtbl;
 
@@ -5498,23 +5498,23 @@ EXTERN_C const IID IID_IResultDataCompareEx;
         CONST_VTBL struct IResultDataCompareExVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IResultDataCompareEx_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IResultDataCompareEx_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IResultDataCompareEx_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IResultDataCompareEx_Compare(This,prdc,pnResult)	\
-    ( (This)->lpVtbl -> Compare(This,prdc,pnResult) ) 
+    ( (This)->lpVtbl -> Compare(This,prdc,pnResult) )
 
 #endif /* COBJMACROS */
 
@@ -5528,15 +5528,15 @@ EXTERN_C const IID IID_IResultDataCompareEx;
 
 
 /* interface __MIDL_itf_mmc_0000_0035 */
-/* [local] */ 
+/* [local] */
 
 #endif // MMC_VER >= 0x0120
 #if (MMC_VER >= 0x0200)
-typedef 
+typedef
 enum _MMC_VIEW_TYPE
     {	MMC_VIEW_TYPE_LIST	= 0,
 	MMC_VIEW_TYPE_HTML	= ( MMC_VIEW_TYPE_LIST + 1 ) ,
-	MMC_VIEW_TYPE_OCX	= ( MMC_VIEW_TYPE_HTML + 1 ) 
+	MMC_VIEW_TYPE_OCX	= ( MMC_VIEW_TYPE_HTML + 1 )
     } 	MMC_VIEW_TYPE;
 
 #define	RVTI_MISC_OPTIONS_NOLISTVIEWS	( 0x1 )
@@ -5572,20 +5572,20 @@ typedef struct _RESULT_VIEW_TYPE_INFO
     LPOLESTR pstrPersistableViewDescription;
     MMC_VIEW_TYPE eViewType;
     DWORD dwMiscOptions;
-    union 
+    union
         {
         DWORD dwListOptions;
-        struct 
+        struct
             {
             DWORD dwHTMLOptions;
             LPOLESTR pstrURL;
             } 	;
-        struct 
+        struct
             {
             DWORD dwOCXOptions;
             LPUNKNOWN pUnkControl;
             } 	;
-         /* Empty union arm */ 
+         /* Empty union arm */
         } 	;
     } 	RESULT_VIEW_TYPE_INFO;
 
@@ -5630,81 +5630,81 @@ extern RPC_IF_HANDLE __MIDL_itf_mmc_0000_0035_v0_0_s_ifspec;
 #define __IComponentData2_INTERFACE_DEFINED__
 
 /* interface IComponentData2 */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IComponentData2;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("CCA0F2D2-82DE-41B5-BF47-3B2076273D5C")
     IComponentData2 : public IComponentData
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryDispatch( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryDispatch(
             /* [in] */ MMC_COOKIE cookie,
             /* [in] */ DATA_OBJECT_TYPES type,
             /* [out] */ __RPC__deref_out_opt LPDISPATCH *ppDispatch) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IComponentData2Vtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IComponentData2 * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IComponentData2 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IComponentData2 * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Initialize )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Initialize )(
             IComponentData2 * This,
             /* [in] */ __RPC__in_opt LPUNKNOWN pUnknown);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CreateComponent )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CreateComponent )(
             IComponentData2 * This,
             /* [out] */ __RPC__deref_out_opt LPCOMPONENT *ppComponent);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Notify )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Notify )(
             IComponentData2 * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObject,
             /* [in] */ MMC_NOTIFY_TYPE event,
             /* [in] */ LPARAM arg,
             /* [in] */ LPARAM param);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Destroy )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Destroy )(
             IComponentData2 * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryDataObject )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryDataObject )(
             IComponentData2 * This,
             /* [in] */ MMC_COOKIE cookie,
             /* [in] */ DATA_OBJECT_TYPES type,
             /* [out] */ __RPC__deref_out_opt LPDATAOBJECT *ppDataObject);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetDisplayInfo )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetDisplayInfo )(
             IComponentData2 * This,
             /* [out][in] */ __RPC__inout SCOPEDATAITEM *pScopeDataItem);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CompareObjects )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CompareObjects )(
             IComponentData2 * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObjectA,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObjectB);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryDispatch )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryDispatch )(
             IComponentData2 * This,
             /* [in] */ MMC_COOKIE cookie,
             /* [in] */ DATA_OBJECT_TYPES type,
             /* [out] */ __RPC__deref_out_opt LPDISPATCH *ppDispatch);
-        
+
         END_INTERFACE
     } IComponentData2Vtbl;
 
@@ -5713,45 +5713,45 @@ EXTERN_C const IID IID_IComponentData2;
         CONST_VTBL struct IComponentData2Vtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IComponentData2_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IComponentData2_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IComponentData2_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IComponentData2_Initialize(This,pUnknown)	\
-    ( (This)->lpVtbl -> Initialize(This,pUnknown) ) 
+    ( (This)->lpVtbl -> Initialize(This,pUnknown) )
 
 #define IComponentData2_CreateComponent(This,ppComponent)	\
-    ( (This)->lpVtbl -> CreateComponent(This,ppComponent) ) 
+    ( (This)->lpVtbl -> CreateComponent(This,ppComponent) )
 
 #define IComponentData2_Notify(This,lpDataObject,event,arg,param)	\
-    ( (This)->lpVtbl -> Notify(This,lpDataObject,event,arg,param) ) 
+    ( (This)->lpVtbl -> Notify(This,lpDataObject,event,arg,param) )
 
 #define IComponentData2_Destroy(This)	\
-    ( (This)->lpVtbl -> Destroy(This) ) 
+    ( (This)->lpVtbl -> Destroy(This) )
 
 #define IComponentData2_QueryDataObject(This,cookie,type,ppDataObject)	\
-    ( (This)->lpVtbl -> QueryDataObject(This,cookie,type,ppDataObject) ) 
+    ( (This)->lpVtbl -> QueryDataObject(This,cookie,type,ppDataObject) )
 
 #define IComponentData2_GetDisplayInfo(This,pScopeDataItem)	\
-    ( (This)->lpVtbl -> GetDisplayInfo(This,pScopeDataItem) ) 
+    ( (This)->lpVtbl -> GetDisplayInfo(This,pScopeDataItem) )
 
 #define IComponentData2_CompareObjects(This,lpDataObjectA,lpDataObjectB)	\
-    ( (This)->lpVtbl -> CompareObjects(This,lpDataObjectA,lpDataObjectB) ) 
+    ( (This)->lpVtbl -> CompareObjects(This,lpDataObjectA,lpDataObjectB) )
 
 
 #define IComponentData2_QueryDispatch(This,cookie,type,ppDispatch)	\
-    ( (This)->lpVtbl -> QueryDispatch(This,cookie,type,ppDispatch) ) 
+    ( (This)->lpVtbl -> QueryDispatch(This,cookie,type,ppDispatch) )
 
 #endif /* COBJMACROS */
 
@@ -5768,102 +5768,102 @@ EXTERN_C const IID IID_IComponentData2;
 #define __IComponent2_INTERFACE_DEFINED__
 
 /* interface IComponent2 */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IComponent2;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("79A2D615-4A10-4ED4-8C65-8633F9335095")
     IComponent2 : public IComponent
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryDispatch( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE QueryDispatch(
             /* [in] */ MMC_COOKIE cookie,
             /* [in] */ DATA_OBJECT_TYPES type,
             /* [out] */ __RPC__deref_out_opt LPDISPATCH *ppDispatch) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetResultViewType2( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetResultViewType2(
             /* [in] */ MMC_COOKIE cookie,
             /* [out][in] */ __RPC__inout PRESULT_VIEW_TYPE_INFO pResultViewType) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE RestoreResultView( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE RestoreResultView(
             /* [in] */ MMC_COOKIE cookie,
             /* [in] */ __RPC__in PRESULT_VIEW_TYPE_INFO pResultViewType) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IComponent2Vtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IComponent2 * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IComponent2 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IComponent2 * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Initialize )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Initialize )(
             IComponent2 * This,
             /* [in] */ __RPC__in_opt LPCONSOLE lpConsole);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Notify )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Notify )(
             IComponent2 * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObject,
             /* [in] */ MMC_NOTIFY_TYPE event,
             /* [in] */ LPARAM arg,
             /* [in] */ LPARAM param);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Destroy )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Destroy )(
             IComponent2 * This,
             /* [in] */ MMC_COOKIE cookie);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryDataObject )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryDataObject )(
             IComponent2 * This,
             /* [in] */ MMC_COOKIE cookie,
             /* [in] */ DATA_OBJECT_TYPES type,
             /* [out] */ __RPC__deref_out_opt LPDATAOBJECT *ppDataObject);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetResultViewType )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetResultViewType )(
             IComponent2 * This,
             /* [in] */ MMC_COOKIE cookie,
             /* [out] */ __RPC__deref_out_opt LPOLESTR *ppViewType,
             /* [out] */ __RPC__out long *pViewOptions);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetDisplayInfo )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetDisplayInfo )(
             IComponent2 * This,
             /* [out][in] */ __RPC__inout RESULTDATAITEM *pResultDataItem);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CompareObjects )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *CompareObjects )(
             IComponent2 * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObjectA,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObjectB);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryDispatch )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryDispatch )(
             IComponent2 * This,
             /* [in] */ MMC_COOKIE cookie,
             /* [in] */ DATA_OBJECT_TYPES type,
             /* [out] */ __RPC__deref_out_opt LPDISPATCH *ppDispatch);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetResultViewType2 )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetResultViewType2 )(
             IComponent2 * This,
             /* [in] */ MMC_COOKIE cookie,
             /* [out][in] */ __RPC__inout PRESULT_VIEW_TYPE_INFO pResultViewType);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *RestoreResultView )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *RestoreResultView )(
             IComponent2 * This,
             /* [in] */ MMC_COOKIE cookie,
             /* [in] */ __RPC__in PRESULT_VIEW_TYPE_INFO pResultViewType);
-        
+
         END_INTERFACE
     } IComponent2Vtbl;
 
@@ -5872,51 +5872,51 @@ EXTERN_C const IID IID_IComponent2;
         CONST_VTBL struct IComponent2Vtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IComponent2_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IComponent2_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IComponent2_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IComponent2_Initialize(This,lpConsole)	\
-    ( (This)->lpVtbl -> Initialize(This,lpConsole) ) 
+    ( (This)->lpVtbl -> Initialize(This,lpConsole) )
 
 #define IComponent2_Notify(This,lpDataObject,event,arg,param)	\
-    ( (This)->lpVtbl -> Notify(This,lpDataObject,event,arg,param) ) 
+    ( (This)->lpVtbl -> Notify(This,lpDataObject,event,arg,param) )
 
 #define IComponent2_Destroy(This,cookie)	\
-    ( (This)->lpVtbl -> Destroy(This,cookie) ) 
+    ( (This)->lpVtbl -> Destroy(This,cookie) )
 
 #define IComponent2_QueryDataObject(This,cookie,type,ppDataObject)	\
-    ( (This)->lpVtbl -> QueryDataObject(This,cookie,type,ppDataObject) ) 
+    ( (This)->lpVtbl -> QueryDataObject(This,cookie,type,ppDataObject) )
 
 #define IComponent2_GetResultViewType(This,cookie,ppViewType,pViewOptions)	\
-    ( (This)->lpVtbl -> GetResultViewType(This,cookie,ppViewType,pViewOptions) ) 
+    ( (This)->lpVtbl -> GetResultViewType(This,cookie,ppViewType,pViewOptions) )
 
 #define IComponent2_GetDisplayInfo(This,pResultDataItem)	\
-    ( (This)->lpVtbl -> GetDisplayInfo(This,pResultDataItem) ) 
+    ( (This)->lpVtbl -> GetDisplayInfo(This,pResultDataItem) )
 
 #define IComponent2_CompareObjects(This,lpDataObjectA,lpDataObjectB)	\
-    ( (This)->lpVtbl -> CompareObjects(This,lpDataObjectA,lpDataObjectB) ) 
+    ( (This)->lpVtbl -> CompareObjects(This,lpDataObjectA,lpDataObjectB) )
 
 
 #define IComponent2_QueryDispatch(This,cookie,type,ppDispatch)	\
-    ( (This)->lpVtbl -> QueryDispatch(This,cookie,type,ppDispatch) ) 
+    ( (This)->lpVtbl -> QueryDispatch(This,cookie,type,ppDispatch) )
 
 #define IComponent2_GetResultViewType2(This,cookie,pResultViewType)	\
-    ( (This)->lpVtbl -> GetResultViewType2(This,cookie,pResultViewType) ) 
+    ( (This)->lpVtbl -> GetResultViewType2(This,cookie,pResultViewType) )
 
 #define IComponent2_RestoreResultView(This,cookie,pResultViewType)	\
-    ( (This)->lpVtbl -> RestoreResultView(This,cookie,pResultViewType) ) 
+    ( (This)->lpVtbl -> RestoreResultView(This,cookie,pResultViewType) )
 
 #endif /* COBJMACROS */
 
@@ -5933,44 +5933,44 @@ EXTERN_C const IID IID_IComponent2;
 #define __IContextMenuCallback2_INTERFACE_DEFINED__
 
 /* interface IContextMenuCallback2 */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IContextMenuCallback2;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("E178BC0E-2ED0-4b5e-8097-42C9087E8B33")
     IContextMenuCallback2 : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddItem( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddItem(
             /* [in] */ __RPC__in CONTEXTMENUITEM2 *pItem) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IContextMenuCallback2Vtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IContextMenuCallback2 * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IContextMenuCallback2 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IContextMenuCallback2 * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddItem )(
             IContextMenuCallback2 * This,
             /* [in] */ __RPC__in CONTEXTMENUITEM2 *pItem);
-        
+
         END_INTERFACE
     } IContextMenuCallback2Vtbl;
 
@@ -5979,23 +5979,23 @@ EXTERN_C const IID IID_IContextMenuCallback2;
         CONST_VTBL struct IContextMenuCallback2Vtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IContextMenuCallback2_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IContextMenuCallback2_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IContextMenuCallback2_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IContextMenuCallback2_AddItem(This,pItem)	\
-    ( (This)->lpVtbl -> AddItem(This,pItem) ) 
+    ( (This)->lpVtbl -> AddItem(This,pItem) )
 
 #endif /* COBJMACROS */
 
@@ -6012,46 +6012,46 @@ EXTERN_C const IID IID_IContextMenuCallback2;
 #define __IMMCVersionInfo_INTERFACE_DEFINED__
 
 /* interface IMMCVersionInfo */
-/* [object][helpstring][uuid] */ 
+/* [object][helpstring][uuid] */
 
 
 EXTERN_C const IID IID_IMMCVersionInfo;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("A8D2C5FE-CDCB-4b9d-BDE5-A27343FF54BC")
     IMMCVersionInfo : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetMMCVersion( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetMMCVersion(
             /* [out] */ __RPC__out long *pVersionMajor,
             /* [out] */ __RPC__out long *pVersionMinor) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IMMCVersionInfoVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IMMCVersionInfo * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IMMCVersionInfo * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IMMCVersionInfo * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetMMCVersion )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetMMCVersion )(
             IMMCVersionInfo * This,
             /* [out] */ __RPC__out long *pVersionMajor,
             /* [out] */ __RPC__out long *pVersionMinor);
-        
+
         END_INTERFACE
     } IMMCVersionInfoVtbl;
 
@@ -6060,23 +6060,23 @@ EXTERN_C const IID IID_IMMCVersionInfo;
         CONST_VTBL struct IMMCVersionInfoVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IMMCVersionInfo_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IMMCVersionInfo_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IMMCVersionInfo_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IMMCVersionInfo_GetMMCVersion(This,pVersionMajor,pVersionMinor)	\
-    ( (This)->lpVtbl -> GetMMCVersion(This,pVersionMajor,pVersionMinor) ) 
+    ( (This)->lpVtbl -> GetMMCVersion(This,pVersionMajor,pVersionMinor) )
 
 #endif /* COBJMACROS */
 
@@ -6094,7 +6094,7 @@ EXTERN_C const IID IID_IMMCVersionInfo;
 #define __MMCVersionLib_LIBRARY_DEFINED__
 
 /* library MMCVersionLib */
-/* [helpstring][version][uuid] */ 
+/* [helpstring][version][uuid] */
 
 
 EXTERN_C const IID LIBID_MMCVersionLib;
@@ -6120,46 +6120,46 @@ ConsolePower;
 #define __IExtendView_INTERFACE_DEFINED__
 
 /* interface IExtendView */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IExtendView;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("89995CEE-D2ED-4c0e-AE5E-DF7E76F3FA53")
     IExtendView : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetViews( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetViews(
             /* [in] */ __RPC__in_opt LPDATAOBJECT pDataObject,
             /* [in] */ __RPC__in_opt LPVIEWEXTENSIONCALLBACK pViewExtensionCallback) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IExtendViewVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IExtendView * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IExtendView * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IExtendView * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetViews )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetViews )(
             IExtendView * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT pDataObject,
             /* [in] */ __RPC__in_opt LPVIEWEXTENSIONCALLBACK pViewExtensionCallback);
-        
+
         END_INTERFACE
     } IExtendViewVtbl;
 
@@ -6168,23 +6168,23 @@ EXTERN_C const IID IID_IExtendView;
         CONST_VTBL struct IExtendViewVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IExtendView_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IExtendView_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IExtendView_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IExtendView_GetViews(This,pDataObject,pViewExtensionCallback)	\
-    ( (This)->lpVtbl -> GetViews(This,pDataObject,pViewExtensionCallback) ) 
+    ( (This)->lpVtbl -> GetViews(This,pDataObject,pViewExtensionCallback) )
 
 #endif /* COBJMACROS */
 
@@ -6201,44 +6201,44 @@ EXTERN_C const IID IID_IExtendView;
 #define __IViewExtensionCallback_INTERFACE_DEFINED__
 
 /* interface IViewExtensionCallback */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IViewExtensionCallback;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("34DD928A-7599-41E5-9F5E-D6BC3062C2DA")
     IViewExtensionCallback : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddView( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE AddView(
             /* [in] */ __RPC__in PMMC_EXT_VIEW_DATA pExtViewData) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IViewExtensionCallbackVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IViewExtensionCallback * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IViewExtensionCallback * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IViewExtensionCallback * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddView )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *AddView )(
             IViewExtensionCallback * This,
             /* [in] */ __RPC__in PMMC_EXT_VIEW_DATA pExtViewData);
-        
+
         END_INTERFACE
     } IViewExtensionCallbackVtbl;
 
@@ -6247,23 +6247,23 @@ EXTERN_C const IID IID_IViewExtensionCallback;
         CONST_VTBL struct IViewExtensionCallbackVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IViewExtensionCallback_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IViewExtensionCallback_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IViewExtensionCallback_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IViewExtensionCallback_AddView(This,pExtViewData)	\
-    ( (This)->lpVtbl -> AddView(This,pExtViewData) ) 
+    ( (This)->lpVtbl -> AddView(This,pExtViewData) )
 
 #endif /* COBJMACROS */
 
@@ -6280,53 +6280,53 @@ EXTERN_C const IID IID_IViewExtensionCallback;
 #define __IConsolePower_INTERFACE_DEFINED__
 
 /* interface IConsolePower */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IConsolePower;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("1cfbdd0e-62ca-49ce-a3af-dbb2de61b068")
     IConsolePower : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetExecutionState( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE SetExecutionState(
             /* [in] */ DWORD dwAdd,
             /* [in] */ DWORD dwRemove) = 0;
-        
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE ResetIdleTimer( 
+
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE ResetIdleTimer(
             /* [in] */ DWORD dwFlags) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IConsolePowerVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IConsolePower * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IConsolePower * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IConsolePower * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetExecutionState )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetExecutionState )(
             IConsolePower * This,
             /* [in] */ DWORD dwAdd,
             /* [in] */ DWORD dwRemove);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ResetIdleTimer )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ResetIdleTimer )(
             IConsolePower * This,
             /* [in] */ DWORD dwFlags);
-        
+
         END_INTERFACE
     } IConsolePowerVtbl;
 
@@ -6335,26 +6335,26 @@ EXTERN_C const IID IID_IConsolePower;
         CONST_VTBL struct IConsolePowerVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IConsolePower_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IConsolePower_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IConsolePower_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IConsolePower_SetExecutionState(This,dwAdd,dwRemove)	\
-    ( (This)->lpVtbl -> SetExecutionState(This,dwAdd,dwRemove) ) 
+    ( (This)->lpVtbl -> SetExecutionState(This,dwAdd,dwRemove) )
 
 #define IConsolePower_ResetIdleTimer(This,dwFlags)	\
-    ( (This)->lpVtbl -> ResetIdleTimer(This,dwFlags) ) 
+    ( (This)->lpVtbl -> ResetIdleTimer(This,dwFlags) )
 
 #endif /* COBJMACROS */
 
@@ -6371,48 +6371,48 @@ EXTERN_C const IID IID_IConsolePower;
 #define __IConsolePowerSink_INTERFACE_DEFINED__
 
 /* interface IConsolePowerSink */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IConsolePowerSink;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("3333759f-fe4f-4975-b143-fec0a5dd6d65")
     IConsolePowerSink : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE OnPowerBroadcast( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE OnPowerBroadcast(
             /* [in] */ UINT nEvent,
             /* [in] */ LPARAM lParam,
             /* [out] */ __RPC__out LRESULT *plReturn) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IConsolePowerSinkVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IConsolePowerSink * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IConsolePowerSink * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IConsolePowerSink * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *OnPowerBroadcast )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *OnPowerBroadcast )(
             IConsolePowerSink * This,
             /* [in] */ UINT nEvent,
             /* [in] */ LPARAM lParam,
             /* [out] */ __RPC__out LRESULT *plReturn);
-        
+
         END_INTERFACE
     } IConsolePowerSinkVtbl;
 
@@ -6421,23 +6421,23 @@ EXTERN_C const IID IID_IConsolePowerSink;
         CONST_VTBL struct IConsolePowerSinkVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IConsolePowerSink_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IConsolePowerSink_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IConsolePowerSink_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IConsolePowerSink_OnPowerBroadcast(This,nEvent,lParam,plReturn)	\
-    ( (This)->lpVtbl -> OnPowerBroadcast(This,nEvent,lParam,plReturn) ) 
+    ( (This)->lpVtbl -> OnPowerBroadcast(This,nEvent,lParam,plReturn) )
 
 #endif /* COBJMACROS */
 
@@ -6454,48 +6454,48 @@ EXTERN_C const IID IID_IConsolePowerSink;
 #define __INodeProperties_INTERFACE_DEFINED__
 
 /* interface INodeProperties */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_INodeProperties;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("15BC4D24-A522-4406-AA55-0749537A6865")
     INodeProperties : public IUnknown
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetProperty( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetProperty(
             /* [in] */ __RPC__in_opt LPDATAOBJECT pDataObject,
             /* [in] */ __RPC__in BSTR szPropertyName,
             /* [out] */ __RPC__deref_out_opt PBSTR pbstrProperty) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct INodePropertiesVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             INodeProperties * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             INodeProperties * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             INodeProperties * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetProperty )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetProperty )(
             INodeProperties * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT pDataObject,
             /* [in] */ __RPC__in BSTR szPropertyName,
             /* [out] */ __RPC__deref_out_opt PBSTR pbstrProperty);
-        
+
         END_INTERFACE
     } INodePropertiesVtbl;
 
@@ -6504,23 +6504,23 @@ EXTERN_C const IID IID_INodeProperties;
         CONST_VTBL struct INodePropertiesVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define INodeProperties_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define INodeProperties_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define INodeProperties_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define INodeProperties_GetProperty(This,pDataObject,szPropertyName,pbstrProperty)	\
-    ( (This)->lpVtbl -> GetProperty(This,pDataObject,szPropertyName,pbstrProperty) ) 
+    ( (This)->lpVtbl -> GetProperty(This,pDataObject,szPropertyName,pbstrProperty) )
 
 #endif /* COBJMACROS */
 
@@ -6537,106 +6537,106 @@ EXTERN_C const IID IID_INodeProperties;
 #define __IConsole3_INTERFACE_DEFINED__
 
 /* interface IConsole3 */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IConsole3;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("4F85EFDB-D0E1-498c-8D4A-D010DFDD404F")
     IConsole3 : public IConsole2
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE RenameScopeItem( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE RenameScopeItem(
             /* [in] */ HSCOPEITEM hScopeItem) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IConsole3Vtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IConsole3 * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IConsole3 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IConsole3 * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetHeader )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetHeader )(
             IConsole3 * This,
             /* [in] */ __RPC__in_opt LPHEADERCTRL pHeader);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetToolbar )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetToolbar )(
             IConsole3 * This,
             /* [in] */ __RPC__in_opt LPTOOLBAR pToolbar);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryResultView )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryResultView )(
             IConsole3 * This,
             /* [out] */ __RPC__deref_out_opt LPUNKNOWN *pUnknown);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryScopeImageList )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryScopeImageList )(
             IConsole3 * This,
             /* [out] */ __RPC__deref_out_opt LPIMAGELIST *ppImageList);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryResultImageList )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryResultImageList )(
             IConsole3 * This,
             /* [out] */ __RPC__deref_out_opt LPIMAGELIST *ppImageList);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *UpdateAllViews )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *UpdateAllViews )(
             IConsole3 * This,
             /* [in] */ __RPC__in_opt LPDATAOBJECT lpDataObject,
             /* [in] */ LPARAM data,
             /* [in] */ LONG_PTR hint);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *MessageBox )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *MessageBox )(
             IConsole3 * This,
             /* [in] */ __RPC__in LPCWSTR lpszText,
             /* [in] */ __RPC__in LPCWSTR lpszTitle,
             /* [in] */ UINT fuStyle,
             /* [out] */ __RPC__out int *piRetval);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryConsoleVerb )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *QueryConsoleVerb )(
             IConsole3 * This,
             /* [out] */ __RPC__deref_out_opt LPCONSOLEVERB *ppConsoleVerb);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SelectScopeItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SelectScopeItem )(
             IConsole3 * This,
             /* [in] */ HSCOPEITEM hScopeItem);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetMainWindow )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetMainWindow )(
             IConsole3 * This,
             /* [out] */ __RPC__deref_out_opt HWND *phwnd);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *NewWindow )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *NewWindow )(
             IConsole3 * This,
             /* [in] */ HSCOPEITEM hScopeItem,
             /* [in] */ unsigned long lOptions);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Expand )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Expand )(
             IConsole3 * This,
             /* [in] */ HSCOPEITEM hItem,
             /* [in] */ BOOL bExpand);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *IsTaskpadViewPreferred )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *IsTaskpadViewPreferred )(
             IConsole3 * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetStatusText )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetStatusText )(
             IConsole3 * This,
             /* [string][in] */ __RPC__in LPOLESTR pszStatusText);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *RenameScopeItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *RenameScopeItem )(
             IConsole3 * This,
             /* [in] */ HSCOPEITEM hScopeItem);
-        
+
         END_INTERFACE
     } IConsole3Vtbl;
 
@@ -6645,67 +6645,67 @@ EXTERN_C const IID IID_IConsole3;
         CONST_VTBL struct IConsole3Vtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IConsole3_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IConsole3_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IConsole3_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IConsole3_SetHeader(This,pHeader)	\
-    ( (This)->lpVtbl -> SetHeader(This,pHeader) ) 
+    ( (This)->lpVtbl -> SetHeader(This,pHeader) )
 
 #define IConsole3_SetToolbar(This,pToolbar)	\
-    ( (This)->lpVtbl -> SetToolbar(This,pToolbar) ) 
+    ( (This)->lpVtbl -> SetToolbar(This,pToolbar) )
 
 #define IConsole3_QueryResultView(This,pUnknown)	\
-    ( (This)->lpVtbl -> QueryResultView(This,pUnknown) ) 
+    ( (This)->lpVtbl -> QueryResultView(This,pUnknown) )
 
 #define IConsole3_QueryScopeImageList(This,ppImageList)	\
-    ( (This)->lpVtbl -> QueryScopeImageList(This,ppImageList) ) 
+    ( (This)->lpVtbl -> QueryScopeImageList(This,ppImageList) )
 
 #define IConsole3_QueryResultImageList(This,ppImageList)	\
-    ( (This)->lpVtbl -> QueryResultImageList(This,ppImageList) ) 
+    ( (This)->lpVtbl -> QueryResultImageList(This,ppImageList) )
 
 #define IConsole3_UpdateAllViews(This,lpDataObject,data,hint)	\
-    ( (This)->lpVtbl -> UpdateAllViews(This,lpDataObject,data,hint) ) 
+    ( (This)->lpVtbl -> UpdateAllViews(This,lpDataObject,data,hint) )
 
 #define IConsole3_MessageBox(This,lpszText,lpszTitle,fuStyle,piRetval)	\
-    ( (This)->lpVtbl -> MessageBox(This,lpszText,lpszTitle,fuStyle,piRetval) ) 
+    ( (This)->lpVtbl -> MessageBox(This,lpszText,lpszTitle,fuStyle,piRetval) )
 
 #define IConsole3_QueryConsoleVerb(This,ppConsoleVerb)	\
-    ( (This)->lpVtbl -> QueryConsoleVerb(This,ppConsoleVerb) ) 
+    ( (This)->lpVtbl -> QueryConsoleVerb(This,ppConsoleVerb) )
 
 #define IConsole3_SelectScopeItem(This,hScopeItem)	\
-    ( (This)->lpVtbl -> SelectScopeItem(This,hScopeItem) ) 
+    ( (This)->lpVtbl -> SelectScopeItem(This,hScopeItem) )
 
 #define IConsole3_GetMainWindow(This,phwnd)	\
-    ( (This)->lpVtbl -> GetMainWindow(This,phwnd) ) 
+    ( (This)->lpVtbl -> GetMainWindow(This,phwnd) )
 
 #define IConsole3_NewWindow(This,hScopeItem,lOptions)	\
-    ( (This)->lpVtbl -> NewWindow(This,hScopeItem,lOptions) ) 
+    ( (This)->lpVtbl -> NewWindow(This,hScopeItem,lOptions) )
 
 
 #define IConsole3_Expand(This,hItem,bExpand)	\
-    ( (This)->lpVtbl -> Expand(This,hItem,bExpand) ) 
+    ( (This)->lpVtbl -> Expand(This,hItem,bExpand) )
 
 #define IConsole3_IsTaskpadViewPreferred(This)	\
-    ( (This)->lpVtbl -> IsTaskpadViewPreferred(This) ) 
+    ( (This)->lpVtbl -> IsTaskpadViewPreferred(This) )
 
 #define IConsole3_SetStatusText(This,pszStatusText)	\
-    ( (This)->lpVtbl -> SetStatusText(This,pszStatusText) ) 
+    ( (This)->lpVtbl -> SetStatusText(This,pszStatusText) )
 
 
 #define IConsole3_RenameScopeItem(This,hScopeItem)	\
-    ( (This)->lpVtbl -> RenameScopeItem(This,hScopeItem) ) 
+    ( (This)->lpVtbl -> RenameScopeItem(This,hScopeItem) )
 
 #endif /* COBJMACROS */
 
@@ -6722,112 +6722,112 @@ EXTERN_C const IID IID_IConsole3;
 #define __IResultData2_INTERFACE_DEFINED__
 
 /* interface IResultData2 */
-/* [unique][helpstring][uuid][object] */ 
+/* [unique][helpstring][uuid][object] */
 
 
 EXTERN_C const IID IID_IResultData2;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0F36E0EB-A7F1-4a81-BE5A-9247F7DE4B1B")
     IResultData2 : public IResultData
     {
     public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE RenameResultItem( 
+        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE RenameResultItem(
             /* [in] */ HRESULTITEM itemID) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IResultData2Vtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IResultData2 * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IResultData2 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IResultData2 * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *InsertItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *InsertItem )(
             IResultData2 * This,
             /* [out][in] */ __RPC__inout LPRESULTDATAITEM item);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteItem )(
             IResultData2 * This,
             /* [in] */ HRESULTITEM itemID,
             /* [in] */ int nCol);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *FindItemByLParam )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *FindItemByLParam )(
             IResultData2 * This,
             /* [in] */ LPARAM lParam,
             /* [out] */ __RPC__out HRESULTITEM *pItemID);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteAllRsltItems )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *DeleteAllRsltItems )(
             IResultData2 * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetItem )(
             IResultData2 * This,
             /* [in] */ __RPC__in LPRESULTDATAITEM item);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetItem )(
             IResultData2 * This,
             /* [out][in] */ __RPC__inout LPRESULTDATAITEM item);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetNextItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetNextItem )(
             IResultData2 * This,
             /* [out][in] */ __RPC__inout LPRESULTDATAITEM item);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ModifyItemState )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ModifyItemState )(
             IResultData2 * This,
             /* [in] */ int nIndex,
             /* [in] */ HRESULTITEM itemID,
             /* [in] */ UINT uAdd,
             /* [in] */ UINT uRemove);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ModifyViewStyle )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *ModifyViewStyle )(
             IResultData2 * This,
             /* [in] */ MMC_RESULT_VIEW_STYLE add,
             /* [in] */ MMC_RESULT_VIEW_STYLE remove);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetViewMode )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetViewMode )(
             IResultData2 * This,
             /* [in] */ long lViewMode);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetViewMode )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetViewMode )(
             IResultData2 * This,
             /* [out] */ __RPC__out long *lViewMode);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *UpdateItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *UpdateItem )(
             IResultData2 * This,
             /* [in] */ HRESULTITEM itemID);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Sort )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *Sort )(
             IResultData2 * This,
             /* [in] */ int nColumn,
             /* [in] */ DWORD dwSortOptions,
             /* [in] */ LPARAM lUserParam);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetDescBarText )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetDescBarText )(
             IResultData2 * This,
             /* [in] */ __RPC__in LPOLESTR DescText);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetItemCount )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *SetItemCount )(
             IResultData2 * This,
             /* [in] */ int nItemCount,
             /* [in] */ DWORD dwOptions);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *RenameResultItem )( 
+
+        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *RenameResultItem )(
             IResultData2 * This,
             /* [in] */ HRESULTITEM itemID);
-        
+
         END_INTERFACE
     } IResultData2Vtbl;
 
@@ -6836,69 +6836,69 @@ EXTERN_C const IID IID_IResultData2;
         CONST_VTBL struct IResultData2Vtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IResultData2_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IResultData2_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IResultData2_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IResultData2_InsertItem(This,item)	\
-    ( (This)->lpVtbl -> InsertItem(This,item) ) 
+    ( (This)->lpVtbl -> InsertItem(This,item) )
 
 #define IResultData2_DeleteItem(This,itemID,nCol)	\
-    ( (This)->lpVtbl -> DeleteItem(This,itemID,nCol) ) 
+    ( (This)->lpVtbl -> DeleteItem(This,itemID,nCol) )
 
 #define IResultData2_FindItemByLParam(This,lParam,pItemID)	\
-    ( (This)->lpVtbl -> FindItemByLParam(This,lParam,pItemID) ) 
+    ( (This)->lpVtbl -> FindItemByLParam(This,lParam,pItemID) )
 
 #define IResultData2_DeleteAllRsltItems(This)	\
-    ( (This)->lpVtbl -> DeleteAllRsltItems(This) ) 
+    ( (This)->lpVtbl -> DeleteAllRsltItems(This) )
 
 #define IResultData2_SetItem(This,item)	\
-    ( (This)->lpVtbl -> SetItem(This,item) ) 
+    ( (This)->lpVtbl -> SetItem(This,item) )
 
 #define IResultData2_GetItem(This,item)	\
-    ( (This)->lpVtbl -> GetItem(This,item) ) 
+    ( (This)->lpVtbl -> GetItem(This,item) )
 
 #define IResultData2_GetNextItem(This,item)	\
-    ( (This)->lpVtbl -> GetNextItem(This,item) ) 
+    ( (This)->lpVtbl -> GetNextItem(This,item) )
 
 #define IResultData2_ModifyItemState(This,nIndex,itemID,uAdd,uRemove)	\
-    ( (This)->lpVtbl -> ModifyItemState(This,nIndex,itemID,uAdd,uRemove) ) 
+    ( (This)->lpVtbl -> ModifyItemState(This,nIndex,itemID,uAdd,uRemove) )
 
 #define IResultData2_ModifyViewStyle(This,add,remove)	\
-    ( (This)->lpVtbl -> ModifyViewStyle(This,add,remove) ) 
+    ( (This)->lpVtbl -> ModifyViewStyle(This,add,remove) )
 
 #define IResultData2_SetViewMode(This,lViewMode)	\
-    ( (This)->lpVtbl -> SetViewMode(This,lViewMode) ) 
+    ( (This)->lpVtbl -> SetViewMode(This,lViewMode) )
 
 #define IResultData2_GetViewMode(This,lViewMode)	\
-    ( (This)->lpVtbl -> GetViewMode(This,lViewMode) ) 
+    ( (This)->lpVtbl -> GetViewMode(This,lViewMode) )
 
 #define IResultData2_UpdateItem(This,itemID)	\
-    ( (This)->lpVtbl -> UpdateItem(This,itemID) ) 
+    ( (This)->lpVtbl -> UpdateItem(This,itemID) )
 
 #define IResultData2_Sort(This,nColumn,dwSortOptions,lUserParam)	\
-    ( (This)->lpVtbl -> Sort(This,nColumn,dwSortOptions,lUserParam) ) 
+    ( (This)->lpVtbl -> Sort(This,nColumn,dwSortOptions,lUserParam) )
 
 #define IResultData2_SetDescBarText(This,DescText)	\
-    ( (This)->lpVtbl -> SetDescBarText(This,DescText) ) 
+    ( (This)->lpVtbl -> SetDescBarText(This,DescText) )
 
 #define IResultData2_SetItemCount(This,nItemCount,dwOptions)	\
-    ( (This)->lpVtbl -> SetItemCount(This,nItemCount,dwOptions) ) 
+    ( (This)->lpVtbl -> SetItemCount(This,nItemCount,dwOptions) )
 
 
 #define IResultData2_RenameResultItem(This,itemID)	\
-    ( (This)->lpVtbl -> RenameResultItem(This,itemID) ) 
+    ( (This)->lpVtbl -> RenameResultItem(This,itemID) )
 
 #endif /* COBJMACROS */
 
@@ -6912,11 +6912,11 @@ EXTERN_C const IID IID_IResultData2;
 
 
 /* interface __MIDL_itf_mmc_0000_0046 */
-/* [local] */ 
+/* [local] */
 
 #endif // MMC_VER >= 0x0200
 #if (MMC_VER >= 0x0210)
-typedef 
+typedef
 enum _MMC_ITEM_OVERLAY
     {	MMC_ITEM_OVERLAY_NONE	= 0,
 	MMC_ITEM_OVERLAY_ERROR	= 1,
@@ -6947,55 +6947,55 @@ extern RPC_IF_HANDLE __MIDL_itf_mmc_0000_0046_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 
-unsigned long             __RPC_USER  BSTR_UserSize(     unsigned long *, unsigned long            , BSTR * ); 
-unsigned char * __RPC_USER  BSTR_UserMarshal(  unsigned long *, unsigned char *, BSTR * ); 
-unsigned char * __RPC_USER  BSTR_UserUnmarshal(unsigned long *, unsigned char *, BSTR * ); 
-void                      __RPC_USER  BSTR_UserFree(     unsigned long *, BSTR * ); 
+unsigned long             __RPC_USER  BSTR_UserSize(     unsigned long *, unsigned long            , BSTR * );
+unsigned char * __RPC_USER  BSTR_UserMarshal(  unsigned long *, unsigned char *, BSTR * );
+unsigned char * __RPC_USER  BSTR_UserUnmarshal(unsigned long *, unsigned char *, BSTR * );
+void                      __RPC_USER  BSTR_UserFree(     unsigned long *, BSTR * );
 
-unsigned long             __RPC_USER  HBITMAP_UserSize(     unsigned long *, unsigned long            , HBITMAP * ); 
-unsigned char * __RPC_USER  HBITMAP_UserMarshal(  unsigned long *, unsigned char *, HBITMAP * ); 
-unsigned char * __RPC_USER  HBITMAP_UserUnmarshal(unsigned long *, unsigned char *, HBITMAP * ); 
-void                      __RPC_USER  HBITMAP_UserFree(     unsigned long *, HBITMAP * ); 
+unsigned long             __RPC_USER  HBITMAP_UserSize(     unsigned long *, unsigned long            , HBITMAP * );
+unsigned char * __RPC_USER  HBITMAP_UserMarshal(  unsigned long *, unsigned char *, HBITMAP * );
+unsigned char * __RPC_USER  HBITMAP_UserUnmarshal(unsigned long *, unsigned char *, HBITMAP * );
+void                      __RPC_USER  HBITMAP_UserFree(     unsigned long *, HBITMAP * );
 
-unsigned long             __RPC_USER  HICON_UserSize(     unsigned long *, unsigned long            , HICON * ); 
-unsigned char * __RPC_USER  HICON_UserMarshal(  unsigned long *, unsigned char *, HICON * ); 
-unsigned char * __RPC_USER  HICON_UserUnmarshal(unsigned long *, unsigned char *, HICON * ); 
-void                      __RPC_USER  HICON_UserFree(     unsigned long *, HICON * ); 
+unsigned long             __RPC_USER  HICON_UserSize(     unsigned long *, unsigned long            , HICON * );
+unsigned char * __RPC_USER  HICON_UserMarshal(  unsigned long *, unsigned char *, HICON * );
+unsigned char * __RPC_USER  HICON_UserUnmarshal(unsigned long *, unsigned char *, HICON * );
+void                      __RPC_USER  HICON_UserFree(     unsigned long *, HICON * );
 
-unsigned long             __RPC_USER  HPALETTE_UserSize(     unsigned long *, unsigned long            , HPALETTE * ); 
-unsigned char * __RPC_USER  HPALETTE_UserMarshal(  unsigned long *, unsigned char *, HPALETTE * ); 
-unsigned char * __RPC_USER  HPALETTE_UserUnmarshal(unsigned long *, unsigned char *, HPALETTE * ); 
-void                      __RPC_USER  HPALETTE_UserFree(     unsigned long *, HPALETTE * ); 
+unsigned long             __RPC_USER  HPALETTE_UserSize(     unsigned long *, unsigned long            , HPALETTE * );
+unsigned char * __RPC_USER  HPALETTE_UserMarshal(  unsigned long *, unsigned char *, HPALETTE * );
+unsigned char * __RPC_USER  HPALETTE_UserUnmarshal(unsigned long *, unsigned char *, HPALETTE * );
+void                      __RPC_USER  HPALETTE_UserFree(     unsigned long *, HPALETTE * );
 
-unsigned long             __RPC_USER  HWND_UserSize(     unsigned long *, unsigned long            , HWND * ); 
-unsigned char * __RPC_USER  HWND_UserMarshal(  unsigned long *, unsigned char *, HWND * ); 
-unsigned char * __RPC_USER  HWND_UserUnmarshal(unsigned long *, unsigned char *, HWND * ); 
-void                      __RPC_USER  HWND_UserFree(     unsigned long *, HWND * ); 
+unsigned long             __RPC_USER  HWND_UserSize(     unsigned long *, unsigned long            , HWND * );
+unsigned char * __RPC_USER  HWND_UserMarshal(  unsigned long *, unsigned char *, HWND * );
+unsigned char * __RPC_USER  HWND_UserUnmarshal(unsigned long *, unsigned char *, HWND * );
+void                      __RPC_USER  HWND_UserFree(     unsigned long *, HWND * );
 
-unsigned long             __RPC_USER  BSTR_UserSize64(     unsigned long *, unsigned long            , BSTR * ); 
-unsigned char * __RPC_USER  BSTR_UserMarshal64(  unsigned long *, unsigned char *, BSTR * ); 
-unsigned char * __RPC_USER  BSTR_UserUnmarshal64(unsigned long *, unsigned char *, BSTR * ); 
-void                      __RPC_USER  BSTR_UserFree64(     unsigned long *, BSTR * ); 
+unsigned long             __RPC_USER  BSTR_UserSize64(     unsigned long *, unsigned long            , BSTR * );
+unsigned char * __RPC_USER  BSTR_UserMarshal64(  unsigned long *, unsigned char *, BSTR * );
+unsigned char * __RPC_USER  BSTR_UserUnmarshal64(unsigned long *, unsigned char *, BSTR * );
+void                      __RPC_USER  BSTR_UserFree64(     unsigned long *, BSTR * );
 
-unsigned long             __RPC_USER  HBITMAP_UserSize64(     unsigned long *, unsigned long            , HBITMAP * ); 
-unsigned char * __RPC_USER  HBITMAP_UserMarshal64(  unsigned long *, unsigned char *, HBITMAP * ); 
-unsigned char * __RPC_USER  HBITMAP_UserUnmarshal64(unsigned long *, unsigned char *, HBITMAP * ); 
-void                      __RPC_USER  HBITMAP_UserFree64(     unsigned long *, HBITMAP * ); 
+unsigned long             __RPC_USER  HBITMAP_UserSize64(     unsigned long *, unsigned long            , HBITMAP * );
+unsigned char * __RPC_USER  HBITMAP_UserMarshal64(  unsigned long *, unsigned char *, HBITMAP * );
+unsigned char * __RPC_USER  HBITMAP_UserUnmarshal64(unsigned long *, unsigned char *, HBITMAP * );
+void                      __RPC_USER  HBITMAP_UserFree64(     unsigned long *, HBITMAP * );
 
-unsigned long             __RPC_USER  HICON_UserSize64(     unsigned long *, unsigned long            , HICON * ); 
-unsigned char * __RPC_USER  HICON_UserMarshal64(  unsigned long *, unsigned char *, HICON * ); 
-unsigned char * __RPC_USER  HICON_UserUnmarshal64(unsigned long *, unsigned char *, HICON * ); 
-void                      __RPC_USER  HICON_UserFree64(     unsigned long *, HICON * ); 
+unsigned long             __RPC_USER  HICON_UserSize64(     unsigned long *, unsigned long            , HICON * );
+unsigned char * __RPC_USER  HICON_UserMarshal64(  unsigned long *, unsigned char *, HICON * );
+unsigned char * __RPC_USER  HICON_UserUnmarshal64(unsigned long *, unsigned char *, HICON * );
+void                      __RPC_USER  HICON_UserFree64(     unsigned long *, HICON * );
 
-unsigned long             __RPC_USER  HPALETTE_UserSize64(     unsigned long *, unsigned long            , HPALETTE * ); 
-unsigned char * __RPC_USER  HPALETTE_UserMarshal64(  unsigned long *, unsigned char *, HPALETTE * ); 
-unsigned char * __RPC_USER  HPALETTE_UserUnmarshal64(unsigned long *, unsigned char *, HPALETTE * ); 
-void                      __RPC_USER  HPALETTE_UserFree64(     unsigned long *, HPALETTE * ); 
+unsigned long             __RPC_USER  HPALETTE_UserSize64(     unsigned long *, unsigned long            , HPALETTE * );
+unsigned char * __RPC_USER  HPALETTE_UserMarshal64(  unsigned long *, unsigned char *, HPALETTE * );
+unsigned char * __RPC_USER  HPALETTE_UserUnmarshal64(unsigned long *, unsigned char *, HPALETTE * );
+void                      __RPC_USER  HPALETTE_UserFree64(     unsigned long *, HPALETTE * );
 
-unsigned long             __RPC_USER  HWND_UserSize64(     unsigned long *, unsigned long            , HWND * ); 
-unsigned char * __RPC_USER  HWND_UserMarshal64(  unsigned long *, unsigned char *, HWND * ); 
-unsigned char * __RPC_USER  HWND_UserUnmarshal64(unsigned long *, unsigned char *, HWND * ); 
-void                      __RPC_USER  HWND_UserFree64(     unsigned long *, HWND * ); 
+unsigned long             __RPC_USER  HWND_UserSize64(     unsigned long *, unsigned long            , HWND * );
+unsigned char * __RPC_USER  HWND_UserMarshal64(  unsigned long *, unsigned char *, HWND * );
+unsigned char * __RPC_USER  HWND_UserUnmarshal64(unsigned long *, unsigned char *, HWND * );
+void                      __RPC_USER  HWND_UserFree64(     unsigned long *, HWND * );
 
 /* end of Additional Prototypes */
 
@@ -7004,6 +7004,3 @@ void                      __RPC_USER  HWND_UserFree64(     unsigned long *, HWND
 #endif
 
 #endif
-
-
-

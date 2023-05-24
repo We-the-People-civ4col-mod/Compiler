@@ -438,14 +438,14 @@ LONG
 APIENTRY
 RegDisableReflectionKey (
     __in HKEY hBase
-    );    
+    );
 
 WINADVAPI
 LONG
 APIENTRY
 RegEnableReflectionKey (
     __in HKEY hBase
-    );    
+    );
 
 WINADVAPI
 LONG
@@ -453,8 +453,8 @@ APIENTRY
 RegQueryReflectionKey (
     __in HKEY hBase,
     __out BOOL *bIsReflectionDisabled
-    );    
-    
+    );
+
 WINADVAPI
 LSTATUS
 APIENTRY
@@ -1100,7 +1100,7 @@ RegLoadMUIStringA (
                     __out_bcount_opt(cbOutBuf)  LPSTR     pszOutBuf,
                     __in                    DWORD       cbOutBuf,
                     __out_opt               LPDWORD     pcbData,
-                    __in                    DWORD       Flags,   
+                    __in                    DWORD       Flags,
                     __in_opt                LPCSTR    pszDirectory
                     );
 WINADVAPI
@@ -1112,7 +1112,7 @@ RegLoadMUIStringW (
                     __out_bcount_opt(cbOutBuf)  LPWSTR     pszOutBuf,
                     __in                    DWORD       cbOutBuf,
                     __out_opt               LPDWORD     pcbData,
-                    __in                    DWORD       Flags,   
+                    __in                    DWORD       Flags,
                     __in_opt                LPCWSTR    pszDirectory
                     );
 #ifdef UNICODE
@@ -1128,7 +1128,7 @@ APIENTRY
 RegLoadAppKeyA (
         __in        LPCSTR    lpFile,
         __out       PHKEY       phkResult,
-        __in        REGSAM      samDesired, 
+        __in        REGSAM      samDesired,
         __in        DWORD       dwOptions,
         __reserved  DWORD       Reserved
     );
@@ -1138,7 +1138,7 @@ APIENTRY
 RegLoadAppKeyW (
         __in        LPCWSTR    lpFile,
         __out       PHKEY       phkResult,
-        __in        REGSAM      samDesired, 
+        __in        REGSAM      samDesired,
         __in        DWORD       dwOptions,
         __reserved  DWORD       Reserved
     );
@@ -1203,7 +1203,7 @@ AbortSystemShutdownW(
 // defines for InitiateSystemShutdownEx reason codes
 //
 
-#include <reason.h>             // get the public reasons
+#include <Reason.h>             // get the public reasons
 //
 // Then for Historical reasons support some old symbols, internal only
 
@@ -1329,5 +1329,3 @@ Wow64Win32ApiEntry (
 
 
 #endif // _WINREG_
-
-

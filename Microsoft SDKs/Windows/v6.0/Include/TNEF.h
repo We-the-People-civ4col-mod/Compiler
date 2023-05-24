@@ -192,7 +192,7 @@ enum { atypNull, atypFile, atypOle, atypPicture, atypMax };
 
 #define MAC_BINARY	((DWORD) 0x00000001)
 
-#include <pshpack1.h>
+#include <PshPack1.h>
 typedef struct _renddata
 {
 	ATYP	atyp;
@@ -202,14 +202,14 @@ typedef struct _renddata
 	DWORD	dwFlags;
 
 } RENDDATA, *PRENDDATA;
-#include <poppack.h>
+#include <PopPack.h>
 
 
 /* ----------------------------------- */
 /* TNEF Down-level Date/Time Structure */
 /* ----------------------------------- */
 
-#include <pshpack1.h>
+#include <PshPack1.h>
 typedef struct _dtr
 {
 	WORD	wYear;
@@ -221,7 +221,7 @@ typedef struct _dtr
 	WORD	wDayOfWeek;
 
 } DTR;
-#include <poppack.h>
+#include <PopPack.h>
 
 
 /* ----------------------------- */
@@ -373,4 +373,3 @@ typedef struct _NSID
 #endif
 
 #endif	/*	defined TNEF_H */
-

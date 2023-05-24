@@ -9,7 +9,7 @@
 #ifndef _INC_SHELLAPI
 #define _INC_SHELLAPI
 
-#include <SpecStrings.h>
+#include <specstrings.h>
 
 //
 // Define API decoration for direct importing of DLL references.
@@ -44,7 +44,7 @@
 
 
 #if !defined(_WIN64)
-#include <pshpack1.h>
+#include <PshPack1.h>
 #endif
 
 #ifdef __cplusplus
@@ -1274,9 +1274,9 @@ typedef enum SHSTOCKICONID
     SIID_AUTOLIST = 49,           // AutoList
     SIID_PRINTERNET = 50,         // Network printer
     SIID_SERVERSHARE = 51,        // Server share
-    SIID_PRINTERFAX = 52,         // Fax printer 
+    SIID_PRINTERFAX = 52,         // Fax printer
     SIID_PRINTERFAXNET = 53,      // Networked Fax Printer
-    SIID_PRINTERFILE = 54,        // Print to File 
+    SIID_PRINTERFILE = 54,        // Print to File
     SIID_STACK = 55,              // Stack
     SIID_MEDIASVCD = 56,          // SVCD Media
     SIID_STUFFEDFOLDER = 57,      // Folder containing other items
@@ -1287,17 +1287,17 @@ typedef enum SHSTOCKICONID
     SIID_MEDIADVDRW = 62,         // DVD-RW Media
     SIID_MEDIADVDR = 63,          // DVD-R Media
     SIID_MEDIADVDROM = 64,        // DVD-ROM Media
-    SIID_MEDIACDAUDIOPLUS = 65,   // CD+ (Enhanced CD) Media 
-    SIID_MEDIACDRW = 66,          // CD-RW Media 
+    SIID_MEDIACDAUDIOPLUS = 65,   // CD+ (Enhanced CD) Media
+    SIID_MEDIACDRW = 66,          // CD-RW Media
     SIID_MEDIACDR = 67,           // CD-R Media
     SIID_MEDIACDBURN = 68,        // Burning CD
-    SIID_MEDIABLANKCD = 69,       // Blank CD Media 
+    SIID_MEDIABLANKCD = 69,       // Blank CD Media
     SIID_MEDIACDROM = 70,         // CD-ROM Media
     SIID_AUDIOFILES = 71,         // Audio files
     SIID_IMAGEFILES = 72,         // Image files
     SIID_VIDEOFILES = 73,         // Video files
     SIID_MIXEDFILES = 74,         // Mixed files
-    SIID_FOLDERBACK = 75,         // Folder back 
+    SIID_FOLDERBACK = 75,         // Folder back
     SIID_FOLDERFRONT = 76,        // Folder front
     SIID_SHIELD = 77,             // Security shield. Use for UAC prompts only.
     SIID_WARNING = 78,            // Warning
@@ -1601,7 +1601,7 @@ typedef HRESULT (STDMETHODCALLTYPE *PFNSHOWSHAREFOLDERUIW)(HWND hwndParent, LPCW
 #endif  /* __cplusplus */
 
 #if !defined(_WIN64)
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
@@ -1670,5 +1670,3 @@ STDAPI SHGetDriveMedia(LPCWSTR pszDrive, __out DWORD *pdwMediaContent);
 #endif // (NTDDI_VERSION >= NTDDI_LONGHORN)
 
 #endif  /* _INC_SHELLAPI */
-
-

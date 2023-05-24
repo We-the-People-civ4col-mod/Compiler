@@ -14,7 +14,7 @@ Abstract:
 
     The APIs in this header are added in Windows NT SUR and are not available
     in prior Windows NT or Windows 95 releases.
-    
+
 --*/
 
 #ifndef _RASDLG_H_
@@ -24,7 +24,7 @@ Abstract:
 #pragma once
 #endif
 
-#include <pshpack4.h>
+#include <PshPack4.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -286,7 +286,6 @@ BOOL APIENTRY RasDialDlgW(
 }
 #endif
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #endif // _RASDLG_H_
-

@@ -7,5 +7,4 @@
 //
 //----------------------------------------------------------------------------
 
-// All items moved to wingdi.h
-
+// All items moved to WinGDI.h

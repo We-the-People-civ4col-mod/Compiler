@@ -16,7 +16,7 @@
 #define _INC_DIGITALV  100
 
 #ifdef _WIN32
-#include <pshpack1.h>
+#include <PshPack1.h>
 #else
 #ifndef RC_INVOKED
 #pragma pack(1)
@@ -494,7 +494,7 @@ typedef struct {
 #ifdef MCI_USE_OFFEXT
     POINT   ptOffset;
     POINT   ptExtent;
-#else	
+#else
     RECT    rc;
 #endif
 } MCI_DGV_RECT_PARMS;
@@ -508,7 +508,7 @@ typedef struct {
 #ifdef MCI_USE_OFFEXT
     POINT   ptOffset;
     POINT   ptExtent;
-#else	
+#else
     RECT    rc;
 #endif
 } MCI_DGV_CAPTURE_PARMSA;
@@ -518,7 +518,7 @@ typedef struct {
 #ifdef MCI_USE_OFFEXT
     POINT   ptOffset;
     POINT   ptExtent;
-#else	
+#else
     RECT    rc;
 #endif
 } MCI_DGV_CAPTURE_PARMSW;
@@ -549,7 +549,7 @@ typedef struct {
 #ifdef MCI_USE_OFFEXT
     POINT   ptOffset;
     POINT   ptExtent;
-#else	
+#else
     RECT    rc;
 #endif
     DWORD   dwAudioStream;
@@ -574,7 +574,7 @@ typedef struct {
 #ifdef MCI_USE_OFFEXT
     POINT   ptOffset;
     POINT   ptExtent;
-#else	
+#else
     RECT    rc;
 #endif
     DWORD   dwAudioStream;
@@ -591,7 +591,7 @@ typedef struct {
 #ifdef MCI_USE_OFFEXT
     POINT   ptOffset;
     POINT   ptExtent;
-#else	
+#else
     RECT    rc;
 #endif
     DWORD   dwAudioStream;
@@ -735,7 +735,7 @@ typedef struct {
 #ifdef MCI_USE_OFFEXT
     POINT   ptOffset;
     POINT   ptExtent;
-#else	
+#else
     RECT    rc;
 #endif
     DWORD   dwAudioStream;
@@ -796,7 +796,7 @@ typedef struct {
 #ifdef MCI_USE_OFFEXT
     POINT   ptOffset;
     POINT   ptExtent;
-#else	
+#else
     RECT    rc;
 #endif
     DWORD   dwAudioStream;
@@ -837,7 +837,7 @@ typedef struct {
 #ifdef MCI_USE_OFFEXT
     POINT   ptOffset;
     POINT   ptExtent;
-#else	
+#else
     RECT    rc;
 #endif
 } MCI_DGV_RESTORE_PARMSA;
@@ -847,7 +847,7 @@ typedef struct {
 #ifdef MCI_USE_OFFEXT
     POINT   ptOffset;
     POINT   ptExtent;
-#else	
+#else
     RECT    rc;
 #endif
 } MCI_DGV_RESTORE_PARMSW;
@@ -1035,7 +1035,7 @@ typedef struct {
 #ifdef MCI_USE_OFFEXT
     POINT   ptOffset;
     POINT   ptExtent;
-#else	
+#else
     RECT    rc;
 #endif
     HDC     hDC;
@@ -1095,7 +1095,7 @@ typedef LPMCI_DGV_WINDOW_PARMSA LPMCI_DGV_WINDOW_PARMS;
 #endif	/* __cplusplus */
 
 #ifdef _WIN32
-#include <poppack.h>
+#include <PopPack.h>
 #else
 #ifndef RC_INVOKED
 #pragma pack()
@@ -1103,4 +1103,3 @@ typedef LPMCI_DGV_WINDOW_PARMSA LPMCI_DGV_WINDOW_PARMS;
 #endif
 
 #endif  /* !_INC_DIGITALV */
-

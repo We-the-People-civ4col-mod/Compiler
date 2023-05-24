@@ -4,7 +4,7 @@ Copyright (c) 1995-1998  Microsoft Corporation
 
 Module Name:
 
-    winsvc.h
+    WinSvc.h
 
 Abstract:
 
@@ -235,7 +235,7 @@ extern "C" {
 #define SERVICE_STOP_REASON_MAJOR_SOFTWARE                      0x00040000
 #define SERVICE_STOP_REASON_MAJOR_APPLICATION                   0x00050000
 #define SERVICE_STOP_REASON_MAJOR_NONE                          0x00060000
-#define SERVICE_STOP_REASON_MAJOR_MAX                           0x00070000 
+#define SERVICE_STOP_REASON_MAJOR_MAX                           0x00070000
 #define SERVICE_STOP_REASON_MAJOR_MIN_CUSTOM                    0x00400000
 #define SERVICE_STOP_REASON_MAJOR_MAX_CUSTOM                    0x00ff0000
 
@@ -261,7 +261,7 @@ extern "C" {
 #define SERVICE_STOP_REASON_MINOR_SECURITYFIX                   0x0000000f
 #define SERVICE_STOP_REASON_MINOR_SECURITY                      0x00000010
 #define SERVICE_STOP_REASON_MINOR_NETWORK_CONNECTIVITY          0x00000011
-#define SERVICE_STOP_REASON_MINOR_WMI                           0x00000012 
+#define SERVICE_STOP_REASON_MINOR_WMI                           0x00000012
 #define SERVICE_STOP_REASON_MINOR_SERVICEPACK_UNINSTALL         0x00000013
 #define SERVICE_STOP_REASON_MINOR_SOFTWARE_UPDATE_UNINSTALL     0x00000014
 #define SERVICE_STOP_REASON_MINOR_SECURITYFIX_UNINSTALL         0x00000015
@@ -282,7 +282,7 @@ extern "C" {
 #define SERVICE_SID_TYPE_NONE                                   0x00000000
 #define SERVICE_SID_TYPE_UNRESTRICTED                           0x00000001
 #define SERVICE_SID_TYPE_RESTRICTED                             ( 0x00000002 | SERVICE_SID_TYPE_UNRESTRICTED )
-                                                  
+
 //
 // Service description string
 //
@@ -613,10 +613,10 @@ typedef DWORD (WINAPI *LPHANDLER_FUNCTION_EX)(
 //
 // Service notification parameters
 //
-typedef 
+typedef
 VOID
 ( CALLBACK * PFN_SC_NOTIFY_CALLBACK ) (
-    IN PVOID pParameter 
+    IN PVOID pParameter
     );
 
 //
@@ -624,16 +624,16 @@ VOID
 //
 typedef struct _SERVICE_NOTIFY_1 {
     DWORD                   dwVersion;
-    PFN_SC_NOTIFY_CALLBACK  pfnNotifyCallback; 
-    PVOID                   pContext; 
+    PFN_SC_NOTIFY_CALLBACK  pfnNotifyCallback;
+    PVOID                   pContext;
     DWORD                   dwNotificationStatus;
     SERVICE_STATUS_PROCESS  ServiceStatus;
 } SERVICE_NOTIFY_1, *PSERVICE_NOTIFY_1;
 
 typedef struct _SERVICE_NOTIFY_2A {
     DWORD                   dwVersion;
-    PFN_SC_NOTIFY_CALLBACK  pfnNotifyCallback; 
-    PVOID                   pContext; 
+    PFN_SC_NOTIFY_CALLBACK  pfnNotifyCallback;
+    PVOID                   pContext;
     DWORD                   dwNotificationStatus;
     SERVICE_STATUS_PROCESS  ServiceStatus;
     DWORD                   dwNotificationTriggered;
@@ -641,8 +641,8 @@ typedef struct _SERVICE_NOTIFY_2A {
 } SERVICE_NOTIFY_2A, *PSERVICE_NOTIFY_2A;
 typedef struct _SERVICE_NOTIFY_2W {
     DWORD                   dwVersion;
-    PFN_SC_NOTIFY_CALLBACK  pfnNotifyCallback; 
-    PVOID                   pContext; 
+    PFN_SC_NOTIFY_CALLBACK  pfnNotifyCallback;
+    PVOID                   pContext;
     DWORD                   dwNotificationStatus;
     SERVICE_STATUS_PROCESS  ServiceStatus;
     DWORD                   dwNotificationTriggered;
@@ -829,7 +829,7 @@ WINAPI
 EnumDependentServicesA(
     __in            SC_HANDLE               hService,
     __in            DWORD                   dwServiceState,
-    __out_bcount_opt(cbBufSize)     
+    __out_bcount_opt(cbBufSize)
                     LPENUM_SERVICE_STATUSA  lpServices,
     __in            DWORD                   cbBufSize,
     __out           LPDWORD                 pcbBytesNeeded,
@@ -842,7 +842,7 @@ WINAPI
 EnumDependentServicesW(
     __in            SC_HANDLE               hService,
     __in            DWORD                   dwServiceState,
-    __out_bcount_opt(cbBufSize)     
+    __out_bcount_opt(cbBufSize)
                     LPENUM_SERVICE_STATUSW  lpServices,
     __in            DWORD                   cbBufSize,
     __out           LPDWORD                 pcbBytesNeeded,
@@ -899,7 +899,7 @@ EnumServicesStatusExA(
     __in            SC_ENUM_TYPE            InfoLevel,
     __in            DWORD                   dwServiceType,
     __in            DWORD                   dwServiceState,
-    __out_bcount_opt(cbBufSize) 
+    __out_bcount_opt(cbBufSize)
                     LPBYTE                  lpServices,
     __in            DWORD                   cbBufSize,
     __out           LPDWORD                 pcbBytesNeeded,
@@ -916,7 +916,7 @@ EnumServicesStatusExW(
     __in            SC_ENUM_TYPE            InfoLevel,
     __in            DWORD                   dwServiceType,
     __in            DWORD                   dwServiceState,
-    __out_bcount_opt(cbBufSize) 
+    __out_bcount_opt(cbBufSize)
                     LPBYTE                  lpServices,
     __in            DWORD                   cbBufSize,
     __out           LPDWORD                 pcbBytesNeeded,
@@ -965,7 +965,7 @@ WINAPI
 GetServiceDisplayNameA(
     __in            SC_HANDLE               hSCManager,
     __in            LPCSTR                lpServiceName,
-    __out_ecount_opt(*lpcchBuffer) 
+    __out_ecount_opt(*lpcchBuffer)
                     LPSTR                 lpDisplayName,
     __inout         LPDWORD                 lpcchBuffer
     );
@@ -976,7 +976,7 @@ WINAPI
 GetServiceDisplayNameW(
     __in            SC_HANDLE               hSCManager,
     __in            LPCWSTR                lpServiceName,
-    __out_ecount_opt(*lpcchBuffer) 
+    __out_ecount_opt(*lpcchBuffer)
                     LPWSTR                 lpDisplayName,
     __inout         LPDWORD                 lpcchBuffer
     );
@@ -1054,7 +1054,7 @@ BOOL
 WINAPI
 QueryServiceConfigA(
     __in            SC_HANDLE               hService,
-    __out_bcount_opt(cbBufSize)      
+    __out_bcount_opt(cbBufSize)
                     LPQUERY_SERVICE_CONFIGA lpServiceConfig,
     __in            DWORD                   cbBufSize,
     __out           LPDWORD                 pcbBytesNeeded
@@ -1065,7 +1065,7 @@ BOOL
 WINAPI
 QueryServiceConfigW(
     __in            SC_HANDLE               hService,
-    __out_bcount_opt(cbBufSize)      
+    __out_bcount_opt(cbBufSize)
                     LPQUERY_SERVICE_CONFIGW lpServiceConfig,
     __in            DWORD                   cbBufSize,
     __out           LPDWORD                 pcbBytesNeeded
@@ -1083,7 +1083,7 @@ WINAPI
 QueryServiceConfig2A(
     __in            SC_HANDLE               hService,
     __in            DWORD                   dwInfoLevel,
-    __out_bcount_opt(cbBufSize) 
+    __out_bcount_opt(cbBufSize)
                     LPBYTE                  lpBuffer,
     __in            DWORD                   cbBufSize,
     __out           LPDWORD                 pcbBytesNeeded
@@ -1095,7 +1095,7 @@ WINAPI
 QueryServiceConfig2W(
     __in            SC_HANDLE               hService,
     __in            DWORD                   dwInfoLevel,
-    __out_bcount_opt(cbBufSize) 
+    __out_bcount_opt(cbBufSize)
                     LPBYTE                  lpBuffer,
     __in            DWORD                   cbBufSize,
     __out           LPDWORD                 pcbBytesNeeded
@@ -1112,7 +1112,7 @@ BOOL
 WINAPI
 QueryServiceLockStatusA(
     __in            SC_HANDLE                       hSCManager,
-    __out_bcount_opt(cbBufSize) 
+    __out_bcount_opt(cbBufSize)
                     LPQUERY_SERVICE_LOCK_STATUSA    lpLockStatus,
     __in            DWORD                           cbBufSize,
     __out           LPDWORD                         pcbBytesNeeded
@@ -1123,7 +1123,7 @@ BOOL
 WINAPI
 QueryServiceLockStatusW(
     __in            SC_HANDLE                       hSCManager,
-    __out_bcount_opt(cbBufSize) 
+    __out_bcount_opt(cbBufSize)
                     LPQUERY_SERVICE_LOCK_STATUSW    lpLockStatus,
     __in            DWORD                           cbBufSize,
     __out           LPDWORD                         pcbBytesNeeded
@@ -1141,7 +1141,7 @@ WINAPI
 QueryServiceObjectSecurity(
     __in            SC_HANDLE               hService,
     __in            SECURITY_INFORMATION    dwSecurityInformation,
-    __out_bcount_opt(cbBufSize) 
+    __out_bcount_opt(cbBufSize)
                     PSECURITY_DESCRIPTOR    lpSecurityDescriptor,
     __in            DWORD                   cbBufSize,
     __out           LPDWORD                 pcbBytesNeeded
@@ -1163,7 +1163,7 @@ WINAPI
 QueryServiceStatusEx(
     __in            SC_HANDLE           hService,
     __in            SC_STATUS_TYPE      InfoLevel,
-    __out_bcount_opt(cbBufSize) 
+    __out_bcount_opt(cbBufSize)
                     LPBYTE              lpBuffer,
     __in            DWORD               cbBufSize,
     __out           LPDWORD             pcbBytesNeeded
@@ -1175,7 +1175,7 @@ SERVICE_STATUS_HANDLE
 WINAPI
 RegisterServiceCtrlHandlerA(
     __in    LPCSTR                    lpServiceName,
-    __in    __callback  
+    __in    __callback
             LPHANDLER_FUNCTION          lpHandlerProc
     );
 __checkReturn
@@ -1184,7 +1184,7 @@ SERVICE_STATUS_HANDLE
 WINAPI
 RegisterServiceCtrlHandlerW(
     __in    LPCWSTR                    lpServiceName,
-    __in    __callback  
+    __in    __callback
             LPHANDLER_FUNCTION          lpHandlerProc
     );
 #ifdef UNICODE
@@ -1261,7 +1261,7 @@ WINAPI
 StartServiceA(
     __in            SC_HANDLE            hService,
     __in            DWORD                dwNumServiceArgs,
-    __in_ecount_opt(dwNumServiceArgs)       
+    __in_ecount_opt(dwNumServiceArgs)
                     LPCSTR             *lpServiceArgVectors
     );
 WINADVAPI
@@ -1270,7 +1270,7 @@ WINAPI
 StartServiceW(
     __in            SC_HANDLE            hService,
     __in            DWORD                dwNumServiceArgs,
-    __in_ecount_opt(dwNumServiceArgs)       
+    __in_ecount_opt(dwNumServiceArgs)
                     LPCWSTR             *lpServiceArgVectors
     );
 #ifdef UNICODE
@@ -1291,7 +1291,7 @@ DWORD
 WINAPI
 NotifyServiceStatusChangeA (
     __in        SC_HANDLE               hService,
-    __in        DWORD                   dwNotifyMask, 
+    __in        DWORD                   dwNotifyMask,
     __in        PSERVICE_NOTIFYA        pNotifyBuffer
     );
 WINADVAPI
@@ -1299,7 +1299,7 @@ DWORD
 WINAPI
 NotifyServiceStatusChangeW (
     __in        SC_HANDLE               hService,
-    __in        DWORD                   dwNotifyMask, 
+    __in        DWORD                   dwNotifyMask,
     __in        PSERVICE_NOTIFYW        pNotifyBuffer
     );
 #ifdef UNICODE
@@ -1331,10 +1331,9 @@ ControlServiceExW(
 #else
 #define ControlServiceEx  ControlServiceExA
 #endif // !UNICODE
-    
+
 #ifdef __cplusplus
 }
 #endif
 
 #endif // _WINSVC_
-

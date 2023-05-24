@@ -17,7 +17,7 @@ Abstract:
 #ifndef _NDR64TYPES_H
 #define _NDR64TYPES_H
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 #include <guiddef.h>    // REVIEW: or just redefine GUID here
 #if _MSC_VER >= 1200
@@ -768,8 +768,6 @@ typedef struct _NDR64_TYPE_STRICT_FULL_POINTER
 #pragma warning(pop)
 #endif
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #endif //_NDR64TYPES_H
-
-

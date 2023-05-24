@@ -18,7 +18,7 @@
 #define _WIADEF_
 
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 #ifndef _NO_COM
 #include <objbase.h>
 #endif
@@ -658,29 +658,29 @@ DEFINE_GUID(CLSID_WiaDefaultSegFilter, 0xD4F4D30B, 0x0B29, 0x4508, 0x89, 0x22, 0
 #define WIA_BASIC_PREVIEW                 1
 
 //
-// WIA Raw Format header: 
+// WIA Raw Format header:
 //
 typedef struct _WIA_RAW_HEADER
 {
-    DWORD Tag; 
+    DWORD Tag;
     DWORD Version;
-    DWORD HeaderSize; 
-    DWORD XRes; 
-    DWORD YRes;                         
+    DWORD HeaderSize;
+    DWORD XRes;
+    DWORD YRes;
     DWORD XExtent;
-    DWORD YExtent; 
+    DWORD YExtent;
     DWORD BytesPerLine;
     DWORD BitsPerPixel;
     DWORD ChannelsPerPixel;
-    DWORD DataType;    
-    BYTE  BitsPerChannel[8]; 
-    DWORD Compression; 
-    DWORD PhotometricInterp; 
-    DWORD LineOrder; 
+    DWORD DataType;
+    BYTE  BitsPerChannel[8];
+    DWORD Compression;
+    DWORD PhotometricInterp;
+    DWORD LineOrder;
     DWORD RawDataOffset;
-    DWORD RawDataSize; 
+    DWORD RawDataSize;
     DWORD PaletteOffset;
-    DWORD PaletteSize; 
+    DWORD PaletteSize;
 } WIA_RAW_HEADER;
 
 typedef struct _WIA_RAW_HEADER *PWIA_RAW_HEADER;
@@ -910,7 +910,7 @@ DEFINE_GUID(WIA_CMD_BUILD_DEVICE_TREE,    0x9cba5ce0,0xdbea,0x11d2,0x84,0x16,0x0
 // Additional WIA raw format constants
 //
 
-#define  WIA_LINE_ORDER_TOP_TO_BOTTOM        0x00000001 
+#define  WIA_LINE_ORDER_TOP_TO_BOTTOM        0x00000001
 #define  WIA_LINE_ORDER_BOTTOM_TO_TOP        0x00000002
 
 //
@@ -1292,7 +1292,7 @@ DEFINE_GUID(WIA_CMD_BUILD_DEVICE_TREE,    0x9cba5ce0,0xdbea,0x11d2,0x84,0x16,0x0
 #define  DETECT_FILM_TPA               0x400
 #define  STOR                          0x800
 #define  DETECT_STOR                   0x1000
-#define  ADVANCED_DUP                  0x2000 
+#define  ADVANCED_DUP                  0x2000
 #endif
 
 //
@@ -1533,7 +1533,7 @@ DEFINE_GUID(WIA_CMD_BUILD_DEVICE_TREE,    0x9cba5ce0,0xdbea,0x11d2,0x84,0x16,0x0
 #define WIA_DATA_COLOR_DITHER          5
 #if (_WIN32_WINNT >= 0x0600)
 #define WIA_DATA_RAW_RGB               6
-#define WIA_DATA_RAW_BGR               7 
+#define WIA_DATA_RAW_BGR               7
 #define WIA_DATA_RAW_YUV               8
 #define WIA_DATA_RAW_YUVK              9
 #define WIA_DATA_RAW_CMY              10
@@ -1799,9 +1799,9 @@ WIA_PROPID_TO_NAME g_wiaPropIdToName[] =
     {WIA_IPS_PREVIEW,                         WIA_IPS_PREVIEW_STR},
     {WIA_IPS_SHOW_PREVIEW_CONTROL,            WIA_IPS_SHOW_PREVIEW_CONTROL_STR},
     {WIA_IPS_TRANSFER_CAPABILITIES,           WIA_IPS_TRANSFER_CAPABILITIES_STR},
-    {WIA_IPS_FILM_SCAN_MODE,                  WIA_IPS_FILM_SCAN_MODE_STR}, 
+    {WIA_IPS_FILM_SCAN_MODE,                  WIA_IPS_FILM_SCAN_MODE_STR},
     {WIA_IPS_LAMP,                            WIA_IPS_LAMP_STR},
-    {WIA_IPS_LAMP_AUTO_OFF,                   WIA_IPS_LAMP_AUTO_OFF_STR}, 
+    {WIA_IPS_LAMP_AUTO_OFF,                   WIA_IPS_LAMP_AUTO_OFF_STR},
     {WIA_IPS_AUTO_DESKEW,                     WIA_IPS_AUTO_DESKEW_STR},
     {WIA_IPS_SUPPORTS_CHILD_ITEM_CREATION,    WIA_IPS_SUPPORTS_CHILD_ITEM_CREATION_STR},
     {WIA_IPS_PREVIEW_TYPE,                    WIA_IPS_PREVIEW_TYPE_STR},
@@ -1823,9 +1823,8 @@ extern WIA_PROPID_TO_NAME g_wiaPropIdToName[];
 };
 #endif
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #endif // _WIADEF_
 
 #endif //#if (_WIN32_WINNT >= 0x0501)
-

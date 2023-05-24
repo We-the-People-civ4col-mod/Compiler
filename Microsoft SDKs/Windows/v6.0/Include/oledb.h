@@ -7,8 +7,8 @@
 /* Compiler settings for oledb.idl:
     Oicf, W1, ..., env=Win32 (32b run)
     protocol : dce , ms_ext, c_ext, robust
-    error checks: allocation ref bounds_check enum stub_data 
-    VC __declspec() decoration level: 
+    error checks: allocation ref bounds_check enum stub_data
+    VC __declspec() decoration level:
          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
          DECLSPEC_UUID(), MIDL_INTERFACE()
 */
@@ -46,7 +46,7 @@
 #pragma once
 #endif
 
-/* Forward Declarations */ 
+/* Forward Declarations */
 
 #ifndef __IAccessor_FWD_DEFINED__
 #define __IAccessor_FWD_DEFINED__
@@ -543,11 +543,11 @@ typedef interface IRowsetBookmark IRowsetBookmark;
 
 #ifdef __cplusplus
 extern "C"{
-#endif 
+#endif
 
 
 /* interface __MIDL_itf_oledb_0000_0000 */
-/* [local] */ 
+/* [local] */
 
 //+---------------------------------------------------------------------------
 //
@@ -557,9 +557,9 @@ extern "C"{
 //----------------------------------------------------------------------------
 
 #ifdef _WIN64
-#include <pshpack8.h>	// 8-byte structure packing
+#include <PshPack8.h>	// 8-byte structure packing
 #else
-#include <pshpack2.h>	// 2-byte structure packing
+#include <PshPack2.h>	// 2-byte structure packing
 #endif
 
 //
@@ -574,7 +574,7 @@ extern "C"{
 #endif
 // If deprecated is defined - convert to oledb_deprecated and generate warning
 #ifdef deprecated
-#error deprecated defined 
+#error deprecated defined
 #define oledb_deprecated
 #undef deprecated
 #endif
@@ -673,7 +673,7 @@ extern RPC_IF_HANDLE __MIDL_itf_oledb_0000_0000_v0_0_s_ifspec;
 #define __DBStructureDefinitions_INTERFACE_DEFINED__
 
 /* interface DBStructureDefinitions */
-/* [unique][uuid] */ 
+/* [unique][uuid] */
 
 #ifndef UNALIGNED
 #if defined(_MIPS_) || defined(_ALPHA_) || defined(_PPC_)
@@ -686,7 +686,7 @@ extern RPC_IF_HANDLE __MIDL_itf_oledb_0000_0000_v0_0_s_ifspec;
 #if _MSC_VER >= 1100 && (!defined(SHx) || (defined(SHx) && _MSC_VER >= 1200))
 #define OLEDBDECLSPEC __declspec(selectany)
 #else
-#define OLEDBDECLSPEC 
+#define OLEDBDECLSPEC
 #endif //_MSC_VER
 typedef DWORD DBKIND;
 
@@ -698,22 +698,22 @@ enum DBKINDENUM
 	DBKIND_PGUID_NAME	= ( DBKIND_NAME + 1 ) ,
 	DBKIND_PGUID_PROPID	= ( DBKIND_PGUID_NAME + 1 ) ,
 	DBKIND_PROPID	= ( DBKIND_PGUID_PROPID + 1 ) ,
-	DBKIND_GUID	= ( DBKIND_PROPID + 1 ) 
+	DBKIND_GUID	= ( DBKIND_PROPID + 1 )
     } ;
 typedef struct tagDBID
     {
-    union 
+    union
         {
         GUID guid;
         GUID *pguid;
-         /* Empty union arm */ 
+         /* Empty union arm */
         } 	uGuid;
     DBKIND eKind;
-    union 
+    union
         {
         LPOLESTR pwszName;
         ULONG ulPropid;
-         /* Empty union arm */ 
+         /* Empty union arm */
         } 	uName;
     } 	DBID;
 
@@ -1202,11 +1202,11 @@ typedef struct tagDBCOLUMNINFO
     DBID columnid;
     } 	DBCOLUMNINFO;
 
-typedef 
+typedef
 enum tagDBBOOKMARK
     {	DBBMK_INVALID	= 0,
 	DBBMK_FIRST	= ( DBBMK_INVALID + 1 ) ,
-	DBBMK_LAST	= ( DBBMK_FIRST + 1 ) 
+	DBBMK_LAST	= ( DBBMK_FIRST + 1 )
     } 	DBBOOKMARK;
 
 #define STD_BOOKMARKLENGTH 1
@@ -1487,31 +1487,31 @@ extern const GUID DBPROPSET_INDEXALL;
 extern const GUID DBPROPSET_TABLEALL;
 extern const GUID DBPROPSET_TRUSTEEALL;
 extern const GUID DBPROPSET_CONSTRAINTALL;
-extern const GUID DBGUID_DSO;    
+extern const GUID DBGUID_DSO;
 extern const GUID DBGUID_SESSION;
-extern const GUID DBGUID_ROWSET; 
-extern const GUID DBGUID_ROW;    
+extern const GUID DBGUID_ROWSET;
+extern const GUID DBGUID_ROW;
 extern const GUID DBGUID_COMMAND;
-extern const GUID DBGUID_STREAM; 
-extern const DBID DBROWCOL_ROWURL;		        
-extern const DBID DBROWCOL_PARSENAME;            
-extern const DBID DBROWCOL_PARENTNAME;           
-extern const DBID DBROWCOL_ABSOLUTEPARSENAME;    
-extern const DBID DBROWCOL_ISHIDDEN;             
-extern const DBID DBROWCOL_ISREADONLY;           
-extern const DBID DBROWCOL_CONTENTTYPE;          
-extern const DBID DBROWCOL_CONTENTCLASS;         
-extern const DBID DBROWCOL_CONTENTLANGUAGE;      
-extern const DBID DBROWCOL_CREATIONTIME;         
-extern const DBID DBROWCOL_LASTACCESSTIME;       
-extern const DBID DBROWCOL_LASTWRITETIME;        
-extern const DBID DBROWCOL_STREAMSIZE;           
-extern const DBID DBROWCOL_ISCOLLECTION;         
-extern const DBID DBROWCOL_ISSTRUCTUREDDOCUMENT; 
-extern const DBID DBROWCOL_DEFAULTDOCUMENT;      
-extern const DBID DBROWCOL_DISPLAYNAME;          
-extern const DBID DBROWCOL_ISROOT;               
-extern const DBID DBROWCOL_DEFAULTSTREAM;        
+extern const GUID DBGUID_STREAM;
+extern const DBID DBROWCOL_ROWURL;
+extern const DBID DBROWCOL_PARSENAME;
+extern const DBID DBROWCOL_PARENTNAME;
+extern const DBID DBROWCOL_ABSOLUTEPARSENAME;
+extern const DBID DBROWCOL_ISHIDDEN;
+extern const DBID DBROWCOL_ISREADONLY;
+extern const DBID DBROWCOL_CONTENTTYPE;
+extern const DBID DBROWCOL_CONTENTCLASS;
+extern const DBID DBROWCOL_CONTENTLANGUAGE;
+extern const DBID DBROWCOL_CREATIONTIME;
+extern const DBID DBROWCOL_LASTACCESSTIME;
+extern const DBID DBROWCOL_LASTWRITETIME;
+extern const DBID DBROWCOL_STREAMSIZE;
+extern const DBID DBROWCOL_ISCOLLECTION;
+extern const DBID DBROWCOL_ISSTRUCTUREDDOCUMENT;
+extern const DBID DBROWCOL_DEFAULTDOCUMENT;
+extern const DBID DBROWCOL_DISPLAYNAME;
+extern const DBID DBROWCOL_ISROOT;
+extern const DBID DBROWCOL_DEFAULTSTREAM;
 extern const GUID DBGUID_CONTAINEROBJECT;
 #endif // OLEDBVER >= 0x0210
 //@@@- V2.1
@@ -2488,7 +2488,7 @@ typedef DWORD DBINDEX_COL_ORDER;
 
 enum DBINDEX_COL_ORDERENUM
     {	DBINDEX_COL_ORDER_ASC	= 0,
-	DBINDEX_COL_ORDER_DESC	= ( DBINDEX_COL_ORDER_ASC + 1 ) 
+	DBINDEX_COL_ORDER_DESC	= ( DBINDEX_COL_ORDER_ASC + 1 )
     } ;
 typedef struct tagDBINDEXCOLUMNDESC
     {
@@ -2553,7 +2553,7 @@ enum DBEVENTPHASEENUM
 	DBEVENTPHASE_ABOUTTODO	= ( DBEVENTPHASE_OKTODO + 1 ) ,
 	DBEVENTPHASE_SYNCHAFTER	= ( DBEVENTPHASE_ABOUTTODO + 1 ) ,
 	DBEVENTPHASE_FAILEDTODO	= ( DBEVENTPHASE_SYNCHAFTER + 1 ) ,
-	DBEVENTPHASE_DIDEVENT	= ( DBEVENTPHASE_FAILEDTODO + 1 ) 
+	DBEVENTPHASE_DIDEVENT	= ( DBEVENTPHASE_FAILEDTODO + 1 )
     } ;
 typedef DWORD DBREASON;
 
@@ -2573,7 +2573,7 @@ enum DBREASONENUM
 	DBREASON_ROW_UNDOINSERT	= ( DBREASON_ROW_UNDOCHANGE + 1 ) ,
 	DBREASON_ROW_UNDODELETE	= ( DBREASON_ROW_UNDOINSERT + 1 ) ,
 	DBREASON_ROW_UPDATE	= ( DBREASON_ROW_UNDODELETE + 1 ) ,
-	DBREASON_ROWSET_CHANGED	= ( DBREASON_ROW_UPDATE + 1 ) 
+	DBREASON_ROWSET_CHANGED	= ( DBREASON_ROW_UPDATE + 1 )
     } ;
 //@@@+ V1.5
 #if( OLEDBVER >= 0x0150 )
@@ -2582,7 +2582,7 @@ enum DBREASONENUM15
     {	DBREASON_ROWPOSITION_CHANGED	= ( DBREASON_ROWSET_CHANGED + 1 ) ,
 	DBREASON_ROWPOSITION_CHAPTERCHANGED	= ( DBREASON_ROWPOSITION_CHANGED + 1 ) ,
 	DBREASON_ROWPOSITION_CLEARED	= ( DBREASON_ROWPOSITION_CHAPTERCHANGED + 1 ) ,
-	DBREASON_ROW_ASYNCHINSERT	= ( DBREASON_ROWPOSITION_CLEARED + 1 ) 
+	DBREASON_ROW_ASYNCHINSERT	= ( DBREASON_ROWPOSITION_CLEARED + 1 )
     } ;
 #endif // OLEDBVER >= 0x0150
 //@@@- V1.5
@@ -2626,7 +2626,7 @@ enum DBASYNCHPHASEENUM
     {	DBASYNCHPHASE_INITIALIZATION	= 0,
 	DBASYNCHPHASE_POPULATION	= ( DBASYNCHPHASE_INITIALIZATION + 1 ) ,
 	DBASYNCHPHASE_COMPLETE	= ( DBASYNCHPHASE_POPULATION + 1 ) ,
-	DBASYNCHPHASE_CANCELED	= ( DBASYNCHPHASE_COMPLETE + 1 ) 
+	DBASYNCHPHASE_CANCELED	= ( DBASYNCHPHASE_COMPLETE + 1 )
     } ;
 #define DB_COUNTUNAVAILABLE -1
 #endif // OLEDBVER >= 0x0150
@@ -2636,7 +2636,7 @@ typedef DWORD DBSORT;
 
 enum DBSORTENUM
     {	DBSORT_ASCENDING	= 0,
-	DBSORT_DESCENDING	= ( DBSORT_ASCENDING + 1 ) 
+	DBSORT_DESCENDING	= ( DBSORT_ASCENDING + 1 )
     } ;
 #if( OLEDBVER >= 0x0200 )
 typedef DWORD DBCOMMANDPERSISTFLAG;
@@ -2761,7 +2761,7 @@ extern RPC_IF_HANDLE DBStructureDefinitions_v0_0_s_ifspec;
 #define __IAccessor_INTERFACE_DEFINED__
 
 /* interface IAccessor */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 typedef DWORD DBACCESSORFLAGS;
 
@@ -2790,59 +2790,59 @@ enum DBBINDSTATUSENUM
 EXTERN_C const IID IID_IAccessor;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a8c-2a1c-11ce-ade5-00aa0044773d")
     IAccessor : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE AddRefAccessor( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE AddRefAccessor(
             /* [in] */ HACCESSOR hAccessor,
             /* [unique][out][in] */ DBREFCOUNT *pcRefCount) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CreateAccessor( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CreateAccessor(
             /* [in] */ DBACCESSORFLAGS dwAccessorFlags,
             /* [in] */ DBCOUNTITEM cBindings,
             /* [size_is][in] */ const DBBINDING rgBindings[  ],
             /* [in] */ DBLENGTH cbRowSize,
             /* [out] */ HACCESSOR *phAccessor,
             /* [size_is][out] */ DBBINDSTATUS rgStatus[  ]) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetBindings( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetBindings(
             /* [in] */ HACCESSOR hAccessor,
             /* [out] */ DBACCESSORFLAGS *pdwAccessorFlags,
             /* [out][in] */ DBCOUNTITEM *pcBindings,
             /* [size_is][size_is][out] */ DBBINDING **prgBindings) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE ReleaseAccessor( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE ReleaseAccessor(
             /* [in] */ HACCESSOR hAccessor,
             /* [unique][out][in] */ DBREFCOUNT *pcRefCount) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IAccessorVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IAccessor * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IAccessor * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IAccessor * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *AddRefAccessor )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *AddRefAccessor )(
             IAccessor * This,
             /* [in] */ HACCESSOR hAccessor,
             /* [unique][out][in] */ DBREFCOUNT *pcRefCount);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateAccessor )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateAccessor )(
             IAccessor * This,
             /* [in] */ DBACCESSORFLAGS dwAccessorFlags,
             /* [in] */ DBCOUNTITEM cBindings,
@@ -2850,19 +2850,19 @@ EXTERN_C const IID IID_IAccessor;
             /* [in] */ DBLENGTH cbRowSize,
             /* [out] */ HACCESSOR *phAccessor,
             /* [size_is][out] */ DBBINDSTATUS rgStatus[  ]);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetBindings )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetBindings )(
             IAccessor * This,
             /* [in] */ HACCESSOR hAccessor,
             /* [out] */ DBACCESSORFLAGS *pdwAccessorFlags,
             /* [out][in] */ DBCOUNTITEM *pcBindings,
             /* [size_is][size_is][out] */ DBBINDING **prgBindings);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *ReleaseAccessor )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *ReleaseAccessor )(
             IAccessor * This,
             /* [in] */ HACCESSOR hAccessor,
             /* [unique][out][in] */ DBREFCOUNT *pcRefCount);
-        
+
         END_INTERFACE
     } IAccessorVtbl;
 
@@ -2871,32 +2871,32 @@ EXTERN_C const IID IID_IAccessor;
         CONST_VTBL struct IAccessorVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IAccessor_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IAccessor_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IAccessor_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IAccessor_AddRefAccessor(This,hAccessor,pcRefCount)	\
-    ( (This)->lpVtbl -> AddRefAccessor(This,hAccessor,pcRefCount) ) 
+    ( (This)->lpVtbl -> AddRefAccessor(This,hAccessor,pcRefCount) )
 
 #define IAccessor_CreateAccessor(This,dwAccessorFlags,cBindings,rgBindings,cbRowSize,phAccessor,rgStatus)	\
-    ( (This)->lpVtbl -> CreateAccessor(This,dwAccessorFlags,cBindings,rgBindings,cbRowSize,phAccessor,rgStatus) ) 
+    ( (This)->lpVtbl -> CreateAccessor(This,dwAccessorFlags,cBindings,rgBindings,cbRowSize,phAccessor,rgStatus) )
 
 #define IAccessor_GetBindings(This,hAccessor,pdwAccessorFlags,pcBindings,prgBindings)	\
-    ( (This)->lpVtbl -> GetBindings(This,hAccessor,pdwAccessorFlags,pcBindings,prgBindings) ) 
+    ( (This)->lpVtbl -> GetBindings(This,hAccessor,pdwAccessorFlags,pcBindings,prgBindings) )
 
 #define IAccessor_ReleaseAccessor(This,hAccessor,pcRefCount)	\
-    ( (This)->lpVtbl -> ReleaseAccessor(This,hAccessor,pcRefCount) ) 
+    ( (This)->lpVtbl -> ReleaseAccessor(This,hAccessor,pcRefCount) )
 
 #endif /* COBJMACROS */
 
@@ -2905,7 +2905,7 @@ EXTERN_C const IID IID_IAccessor;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IAccessor_RemoteAddRefAccessor_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IAccessor_RemoteAddRefAccessor_Proxy(
     IAccessor * This,
     /* [in] */ HACCESSOR hAccessor,
     /* [unique][out][in] */ __RPC__inout_opt DBREFCOUNT *pcRefCount,
@@ -2919,7 +2919,7 @@ void __RPC_STUB IAccessor_RemoteAddRefAccessor_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IAccessor_RemoteCreateAccessor_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IAccessor_RemoteCreateAccessor_Proxy(
     IAccessor * This,
     /* [in] */ DBACCESSORFLAGS dwAccessorFlags,
     /* [in] */ DBCOUNTITEM cBindings,
@@ -2937,7 +2937,7 @@ void __RPC_STUB IAccessor_RemoteCreateAccessor_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IAccessor_RemoteGetBindings_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IAccessor_RemoteGetBindings_Proxy(
     IAccessor * This,
     /* [in] */ HACCESSOR hAccessor,
     /* [out] */ __RPC__out DBACCESSORFLAGS *pdwAccessorFlags,
@@ -2953,7 +2953,7 @@ void __RPC_STUB IAccessor_RemoteGetBindings_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IAccessor_RemoteReleaseAccessor_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IAccessor_RemoteReleaseAccessor_Proxy(
     IAccessor * This,
     /* [in] */ HACCESSOR hAccessor,
     /* [unique][out][in] */ __RPC__inout_opt DBREFCOUNT *pcRefCount,
@@ -2975,7 +2975,7 @@ void __RPC_STUB IAccessor_RemoteReleaseAccessor_Stub(
 #define __IRowset_INTERFACE_DEFINED__
 
 /* interface IRowset */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 typedef DWORD DBROWOPTIONS;
 
@@ -2983,92 +2983,92 @@ typedef DWORD DBROWOPTIONS;
 EXTERN_C const IID IID_IRowset;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a7c-2a1c-11ce-ade5-00aa0044773d")
     IRowset : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE AddRefRows( 
+        virtual HRESULT STDMETHODCALLTYPE AddRefRows(
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [size_is][out] */ DBREFCOUNT rgRefCounts[  ],
             /* [size_is][out] */ DBROWSTATUS rgRowStatus[  ]) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetData( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetData(
             /* [in] */ HROW hRow,
             /* [in] */ HACCESSOR hAccessor,
             /* [out] */ void *pData) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetNextRows( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetNextRows(
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBROWOFFSET lRowsOffset,
             /* [in] */ DBROWCOUNT cRows,
             /* [out] */ DBCOUNTITEM *pcRowsObtained,
             /* [size_is][size_is][out] */ HROW **prghRows) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE ReleaseRows( 
+
+        virtual HRESULT STDMETHODCALLTYPE ReleaseRows(
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [size_is][in] */ DBROWOPTIONS rgRowOptions[  ],
             /* [size_is][out] */ DBREFCOUNT rgRefCounts[  ],
             /* [size_is][out] */ DBROWSTATUS rgRowStatus[  ]) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE RestartPosition( 
+
+        virtual HRESULT STDMETHODCALLTYPE RestartPosition(
             /* [in] */ HCHAPTER hReserved) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowsetVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowset * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowset * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowset * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *AddRefRows )( 
+
+        HRESULT ( STDMETHODCALLTYPE *AddRefRows )(
             IRowset * This,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [size_is][out] */ DBREFCOUNT rgRefCounts[  ],
             /* [size_is][out] */ DBROWSTATUS rgRowStatus[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetData )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetData )(
             IRowset * This,
             /* [in] */ HROW hRow,
             /* [in] */ HACCESSOR hAccessor,
             /* [out] */ void *pData);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetNextRows )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetNextRows )(
             IRowset * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBROWOFFSET lRowsOffset,
             /* [in] */ DBROWCOUNT cRows,
             /* [out] */ DBCOUNTITEM *pcRowsObtained,
             /* [size_is][size_is][out] */ HROW **prghRows);
-        
-        HRESULT ( STDMETHODCALLTYPE *ReleaseRows )( 
+
+        HRESULT ( STDMETHODCALLTYPE *ReleaseRows )(
             IRowset * This,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [size_is][in] */ DBROWOPTIONS rgRowOptions[  ],
             /* [size_is][out] */ DBREFCOUNT rgRefCounts[  ],
             /* [size_is][out] */ DBROWSTATUS rgRowStatus[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *RestartPosition )( 
+
+        HRESULT ( STDMETHODCALLTYPE *RestartPosition )(
             IRowset * This,
             /* [in] */ HCHAPTER hReserved);
-        
+
         END_INTERFACE
     } IRowsetVtbl;
 
@@ -3077,35 +3077,35 @@ EXTERN_C const IID IID_IRowset;
         CONST_VTBL struct IRowsetVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowset_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowset_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowset_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowset_AddRefRows(This,cRows,rghRows,rgRefCounts,rgRowStatus)	\
-    ( (This)->lpVtbl -> AddRefRows(This,cRows,rghRows,rgRefCounts,rgRowStatus) ) 
+    ( (This)->lpVtbl -> AddRefRows(This,cRows,rghRows,rgRefCounts,rgRowStatus) )
 
 #define IRowset_GetData(This,hRow,hAccessor,pData)	\
-    ( (This)->lpVtbl -> GetData(This,hRow,hAccessor,pData) ) 
+    ( (This)->lpVtbl -> GetData(This,hRow,hAccessor,pData) )
 
 #define IRowset_GetNextRows(This,hReserved,lRowsOffset,cRows,pcRowsObtained,prghRows)	\
-    ( (This)->lpVtbl -> GetNextRows(This,hReserved,lRowsOffset,cRows,pcRowsObtained,prghRows) ) 
+    ( (This)->lpVtbl -> GetNextRows(This,hReserved,lRowsOffset,cRows,pcRowsObtained,prghRows) )
 
 #define IRowset_ReleaseRows(This,cRows,rghRows,rgRowOptions,rgRefCounts,rgRowStatus)	\
-    ( (This)->lpVtbl -> ReleaseRows(This,cRows,rghRows,rgRowOptions,rgRefCounts,rgRowStatus) ) 
+    ( (This)->lpVtbl -> ReleaseRows(This,cRows,rghRows,rgRowOptions,rgRefCounts,rgRowStatus) )
 
 #define IRowset_RestartPosition(This,hReserved)	\
-    ( (This)->lpVtbl -> RestartPosition(This,hReserved) ) 
+    ( (This)->lpVtbl -> RestartPosition(This,hReserved) )
 
 #endif /* COBJMACROS */
 
@@ -3122,70 +3122,70 @@ EXTERN_C const IID IID_IRowset;
 #define __IRowsetInfo_INTERFACE_DEFINED__
 
 /* interface IRowsetInfo */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IRowsetInfo;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a55-2a1c-11ce-ade5-00aa0044773d")
     IRowsetInfo : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetProperties( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetProperties(
             /* [in] */ const ULONG cPropertyIDSets,
             /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
             /* [out][in] */ ULONG *pcPropertySets,
             /* [size_is][size_is][out] */ DBPROPSET **prgPropertySets) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetReferencedRowset( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetReferencedRowset(
             /* [in] */ DBORDINAL iOrdinal,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppReferencedRowset) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetSpecification( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetSpecification(
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppSpecification) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowsetInfoVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowsetInfo * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowsetInfo * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowsetInfo * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetProperties )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetProperties )(
             IRowsetInfo * This,
             /* [in] */ const ULONG cPropertyIDSets,
             /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
             /* [out][in] */ ULONG *pcPropertySets,
             /* [size_is][size_is][out] */ DBPROPSET **prgPropertySets);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetReferencedRowset )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetReferencedRowset )(
             IRowsetInfo * This,
             /* [in] */ DBORDINAL iOrdinal,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppReferencedRowset);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetSpecification )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetSpecification )(
             IRowsetInfo * This,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppSpecification);
-        
+
         END_INTERFACE
     } IRowsetInfoVtbl;
 
@@ -3194,29 +3194,29 @@ EXTERN_C const IID IID_IRowsetInfo;
         CONST_VTBL struct IRowsetInfoVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowsetInfo_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowsetInfo_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowsetInfo_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowsetInfo_GetProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets)	\
-    ( (This)->lpVtbl -> GetProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets) ) 
+    ( (This)->lpVtbl -> GetProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets) )
 
 #define IRowsetInfo_GetReferencedRowset(This,iOrdinal,riid,ppReferencedRowset)	\
-    ( (This)->lpVtbl -> GetReferencedRowset(This,iOrdinal,riid,ppReferencedRowset) ) 
+    ( (This)->lpVtbl -> GetReferencedRowset(This,iOrdinal,riid,ppReferencedRowset) )
 
 #define IRowsetInfo_GetSpecification(This,riid,ppSpecification)	\
-    ( (This)->lpVtbl -> GetSpecification(This,riid,ppSpecification) ) 
+    ( (This)->lpVtbl -> GetSpecification(This,riid,ppSpecification) )
 
 #endif /* COBJMACROS */
 
@@ -3225,7 +3225,7 @@ EXTERN_C const IID IID_IRowsetInfo;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_RemoteGetProperties_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_RemoteGetProperties_Proxy(
     IRowsetInfo * This,
     /* [in] */ ULONG cPropertyIDSets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertyIDSets) const DBPROPIDSET *rgPropertyIDSets,
@@ -3241,7 +3241,7 @@ void __RPC_STUB IRowsetInfo_RemoteGetProperties_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_RemoteGetReferencedRowset_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_RemoteGetReferencedRowset_Proxy(
     IRowsetInfo * This,
     /* [in] */ DBORDINAL iOrdinal,
     /* [in] */ __RPC__in REFIID riid,
@@ -3256,7 +3256,7 @@ void __RPC_STUB IRowsetInfo_RemoteGetReferencedRowset_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_RemoteGetSpecification_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_RemoteGetSpecification_Proxy(
     IRowsetInfo * This,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppSpecification,
@@ -3278,7 +3278,7 @@ void __RPC_STUB IRowsetInfo_RemoteGetSpecification_Stub(
 #define __IRowsetLocate_INTERFACE_DEFINED__
 
 /* interface IRowsetLocate */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 typedef DWORD DBCOMPARE;
 
@@ -3288,26 +3288,26 @@ enum DBCOMPAREENUM
 	DBCOMPARE_EQ	= ( DBCOMPARE_LT + 1 ) ,
 	DBCOMPARE_GT	= ( DBCOMPARE_EQ + 1 ) ,
 	DBCOMPARE_NE	= ( DBCOMPARE_GT + 1 ) ,
-	DBCOMPARE_NOTCOMPARABLE	= ( DBCOMPARE_NE + 1 ) 
+	DBCOMPARE_NOTCOMPARABLE	= ( DBCOMPARE_NE + 1 )
     } ;
 
 EXTERN_C const IID IID_IRowsetLocate;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a7d-2a1c-11ce-ade5-00aa0044773d")
     IRowsetLocate : public IRowset
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE Compare( 
+        virtual HRESULT STDMETHODCALLTYPE Compare(
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBBKMARK cbBookmark1,
             /* [size_is][in] */ const BYTE *pBookmark1,
             /* [in] */ DBBKMARK cbBookmark2,
             /* [size_is][in] */ const BYTE *pBookmark2,
             /* [out] */ DBCOMPARE *pComparison) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetRowsAt( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetRowsAt(
             /* [in] */ HWATCHREGION hReserved1,
             /* [in] */ HCHAPTER hReserved2,
             /* [in] */ DBBKMARK cbBookmark,
@@ -3316,77 +3316,77 @@ EXTERN_C const IID IID_IRowsetLocate;
             /* [in] */ DBROWCOUNT cRows,
             /* [out] */ DBCOUNTITEM *pcRowsObtained,
             /* [size_is][size_is][out] */ HROW **prghRows) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetRowsByBookmark( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetRowsByBookmark(
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const DBBKMARK rgcbBookmarks[  ],
             /* [size_is][in] */ const BYTE *rgpBookmarks[  ],
             /* [size_is][out] */ HROW rghRows[  ],
             /* [size_is][out] */ DBROWSTATUS rgRowStatus[  ]) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Hash( 
+
+        virtual HRESULT STDMETHODCALLTYPE Hash(
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBBKMARK cBookmarks,
             /* [size_is][in] */ const DBBKMARK rgcbBookmarks[  ],
             /* [size_is][in] */ const BYTE *rgpBookmarks[  ],
             /* [size_is][out] */ DBHASHVALUE rgHashedValues[  ],
             /* [size_is][out] */ DBROWSTATUS rgBookmarkStatus[  ]) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowsetLocateVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowsetLocate * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowsetLocate * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowsetLocate * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *AddRefRows )( 
+
+        HRESULT ( STDMETHODCALLTYPE *AddRefRows )(
             IRowsetLocate * This,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [size_is][out] */ DBREFCOUNT rgRefCounts[  ],
             /* [size_is][out] */ DBROWSTATUS rgRowStatus[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetData )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetData )(
             IRowsetLocate * This,
             /* [in] */ HROW hRow,
             /* [in] */ HACCESSOR hAccessor,
             /* [out] */ void *pData);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetNextRows )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetNextRows )(
             IRowsetLocate * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBROWOFFSET lRowsOffset,
             /* [in] */ DBROWCOUNT cRows,
             /* [out] */ DBCOUNTITEM *pcRowsObtained,
             /* [size_is][size_is][out] */ HROW **prghRows);
-        
-        HRESULT ( STDMETHODCALLTYPE *ReleaseRows )( 
+
+        HRESULT ( STDMETHODCALLTYPE *ReleaseRows )(
             IRowsetLocate * This,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [size_is][in] */ DBROWOPTIONS rgRowOptions[  ],
             /* [size_is][out] */ DBREFCOUNT rgRefCounts[  ],
             /* [size_is][out] */ DBROWSTATUS rgRowStatus[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *RestartPosition )( 
+
+        HRESULT ( STDMETHODCALLTYPE *RestartPosition )(
             IRowsetLocate * This,
             /* [in] */ HCHAPTER hReserved);
-        
-        HRESULT ( STDMETHODCALLTYPE *Compare )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Compare )(
             IRowsetLocate * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBBKMARK cbBookmark1,
@@ -3394,8 +3394,8 @@ EXTERN_C const IID IID_IRowsetLocate;
             /* [in] */ DBBKMARK cbBookmark2,
             /* [size_is][in] */ const BYTE *pBookmark2,
             /* [out] */ DBCOMPARE *pComparison);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRowsAt )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetRowsAt )(
             IRowsetLocate * This,
             /* [in] */ HWATCHREGION hReserved1,
             /* [in] */ HCHAPTER hReserved2,
@@ -3405,8 +3405,8 @@ EXTERN_C const IID IID_IRowsetLocate;
             /* [in] */ DBROWCOUNT cRows,
             /* [out] */ DBCOUNTITEM *pcRowsObtained,
             /* [size_is][size_is][out] */ HROW **prghRows);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRowsByBookmark )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetRowsByBookmark )(
             IRowsetLocate * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBCOUNTITEM cRows,
@@ -3414,8 +3414,8 @@ EXTERN_C const IID IID_IRowsetLocate;
             /* [size_is][in] */ const BYTE *rgpBookmarks[  ],
             /* [size_is][out] */ HROW rghRows[  ],
             /* [size_is][out] */ DBROWSTATUS rgRowStatus[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *Hash )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Hash )(
             IRowsetLocate * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBBKMARK cBookmarks,
@@ -3423,7 +3423,7 @@ EXTERN_C const IID IID_IRowsetLocate;
             /* [size_is][in] */ const BYTE *rgpBookmarks[  ],
             /* [size_is][out] */ DBHASHVALUE rgHashedValues[  ],
             /* [size_is][out] */ DBROWSTATUS rgBookmarkStatus[  ]);
-        
+
         END_INTERFACE
     } IRowsetLocateVtbl;
 
@@ -3432,48 +3432,48 @@ EXTERN_C const IID IID_IRowsetLocate;
         CONST_VTBL struct IRowsetLocateVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowsetLocate_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowsetLocate_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowsetLocate_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowsetLocate_AddRefRows(This,cRows,rghRows,rgRefCounts,rgRowStatus)	\
-    ( (This)->lpVtbl -> AddRefRows(This,cRows,rghRows,rgRefCounts,rgRowStatus) ) 
+    ( (This)->lpVtbl -> AddRefRows(This,cRows,rghRows,rgRefCounts,rgRowStatus) )
 
 #define IRowsetLocate_GetData(This,hRow,hAccessor,pData)	\
-    ( (This)->lpVtbl -> GetData(This,hRow,hAccessor,pData) ) 
+    ( (This)->lpVtbl -> GetData(This,hRow,hAccessor,pData) )
 
 #define IRowsetLocate_GetNextRows(This,hReserved,lRowsOffset,cRows,pcRowsObtained,prghRows)	\
-    ( (This)->lpVtbl -> GetNextRows(This,hReserved,lRowsOffset,cRows,pcRowsObtained,prghRows) ) 
+    ( (This)->lpVtbl -> GetNextRows(This,hReserved,lRowsOffset,cRows,pcRowsObtained,prghRows) )
 
 #define IRowsetLocate_ReleaseRows(This,cRows,rghRows,rgRowOptions,rgRefCounts,rgRowStatus)	\
-    ( (This)->lpVtbl -> ReleaseRows(This,cRows,rghRows,rgRowOptions,rgRefCounts,rgRowStatus) ) 
+    ( (This)->lpVtbl -> ReleaseRows(This,cRows,rghRows,rgRowOptions,rgRefCounts,rgRowStatus) )
 
 #define IRowsetLocate_RestartPosition(This,hReserved)	\
-    ( (This)->lpVtbl -> RestartPosition(This,hReserved) ) 
+    ( (This)->lpVtbl -> RestartPosition(This,hReserved) )
 
 
 #define IRowsetLocate_Compare(This,hReserved,cbBookmark1,pBookmark1,cbBookmark2,pBookmark2,pComparison)	\
-    ( (This)->lpVtbl -> Compare(This,hReserved,cbBookmark1,pBookmark1,cbBookmark2,pBookmark2,pComparison) ) 
+    ( (This)->lpVtbl -> Compare(This,hReserved,cbBookmark1,pBookmark1,cbBookmark2,pBookmark2,pComparison) )
 
 #define IRowsetLocate_GetRowsAt(This,hReserved1,hReserved2,cbBookmark,pBookmark,lRowsOffset,cRows,pcRowsObtained,prghRows)	\
-    ( (This)->lpVtbl -> GetRowsAt(This,hReserved1,hReserved2,cbBookmark,pBookmark,lRowsOffset,cRows,pcRowsObtained,prghRows) ) 
+    ( (This)->lpVtbl -> GetRowsAt(This,hReserved1,hReserved2,cbBookmark,pBookmark,lRowsOffset,cRows,pcRowsObtained,prghRows) )
 
 #define IRowsetLocate_GetRowsByBookmark(This,hReserved,cRows,rgcbBookmarks,rgpBookmarks,rghRows,rgRowStatus)	\
-    ( (This)->lpVtbl -> GetRowsByBookmark(This,hReserved,cRows,rgcbBookmarks,rgpBookmarks,rghRows,rgRowStatus) ) 
+    ( (This)->lpVtbl -> GetRowsByBookmark(This,hReserved,cRows,rgcbBookmarks,rgpBookmarks,rghRows,rgRowStatus) )
 
 #define IRowsetLocate_Hash(This,hReserved,cBookmarks,rgcbBookmarks,rgpBookmarks,rgHashedValues,rgBookmarkStatus)	\
-    ( (This)->lpVtbl -> Hash(This,hReserved,cBookmarks,rgcbBookmarks,rgpBookmarks,rgHashedValues,rgBookmarkStatus) ) 
+    ( (This)->lpVtbl -> Hash(This,hReserved,cBookmarks,rgcbBookmarks,rgpBookmarks,rgHashedValues,rgBookmarkStatus) )
 
 #endif /* COBJMACROS */
 
@@ -3490,63 +3490,63 @@ EXTERN_C const IID IID_IRowsetLocate;
 #define __IRowsetResynch_INTERFACE_DEFINED__
 
 /* interface IRowsetResynch */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IRowsetResynch;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a84-2a1c-11ce-ade5-00aa0044773d")
     IRowsetResynch : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE GetVisibleData( 
+        virtual HRESULT STDMETHODCALLTYPE GetVisibleData(
             /* [in] */ HROW hRow,
             /* [in] */ HACCESSOR hAccessor,
             /* [out] */ void *pData) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE ResynchRows( 
+
+        virtual HRESULT STDMETHODCALLTYPE ResynchRows(
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [out] */ DBCOUNTITEM *pcRowsResynched,
             /* [size_is][size_is][out] */ HROW **prghRowsResynched,
             /* [size_is][size_is][out] */ DBROWSTATUS **prgRowStatus) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowsetResynchVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowsetResynch * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowsetResynch * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowsetResynch * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetVisibleData )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetVisibleData )(
             IRowsetResynch * This,
             /* [in] */ HROW hRow,
             /* [in] */ HACCESSOR hAccessor,
             /* [out] */ void *pData);
-        
-        HRESULT ( STDMETHODCALLTYPE *ResynchRows )( 
+
+        HRESULT ( STDMETHODCALLTYPE *ResynchRows )(
             IRowsetResynch * This,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [out] */ DBCOUNTITEM *pcRowsResynched,
             /* [size_is][size_is][out] */ HROW **prghRowsResynched,
             /* [size_is][size_is][out] */ DBROWSTATUS **prgRowStatus);
-        
+
         END_INTERFACE
     } IRowsetResynchVtbl;
 
@@ -3555,26 +3555,26 @@ EXTERN_C const IID IID_IRowsetResynch;
         CONST_VTBL struct IRowsetResynchVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowsetResynch_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowsetResynch_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowsetResynch_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowsetResynch_GetVisibleData(This,hRow,hAccessor,pData)	\
-    ( (This)->lpVtbl -> GetVisibleData(This,hRow,hAccessor,pData) ) 
+    ( (This)->lpVtbl -> GetVisibleData(This,hRow,hAccessor,pData) )
 
 #define IRowsetResynch_ResynchRows(This,cRows,rghRows,pcRowsResynched,prghRowsResynched,prgRowStatus)	\
-    ( (This)->lpVtbl -> ResynchRows(This,cRows,rghRows,pcRowsResynched,prghRowsResynched,prgRowStatus) ) 
+    ( (This)->lpVtbl -> ResynchRows(This,cRows,rghRows,pcRowsResynched,prghRowsResynched,prgRowStatus) )
 
 #endif /* COBJMACROS */
 
@@ -3591,25 +3591,25 @@ EXTERN_C const IID IID_IRowsetResynch;
 #define __IRowsetScroll_INTERFACE_DEFINED__
 
 /* interface IRowsetScroll */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IRowsetScroll;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a7e-2a1c-11ce-ade5-00aa0044773d")
     IRowsetScroll : public IRowsetLocate
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE GetApproximatePosition( 
+        virtual HRESULT STDMETHODCALLTYPE GetApproximatePosition(
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBBKMARK cbBookmark,
             /* [size_is][in] */ const BYTE *pBookmark,
             /* [out] */ DBCOUNTITEM *pulPosition,
             /* [out] */ DBCOUNTITEM *pcRows) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetRowsAtRatio( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetRowsAtRatio(
             /* [in] */ HWATCHREGION hReserved1,
             /* [in] */ HCHAPTER hReserved2,
             /* [in] */ DBCOUNTITEM ulNumerator,
@@ -3617,61 +3617,61 @@ EXTERN_C const IID IID_IRowsetScroll;
             /* [in] */ DBROWCOUNT cRows,
             /* [out] */ DBCOUNTITEM *pcRowsObtained,
             /* [size_is][size_is][out] */ HROW **prghRows) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowsetScrollVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowsetScroll * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowsetScroll * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowsetScroll * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *AddRefRows )( 
+
+        HRESULT ( STDMETHODCALLTYPE *AddRefRows )(
             IRowsetScroll * This,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [size_is][out] */ DBREFCOUNT rgRefCounts[  ],
             /* [size_is][out] */ DBROWSTATUS rgRowStatus[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetData )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetData )(
             IRowsetScroll * This,
             /* [in] */ HROW hRow,
             /* [in] */ HACCESSOR hAccessor,
             /* [out] */ void *pData);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetNextRows )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetNextRows )(
             IRowsetScroll * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBROWOFFSET lRowsOffset,
             /* [in] */ DBROWCOUNT cRows,
             /* [out] */ DBCOUNTITEM *pcRowsObtained,
             /* [size_is][size_is][out] */ HROW **prghRows);
-        
-        HRESULT ( STDMETHODCALLTYPE *ReleaseRows )( 
+
+        HRESULT ( STDMETHODCALLTYPE *ReleaseRows )(
             IRowsetScroll * This,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [size_is][in] */ DBROWOPTIONS rgRowOptions[  ],
             /* [size_is][out] */ DBREFCOUNT rgRefCounts[  ],
             /* [size_is][out] */ DBROWSTATUS rgRowStatus[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *RestartPosition )( 
+
+        HRESULT ( STDMETHODCALLTYPE *RestartPosition )(
             IRowsetScroll * This,
             /* [in] */ HCHAPTER hReserved);
-        
-        HRESULT ( STDMETHODCALLTYPE *Compare )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Compare )(
             IRowsetScroll * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBBKMARK cbBookmark1,
@@ -3679,8 +3679,8 @@ EXTERN_C const IID IID_IRowsetScroll;
             /* [in] */ DBBKMARK cbBookmark2,
             /* [size_is][in] */ const BYTE *pBookmark2,
             /* [out] */ DBCOMPARE *pComparison);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRowsAt )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetRowsAt )(
             IRowsetScroll * This,
             /* [in] */ HWATCHREGION hReserved1,
             /* [in] */ HCHAPTER hReserved2,
@@ -3690,8 +3690,8 @@ EXTERN_C const IID IID_IRowsetScroll;
             /* [in] */ DBROWCOUNT cRows,
             /* [out] */ DBCOUNTITEM *pcRowsObtained,
             /* [size_is][size_is][out] */ HROW **prghRows);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRowsByBookmark )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetRowsByBookmark )(
             IRowsetScroll * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBCOUNTITEM cRows,
@@ -3699,8 +3699,8 @@ EXTERN_C const IID IID_IRowsetScroll;
             /* [size_is][in] */ const BYTE *rgpBookmarks[  ],
             /* [size_is][out] */ HROW rghRows[  ],
             /* [size_is][out] */ DBROWSTATUS rgRowStatus[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *Hash )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Hash )(
             IRowsetScroll * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBBKMARK cBookmarks,
@@ -3708,16 +3708,16 @@ EXTERN_C const IID IID_IRowsetScroll;
             /* [size_is][in] */ const BYTE *rgpBookmarks[  ],
             /* [size_is][out] */ DBHASHVALUE rgHashedValues[  ],
             /* [size_is][out] */ DBROWSTATUS rgBookmarkStatus[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetApproximatePosition )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetApproximatePosition )(
             IRowsetScroll * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBBKMARK cbBookmark,
             /* [size_is][in] */ const BYTE *pBookmark,
             /* [out] */ DBCOUNTITEM *pulPosition,
             /* [out] */ DBCOUNTITEM *pcRows);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRowsAtRatio )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetRowsAtRatio )(
             IRowsetScroll * This,
             /* [in] */ HWATCHREGION hReserved1,
             /* [in] */ HCHAPTER hReserved2,
@@ -3726,7 +3726,7 @@ EXTERN_C const IID IID_IRowsetScroll;
             /* [in] */ DBROWCOUNT cRows,
             /* [out] */ DBCOUNTITEM *pcRowsObtained,
             /* [size_is][size_is][out] */ HROW **prghRows);
-        
+
         END_INTERFACE
     } IRowsetScrollVtbl;
 
@@ -3735,55 +3735,55 @@ EXTERN_C const IID IID_IRowsetScroll;
         CONST_VTBL struct IRowsetScrollVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowsetScroll_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowsetScroll_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowsetScroll_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowsetScroll_AddRefRows(This,cRows,rghRows,rgRefCounts,rgRowStatus)	\
-    ( (This)->lpVtbl -> AddRefRows(This,cRows,rghRows,rgRefCounts,rgRowStatus) ) 
+    ( (This)->lpVtbl -> AddRefRows(This,cRows,rghRows,rgRefCounts,rgRowStatus) )
 
 #define IRowsetScroll_GetData(This,hRow,hAccessor,pData)	\
-    ( (This)->lpVtbl -> GetData(This,hRow,hAccessor,pData) ) 
+    ( (This)->lpVtbl -> GetData(This,hRow,hAccessor,pData) )
 
 #define IRowsetScroll_GetNextRows(This,hReserved,lRowsOffset,cRows,pcRowsObtained,prghRows)	\
-    ( (This)->lpVtbl -> GetNextRows(This,hReserved,lRowsOffset,cRows,pcRowsObtained,prghRows) ) 
+    ( (This)->lpVtbl -> GetNextRows(This,hReserved,lRowsOffset,cRows,pcRowsObtained,prghRows) )
 
 #define IRowsetScroll_ReleaseRows(This,cRows,rghRows,rgRowOptions,rgRefCounts,rgRowStatus)	\
-    ( (This)->lpVtbl -> ReleaseRows(This,cRows,rghRows,rgRowOptions,rgRefCounts,rgRowStatus) ) 
+    ( (This)->lpVtbl -> ReleaseRows(This,cRows,rghRows,rgRowOptions,rgRefCounts,rgRowStatus) )
 
 #define IRowsetScroll_RestartPosition(This,hReserved)	\
-    ( (This)->lpVtbl -> RestartPosition(This,hReserved) ) 
+    ( (This)->lpVtbl -> RestartPosition(This,hReserved) )
 
 
 #define IRowsetScroll_Compare(This,hReserved,cbBookmark1,pBookmark1,cbBookmark2,pBookmark2,pComparison)	\
-    ( (This)->lpVtbl -> Compare(This,hReserved,cbBookmark1,pBookmark1,cbBookmark2,pBookmark2,pComparison) ) 
+    ( (This)->lpVtbl -> Compare(This,hReserved,cbBookmark1,pBookmark1,cbBookmark2,pBookmark2,pComparison) )
 
 #define IRowsetScroll_GetRowsAt(This,hReserved1,hReserved2,cbBookmark,pBookmark,lRowsOffset,cRows,pcRowsObtained,prghRows)	\
-    ( (This)->lpVtbl -> GetRowsAt(This,hReserved1,hReserved2,cbBookmark,pBookmark,lRowsOffset,cRows,pcRowsObtained,prghRows) ) 
+    ( (This)->lpVtbl -> GetRowsAt(This,hReserved1,hReserved2,cbBookmark,pBookmark,lRowsOffset,cRows,pcRowsObtained,prghRows) )
 
 #define IRowsetScroll_GetRowsByBookmark(This,hReserved,cRows,rgcbBookmarks,rgpBookmarks,rghRows,rgRowStatus)	\
-    ( (This)->lpVtbl -> GetRowsByBookmark(This,hReserved,cRows,rgcbBookmarks,rgpBookmarks,rghRows,rgRowStatus) ) 
+    ( (This)->lpVtbl -> GetRowsByBookmark(This,hReserved,cRows,rgcbBookmarks,rgpBookmarks,rghRows,rgRowStatus) )
 
 #define IRowsetScroll_Hash(This,hReserved,cBookmarks,rgcbBookmarks,rgpBookmarks,rgHashedValues,rgBookmarkStatus)	\
-    ( (This)->lpVtbl -> Hash(This,hReserved,cBookmarks,rgcbBookmarks,rgpBookmarks,rgHashedValues,rgBookmarkStatus) ) 
+    ( (This)->lpVtbl -> Hash(This,hReserved,cBookmarks,rgcbBookmarks,rgpBookmarks,rgHashedValues,rgBookmarkStatus) )
 
 
 #define IRowsetScroll_GetApproximatePosition(This,hReserved,cbBookmark,pBookmark,pulPosition,pcRows)	\
-    ( (This)->lpVtbl -> GetApproximatePosition(This,hReserved,cbBookmark,pBookmark,pulPosition,pcRows) ) 
+    ( (This)->lpVtbl -> GetApproximatePosition(This,hReserved,cbBookmark,pBookmark,pulPosition,pcRows) )
 
 #define IRowsetScroll_GetRowsAtRatio(This,hReserved1,hReserved2,ulNumerator,ulDenominator,cRows,pcRowsObtained,prghRows)	\
-    ( (This)->lpVtbl -> GetRowsAtRatio(This,hReserved1,hReserved2,ulNumerator,ulDenominator,cRows,pcRowsObtained,prghRows) ) 
+    ( (This)->lpVtbl -> GetRowsAtRatio(This,hReserved1,hReserved2,ulNumerator,ulDenominator,cRows,pcRowsObtained,prghRows) )
 
 #endif /* COBJMACROS */
 
@@ -3797,7 +3797,7 @@ EXTERN_C const IID IID_IRowsetScroll;
 
 
 /* interface __MIDL_itf_oledb_0000_0007 */
-/* [local] */ 
+/* [local] */
 
 //@@@+ V1.5
 #if( OLEDBVER >= 0x0150 )
@@ -3810,55 +3810,55 @@ extern RPC_IF_HANDLE __MIDL_itf_oledb_0000_0007_v0_0_s_ifspec;
 #define __IChapteredRowset_INTERFACE_DEFINED__
 
 /* interface IChapteredRowset */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IChapteredRowset;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a93-2a1c-11ce-ade5-00aa0044773d")
     IChapteredRowset : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE AddRefChapter( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE AddRefChapter(
             /* [in] */ HCHAPTER hChapter,
             /* [out] */ DBREFCOUNT *pcRefCount) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE ReleaseChapter( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE ReleaseChapter(
             /* [in] */ HCHAPTER hChapter,
             /* [out] */ DBREFCOUNT *pcRefCount) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IChapteredRowsetVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IChapteredRowset * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IChapteredRowset * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IChapteredRowset * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *AddRefChapter )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *AddRefChapter )(
             IChapteredRowset * This,
             /* [in] */ HCHAPTER hChapter,
             /* [out] */ DBREFCOUNT *pcRefCount);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *ReleaseChapter )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *ReleaseChapter )(
             IChapteredRowset * This,
             /* [in] */ HCHAPTER hChapter,
             /* [out] */ DBREFCOUNT *pcRefCount);
-        
+
         END_INTERFACE
     } IChapteredRowsetVtbl;
 
@@ -3867,26 +3867,26 @@ EXTERN_C const IID IID_IChapteredRowset;
         CONST_VTBL struct IChapteredRowsetVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IChapteredRowset_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IChapteredRowset_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IChapteredRowset_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IChapteredRowset_AddRefChapter(This,hChapter,pcRefCount)	\
-    ( (This)->lpVtbl -> AddRefChapter(This,hChapter,pcRefCount) ) 
+    ( (This)->lpVtbl -> AddRefChapter(This,hChapter,pcRefCount) )
 
 #define IChapteredRowset_ReleaseChapter(This,hChapter,pcRefCount)	\
-    ( (This)->lpVtbl -> ReleaseChapter(This,hChapter,pcRefCount) ) 
+    ( (This)->lpVtbl -> ReleaseChapter(This,hChapter,pcRefCount) )
 
 #endif /* COBJMACROS */
 
@@ -3895,7 +3895,7 @@ EXTERN_C const IID IID_IChapteredRowset;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IChapteredRowset_RemoteAddRefChapter_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IChapteredRowset_RemoteAddRefChapter_Proxy(
     IChapteredRowset * This,
     /* [in] */ HCHAPTER hChapter,
     /* [out] */ __RPC__out DBREFCOUNT *pcRefCount,
@@ -3909,7 +3909,7 @@ void __RPC_STUB IChapteredRowset_RemoteAddRefChapter_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IChapteredRowset_RemoteReleaseChapter_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IChapteredRowset_RemoteReleaseChapter_Proxy(
     IChapteredRowset * This,
     /* [in] */ HCHAPTER hChapter,
     /* [out] */ __RPC__out DBREFCOUNT *pcRefCount,
@@ -3931,18 +3931,18 @@ void __RPC_STUB IChapteredRowset_RemoteReleaseChapter_Stub(
 #define __IRowsetFind_INTERFACE_DEFINED__
 
 /* interface IRowsetFind */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IRowsetFind;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a9d-2a1c-11ce-ade5-00aa0044773d")
     IRowsetFind : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE FindNextRow( 
+        virtual HRESULT STDMETHODCALLTYPE FindNextRow(
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ HACCESSOR hAccessor,
             /* [in] */ void *pFindValue,
@@ -3953,28 +3953,28 @@ EXTERN_C const IID IID_IRowsetFind;
             /* [in] */ DBROWCOUNT cRows,
             /* [out][in] */ DBCOUNTITEM *pcRowsObtained,
             /* [size_is][size_is][out] */ HROW **prghRows) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowsetFindVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowsetFind * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowsetFind * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowsetFind * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *FindNextRow )( 
+
+        HRESULT ( STDMETHODCALLTYPE *FindNextRow )(
             IRowsetFind * This,
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ HACCESSOR hAccessor,
@@ -3986,7 +3986,7 @@ EXTERN_C const IID IID_IRowsetFind;
             /* [in] */ DBROWCOUNT cRows,
             /* [out][in] */ DBCOUNTITEM *pcRowsObtained,
             /* [size_is][size_is][out] */ HROW **prghRows);
-        
+
         END_INTERFACE
     } IRowsetFindVtbl;
 
@@ -3995,23 +3995,23 @@ EXTERN_C const IID IID_IRowsetFind;
         CONST_VTBL struct IRowsetFindVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowsetFind_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowsetFind_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowsetFind_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowsetFind_FindNextRow(This,hChapter,hAccessor,pFindValue,CompareOp,cbBookmark,pBookmark,lRowsOffset,cRows,pcRowsObtained,prghRows)	\
-    ( (This)->lpVtbl -> FindNextRow(This,hChapter,hAccessor,pFindValue,CompareOp,cbBookmark,pBookmark,lRowsOffset,cRows,pcRowsObtained,prghRows) ) 
+    ( (This)->lpVtbl -> FindNextRow(This,hChapter,hAccessor,pFindValue,CompareOp,cbBookmark,pBookmark,lRowsOffset,cRows,pcRowsObtained,prghRows) )
 
 #endif /* COBJMACROS */
 
@@ -4028,7 +4028,7 @@ EXTERN_C const IID IID_IRowsetFind;
 #define __IRowPosition_INTERFACE_DEFINED__
 
 /* interface IRowPosition */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 typedef DWORD DBPOSITIONFLAGS;
 
@@ -4037,80 +4037,80 @@ enum DBPOSITIONFLAGSENUM
     {	DBPOSITION_OK	= 0,
 	DBPOSITION_NOROW	= ( DBPOSITION_OK + 1 ) ,
 	DBPOSITION_BOF	= ( DBPOSITION_NOROW + 1 ) ,
-	DBPOSITION_EOF	= ( DBPOSITION_BOF + 1 ) 
+	DBPOSITION_EOF	= ( DBPOSITION_BOF + 1 )
     } ;
 
 EXTERN_C const IID IID_IRowPosition;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a94-2a1c-11ce-ade5-00aa0044773d")
     IRowPosition : public IUnknown
     {
     public:
         virtual /* [local] */ HRESULT STDMETHODCALLTYPE ClearRowPosition( void) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetRowPosition( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetRowPosition(
             /* [out] */ HCHAPTER *phChapter,
             /* [out] */ HROW *phRow,
             /* [out] */ DBPOSITIONFLAGS *pdwPositionFlags) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetRowset( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetRowset(
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppRowset) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE Initialize( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE Initialize(
             /* [in] */ IUnknown *pRowset) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetRowPosition( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetRowPosition(
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ HROW hRow,
             /* [in] */ DBPOSITIONFLAGS dwPositionFlags) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowPositionVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowPosition * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowPosition * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowPosition * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *ClearRowPosition )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *ClearRowPosition )(
             IRowPosition * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetRowPosition )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetRowPosition )(
             IRowPosition * This,
             /* [out] */ HCHAPTER *phChapter,
             /* [out] */ HROW *phRow,
             /* [out] */ DBPOSITIONFLAGS *pdwPositionFlags);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetRowset )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetRowset )(
             IRowPosition * This,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppRowset);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Initialize )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Initialize )(
             IRowPosition * This,
             /* [in] */ IUnknown *pRowset);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetRowPosition )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetRowPosition )(
             IRowPosition * This,
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ HROW hRow,
             /* [in] */ DBPOSITIONFLAGS dwPositionFlags);
-        
+
         END_INTERFACE
     } IRowPositionVtbl;
 
@@ -4119,35 +4119,35 @@ EXTERN_C const IID IID_IRowPosition;
         CONST_VTBL struct IRowPositionVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowPosition_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowPosition_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowPosition_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowPosition_ClearRowPosition(This)	\
-    ( (This)->lpVtbl -> ClearRowPosition(This) ) 
+    ( (This)->lpVtbl -> ClearRowPosition(This) )
 
 #define IRowPosition_GetRowPosition(This,phChapter,phRow,pdwPositionFlags)	\
-    ( (This)->lpVtbl -> GetRowPosition(This,phChapter,phRow,pdwPositionFlags) ) 
+    ( (This)->lpVtbl -> GetRowPosition(This,phChapter,phRow,pdwPositionFlags) )
 
 #define IRowPosition_GetRowset(This,riid,ppRowset)	\
-    ( (This)->lpVtbl -> GetRowset(This,riid,ppRowset) ) 
+    ( (This)->lpVtbl -> GetRowset(This,riid,ppRowset) )
 
 #define IRowPosition_Initialize(This,pRowset)	\
-    ( (This)->lpVtbl -> Initialize(This,pRowset) ) 
+    ( (This)->lpVtbl -> Initialize(This,pRowset) )
 
 #define IRowPosition_SetRowPosition(This,hChapter,hRow,dwPositionFlags)	\
-    ( (This)->lpVtbl -> SetRowPosition(This,hChapter,hRow,dwPositionFlags) ) 
+    ( (This)->lpVtbl -> SetRowPosition(This,hChapter,hRow,dwPositionFlags) )
 
 #endif /* COBJMACROS */
 
@@ -4156,7 +4156,7 @@ EXTERN_C const IID IID_IRowPosition;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_RemoteClearRowPosition_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_RemoteClearRowPosition_Proxy(
     IRowPosition * This,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
@@ -4168,7 +4168,7 @@ void __RPC_STUB IRowPosition_RemoteClearRowPosition_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_RemoteGetRowPosition_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_RemoteGetRowPosition_Proxy(
     IRowPosition * This,
     /* [out] */ __RPC__out HCHAPTER *phChapter,
     /* [out] */ __RPC__out HROW *phRow,
@@ -4183,7 +4183,7 @@ void __RPC_STUB IRowPosition_RemoteGetRowPosition_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_RemoteGetRowset_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_RemoteGetRowset_Proxy(
     IRowPosition * This,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppRowset,
@@ -4197,7 +4197,7 @@ void __RPC_STUB IRowPosition_RemoteGetRowset_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_RemoteInitialize_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_RemoteInitialize_Proxy(
     IRowPosition * This,
     /* [in] */ __RPC__in_opt IUnknown *pRowset,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
@@ -4210,7 +4210,7 @@ void __RPC_STUB IRowPosition_RemoteInitialize_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_RemoteSetRowPosition_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_RemoteSetRowPosition_Proxy(
     IRowPosition * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ HROW hRow,
@@ -4233,48 +4233,48 @@ void __RPC_STUB IRowPosition_RemoteSetRowPosition_Stub(
 #define __IRowPositionChange_INTERFACE_DEFINED__
 
 /* interface IRowPositionChange */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IRowPositionChange;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0997a571-126e-11d0-9f8a-00a0c9a0631e")
     IRowPositionChange : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OnRowPositionChange( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OnRowPositionChange(
             /* [in] */ DBREASON eReason,
             /* [in] */ DBEVENTPHASE ePhase,
             /* [in] */ BOOL fCantDeny) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowPositionChangeVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowPositionChange * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowPositionChange * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowPositionChange * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OnRowPositionChange )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OnRowPositionChange )(
             IRowPositionChange * This,
             /* [in] */ DBREASON eReason,
             /* [in] */ DBEVENTPHASE ePhase,
             /* [in] */ BOOL fCantDeny);
-        
+
         END_INTERFACE
     } IRowPositionChangeVtbl;
 
@@ -4283,23 +4283,23 @@ EXTERN_C const IID IID_IRowPositionChange;
         CONST_VTBL struct IRowPositionChangeVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowPositionChange_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowPositionChange_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowPositionChange_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowPositionChange_OnRowPositionChange(This,eReason,ePhase,fCantDeny)	\
-    ( (This)->lpVtbl -> OnRowPositionChange(This,eReason,ePhase,fCantDeny) ) 
+    ( (This)->lpVtbl -> OnRowPositionChange(This,eReason,ePhase,fCantDeny) )
 
 #endif /* COBJMACROS */
 
@@ -4308,7 +4308,7 @@ EXTERN_C const IID IID_IRowPositionChange;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPositionChange_RemoteOnRowPositionChange_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPositionChange_RemoteOnRowPositionChange_Proxy(
     IRowPositionChange * This,
     /* [in] */ DBREASON eReason,
     /* [in] */ DBEVENTPHASE ePhase,
@@ -4331,57 +4331,57 @@ void __RPC_STUB IRowPositionChange_RemoteOnRowPositionChange_Stub(
 #define __IViewRowset_INTERFACE_DEFINED__
 
 /* interface IViewRowset */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IViewRowset;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a97-2a1c-11ce-ade5-00aa0044773d")
     IViewRowset : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetSpecification( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetSpecification(
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppObject) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OpenViewRowset( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OpenViewRowset(
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppRowset) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IViewRowsetVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IViewRowset * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IViewRowset * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IViewRowset * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetSpecification )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetSpecification )(
             IViewRowset * This,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppObject);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OpenViewRowset )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OpenViewRowset )(
             IViewRowset * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppRowset);
-        
+
         END_INTERFACE
     } IViewRowsetVtbl;
 
@@ -4390,26 +4390,26 @@ EXTERN_C const IID IID_IViewRowset;
         CONST_VTBL struct IViewRowsetVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IViewRowset_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IViewRowset_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IViewRowset_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IViewRowset_GetSpecification(This,riid,ppObject)	\
-    ( (This)->lpVtbl -> GetSpecification(This,riid,ppObject) ) 
+    ( (This)->lpVtbl -> GetSpecification(This,riid,ppObject) )
 
 #define IViewRowset_OpenViewRowset(This,pUnkOuter,riid,ppRowset)	\
-    ( (This)->lpVtbl -> OpenViewRowset(This,pUnkOuter,riid,ppRowset) ) 
+    ( (This)->lpVtbl -> OpenViewRowset(This,pUnkOuter,riid,ppRowset) )
 
 #endif /* COBJMACROS */
 
@@ -4418,7 +4418,7 @@ EXTERN_C const IID IID_IViewRowset;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewRowset_RemoteGetSpecification_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewRowset_RemoteGetSpecification_Proxy(
     IViewRowset * This,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppObject,
@@ -4432,7 +4432,7 @@ void __RPC_STUB IViewRowset_RemoteGetSpecification_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewRowset_RemoteOpenViewRowset_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewRowset_RemoteOpenViewRowset_Proxy(
     IViewRowset * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in REFIID riid,
@@ -4455,55 +4455,55 @@ void __RPC_STUB IViewRowset_RemoteOpenViewRowset_Stub(
 #define __IViewChapter_INTERFACE_DEFINED__
 
 /* interface IViewChapter */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IViewChapter;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a98-2a1c-11ce-ade5-00aa0044773d")
     IViewChapter : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetSpecification( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetSpecification(
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppRowset) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OpenViewChapter( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OpenViewChapter(
             /* [in] */ HCHAPTER hSource,
             /* [out] */ HCHAPTER *phViewChapter) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IViewChapterVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IViewChapter * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IViewChapter * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IViewChapter * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetSpecification )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetSpecification )(
             IViewChapter * This,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppRowset);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OpenViewChapter )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OpenViewChapter )(
             IViewChapter * This,
             /* [in] */ HCHAPTER hSource,
             /* [out] */ HCHAPTER *phViewChapter);
-        
+
         END_INTERFACE
     } IViewChapterVtbl;
 
@@ -4512,26 +4512,26 @@ EXTERN_C const IID IID_IViewChapter;
         CONST_VTBL struct IViewChapterVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IViewChapter_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IViewChapter_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IViewChapter_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IViewChapter_GetSpecification(This,riid,ppRowset)	\
-    ( (This)->lpVtbl -> GetSpecification(This,riid,ppRowset) ) 
+    ( (This)->lpVtbl -> GetSpecification(This,riid,ppRowset) )
 
 #define IViewChapter_OpenViewChapter(This,hSource,phViewChapter)	\
-    ( (This)->lpVtbl -> OpenViewChapter(This,hSource,phViewChapter) ) 
+    ( (This)->lpVtbl -> OpenViewChapter(This,hSource,phViewChapter) )
 
 #endif /* COBJMACROS */
 
@@ -4540,7 +4540,7 @@ EXTERN_C const IID IID_IViewChapter;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewChapter_RemoteGetSpecification_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewChapter_RemoteGetSpecification_Proxy(
     IViewChapter * This,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppRowset,
@@ -4554,7 +4554,7 @@ void __RPC_STUB IViewChapter_RemoteGetSpecification_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewChapter_RemoteOpenViewChapter_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewChapter_RemoteOpenViewChapter_Proxy(
     IViewChapter * This,
     /* [in] */ HCHAPTER hSource,
     /* [out] */ __RPC__out HCHAPTER *phViewChapter,
@@ -4576,59 +4576,59 @@ void __RPC_STUB IViewChapter_RemoteOpenViewChapter_Stub(
 #define __IViewSort_INTERFACE_DEFINED__
 
 /* interface IViewSort */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IViewSort;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a9a-2a1c-11ce-ade5-00aa0044773d")
     IViewSort : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetSortOrder( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetSortOrder(
             /* [out] */ DBORDINAL *pcValues,
             /* [out] */ DBORDINAL *prgColumns[  ],
             /* [out] */ DBSORT *prgOrders[  ]) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetSortOrder( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetSortOrder(
             /* [in] */ DBORDINAL cValues,
             /* [size_is][in] */ const DBORDINAL rgColumns[  ],
             /* [size_is][in] */ const DBSORT rgOrders[  ]) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IViewSortVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IViewSort * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IViewSort * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IViewSort * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetSortOrder )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetSortOrder )(
             IViewSort * This,
             /* [out] */ DBORDINAL *pcValues,
             /* [out] */ DBORDINAL *prgColumns[  ],
             /* [out] */ DBSORT *prgOrders[  ]);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetSortOrder )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetSortOrder )(
             IViewSort * This,
             /* [in] */ DBORDINAL cValues,
             /* [size_is][in] */ const DBORDINAL rgColumns[  ],
             /* [size_is][in] */ const DBSORT rgOrders[  ]);
-        
+
         END_INTERFACE
     } IViewSortVtbl;
 
@@ -4637,26 +4637,26 @@ EXTERN_C const IID IID_IViewSort;
         CONST_VTBL struct IViewSortVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IViewSort_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IViewSort_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IViewSort_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IViewSort_GetSortOrder(This,pcValues,prgColumns,prgOrders)	\
-    ( (This)->lpVtbl -> GetSortOrder(This,pcValues,prgColumns,prgOrders) ) 
+    ( (This)->lpVtbl -> GetSortOrder(This,pcValues,prgColumns,prgOrders) )
 
 #define IViewSort_SetSortOrder(This,cValues,rgColumns,rgOrders)	\
-    ( (This)->lpVtbl -> SetSortOrder(This,cValues,rgColumns,rgOrders) ) 
+    ( (This)->lpVtbl -> SetSortOrder(This,cValues,rgColumns,rgOrders) )
 
 #endif /* COBJMACROS */
 
@@ -4665,7 +4665,7 @@ EXTERN_C const IID IID_IViewSort;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewSort_RemoteGetSortOrder_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewSort_RemoteGetSortOrder_Proxy(
     IViewSort * This,
     /* [out][in] */ __RPC__inout DBORDINAL *pcValues,
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(( ULONG  )*pcValues) DBORDINAL **prgColumns,
@@ -4680,7 +4680,7 @@ void __RPC_STUB IViewSort_RemoteGetSortOrder_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewSort_RemoteSetSortOrder_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewSort_RemoteSetSortOrder_Proxy(
     IViewSort * This,
     /* [in] */ DBORDINAL cValues,
     /* [size_is][in] */ __RPC__in_ecount_full(( ULONG  )cValues) const DBORDINAL *rgColumns,
@@ -4703,72 +4703,72 @@ void __RPC_STUB IViewSort_RemoteSetSortOrder_Stub(
 #define __IViewFilter_INTERFACE_DEFINED__
 
 /* interface IViewFilter */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IViewFilter;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a9b-2a1c-11ce-ade5-00aa0044773d")
     IViewFilter : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetFilter( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetFilter(
             /* [in] */ HACCESSOR hAccessor,
             /* [out] */ DBCOUNTITEM *pcRows,
             /* [out] */ DBCOMPAREOP *pCompareOps[  ],
             /* [out] */ void *pCriteriaData) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetFilterBindings( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetFilterBindings(
             /* [out] */ DBCOUNTITEM *pcBindings,
             /* [out] */ DBBINDING **prgBindings) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetFilter( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetFilter(
             /* [in] */ HACCESSOR hAccessor,
             /* [in] */ DBCOUNTITEM cRows,
             /* [in] */ DBCOMPAREOP CompareOps[  ],
             /* [in] */ void *pCriteriaData) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IViewFilterVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IViewFilter * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IViewFilter * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IViewFilter * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetFilter )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetFilter )(
             IViewFilter * This,
             /* [in] */ HACCESSOR hAccessor,
             /* [out] */ DBCOUNTITEM *pcRows,
             /* [out] */ DBCOMPAREOP *pCompareOps[  ],
             /* [out] */ void *pCriteriaData);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetFilterBindings )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetFilterBindings )(
             IViewFilter * This,
             /* [out] */ DBCOUNTITEM *pcBindings,
             /* [out] */ DBBINDING **prgBindings);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetFilter )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetFilter )(
             IViewFilter * This,
             /* [in] */ HACCESSOR hAccessor,
             /* [in] */ DBCOUNTITEM cRows,
             /* [in] */ DBCOMPAREOP CompareOps[  ],
             /* [in] */ void *pCriteriaData);
-        
+
         END_INTERFACE
     } IViewFilterVtbl;
 
@@ -4777,29 +4777,29 @@ EXTERN_C const IID IID_IViewFilter;
         CONST_VTBL struct IViewFilterVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IViewFilter_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IViewFilter_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IViewFilter_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IViewFilter_GetFilter(This,hAccessor,pcRows,pCompareOps,pCriteriaData)	\
-    ( (This)->lpVtbl -> GetFilter(This,hAccessor,pcRows,pCompareOps,pCriteriaData) ) 
+    ( (This)->lpVtbl -> GetFilter(This,hAccessor,pcRows,pCompareOps,pCriteriaData) )
 
 #define IViewFilter_GetFilterBindings(This,pcBindings,prgBindings)	\
-    ( (This)->lpVtbl -> GetFilterBindings(This,pcBindings,prgBindings) ) 
+    ( (This)->lpVtbl -> GetFilterBindings(This,pcBindings,prgBindings) )
 
 #define IViewFilter_SetFilter(This,hAccessor,cRows,CompareOps,pCriteriaData)	\
-    ( (This)->lpVtbl -> SetFilter(This,hAccessor,cRows,CompareOps,pCriteriaData) ) 
+    ( (This)->lpVtbl -> SetFilter(This,hAccessor,cRows,CompareOps,pCriteriaData) )
 
 #endif /* COBJMACROS */
 
@@ -4808,7 +4808,7 @@ EXTERN_C const IID IID_IViewFilter;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewFilter_RemoteGetFilterBindings_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewFilter_RemoteGetFilterBindings_Proxy(
     IViewFilter * This,
     /* [out][in] */ __RPC__inout DBCOUNTITEM *pcBindings,
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(( ULONG  )*pcBindings) DBBINDING **prgBindings,
@@ -4830,61 +4830,61 @@ void __RPC_STUB IViewFilter_RemoteGetFilterBindings_Stub(
 #define __IRowsetView_INTERFACE_DEFINED__
 
 /* interface IRowsetView */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IRowsetView;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a99-2a1c-11ce-ade5-00aa0044773d")
     IRowsetView : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CreateView( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CreateView(
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppView) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetView( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetView(
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ REFIID riid,
             /* [out] */ HCHAPTER *phChapterSource,
             /* [iid_is][out] */ IUnknown **ppView) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowsetViewVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowsetView * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowsetView * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowsetView * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateView )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateView )(
             IRowsetView * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppView);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetView )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetView )(
             IRowsetView * This,
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ REFIID riid,
             /* [out] */ HCHAPTER *phChapterSource,
             /* [iid_is][out] */ IUnknown **ppView);
-        
+
         END_INTERFACE
     } IRowsetViewVtbl;
 
@@ -4893,26 +4893,26 @@ EXTERN_C const IID IID_IRowsetView;
         CONST_VTBL struct IRowsetViewVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowsetView_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowsetView_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowsetView_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowsetView_CreateView(This,pUnkOuter,riid,ppView)	\
-    ( (This)->lpVtbl -> CreateView(This,pUnkOuter,riid,ppView) ) 
+    ( (This)->lpVtbl -> CreateView(This,pUnkOuter,riid,ppView) )
 
 #define IRowsetView_GetView(This,hChapter,riid,phChapterSource,ppView)	\
-    ( (This)->lpVtbl -> GetView(This,hChapter,riid,phChapterSource,ppView) ) 
+    ( (This)->lpVtbl -> GetView(This,hChapter,riid,phChapterSource,ppView) )
 
 #endif /* COBJMACROS */
 
@@ -4921,7 +4921,7 @@ EXTERN_C const IID IID_IRowsetView;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetView_RemoteCreateView_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetView_RemoteCreateView_Proxy(
     IRowsetView * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in REFIID riid,
@@ -4936,7 +4936,7 @@ void __RPC_STUB IRowsetView_RemoteCreateView_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetView_RemoteGetView_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetView_RemoteGetView_Proxy(
     IRowsetView * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ __RPC__in REFIID riid,
@@ -4957,7 +4957,7 @@ void __RPC_STUB IRowsetView_RemoteGetView_Stub(
 
 
 /* interface __MIDL_itf_oledb_0000_0016 */
-/* [local] */ 
+/* [local] */
 
 #endif // OLEDBVER >= 0x0150
 //@@@- V1.5
@@ -4972,78 +4972,78 @@ extern RPC_IF_HANDLE __MIDL_itf_oledb_0000_0016_v0_0_s_ifspec;
 #define __IRowsetExactScroll_INTERFACE_DEFINED__
 
 /* interface IRowsetExactScroll */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IRowsetExactScroll;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a7f-2a1c-11ce-ade5-00aa0044773d")
     IRowsetExactScroll : public IRowsetScroll
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE GetExactPosition( 
+        virtual HRESULT STDMETHODCALLTYPE GetExactPosition(
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ DBBKMARK cbBookmark,
             /* [size_is][in] */ const BYTE *pBookmark,
             /* [out] */ DBCOUNTITEM *pulPosition,
             /* [out] */ DBCOUNTITEM *pcRows) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowsetExactScrollVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowsetExactScroll * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowsetExactScroll * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowsetExactScroll * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *AddRefRows )( 
+
+        HRESULT ( STDMETHODCALLTYPE *AddRefRows )(
             IRowsetExactScroll * This,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [size_is][out] */ DBREFCOUNT rgRefCounts[  ],
             /* [size_is][out] */ DBROWSTATUS rgRowStatus[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetData )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetData )(
             IRowsetExactScroll * This,
             /* [in] */ HROW hRow,
             /* [in] */ HACCESSOR hAccessor,
             /* [out] */ void *pData);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetNextRows )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetNextRows )(
             IRowsetExactScroll * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBROWOFFSET lRowsOffset,
             /* [in] */ DBROWCOUNT cRows,
             /* [out] */ DBCOUNTITEM *pcRowsObtained,
             /* [size_is][size_is][out] */ HROW **prghRows);
-        
-        HRESULT ( STDMETHODCALLTYPE *ReleaseRows )( 
+
+        HRESULT ( STDMETHODCALLTYPE *ReleaseRows )(
             IRowsetExactScroll * This,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [size_is][in] */ DBROWOPTIONS rgRowOptions[  ],
             /* [size_is][out] */ DBREFCOUNT rgRefCounts[  ],
             /* [size_is][out] */ DBROWSTATUS rgRowStatus[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *RestartPosition )( 
+
+        HRESULT ( STDMETHODCALLTYPE *RestartPosition )(
             IRowsetExactScroll * This,
             /* [in] */ HCHAPTER hReserved);
-        
-        HRESULT ( STDMETHODCALLTYPE *Compare )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Compare )(
             IRowsetExactScroll * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBBKMARK cbBookmark1,
@@ -5051,8 +5051,8 @@ EXTERN_C const IID IID_IRowsetExactScroll;
             /* [in] */ DBBKMARK cbBookmark2,
             /* [size_is][in] */ const BYTE *pBookmark2,
             /* [out] */ DBCOMPARE *pComparison);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRowsAt )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetRowsAt )(
             IRowsetExactScroll * This,
             /* [in] */ HWATCHREGION hReserved1,
             /* [in] */ HCHAPTER hReserved2,
@@ -5062,8 +5062,8 @@ EXTERN_C const IID IID_IRowsetExactScroll;
             /* [in] */ DBROWCOUNT cRows,
             /* [out] */ DBCOUNTITEM *pcRowsObtained,
             /* [size_is][size_is][out] */ HROW **prghRows);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRowsByBookmark )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetRowsByBookmark )(
             IRowsetExactScroll * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBCOUNTITEM cRows,
@@ -5071,8 +5071,8 @@ EXTERN_C const IID IID_IRowsetExactScroll;
             /* [size_is][in] */ const BYTE *rgpBookmarks[  ],
             /* [size_is][out] */ HROW rghRows[  ],
             /* [size_is][out] */ DBROWSTATUS rgRowStatus[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *Hash )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Hash )(
             IRowsetExactScroll * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBBKMARK cBookmarks,
@@ -5080,16 +5080,16 @@ EXTERN_C const IID IID_IRowsetExactScroll;
             /* [size_is][in] */ const BYTE *rgpBookmarks[  ],
             /* [size_is][out] */ DBHASHVALUE rgHashedValues[  ],
             /* [size_is][out] */ DBROWSTATUS rgBookmarkStatus[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetApproximatePosition )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetApproximatePosition )(
             IRowsetExactScroll * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBBKMARK cbBookmark,
             /* [size_is][in] */ const BYTE *pBookmark,
             /* [out] */ DBCOUNTITEM *pulPosition,
             /* [out] */ DBCOUNTITEM *pcRows);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRowsAtRatio )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetRowsAtRatio )(
             IRowsetExactScroll * This,
             /* [in] */ HWATCHREGION hReserved1,
             /* [in] */ HCHAPTER hReserved2,
@@ -5098,15 +5098,15 @@ EXTERN_C const IID IID_IRowsetExactScroll;
             /* [in] */ DBROWCOUNT cRows,
             /* [out] */ DBCOUNTITEM *pcRowsObtained,
             /* [size_is][size_is][out] */ HROW **prghRows);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetExactPosition )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetExactPosition )(
             IRowsetExactScroll * This,
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ DBBKMARK cbBookmark,
             /* [size_is][in] */ const BYTE *pBookmark,
             /* [out] */ DBCOUNTITEM *pulPosition,
             /* [out] */ DBCOUNTITEM *pcRows);
-        
+
         END_INTERFACE
     } IRowsetExactScrollVtbl;
 
@@ -5115,59 +5115,59 @@ EXTERN_C const IID IID_IRowsetExactScroll;
         CONST_VTBL struct IRowsetExactScrollVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowsetExactScroll_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowsetExactScroll_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowsetExactScroll_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowsetExactScroll_AddRefRows(This,cRows,rghRows,rgRefCounts,rgRowStatus)	\
-    ( (This)->lpVtbl -> AddRefRows(This,cRows,rghRows,rgRefCounts,rgRowStatus) ) 
+    ( (This)->lpVtbl -> AddRefRows(This,cRows,rghRows,rgRefCounts,rgRowStatus) )
 
 #define IRowsetExactScroll_GetData(This,hRow,hAccessor,pData)	\
-    ( (This)->lpVtbl -> GetData(This,hRow,hAccessor,pData) ) 
+    ( (This)->lpVtbl -> GetData(This,hRow,hAccessor,pData) )
 
 #define IRowsetExactScroll_GetNextRows(This,hReserved,lRowsOffset,cRows,pcRowsObtained,prghRows)	\
-    ( (This)->lpVtbl -> GetNextRows(This,hReserved,lRowsOffset,cRows,pcRowsObtained,prghRows) ) 
+    ( (This)->lpVtbl -> GetNextRows(This,hReserved,lRowsOffset,cRows,pcRowsObtained,prghRows) )
 
 #define IRowsetExactScroll_ReleaseRows(This,cRows,rghRows,rgRowOptions,rgRefCounts,rgRowStatus)	\
-    ( (This)->lpVtbl -> ReleaseRows(This,cRows,rghRows,rgRowOptions,rgRefCounts,rgRowStatus) ) 
+    ( (This)->lpVtbl -> ReleaseRows(This,cRows,rghRows,rgRowOptions,rgRefCounts,rgRowStatus) )
 
 #define IRowsetExactScroll_RestartPosition(This,hReserved)	\
-    ( (This)->lpVtbl -> RestartPosition(This,hReserved) ) 
+    ( (This)->lpVtbl -> RestartPosition(This,hReserved) )
 
 
 #define IRowsetExactScroll_Compare(This,hReserved,cbBookmark1,pBookmark1,cbBookmark2,pBookmark2,pComparison)	\
-    ( (This)->lpVtbl -> Compare(This,hReserved,cbBookmark1,pBookmark1,cbBookmark2,pBookmark2,pComparison) ) 
+    ( (This)->lpVtbl -> Compare(This,hReserved,cbBookmark1,pBookmark1,cbBookmark2,pBookmark2,pComparison) )
 
 #define IRowsetExactScroll_GetRowsAt(This,hReserved1,hReserved2,cbBookmark,pBookmark,lRowsOffset,cRows,pcRowsObtained,prghRows)	\
-    ( (This)->lpVtbl -> GetRowsAt(This,hReserved1,hReserved2,cbBookmark,pBookmark,lRowsOffset,cRows,pcRowsObtained,prghRows) ) 
+    ( (This)->lpVtbl -> GetRowsAt(This,hReserved1,hReserved2,cbBookmark,pBookmark,lRowsOffset,cRows,pcRowsObtained,prghRows) )
 
 #define IRowsetExactScroll_GetRowsByBookmark(This,hReserved,cRows,rgcbBookmarks,rgpBookmarks,rghRows,rgRowStatus)	\
-    ( (This)->lpVtbl -> GetRowsByBookmark(This,hReserved,cRows,rgcbBookmarks,rgpBookmarks,rghRows,rgRowStatus) ) 
+    ( (This)->lpVtbl -> GetRowsByBookmark(This,hReserved,cRows,rgcbBookmarks,rgpBookmarks,rghRows,rgRowStatus) )
 
 #define IRowsetExactScroll_Hash(This,hReserved,cBookmarks,rgcbBookmarks,rgpBookmarks,rgHashedValues,rgBookmarkStatus)	\
-    ( (This)->lpVtbl -> Hash(This,hReserved,cBookmarks,rgcbBookmarks,rgpBookmarks,rgHashedValues,rgBookmarkStatus) ) 
+    ( (This)->lpVtbl -> Hash(This,hReserved,cBookmarks,rgcbBookmarks,rgpBookmarks,rgHashedValues,rgBookmarkStatus) )
 
 
 #define IRowsetExactScroll_GetApproximatePosition(This,hReserved,cbBookmark,pBookmark,pulPosition,pcRows)	\
-    ( (This)->lpVtbl -> GetApproximatePosition(This,hReserved,cbBookmark,pBookmark,pulPosition,pcRows) ) 
+    ( (This)->lpVtbl -> GetApproximatePosition(This,hReserved,cbBookmark,pBookmark,pulPosition,pcRows) )
 
 #define IRowsetExactScroll_GetRowsAtRatio(This,hReserved1,hReserved2,ulNumerator,ulDenominator,cRows,pcRowsObtained,prghRows)	\
-    ( (This)->lpVtbl -> GetRowsAtRatio(This,hReserved1,hReserved2,ulNumerator,ulDenominator,cRows,pcRowsObtained,prghRows) ) 
+    ( (This)->lpVtbl -> GetRowsAtRatio(This,hReserved1,hReserved2,ulNumerator,ulDenominator,cRows,pcRowsObtained,prghRows) )
 
 
 #define IRowsetExactScroll_GetExactPosition(This,hChapter,cbBookmark,pBookmark,pulPosition,pcRows)	\
-    ( (This)->lpVtbl -> GetExactPosition(This,hChapter,cbBookmark,pBookmark,pulPosition,pcRows) ) 
+    ( (This)->lpVtbl -> GetExactPosition(This,hChapter,cbBookmark,pBookmark,pulPosition,pcRows) )
 
 #endif /* COBJMACROS */
 
@@ -5181,7 +5181,7 @@ EXTERN_C const IID IID_IRowsetExactScroll;
 
 
 /* interface __MIDL_itf_oledb_0000_0017 */
-/* [local] */ 
+/* [local] */
 
 #endif // oledb_deprecated
 //@@@- oledb_deprecated
@@ -5194,74 +5194,74 @@ extern RPC_IF_HANDLE __MIDL_itf_oledb_0000_0017_v0_0_s_ifspec;
 #define __IRowsetChange_INTERFACE_DEFINED__
 
 /* interface IRowsetChange */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IRowsetChange;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a05-2a1c-11ce-ade5-00aa0044773d")
     IRowsetChange : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE DeleteRows( 
+        virtual HRESULT STDMETHODCALLTYPE DeleteRows(
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [size_is][out] */ DBROWSTATUS rgRowStatus[  ]) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetData( 
+
+        virtual HRESULT STDMETHODCALLTYPE SetData(
             /* [in] */ HROW hRow,
             /* [in] */ HACCESSOR hAccessor,
             /* [in] */ void *pData) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE InsertRow( 
+
+        virtual HRESULT STDMETHODCALLTYPE InsertRow(
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ HACCESSOR hAccessor,
             /* [in] */ void *pData,
             /* [out] */ HROW *phRow) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowsetChangeVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowsetChange * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowsetChange * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowsetChange * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *DeleteRows )( 
+
+        HRESULT ( STDMETHODCALLTYPE *DeleteRows )(
             IRowsetChange * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [size_is][out] */ DBROWSTATUS rgRowStatus[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetData )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetData )(
             IRowsetChange * This,
             /* [in] */ HROW hRow,
             /* [in] */ HACCESSOR hAccessor,
             /* [in] */ void *pData);
-        
-        HRESULT ( STDMETHODCALLTYPE *InsertRow )( 
+
+        HRESULT ( STDMETHODCALLTYPE *InsertRow )(
             IRowsetChange * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ HACCESSOR hAccessor,
             /* [in] */ void *pData,
             /* [out] */ HROW *phRow);
-        
+
         END_INTERFACE
     } IRowsetChangeVtbl;
 
@@ -5270,29 +5270,29 @@ EXTERN_C const IID IID_IRowsetChange;
         CONST_VTBL struct IRowsetChangeVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowsetChange_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowsetChange_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowsetChange_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowsetChange_DeleteRows(This,hReserved,cRows,rghRows,rgRowStatus)	\
-    ( (This)->lpVtbl -> DeleteRows(This,hReserved,cRows,rghRows,rgRowStatus) ) 
+    ( (This)->lpVtbl -> DeleteRows(This,hReserved,cRows,rghRows,rgRowStatus) )
 
 #define IRowsetChange_SetData(This,hRow,hAccessor,pData)	\
-    ( (This)->lpVtbl -> SetData(This,hRow,hAccessor,pData) ) 
+    ( (This)->lpVtbl -> SetData(This,hRow,hAccessor,pData) )
 
 #define IRowsetChange_InsertRow(This,hReserved,hAccessor,pData,phRow)	\
-    ( (This)->lpVtbl -> InsertRow(This,hReserved,hAccessor,pData,phRow) ) 
+    ( (This)->lpVtbl -> InsertRow(This,hReserved,hAccessor,pData,phRow) )
 
 #endif /* COBJMACROS */
 
@@ -5309,7 +5309,7 @@ EXTERN_C const IID IID_IRowsetChange;
 #define __IRowsetUpdate_INTERFACE_DEFINED__
 
 /* interface IRowsetUpdate */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 typedef DWORD DBPENDINGSTATUS;
 
@@ -5325,107 +5325,107 @@ enum DBPENDINGSTATUSENUM
 EXTERN_C const IID IID_IRowsetUpdate;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a6d-2a1c-11ce-ade5-00aa0044773d")
     IRowsetUpdate : public IRowsetChange
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE GetOriginalData( 
+        virtual HRESULT STDMETHODCALLTYPE GetOriginalData(
             /* [in] */ HROW hRow,
             /* [in] */ HACCESSOR hAccessor,
             /* [out] */ void *pData) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetPendingRows( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetPendingRows(
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBPENDINGSTATUS dwRowStatus,
             /* [out][in] */ DBCOUNTITEM *pcPendingRows,
             /* [size_is][size_is][out] */ HROW **prgPendingRows,
             /* [size_is][size_is][out] */ DBPENDINGSTATUS **prgPendingStatus) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetRowStatus( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetRowStatus(
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [size_is][out] */ DBPENDINGSTATUS rgPendingStatus[  ]) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Undo( 
+
+        virtual HRESULT STDMETHODCALLTYPE Undo(
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [out][in] */ DBCOUNTITEM *pcRowsUndone,
             /* [size_is][size_is][out] */ HROW **prgRowsUndone,
             /* [size_is][size_is][out] */ DBROWSTATUS **prgRowStatus) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Update( 
+
+        virtual HRESULT STDMETHODCALLTYPE Update(
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [out][in] */ DBCOUNTITEM *pcRows,
             /* [size_is][size_is][out] */ HROW **prgRows,
             /* [size_is][size_is][out] */ DBROWSTATUS **prgRowStatus) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowsetUpdateVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowsetUpdate * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowsetUpdate * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowsetUpdate * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *DeleteRows )( 
+
+        HRESULT ( STDMETHODCALLTYPE *DeleteRows )(
             IRowsetUpdate * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [size_is][out] */ DBROWSTATUS rgRowStatus[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetData )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetData )(
             IRowsetUpdate * This,
             /* [in] */ HROW hRow,
             /* [in] */ HACCESSOR hAccessor,
             /* [in] */ void *pData);
-        
-        HRESULT ( STDMETHODCALLTYPE *InsertRow )( 
+
+        HRESULT ( STDMETHODCALLTYPE *InsertRow )(
             IRowsetUpdate * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ HACCESSOR hAccessor,
             /* [in] */ void *pData,
             /* [out] */ HROW *phRow);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetOriginalData )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetOriginalData )(
             IRowsetUpdate * This,
             /* [in] */ HROW hRow,
             /* [in] */ HACCESSOR hAccessor,
             /* [out] */ void *pData);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetPendingRows )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetPendingRows )(
             IRowsetUpdate * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBPENDINGSTATUS dwRowStatus,
             /* [out][in] */ DBCOUNTITEM *pcPendingRows,
             /* [size_is][size_is][out] */ HROW **prgPendingRows,
             /* [size_is][size_is][out] */ DBPENDINGSTATUS **prgPendingStatus);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRowStatus )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetRowStatus )(
             IRowsetUpdate * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [size_is][out] */ DBPENDINGSTATUS rgPendingStatus[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *Undo )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Undo )(
             IRowsetUpdate * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBCOUNTITEM cRows,
@@ -5433,8 +5433,8 @@ EXTERN_C const IID IID_IRowsetUpdate;
             /* [out][in] */ DBCOUNTITEM *pcRowsUndone,
             /* [size_is][size_is][out] */ HROW **prgRowsUndone,
             /* [size_is][size_is][out] */ DBROWSTATUS **prgRowStatus);
-        
-        HRESULT ( STDMETHODCALLTYPE *Update )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Update )(
             IRowsetUpdate * This,
             /* [in] */ HCHAPTER hReserved,
             /* [in] */ DBCOUNTITEM cRows,
@@ -5442,7 +5442,7 @@ EXTERN_C const IID IID_IRowsetUpdate;
             /* [out][in] */ DBCOUNTITEM *pcRows,
             /* [size_is][size_is][out] */ HROW **prgRows,
             /* [size_is][size_is][out] */ DBROWSTATUS **prgRowStatus);
-        
+
         END_INTERFACE
     } IRowsetUpdateVtbl;
 
@@ -5451,45 +5451,45 @@ EXTERN_C const IID IID_IRowsetUpdate;
         CONST_VTBL struct IRowsetUpdateVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowsetUpdate_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowsetUpdate_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowsetUpdate_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowsetUpdate_DeleteRows(This,hReserved,cRows,rghRows,rgRowStatus)	\
-    ( (This)->lpVtbl -> DeleteRows(This,hReserved,cRows,rghRows,rgRowStatus) ) 
+    ( (This)->lpVtbl -> DeleteRows(This,hReserved,cRows,rghRows,rgRowStatus) )
 
 #define IRowsetUpdate_SetData(This,hRow,hAccessor,pData)	\
-    ( (This)->lpVtbl -> SetData(This,hRow,hAccessor,pData) ) 
+    ( (This)->lpVtbl -> SetData(This,hRow,hAccessor,pData) )
 
 #define IRowsetUpdate_InsertRow(This,hReserved,hAccessor,pData,phRow)	\
-    ( (This)->lpVtbl -> InsertRow(This,hReserved,hAccessor,pData,phRow) ) 
+    ( (This)->lpVtbl -> InsertRow(This,hReserved,hAccessor,pData,phRow) )
 
 
 #define IRowsetUpdate_GetOriginalData(This,hRow,hAccessor,pData)	\
-    ( (This)->lpVtbl -> GetOriginalData(This,hRow,hAccessor,pData) ) 
+    ( (This)->lpVtbl -> GetOriginalData(This,hRow,hAccessor,pData) )
 
 #define IRowsetUpdate_GetPendingRows(This,hReserved,dwRowStatus,pcPendingRows,prgPendingRows,prgPendingStatus)	\
-    ( (This)->lpVtbl -> GetPendingRows(This,hReserved,dwRowStatus,pcPendingRows,prgPendingRows,prgPendingStatus) ) 
+    ( (This)->lpVtbl -> GetPendingRows(This,hReserved,dwRowStatus,pcPendingRows,prgPendingRows,prgPendingStatus) )
 
 #define IRowsetUpdate_GetRowStatus(This,hReserved,cRows,rghRows,rgPendingStatus)	\
-    ( (This)->lpVtbl -> GetRowStatus(This,hReserved,cRows,rghRows,rgPendingStatus) ) 
+    ( (This)->lpVtbl -> GetRowStatus(This,hReserved,cRows,rghRows,rgPendingStatus) )
 
 #define IRowsetUpdate_Undo(This,hReserved,cRows,rghRows,pcRowsUndone,prgRowsUndone,prgRowStatus)	\
-    ( (This)->lpVtbl -> Undo(This,hReserved,cRows,rghRows,pcRowsUndone,prgRowsUndone,prgRowStatus) ) 
+    ( (This)->lpVtbl -> Undo(This,hReserved,cRows,rghRows,pcRowsUndone,prgRowsUndone,prgRowStatus) )
 
 #define IRowsetUpdate_Update(This,hReserved,cRows,rghRows,pcRows,prgRows,prgRowStatus)	\
-    ( (This)->lpVtbl -> Update(This,hReserved,cRows,rghRows,pcRows,prgRows,prgRowStatus) ) 
+    ( (This)->lpVtbl -> Update(This,hReserved,cRows,rghRows,pcRows,prgRows,prgRowStatus) )
 
 #endif /* COBJMACROS */
 
@@ -5506,46 +5506,46 @@ EXTERN_C const IID IID_IRowsetUpdate;
 #define __IRowsetIdentity_INTERFACE_DEFINED__
 
 /* interface IRowsetIdentity */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IRowsetIdentity;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a09-2a1c-11ce-ade5-00aa0044773d")
     IRowsetIdentity : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE IsSameRow( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE IsSameRow(
             /* [in] */ HROW hThisRow,
             /* [in] */ HROW hThatRow) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowsetIdentityVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowsetIdentity * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowsetIdentity * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowsetIdentity * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *IsSameRow )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *IsSameRow )(
             IRowsetIdentity * This,
             /* [in] */ HROW hThisRow,
             /* [in] */ HROW hThatRow);
-        
+
         END_INTERFACE
     } IRowsetIdentityVtbl;
 
@@ -5554,23 +5554,23 @@ EXTERN_C const IID IID_IRowsetIdentity;
         CONST_VTBL struct IRowsetIdentityVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowsetIdentity_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowsetIdentity_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowsetIdentity_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowsetIdentity_IsSameRow(This,hThisRow,hThatRow)	\
-    ( (This)->lpVtbl -> IsSameRow(This,hThisRow,hThatRow) ) 
+    ( (This)->lpVtbl -> IsSameRow(This,hThisRow,hThatRow) )
 
 #endif /* COBJMACROS */
 
@@ -5579,7 +5579,7 @@ EXTERN_C const IID IID_IRowsetIdentity;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetIdentity_RemoteIsSameRow_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetIdentity_RemoteIsSameRow_Proxy(
     IRowsetIdentity * This,
     /* [in] */ HROW hThisRow,
     /* [in] */ HROW hThatRow,
@@ -5601,18 +5601,18 @@ void __RPC_STUB IRowsetIdentity_RemoteIsSameRow_Stub(
 #define __IRowsetNotify_INTERFACE_DEFINED__
 
 /* interface IRowsetNotify */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IRowsetNotify;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a83-2a1c-11ce-ade5-00aa0044773d")
     IRowsetNotify : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OnFieldChange( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OnFieldChange(
             /* [in] */ IRowset *pRowset,
             /* [in] */ HROW hRow,
             /* [in] */ DBORDINAL cColumns,
@@ -5620,42 +5620,42 @@ EXTERN_C const IID IID_IRowsetNotify;
             /* [in] */ DBREASON eReason,
             /* [in] */ DBEVENTPHASE ePhase,
             /* [in] */ BOOL fCantDeny) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OnRowChange( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OnRowChange(
             /* [in] */ IRowset *pRowset,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ const HROW rghRows[  ],
             /* [in] */ DBREASON eReason,
             /* [in] */ DBEVENTPHASE ePhase,
             /* [in] */ BOOL fCantDeny) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OnRowsetChange( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OnRowsetChange(
             /* [in] */ IRowset *pRowset,
             /* [in] */ DBREASON eReason,
             /* [in] */ DBEVENTPHASE ePhase,
             /* [in] */ BOOL fCantDeny) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowsetNotifyVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowsetNotify * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowsetNotify * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowsetNotify * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OnFieldChange )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OnFieldChange )(
             IRowsetNotify * This,
             /* [in] */ IRowset *pRowset,
             /* [in] */ HROW hRow,
@@ -5664,8 +5664,8 @@ EXTERN_C const IID IID_IRowsetNotify;
             /* [in] */ DBREASON eReason,
             /* [in] */ DBEVENTPHASE ePhase,
             /* [in] */ BOOL fCantDeny);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OnRowChange )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OnRowChange )(
             IRowsetNotify * This,
             /* [in] */ IRowset *pRowset,
             /* [in] */ DBCOUNTITEM cRows,
@@ -5673,14 +5673,14 @@ EXTERN_C const IID IID_IRowsetNotify;
             /* [in] */ DBREASON eReason,
             /* [in] */ DBEVENTPHASE ePhase,
             /* [in] */ BOOL fCantDeny);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OnRowsetChange )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OnRowsetChange )(
             IRowsetNotify * This,
             /* [in] */ IRowset *pRowset,
             /* [in] */ DBREASON eReason,
             /* [in] */ DBEVENTPHASE ePhase,
             /* [in] */ BOOL fCantDeny);
-        
+
         END_INTERFACE
     } IRowsetNotifyVtbl;
 
@@ -5689,29 +5689,29 @@ EXTERN_C const IID IID_IRowsetNotify;
         CONST_VTBL struct IRowsetNotifyVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowsetNotify_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowsetNotify_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowsetNotify_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowsetNotify_OnFieldChange(This,pRowset,hRow,cColumns,rgColumns,eReason,ePhase,fCantDeny)	\
-    ( (This)->lpVtbl -> OnFieldChange(This,pRowset,hRow,cColumns,rgColumns,eReason,ePhase,fCantDeny) ) 
+    ( (This)->lpVtbl -> OnFieldChange(This,pRowset,hRow,cColumns,rgColumns,eReason,ePhase,fCantDeny) )
 
 #define IRowsetNotify_OnRowChange(This,pRowset,cRows,rghRows,eReason,ePhase,fCantDeny)	\
-    ( (This)->lpVtbl -> OnRowChange(This,pRowset,cRows,rghRows,eReason,ePhase,fCantDeny) ) 
+    ( (This)->lpVtbl -> OnRowChange(This,pRowset,cRows,rghRows,eReason,ePhase,fCantDeny) )
 
 #define IRowsetNotify_OnRowsetChange(This,pRowset,eReason,ePhase,fCantDeny)	\
-    ( (This)->lpVtbl -> OnRowsetChange(This,pRowset,eReason,ePhase,fCantDeny) ) 
+    ( (This)->lpVtbl -> OnRowsetChange(This,pRowset,eReason,ePhase,fCantDeny) )
 
 #endif /* COBJMACROS */
 
@@ -5720,7 +5720,7 @@ EXTERN_C const IID IID_IRowsetNotify;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_RemoteOnFieldChange_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_RemoteOnFieldChange_Proxy(
     IRowsetNotify * This,
     /* [in] */ __RPC__in_opt IRowset *pRowset,
     /* [in] */ HROW hRow,
@@ -5738,7 +5738,7 @@ void __RPC_STUB IRowsetNotify_RemoteOnFieldChange_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_RemoteOnRowChange_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_RemoteOnRowChange_Proxy(
     IRowsetNotify * This,
     /* [in] */ __RPC__in_opt IRowset *pRowset,
     /* [in] */ DBCOUNTITEM cRows,
@@ -5755,7 +5755,7 @@ void __RPC_STUB IRowsetNotify_RemoteOnRowChange_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_RemoteOnRowsetChange_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_RemoteOnRowsetChange_Proxy(
     IRowsetNotify * This,
     /* [in] */ __RPC__in_opt IRowset *pRowset,
     /* [in] */ DBREASON eReason,
@@ -5778,7 +5778,7 @@ void __RPC_STUB IRowsetNotify_RemoteOnRowsetChange_Stub(
 #define __IRowsetIndex_INTERFACE_DEFINED__
 
 /* interface IRowsetIndex */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 typedef DWORD DBSEEK;
 
@@ -5821,66 +5821,66 @@ enum DBRANGEENUM20
 EXTERN_C const IID IID_IRowsetIndex;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a82-2a1c-11ce-ade5-00aa0044773d")
     IRowsetIndex : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE GetIndexInfo( 
+        virtual HRESULT STDMETHODCALLTYPE GetIndexInfo(
             /* [out][in] */ DBORDINAL *pcKeyColumns,
             /* [size_is][size_is][out] */ DBINDEXCOLUMNDESC **prgIndexColumnDesc,
             /* [out][in] */ ULONG *pcIndexPropertySets,
             /* [size_is][size_is][out] */ DBPROPSET **prgIndexPropertySets) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Seek( 
+
+        virtual HRESULT STDMETHODCALLTYPE Seek(
             /* [in] */ HACCESSOR hAccessor,
             /* [in] */ DBORDINAL cKeyValues,
             /* [in] */ void *pData,
             /* [in] */ DBSEEK dwSeekOptions) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetRange( 
+
+        virtual HRESULT STDMETHODCALLTYPE SetRange(
             /* [in] */ HACCESSOR hAccessor,
             /* [in] */ DBORDINAL cStartKeyColumns,
             /* [in] */ void *pStartData,
             /* [in] */ DBORDINAL cEndKeyColumns,
             /* [in] */ void *pEndData,
             /* [in] */ DBRANGE dwRangeOptions) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowsetIndexVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowsetIndex * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowsetIndex * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowsetIndex * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIndexInfo )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetIndexInfo )(
             IRowsetIndex * This,
             /* [out][in] */ DBORDINAL *pcKeyColumns,
             /* [size_is][size_is][out] */ DBINDEXCOLUMNDESC **prgIndexColumnDesc,
             /* [out][in] */ ULONG *pcIndexPropertySets,
             /* [size_is][size_is][out] */ DBPROPSET **prgIndexPropertySets);
-        
-        HRESULT ( STDMETHODCALLTYPE *Seek )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Seek )(
             IRowsetIndex * This,
             /* [in] */ HACCESSOR hAccessor,
             /* [in] */ DBORDINAL cKeyValues,
             /* [in] */ void *pData,
             /* [in] */ DBSEEK dwSeekOptions);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetRange )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetRange )(
             IRowsetIndex * This,
             /* [in] */ HACCESSOR hAccessor,
             /* [in] */ DBORDINAL cStartKeyColumns,
@@ -5888,7 +5888,7 @@ EXTERN_C const IID IID_IRowsetIndex;
             /* [in] */ DBORDINAL cEndKeyColumns,
             /* [in] */ void *pEndData,
             /* [in] */ DBRANGE dwRangeOptions);
-        
+
         END_INTERFACE
     } IRowsetIndexVtbl;
 
@@ -5897,29 +5897,29 @@ EXTERN_C const IID IID_IRowsetIndex;
         CONST_VTBL struct IRowsetIndexVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowsetIndex_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowsetIndex_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowsetIndex_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowsetIndex_GetIndexInfo(This,pcKeyColumns,prgIndexColumnDesc,pcIndexPropertySets,prgIndexPropertySets)	\
-    ( (This)->lpVtbl -> GetIndexInfo(This,pcKeyColumns,prgIndexColumnDesc,pcIndexPropertySets,prgIndexPropertySets) ) 
+    ( (This)->lpVtbl -> GetIndexInfo(This,pcKeyColumns,prgIndexColumnDesc,pcIndexPropertySets,prgIndexPropertySets) )
 
 #define IRowsetIndex_Seek(This,hAccessor,cKeyValues,pData,dwSeekOptions)	\
-    ( (This)->lpVtbl -> Seek(This,hAccessor,cKeyValues,pData,dwSeekOptions) ) 
+    ( (This)->lpVtbl -> Seek(This,hAccessor,cKeyValues,pData,dwSeekOptions) )
 
 #define IRowsetIndex_SetRange(This,hAccessor,cStartKeyColumns,pStartData,cEndKeyColumns,pEndData,dwRangeOptions)	\
-    ( (This)->lpVtbl -> SetRange(This,hAccessor,cStartKeyColumns,pStartData,cEndKeyColumns,pEndData,dwRangeOptions) ) 
+    ( (This)->lpVtbl -> SetRange(This,hAccessor,cStartKeyColumns,pStartData,cEndKeyColumns,pEndData,dwRangeOptions) )
 
 #endif /* COBJMACROS */
 
@@ -5936,66 +5936,66 @@ EXTERN_C const IID IID_IRowsetIndex;
 #define __ICommand_INTERFACE_DEFINED__
 
 /* interface ICommand */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_ICommand;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a63-2a1c-11ce-ade5-00aa0044773d")
     ICommand : public IUnknown
     {
     public:
         virtual /* [local] */ HRESULT STDMETHODCALLTYPE Cancel( void) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE Execute( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE Execute(
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ REFIID riid,
             /* [out][in] */ DBPARAMS *pParams,
             /* [out] */ DBROWCOUNT *pcRowsAffected,
             /* [iid_is][out] */ IUnknown **ppRowset) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetDBSession( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetDBSession(
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppSession) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ICommandVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ICommand * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ICommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ICommand * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Cancel )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Cancel )(
             ICommand * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Execute )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Execute )(
             ICommand * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ REFIID riid,
             /* [out][in] */ DBPARAMS *pParams,
             /* [out] */ DBROWCOUNT *pcRowsAffected,
             /* [iid_is][out] */ IUnknown **ppRowset);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetDBSession )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetDBSession )(
             ICommand * This,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppSession);
-        
+
         END_INTERFACE
     } ICommandVtbl;
 
@@ -6004,29 +6004,29 @@ EXTERN_C const IID IID_ICommand;
         CONST_VTBL struct ICommandVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ICommand_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ICommand_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ICommand_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ICommand_Cancel(This)	\
-    ( (This)->lpVtbl -> Cancel(This) ) 
+    ( (This)->lpVtbl -> Cancel(This) )
 
 #define ICommand_Execute(This,pUnkOuter,riid,pParams,pcRowsAffected,ppRowset)	\
-    ( (This)->lpVtbl -> Execute(This,pUnkOuter,riid,pParams,pcRowsAffected,ppRowset) ) 
+    ( (This)->lpVtbl -> Execute(This,pUnkOuter,riid,pParams,pcRowsAffected,ppRowset) )
 
 #define ICommand_GetDBSession(This,riid,ppSession)	\
-    ( (This)->lpVtbl -> GetDBSession(This,riid,ppSession) ) 
+    ( (This)->lpVtbl -> GetDBSession(This,riid,ppSession) )
 
 #endif /* COBJMACROS */
 
@@ -6035,7 +6035,7 @@ EXTERN_C const IID IID_ICommand;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommand_RemoteCancel_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommand_RemoteCancel_Proxy(
     ICommand * This,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
@@ -6047,7 +6047,7 @@ void __RPC_STUB ICommand_RemoteCancel_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommand_RemoteExecute_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommand_RemoteExecute_Proxy(
     ICommand * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in REFIID riid,
@@ -6071,7 +6071,7 @@ void __RPC_STUB ICommand_RemoteExecute_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommand_RemoteGetDBSession_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommand_RemoteGetDBSession_Proxy(
     ICommand * This,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppSession,
@@ -6093,7 +6093,7 @@ void __RPC_STUB ICommand_RemoteGetDBSession_Stub(
 #define __IMultipleResults_INTERFACE_DEFINED__
 
 /* interface IMultipleResults */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 typedef DB_LRESERVE DBRESULTFLAG;
 
@@ -6107,46 +6107,46 @@ enum DBRESULTFLAGENUM
 EXTERN_C const IID IID_IMultipleResults;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a90-2a1c-11ce-ade5-00aa0044773d")
     IMultipleResults : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetResult( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetResult(
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ DBRESULTFLAG lResultFlag,
             /* [in] */ REFIID riid,
             /* [out] */ DBROWCOUNT *pcRowsAffected,
             /* [iid_is][out] */ IUnknown **ppRowset) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IMultipleResultsVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IMultipleResults * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IMultipleResults * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IMultipleResults * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetResult )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetResult )(
             IMultipleResults * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ DBRESULTFLAG lResultFlag,
             /* [in] */ REFIID riid,
             /* [out] */ DBROWCOUNT *pcRowsAffected,
             /* [iid_is][out] */ IUnknown **ppRowset);
-        
+
         END_INTERFACE
     } IMultipleResultsVtbl;
 
@@ -6155,23 +6155,23 @@ EXTERN_C const IID IID_IMultipleResults;
         CONST_VTBL struct IMultipleResultsVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IMultipleResults_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IMultipleResults_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IMultipleResults_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IMultipleResults_GetResult(This,pUnkOuter,lResultFlag,riid,pcRowsAffected,ppRowset)	\
-    ( (This)->lpVtbl -> GetResult(This,pUnkOuter,lResultFlag,riid,pcRowsAffected,ppRowset) ) 
+    ( (This)->lpVtbl -> GetResult(This,pUnkOuter,lResultFlag,riid,pcRowsAffected,ppRowset) )
 
 #endif /* COBJMACROS */
 
@@ -6180,7 +6180,7 @@ EXTERN_C const IID IID_IMultipleResults;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IMultipleResults_RemoteGetResult_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IMultipleResults_RemoteGetResult_Proxy(
     IMultipleResults * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ DBRESULTFLAG lResultFlag,
@@ -6205,7 +6205,7 @@ void __RPC_STUB IMultipleResults_RemoteGetResult_Stub(
 #define __IConvertType_INTERFACE_DEFINED__
 
 /* interface IConvertType */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 typedef DWORD DBCONVERTFLAGS;
 
@@ -6228,42 +6228,42 @@ enum DBCONVERTFLAGSENUM20
 EXTERN_C const IID IID_IConvertType;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a88-2a1c-11ce-ade5-00aa0044773d")
     IConvertType : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CanConvert( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CanConvert(
             /* [in] */ DBTYPE wFromType,
             /* [in] */ DBTYPE wToType,
             /* [in] */ DBCONVERTFLAGS dwConvertFlags) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IConvertTypeVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IConvertType * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IConvertType * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IConvertType * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CanConvert )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CanConvert )(
             IConvertType * This,
             /* [in] */ DBTYPE wFromType,
             /* [in] */ DBTYPE wToType,
             /* [in] */ DBCONVERTFLAGS dwConvertFlags);
-        
+
         END_INTERFACE
     } IConvertTypeVtbl;
 
@@ -6272,23 +6272,23 @@ EXTERN_C const IID IID_IConvertType;
         CONST_VTBL struct IConvertTypeVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IConvertType_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IConvertType_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IConvertType_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IConvertType_CanConvert(This,wFromType,wToType,dwConvertFlags)	\
-    ( (This)->lpVtbl -> CanConvert(This,wFromType,wToType,dwConvertFlags) ) 
+    ( (This)->lpVtbl -> CanConvert(This,wFromType,wToType,dwConvertFlags) )
 
 #endif /* COBJMACROS */
 
@@ -6297,7 +6297,7 @@ EXTERN_C const IID IID_IConvertType;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IConvertType_RemoteCanConvert_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IConvertType_RemoteCanConvert_Proxy(
     IConvertType * This,
     /* [in] */ DBTYPE wFromType,
     /* [in] */ DBTYPE wToType,
@@ -6320,49 +6320,49 @@ void __RPC_STUB IConvertType_RemoteCanConvert_Stub(
 #define __ICommandPrepare_INTERFACE_DEFINED__
 
 /* interface ICommandPrepare */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_ICommandPrepare;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a26-2a1c-11ce-ade5-00aa0044773d")
     ICommandPrepare : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE Prepare( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE Prepare(
             /* [in] */ ULONG cExpectedRuns) = 0;
-        
+
         virtual /* [local] */ HRESULT STDMETHODCALLTYPE Unprepare( void) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ICommandPrepareVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ICommandPrepare * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ICommandPrepare * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ICommandPrepare * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Prepare )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Prepare )(
             ICommandPrepare * This,
             /* [in] */ ULONG cExpectedRuns);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Unprepare )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Unprepare )(
             ICommandPrepare * This);
-        
+
         END_INTERFACE
     } ICommandPrepareVtbl;
 
@@ -6371,26 +6371,26 @@ EXTERN_C const IID IID_ICommandPrepare;
         CONST_VTBL struct ICommandPrepareVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ICommandPrepare_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ICommandPrepare_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ICommandPrepare_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ICommandPrepare_Prepare(This,cExpectedRuns)	\
-    ( (This)->lpVtbl -> Prepare(This,cExpectedRuns) ) 
+    ( (This)->lpVtbl -> Prepare(This,cExpectedRuns) )
 
 #define ICommandPrepare_Unprepare(This)	\
-    ( (This)->lpVtbl -> Unprepare(This) ) 
+    ( (This)->lpVtbl -> Unprepare(This) )
 
 #endif /* COBJMACROS */
 
@@ -6399,7 +6399,7 @@ EXTERN_C const IID IID_ICommandPrepare;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandPrepare_RemotePrepare_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandPrepare_RemotePrepare_Proxy(
     ICommandPrepare * This,
     /* [in] */ ULONG cExpectedRuns,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
@@ -6412,7 +6412,7 @@ void __RPC_STUB ICommandPrepare_RemotePrepare_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandPrepare_RemoteUnprepare_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandPrepare_RemoteUnprepare_Proxy(
     ICommandPrepare * This,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
@@ -6432,59 +6432,59 @@ void __RPC_STUB ICommandPrepare_RemoteUnprepare_Stub(
 #define __ICommandProperties_INTERFACE_DEFINED__
 
 /* interface ICommandProperties */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_ICommandProperties;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a79-2a1c-11ce-ade5-00aa0044773d")
     ICommandProperties : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetProperties( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetProperties(
             /* [in] */ const ULONG cPropertyIDSets,
             /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
             /* [out][in] */ ULONG *pcPropertySets,
             /* [size_is][size_is][out] */ DBPROPSET **prgPropertySets) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetProperties( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetProperties(
             /* [in] */ ULONG cPropertySets,
             /* [size_is][unique][out][in] */ DBPROPSET rgPropertySets[  ]) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ICommandPropertiesVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ICommandProperties * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ICommandProperties * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ICommandProperties * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetProperties )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetProperties )(
             ICommandProperties * This,
             /* [in] */ const ULONG cPropertyIDSets,
             /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
             /* [out][in] */ ULONG *pcPropertySets,
             /* [size_is][size_is][out] */ DBPROPSET **prgPropertySets);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetProperties )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetProperties )(
             ICommandProperties * This,
             /* [in] */ ULONG cPropertySets,
             /* [size_is][unique][out][in] */ DBPROPSET rgPropertySets[  ]);
-        
+
         END_INTERFACE
     } ICommandPropertiesVtbl;
 
@@ -6493,26 +6493,26 @@ EXTERN_C const IID IID_ICommandProperties;
         CONST_VTBL struct ICommandPropertiesVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ICommandProperties_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ICommandProperties_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ICommandProperties_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ICommandProperties_GetProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets)	\
-    ( (This)->lpVtbl -> GetProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets) ) 
+    ( (This)->lpVtbl -> GetProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets) )
 
 #define ICommandProperties_SetProperties(This,cPropertySets,rgPropertySets)	\
-    ( (This)->lpVtbl -> SetProperties(This,cPropertySets,rgPropertySets) ) 
+    ( (This)->lpVtbl -> SetProperties(This,cPropertySets,rgPropertySets) )
 
 #endif /* COBJMACROS */
 
@@ -6521,7 +6521,7 @@ EXTERN_C const IID IID_ICommandProperties;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandProperties_RemoteGetProperties_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandProperties_RemoteGetProperties_Proxy(
     ICommandProperties * This,
     /* [in] */ const ULONG cPropertyIDSets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertyIDSets) const DBPROPIDSET *rgPropertyIDSets,
@@ -6537,7 +6537,7 @@ void __RPC_STUB ICommandProperties_RemoteGetProperties_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandProperties_RemoteSetProperties_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandProperties_RemoteSetProperties_Proxy(
     ICommandProperties * This,
     /* [in] */ ULONG cPropertySets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertySets) DBPROPSET *rgPropertySets,
@@ -6561,73 +6561,73 @@ void __RPC_STUB ICommandProperties_RemoteSetProperties_Stub(
 #define __ICommandText_INTERFACE_DEFINED__
 
 /* interface ICommandText */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_ICommandText;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a27-2a1c-11ce-ade5-00aa0044773d")
     ICommandText : public ICommand
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetCommandText( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetCommandText(
             /* [out][in] */ GUID *pguidDialect,
-            /* [out] */ 
+            /* [out] */
             __deref_out  LPOLESTR *ppwszCommand) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetCommandText( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetCommandText(
             /* [in] */ REFGUID rguidDialect,
             /* [unique][in] */ LPCOLESTR pwszCommand) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ICommandTextVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ICommandText * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ICommandText * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ICommandText * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Cancel )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Cancel )(
             ICommandText * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Execute )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Execute )(
             ICommandText * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ REFIID riid,
             /* [out][in] */ DBPARAMS *pParams,
             /* [out] */ DBROWCOUNT *pcRowsAffected,
             /* [iid_is][out] */ IUnknown **ppRowset);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetDBSession )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetDBSession )(
             ICommandText * This,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppSession);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetCommandText )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetCommandText )(
             ICommandText * This,
             /* [out][in] */ GUID *pguidDialect,
-            /* [out] */ 
+            /* [out] */
             __deref_out  LPOLESTR *ppwszCommand);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetCommandText )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetCommandText )(
             ICommandText * This,
             /* [in] */ REFGUID rguidDialect,
             /* [unique][in] */ LPCOLESTR pwszCommand);
-        
+
         END_INTERFACE
     } ICommandTextVtbl;
 
@@ -6636,36 +6636,36 @@ EXTERN_C const IID IID_ICommandText;
         CONST_VTBL struct ICommandTextVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ICommandText_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ICommandText_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ICommandText_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ICommandText_Cancel(This)	\
-    ( (This)->lpVtbl -> Cancel(This) ) 
+    ( (This)->lpVtbl -> Cancel(This) )
 
 #define ICommandText_Execute(This,pUnkOuter,riid,pParams,pcRowsAffected,ppRowset)	\
-    ( (This)->lpVtbl -> Execute(This,pUnkOuter,riid,pParams,pcRowsAffected,ppRowset) ) 
+    ( (This)->lpVtbl -> Execute(This,pUnkOuter,riid,pParams,pcRowsAffected,ppRowset) )
 
 #define ICommandText_GetDBSession(This,riid,ppSession)	\
-    ( (This)->lpVtbl -> GetDBSession(This,riid,ppSession) ) 
+    ( (This)->lpVtbl -> GetDBSession(This,riid,ppSession) )
 
 
 #define ICommandText_GetCommandText(This,pguidDialect,ppwszCommand)	\
-    ( (This)->lpVtbl -> GetCommandText(This,pguidDialect,ppwszCommand) ) 
+    ( (This)->lpVtbl -> GetCommandText(This,pguidDialect,ppwszCommand) )
 
 #define ICommandText_SetCommandText(This,rguidDialect,pwszCommand)	\
-    ( (This)->lpVtbl -> SetCommandText(This,rguidDialect,pwszCommand) ) 
+    ( (This)->lpVtbl -> SetCommandText(This,rguidDialect,pwszCommand) )
 
 #endif /* COBJMACROS */
 
@@ -6674,7 +6674,7 @@ EXTERN_C const IID IID_ICommandText;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandText_RemoteGetCommandText_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandText_RemoteGetCommandText_Proxy(
     ICommandText * This,
     /* [unique][out][in] */ __RPC__inout_opt GUID *pguidDialect,
     /* [out] */ __RPC__deref_out_opt LPOLESTR *ppwszCommand,
@@ -6688,7 +6688,7 @@ void __RPC_STUB ICommandText_RemoteGetCommandText_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandText_RemoteSetCommandText_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandText_RemoteSetCommandText_Proxy(
     ICommandText * This,
     /* [in] */ __RPC__in REFGUID rguidDialect,
     /* [unique][in] */ __RPC__in_opt LPCOLESTR pwszCommand,
@@ -6710,7 +6710,7 @@ void __RPC_STUB ICommandText_RemoteSetCommandText_Stub(
 #define __ICommandWithParameters_INTERFACE_DEFINED__
 
 /* interface ICommandWithParameters */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 typedef struct tagDBPARAMBINDINFO
     {
@@ -6726,66 +6726,66 @@ typedef struct tagDBPARAMBINDINFO
 EXTERN_C const IID IID_ICommandWithParameters;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a64-2a1c-11ce-ade5-00aa0044773d")
     ICommandWithParameters : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetParameterInfo( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetParameterInfo(
             /* [out][in] */ DB_UPARAMS *pcParams,
             /* [size_is][size_is][out] */ DBPARAMINFO **prgParamInfo,
-            /* [out] */ 
+            /* [out] */
             __deref_out_z_opt  OLECHAR **ppNamesBuffer) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE MapParameterNames( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE MapParameterNames(
             /* [in] */ DB_UPARAMS cParamNames,
             /* [size_is][in] */ const OLECHAR *rgParamNames[  ],
             /* [size_is][out] */ DB_LPARAMS rgParamOrdinals[  ]) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetParameterInfo( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetParameterInfo(
             /* [in] */ DB_UPARAMS cParams,
             /* [size_is][unique][in] */ const DB_UPARAMS rgParamOrdinals[  ],
             /* [size_is][unique][in] */ const DBPARAMBINDINFO rgParamBindInfo[  ]) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ICommandWithParametersVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ICommandWithParameters * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ICommandWithParameters * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ICommandWithParameters * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetParameterInfo )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetParameterInfo )(
             ICommandWithParameters * This,
             /* [out][in] */ DB_UPARAMS *pcParams,
             /* [size_is][size_is][out] */ DBPARAMINFO **prgParamInfo,
-            /* [out] */ 
+            /* [out] */
             __deref_out_z_opt  OLECHAR **ppNamesBuffer);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *MapParameterNames )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *MapParameterNames )(
             ICommandWithParameters * This,
             /* [in] */ DB_UPARAMS cParamNames,
             /* [size_is][in] */ const OLECHAR *rgParamNames[  ],
             /* [size_is][out] */ DB_LPARAMS rgParamOrdinals[  ]);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetParameterInfo )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetParameterInfo )(
             ICommandWithParameters * This,
             /* [in] */ DB_UPARAMS cParams,
             /* [size_is][unique][in] */ const DB_UPARAMS rgParamOrdinals[  ],
             /* [size_is][unique][in] */ const DBPARAMBINDINFO rgParamBindInfo[  ]);
-        
+
         END_INTERFACE
     } ICommandWithParametersVtbl;
 
@@ -6794,29 +6794,29 @@ EXTERN_C const IID IID_ICommandWithParameters;
         CONST_VTBL struct ICommandWithParametersVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ICommandWithParameters_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ICommandWithParameters_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ICommandWithParameters_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ICommandWithParameters_GetParameterInfo(This,pcParams,prgParamInfo,ppNamesBuffer)	\
-    ( (This)->lpVtbl -> GetParameterInfo(This,pcParams,prgParamInfo,ppNamesBuffer) ) 
+    ( (This)->lpVtbl -> GetParameterInfo(This,pcParams,prgParamInfo,ppNamesBuffer) )
 
 #define ICommandWithParameters_MapParameterNames(This,cParamNames,rgParamNames,rgParamOrdinals)	\
-    ( (This)->lpVtbl -> MapParameterNames(This,cParamNames,rgParamNames,rgParamOrdinals) ) 
+    ( (This)->lpVtbl -> MapParameterNames(This,cParamNames,rgParamNames,rgParamOrdinals) )
 
 #define ICommandWithParameters_SetParameterInfo(This,cParams,rgParamOrdinals,rgParamBindInfo)	\
-    ( (This)->lpVtbl -> SetParameterInfo(This,cParams,rgParamOrdinals,rgParamBindInfo) ) 
+    ( (This)->lpVtbl -> SetParameterInfo(This,cParams,rgParamOrdinals,rgParamBindInfo) )
 
 #endif /* COBJMACROS */
 
@@ -6825,7 +6825,7 @@ EXTERN_C const IID IID_ICommandWithParameters;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_RemoteGetParameterInfo_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_RemoteGetParameterInfo_Proxy(
     ICommandWithParameters * This,
     /* [out][in] */ __RPC__inout DB_UPARAMS *pcParams,
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(( ULONG  )*pcParams) DBPARAMINFO **prgParamInfo,
@@ -6842,7 +6842,7 @@ void __RPC_STUB ICommandWithParameters_RemoteGetParameterInfo_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_RemoteMapParameterNames_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_RemoteMapParameterNames_Proxy(
     ICommandWithParameters * This,
     /* [in] */ DB_UPARAMS cParamNames,
     /* [size_is][in] */ __RPC__in_ecount_full(( ULONG  )cParamNames) LPCOLESTR *rgParamNames,
@@ -6857,7 +6857,7 @@ void __RPC_STUB ICommandWithParameters_RemoteMapParameterNames_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_RemoteSetParameterInfo_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_RemoteSetParameterInfo_Proxy(
     ICommandWithParameters * This,
     /* [in] */ DB_UPARAMS cParams,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(( ULONG  )cParams) const DB_UPARAMS *rgParamOrdinals,
@@ -6880,22 +6880,22 @@ void __RPC_STUB ICommandWithParameters_RemoteSetParameterInfo_Stub(
 #define __IColumnsRowset_INTERFACE_DEFINED__
 
 /* interface IColumnsRowset */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IColumnsRowset;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a10-2a1c-11ce-ade5-00aa0044773d")
     IColumnsRowset : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetAvailableColumns( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetAvailableColumns(
             /* [out][in] */ DBORDINAL *pcOptColumns,
             /* [size_is][size_is][out] */ DBID **prgOptColumns) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetColumnsRowset( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetColumnsRowset(
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ DBORDINAL cOptColumns,
             /* [size_is][in] */ const DBID rgOptColumns[  ],
@@ -6903,33 +6903,33 @@ EXTERN_C const IID IID_IColumnsRowset;
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [iid_is][out] */ IUnknown **ppColRowset) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IColumnsRowsetVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IColumnsRowset * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IColumnsRowset * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IColumnsRowset * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetAvailableColumns )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetAvailableColumns )(
             IColumnsRowset * This,
             /* [out][in] */ DBORDINAL *pcOptColumns,
             /* [size_is][size_is][out] */ DBID **prgOptColumns);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetColumnsRowset )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetColumnsRowset )(
             IColumnsRowset * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ DBORDINAL cOptColumns,
@@ -6938,7 +6938,7 @@ EXTERN_C const IID IID_IColumnsRowset;
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [iid_is][out] */ IUnknown **ppColRowset);
-        
+
         END_INTERFACE
     } IColumnsRowsetVtbl;
 
@@ -6947,26 +6947,26 @@ EXTERN_C const IID IID_IColumnsRowset;
         CONST_VTBL struct IColumnsRowsetVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IColumnsRowset_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IColumnsRowset_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IColumnsRowset_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IColumnsRowset_GetAvailableColumns(This,pcOptColumns,prgOptColumns)	\
-    ( (This)->lpVtbl -> GetAvailableColumns(This,pcOptColumns,prgOptColumns) ) 
+    ( (This)->lpVtbl -> GetAvailableColumns(This,pcOptColumns,prgOptColumns) )
 
 #define IColumnsRowset_GetColumnsRowset(This,pUnkOuter,cOptColumns,rgOptColumns,riid,cPropertySets,rgPropertySets,ppColRowset)	\
-    ( (This)->lpVtbl -> GetColumnsRowset(This,pUnkOuter,cOptColumns,rgOptColumns,riid,cPropertySets,rgPropertySets,ppColRowset) ) 
+    ( (This)->lpVtbl -> GetColumnsRowset(This,pUnkOuter,cOptColumns,rgOptColumns,riid,cPropertySets,rgPropertySets,ppColRowset) )
 
 #endif /* COBJMACROS */
 
@@ -6975,7 +6975,7 @@ EXTERN_C const IID IID_IColumnsRowset;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsRowset_RemoteGetAvailableColumns_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsRowset_RemoteGetAvailableColumns_Proxy(
     IColumnsRowset * This,
     /* [out][in] */ __RPC__inout DBORDINAL *pcOptColumns,
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(( ULONG  )*pcOptColumns) DBID **prgOptColumns,
@@ -6989,7 +6989,7 @@ void __RPC_STUB IColumnsRowset_RemoteGetAvailableColumns_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsRowset_RemoteGetColumnsRowset_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsRowset_RemoteGetColumnsRowset_Proxy(
     IColumnsRowset * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ DBORDINAL cOptColumns,
@@ -7018,61 +7018,61 @@ void __RPC_STUB IColumnsRowset_RemoteGetColumnsRowset_Stub(
 #define __IColumnsInfo_INTERFACE_DEFINED__
 
 /* interface IColumnsInfo */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IColumnsInfo;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a11-2a1c-11ce-ade5-00aa0044773d")
     IColumnsInfo : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetColumnInfo( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetColumnInfo(
             /* [out][in] */ DBORDINAL *pcColumns,
             /* [size_is][size_is][out] */ DBCOLUMNINFO **prgInfo,
-            /* [out] */ 
+            /* [out] */
             __deref_out_z_opt  OLECHAR **ppStringsBuffer) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE MapColumnIDs( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE MapColumnIDs(
             /* [in] */ DBORDINAL cColumnIDs,
             /* [size_is][in] */ const DBID rgColumnIDs[  ],
             /* [size_is][out] */ DBORDINAL rgColumns[  ]) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IColumnsInfoVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IColumnsInfo * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IColumnsInfo * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IColumnsInfo * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetColumnInfo )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetColumnInfo )(
             IColumnsInfo * This,
             /* [out][in] */ DBORDINAL *pcColumns,
             /* [size_is][size_is][out] */ DBCOLUMNINFO **prgInfo,
-            /* [out] */ 
+            /* [out] */
             __deref_out_z_opt  OLECHAR **ppStringsBuffer);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *MapColumnIDs )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *MapColumnIDs )(
             IColumnsInfo * This,
             /* [in] */ DBORDINAL cColumnIDs,
             /* [size_is][in] */ const DBID rgColumnIDs[  ],
             /* [size_is][out] */ DBORDINAL rgColumns[  ]);
-        
+
         END_INTERFACE
     } IColumnsInfoVtbl;
 
@@ -7081,26 +7081,26 @@ EXTERN_C const IID IID_IColumnsInfo;
         CONST_VTBL struct IColumnsInfoVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IColumnsInfo_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IColumnsInfo_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IColumnsInfo_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IColumnsInfo_GetColumnInfo(This,pcColumns,prgInfo,ppStringsBuffer)	\
-    ( (This)->lpVtbl -> GetColumnInfo(This,pcColumns,prgInfo,ppStringsBuffer) ) 
+    ( (This)->lpVtbl -> GetColumnInfo(This,pcColumns,prgInfo,ppStringsBuffer) )
 
 #define IColumnsInfo_MapColumnIDs(This,cColumnIDs,rgColumnIDs,rgColumns)	\
-    ( (This)->lpVtbl -> MapColumnIDs(This,cColumnIDs,rgColumnIDs,rgColumns) ) 
+    ( (This)->lpVtbl -> MapColumnIDs(This,cColumnIDs,rgColumnIDs,rgColumns) )
 
 #endif /* COBJMACROS */
 
@@ -7109,7 +7109,7 @@ EXTERN_C const IID IID_IColumnsInfo;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsInfo_RemoteGetColumnInfo_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsInfo_RemoteGetColumnInfo_Proxy(
     IColumnsInfo * This,
     /* [out][in] */ __RPC__inout DBORDINAL *pcColumns,
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(( ULONG  )*pcColumns) DBCOLUMNINFO **prgInfo,
@@ -7127,7 +7127,7 @@ void __RPC_STUB IColumnsInfo_RemoteGetColumnInfo_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsInfo_RemoteMapColumnIDs_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsInfo_RemoteMapColumnIDs_Proxy(
     IColumnsInfo * This,
     /* [in] */ DBORDINAL cColumnIDs,
     /* [size_is][in] */ __RPC__in_ecount_full(( ULONG  )cColumnIDs) const DBID *rgColumnIDs,
@@ -7150,48 +7150,48 @@ void __RPC_STUB IColumnsInfo_RemoteMapColumnIDs_Stub(
 #define __IDBCreateCommand_INTERFACE_DEFINED__
 
 /* interface IDBCreateCommand */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IDBCreateCommand;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a1d-2a1c-11ce-ade5-00aa0044773d")
     IDBCreateCommand : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CreateCommand( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CreateCommand(
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppCommand) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IDBCreateCommandVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IDBCreateCommand * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IDBCreateCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IDBCreateCommand * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateCommand )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateCommand )(
             IDBCreateCommand * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppCommand);
-        
+
         END_INTERFACE
     } IDBCreateCommandVtbl;
 
@@ -7200,23 +7200,23 @@ EXTERN_C const IID IID_IDBCreateCommand;
         CONST_VTBL struct IDBCreateCommandVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IDBCreateCommand_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IDBCreateCommand_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IDBCreateCommand_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IDBCreateCommand_CreateCommand(This,pUnkOuter,riid,ppCommand)	\
-    ( (This)->lpVtbl -> CreateCommand(This,pUnkOuter,riid,ppCommand) ) 
+    ( (This)->lpVtbl -> CreateCommand(This,pUnkOuter,riid,ppCommand) )
 
 #endif /* COBJMACROS */
 
@@ -7225,7 +7225,7 @@ EXTERN_C const IID IID_IDBCreateCommand;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBCreateCommand_RemoteCreateCommand_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBCreateCommand_RemoteCreateCommand_Proxy(
     IDBCreateCommand * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in REFIID riid,
@@ -7248,48 +7248,48 @@ void __RPC_STUB IDBCreateCommand_RemoteCreateCommand_Stub(
 #define __IDBCreateSession_INTERFACE_DEFINED__
 
 /* interface IDBCreateSession */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IDBCreateSession;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a5d-2a1c-11ce-ade5-00aa0044773d")
     IDBCreateSession : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CreateSession( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CreateSession(
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppDBSession) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IDBCreateSessionVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IDBCreateSession * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IDBCreateSession * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IDBCreateSession * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateSession )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateSession )(
             IDBCreateSession * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppDBSession);
-        
+
         END_INTERFACE
     } IDBCreateSessionVtbl;
 
@@ -7298,23 +7298,23 @@ EXTERN_C const IID IID_IDBCreateSession;
         CONST_VTBL struct IDBCreateSessionVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IDBCreateSession_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IDBCreateSession_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IDBCreateSession_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IDBCreateSession_CreateSession(This,pUnkOuter,riid,ppDBSession)	\
-    ( (This)->lpVtbl -> CreateSession(This,pUnkOuter,riid,ppDBSession) ) 
+    ( (This)->lpVtbl -> CreateSession(This,pUnkOuter,riid,ppDBSession) )
 
 #endif /* COBJMACROS */
 
@@ -7323,7 +7323,7 @@ EXTERN_C const IID IID_IDBCreateSession;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBCreateSession_RemoteCreateSession_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBCreateSession_RemoteCreateSession_Proxy(
     IDBCreateSession * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in REFIID riid,
@@ -7346,7 +7346,7 @@ void __RPC_STUB IDBCreateSession_RemoteCreateSession_Stub(
 #define __ISourcesRowset_INTERFACE_DEFINED__
 
 /* interface ISourcesRowset */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 typedef DWORD DBSOURCETYPE;
 
@@ -7376,46 +7376,46 @@ enum DBSOURCETYPEENUM25
 EXTERN_C const IID IID_ISourcesRowset;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a1e-2a1c-11ce-ade5-00aa0044773d")
     ISourcesRowset : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetSourcesRowset( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetSourcesRowset(
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ REFIID riid,
             /* [in] */ ULONG cPropertySets,
             /* [size_is][unique][out][in] */ DBPROPSET rgProperties[  ],
             /* [iid_is][out] */ IUnknown **ppSourcesRowset) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ISourcesRowsetVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ISourcesRowset * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ISourcesRowset * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ISourcesRowset * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetSourcesRowset )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetSourcesRowset )(
             ISourcesRowset * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ REFIID riid,
             /* [in] */ ULONG cPropertySets,
             /* [size_is][unique][out][in] */ DBPROPSET rgProperties[  ],
             /* [iid_is][out] */ IUnknown **ppSourcesRowset);
-        
+
         END_INTERFACE
     } ISourcesRowsetVtbl;
 
@@ -7424,23 +7424,23 @@ EXTERN_C const IID IID_ISourcesRowset;
         CONST_VTBL struct ISourcesRowsetVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ISourcesRowset_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ISourcesRowset_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ISourcesRowset_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ISourcesRowset_GetSourcesRowset(This,pUnkOuter,riid,cPropertySets,rgProperties,ppSourcesRowset)	\
-    ( (This)->lpVtbl -> GetSourcesRowset(This,pUnkOuter,riid,cPropertySets,rgProperties,ppSourcesRowset) ) 
+    ( (This)->lpVtbl -> GetSourcesRowset(This,pUnkOuter,riid,cPropertySets,rgProperties,ppSourcesRowset) )
 
 #endif /* COBJMACROS */
 
@@ -7449,7 +7449,7 @@ EXTERN_C const IID IID_ISourcesRowset;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ISourcesRowset_RemoteGetSourcesRowset_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ISourcesRowset_RemoteGetSourcesRowset_Proxy(
     ISourcesRowset * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in REFIID riid,
@@ -7476,76 +7476,76 @@ void __RPC_STUB ISourcesRowset_RemoteGetSourcesRowset_Stub(
 #define __IDBProperties_INTERFACE_DEFINED__
 
 /* interface IDBProperties */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IDBProperties;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a8a-2a1c-11ce-ade5-00aa0044773d")
     IDBProperties : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetProperties( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetProperties(
             /* [in] */ ULONG cPropertyIDSets,
             /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
             /* [out][in] */ ULONG *pcPropertySets,
             /* [size_is][size_is][out] */ DBPROPSET **prgPropertySets) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetPropertyInfo( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetPropertyInfo(
             /* [in] */ ULONG cPropertyIDSets,
             /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
             /* [out][in] */ ULONG *pcPropertyInfoSets,
             /* [size_is][size_is][out] */ DBPROPINFOSET **prgPropertyInfoSets,
-            /* [out] */ 
+            /* [out] */
             __deref_out_z_opt  OLECHAR **ppDescBuffer) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetProperties( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetProperties(
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ]) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IDBPropertiesVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IDBProperties * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IDBProperties * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IDBProperties * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetProperties )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetProperties )(
             IDBProperties * This,
             /* [in] */ ULONG cPropertyIDSets,
             /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
             /* [out][in] */ ULONG *pcPropertySets,
             /* [size_is][size_is][out] */ DBPROPSET **prgPropertySets);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetPropertyInfo )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetPropertyInfo )(
             IDBProperties * This,
             /* [in] */ ULONG cPropertyIDSets,
             /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
             /* [out][in] */ ULONG *pcPropertyInfoSets,
             /* [size_is][size_is][out] */ DBPROPINFOSET **prgPropertyInfoSets,
-            /* [out] */ 
+            /* [out] */
             __deref_out_z_opt  OLECHAR **ppDescBuffer);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetProperties )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetProperties )(
             IDBProperties * This,
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ]);
-        
+
         END_INTERFACE
     } IDBPropertiesVtbl;
 
@@ -7554,29 +7554,29 @@ EXTERN_C const IID IID_IDBProperties;
         CONST_VTBL struct IDBPropertiesVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IDBProperties_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IDBProperties_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IDBProperties_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IDBProperties_GetProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets)	\
-    ( (This)->lpVtbl -> GetProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets) ) 
+    ( (This)->lpVtbl -> GetProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets) )
 
 #define IDBProperties_GetPropertyInfo(This,cPropertyIDSets,rgPropertyIDSets,pcPropertyInfoSets,prgPropertyInfoSets,ppDescBuffer)	\
-    ( (This)->lpVtbl -> GetPropertyInfo(This,cPropertyIDSets,rgPropertyIDSets,pcPropertyInfoSets,prgPropertyInfoSets,ppDescBuffer) ) 
+    ( (This)->lpVtbl -> GetPropertyInfo(This,cPropertyIDSets,rgPropertyIDSets,pcPropertyInfoSets,prgPropertyInfoSets,ppDescBuffer) )
 
 #define IDBProperties_SetProperties(This,cPropertySets,rgPropertySets)	\
-    ( (This)->lpVtbl -> SetProperties(This,cPropertySets,rgPropertySets) ) 
+    ( (This)->lpVtbl -> SetProperties(This,cPropertySets,rgPropertySets) )
 
 #endif /* COBJMACROS */
 
@@ -7585,7 +7585,7 @@ EXTERN_C const IID IID_IDBProperties;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBProperties_RemoteGetProperties_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBProperties_RemoteGetProperties_Proxy(
     IDBProperties * This,
     /* [in] */ ULONG cPropertyIDSets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertyIDSets) const DBPROPIDSET *rgPropertyIDSets,
@@ -7601,7 +7601,7 @@ void __RPC_STUB IDBProperties_RemoteGetProperties_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBProperties_RemoteGetPropertyInfo_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBProperties_RemoteGetPropertyInfo_Proxy(
     IDBProperties * This,
     /* [in] */ ULONG cPropertyIDSets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertyIDSets) const DBPROPIDSET *rgPropertyIDSets,
@@ -7621,7 +7621,7 @@ void __RPC_STUB IDBProperties_RemoteGetPropertyInfo_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBProperties_RemoteSetProperties_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBProperties_RemoteSetProperties_Proxy(
     IDBProperties * This,
     /* [in] */ ULONG cPropertySets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertySets) DBPROPSET *rgPropertySets,
@@ -7645,47 +7645,47 @@ void __RPC_STUB IDBProperties_RemoteSetProperties_Stub(
 #define __IDBInitialize_INTERFACE_DEFINED__
 
 /* interface IDBInitialize */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IDBInitialize;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a8b-2a1c-11ce-ade5-00aa0044773d")
     IDBInitialize : public IUnknown
     {
     public:
         virtual /* [local] */ HRESULT STDMETHODCALLTYPE Initialize( void) = 0;
-        
+
         virtual /* [local] */ HRESULT STDMETHODCALLTYPE Uninitialize( void) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IDBInitializeVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IDBInitialize * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IDBInitialize * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IDBInitialize * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Initialize )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Initialize )(
             IDBInitialize * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Uninitialize )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Uninitialize )(
             IDBInitialize * This);
-        
+
         END_INTERFACE
     } IDBInitializeVtbl;
 
@@ -7694,26 +7694,26 @@ EXTERN_C const IID IID_IDBInitialize;
         CONST_VTBL struct IDBInitializeVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IDBInitialize_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IDBInitialize_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IDBInitialize_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IDBInitialize_Initialize(This)	\
-    ( (This)->lpVtbl -> Initialize(This) ) 
+    ( (This)->lpVtbl -> Initialize(This) )
 
 #define IDBInitialize_Uninitialize(This)	\
-    ( (This)->lpVtbl -> Uninitialize(This) ) 
+    ( (This)->lpVtbl -> Uninitialize(This) )
 
 #endif /* COBJMACROS */
 
@@ -7722,7 +7722,7 @@ EXTERN_C const IID IID_IDBInitialize;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBInitialize_RemoteInitialize_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBInitialize_RemoteInitialize_Proxy(
     IDBInitialize * This,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
@@ -7734,7 +7734,7 @@ void __RPC_STUB IDBInitialize_RemoteInitialize_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBInitialize_RemoteUninitialize_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBInitialize_RemoteUninitialize_Proxy(
     IDBInitialize * This,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
@@ -7754,7 +7754,7 @@ void __RPC_STUB IDBInitialize_RemoteUninitialize_Stub(
 #define __IDBInfo_INTERFACE_DEFINED__
 
 /* interface IDBInfo */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 typedef DWORD DBLITERAL;
 
@@ -7823,57 +7823,57 @@ typedef struct tagDBLITERALINFO
 EXTERN_C const IID IID_IDBInfo;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a89-2a1c-11ce-ade5-00aa0044773d")
     IDBInfo : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetKeywords( 
-            /* [out] */ 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetKeywords(
+            /* [out] */
             __deref_out  LPOLESTR *ppwszKeywords) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetLiteralInfo( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetLiteralInfo(
             /* [in] */ ULONG cLiterals,
             /* [size_is][in] */ const DBLITERAL rgLiterals[  ],
             /* [out][in] */ ULONG *pcLiteralInfo,
             /* [size_is][size_is][out] */ DBLITERALINFO **prgLiteralInfo,
-            /* [out] */ 
+            /* [out] */
             __deref_out_z  OLECHAR **ppCharBuffer) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IDBInfoVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IDBInfo * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IDBInfo * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IDBInfo * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetKeywords )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetKeywords )(
             IDBInfo * This,
-            /* [out] */ 
+            /* [out] */
             __deref_out  LPOLESTR *ppwszKeywords);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetLiteralInfo )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetLiteralInfo )(
             IDBInfo * This,
             /* [in] */ ULONG cLiterals,
             /* [size_is][in] */ const DBLITERAL rgLiterals[  ],
             /* [out][in] */ ULONG *pcLiteralInfo,
             /* [size_is][size_is][out] */ DBLITERALINFO **prgLiteralInfo,
-            /* [out] */ 
+            /* [out] */
             __deref_out_z  OLECHAR **ppCharBuffer);
-        
+
         END_INTERFACE
     } IDBInfoVtbl;
 
@@ -7882,26 +7882,26 @@ EXTERN_C const IID IID_IDBInfo;
         CONST_VTBL struct IDBInfoVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IDBInfo_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IDBInfo_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IDBInfo_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IDBInfo_GetKeywords(This,ppwszKeywords)	\
-    ( (This)->lpVtbl -> GetKeywords(This,ppwszKeywords) ) 
+    ( (This)->lpVtbl -> GetKeywords(This,ppwszKeywords) )
 
 #define IDBInfo_GetLiteralInfo(This,cLiterals,rgLiterals,pcLiteralInfo,prgLiteralInfo,ppCharBuffer)	\
-    ( (This)->lpVtbl -> GetLiteralInfo(This,cLiterals,rgLiterals,pcLiteralInfo,prgLiteralInfo,ppCharBuffer) ) 
+    ( (This)->lpVtbl -> GetLiteralInfo(This,cLiterals,rgLiterals,pcLiteralInfo,prgLiteralInfo,ppCharBuffer) )
 
 #endif /* COBJMACROS */
 
@@ -7910,7 +7910,7 @@ EXTERN_C const IID IID_IDBInfo;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBInfo_RemoteGetKeywords_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBInfo_RemoteGetKeywords_Proxy(
     IDBInfo * This,
     /* [unique][out][in] */ __RPC__deref_opt_inout_opt LPOLESTR *ppwszKeywords,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
@@ -7923,7 +7923,7 @@ void __RPC_STUB IDBInfo_RemoteGetKeywords_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBInfo_RemoteGetLiteralInfo_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBInfo_RemoteGetLiteralInfo_Proxy(
     IDBInfo * This,
     /* [in] */ ULONG cLiterals,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cLiterals) const DBLITERAL *rgLiterals,
@@ -7952,83 +7952,83 @@ void __RPC_STUB IDBInfo_RemoteGetLiteralInfo_Stub(
 #define __IDBDataSourceAdmin_INTERFACE_DEFINED__
 
 /* interface IDBDataSourceAdmin */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IDBDataSourceAdmin;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a7a-2a1c-11ce-ade5-00aa0044773d")
     IDBDataSourceAdmin : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CreateDataSource( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CreateDataSource(
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppDBSession) = 0;
-        
+
         virtual /* [local] */ HRESULT STDMETHODCALLTYPE DestroyDataSource( void) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetCreationProperties( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetCreationProperties(
             /* [in] */ ULONG cPropertyIDSets,
             /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
             /* [out][in] */ ULONG *pcPropertyInfoSets,
             /* [size_is][size_is][out] */ DBPROPINFOSET **prgPropertyInfoSets,
-            /* [out] */ 
+            /* [out] */
             __deref_out_z_opt  OLECHAR **ppDescBuffer) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE ModifyDataSource( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE ModifyDataSource(
             /* [in] */ ULONG cPropertySets,
             /* [size_is][in] */ DBPROPSET rgPropertySets[  ]) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IDBDataSourceAdminVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IDBDataSourceAdmin * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IDBDataSourceAdmin * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IDBDataSourceAdmin * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateDataSource )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateDataSource )(
             IDBDataSourceAdmin * This,
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppDBSession);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *DestroyDataSource )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *DestroyDataSource )(
             IDBDataSourceAdmin * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetCreationProperties )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetCreationProperties )(
             IDBDataSourceAdmin * This,
             /* [in] */ ULONG cPropertyIDSets,
             /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
             /* [out][in] */ ULONG *pcPropertyInfoSets,
             /* [size_is][size_is][out] */ DBPROPINFOSET **prgPropertyInfoSets,
-            /* [out] */ 
+            /* [out] */
             __deref_out_z_opt  OLECHAR **ppDescBuffer);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *ModifyDataSource )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *ModifyDataSource )(
             IDBDataSourceAdmin * This,
             /* [in] */ ULONG cPropertySets,
             /* [size_is][in] */ DBPROPSET rgPropertySets[  ]);
-        
+
         END_INTERFACE
     } IDBDataSourceAdminVtbl;
 
@@ -8037,32 +8037,32 @@ EXTERN_C const IID IID_IDBDataSourceAdmin;
         CONST_VTBL struct IDBDataSourceAdminVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IDBDataSourceAdmin_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IDBDataSourceAdmin_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IDBDataSourceAdmin_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IDBDataSourceAdmin_CreateDataSource(This,cPropertySets,rgPropertySets,pUnkOuter,riid,ppDBSession)	\
-    ( (This)->lpVtbl -> CreateDataSource(This,cPropertySets,rgPropertySets,pUnkOuter,riid,ppDBSession) ) 
+    ( (This)->lpVtbl -> CreateDataSource(This,cPropertySets,rgPropertySets,pUnkOuter,riid,ppDBSession) )
 
 #define IDBDataSourceAdmin_DestroyDataSource(This)	\
-    ( (This)->lpVtbl -> DestroyDataSource(This) ) 
+    ( (This)->lpVtbl -> DestroyDataSource(This) )
 
 #define IDBDataSourceAdmin_GetCreationProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertyInfoSets,prgPropertyInfoSets,ppDescBuffer)	\
-    ( (This)->lpVtbl -> GetCreationProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertyInfoSets,prgPropertyInfoSets,ppDescBuffer) ) 
+    ( (This)->lpVtbl -> GetCreationProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertyInfoSets,prgPropertyInfoSets,ppDescBuffer) )
 
 #define IDBDataSourceAdmin_ModifyDataSource(This,cPropertySets,rgPropertySets)	\
-    ( (This)->lpVtbl -> ModifyDataSource(This,cPropertySets,rgPropertySets) ) 
+    ( (This)->lpVtbl -> ModifyDataSource(This,cPropertySets,rgPropertySets) )
 
 #endif /* COBJMACROS */
 
@@ -8071,7 +8071,7 @@ EXTERN_C const IID IID_IDBDataSourceAdmin;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_RemoteCreateDataSource_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_RemoteCreateDataSource_Proxy(
     IDBDataSourceAdmin * This,
     /* [in] */ ULONG cPropertySets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertySets) DBPROPSET *rgPropertySets,
@@ -8090,7 +8090,7 @@ void __RPC_STUB IDBDataSourceAdmin_RemoteCreateDataSource_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_RemoteDestroyDataSource_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_RemoteDestroyDataSource_Proxy(
     IDBDataSourceAdmin * This,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
@@ -8102,7 +8102,7 @@ void __RPC_STUB IDBDataSourceAdmin_RemoteDestroyDataSource_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_RemoteGetCreationProperties_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_RemoteGetCreationProperties_Proxy(
     IDBDataSourceAdmin * This,
     /* [in] */ ULONG cPropertyIDSets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertyIDSets) const DBPROPIDSET *rgPropertyIDSets,
@@ -8122,7 +8122,7 @@ void __RPC_STUB IDBDataSourceAdmin_RemoteGetCreationProperties_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_RemoteModifyDataSource_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_RemoteModifyDataSource_Proxy(
     IDBDataSourceAdmin * This,
     /* [in] */ ULONG cPropertySets,
     /* [size_is][in] */ __RPC__in_ecount_full(cPropertySets) DBPROPSET *rgPropertySets,
@@ -8141,7 +8141,7 @@ void __RPC_STUB IDBDataSourceAdmin_RemoteModifyDataSource_Stub(
 
 
 /* interface __MIDL_itf_oledb_0000_0038 */
-/* [local] */ 
+/* [local] */
 
 //@@@+ V1.5
 #if( OLEDBVER >= 0x0150 )
@@ -8154,78 +8154,78 @@ extern RPC_IF_HANDLE __MIDL_itf_oledb_0000_0038_v0_0_s_ifspec;
 #define __IDBAsynchNotify_INTERFACE_DEFINED__
 
 /* interface IDBAsynchNotify */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IDBAsynchNotify;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a96-2a1c-11ce-ade5-00aa0044773d")
     IDBAsynchNotify : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OnLowResource( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OnLowResource(
             /* [in] */ DB_DWRESERVE dwReserved) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OnProgress( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OnProgress(
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ DBASYNCHOP eOperation,
             /* [in] */ DBCOUNTITEM ulProgress,
             /* [in] */ DBCOUNTITEM ulProgressMax,
             /* [in] */ DBASYNCHPHASE eAsynchPhase,
-            /* [in] */ 
+            /* [in] */
             __in_opt  LPOLESTR pwszStatusText) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OnStop( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OnStop(
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ DBASYNCHOP eOperation,
             /* [in] */ HRESULT hrStatus,
-            /* [in] */ 
+            /* [in] */
             __in_opt  LPOLESTR pwszStatusText) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IDBAsynchNotifyVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IDBAsynchNotify * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IDBAsynchNotify * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IDBAsynchNotify * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OnLowResource )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OnLowResource )(
             IDBAsynchNotify * This,
             /* [in] */ DB_DWRESERVE dwReserved);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OnProgress )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OnProgress )(
             IDBAsynchNotify * This,
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ DBASYNCHOP eOperation,
             /* [in] */ DBCOUNTITEM ulProgress,
             /* [in] */ DBCOUNTITEM ulProgressMax,
             /* [in] */ DBASYNCHPHASE eAsynchPhase,
-            /* [in] */ 
+            /* [in] */
             __in_opt  LPOLESTR pwszStatusText);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OnStop )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OnStop )(
             IDBAsynchNotify * This,
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ DBASYNCHOP eOperation,
             /* [in] */ HRESULT hrStatus,
-            /* [in] */ 
+            /* [in] */
             __in_opt  LPOLESTR pwszStatusText);
-        
+
         END_INTERFACE
     } IDBAsynchNotifyVtbl;
 
@@ -8234,29 +8234,29 @@ EXTERN_C const IID IID_IDBAsynchNotify;
         CONST_VTBL struct IDBAsynchNotifyVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IDBAsynchNotify_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IDBAsynchNotify_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IDBAsynchNotify_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IDBAsynchNotify_OnLowResource(This,dwReserved)	\
-    ( (This)->lpVtbl -> OnLowResource(This,dwReserved) ) 
+    ( (This)->lpVtbl -> OnLowResource(This,dwReserved) )
 
 #define IDBAsynchNotify_OnProgress(This,hChapter,eOperation,ulProgress,ulProgressMax,eAsynchPhase,pwszStatusText)	\
-    ( (This)->lpVtbl -> OnProgress(This,hChapter,eOperation,ulProgress,ulProgressMax,eAsynchPhase,pwszStatusText) ) 
+    ( (This)->lpVtbl -> OnProgress(This,hChapter,eOperation,ulProgress,ulProgressMax,eAsynchPhase,pwszStatusText) )
 
 #define IDBAsynchNotify_OnStop(This,hChapter,eOperation,hrStatus,pwszStatusText)	\
-    ( (This)->lpVtbl -> OnStop(This,hChapter,eOperation,hrStatus,pwszStatusText) ) 
+    ( (This)->lpVtbl -> OnStop(This,hChapter,eOperation,hrStatus,pwszStatusText) )
 
 #endif /* COBJMACROS */
 
@@ -8265,7 +8265,7 @@ EXTERN_C const IID IID_IDBAsynchNotify;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_RemoteOnLowResource_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_RemoteOnLowResource_Proxy(
     IDBAsynchNotify * This,
     /* [in] */ DB_DWRESERVE dwReserved);
 
@@ -8277,7 +8277,7 @@ void __RPC_STUB IDBAsynchNotify_RemoteOnLowResource_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_RemoteOnProgress_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_RemoteOnProgress_Proxy(
     IDBAsynchNotify * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ DBASYNCHOP eOperation,
@@ -8294,7 +8294,7 @@ void __RPC_STUB IDBAsynchNotify_RemoteOnProgress_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_RemoteOnStop_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_RemoteOnStop_Proxy(
     IDBAsynchNotify * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ DBASYNCHOP eOperation,
@@ -8317,65 +8317,65 @@ void __RPC_STUB IDBAsynchNotify_RemoteOnStop_Stub(
 #define __IDBAsynchStatus_INTERFACE_DEFINED__
 
 /* interface IDBAsynchStatus */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IDBAsynchStatus;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a95-2a1c-11ce-ade5-00aa0044773d")
     IDBAsynchStatus : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE Abort( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE Abort(
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ DBASYNCHOP eOperation) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetStatus( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetStatus(
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ DBASYNCHOP eOperation,
             /* [out] */ DBCOUNTITEM *pulProgress,
             /* [out] */ DBCOUNTITEM *pulProgressMax,
             /* [out] */ DBASYNCHPHASE *peAsynchPhase,
-            /* [out] */ 
+            /* [out] */
             __deref_opt_inout_opt  LPOLESTR *ppwszStatusText) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IDBAsynchStatusVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IDBAsynchStatus * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IDBAsynchStatus * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IDBAsynchStatus * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Abort )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Abort )(
             IDBAsynchStatus * This,
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ DBASYNCHOP eOperation);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetStatus )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetStatus )(
             IDBAsynchStatus * This,
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ DBASYNCHOP eOperation,
             /* [out] */ DBCOUNTITEM *pulProgress,
             /* [out] */ DBCOUNTITEM *pulProgressMax,
             /* [out] */ DBASYNCHPHASE *peAsynchPhase,
-            /* [out] */ 
+            /* [out] */
             __deref_opt_inout_opt  LPOLESTR *ppwszStatusText);
-        
+
         END_INTERFACE
     } IDBAsynchStatusVtbl;
 
@@ -8384,26 +8384,26 @@ EXTERN_C const IID IID_IDBAsynchStatus;
         CONST_VTBL struct IDBAsynchStatusVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IDBAsynchStatus_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IDBAsynchStatus_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IDBAsynchStatus_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IDBAsynchStatus_Abort(This,hChapter,eOperation)	\
-    ( (This)->lpVtbl -> Abort(This,hChapter,eOperation) ) 
+    ( (This)->lpVtbl -> Abort(This,hChapter,eOperation) )
 
 #define IDBAsynchStatus_GetStatus(This,hChapter,eOperation,pulProgress,pulProgressMax,peAsynchPhase,ppwszStatusText)	\
-    ( (This)->lpVtbl -> GetStatus(This,hChapter,eOperation,pulProgress,pulProgressMax,peAsynchPhase,ppwszStatusText) ) 
+    ( (This)->lpVtbl -> GetStatus(This,hChapter,eOperation,pulProgress,pulProgressMax,peAsynchPhase,ppwszStatusText) )
 
 #endif /* COBJMACROS */
 
@@ -8412,7 +8412,7 @@ EXTERN_C const IID IID_IDBAsynchStatus;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchStatus_RemoteAbort_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchStatus_RemoteAbort_Proxy(
     IDBAsynchStatus * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ DBASYNCHOP eOperation,
@@ -8426,7 +8426,7 @@ void __RPC_STUB IDBAsynchStatus_RemoteAbort_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchStatus_RemoteGetStatus_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchStatus_RemoteGetStatus_Proxy(
     IDBAsynchStatus * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ DBASYNCHOP eOperation,
@@ -8449,7 +8449,7 @@ void __RPC_STUB IDBAsynchStatus_RemoteGetStatus_Stub(
 
 
 /* interface __MIDL_itf_oledb_0000_0040 */
-/* [local] */ 
+/* [local] */
 
 #endif // OLEDBVER >= 0x0150
 //@@@- V1.5
@@ -8462,59 +8462,59 @@ extern RPC_IF_HANDLE __MIDL_itf_oledb_0000_0040_v0_0_s_ifspec;
 #define __ISessionProperties_INTERFACE_DEFINED__
 
 /* interface ISessionProperties */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_ISessionProperties;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a85-2a1c-11ce-ade5-00aa0044773d")
     ISessionProperties : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetProperties( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetProperties(
             /* [in] */ ULONG cPropertyIDSets,
             /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
             /* [out][in] */ ULONG *pcPropertySets,
             /* [size_is][size_is][out] */ DBPROPSET **prgPropertySets) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetProperties( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetProperties(
             /* [in] */ ULONG cPropertySets,
             /* [size_is][unique][out][in] */ DBPROPSET rgPropertySets[  ]) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ISessionPropertiesVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ISessionProperties * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ISessionProperties * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ISessionProperties * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetProperties )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetProperties )(
             ISessionProperties * This,
             /* [in] */ ULONG cPropertyIDSets,
             /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
             /* [out][in] */ ULONG *pcPropertySets,
             /* [size_is][size_is][out] */ DBPROPSET **prgPropertySets);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetProperties )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetProperties )(
             ISessionProperties * This,
             /* [in] */ ULONG cPropertySets,
             /* [size_is][unique][out][in] */ DBPROPSET rgPropertySets[  ]);
-        
+
         END_INTERFACE
     } ISessionPropertiesVtbl;
 
@@ -8523,26 +8523,26 @@ EXTERN_C const IID IID_ISessionProperties;
         CONST_VTBL struct ISessionPropertiesVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ISessionProperties_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ISessionProperties_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ISessionProperties_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ISessionProperties_GetProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets)	\
-    ( (This)->lpVtbl -> GetProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets) ) 
+    ( (This)->lpVtbl -> GetProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets) )
 
 #define ISessionProperties_SetProperties(This,cPropertySets,rgPropertySets)	\
-    ( (This)->lpVtbl -> SetProperties(This,cPropertySets,rgPropertySets) ) 
+    ( (This)->lpVtbl -> SetProperties(This,cPropertySets,rgPropertySets) )
 
 #endif /* COBJMACROS */
 
@@ -8551,7 +8551,7 @@ EXTERN_C const IID IID_ISessionProperties;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ISessionProperties_RemoteGetProperties_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ISessionProperties_RemoteGetProperties_Proxy(
     ISessionProperties * This,
     /* [in] */ ULONG cPropertyIDSets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertyIDSets) const DBPROPIDSET *rgPropertyIDSets,
@@ -8567,7 +8567,7 @@ void __RPC_STUB ISessionProperties_RemoteGetProperties_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ISessionProperties_RemoteSetProperties_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ISessionProperties_RemoteSetProperties_Proxy(
     ISessionProperties * This,
     /* [in] */ ULONG cPropertySets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertySets) DBPROPSET *rgPropertySets,
@@ -8591,18 +8591,18 @@ void __RPC_STUB ISessionProperties_RemoteSetProperties_Stub(
 #define __IIndexDefinition_INTERFACE_DEFINED__
 
 /* interface IIndexDefinition */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IIndexDefinition;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a68-2a1c-11ce-ade5-00aa0044773d")
     IIndexDefinition : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CreateIndex( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CreateIndex(
             /* [in] */ DBID *pTableID,
             /* [in] */ DBID *pIndexID,
             /* [in] */ DBORDINAL cIndexColumnDescs,
@@ -8610,32 +8610,32 @@ EXTERN_C const IID IID_IIndexDefinition;
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [out] */ DBID **ppIndexID) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE DropIndex( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE DropIndex(
             /* [unique][in] */ DBID *pTableID,
             /* [unique][in] */ DBID *pIndexID) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IIndexDefinitionVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IIndexDefinition * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IIndexDefinition * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IIndexDefinition * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateIndex )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateIndex )(
             IIndexDefinition * This,
             /* [in] */ DBID *pTableID,
             /* [in] */ DBID *pIndexID,
@@ -8644,12 +8644,12 @@ EXTERN_C const IID IID_IIndexDefinition;
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [out] */ DBID **ppIndexID);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *DropIndex )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *DropIndex )(
             IIndexDefinition * This,
             /* [unique][in] */ DBID *pTableID,
             /* [unique][in] */ DBID *pIndexID);
-        
+
         END_INTERFACE
     } IIndexDefinitionVtbl;
 
@@ -8658,26 +8658,26 @@ EXTERN_C const IID IID_IIndexDefinition;
         CONST_VTBL struct IIndexDefinitionVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IIndexDefinition_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IIndexDefinition_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IIndexDefinition_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IIndexDefinition_CreateIndex(This,pTableID,pIndexID,cIndexColumnDescs,rgIndexColumnDescs,cPropertySets,rgPropertySets,ppIndexID)	\
-    ( (This)->lpVtbl -> CreateIndex(This,pTableID,pIndexID,cIndexColumnDescs,rgIndexColumnDescs,cPropertySets,rgPropertySets,ppIndexID) ) 
+    ( (This)->lpVtbl -> CreateIndex(This,pTableID,pIndexID,cIndexColumnDescs,rgIndexColumnDescs,cPropertySets,rgPropertySets,ppIndexID) )
 
 #define IIndexDefinition_DropIndex(This,pTableID,pIndexID)	\
-    ( (This)->lpVtbl -> DropIndex(This,pTableID,pIndexID) ) 
+    ( (This)->lpVtbl -> DropIndex(This,pTableID,pIndexID) )
 
 #endif /* COBJMACROS */
 
@@ -8686,7 +8686,7 @@ EXTERN_C const IID IID_IIndexDefinition;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IIndexDefinition_RemoteCreateIndex_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IIndexDefinition_RemoteCreateIndex_Proxy(
     IIndexDefinition * This,
     /* [in] */ __RPC__in DBID *pTableID,
     /* [unique][in] */ __RPC__in_opt DBID *pIndexID,
@@ -8707,7 +8707,7 @@ void __RPC_STUB IIndexDefinition_RemoteCreateIndex_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IIndexDefinition_RemoteDropIndex_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IIndexDefinition_RemoteDropIndex_Proxy(
     IIndexDefinition * This,
     /* [unique][in] */ __RPC__in_opt DBID *pTableID,
     /* [unique][in] */ __RPC__in_opt DBID *pIndexID,
@@ -8729,18 +8729,18 @@ void __RPC_STUB IIndexDefinition_RemoteDropIndex_Stub(
 #define __ITableDefinition_INTERFACE_DEFINED__
 
 /* interface ITableDefinition */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_ITableDefinition;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a86-2a1c-11ce-ade5-00aa0044773d")
     ITableDefinition : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CreateTable( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CreateTable(
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ DBID *pTableID,
             /* [in] */ DBORDINAL cColumnDescs,
@@ -8750,40 +8750,40 @@ EXTERN_C const IID IID_ITableDefinition;
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [out] */ DBID **ppTableID,
             /* [iid_is][out] */ IUnknown **ppRowset) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE DropTable( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE DropTable(
             /* [unique][in] */ DBID *pTableID) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE AddColumn( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE AddColumn(
             /* [in] */ DBID *pTableID,
             /* [out][in] */ DBCOLUMNDESC *pColumnDesc,
             /* [out] */ DBID **ppColumnID) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE DropColumn( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE DropColumn(
             /* [unique][in] */ DBID *pTableID,
             /* [unique][in] */ DBID *pColumnID) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ITableDefinitionVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ITableDefinition * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ITableDefinition * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ITableDefinition * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateTable )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateTable )(
             ITableDefinition * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ DBID *pTableID,
@@ -8794,22 +8794,22 @@ EXTERN_C const IID IID_ITableDefinition;
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [out] */ DBID **ppTableID,
             /* [iid_is][out] */ IUnknown **ppRowset);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *DropTable )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *DropTable )(
             ITableDefinition * This,
             /* [unique][in] */ DBID *pTableID);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *AddColumn )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *AddColumn )(
             ITableDefinition * This,
             /* [in] */ DBID *pTableID,
             /* [out][in] */ DBCOLUMNDESC *pColumnDesc,
             /* [out] */ DBID **ppColumnID);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *DropColumn )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *DropColumn )(
             ITableDefinition * This,
             /* [unique][in] */ DBID *pTableID,
             /* [unique][in] */ DBID *pColumnID);
-        
+
         END_INTERFACE
     } ITableDefinitionVtbl;
 
@@ -8818,32 +8818,32 @@ EXTERN_C const IID IID_ITableDefinition;
         CONST_VTBL struct ITableDefinitionVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ITableDefinition_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ITableDefinition_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ITableDefinition_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ITableDefinition_CreateTable(This,pUnkOuter,pTableID,cColumnDescs,rgColumnDescs,riid,cPropertySets,rgPropertySets,ppTableID,ppRowset)	\
-    ( (This)->lpVtbl -> CreateTable(This,pUnkOuter,pTableID,cColumnDescs,rgColumnDescs,riid,cPropertySets,rgPropertySets,ppTableID,ppRowset) ) 
+    ( (This)->lpVtbl -> CreateTable(This,pUnkOuter,pTableID,cColumnDescs,rgColumnDescs,riid,cPropertySets,rgPropertySets,ppTableID,ppRowset) )
 
 #define ITableDefinition_DropTable(This,pTableID)	\
-    ( (This)->lpVtbl -> DropTable(This,pTableID) ) 
+    ( (This)->lpVtbl -> DropTable(This,pTableID) )
 
 #define ITableDefinition_AddColumn(This,pTableID,pColumnDesc,ppColumnID)	\
-    ( (This)->lpVtbl -> AddColumn(This,pTableID,pColumnDesc,ppColumnID) ) 
+    ( (This)->lpVtbl -> AddColumn(This,pTableID,pColumnDesc,ppColumnID) )
 
 #define ITableDefinition_DropColumn(This,pTableID,pColumnID)	\
-    ( (This)->lpVtbl -> DropColumn(This,pTableID,pColumnID) ) 
+    ( (This)->lpVtbl -> DropColumn(This,pTableID,pColumnID) )
 
 #endif /* COBJMACROS */
 
@@ -8852,7 +8852,7 @@ EXTERN_C const IID IID_ITableDefinition;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITableDefinition_RemoteCreateTable_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITableDefinition_RemoteCreateTable_Proxy(
     ITableDefinition * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [unique][in] */ __RPC__in_opt DBID *pTableID,
@@ -8876,7 +8876,7 @@ void __RPC_STUB ITableDefinition_RemoteCreateTable_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITableDefinition_RemoteDropTable_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITableDefinition_RemoteDropTable_Proxy(
     ITableDefinition * This,
     /* [unique][in] */ __RPC__in_opt DBID *pTableID,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
@@ -8889,7 +8889,7 @@ void __RPC_STUB ITableDefinition_RemoteDropTable_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITableDefinition_RemoteAddColumn_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITableDefinition_RemoteAddColumn_Proxy(
     ITableDefinition * This,
     /* [in] */ __RPC__in DBID *pTableID,
     /* [in] */ __RPC__in DBCOLUMNDESC *pColumnDesc,
@@ -8906,7 +8906,7 @@ void __RPC_STUB ITableDefinition_RemoteAddColumn_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITableDefinition_RemoteDropColumn_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITableDefinition_RemoteDropColumn_Proxy(
     ITableDefinition * This,
     /* [unique][in] */ __RPC__in_opt DBID *pTableID,
     /* [unique][in] */ __RPC__in_opt DBID *pColumnID,
@@ -8928,18 +8928,18 @@ void __RPC_STUB ITableDefinition_RemoteDropColumn_Stub(
 #define __IOpenRowset_INTERFACE_DEFINED__
 
 /* interface IOpenRowset */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IOpenRowset;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a69-2a1c-11ce-ade5-00aa0044773d")
     IOpenRowset : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OpenRowset( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OpenRowset(
             /* [in] */ IUnknown *pUnkOuter,
             /* [unique][in] */ DBID *pTableID,
             /* [unique][in] */ DBID *pIndexID,
@@ -8947,28 +8947,28 @@ EXTERN_C const IID IID_IOpenRowset;
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [iid_is][out] */ IUnknown **ppRowset) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IOpenRowsetVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IOpenRowset * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IOpenRowset * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IOpenRowset * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OpenRowset )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OpenRowset )(
             IOpenRowset * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [unique][in] */ DBID *pTableID,
@@ -8977,7 +8977,7 @@ EXTERN_C const IID IID_IOpenRowset;
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [iid_is][out] */ IUnknown **ppRowset);
-        
+
         END_INTERFACE
     } IOpenRowsetVtbl;
 
@@ -8986,23 +8986,23 @@ EXTERN_C const IID IID_IOpenRowset;
         CONST_VTBL struct IOpenRowsetVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IOpenRowset_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IOpenRowset_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IOpenRowset_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IOpenRowset_OpenRowset(This,pUnkOuter,pTableID,pIndexID,riid,cPropertySets,rgPropertySets,ppRowset)	\
-    ( (This)->lpVtbl -> OpenRowset(This,pUnkOuter,pTableID,pIndexID,riid,cPropertySets,rgPropertySets,ppRowset) ) 
+    ( (This)->lpVtbl -> OpenRowset(This,pUnkOuter,pTableID,pIndexID,riid,cPropertySets,rgPropertySets,ppRowset) )
 
 #endif /* COBJMACROS */
 
@@ -9011,7 +9011,7 @@ EXTERN_C const IID IID_IOpenRowset;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IOpenRowset_RemoteOpenRowset_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IOpenRowset_RemoteOpenRowset_Proxy(
     IOpenRowset * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [unique][in] */ __RPC__in_opt DBID *pTableID,
@@ -9040,7 +9040,7 @@ void __RPC_STUB IOpenRowset_RemoteOpenRowset_Stub(
 #define __IDBSchemaRowset_INTERFACE_DEFINED__
 
 /* interface IDBSchemaRowset */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 #define CRESTRICTIONS_DBSCHEMA_ASSERTIONS                      3
 #define CRESTRICTIONS_DBSCHEMA_CATALOGS                        1
@@ -9105,12 +9105,12 @@ void __RPC_STUB IOpenRowset_RemoteOpenRowset_Stub(
 EXTERN_C const IID IID_IDBSchemaRowset;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a7b-2a1c-11ce-ade5-00aa0044773d")
     IDBSchemaRowset : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetRowset( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetRowset(
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ REFGUID rguidSchema,
             /* [in] */ ULONG cRestrictions,
@@ -9119,33 +9119,33 @@ EXTERN_C const IID IID_IDBSchemaRowset;
             /* [in] */ ULONG cPropertySets,
             /* [size_is][unique][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [iid_is][out] */ IUnknown **ppRowset) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetSchemas( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetSchemas(
             /* [out][in] */ ULONG *pcSchemas,
             /* [size_is][size_is][out] */ GUID **prgSchemas,
             /* [size_is][size_is][out] */ ULONG **prgRestrictionSupport) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IDBSchemaRowsetVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IDBSchemaRowset * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IDBSchemaRowset * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IDBSchemaRowset * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetRowset )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetRowset )(
             IDBSchemaRowset * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ REFGUID rguidSchema,
@@ -9155,13 +9155,13 @@ EXTERN_C const IID IID_IDBSchemaRowset;
             /* [in] */ ULONG cPropertySets,
             /* [size_is][unique][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [iid_is][out] */ IUnknown **ppRowset);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetSchemas )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetSchemas )(
             IDBSchemaRowset * This,
             /* [out][in] */ ULONG *pcSchemas,
             /* [size_is][size_is][out] */ GUID **prgSchemas,
             /* [size_is][size_is][out] */ ULONG **prgRestrictionSupport);
-        
+
         END_INTERFACE
     } IDBSchemaRowsetVtbl;
 
@@ -9170,26 +9170,26 @@ EXTERN_C const IID IID_IDBSchemaRowset;
         CONST_VTBL struct IDBSchemaRowsetVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IDBSchemaRowset_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IDBSchemaRowset_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IDBSchemaRowset_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IDBSchemaRowset_GetRowset(This,pUnkOuter,rguidSchema,cRestrictions,rgRestrictions,riid,cPropertySets,rgPropertySets,ppRowset)	\
-    ( (This)->lpVtbl -> GetRowset(This,pUnkOuter,rguidSchema,cRestrictions,rgRestrictions,riid,cPropertySets,rgPropertySets,ppRowset) ) 
+    ( (This)->lpVtbl -> GetRowset(This,pUnkOuter,rguidSchema,cRestrictions,rgRestrictions,riid,cPropertySets,rgPropertySets,ppRowset) )
 
 #define IDBSchemaRowset_GetSchemas(This,pcSchemas,prgSchemas,prgRestrictionSupport)	\
-    ( (This)->lpVtbl -> GetSchemas(This,pcSchemas,prgSchemas,prgRestrictionSupport) ) 
+    ( (This)->lpVtbl -> GetSchemas(This,pcSchemas,prgSchemas,prgRestrictionSupport) )
 
 #endif /* COBJMACROS */
 
@@ -9198,7 +9198,7 @@ EXTERN_C const IID IID_IDBSchemaRowset;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBSchemaRowset_RemoteGetRowset_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBSchemaRowset_RemoteGetRowset_Proxy(
     IDBSchemaRowset * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in REFGUID rguidSchema,
@@ -9220,7 +9220,7 @@ void __RPC_STUB IDBSchemaRowset_RemoteGetRowset_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBSchemaRowset_RemoteGetSchemas_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBSchemaRowset_RemoteGetSchemas_Proxy(
     IDBSchemaRowset * This,
     /* [out][in] */ __RPC__inout ULONG *pcSchemas,
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*pcSchemas) GUID **prgSchemas,
@@ -9240,7 +9240,7 @@ void __RPC_STUB IDBSchemaRowset_RemoteGetSchemas_Stub(
 
 
 /* interface __MIDL_itf_oledb_0000_0045 */
-/* [local] */ 
+/* [local] */
 
 //@@@+ V2.0
 #if( OLEDBVER >= 0x0200 )
@@ -9253,74 +9253,74 @@ extern RPC_IF_HANDLE __MIDL_itf_oledb_0000_0045_v0_0_s_ifspec;
 #define __IMDDataset_INTERFACE_DEFINED__
 
 /* interface IMDDataset */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IMDDataset;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("a07cccd1-8148-11d0-87bb-00c04fc33942")
     IMDDataset : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE FreeAxisInfo( 
+        virtual HRESULT STDMETHODCALLTYPE FreeAxisInfo(
             /* [in] */ DBCOUNTITEM cAxes,
             /* [size_is][in] */ MDAXISINFO *rgAxisInfo) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetAxisInfo( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetAxisInfo(
             /* [out][in] */ DBCOUNTITEM *pcAxes,
             /* [size_is][size_is][out] */ MDAXISINFO **prgAxisInfo) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetAxisRowset( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetAxisRowset(
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ DBCOUNTITEM iAxis,
             /* [in] */ REFIID riid,
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [iid_is][out] */ IUnknown **ppRowset) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetCellData( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetCellData(
             /* [in] */ HACCESSOR hAccessor,
             /* [in] */ DBORDINAL ulStartCell,
             /* [in] */ DBORDINAL ulEndCell,
             /* [out] */ void *pData) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetSpecification( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetSpecification(
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppSpecification) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IMDDatasetVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IMDDataset * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IMDDataset * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IMDDataset * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *FreeAxisInfo )( 
+
+        HRESULT ( STDMETHODCALLTYPE *FreeAxisInfo )(
             IMDDataset * This,
             /* [in] */ DBCOUNTITEM cAxes,
             /* [size_is][in] */ MDAXISINFO *rgAxisInfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetAxisInfo )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetAxisInfo )(
             IMDDataset * This,
             /* [out][in] */ DBCOUNTITEM *pcAxes,
             /* [size_is][size_is][out] */ MDAXISINFO **prgAxisInfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetAxisRowset )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetAxisRowset )(
             IMDDataset * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ DBCOUNTITEM iAxis,
@@ -9328,19 +9328,19 @@ EXTERN_C const IID IID_IMDDataset;
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [iid_is][out] */ IUnknown **ppRowset);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetCellData )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetCellData )(
             IMDDataset * This,
             /* [in] */ HACCESSOR hAccessor,
             /* [in] */ DBORDINAL ulStartCell,
             /* [in] */ DBORDINAL ulEndCell,
             /* [out] */ void *pData);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetSpecification )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetSpecification )(
             IMDDataset * This,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppSpecification);
-        
+
         END_INTERFACE
     } IMDDatasetVtbl;
 
@@ -9349,35 +9349,35 @@ EXTERN_C const IID IID_IMDDataset;
         CONST_VTBL struct IMDDatasetVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IMDDataset_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IMDDataset_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IMDDataset_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IMDDataset_FreeAxisInfo(This,cAxes,rgAxisInfo)	\
-    ( (This)->lpVtbl -> FreeAxisInfo(This,cAxes,rgAxisInfo) ) 
+    ( (This)->lpVtbl -> FreeAxisInfo(This,cAxes,rgAxisInfo) )
 
 #define IMDDataset_GetAxisInfo(This,pcAxes,prgAxisInfo)	\
-    ( (This)->lpVtbl -> GetAxisInfo(This,pcAxes,prgAxisInfo) ) 
+    ( (This)->lpVtbl -> GetAxisInfo(This,pcAxes,prgAxisInfo) )
 
 #define IMDDataset_GetAxisRowset(This,pUnkOuter,iAxis,riid,cPropertySets,rgPropertySets,ppRowset)	\
-    ( (This)->lpVtbl -> GetAxisRowset(This,pUnkOuter,iAxis,riid,cPropertySets,rgPropertySets,ppRowset) ) 
+    ( (This)->lpVtbl -> GetAxisRowset(This,pUnkOuter,iAxis,riid,cPropertySets,rgPropertySets,ppRowset) )
 
 #define IMDDataset_GetCellData(This,hAccessor,ulStartCell,ulEndCell,pData)	\
-    ( (This)->lpVtbl -> GetCellData(This,hAccessor,ulStartCell,ulEndCell,pData) ) 
+    ( (This)->lpVtbl -> GetCellData(This,hAccessor,ulStartCell,ulEndCell,pData) )
 
 #define IMDDataset_GetSpecification(This,riid,ppSpecification)	\
-    ( (This)->lpVtbl -> GetSpecification(This,riid,ppSpecification) ) 
+    ( (This)->lpVtbl -> GetSpecification(This,riid,ppSpecification) )
 
 #endif /* COBJMACROS */
 
@@ -9394,65 +9394,65 @@ EXTERN_C const IID IID_IMDDataset;
 #define __IMDFind_INTERFACE_DEFINED__
 
 /* interface IMDFind */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IMDFind;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("a07cccd2-8148-11d0-87bb-00c04fc33942")
     IMDFind : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE FindCell( 
+        virtual HRESULT STDMETHODCALLTYPE FindCell(
             /* [in] */ DBORDINAL ulStartingOrdinal,
             /* [in] */ DBCOUNTITEM cMembers,
             /* [size_is][in] */ LPCOLESTR *rgpwszMember,
             /* [out] */ DBORDINAL *pulCellOrdinal) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE FindTuple( 
+
+        virtual HRESULT STDMETHODCALLTYPE FindTuple(
             /* [in] */ ULONG ulAxisIdentifier,
             /* [in] */ DBORDINAL ulStartingOrdinal,
             /* [in] */ DBCOUNTITEM cMembers,
             /* [size_is][in] */ LPCOLESTR *rgpwszMember,
             /* [out] */ ULONG *pulTupleOrdinal) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IMDFindVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IMDFind * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IMDFind * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IMDFind * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *FindCell )( 
+
+        HRESULT ( STDMETHODCALLTYPE *FindCell )(
             IMDFind * This,
             /* [in] */ DBORDINAL ulStartingOrdinal,
             /* [in] */ DBCOUNTITEM cMembers,
             /* [size_is][in] */ LPCOLESTR *rgpwszMember,
             /* [out] */ DBORDINAL *pulCellOrdinal);
-        
-        HRESULT ( STDMETHODCALLTYPE *FindTuple )( 
+
+        HRESULT ( STDMETHODCALLTYPE *FindTuple )(
             IMDFind * This,
             /* [in] */ ULONG ulAxisIdentifier,
             /* [in] */ DBORDINAL ulStartingOrdinal,
             /* [in] */ DBCOUNTITEM cMembers,
             /* [size_is][in] */ LPCOLESTR *rgpwszMember,
             /* [out] */ ULONG *pulTupleOrdinal);
-        
+
         END_INTERFACE
     } IMDFindVtbl;
 
@@ -9461,26 +9461,26 @@ EXTERN_C const IID IID_IMDFind;
         CONST_VTBL struct IMDFindVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IMDFind_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IMDFind_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IMDFind_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IMDFind_FindCell(This,ulStartingOrdinal,cMembers,rgpwszMember,pulCellOrdinal)	\
-    ( (This)->lpVtbl -> FindCell(This,ulStartingOrdinal,cMembers,rgpwszMember,pulCellOrdinal) ) 
+    ( (This)->lpVtbl -> FindCell(This,ulStartingOrdinal,cMembers,rgpwszMember,pulCellOrdinal) )
 
 #define IMDFind_FindTuple(This,ulAxisIdentifier,ulStartingOrdinal,cMembers,rgpwszMember,pulTupleOrdinal)	\
-    ( (This)->lpVtbl -> FindTuple(This,ulAxisIdentifier,ulStartingOrdinal,cMembers,rgpwszMember,pulTupleOrdinal) ) 
+    ( (This)->lpVtbl -> FindTuple(This,ulAxisIdentifier,ulStartingOrdinal,cMembers,rgpwszMember,pulTupleOrdinal) )
 
 #endif /* COBJMACROS */
 
@@ -9497,18 +9497,18 @@ EXTERN_C const IID IID_IMDFind;
 #define __IMDRangeRowset_INTERFACE_DEFINED__
 
 /* interface IMDRangeRowset */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IMDRangeRowset;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733aa0-2a1c-11ce-ade5-00aa0044773d")
     IMDRangeRowset : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE GetRangeRowset( 
+        virtual HRESULT STDMETHODCALLTYPE GetRangeRowset(
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ DBORDINAL ulStartCell,
             /* [in] */ DBORDINAL ulEndCell,
@@ -9516,28 +9516,28 @@ EXTERN_C const IID IID_IMDRangeRowset;
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [iid_is][out] */ IUnknown **ppRowset) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IMDRangeRowsetVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IMDRangeRowset * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IMDRangeRowset * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IMDRangeRowset * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRangeRowset )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetRangeRowset )(
             IMDRangeRowset * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ DBORDINAL ulStartCell,
@@ -9546,7 +9546,7 @@ EXTERN_C const IID IID_IMDRangeRowset;
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [iid_is][out] */ IUnknown **ppRowset);
-        
+
         END_INTERFACE
     } IMDRangeRowsetVtbl;
 
@@ -9555,23 +9555,23 @@ EXTERN_C const IID IID_IMDRangeRowset;
         CONST_VTBL struct IMDRangeRowsetVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IMDRangeRowset_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IMDRangeRowset_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IMDRangeRowset_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IMDRangeRowset_GetRangeRowset(This,pUnkOuter,ulStartCell,ulEndCell,riid,cPropertySets,rgPropertySets,ppRowset)	\
-    ( (This)->lpVtbl -> GetRangeRowset(This,pUnkOuter,ulStartCell,ulEndCell,riid,cPropertySets,rgPropertySets,ppRowset) ) 
+    ( (This)->lpVtbl -> GetRangeRowset(This,pUnkOuter,ulStartCell,ulEndCell,riid,cPropertySets,rgPropertySets,ppRowset) )
 
 #endif /* COBJMACROS */
 
@@ -9588,63 +9588,63 @@ EXTERN_C const IID IID_IMDRangeRowset;
 #define __IAlterTable_INTERFACE_DEFINED__
 
 /* interface IAlterTable */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IAlterTable;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733aa5-2a1c-11ce-ade5-00aa0044773d")
     IAlterTable : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE AlterColumn( 
+        virtual HRESULT STDMETHODCALLTYPE AlterColumn(
             /* [in] */ DBID *pTableId,
             /* [in] */ DBID *pColumnId,
             /* [in] */ DBCOLUMNDESCFLAGS dwColumnDescFlags,
             /* [in] */ DBCOLUMNDESC *pColumnDesc) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE AlterTable( 
+
+        virtual HRESULT STDMETHODCALLTYPE AlterTable(
             /* [in] */ DBID *pTableId,
             /* [in] */ DBID *pNewTableId,
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ]) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IAlterTableVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IAlterTable * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IAlterTable * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IAlterTable * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *AlterColumn )( 
+
+        HRESULT ( STDMETHODCALLTYPE *AlterColumn )(
             IAlterTable * This,
             /* [in] */ DBID *pTableId,
             /* [in] */ DBID *pColumnId,
             /* [in] */ DBCOLUMNDESCFLAGS dwColumnDescFlags,
             /* [in] */ DBCOLUMNDESC *pColumnDesc);
-        
-        HRESULT ( STDMETHODCALLTYPE *AlterTable )( 
+
+        HRESULT ( STDMETHODCALLTYPE *AlterTable )(
             IAlterTable * This,
             /* [in] */ DBID *pTableId,
             /* [in] */ DBID *pNewTableId,
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ]);
-        
+
         END_INTERFACE
     } IAlterTableVtbl;
 
@@ -9653,26 +9653,26 @@ EXTERN_C const IID IID_IAlterTable;
         CONST_VTBL struct IAlterTableVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IAlterTable_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IAlterTable_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IAlterTable_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IAlterTable_AlterColumn(This,pTableId,pColumnId,dwColumnDescFlags,pColumnDesc)	\
-    ( (This)->lpVtbl -> AlterColumn(This,pTableId,pColumnId,dwColumnDescFlags,pColumnDesc) ) 
+    ( (This)->lpVtbl -> AlterColumn(This,pTableId,pColumnId,dwColumnDescFlags,pColumnDesc) )
 
 #define IAlterTable_AlterTable(This,pTableId,pNewTableId,cPropertySets,rgPropertySets)	\
-    ( (This)->lpVtbl -> AlterTable(This,pTableId,pNewTableId,cPropertySets,rgPropertySets) ) 
+    ( (This)->lpVtbl -> AlterTable(This,pTableId,pNewTableId,cPropertySets,rgPropertySets) )
 
 #endif /* COBJMACROS */
 
@@ -9689,52 +9689,52 @@ EXTERN_C const IID IID_IAlterTable;
 #define __IAlterIndex_INTERFACE_DEFINED__
 
 /* interface IAlterIndex */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IAlterIndex;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733aa6-2a1c-11ce-ade5-00aa0044773d")
     IAlterIndex : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE AlterIndex( 
+        virtual HRESULT STDMETHODCALLTYPE AlterIndex(
             /* [in] */ DBID *pTableId,
             /* [in] */ DBID *pIndexId,
             /* [in] */ DBID *pNewIndexId,
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ]) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IAlterIndexVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IAlterIndex * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IAlterIndex * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IAlterIndex * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *AlterIndex )( 
+
+        HRESULT ( STDMETHODCALLTYPE *AlterIndex )(
             IAlterIndex * This,
             /* [in] */ DBID *pTableId,
             /* [in] */ DBID *pIndexId,
             /* [in] */ DBID *pNewIndexId,
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ]);
-        
+
         END_INTERFACE
     } IAlterIndexVtbl;
 
@@ -9743,23 +9743,23 @@ EXTERN_C const IID IID_IAlterIndex;
         CONST_VTBL struct IAlterIndexVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IAlterIndex_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IAlterIndex_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IAlterIndex_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IAlterIndex_AlterIndex(This,pTableId,pIndexId,pNewIndexId,cPropertySets,rgPropertySets)	\
-    ( (This)->lpVtbl -> AlterIndex(This,pTableId,pIndexId,pNewIndexId,cPropertySets,rgPropertySets) ) 
+    ( (This)->lpVtbl -> AlterIndex(This,pTableId,pIndexId,pNewIndexId,cPropertySets,rgPropertySets) )
 
 #endif /* COBJMACROS */
 
@@ -9776,46 +9776,46 @@ EXTERN_C const IID IID_IAlterIndex;
 #define __IRowsetChapterMember_INTERFACE_DEFINED__
 
 /* interface IRowsetChapterMember */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IRowsetChapterMember;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733aa8-2a1c-11ce-ade5-00aa0044773d")
     IRowsetChapterMember : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE IsRowInChapter( 
+        virtual HRESULT STDMETHODCALLTYPE IsRowInChapter(
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ HROW hRow) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowsetChapterMemberVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowsetChapterMember * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowsetChapterMember * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowsetChapterMember * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *IsRowInChapter )( 
+
+        HRESULT ( STDMETHODCALLTYPE *IsRowInChapter )(
             IRowsetChapterMember * This,
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ HROW hRow);
-        
+
         END_INTERFACE
     } IRowsetChapterMemberVtbl;
 
@@ -9824,23 +9824,23 @@ EXTERN_C const IID IID_IRowsetChapterMember;
         CONST_VTBL struct IRowsetChapterMemberVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowsetChapterMember_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowsetChapterMember_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowsetChapterMember_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowsetChapterMember_IsRowInChapter(This,hChapter,hRow)	\
-    ( (This)->lpVtbl -> IsRowInChapter(This,hChapter,hRow) ) 
+    ( (This)->lpVtbl -> IsRowInChapter(This,hChapter,hRow) )
 
 #endif /* COBJMACROS */
 
@@ -9857,69 +9857,69 @@ EXTERN_C const IID IID_IRowsetChapterMember;
 #define __ICommandPersist_INTERFACE_DEFINED__
 
 /* interface ICommandPersist */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_ICommandPersist;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733aa7-2a1c-11ce-ade5-00aa0044773d")
     ICommandPersist : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE DeleteCommand( 
+        virtual HRESULT STDMETHODCALLTYPE DeleteCommand(
             /* [in] */ DBID *pCommandID) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetCurrentCommand( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetCurrentCommand(
             /* [out] */ DBID **ppCommandID) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE LoadCommand( 
+
+        virtual HRESULT STDMETHODCALLTYPE LoadCommand(
             /* [in] */ DBID *pCommandID,
             /* [in] */ DWORD dwFlags) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SaveCommand( 
+
+        virtual HRESULT STDMETHODCALLTYPE SaveCommand(
             /* [in] */ DBID *pCommandID,
             /* [in] */ DWORD dwFlags) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ICommandPersistVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ICommandPersist * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ICommandPersist * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ICommandPersist * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *DeleteCommand )( 
+
+        HRESULT ( STDMETHODCALLTYPE *DeleteCommand )(
             ICommandPersist * This,
             /* [in] */ DBID *pCommandID);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetCurrentCommand )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetCurrentCommand )(
             ICommandPersist * This,
             /* [out] */ DBID **ppCommandID);
-        
-        HRESULT ( STDMETHODCALLTYPE *LoadCommand )( 
+
+        HRESULT ( STDMETHODCALLTYPE *LoadCommand )(
             ICommandPersist * This,
             /* [in] */ DBID *pCommandID,
             /* [in] */ DWORD dwFlags);
-        
-        HRESULT ( STDMETHODCALLTYPE *SaveCommand )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SaveCommand )(
             ICommandPersist * This,
             /* [in] */ DBID *pCommandID,
             /* [in] */ DWORD dwFlags);
-        
+
         END_INTERFACE
     } ICommandPersistVtbl;
 
@@ -9928,32 +9928,32 @@ EXTERN_C const IID IID_ICommandPersist;
         CONST_VTBL struct ICommandPersistVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ICommandPersist_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ICommandPersist_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ICommandPersist_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ICommandPersist_DeleteCommand(This,pCommandID)	\
-    ( (This)->lpVtbl -> DeleteCommand(This,pCommandID) ) 
+    ( (This)->lpVtbl -> DeleteCommand(This,pCommandID) )
 
 #define ICommandPersist_GetCurrentCommand(This,ppCommandID)	\
-    ( (This)->lpVtbl -> GetCurrentCommand(This,ppCommandID) ) 
+    ( (This)->lpVtbl -> GetCurrentCommand(This,ppCommandID) )
 
 #define ICommandPersist_LoadCommand(This,pCommandID,dwFlags)	\
-    ( (This)->lpVtbl -> LoadCommand(This,pCommandID,dwFlags) ) 
+    ( (This)->lpVtbl -> LoadCommand(This,pCommandID,dwFlags) )
 
 #define ICommandPersist_SaveCommand(This,pCommandID,dwFlags)	\
-    ( (This)->lpVtbl -> SaveCommand(This,pCommandID,dwFlags) ) 
+    ( (This)->lpVtbl -> SaveCommand(This,pCommandID,dwFlags) )
 
 #endif /* COBJMACROS */
 
@@ -9970,18 +9970,18 @@ EXTERN_C const IID IID_ICommandPersist;
 #define __IRowsetRefresh_INTERFACE_DEFINED__
 
 /* interface IRowsetRefresh */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IRowsetRefresh;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733aa9-2a1c-11ce-ade5-00aa0044773d")
     IRowsetRefresh : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE RefreshVisibleData( 
+        virtual HRESULT STDMETHODCALLTYPE RefreshVisibleData(
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ DBCOUNTITEM cRows,
             /* [in] */ const HROW rghRows[  ],
@@ -9989,33 +9989,33 @@ EXTERN_C const IID IID_IRowsetRefresh;
             /* [out] */ DBCOUNTITEM *pcRowsRefreshed,
             /* [out] */ HROW **prghRowsRefreshed,
             /* [out] */ DBROWSTATUS **prgRowStatus) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetLastVisibleData( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetLastVisibleData(
             /* [in] */ HROW hRow,
             /* [in] */ HACCESSOR hAccessor,
             /* [out] */ void *pData) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowsetRefreshVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowsetRefresh * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowsetRefresh * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowsetRefresh * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *RefreshVisibleData )( 
+
+        HRESULT ( STDMETHODCALLTYPE *RefreshVisibleData )(
             IRowsetRefresh * This,
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ DBCOUNTITEM cRows,
@@ -10024,13 +10024,13 @@ EXTERN_C const IID IID_IRowsetRefresh;
             /* [out] */ DBCOUNTITEM *pcRowsRefreshed,
             /* [out] */ HROW **prghRowsRefreshed,
             /* [out] */ DBROWSTATUS **prgRowStatus);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetLastVisibleData )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetLastVisibleData )(
             IRowsetRefresh * This,
             /* [in] */ HROW hRow,
             /* [in] */ HACCESSOR hAccessor,
             /* [out] */ void *pData);
-        
+
         END_INTERFACE
     } IRowsetRefreshVtbl;
 
@@ -10039,26 +10039,26 @@ EXTERN_C const IID IID_IRowsetRefresh;
         CONST_VTBL struct IRowsetRefreshVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowsetRefresh_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowsetRefresh_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowsetRefresh_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowsetRefresh_RefreshVisibleData(This,hChapter,cRows,rghRows,fOverWrite,pcRowsRefreshed,prghRowsRefreshed,prgRowStatus)	\
-    ( (This)->lpVtbl -> RefreshVisibleData(This,hChapter,cRows,rghRows,fOverWrite,pcRowsRefreshed,prghRowsRefreshed,prgRowStatus) ) 
+    ( (This)->lpVtbl -> RefreshVisibleData(This,hChapter,cRows,rghRows,fOverWrite,pcRowsRefreshed,prghRowsRefreshed,prgRowStatus) )
 
 #define IRowsetRefresh_GetLastVisibleData(This,hRow,hAccessor,pData)	\
-    ( (This)->lpVtbl -> GetLastVisibleData(This,hRow,hAccessor,pData) ) 
+    ( (This)->lpVtbl -> GetLastVisibleData(This,hRow,hAccessor,pData) )
 
 #endif /* COBJMACROS */
 
@@ -10075,50 +10075,50 @@ EXTERN_C const IID IID_IRowsetRefresh;
 #define __IParentRowset_INTERFACE_DEFINED__
 
 /* interface IParentRowset */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IParentRowset;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733aaa-2a1c-11ce-ade5-00aa0044773d")
     IParentRowset : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE GetChildRowset( 
+        virtual HRESULT STDMETHODCALLTYPE GetChildRowset(
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ DBORDINAL iOrdinal,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppRowset) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IParentRowsetVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IParentRowset * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IParentRowset * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IParentRowset * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetChildRowset )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetChildRowset )(
             IParentRowset * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ DBORDINAL iOrdinal,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppRowset);
-        
+
         END_INTERFACE
     } IParentRowsetVtbl;
 
@@ -10127,23 +10127,23 @@ EXTERN_C const IID IID_IParentRowset;
         CONST_VTBL struct IParentRowsetVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IParentRowset_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IParentRowset_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IParentRowset_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IParentRowset_GetChildRowset(This,pUnkOuter,iOrdinal,riid,ppRowset)	\
-    ( (This)->lpVtbl -> GetChildRowset(This,pUnkOuter,iOrdinal,riid,ppRowset) ) 
+    ( (This)->lpVtbl -> GetChildRowset(This,pUnkOuter,iOrdinal,riid,ppRowset) )
 
 #endif /* COBJMACROS */
 
@@ -10157,7 +10157,7 @@ EXTERN_C const IID IID_IParentRowset;
 
 
 /* interface __MIDL_itf_oledb_0000_0054 */
-/* [local] */ 
+/* [local] */
 
 #endif // OLEDBVER >= 0x0200
 //@@@- V2.0
@@ -10170,7 +10170,7 @@ extern RPC_IF_HANDLE __MIDL_itf_oledb_0000_0054_v0_0_s_ifspec;
 #define __IErrorRecords_INTERFACE_DEFINED__
 
 /* interface IErrorRecords */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 #define IDENTIFIER_SDK_MASK	0xF0000000
 #define IDENTIFIER_SDK_ERROR	0x10000000
@@ -10187,93 +10187,93 @@ typedef struct tagERRORINFO
 EXTERN_C const IID IID_IErrorRecords;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a67-2a1c-11ce-ade5-00aa0044773d")
     IErrorRecords : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE AddErrorRecord( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE AddErrorRecord(
             /* [in] */ ERRORINFO *pErrorInfo,
             /* [in] */ DWORD dwLookupID,
             /* [in] */ DISPPARAMS *pdispparams,
             /* [in] */ IUnknown *punkCustomError,
             /* [in] */ DWORD dwDynamicErrorID) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetBasicErrorInfo( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetBasicErrorInfo(
             /* [in] */ ULONG ulRecordNum,
             /* [out] */ ERRORINFO *pErrorInfo) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetCustomErrorObject( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetCustomErrorObject(
             /* [in] */ ULONG ulRecordNum,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppObject) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetErrorInfo( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetErrorInfo(
             /* [in] */ ULONG ulRecordNum,
             /* [in] */ LCID lcid,
             /* [out] */ IErrorInfo **ppErrorInfo) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetErrorParameters( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetErrorParameters(
             /* [in] */ ULONG ulRecordNum,
             /* [out] */ DISPPARAMS *pdispparams) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetRecordCount( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetRecordCount(
             /* [out] */ ULONG *pcRecords) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IErrorRecordsVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IErrorRecords * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IErrorRecords * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IErrorRecords * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *AddErrorRecord )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *AddErrorRecord )(
             IErrorRecords * This,
             /* [in] */ ERRORINFO *pErrorInfo,
             /* [in] */ DWORD dwLookupID,
             /* [in] */ DISPPARAMS *pdispparams,
             /* [in] */ IUnknown *punkCustomError,
             /* [in] */ DWORD dwDynamicErrorID);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetBasicErrorInfo )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetBasicErrorInfo )(
             IErrorRecords * This,
             /* [in] */ ULONG ulRecordNum,
             /* [out] */ ERRORINFO *pErrorInfo);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetCustomErrorObject )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetCustomErrorObject )(
             IErrorRecords * This,
             /* [in] */ ULONG ulRecordNum,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppObject);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetErrorInfo )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetErrorInfo )(
             IErrorRecords * This,
             /* [in] */ ULONG ulRecordNum,
             /* [in] */ LCID lcid,
             /* [out] */ IErrorInfo **ppErrorInfo);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetErrorParameters )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetErrorParameters )(
             IErrorRecords * This,
             /* [in] */ ULONG ulRecordNum,
             /* [out] */ DISPPARAMS *pdispparams);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetRecordCount )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetRecordCount )(
             IErrorRecords * This,
             /* [out] */ ULONG *pcRecords);
-        
+
         END_INTERFACE
     } IErrorRecordsVtbl;
 
@@ -10282,38 +10282,38 @@ EXTERN_C const IID IID_IErrorRecords;
         CONST_VTBL struct IErrorRecordsVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IErrorRecords_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IErrorRecords_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IErrorRecords_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IErrorRecords_AddErrorRecord(This,pErrorInfo,dwLookupID,pdispparams,punkCustomError,dwDynamicErrorID)	\
-    ( (This)->lpVtbl -> AddErrorRecord(This,pErrorInfo,dwLookupID,pdispparams,punkCustomError,dwDynamicErrorID) ) 
+    ( (This)->lpVtbl -> AddErrorRecord(This,pErrorInfo,dwLookupID,pdispparams,punkCustomError,dwDynamicErrorID) )
 
 #define IErrorRecords_GetBasicErrorInfo(This,ulRecordNum,pErrorInfo)	\
-    ( (This)->lpVtbl -> GetBasicErrorInfo(This,ulRecordNum,pErrorInfo) ) 
+    ( (This)->lpVtbl -> GetBasicErrorInfo(This,ulRecordNum,pErrorInfo) )
 
 #define IErrorRecords_GetCustomErrorObject(This,ulRecordNum,riid,ppObject)	\
-    ( (This)->lpVtbl -> GetCustomErrorObject(This,ulRecordNum,riid,ppObject) ) 
+    ( (This)->lpVtbl -> GetCustomErrorObject(This,ulRecordNum,riid,ppObject) )
 
 #define IErrorRecords_GetErrorInfo(This,ulRecordNum,lcid,ppErrorInfo)	\
-    ( (This)->lpVtbl -> GetErrorInfo(This,ulRecordNum,lcid,ppErrorInfo) ) 
+    ( (This)->lpVtbl -> GetErrorInfo(This,ulRecordNum,lcid,ppErrorInfo) )
 
 #define IErrorRecords_GetErrorParameters(This,ulRecordNum,pdispparams)	\
-    ( (This)->lpVtbl -> GetErrorParameters(This,ulRecordNum,pdispparams) ) 
+    ( (This)->lpVtbl -> GetErrorParameters(This,ulRecordNum,pdispparams) )
 
 #define IErrorRecords_GetRecordCount(This,pcRecords)	\
-    ( (This)->lpVtbl -> GetRecordCount(This,pcRecords) ) 
+    ( (This)->lpVtbl -> GetRecordCount(This,pcRecords) )
 
 #endif /* COBJMACROS */
 
@@ -10322,7 +10322,7 @@ EXTERN_C const IID IID_IErrorRecords;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_RemoteAddErrorRecord_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_RemoteAddErrorRecord_Proxy(
     IErrorRecords * This,
     /* [in] */ __RPC__in ERRORINFO *pErrorInfo,
     /* [in] */ DWORD dwLookupID,
@@ -10339,7 +10339,7 @@ void __RPC_STUB IErrorRecords_RemoteAddErrorRecord_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_RemoteGetBasicErrorInfo_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_RemoteGetBasicErrorInfo_Proxy(
     IErrorRecords * This,
     /* [in] */ ULONG ulRecordNum,
     /* [out] */ __RPC__out ERRORINFO *pErrorInfo,
@@ -10353,7 +10353,7 @@ void __RPC_STUB IErrorRecords_RemoteGetBasicErrorInfo_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_RemoteGetCustomErrorObject_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_RemoteGetCustomErrorObject_Proxy(
     IErrorRecords * This,
     /* [in] */ ULONG ulRecordNum,
     /* [in] */ __RPC__in REFIID riid,
@@ -10368,7 +10368,7 @@ void __RPC_STUB IErrorRecords_RemoteGetCustomErrorObject_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_RemoteGetErrorInfo_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_RemoteGetErrorInfo_Proxy(
     IErrorRecords * This,
     /* [in] */ ULONG ulRecordNum,
     /* [in] */ LCID lcid,
@@ -10383,7 +10383,7 @@ void __RPC_STUB IErrorRecords_RemoteGetErrorInfo_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_RemoteGetErrorParameters_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_RemoteGetErrorParameters_Proxy(
     IErrorRecords * This,
     /* [in] */ ULONG ulRecordNum,
     /* [out] */ __RPC__out DISPPARAMS *pdispparams,
@@ -10397,7 +10397,7 @@ void __RPC_STUB IErrorRecords_RemoteGetErrorParameters_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_RemoteGetRecordCount_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_RemoteGetRecordCount_Proxy(
     IErrorRecords * This,
     /* [out] */ __RPC__out ULONG *pcRecords,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
@@ -10418,56 +10418,56 @@ void __RPC_STUB IErrorRecords_RemoteGetRecordCount_Stub(
 #define __IErrorLookup_INTERFACE_DEFINED__
 
 /* interface IErrorLookup */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IErrorLookup;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a66-2a1c-11ce-ade5-00aa0044773d")
     IErrorLookup : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetErrorDescription( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetErrorDescription(
             /* [in] */ HRESULT hrError,
             /* [in] */ DWORD dwLookupID,
             /* [in] */ DISPPARAMS *pdispparams,
             /* [in] */ LCID lcid,
             /* [out] */ BSTR *pbstrSource,
             /* [out] */ BSTR *pbstrDescription) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetHelpInfo( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetHelpInfo(
             /* [in] */ HRESULT hrError,
             /* [in] */ DWORD dwLookupID,
             /* [in] */ LCID lcid,
             /* [out] */ BSTR *pbstrHelpFile,
             /* [out] */ DWORD *pdwHelpContext) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE ReleaseErrors( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE ReleaseErrors(
             /* [in] */ const DWORD dwDynamicErrorID) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IErrorLookupVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IErrorLookup * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IErrorLookup * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IErrorLookup * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetErrorDescription )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetErrorDescription )(
             IErrorLookup * This,
             /* [in] */ HRESULT hrError,
             /* [in] */ DWORD dwLookupID,
@@ -10475,19 +10475,19 @@ EXTERN_C const IID IID_IErrorLookup;
             /* [in] */ LCID lcid,
             /* [out] */ BSTR *pbstrSource,
             /* [out] */ BSTR *pbstrDescription);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetHelpInfo )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetHelpInfo )(
             IErrorLookup * This,
             /* [in] */ HRESULT hrError,
             /* [in] */ DWORD dwLookupID,
             /* [in] */ LCID lcid,
             /* [out] */ BSTR *pbstrHelpFile,
             /* [out] */ DWORD *pdwHelpContext);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *ReleaseErrors )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *ReleaseErrors )(
             IErrorLookup * This,
             /* [in] */ const DWORD dwDynamicErrorID);
-        
+
         END_INTERFACE
     } IErrorLookupVtbl;
 
@@ -10496,29 +10496,29 @@ EXTERN_C const IID IID_IErrorLookup;
         CONST_VTBL struct IErrorLookupVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IErrorLookup_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IErrorLookup_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IErrorLookup_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IErrorLookup_GetErrorDescription(This,hrError,dwLookupID,pdispparams,lcid,pbstrSource,pbstrDescription)	\
-    ( (This)->lpVtbl -> GetErrorDescription(This,hrError,dwLookupID,pdispparams,lcid,pbstrSource,pbstrDescription) ) 
+    ( (This)->lpVtbl -> GetErrorDescription(This,hrError,dwLookupID,pdispparams,lcid,pbstrSource,pbstrDescription) )
 
 #define IErrorLookup_GetHelpInfo(This,hrError,dwLookupID,lcid,pbstrHelpFile,pdwHelpContext)	\
-    ( (This)->lpVtbl -> GetHelpInfo(This,hrError,dwLookupID,lcid,pbstrHelpFile,pdwHelpContext) ) 
+    ( (This)->lpVtbl -> GetHelpInfo(This,hrError,dwLookupID,lcid,pbstrHelpFile,pdwHelpContext) )
 
 #define IErrorLookup_ReleaseErrors(This,dwDynamicErrorID)	\
-    ( (This)->lpVtbl -> ReleaseErrors(This,dwDynamicErrorID) ) 
+    ( (This)->lpVtbl -> ReleaseErrors(This,dwDynamicErrorID) )
 
 #endif /* COBJMACROS */
 
@@ -10527,7 +10527,7 @@ EXTERN_C const IID IID_IErrorLookup;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorLookup_RemoteGetErrorDescription_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorLookup_RemoteGetErrorDescription_Proxy(
     IErrorLookup * This,
     /* [in] */ HRESULT hrError,
     /* [in] */ DWORD dwLookupID,
@@ -10545,7 +10545,7 @@ void __RPC_STUB IErrorLookup_RemoteGetErrorDescription_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorLookup_RemoteGetHelpInfo_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorLookup_RemoteGetHelpInfo_Proxy(
     IErrorLookup * This,
     /* [in] */ HRESULT hrError,
     /* [in] */ DWORD dwLookupID,
@@ -10562,7 +10562,7 @@ void __RPC_STUB IErrorLookup_RemoteGetHelpInfo_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorLookup_RemoteReleaseErrors_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorLookup_RemoteReleaseErrors_Proxy(
     IErrorLookup * This,
     /* [in] */ const DWORD dwDynamicErrorID,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
@@ -10583,46 +10583,46 @@ void __RPC_STUB IErrorLookup_RemoteReleaseErrors_Stub(
 #define __ISQLErrorInfo_INTERFACE_DEFINED__
 
 /* interface ISQLErrorInfo */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_ISQLErrorInfo;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a74-2a1c-11ce-ade5-00aa0044773d")
     ISQLErrorInfo : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetSQLInfo( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetSQLInfo(
             /* [out] */ BSTR *pbstrSQLState,
             /* [out] */ LONG *plNativeError) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ISQLErrorInfoVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ISQLErrorInfo * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ISQLErrorInfo * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ISQLErrorInfo * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetSQLInfo )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetSQLInfo )(
             ISQLErrorInfo * This,
             /* [out] */ BSTR *pbstrSQLState,
             /* [out] */ LONG *plNativeError);
-        
+
         END_INTERFACE
     } ISQLErrorInfoVtbl;
 
@@ -10631,23 +10631,23 @@ EXTERN_C const IID IID_ISQLErrorInfo;
         CONST_VTBL struct ISQLErrorInfoVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ISQLErrorInfo_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ISQLErrorInfo_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ISQLErrorInfo_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ISQLErrorInfo_GetSQLInfo(This,pbstrSQLState,plNativeError)	\
-    ( (This)->lpVtbl -> GetSQLInfo(This,pbstrSQLState,plNativeError) ) 
+    ( (This)->lpVtbl -> GetSQLInfo(This,pbstrSQLState,plNativeError) )
 
 #endif /* COBJMACROS */
 
@@ -10656,7 +10656,7 @@ EXTERN_C const IID IID_ISQLErrorInfo;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ISQLErrorInfo_RemoteGetSQLInfo_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ISQLErrorInfo_RemoteGetSQLInfo_Proxy(
     ISQLErrorInfo * This,
     /* [out] */ __RPC__deref_out_opt BSTR *pbstrSQLState,
     /* [out] */ __RPC__out LONG *plNativeError,
@@ -10678,46 +10678,46 @@ void __RPC_STUB ISQLErrorInfo_RemoteGetSQLInfo_Stub(
 #define __IGetDataSource_INTERFACE_DEFINED__
 
 /* interface IGetDataSource */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IGetDataSource;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a75-2a1c-11ce-ade5-00aa0044773d")
     IGetDataSource : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetDataSource( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetDataSource(
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppDataSource) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IGetDataSourceVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IGetDataSource * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IGetDataSource * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IGetDataSource * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetDataSource )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetDataSource )(
             IGetDataSource * This,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppDataSource);
-        
+
         END_INTERFACE
     } IGetDataSourceVtbl;
 
@@ -10726,23 +10726,23 @@ EXTERN_C const IID IID_IGetDataSource;
         CONST_VTBL struct IGetDataSourceVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IGetDataSource_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IGetDataSource_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IGetDataSource_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IGetDataSource_GetDataSource(This,riid,ppDataSource)	\
-    ( (This)->lpVtbl -> GetDataSource(This,riid,ppDataSource) ) 
+    ( (This)->lpVtbl -> GetDataSource(This,riid,ppDataSource) )
 
 #endif /* COBJMACROS */
 
@@ -10751,7 +10751,7 @@ EXTERN_C const IID IID_IGetDataSource;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IGetDataSource_RemoteGetDataSource_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IGetDataSource_RemoteGetDataSource_Proxy(
     IGetDataSource * This,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppDataSource,
@@ -10773,73 +10773,73 @@ void __RPC_STUB IGetDataSource_RemoteGetDataSource_Stub(
 #define __ITransactionLocal_INTERFACE_DEFINED__
 
 /* interface ITransactionLocal */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_ITransactionLocal;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a5f-2a1c-11ce-ade5-00aa0044773d")
     ITransactionLocal : public ITransaction
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetOptionsObject( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetOptionsObject(
             /* [out] */ ITransactionOptions **ppOptions) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE StartTransaction( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE StartTransaction(
             /* [in] */ ISOLEVEL isoLevel,
             /* [in] */ ULONG isoFlags,
             /* [in] */ ITransactionOptions *pOtherOptions,
             /* [out] */ ULONG *pulTransactionLevel) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ITransactionLocalVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ITransactionLocal * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ITransactionLocal * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ITransactionLocal * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Commit )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Commit )(
             ITransactionLocal * This,
             /* [in] */ BOOL fRetaining,
             /* [in] */ DWORD grfTC,
             /* [in] */ DWORD grfRM);
-        
-        HRESULT ( STDMETHODCALLTYPE *Abort )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Abort )(
             ITransactionLocal * This,
             /* [unique][in] */ __RPC__in_opt BOID *pboidReason,
             /* [in] */ BOOL fRetaining,
             /* [in] */ BOOL fAsync);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTransactionInfo )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetTransactionInfo )(
             ITransactionLocal * This,
             /* [out] */ __RPC__out XACTTRANSINFO *pinfo);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetOptionsObject )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetOptionsObject )(
             ITransactionLocal * This,
             /* [out] */ ITransactionOptions **ppOptions);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *StartTransaction )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *StartTransaction )(
             ITransactionLocal * This,
             /* [in] */ ISOLEVEL isoLevel,
             /* [in] */ ULONG isoFlags,
             /* [in] */ ITransactionOptions *pOtherOptions,
             /* [out] */ ULONG *pulTransactionLevel);
-        
+
         END_INTERFACE
     } ITransactionLocalVtbl;
 
@@ -10848,36 +10848,36 @@ EXTERN_C const IID IID_ITransactionLocal;
         CONST_VTBL struct ITransactionLocalVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ITransactionLocal_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ITransactionLocal_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ITransactionLocal_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ITransactionLocal_Commit(This,fRetaining,grfTC,grfRM)	\
-    ( (This)->lpVtbl -> Commit(This,fRetaining,grfTC,grfRM) ) 
+    ( (This)->lpVtbl -> Commit(This,fRetaining,grfTC,grfRM) )
 
 #define ITransactionLocal_Abort(This,pboidReason,fRetaining,fAsync)	\
-    ( (This)->lpVtbl -> Abort(This,pboidReason,fRetaining,fAsync) ) 
+    ( (This)->lpVtbl -> Abort(This,pboidReason,fRetaining,fAsync) )
 
 #define ITransactionLocal_GetTransactionInfo(This,pinfo)	\
-    ( (This)->lpVtbl -> GetTransactionInfo(This,pinfo) ) 
+    ( (This)->lpVtbl -> GetTransactionInfo(This,pinfo) )
 
 
 #define ITransactionLocal_GetOptionsObject(This,ppOptions)	\
-    ( (This)->lpVtbl -> GetOptionsObject(This,ppOptions) ) 
+    ( (This)->lpVtbl -> GetOptionsObject(This,ppOptions) )
 
 #define ITransactionLocal_StartTransaction(This,isoLevel,isoFlags,pOtherOptions,pulTransactionLevel)	\
-    ( (This)->lpVtbl -> StartTransaction(This,isoLevel,isoFlags,pOtherOptions,pulTransactionLevel) ) 
+    ( (This)->lpVtbl -> StartTransaction(This,isoLevel,isoFlags,pOtherOptions,pulTransactionLevel) )
 
 #endif /* COBJMACROS */
 
@@ -10886,7 +10886,7 @@ EXTERN_C const IID IID_ITransactionLocal;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionLocal_RemoteGetOptionsObject_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionLocal_RemoteGetOptionsObject_Proxy(
     ITransactionLocal * This,
     /* [out] */ __RPC__deref_out_opt ITransactionOptions **ppOptions,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
@@ -10899,7 +10899,7 @@ void __RPC_STUB ITransactionLocal_RemoteGetOptionsObject_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionLocal_RemoteStartTransaction_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionLocal_RemoteStartTransaction_Proxy(
     ITransactionLocal * This,
     /* [in] */ ISOLEVEL isoLevel,
     /* [in] */ ULONG isoFlags,
@@ -10923,57 +10923,57 @@ void __RPC_STUB ITransactionLocal_RemoteStartTransaction_Stub(
 #define __ITransactionJoin_INTERFACE_DEFINED__
 
 /* interface ITransactionJoin */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_ITransactionJoin;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a5e-2a1c-11ce-ade5-00aa0044773d")
     ITransactionJoin : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetOptionsObject( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetOptionsObject(
             /* [out] */ ITransactionOptions **ppOptions) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE JoinTransaction( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE JoinTransaction(
             /* [in] */ IUnknown *punkTransactionCoord,
             /* [in] */ ISOLEVEL isoLevel,
             /* [in] */ ULONG isoFlags,
             /* [in] */ ITransactionOptions *pOtherOptions) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ITransactionJoinVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ITransactionJoin * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ITransactionJoin * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ITransactionJoin * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetOptionsObject )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetOptionsObject )(
             ITransactionJoin * This,
             /* [out] */ ITransactionOptions **ppOptions);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *JoinTransaction )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *JoinTransaction )(
             ITransactionJoin * This,
             /* [in] */ IUnknown *punkTransactionCoord,
             /* [in] */ ISOLEVEL isoLevel,
             /* [in] */ ULONG isoFlags,
             /* [in] */ ITransactionOptions *pOtherOptions);
-        
+
         END_INTERFACE
     } ITransactionJoinVtbl;
 
@@ -10982,26 +10982,26 @@ EXTERN_C const IID IID_ITransactionJoin;
         CONST_VTBL struct ITransactionJoinVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ITransactionJoin_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ITransactionJoin_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ITransactionJoin_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ITransactionJoin_GetOptionsObject(This,ppOptions)	\
-    ( (This)->lpVtbl -> GetOptionsObject(This,ppOptions) ) 
+    ( (This)->lpVtbl -> GetOptionsObject(This,ppOptions) )
 
 #define ITransactionJoin_JoinTransaction(This,punkTransactionCoord,isoLevel,isoFlags,pOtherOptions)	\
-    ( (This)->lpVtbl -> JoinTransaction(This,punkTransactionCoord,isoLevel,isoFlags,pOtherOptions) ) 
+    ( (This)->lpVtbl -> JoinTransaction(This,punkTransactionCoord,isoLevel,isoFlags,pOtherOptions) )
 
 #endif /* COBJMACROS */
 
@@ -11010,7 +11010,7 @@ EXTERN_C const IID IID_ITransactionJoin;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionJoin_RemoteGetOptionsObject_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionJoin_RemoteGetOptionsObject_Proxy(
     ITransactionJoin * This,
     /* [out] */ __RPC__deref_out_opt ITransactionOptions **ppOptions,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
@@ -11023,7 +11023,7 @@ void __RPC_STUB ITransactionJoin_RemoteGetOptionsObject_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionJoin_RemoteJoinTransaction_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionJoin_RemoteJoinTransaction_Proxy(
     ITransactionJoin * This,
     /* [unique][in] */ __RPC__in_opt IUnknown *punkTransactionCoord,
     /* [in] */ ISOLEVEL isoLevel,
@@ -11047,46 +11047,46 @@ void __RPC_STUB ITransactionJoin_RemoteJoinTransaction_Stub(
 #define __ITransactionObject_INTERFACE_DEFINED__
 
 /* interface ITransactionObject */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_ITransactionObject;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733a60-2a1c-11ce-ade5-00aa0044773d")
     ITransactionObject : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetTransactionObject( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetTransactionObject(
             /* [in] */ ULONG ulTransactionLevel,
             /* [out] */ ITransaction **ppTransactionObject) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ITransactionObjectVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ITransactionObject * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ITransactionObject * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ITransactionObject * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetTransactionObject )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetTransactionObject )(
             ITransactionObject * This,
             /* [in] */ ULONG ulTransactionLevel,
             /* [out] */ ITransaction **ppTransactionObject);
-        
+
         END_INTERFACE
     } ITransactionObjectVtbl;
 
@@ -11095,23 +11095,23 @@ EXTERN_C const IID IID_ITransactionObject;
         CONST_VTBL struct ITransactionObjectVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ITransactionObject_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ITransactionObject_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ITransactionObject_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ITransactionObject_GetTransactionObject(This,ulTransactionLevel,ppTransactionObject)	\
-    ( (This)->lpVtbl -> GetTransactionObject(This,ulTransactionLevel,ppTransactionObject) ) 
+    ( (This)->lpVtbl -> GetTransactionObject(This,ulTransactionLevel,ppTransactionObject) )
 
 #endif /* COBJMACROS */
 
@@ -11120,7 +11120,7 @@ EXTERN_C const IID IID_ITransactionObject;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionObject_RemoteGetTransactionObject_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionObject_RemoteGetTransactionObject_Proxy(
     ITransactionObject * This,
     /* [in] */ ULONG ulTransactionLevel,
     /* [out] */ __RPC__deref_out_opt ITransaction **ppTransactionObject,
@@ -11139,13 +11139,13 @@ void __RPC_STUB ITransactionObject_RemoteGetTransactionObject_Stub(
 
 
 /* interface __MIDL_itf_oledb_0000_0061 */
-/* [local] */ 
+/* [local] */
 
 //@@@+ V2.1
 #if( OLEDBVER >= 0x0210 )
 #ifndef UNDER_CE
 #if 0  // to get around a MIDL limitation
-typedef 
+typedef
 enum _SE_OBJECT_TYPE
     {	SE_UNKNOWN_OBJECT_TYPE	= 0,
 	SE_FILE_OBJECT	= ( SE_UNKNOWN_OBJECT_TYPE + 1 ) ,
@@ -11159,10 +11159,10 @@ enum _SE_OBJECT_TYPE
 	SE_DS_OBJECT_ALL	= ( SE_DS_OBJECT + 1 ) ,
 	SE_PROVIDER_DEFINED_OBJECT	= ( SE_DS_OBJECT_ALL + 1 ) ,
 	SE_WMIGUID_OBJECT	= ( SE_PROVIDER_DEFINED_OBJECT + 1 ) ,
-	SE_REGISTRY_WOW64_32KEY	= ( SE_WMIGUID_OBJECT + 1 ) 
+	SE_REGISTRY_WOW64_32KEY	= ( SE_WMIGUID_OBJECT + 1 )
     } 	SE_OBJECT_TYPE;
 
-typedef 
+typedef
 enum _TRUSTEE_TYPE
     {	TRUSTEE_IS_UNKNOWN	= 0,
 	TRUSTEE_IS_USER	= ( TRUSTEE_IS_UNKNOWN + 1 ) ,
@@ -11172,22 +11172,22 @@ enum _TRUSTEE_TYPE
 	TRUSTEE_IS_WELL_KNOWN_GROUP	= ( TRUSTEE_IS_ALIAS + 1 ) ,
 	TRUSTEE_IS_DELETED	= ( TRUSTEE_IS_WELL_KNOWN_GROUP + 1 ) ,
 	TRUSTEE_IS_INVALID	= ( TRUSTEE_IS_DELETED + 1 ) ,
-	TRUSTEE_IS_COMPUTER	= ( TRUSTEE_IS_INVALID + 1 ) 
+	TRUSTEE_IS_COMPUTER	= ( TRUSTEE_IS_INVALID + 1 )
     } 	TRUSTEE_TYPE;
 
-typedef 
+typedef
 enum _TRUSTEE_FORM
     {	TRUSTEE_IS_SID	= 0,
 	TRUSTEE_IS_NAME	= ( TRUSTEE_IS_SID + 1 ) ,
 	TRUSTEE_BAD_FORM	= ( TRUSTEE_IS_NAME + 1 ) ,
 	TRUSTEE_IS_OBJECTS_AND_SID	= ( TRUSTEE_BAD_FORM + 1 ) ,
-	TRUSTEE_IS_OBJECTS_AND_NAME	= ( TRUSTEE_IS_OBJECTS_AND_SID + 1 ) 
+	TRUSTEE_IS_OBJECTS_AND_NAME	= ( TRUSTEE_IS_OBJECTS_AND_SID + 1 )
     } 	TRUSTEE_FORM;
 
-typedef 
+typedef
 enum _MULTIPLE_TRUSTEE_OPERATION
     {	NO_MULTIPLE_TRUSTEE	= 0,
-	TRUSTEE_IS_IMPERSONATE	= ( NO_MULTIPLE_TRUSTEE + 1 ) 
+	TRUSTEE_IS_IMPERSONATE	= ( NO_MULTIPLE_TRUSTEE + 1 )
     } 	MULTIPLE_TRUSTEE_OPERATION;
 
 typedef struct _OBJECTS_AND_SID
@@ -11232,7 +11232,7 @@ typedef struct _TRUSTEE_A
     MULTIPLE_TRUSTEE_OPERATION MultipleTrusteeOperation;
     TRUSTEE_FORM TrusteeForm;
     TRUSTEE_TYPE TrusteeType;
-    /* [switch_type] */ union 
+    /* [switch_type] */ union
         {
         LPSTR ptstrName;
         SID *pSid;
@@ -11253,7 +11253,7 @@ typedef struct _TRUSTEE_W
     MULTIPLE_TRUSTEE_OPERATION MultipleTrusteeOperation;
     TRUSTEE_FORM TrusteeForm;
     TRUSTEE_TYPE TrusteeType;
-    /* [switch_type] */ union 
+    /* [switch_type] */ union
         {
         LPWSTR ptstrName;
         SID *pSid;
@@ -11276,7 +11276,7 @@ typedef TRUSTEEA TRUSTEE;
 
 typedef PTRUSTEEA PTRUSTEE;
 
-typedef 
+typedef
 enum _ACCESS_MODE
     {	NOT_USED_ACCESS	= 0,
 	GRANT_ACCESS	= ( NOT_USED_ACCESS + 1 ) ,
@@ -11284,7 +11284,7 @@ enum _ACCESS_MODE
 	DENY_ACCESS	= ( SET_ACCESS + 1 ) ,
 	REVOKE_ACCESS	= ( DENY_ACCESS + 1 ) ,
 	SET_AUDIT_SUCCESS	= ( REVOKE_ACCESS + 1 ) ,
-	SET_AUDIT_FAILURE	= ( SET_AUDIT_SUCCESS + 1 ) 
+	SET_AUDIT_FAILURE	= ( SET_AUDIT_SUCCESS + 1 )
     } 	ACCESS_MODE;
 
 typedef struct _EXPLICIT_ACCESS_A
@@ -11461,7 +11461,7 @@ typedef PTRUSTEE_ACCESSA PTRUSTEE_ACCESS;
 #pragma warning (disable: 4201)
 typedef struct _ACTRL_OVERLAPPED
     {
-    union 
+    union
         {
         PVOID Provider;
         ULONG Reserved1;
@@ -11513,14 +11513,14 @@ typedef ACTRL_CONTROL_INFOA ACTRL_CONTROL_INFO;
 
 typedef PACTRL_CONTROL_INFOA PACTRL_CONTROL_INFO;
 
-typedef 
+typedef
 enum _PROGRESS_INVOKE_SETTING
     {	ProgressInvokeNever	= 1,
 	ProgressInvokeEveryObject	= ( ProgressInvokeNever + 1 ) ,
 	ProgressInvokeOnError	= ( ProgressInvokeEveryObject + 1 ) ,
 	ProgressCancelOperation	= ( ProgressInvokeOnError + 1 ) ,
 	ProgressRetryOperation	= ( ProgressCancelOperation + 1 ) ,
-	ProgressInvokePrePostError	= ( ProgressRetryOperation + 1 ) 
+	ProgressInvokePrePostError	= ( ProgressRetryOperation + 1 )
     } 	PROG_INVOKE_SETTING;
 
 typedef enum _PROGRESS_INVOKE_SETTING *PPROG_INVOKE_SETTING;
@@ -11564,90 +11564,90 @@ extern RPC_IF_HANDLE __MIDL_itf_oledb_0000_0061_v0_0_s_ifspec;
 #define __ITrusteeAdmin_INTERFACE_DEFINED__
 
 /* interface ITrusteeAdmin */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_ITrusteeAdmin;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733aa1-2a1c-11ce-ade5-00aa0044773d")
     ITrusteeAdmin : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE CompareTrustees( 
+        virtual HRESULT STDMETHODCALLTYPE CompareTrustees(
             /* [in] */ TRUSTEE_W *pTrustee1,
             /* [in] */ TRUSTEE_W *pTrustee2) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE CreateTrustee( 
+
+        virtual HRESULT STDMETHODCALLTYPE CreateTrustee(
             /* [in] */ TRUSTEE_W *pTrustee,
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ]) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE DeleteTrustee( 
+
+        virtual HRESULT STDMETHODCALLTYPE DeleteTrustee(
             /* [in] */ TRUSTEE_W *pTrustee) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetTrusteeProperties( 
+
+        virtual HRESULT STDMETHODCALLTYPE SetTrusteeProperties(
             /* [in] */ TRUSTEE_W *pTrustee,
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ]) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetTrusteeProperties( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetTrusteeProperties(
             /* [in] */ TRUSTEE_W *pTrustee,
             /* [in] */ const ULONG cPropertyIDSets,
             /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
             /* [out][in] */ ULONG *pcPropertySets,
             /* [size_is][size_is][out] */ DBPROPSET **prgPropertySets) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ITrusteeAdminVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ITrusteeAdmin * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ITrusteeAdmin * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ITrusteeAdmin * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *CompareTrustees )( 
+
+        HRESULT ( STDMETHODCALLTYPE *CompareTrustees )(
             ITrusteeAdmin * This,
             /* [in] */ TRUSTEE_W *pTrustee1,
             /* [in] */ TRUSTEE_W *pTrustee2);
-        
-        HRESULT ( STDMETHODCALLTYPE *CreateTrustee )( 
+
+        HRESULT ( STDMETHODCALLTYPE *CreateTrustee )(
             ITrusteeAdmin * This,
             /* [in] */ TRUSTEE_W *pTrustee,
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *DeleteTrustee )( 
+
+        HRESULT ( STDMETHODCALLTYPE *DeleteTrustee )(
             ITrusteeAdmin * This,
             /* [in] */ TRUSTEE_W *pTrustee);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetTrusteeProperties )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetTrusteeProperties )(
             ITrusteeAdmin * This,
             /* [in] */ TRUSTEE_W *pTrustee,
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrusteeProperties )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetTrusteeProperties )(
             ITrusteeAdmin * This,
             /* [in] */ TRUSTEE_W *pTrustee,
             /* [in] */ const ULONG cPropertyIDSets,
             /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
             /* [out][in] */ ULONG *pcPropertySets,
             /* [size_is][size_is][out] */ DBPROPSET **prgPropertySets);
-        
+
         END_INTERFACE
     } ITrusteeAdminVtbl;
 
@@ -11656,35 +11656,35 @@ EXTERN_C const IID IID_ITrusteeAdmin;
         CONST_VTBL struct ITrusteeAdminVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ITrusteeAdmin_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ITrusteeAdmin_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ITrusteeAdmin_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ITrusteeAdmin_CompareTrustees(This,pTrustee1,pTrustee2)	\
-    ( (This)->lpVtbl -> CompareTrustees(This,pTrustee1,pTrustee2) ) 
+    ( (This)->lpVtbl -> CompareTrustees(This,pTrustee1,pTrustee2) )
 
 #define ITrusteeAdmin_CreateTrustee(This,pTrustee,cPropertySets,rgPropertySets)	\
-    ( (This)->lpVtbl -> CreateTrustee(This,pTrustee,cPropertySets,rgPropertySets) ) 
+    ( (This)->lpVtbl -> CreateTrustee(This,pTrustee,cPropertySets,rgPropertySets) )
 
 #define ITrusteeAdmin_DeleteTrustee(This,pTrustee)	\
-    ( (This)->lpVtbl -> DeleteTrustee(This,pTrustee) ) 
+    ( (This)->lpVtbl -> DeleteTrustee(This,pTrustee) )
 
 #define ITrusteeAdmin_SetTrusteeProperties(This,pTrustee,cPropertySets,rgPropertySets)	\
-    ( (This)->lpVtbl -> SetTrusteeProperties(This,pTrustee,cPropertySets,rgPropertySets) ) 
+    ( (This)->lpVtbl -> SetTrusteeProperties(This,pTrustee,cPropertySets,rgPropertySets) )
 
 #define ITrusteeAdmin_GetTrusteeProperties(This,pTrustee,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets)	\
-    ( (This)->lpVtbl -> GetTrusteeProperties(This,pTrustee,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets) ) 
+    ( (This)->lpVtbl -> GetTrusteeProperties(This,pTrustee,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets) )
 
 #endif /* COBJMACROS */
 
@@ -11701,88 +11701,88 @@ EXTERN_C const IID IID_ITrusteeAdmin;
 #define __ITrusteeGroupAdmin_INTERFACE_DEFINED__
 
 /* interface ITrusteeGroupAdmin */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_ITrusteeGroupAdmin;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733aa2-2a1c-11ce-ade5-00aa0044773d")
     ITrusteeGroupAdmin : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE AddMember( 
+        virtual HRESULT STDMETHODCALLTYPE AddMember(
             /* [in] */ TRUSTEE_W *pMembershipTrustee,
             /* [in] */ TRUSTEE_W *pMemberTrustee) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE DeleteMember( 
+
+        virtual HRESULT STDMETHODCALLTYPE DeleteMember(
             /* [in] */ TRUSTEE_W *pMembershipTrustee,
             /* [in] */ TRUSTEE_W *pMemberTrustee) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE IsMember( 
+
+        virtual HRESULT STDMETHODCALLTYPE IsMember(
             /* [in] */ TRUSTEE_W *pMembershipTrustee,
             /* [in] */ TRUSTEE_W *pMemberTrustee,
             /* [out] */ BOOL *pfStatus) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMembers( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetMembers(
             /* [in] */ TRUSTEE_W *pMembershipTrustee,
             /* [out] */ ULONG *pcMembers,
             /* [out] */ TRUSTEE_W **prgMembers) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMemberships( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetMemberships(
             /* [in] */ TRUSTEE_W *pTrustee,
             /* [out] */ ULONG *pcMemberships,
             /* [out] */ TRUSTEE_W **prgMemberships) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ITrusteeGroupAdminVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ITrusteeGroupAdmin * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ITrusteeGroupAdmin * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ITrusteeGroupAdmin * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *AddMember )( 
+
+        HRESULT ( STDMETHODCALLTYPE *AddMember )(
             ITrusteeGroupAdmin * This,
             /* [in] */ TRUSTEE_W *pMembershipTrustee,
             /* [in] */ TRUSTEE_W *pMemberTrustee);
-        
-        HRESULT ( STDMETHODCALLTYPE *DeleteMember )( 
+
+        HRESULT ( STDMETHODCALLTYPE *DeleteMember )(
             ITrusteeGroupAdmin * This,
             /* [in] */ TRUSTEE_W *pMembershipTrustee,
             /* [in] */ TRUSTEE_W *pMemberTrustee);
-        
-        HRESULT ( STDMETHODCALLTYPE *IsMember )( 
+
+        HRESULT ( STDMETHODCALLTYPE *IsMember )(
             ITrusteeGroupAdmin * This,
             /* [in] */ TRUSTEE_W *pMembershipTrustee,
             /* [in] */ TRUSTEE_W *pMemberTrustee,
             /* [out] */ BOOL *pfStatus);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetMembers )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetMembers )(
             ITrusteeGroupAdmin * This,
             /* [in] */ TRUSTEE_W *pMembershipTrustee,
             /* [out] */ ULONG *pcMembers,
             /* [out] */ TRUSTEE_W **prgMembers);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetMemberships )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetMemberships )(
             ITrusteeGroupAdmin * This,
             /* [in] */ TRUSTEE_W *pTrustee,
             /* [out] */ ULONG *pcMemberships,
             /* [out] */ TRUSTEE_W **prgMemberships);
-        
+
         END_INTERFACE
     } ITrusteeGroupAdminVtbl;
 
@@ -11791,35 +11791,35 @@ EXTERN_C const IID IID_ITrusteeGroupAdmin;
         CONST_VTBL struct ITrusteeGroupAdminVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ITrusteeGroupAdmin_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ITrusteeGroupAdmin_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ITrusteeGroupAdmin_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ITrusteeGroupAdmin_AddMember(This,pMembershipTrustee,pMemberTrustee)	\
-    ( (This)->lpVtbl -> AddMember(This,pMembershipTrustee,pMemberTrustee) ) 
+    ( (This)->lpVtbl -> AddMember(This,pMembershipTrustee,pMemberTrustee) )
 
 #define ITrusteeGroupAdmin_DeleteMember(This,pMembershipTrustee,pMemberTrustee)	\
-    ( (This)->lpVtbl -> DeleteMember(This,pMembershipTrustee,pMemberTrustee) ) 
+    ( (This)->lpVtbl -> DeleteMember(This,pMembershipTrustee,pMemberTrustee) )
 
 #define ITrusteeGroupAdmin_IsMember(This,pMembershipTrustee,pMemberTrustee,pfStatus)	\
-    ( (This)->lpVtbl -> IsMember(This,pMembershipTrustee,pMemberTrustee,pfStatus) ) 
+    ( (This)->lpVtbl -> IsMember(This,pMembershipTrustee,pMemberTrustee,pfStatus) )
 
 #define ITrusteeGroupAdmin_GetMembers(This,pMembershipTrustee,pcMembers,prgMembers)	\
-    ( (This)->lpVtbl -> GetMembers(This,pMembershipTrustee,pcMembers,prgMembers) ) 
+    ( (This)->lpVtbl -> GetMembers(This,pMembershipTrustee,pcMembers,prgMembers) )
 
 #define ITrusteeGroupAdmin_GetMemberships(This,pTrustee,pcMemberships,prgMemberships)	\
-    ( (This)->lpVtbl -> GetMemberships(This,pTrustee,pcMemberships,prgMemberships) ) 
+    ( (This)->lpVtbl -> GetMemberships(This,pTrustee,pcMemberships,prgMemberships) )
 
 #endif /* COBJMACROS */
 
@@ -11836,88 +11836,88 @@ EXTERN_C const IID IID_ITrusteeGroupAdmin;
 #define __IObjectAccessControl_INTERFACE_DEFINED__
 
 /* interface IObjectAccessControl */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IObjectAccessControl;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733aa3-2a1c-11ce-ade5-00aa0044773d")
     IObjectAccessControl : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE GetObjectAccessRights( 
+        virtual HRESULT STDMETHODCALLTYPE GetObjectAccessRights(
             /* [in] */ SEC_OBJECT *pObject,
             /* [out][in] */ ULONG *pcAccessEntries,
             /* [out][in] */ EXPLICIT_ACCESS_W **prgAccessEntries) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetObjectOwner( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetObjectOwner(
             /* [in] */ SEC_OBJECT *pObject,
             /* [out] */ TRUSTEE_W **ppOwner) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE IsObjectAccessAllowed( 
+
+        virtual HRESULT STDMETHODCALLTYPE IsObjectAccessAllowed(
             /* [in] */ SEC_OBJECT *pObject,
             /* [in] */ EXPLICIT_ACCESS_W *pAccessEntry,
             /* [out] */ BOOL *pfResult) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetObjectAccessRights( 
+
+        virtual HRESULT STDMETHODCALLTYPE SetObjectAccessRights(
             /* [in] */ SEC_OBJECT *pObject,
             /* [in] */ ULONG cAccessEntries,
             /* [out][in] */ EXPLICIT_ACCESS_W *prgAccessEntries) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetObjectOwner( 
+
+        virtual HRESULT STDMETHODCALLTYPE SetObjectOwner(
             /* [in] */ SEC_OBJECT *pObject,
             /* [in] */ TRUSTEE_W *pOwner) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IObjectAccessControlVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IObjectAccessControl * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IObjectAccessControl * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IObjectAccessControl * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetObjectAccessRights )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetObjectAccessRights )(
             IObjectAccessControl * This,
             /* [in] */ SEC_OBJECT *pObject,
             /* [out][in] */ ULONG *pcAccessEntries,
             /* [out][in] */ EXPLICIT_ACCESS_W **prgAccessEntries);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetObjectOwner )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetObjectOwner )(
             IObjectAccessControl * This,
             /* [in] */ SEC_OBJECT *pObject,
             /* [out] */ TRUSTEE_W **ppOwner);
-        
-        HRESULT ( STDMETHODCALLTYPE *IsObjectAccessAllowed )( 
+
+        HRESULT ( STDMETHODCALLTYPE *IsObjectAccessAllowed )(
             IObjectAccessControl * This,
             /* [in] */ SEC_OBJECT *pObject,
             /* [in] */ EXPLICIT_ACCESS_W *pAccessEntry,
             /* [out] */ BOOL *pfResult);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetObjectAccessRights )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetObjectAccessRights )(
             IObjectAccessControl * This,
             /* [in] */ SEC_OBJECT *pObject,
             /* [in] */ ULONG cAccessEntries,
             /* [out][in] */ EXPLICIT_ACCESS_W *prgAccessEntries);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetObjectOwner )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetObjectOwner )(
             IObjectAccessControl * This,
             /* [in] */ SEC_OBJECT *pObject,
             /* [in] */ TRUSTEE_W *pOwner);
-        
+
         END_INTERFACE
     } IObjectAccessControlVtbl;
 
@@ -11926,35 +11926,35 @@ EXTERN_C const IID IID_IObjectAccessControl;
         CONST_VTBL struct IObjectAccessControlVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IObjectAccessControl_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IObjectAccessControl_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IObjectAccessControl_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IObjectAccessControl_GetObjectAccessRights(This,pObject,pcAccessEntries,prgAccessEntries)	\
-    ( (This)->lpVtbl -> GetObjectAccessRights(This,pObject,pcAccessEntries,prgAccessEntries) ) 
+    ( (This)->lpVtbl -> GetObjectAccessRights(This,pObject,pcAccessEntries,prgAccessEntries) )
 
 #define IObjectAccessControl_GetObjectOwner(This,pObject,ppOwner)	\
-    ( (This)->lpVtbl -> GetObjectOwner(This,pObject,ppOwner) ) 
+    ( (This)->lpVtbl -> GetObjectOwner(This,pObject,ppOwner) )
 
 #define IObjectAccessControl_IsObjectAccessAllowed(This,pObject,pAccessEntry,pfResult)	\
-    ( (This)->lpVtbl -> IsObjectAccessAllowed(This,pObject,pAccessEntry,pfResult) ) 
+    ( (This)->lpVtbl -> IsObjectAccessAllowed(This,pObject,pAccessEntry,pfResult) )
 
 #define IObjectAccessControl_SetObjectAccessRights(This,pObject,cAccessEntries,prgAccessEntries)	\
-    ( (This)->lpVtbl -> SetObjectAccessRights(This,pObject,cAccessEntries,prgAccessEntries) ) 
+    ( (This)->lpVtbl -> SetObjectAccessRights(This,pObject,cAccessEntries,prgAccessEntries) )
 
 #define IObjectAccessControl_SetObjectOwner(This,pObject,pOwner)	\
-    ( (This)->lpVtbl -> SetObjectOwner(This,pObject,pOwner) ) 
+    ( (This)->lpVtbl -> SetObjectOwner(This,pObject,pOwner) )
 
 #endif /* COBJMACROS */
 
@@ -11971,7 +11971,7 @@ EXTERN_C const IID IID_IObjectAccessControl;
 #define __ISecurityInfo_INTERFACE_DEFINED__
 
 /* interface ISecurityInfo */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 //@@@+ V2.1
 #if( OLEDBVER >= 0x0210 )
@@ -12004,56 +12004,56 @@ enum ACCESS_MASKENUM
 EXTERN_C const IID IID_ISecurityInfo;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733aa4-2a1c-11ce-ade5-00aa0044773d")
     ISecurityInfo : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE GetCurrentTrustee( 
+        virtual HRESULT STDMETHODCALLTYPE GetCurrentTrustee(
             /* [out] */ TRUSTEE_W **ppTrustee) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetObjectTypes( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetObjectTypes(
             /* [out] */ ULONG *cObjectTypes,
             /* [out] */ GUID **rgObjectTypes) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetPermissions( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetPermissions(
             /* [in] */ GUID ObjectType,
             /* [out] */ ACCESS_MASK *pPermissions) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ISecurityInfoVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ISecurityInfo * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ISecurityInfo * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ISecurityInfo * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetCurrentTrustee )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetCurrentTrustee )(
             ISecurityInfo * This,
             /* [out] */ TRUSTEE_W **ppTrustee);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetObjectTypes )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetObjectTypes )(
             ISecurityInfo * This,
             /* [out] */ ULONG *cObjectTypes,
             /* [out] */ GUID **rgObjectTypes);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetPermissions )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetPermissions )(
             ISecurityInfo * This,
             /* [in] */ GUID ObjectType,
             /* [out] */ ACCESS_MASK *pPermissions);
-        
+
         END_INTERFACE
     } ISecurityInfoVtbl;
 
@@ -12062,29 +12062,29 @@ EXTERN_C const IID IID_ISecurityInfo;
         CONST_VTBL struct ISecurityInfoVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ISecurityInfo_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ISecurityInfo_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ISecurityInfo_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ISecurityInfo_GetCurrentTrustee(This,ppTrustee)	\
-    ( (This)->lpVtbl -> GetCurrentTrustee(This,ppTrustee) ) 
+    ( (This)->lpVtbl -> GetCurrentTrustee(This,ppTrustee) )
 
 #define ISecurityInfo_GetObjectTypes(This,cObjectTypes,rgObjectTypes)	\
-    ( (This)->lpVtbl -> GetObjectTypes(This,cObjectTypes,rgObjectTypes) ) 
+    ( (This)->lpVtbl -> GetObjectTypes(This,cObjectTypes,rgObjectTypes) )
 
 #define ISecurityInfo_GetPermissions(This,ObjectType,pPermissions)	\
-    ( (This)->lpVtbl -> GetPermissions(This,ObjectType,pPermissions) ) 
+    ( (This)->lpVtbl -> GetPermissions(This,ObjectType,pPermissions) )
 
 #endif /* COBJMACROS */
 
@@ -12098,7 +12098,7 @@ EXTERN_C const IID IID_ISecurityInfo;
 
 
 /* interface __MIDL_itf_oledb_0000_0065 */
-/* [local] */ 
+/* [local] */
 
 #endif // UNDER_CE
 
@@ -12110,18 +12110,18 @@ extern RPC_IF_HANDLE __MIDL_itf_oledb_0000_0065_v0_0_s_ifspec;
 #define __ITableCreation_INTERFACE_DEFINED__
 
 /* interface ITableCreation */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_ITableCreation;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733abc-2a1c-11ce-ade5-00aa0044773d")
     ITableCreation : public ITableDefinition
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetTableDefinition( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetTableDefinition(
             /* [in] */ DBID *pTableID,
             /* [out] */ DBORDINAL *pcColumnDescs,
             /* [size_is][size_is][out] */ DBCOLUMNDESC *prgColumnDescs[  ],
@@ -12129,30 +12129,30 @@ EXTERN_C const IID IID_ITableCreation;
             /* [size_is][size_is][out] */ DBPROPSET *prgPropertySets[  ],
             /* [out] */ ULONG *pcConstraintDescs,
             /* [size_is][size_is][out] */ DBCONSTRAINTDESC *prgConstraintDescs[  ],
-            /* [out] */ 
+            /* [out] */
             __deref_out_opt  OLECHAR **ppwszStringBuffer) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ITableCreationVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ITableCreation * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ITableCreation * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ITableCreation * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateTable )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateTable )(
             ITableCreation * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ DBID *pTableID,
@@ -12163,23 +12163,23 @@ EXTERN_C const IID IID_ITableCreation;
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [out] */ DBID **ppTableID,
             /* [iid_is][out] */ IUnknown **ppRowset);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *DropTable )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *DropTable )(
             ITableCreation * This,
             /* [unique][in] */ DBID *pTableID);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *AddColumn )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *AddColumn )(
             ITableCreation * This,
             /* [in] */ DBID *pTableID,
             /* [out][in] */ DBCOLUMNDESC *pColumnDesc,
             /* [out] */ DBID **ppColumnID);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *DropColumn )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *DropColumn )(
             ITableCreation * This,
             /* [unique][in] */ DBID *pTableID,
             /* [unique][in] */ DBID *pColumnID);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetTableDefinition )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetTableDefinition )(
             ITableCreation * This,
             /* [in] */ DBID *pTableID,
             /* [out] */ DBORDINAL *pcColumnDescs,
@@ -12188,9 +12188,9 @@ EXTERN_C const IID IID_ITableCreation;
             /* [size_is][size_is][out] */ DBPROPSET *prgPropertySets[  ],
             /* [out] */ ULONG *pcConstraintDescs,
             /* [size_is][size_is][out] */ DBCONSTRAINTDESC *prgConstraintDescs[  ],
-            /* [out] */ 
+            /* [out] */
             __deref_out_opt  OLECHAR **ppwszStringBuffer);
-        
+
         END_INTERFACE
     } ITableCreationVtbl;
 
@@ -12199,36 +12199,36 @@ EXTERN_C const IID IID_ITableCreation;
         CONST_VTBL struct ITableCreationVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ITableCreation_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ITableCreation_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ITableCreation_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ITableCreation_CreateTable(This,pUnkOuter,pTableID,cColumnDescs,rgColumnDescs,riid,cPropertySets,rgPropertySets,ppTableID,ppRowset)	\
-    ( (This)->lpVtbl -> CreateTable(This,pUnkOuter,pTableID,cColumnDescs,rgColumnDescs,riid,cPropertySets,rgPropertySets,ppTableID,ppRowset) ) 
+    ( (This)->lpVtbl -> CreateTable(This,pUnkOuter,pTableID,cColumnDescs,rgColumnDescs,riid,cPropertySets,rgPropertySets,ppTableID,ppRowset) )
 
 #define ITableCreation_DropTable(This,pTableID)	\
-    ( (This)->lpVtbl -> DropTable(This,pTableID) ) 
+    ( (This)->lpVtbl -> DropTable(This,pTableID) )
 
 #define ITableCreation_AddColumn(This,pTableID,pColumnDesc,ppColumnID)	\
-    ( (This)->lpVtbl -> AddColumn(This,pTableID,pColumnDesc,ppColumnID) ) 
+    ( (This)->lpVtbl -> AddColumn(This,pTableID,pColumnDesc,ppColumnID) )
 
 #define ITableCreation_DropColumn(This,pTableID,pColumnID)	\
-    ( (This)->lpVtbl -> DropColumn(This,pTableID,pColumnID) ) 
+    ( (This)->lpVtbl -> DropColumn(This,pTableID,pColumnID) )
 
 
 #define ITableCreation_GetTableDefinition(This,pTableID,pcColumnDescs,prgColumnDescs,pcPropertySets,prgPropertySets,pcConstraintDescs,prgConstraintDescs,ppwszStringBuffer)	\
-    ( (This)->lpVtbl -> GetTableDefinition(This,pTableID,pcColumnDescs,prgColumnDescs,pcPropertySets,prgPropertySets,pcConstraintDescs,prgConstraintDescs,ppwszStringBuffer) ) 
+    ( (This)->lpVtbl -> GetTableDefinition(This,pTableID,pcColumnDescs,prgColumnDescs,pcPropertySets,prgPropertySets,pcConstraintDescs,prgConstraintDescs,ppwszStringBuffer) )
 
 #endif /* COBJMACROS */
 
@@ -12245,22 +12245,22 @@ EXTERN_C const IID IID_ITableCreation;
 #define __ITableDefinitionWithConstraints_INTERFACE_DEFINED__
 
 /* interface ITableDefinitionWithConstraints */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_ITableDefinitionWithConstraints;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733aab-2a1c-11ce-ade5-00aa0044773d")
     ITableDefinitionWithConstraints : public ITableCreation
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE AddConstraint( 
+        virtual HRESULT STDMETHODCALLTYPE AddConstraint(
             /* [in] */ DBID *pTableID,
             /* [in] */ DBCONSTRAINTDESC *pConstraintDesc) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE CreateTableWithConstraints( 
+
+        virtual HRESULT STDMETHODCALLTYPE CreateTableWithConstraints(
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ DBID *pTableID,
             /* [in] */ DBORDINAL cColumnDescs,
@@ -12272,32 +12272,32 @@ EXTERN_C const IID IID_ITableDefinitionWithConstraints;
             /* [out][size_is][in] */ DBPROPSET rgPropertySets[  ],
             /* [out] */ DBID **ppTableID,
             /* [out] */ IUnknown **ppRowset) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE DropConstraint( 
+
+        virtual HRESULT STDMETHODCALLTYPE DropConstraint(
             /* [in] */ DBID *pTableID,
             /* [in] */ DBID *pConstraintID) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ITableDefinitionWithConstraintsVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ITableDefinitionWithConstraints * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ITableDefinitionWithConstraints * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ITableDefinitionWithConstraints * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateTable )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateTable )(
             ITableDefinitionWithConstraints * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ DBID *pTableID,
@@ -12308,23 +12308,23 @@ EXTERN_C const IID IID_ITableDefinitionWithConstraints;
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [out] */ DBID **ppTableID,
             /* [iid_is][out] */ IUnknown **ppRowset);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *DropTable )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *DropTable )(
             ITableDefinitionWithConstraints * This,
             /* [unique][in] */ DBID *pTableID);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *AddColumn )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *AddColumn )(
             ITableDefinitionWithConstraints * This,
             /* [in] */ DBID *pTableID,
             /* [out][in] */ DBCOLUMNDESC *pColumnDesc,
             /* [out] */ DBID **ppColumnID);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *DropColumn )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *DropColumn )(
             ITableDefinitionWithConstraints * This,
             /* [unique][in] */ DBID *pTableID,
             /* [unique][in] */ DBID *pColumnID);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetTableDefinition )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetTableDefinition )(
             ITableDefinitionWithConstraints * This,
             /* [in] */ DBID *pTableID,
             /* [out] */ DBORDINAL *pcColumnDescs,
@@ -12333,15 +12333,15 @@ EXTERN_C const IID IID_ITableDefinitionWithConstraints;
             /* [size_is][size_is][out] */ DBPROPSET *prgPropertySets[  ],
             /* [out] */ ULONG *pcConstraintDescs,
             /* [size_is][size_is][out] */ DBCONSTRAINTDESC *prgConstraintDescs[  ],
-            /* [out] */ 
+            /* [out] */
             __deref_out_opt  OLECHAR **ppwszStringBuffer);
-        
-        HRESULT ( STDMETHODCALLTYPE *AddConstraint )( 
+
+        HRESULT ( STDMETHODCALLTYPE *AddConstraint )(
             ITableDefinitionWithConstraints * This,
             /* [in] */ DBID *pTableID,
             /* [in] */ DBCONSTRAINTDESC *pConstraintDesc);
-        
-        HRESULT ( STDMETHODCALLTYPE *CreateTableWithConstraints )( 
+
+        HRESULT ( STDMETHODCALLTYPE *CreateTableWithConstraints )(
             ITableDefinitionWithConstraints * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ DBID *pTableID,
@@ -12354,12 +12354,12 @@ EXTERN_C const IID IID_ITableDefinitionWithConstraints;
             /* [out][size_is][in] */ DBPROPSET rgPropertySets[  ],
             /* [out] */ DBID **ppTableID,
             /* [out] */ IUnknown **ppRowset);
-        
-        HRESULT ( STDMETHODCALLTYPE *DropConstraint )( 
+
+        HRESULT ( STDMETHODCALLTYPE *DropConstraint )(
             ITableDefinitionWithConstraints * This,
             /* [in] */ DBID *pTableID,
             /* [in] */ DBID *pConstraintID);
-        
+
         END_INTERFACE
     } ITableDefinitionWithConstraintsVtbl;
 
@@ -12368,46 +12368,46 @@ EXTERN_C const IID IID_ITableDefinitionWithConstraints;
         CONST_VTBL struct ITableDefinitionWithConstraintsVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ITableDefinitionWithConstraints_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ITableDefinitionWithConstraints_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ITableDefinitionWithConstraints_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ITableDefinitionWithConstraints_CreateTable(This,pUnkOuter,pTableID,cColumnDescs,rgColumnDescs,riid,cPropertySets,rgPropertySets,ppTableID,ppRowset)	\
-    ( (This)->lpVtbl -> CreateTable(This,pUnkOuter,pTableID,cColumnDescs,rgColumnDescs,riid,cPropertySets,rgPropertySets,ppTableID,ppRowset) ) 
+    ( (This)->lpVtbl -> CreateTable(This,pUnkOuter,pTableID,cColumnDescs,rgColumnDescs,riid,cPropertySets,rgPropertySets,ppTableID,ppRowset) )
 
 #define ITableDefinitionWithConstraints_DropTable(This,pTableID)	\
-    ( (This)->lpVtbl -> DropTable(This,pTableID) ) 
+    ( (This)->lpVtbl -> DropTable(This,pTableID) )
 
 #define ITableDefinitionWithConstraints_AddColumn(This,pTableID,pColumnDesc,ppColumnID)	\
-    ( (This)->lpVtbl -> AddColumn(This,pTableID,pColumnDesc,ppColumnID) ) 
+    ( (This)->lpVtbl -> AddColumn(This,pTableID,pColumnDesc,ppColumnID) )
 
 #define ITableDefinitionWithConstraints_DropColumn(This,pTableID,pColumnID)	\
-    ( (This)->lpVtbl -> DropColumn(This,pTableID,pColumnID) ) 
+    ( (This)->lpVtbl -> DropColumn(This,pTableID,pColumnID) )
 
 
 #define ITableDefinitionWithConstraints_GetTableDefinition(This,pTableID,pcColumnDescs,prgColumnDescs,pcPropertySets,prgPropertySets,pcConstraintDescs,prgConstraintDescs,ppwszStringBuffer)	\
-    ( (This)->lpVtbl -> GetTableDefinition(This,pTableID,pcColumnDescs,prgColumnDescs,pcPropertySets,prgPropertySets,pcConstraintDescs,prgConstraintDescs,ppwszStringBuffer) ) 
+    ( (This)->lpVtbl -> GetTableDefinition(This,pTableID,pcColumnDescs,prgColumnDescs,pcPropertySets,prgPropertySets,pcConstraintDescs,prgConstraintDescs,ppwszStringBuffer) )
 
 
 #define ITableDefinitionWithConstraints_AddConstraint(This,pTableID,pConstraintDesc)	\
-    ( (This)->lpVtbl -> AddConstraint(This,pTableID,pConstraintDesc) ) 
+    ( (This)->lpVtbl -> AddConstraint(This,pTableID,pConstraintDesc) )
 
 #define ITableDefinitionWithConstraints_CreateTableWithConstraints(This,pUnkOuter,pTableID,cColumnDescs,rgColumnDescs,cConstraintDescs,rgConstraintDescs,riid,cPropertySets,rgPropertySets,ppTableID,ppRowset)	\
-    ( (This)->lpVtbl -> CreateTableWithConstraints(This,pUnkOuter,pTableID,cColumnDescs,rgColumnDescs,cConstraintDescs,rgConstraintDescs,riid,cPropertySets,rgPropertySets,ppTableID,ppRowset) ) 
+    ( (This)->lpVtbl -> CreateTableWithConstraints(This,pUnkOuter,pTableID,cColumnDescs,rgColumnDescs,cConstraintDescs,rgConstraintDescs,riid,cPropertySets,rgPropertySets,ppTableID,ppRowset) )
 
 #define ITableDefinitionWithConstraints_DropConstraint(This,pTableID,pConstraintID)	\
-    ( (This)->lpVtbl -> DropConstraint(This,pTableID,pConstraintID) ) 
+    ( (This)->lpVtbl -> DropConstraint(This,pTableID,pConstraintID) )
 
 #endif /* COBJMACROS */
 
@@ -12421,7 +12421,7 @@ EXTERN_C const IID IID_ITableDefinitionWithConstraints;
 
 
 /* interface __MIDL_itf_oledb_0000_0066 */
-/* [local] */ 
+/* [local] */
 
 #ifndef UNDER_CE
 
@@ -12433,66 +12433,66 @@ extern RPC_IF_HANDLE __MIDL_itf_oledb_0000_0066_v0_0_s_ifspec;
 #define __IRow_INTERFACE_DEFINED__
 
 /* interface IRow */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IRow;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733ab4-2a1c-11ce-ade5-00aa0044773d")
     IRow : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetColumns( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetColumns(
             /* [in] */ DBORDINAL cColumns,
             /* [size_is][out][in] */ DBCOLUMNACCESS rgColumns[  ]) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetSourceRowset( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetSourceRowset(
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppRowset,
             /* [out] */ HROW *phRow) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Open( 
+
+        virtual HRESULT STDMETHODCALLTYPE Open(
             /* [unique][in] */ IUnknown *pUnkOuter,
             /* [in] */ DBID *pColumnID,
             /* [in] */ REFGUID rguidColumnType,
             /* [in] */ DWORD dwBindFlags,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppUnk) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRow * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRow * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRow * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetColumns )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetColumns )(
             IRow * This,
             /* [in] */ DBORDINAL cColumns,
             /* [size_is][out][in] */ DBCOLUMNACCESS rgColumns[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetSourceRowset )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetSourceRowset )(
             IRow * This,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppRowset,
             /* [out] */ HROW *phRow);
-        
-        HRESULT ( STDMETHODCALLTYPE *Open )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Open )(
             IRow * This,
             /* [unique][in] */ IUnknown *pUnkOuter,
             /* [in] */ DBID *pColumnID,
@@ -12500,7 +12500,7 @@ EXTERN_C const IID IID_IRow;
             /* [in] */ DWORD dwBindFlags,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppUnk);
-        
+
         END_INTERFACE
     } IRowVtbl;
 
@@ -12509,29 +12509,29 @@ EXTERN_C const IID IID_IRow;
         CONST_VTBL struct IRowVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRow_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRow_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRow_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRow_GetColumns(This,cColumns,rgColumns)	\
-    ( (This)->lpVtbl -> GetColumns(This,cColumns,rgColumns) ) 
+    ( (This)->lpVtbl -> GetColumns(This,cColumns,rgColumns) )
 
 #define IRow_GetSourceRowset(This,riid,ppRowset,phRow)	\
-    ( (This)->lpVtbl -> GetSourceRowset(This,riid,ppRowset,phRow) ) 
+    ( (This)->lpVtbl -> GetSourceRowset(This,riid,ppRowset,phRow) )
 
 #define IRow_Open(This,pUnkOuter,pColumnID,rguidColumnType,dwBindFlags,riid,ppUnk)	\
-    ( (This)->lpVtbl -> Open(This,pUnkOuter,pColumnID,rguidColumnType,dwBindFlags,riid,ppUnk) ) 
+    ( (This)->lpVtbl -> Open(This,pUnkOuter,pColumnID,rguidColumnType,dwBindFlags,riid,ppUnk) )
 
 #endif /* COBJMACROS */
 
@@ -12548,46 +12548,46 @@ EXTERN_C const IID IID_IRow;
 #define __IRowChange_INTERFACE_DEFINED__
 
 /* interface IRowChange */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IRowChange;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733ab5-2a1c-11ce-ade5-00aa0044773d")
     IRowChange : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetColumns( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetColumns(
             /* [in] */ DBORDINAL cColumns,
             /* [size_is][out][in] */ DBCOLUMNACCESS rgColumns[  ]) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowChangeVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowChange * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowChange * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowChange * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetColumns )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetColumns )(
             IRowChange * This,
             /* [in] */ DBORDINAL cColumns,
             /* [size_is][out][in] */ DBCOLUMNACCESS rgColumns[  ]);
-        
+
         END_INTERFACE
     } IRowChangeVtbl;
 
@@ -12596,23 +12596,23 @@ EXTERN_C const IID IID_IRowChange;
         CONST_VTBL struct IRowChangeVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowChange_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowChange_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowChange_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowChange_SetColumns(This,cColumns,rgColumns)	\
-    ( (This)->lpVtbl -> SetColumns(This,cColumns,rgColumns) ) 
+    ( (This)->lpVtbl -> SetColumns(This,cColumns,rgColumns) )
 
 #endif /* COBJMACROS */
 
@@ -12629,64 +12629,64 @@ EXTERN_C const IID IID_IRowChange;
 #define __IRowSchemaChange_INTERFACE_DEFINED__
 
 /* interface IRowSchemaChange */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IRowSchemaChange;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733aae-2a1c-11ce-ade5-00aa0044773d")
     IRowSchemaChange : public IRowChange
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE DeleteColumns( 
+        virtual HRESULT STDMETHODCALLTYPE DeleteColumns(
             /* [in] */ DBORDINAL cColumns,
             /* [size_is][in] */ const DBID rgColumnIDs[  ],
             /* [size_is][out][in] */ DBSTATUS rgdwStatus[  ]) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE AddColumns( 
+
+        virtual HRESULT STDMETHODCALLTYPE AddColumns(
             /* [in] */ DBORDINAL cColumns,
             /* [size_is][in] */ const DBCOLUMNINFO rgNewColumnInfo[  ],
             /* [size_is][out][in] */ DBCOLUMNACCESS rgColumns[  ]) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowSchemaChangeVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowSchemaChange * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowSchemaChange * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowSchemaChange * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetColumns )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetColumns )(
             IRowSchemaChange * This,
             /* [in] */ DBORDINAL cColumns,
             /* [size_is][out][in] */ DBCOLUMNACCESS rgColumns[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *DeleteColumns )( 
+
+        HRESULT ( STDMETHODCALLTYPE *DeleteColumns )(
             IRowSchemaChange * This,
             /* [in] */ DBORDINAL cColumns,
             /* [size_is][in] */ const DBID rgColumnIDs[  ],
             /* [size_is][out][in] */ DBSTATUS rgdwStatus[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *AddColumns )( 
+
+        HRESULT ( STDMETHODCALLTYPE *AddColumns )(
             IRowSchemaChange * This,
             /* [in] */ DBORDINAL cColumns,
             /* [size_is][in] */ const DBCOLUMNINFO rgNewColumnInfo[  ],
             /* [size_is][out][in] */ DBCOLUMNACCESS rgColumns[  ]);
-        
+
         END_INTERFACE
     } IRowSchemaChangeVtbl;
 
@@ -12695,30 +12695,30 @@ EXTERN_C const IID IID_IRowSchemaChange;
         CONST_VTBL struct IRowSchemaChangeVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowSchemaChange_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowSchemaChange_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowSchemaChange_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowSchemaChange_SetColumns(This,cColumns,rgColumns)	\
-    ( (This)->lpVtbl -> SetColumns(This,cColumns,rgColumns) ) 
+    ( (This)->lpVtbl -> SetColumns(This,cColumns,rgColumns) )
 
 
 #define IRowSchemaChange_DeleteColumns(This,cColumns,rgColumnIDs,rgdwStatus)	\
-    ( (This)->lpVtbl -> DeleteColumns(This,cColumns,rgColumnIDs,rgdwStatus) ) 
+    ( (This)->lpVtbl -> DeleteColumns(This,cColumns,rgColumnIDs,rgdwStatus) )
 
 #define IRowSchemaChange_AddColumns(This,cColumns,rgNewColumnInfo,rgColumns)	\
-    ( (This)->lpVtbl -> AddColumns(This,cColumns,rgNewColumnInfo,rgColumns) ) 
+    ( (This)->lpVtbl -> AddColumns(This,cColumns,rgNewColumnInfo,rgColumns) )
 
 #endif /* COBJMACROS */
 
@@ -12735,61 +12735,61 @@ EXTERN_C const IID IID_IRowSchemaChange;
 #define __IGetRow_INTERFACE_DEFINED__
 
 /* interface IGetRow */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IGetRow;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733aaf-2a1c-11ce-ade5-00aa0044773d")
     IGetRow : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE GetRowFromHROW( 
+        virtual HRESULT STDMETHODCALLTYPE GetRowFromHROW(
             /* [unique][in] */ IUnknown *pUnkOuter,
             /* [in] */ HROW hRow,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppUnk) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetURLFromHROW( 
+
+        virtual HRESULT STDMETHODCALLTYPE GetURLFromHROW(
             /* [in] */ HROW hRow,
-            /* [out] */ 
+            /* [out] */
             __deref_out_z  LPOLESTR *ppwszURL) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IGetRowVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IGetRow * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IGetRow * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IGetRow * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRowFromHROW )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetRowFromHROW )(
             IGetRow * This,
             /* [unique][in] */ IUnknown *pUnkOuter,
             /* [in] */ HROW hRow,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ IUnknown **ppUnk);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetURLFromHROW )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetURLFromHROW )(
             IGetRow * This,
             /* [in] */ HROW hRow,
-            /* [out] */ 
+            /* [out] */
             __deref_out_z  LPOLESTR *ppwszURL);
-        
+
         END_INTERFACE
     } IGetRowVtbl;
 
@@ -12798,26 +12798,26 @@ EXTERN_C const IID IID_IGetRow;
         CONST_VTBL struct IGetRowVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IGetRow_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IGetRow_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IGetRow_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IGetRow_GetRowFromHROW(This,pUnkOuter,hRow,riid,ppUnk)	\
-    ( (This)->lpVtbl -> GetRowFromHROW(This,pUnkOuter,hRow,riid,ppUnk) ) 
+    ( (This)->lpVtbl -> GetRowFromHROW(This,pUnkOuter,hRow,riid,ppUnk) )
 
 #define IGetRow_GetURLFromHROW(This,hRow,ppwszURL)	\
-    ( (This)->lpVtbl -> GetURLFromHROW(This,hRow,ppwszURL) ) 
+    ( (This)->lpVtbl -> GetURLFromHROW(This,hRow,ppwszURL) )
 
 #endif /* COBJMACROS */
 
@@ -12834,18 +12834,18 @@ EXTERN_C const IID IID_IGetRow;
 #define __IBindResource_INTERFACE_DEFINED__
 
 /* interface IBindResource */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IBindResource;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733ab1-2a1c-11ce-ade5-00aa0044773d")
     IBindResource : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE Bind( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE Bind(
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ LPCOLESTR pwszURL,
             /* [in] */ DBBINDURLFLAG dwBindURLFlags,
@@ -12855,28 +12855,28 @@ EXTERN_C const IID IID_IBindResource;
             /* [unique][out][in] */ DBIMPLICITSESSION *pImplSession,
             /* [unique][out][in] */ DBBINDURLSTATUS *pdwBindStatus,
             /* [iid_is][out] */ IUnknown **ppUnk) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IBindResourceVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IBindResource * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IBindResource * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IBindResource * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Bind )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Bind )(
             IBindResource * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ LPCOLESTR pwszURL,
@@ -12887,7 +12887,7 @@ EXTERN_C const IID IID_IBindResource;
             /* [unique][out][in] */ DBIMPLICITSESSION *pImplSession,
             /* [unique][out][in] */ DBBINDURLSTATUS *pdwBindStatus,
             /* [iid_is][out] */ IUnknown **ppUnk);
-        
+
         END_INTERFACE
     } IBindResourceVtbl;
 
@@ -12896,23 +12896,23 @@ EXTERN_C const IID IID_IBindResource;
         CONST_VTBL struct IBindResourceVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IBindResource_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IBindResource_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IBindResource_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IBindResource_Bind(This,pUnkOuter,pwszURL,dwBindURLFlags,rguid,riid,pAuthenticate,pImplSession,pdwBindStatus,ppUnk)	\
-    ( (This)->lpVtbl -> Bind(This,pUnkOuter,pwszURL,dwBindURLFlags,rguid,riid,pAuthenticate,pImplSession,pdwBindStatus,ppUnk) ) 
+    ( (This)->lpVtbl -> Bind(This,pUnkOuter,pwszURL,dwBindURLFlags,rguid,riid,pAuthenticate,pImplSession,pdwBindStatus,ppUnk) )
 
 #endif /* COBJMACROS */
 
@@ -12921,7 +12921,7 @@ EXTERN_C const IID IID_IBindResource;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IBindResource_RemoteBind_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IBindResource_RemoteBind_Proxy(
     IBindResource * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in LPCOLESTR pwszURL,
@@ -12951,7 +12951,7 @@ void __RPC_STUB IBindResource_RemoteBind_Stub(
 #define __IScopedOperations_INTERFACE_DEFINED__
 
 /* interface IScopedOperations */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 typedef DWORD DBCOPYFLAGS;
 
@@ -12984,42 +12984,42 @@ enum DBDELETEFLAGSENUM
 EXTERN_C const IID IID_IScopedOperations;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733ab0-2a1c-11ce-ade5-00aa0044773d")
     IScopedOperations : public IBindResource
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE Copy( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE Copy(
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ LPCOLESTR rgpwszSourceURLs[  ],
             /* [size_is][in] */ LPCOLESTR rgpwszDestURLs[  ],
             /* [in] */ DWORD dwCopyFlags,
             /* [unique][in] */ IAuthenticate *pAuthenticate,
             /* [size_is][out][in] */ DBSTATUS rgdwStatus[  ],
-            /* [size_is][out] */ 
+            /* [size_is][out] */
             __inout_ecount_opt(cRows)  LPOLESTR rgpwszNewURLs[  ],
-            /* [out] */ 
+            /* [out] */
             __deref_out_z_opt  OLECHAR **ppStringsBuffer) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE Move( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE Move(
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ LPCOLESTR rgpwszSourceURLs[  ],
             /* [size_is][in] */ LPCOLESTR rgpwszDestURLs[  ],
             /* [in] */ DWORD dwMoveFlags,
             /* [unique][in] */ IAuthenticate *pAuthenticate,
             /* [size_is][out][in] */ DBSTATUS rgdwStatus[  ],
-            /* [size_is][out] */ 
+            /* [size_is][out] */
             __inout_ecount_opt(cRows)  LPOLESTR rgpwszNewURLs[  ],
-            /* [out] */ 
+            /* [out] */
             __deref_out_z_opt  OLECHAR **ppStringsBuffer) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE Delete( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE Delete(
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ LPCOLESTR rgpwszURLs[  ],
             /* [in] */ DWORD dwDeleteFlags,
             /* [size_is][out][in] */ DBSTATUS rgdwStatus[  ]) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OpenRowset( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE OpenRowset(
             /* [in] */ IUnknown *pUnkOuter,
             /* [unique][in] */ DBID *pTableID,
             /* [unique][in] */ DBID *pIndexID,
@@ -13027,28 +13027,28 @@ EXTERN_C const IID IID_IScopedOperations;
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [iid_is][out] */ IUnknown **ppRowset) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IScopedOperationsVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IScopedOperations * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IScopedOperations * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IScopedOperations * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Bind )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Bind )(
             IScopedOperations * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [in] */ LPCOLESTR pwszURL,
@@ -13059,8 +13059,8 @@ EXTERN_C const IID IID_IScopedOperations;
             /* [unique][out][in] */ DBIMPLICITSESSION *pImplSession,
             /* [unique][out][in] */ DBBINDURLSTATUS *pdwBindStatus,
             /* [iid_is][out] */ IUnknown **ppUnk);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Copy )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Copy )(
             IScopedOperations * This,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ LPCOLESTR rgpwszSourceURLs[  ],
@@ -13068,12 +13068,12 @@ EXTERN_C const IID IID_IScopedOperations;
             /* [in] */ DWORD dwCopyFlags,
             /* [unique][in] */ IAuthenticate *pAuthenticate,
             /* [size_is][out][in] */ DBSTATUS rgdwStatus[  ],
-            /* [size_is][out] */ 
+            /* [size_is][out] */
             __inout_ecount_opt(cRows)  LPOLESTR rgpwszNewURLs[  ],
-            /* [out] */ 
+            /* [out] */
             __deref_out_z_opt  OLECHAR **ppStringsBuffer);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Move )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Move )(
             IScopedOperations * This,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ LPCOLESTR rgpwszSourceURLs[  ],
@@ -13081,19 +13081,19 @@ EXTERN_C const IID IID_IScopedOperations;
             /* [in] */ DWORD dwMoveFlags,
             /* [unique][in] */ IAuthenticate *pAuthenticate,
             /* [size_is][out][in] */ DBSTATUS rgdwStatus[  ],
-            /* [size_is][out] */ 
+            /* [size_is][out] */
             __inout_ecount_opt(cRows)  LPOLESTR rgpwszNewURLs[  ],
-            /* [out] */ 
+            /* [out] */
             __deref_out_z_opt  OLECHAR **ppStringsBuffer);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Delete )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Delete )(
             IScopedOperations * This,
             /* [in] */ DBCOUNTITEM cRows,
             /* [size_is][in] */ LPCOLESTR rgpwszURLs[  ],
             /* [in] */ DWORD dwDeleteFlags,
             /* [size_is][out][in] */ DBSTATUS rgdwStatus[  ]);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OpenRowset )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *OpenRowset )(
             IScopedOperations * This,
             /* [in] */ IUnknown *pUnkOuter,
             /* [unique][in] */ DBID *pTableID,
@@ -13102,7 +13102,7 @@ EXTERN_C const IID IID_IScopedOperations;
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
             /* [iid_is][out] */ IUnknown **ppRowset);
-        
+
         END_INTERFACE
     } IScopedOperationsVtbl;
 
@@ -13111,36 +13111,36 @@ EXTERN_C const IID IID_IScopedOperations;
         CONST_VTBL struct IScopedOperationsVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IScopedOperations_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IScopedOperations_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IScopedOperations_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IScopedOperations_Bind(This,pUnkOuter,pwszURL,dwBindURLFlags,rguid,riid,pAuthenticate,pImplSession,pdwBindStatus,ppUnk)	\
-    ( (This)->lpVtbl -> Bind(This,pUnkOuter,pwszURL,dwBindURLFlags,rguid,riid,pAuthenticate,pImplSession,pdwBindStatus,ppUnk) ) 
+    ( (This)->lpVtbl -> Bind(This,pUnkOuter,pwszURL,dwBindURLFlags,rguid,riid,pAuthenticate,pImplSession,pdwBindStatus,ppUnk) )
 
 
 #define IScopedOperations_Copy(This,cRows,rgpwszSourceURLs,rgpwszDestURLs,dwCopyFlags,pAuthenticate,rgdwStatus,rgpwszNewURLs,ppStringsBuffer)	\
-    ( (This)->lpVtbl -> Copy(This,cRows,rgpwszSourceURLs,rgpwszDestURLs,dwCopyFlags,pAuthenticate,rgdwStatus,rgpwszNewURLs,ppStringsBuffer) ) 
+    ( (This)->lpVtbl -> Copy(This,cRows,rgpwszSourceURLs,rgpwszDestURLs,dwCopyFlags,pAuthenticate,rgdwStatus,rgpwszNewURLs,ppStringsBuffer) )
 
 #define IScopedOperations_Move(This,cRows,rgpwszSourceURLs,rgpwszDestURLs,dwMoveFlags,pAuthenticate,rgdwStatus,rgpwszNewURLs,ppStringsBuffer)	\
-    ( (This)->lpVtbl -> Move(This,cRows,rgpwszSourceURLs,rgpwszDestURLs,dwMoveFlags,pAuthenticate,rgdwStatus,rgpwszNewURLs,ppStringsBuffer) ) 
+    ( (This)->lpVtbl -> Move(This,cRows,rgpwszSourceURLs,rgpwszDestURLs,dwMoveFlags,pAuthenticate,rgdwStatus,rgpwszNewURLs,ppStringsBuffer) )
 
 #define IScopedOperations_Delete(This,cRows,rgpwszURLs,dwDeleteFlags,rgdwStatus)	\
-    ( (This)->lpVtbl -> Delete(This,cRows,rgpwszURLs,dwDeleteFlags,rgdwStatus) ) 
+    ( (This)->lpVtbl -> Delete(This,cRows,rgpwszURLs,dwDeleteFlags,rgdwStatus) )
 
 #define IScopedOperations_OpenRowset(This,pUnkOuter,pTableID,pIndexID,riid,cPropertySets,rgPropertySets,ppRowset)	\
-    ( (This)->lpVtbl -> OpenRowset(This,pUnkOuter,pTableID,pIndexID,riid,cPropertySets,rgPropertySets,ppRowset) ) 
+    ( (This)->lpVtbl -> OpenRowset(This,pUnkOuter,pTableID,pIndexID,riid,cPropertySets,rgPropertySets,ppRowset) )
 
 #endif /* COBJMACROS */
 
@@ -13149,7 +13149,7 @@ EXTERN_C const IID IID_IScopedOperations;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IScopedOperations_RemoteCopy_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IScopedOperations_RemoteCopy_Proxy(
     IScopedOperations * This,
     /* [in] */ DBCOUNTITEM cRows,
     /* [size_is][in] */ __RPC__in_ecount_full(( ULONG  )cRows) LPCOLESTR *rgpwszSourceURLs,
@@ -13169,7 +13169,7 @@ void __RPC_STUB IScopedOperations_RemoteCopy_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IScopedOperations_RemoteMove_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IScopedOperations_RemoteMove_Proxy(
     IScopedOperations * This,
     /* [in] */ DBCOUNTITEM cRows,
     /* [size_is][in] */ __RPC__in_ecount_full(( ULONG  )cRows) LPCOLESTR *rgpwszSourceURLs,
@@ -13189,7 +13189,7 @@ void __RPC_STUB IScopedOperations_RemoteMove_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IScopedOperations_RemoteDelete_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IScopedOperations_RemoteDelete_Proxy(
     IScopedOperations * This,
     /* [in] */ DBCOUNTITEM cRows,
     /* [size_is][in] */ __RPC__in_ecount_full(( ULONG  )cRows) LPCOLESTR *rgpwszURLs,
@@ -13204,7 +13204,7 @@ void __RPC_STUB IScopedOperations_RemoteDelete_Stub(
     DWORD *_pdwStubPhase);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IScopedOperations_RemoteOpenRowset_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IScopedOperations_RemoteOpenRowset_Proxy(
     IScopedOperations * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [unique][in] */ __RPC__in_opt DBID *pTableID,
@@ -13232,18 +13232,18 @@ void __RPC_STUB IScopedOperations_RemoteOpenRowset_Stub(
 #define __ICreateRow_INTERFACE_DEFINED__
 
 /* interface ICreateRow */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_ICreateRow;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733ab2-2a1c-11ce-ade5-00aa0044773d")
     ICreateRow : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CreateRow( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE CreateRow(
             /* [unique][in] */ IUnknown *pUnkOuter,
             /* [in] */ LPCOLESTR pwszURL,
             /* [in] */ DBBINDURLFLAG dwBindURLFlags,
@@ -13252,31 +13252,31 @@ EXTERN_C const IID IID_ICreateRow;
             /* [unique][in] */ IAuthenticate *pAuthenticate,
             /* [unique][out][in] */ DBIMPLICITSESSION *pImplSession,
             /* [unique][out][in] */ DBBINDURLSTATUS *pdwBindStatus,
-            /* [out] */ 
+            /* [out] */
             __deref_opt_out_opt  LPOLESTR *ppwszNewURL,
             /* [iid_is][out] */ IUnknown **ppUnk) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ICreateRowVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ICreateRow * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ICreateRow * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ICreateRow * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateRow )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateRow )(
             ICreateRow * This,
             /* [unique][in] */ IUnknown *pUnkOuter,
             /* [in] */ LPCOLESTR pwszURL,
@@ -13286,10 +13286,10 @@ EXTERN_C const IID IID_ICreateRow;
             /* [unique][in] */ IAuthenticate *pAuthenticate,
             /* [unique][out][in] */ DBIMPLICITSESSION *pImplSession,
             /* [unique][out][in] */ DBBINDURLSTATUS *pdwBindStatus,
-            /* [out] */ 
+            /* [out] */
             __deref_opt_out_opt  LPOLESTR *ppwszNewURL,
             /* [iid_is][out] */ IUnknown **ppUnk);
-        
+
         END_INTERFACE
     } ICreateRowVtbl;
 
@@ -13298,23 +13298,23 @@ EXTERN_C const IID IID_ICreateRow;
         CONST_VTBL struct ICreateRowVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ICreateRow_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ICreateRow_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ICreateRow_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ICreateRow_CreateRow(This,pUnkOuter,pwszURL,dwBindURLFlags,rguid,riid,pAuthenticate,pImplSession,pdwBindStatus,ppwszNewURL,ppUnk)	\
-    ( (This)->lpVtbl -> CreateRow(This,pUnkOuter,pwszURL,dwBindURLFlags,rguid,riid,pAuthenticate,pImplSession,pdwBindStatus,ppwszNewURL,ppUnk) ) 
+    ( (This)->lpVtbl -> CreateRow(This,pUnkOuter,pwszURL,dwBindURLFlags,rguid,riid,pAuthenticate,pImplSession,pdwBindStatus,ppwszNewURL,ppUnk) )
 
 #endif /* COBJMACROS */
 
@@ -13323,7 +13323,7 @@ EXTERN_C const IID IID_ICreateRow;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICreateRow_RemoteCreateRow_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICreateRow_RemoteCreateRow_Proxy(
     ICreateRow * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in LPCOLESTR pwszURL,
@@ -13354,63 +13354,63 @@ void __RPC_STUB ICreateRow_RemoteCreateRow_Stub(
 #define __IDBBinderProperties_INTERFACE_DEFINED__
 
 /* interface IDBBinderProperties */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IDBBinderProperties;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733ab3-2a1c-11ce-ade5-00aa0044773d")
     IDBBinderProperties : public IDBProperties
     {
     public:
         virtual HRESULT STDMETHODCALLTYPE Reset( void) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IDBBinderPropertiesVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IDBBinderProperties * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IDBBinderProperties * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IDBBinderProperties * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetProperties )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetProperties )(
             IDBBinderProperties * This,
             /* [in] */ ULONG cPropertyIDSets,
             /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
             /* [out][in] */ ULONG *pcPropertySets,
             /* [size_is][size_is][out] */ DBPROPSET **prgPropertySets);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetPropertyInfo )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetPropertyInfo )(
             IDBBinderProperties * This,
             /* [in] */ ULONG cPropertyIDSets,
             /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
             /* [out][in] */ ULONG *pcPropertyInfoSets,
             /* [size_is][size_is][out] */ DBPROPINFOSET **prgPropertyInfoSets,
-            /* [out] */ 
+            /* [out] */
             __deref_out_z_opt  OLECHAR **ppDescBuffer);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetProperties )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetProperties )(
             IDBBinderProperties * This,
             /* [in] */ ULONG cPropertySets,
             /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ]);
-        
-        HRESULT ( STDMETHODCALLTYPE *Reset )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Reset )(
             IDBBinderProperties * This);
-        
+
         END_INTERFACE
     } IDBBinderPropertiesVtbl;
 
@@ -13419,33 +13419,33 @@ EXTERN_C const IID IID_IDBBinderProperties;
         CONST_VTBL struct IDBBinderPropertiesVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IDBBinderProperties_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IDBBinderProperties_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IDBBinderProperties_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IDBBinderProperties_GetProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets)	\
-    ( (This)->lpVtbl -> GetProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets) ) 
+    ( (This)->lpVtbl -> GetProperties(This,cPropertyIDSets,rgPropertyIDSets,pcPropertySets,prgPropertySets) )
 
 #define IDBBinderProperties_GetPropertyInfo(This,cPropertyIDSets,rgPropertyIDSets,pcPropertyInfoSets,prgPropertyInfoSets,ppDescBuffer)	\
-    ( (This)->lpVtbl -> GetPropertyInfo(This,cPropertyIDSets,rgPropertyIDSets,pcPropertyInfoSets,prgPropertyInfoSets,ppDescBuffer) ) 
+    ( (This)->lpVtbl -> GetPropertyInfo(This,cPropertyIDSets,rgPropertyIDSets,pcPropertyInfoSets,prgPropertyInfoSets,ppDescBuffer) )
 
 #define IDBBinderProperties_SetProperties(This,cPropertySets,rgPropertySets)	\
-    ( (This)->lpVtbl -> SetProperties(This,cPropertySets,rgPropertySets) ) 
+    ( (This)->lpVtbl -> SetProperties(This,cPropertySets,rgPropertySets) )
 
 
 #define IDBBinderProperties_Reset(This)	\
-    ( (This)->lpVtbl -> Reset(This) ) 
+    ( (This)->lpVtbl -> Reset(This) )
 
 #endif /* COBJMACROS */
 
@@ -13462,61 +13462,61 @@ EXTERN_C const IID IID_IDBBinderProperties;
 #define __IColumnsInfo2_INTERFACE_DEFINED__
 
 /* interface IColumnsInfo2 */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IColumnsInfo2;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733ab8-2a1c-11ce-ade5-00aa0044773d")
     IColumnsInfo2 : public IColumnsInfo
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetRestrictedColumnInfo( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetRestrictedColumnInfo(
             /* [in] */ DBORDINAL cColumnIDMasks,
             /* [size_is][in] */ const DBID rgColumnIDMasks[  ],
             /* [in] */ DWORD dwFlags,
             /* [out][in] */ DBORDINAL *pcColumns,
             /* [size_is][size_is][out] */ DBID **prgColumnIDs,
             /* [size_is][size_is][out] */ DBCOLUMNINFO **prgColumnInfo,
-            /* [out] */ 
+            /* [out] */
             __deref_out_z_opt  OLECHAR **ppStringsBuffer) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IColumnsInfo2Vtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IColumnsInfo2 * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IColumnsInfo2 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IColumnsInfo2 * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetColumnInfo )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetColumnInfo )(
             IColumnsInfo2 * This,
             /* [out][in] */ DBORDINAL *pcColumns,
             /* [size_is][size_is][out] */ DBCOLUMNINFO **prgInfo,
-            /* [out] */ 
+            /* [out] */
             __deref_out_z_opt  OLECHAR **ppStringsBuffer);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *MapColumnIDs )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *MapColumnIDs )(
             IColumnsInfo2 * This,
             /* [in] */ DBORDINAL cColumnIDs,
             /* [size_is][in] */ const DBID rgColumnIDs[  ],
             /* [size_is][out] */ DBORDINAL rgColumns[  ]);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetRestrictedColumnInfo )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetRestrictedColumnInfo )(
             IColumnsInfo2 * This,
             /* [in] */ DBORDINAL cColumnIDMasks,
             /* [size_is][in] */ const DBID rgColumnIDMasks[  ],
@@ -13524,9 +13524,9 @@ EXTERN_C const IID IID_IColumnsInfo2;
             /* [out][in] */ DBORDINAL *pcColumns,
             /* [size_is][size_is][out] */ DBID **prgColumnIDs,
             /* [size_is][size_is][out] */ DBCOLUMNINFO **prgColumnInfo,
-            /* [out] */ 
+            /* [out] */
             __deref_out_z_opt  OLECHAR **ppStringsBuffer);
-        
+
         END_INTERFACE
     } IColumnsInfo2Vtbl;
 
@@ -13535,30 +13535,30 @@ EXTERN_C const IID IID_IColumnsInfo2;
         CONST_VTBL struct IColumnsInfo2Vtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IColumnsInfo2_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IColumnsInfo2_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IColumnsInfo2_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IColumnsInfo2_GetColumnInfo(This,pcColumns,prgInfo,ppStringsBuffer)	\
-    ( (This)->lpVtbl -> GetColumnInfo(This,pcColumns,prgInfo,ppStringsBuffer) ) 
+    ( (This)->lpVtbl -> GetColumnInfo(This,pcColumns,prgInfo,ppStringsBuffer) )
 
 #define IColumnsInfo2_MapColumnIDs(This,cColumnIDs,rgColumnIDs,rgColumns)	\
-    ( (This)->lpVtbl -> MapColumnIDs(This,cColumnIDs,rgColumnIDs,rgColumns) ) 
+    ( (This)->lpVtbl -> MapColumnIDs(This,cColumnIDs,rgColumnIDs,rgColumns) )
 
 
 #define IColumnsInfo2_GetRestrictedColumnInfo(This,cColumnIDMasks,rgColumnIDMasks,dwFlags,pcColumns,prgColumnIDs,prgColumnInfo,ppStringsBuffer)	\
-    ( (This)->lpVtbl -> GetRestrictedColumnInfo(This,cColumnIDMasks,rgColumnIDMasks,dwFlags,pcColumns,prgColumnIDs,prgColumnInfo,ppStringsBuffer) ) 
+    ( (This)->lpVtbl -> GetRestrictedColumnInfo(This,cColumnIDMasks,rgColumnIDMasks,dwFlags,pcColumns,prgColumnIDs,prgColumnInfo,ppStringsBuffer) )
 
 #endif /* COBJMACROS */
 
@@ -13567,7 +13567,7 @@ EXTERN_C const IID IID_IColumnsInfo2;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsInfo2_RemoteGetRestrictedColumnInfo_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsInfo2_RemoteGetRestrictedColumnInfo_Proxy(
     IColumnsInfo2 * This,
     /* [in] */ DBORDINAL cColumnIDMasks,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(( ULONG  )cColumnIDMasks) const DBID *rgColumnIDMasks,
@@ -13596,70 +13596,70 @@ void __RPC_STUB IColumnsInfo2_RemoteGetRestrictedColumnInfo_Stub(
 #define __IRegisterProvider_INTERFACE_DEFINED__
 
 /* interface IRegisterProvider */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IRegisterProvider;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733ab9-2a1c-11ce-ade5-00aa0044773d")
     IRegisterProvider : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetURLMapping( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetURLMapping(
             /* [in] */ LPCOLESTR pwszURL,
             /* [in] */ DB_DWRESERVE dwReserved,
             /* [out] */ CLSID *pclsidProvider) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetURLMapping( 
+
+        virtual HRESULT STDMETHODCALLTYPE SetURLMapping(
             /* [unique][in] */ __RPC__in_opt LPCOLESTR pwszURL,
             /* [in] */ DB_DWRESERVE dwReserved,
             /* [unique][in] */ __RPC__in_opt REFCLSID rclsidProvider) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE UnregisterProvider( 
+
+        virtual HRESULT STDMETHODCALLTYPE UnregisterProvider(
             /* [unique][in] */ __RPC__in_opt LPCOLESTR pwszURL,
             /* [in] */ DB_DWRESERVE dwReserved,
             /* [unique][in] */ __RPC__in_opt REFCLSID rclsidProvider) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRegisterProviderVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRegisterProvider * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRegisterProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRegisterProvider * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetURLMapping )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetURLMapping )(
             IRegisterProvider * This,
             /* [in] */ LPCOLESTR pwszURL,
             /* [in] */ DB_DWRESERVE dwReserved,
             /* [out] */ CLSID *pclsidProvider);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetURLMapping )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetURLMapping )(
             IRegisterProvider * This,
             /* [unique][in] */ __RPC__in_opt LPCOLESTR pwszURL,
             /* [in] */ DB_DWRESERVE dwReserved,
             /* [unique][in] */ __RPC__in_opt REFCLSID rclsidProvider);
-        
-        HRESULT ( STDMETHODCALLTYPE *UnregisterProvider )( 
+
+        HRESULT ( STDMETHODCALLTYPE *UnregisterProvider )(
             IRegisterProvider * This,
             /* [unique][in] */ __RPC__in_opt LPCOLESTR pwszURL,
             /* [in] */ DB_DWRESERVE dwReserved,
             /* [unique][in] */ __RPC__in_opt REFCLSID rclsidProvider);
-        
+
         END_INTERFACE
     } IRegisterProviderVtbl;
 
@@ -13668,29 +13668,29 @@ EXTERN_C const IID IID_IRegisterProvider;
         CONST_VTBL struct IRegisterProviderVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRegisterProvider_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRegisterProvider_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRegisterProvider_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRegisterProvider_GetURLMapping(This,pwszURL,dwReserved,pclsidProvider)	\
-    ( (This)->lpVtbl -> GetURLMapping(This,pwszURL,dwReserved,pclsidProvider) ) 
+    ( (This)->lpVtbl -> GetURLMapping(This,pwszURL,dwReserved,pclsidProvider) )
 
 #define IRegisterProvider_SetURLMapping(This,pwszURL,dwReserved,rclsidProvider)	\
-    ( (This)->lpVtbl -> SetURLMapping(This,pwszURL,dwReserved,rclsidProvider) ) 
+    ( (This)->lpVtbl -> SetURLMapping(This,pwszURL,dwReserved,rclsidProvider) )
 
 #define IRegisterProvider_UnregisterProvider(This,pwszURL,dwReserved,rclsidProvider)	\
-    ( (This)->lpVtbl -> UnregisterProvider(This,pwszURL,dwReserved,rclsidProvider) ) 
+    ( (This)->lpVtbl -> UnregisterProvider(This,pwszURL,dwReserved,rclsidProvider) )
 
 #endif /* COBJMACROS */
 
@@ -13699,7 +13699,7 @@ EXTERN_C const IID IID_IRegisterProvider;
 
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRegisterProvider_RemoteGetURLMapping_Proxy( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRegisterProvider_RemoteGetURLMapping_Proxy(
     IRegisterProvider * This,
     /* [in] */ __RPC__in LPCOLESTR pwszURL,
     /* [in] */ DB_DWRESERVE dwReserved,
@@ -13718,7 +13718,7 @@ void __RPC_STUB IRegisterProvider_RemoteGetURLMapping_Stub(
 
 
 /* interface __MIDL_itf_oledb_0000_0076 */
-/* [local] */ 
+/* [local] */
 
 #endif // UNDER_CE
 
@@ -13730,46 +13730,46 @@ extern RPC_IF_HANDLE __MIDL_itf_oledb_0000_0076_v0_0_s_ifspec;
 #define __IGetSession_INTERFACE_DEFINED__
 
 /* interface IGetSession */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IGetSession;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733aba-2a1c-11ce-ade5-00aa0044773d")
     IGetSession : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE GetSession( 
+        virtual HRESULT STDMETHODCALLTYPE GetSession(
             /* [in] */ __RPC__in REFIID riid,
             /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppSession) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IGetSessionVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IGetSession * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IGetSession * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IGetSession * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetSession )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetSession )(
             IGetSession * This,
             /* [in] */ __RPC__in REFIID riid,
             /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppSession);
-        
+
         END_INTERFACE
     } IGetSessionVtbl;
 
@@ -13778,23 +13778,23 @@ EXTERN_C const IID IID_IGetSession;
         CONST_VTBL struct IGetSessionVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IGetSession_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IGetSession_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IGetSession_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IGetSession_GetSession(This,riid,ppSession)	\
-    ( (This)->lpVtbl -> GetSession(This,riid,ppSession) ) 
+    ( (This)->lpVtbl -> GetSession(This,riid,ppSession) )
 
 #endif /* COBJMACROS */
 
@@ -13811,46 +13811,46 @@ EXTERN_C const IID IID_IGetSession;
 #define __IGetSourceRow_INTERFACE_DEFINED__
 
 /* interface IGetSourceRow */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IGetSourceRow;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733abb-2a1c-11ce-ade5-00aa0044773d")
     IGetSourceRow : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE GetSourceRow( 
+        virtual HRESULT STDMETHODCALLTYPE GetSourceRow(
             /* [in] */ __RPC__in REFIID riid,
             /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppRow) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IGetSourceRowVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IGetSourceRow * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IGetSourceRow * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IGetSourceRow * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetSourceRow )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetSourceRow )(
             IGetSourceRow * This,
             /* [in] */ __RPC__in REFIID riid,
             /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppRow);
-        
+
         END_INTERFACE
     } IGetSourceRowVtbl;
 
@@ -13859,23 +13859,23 @@ EXTERN_C const IID IID_IGetSourceRow;
         CONST_VTBL struct IGetSourceRowVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IGetSourceRow_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IGetSourceRow_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IGetSourceRow_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IGetSourceRow_GetSourceRow(This,riid,ppRow)	\
-    ( (This)->lpVtbl -> GetSourceRow(This,riid,ppRow) ) 
+    ( (This)->lpVtbl -> GetSourceRow(This,riid,ppRow) )
 
 #endif /* COBJMACROS */
 
@@ -13892,58 +13892,58 @@ EXTERN_C const IID IID_IGetSourceRow;
 #define __IRowsetCurrentIndex_INTERFACE_DEFINED__
 
 /* interface IRowsetCurrentIndex */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_IRowsetCurrentIndex;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733abd-2a1c-11ce-ade5-00aa0044773d")
     IRowsetCurrentIndex : public IRowsetIndex
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE GetIndex( 
+        virtual HRESULT STDMETHODCALLTYPE GetIndex(
             /* [out] */ DBID **ppIndexID) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetIndex( 
+
+        virtual HRESULT STDMETHODCALLTYPE SetIndex(
             /* [in] */ DBID *pIndexID) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowsetCurrentIndexVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowsetCurrentIndex * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowsetCurrentIndex * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowsetCurrentIndex * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIndexInfo )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetIndexInfo )(
             IRowsetCurrentIndex * This,
             /* [out][in] */ DBORDINAL *pcKeyColumns,
             /* [size_is][size_is][out] */ DBINDEXCOLUMNDESC **prgIndexColumnDesc,
             /* [out][in] */ ULONG *pcIndexPropertySets,
             /* [size_is][size_is][out] */ DBPROPSET **prgIndexPropertySets);
-        
-        HRESULT ( STDMETHODCALLTYPE *Seek )( 
+
+        HRESULT ( STDMETHODCALLTYPE *Seek )(
             IRowsetCurrentIndex * This,
             /* [in] */ HACCESSOR hAccessor,
             /* [in] */ DBORDINAL cKeyValues,
             /* [in] */ void *pData,
             /* [in] */ DBSEEK dwSeekOptions);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetRange )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetRange )(
             IRowsetCurrentIndex * This,
             /* [in] */ HACCESSOR hAccessor,
             /* [in] */ DBORDINAL cStartKeyColumns,
@@ -13951,15 +13951,15 @@ EXTERN_C const IID IID_IRowsetCurrentIndex;
             /* [in] */ DBORDINAL cEndKeyColumns,
             /* [in] */ void *pEndData,
             /* [in] */ DBRANGE dwRangeOptions);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIndex )( 
+
+        HRESULT ( STDMETHODCALLTYPE *GetIndex )(
             IRowsetCurrentIndex * This,
             /* [out] */ DBID **ppIndexID);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetIndex )( 
+
+        HRESULT ( STDMETHODCALLTYPE *SetIndex )(
             IRowsetCurrentIndex * This,
             /* [in] */ DBID *pIndexID);
-        
+
         END_INTERFACE
     } IRowsetCurrentIndexVtbl;
 
@@ -13968,36 +13968,36 @@ EXTERN_C const IID IID_IRowsetCurrentIndex;
         CONST_VTBL struct IRowsetCurrentIndexVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowsetCurrentIndex_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowsetCurrentIndex_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowsetCurrentIndex_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowsetCurrentIndex_GetIndexInfo(This,pcKeyColumns,prgIndexColumnDesc,pcIndexPropertySets,prgIndexPropertySets)	\
-    ( (This)->lpVtbl -> GetIndexInfo(This,pcKeyColumns,prgIndexColumnDesc,pcIndexPropertySets,prgIndexPropertySets) ) 
+    ( (This)->lpVtbl -> GetIndexInfo(This,pcKeyColumns,prgIndexColumnDesc,pcIndexPropertySets,prgIndexPropertySets) )
 
 #define IRowsetCurrentIndex_Seek(This,hAccessor,cKeyValues,pData,dwSeekOptions)	\
-    ( (This)->lpVtbl -> Seek(This,hAccessor,cKeyValues,pData,dwSeekOptions) ) 
+    ( (This)->lpVtbl -> Seek(This,hAccessor,cKeyValues,pData,dwSeekOptions) )
 
 #define IRowsetCurrentIndex_SetRange(This,hAccessor,cStartKeyColumns,pStartData,cEndKeyColumns,pEndData,dwRangeOptions)	\
-    ( (This)->lpVtbl -> SetRange(This,hAccessor,cStartKeyColumns,pStartData,cEndKeyColumns,pEndData,dwRangeOptions) ) 
+    ( (This)->lpVtbl -> SetRange(This,hAccessor,cStartKeyColumns,pStartData,cEndKeyColumns,pEndData,dwRangeOptions) )
 
 
 #define IRowsetCurrentIndex_GetIndex(This,ppIndexID)	\
-    ( (This)->lpVtbl -> GetIndex(This,ppIndexID) ) 
+    ( (This)->lpVtbl -> GetIndex(This,ppIndexID) )
 
 #define IRowsetCurrentIndex_SetIndex(This,pIndexID)	\
-    ( (This)->lpVtbl -> SetIndex(This,pIndexID) ) 
+    ( (This)->lpVtbl -> SetIndex(This,pIndexID) )
 
 #endif /* COBJMACROS */
 
@@ -14011,7 +14011,7 @@ EXTERN_C const IID IID_IRowsetCurrentIndex;
 
 
 /* interface __MIDL_itf_oledb_0000_0080 */
-/* [local] */ 
+/* [local] */
 
 #endif // OLEDBVER >= 0x0210
 //@@@- V2.1
@@ -14026,59 +14026,59 @@ extern RPC_IF_HANDLE __MIDL_itf_oledb_0000_0080_v0_0_s_ifspec;
 #define __ICommandStream_INTERFACE_DEFINED__
 
 /* interface ICommandStream */
-/* [unique][uuid][object][local] */ 
+/* [unique][uuid][object][local] */
 
 
 EXTERN_C const IID IID_ICommandStream;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733abf-2a1c-11ce-ade5-00aa0044773d")
     ICommandStream : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetCommandStream( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetCommandStream(
             /* [out] */ IID *piid,
             /* [out][in] */ GUID *pguidDialect,
             /* [iid_is][out] */ IUnknown **ppCommandStream) = 0;
-        
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetCommandStream( 
+
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE SetCommandStream(
             /* [in] */ REFIID riid,
             /* [in] */ REFGUID rguidDialect,
             /* [iid_is][in] */ IUnknown *pCommandStream) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct ICommandStreamVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ICommandStream * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ICommandStream * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ICommandStream * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetCommandStream )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetCommandStream )(
             ICommandStream * This,
             /* [out] */ IID *piid,
             /* [out][in] */ GUID *pguidDialect,
             /* [iid_is][out] */ IUnknown **ppCommandStream);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetCommandStream )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *SetCommandStream )(
             ICommandStream * This,
             /* [in] */ REFIID riid,
             /* [in] */ REFGUID rguidDialect,
             /* [iid_is][in] */ IUnknown *pCommandStream);
-        
+
         END_INTERFACE
     } ICommandStreamVtbl;
 
@@ -14087,26 +14087,26 @@ EXTERN_C const IID IID_ICommandStream;
         CONST_VTBL struct ICommandStreamVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ICommandStream_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ICommandStream_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ICommandStream_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ICommandStream_GetCommandStream(This,piid,pguidDialect,ppCommandStream)	\
-    ( (This)->lpVtbl -> GetCommandStream(This,piid,pguidDialect,ppCommandStream) ) 
+    ( (This)->lpVtbl -> GetCommandStream(This,piid,pguidDialect,ppCommandStream) )
 
 #define ICommandStream_SetCommandStream(This,riid,rguidDialect,pCommandStream)	\
-    ( (This)->lpVtbl -> SetCommandStream(This,riid,rguidDialect,pCommandStream) ) 
+    ( (This)->lpVtbl -> SetCommandStream(This,riid,rguidDialect,pCommandStream) )
 
 #endif /* COBJMACROS */
 
@@ -14123,48 +14123,48 @@ EXTERN_C const IID IID_ICommandStream;
 #define __IRowsetBookmark_INTERFACE_DEFINED__
 
 /* interface IRowsetBookmark */
-/* [unique][uuid][object] */ 
+/* [unique][uuid][object] */
 
 
 EXTERN_C const IID IID_IRowsetBookmark;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("0c733ac2-2a1c-11ce-ade5-00aa0044773d")
     IRowsetBookmark : public IUnknown
     {
     public:
-        virtual /* [local] */ HRESULT STDMETHODCALLTYPE PositionOnBookmark( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE PositionOnBookmark(
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ DBBKMARK cbBookmark,
             /* [size_is][in] */ const BYTE *pBookmark) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRowsetBookmarkVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             IRowsetBookmark * This,
             /* [in] */ __RPC__in REFIID riid,
-            /* [iid_is][out] */ 
+            /* [iid_is][out] */
             __RPC__deref_out  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             IRowsetBookmark * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(
             IRowsetBookmark * This);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *PositionOnBookmark )( 
+
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *PositionOnBookmark )(
             IRowsetBookmark * This,
             /* [in] */ HCHAPTER hChapter,
             /* [in] */ DBBKMARK cbBookmark,
             /* [size_is][in] */ const BYTE *pBookmark);
-        
+
         END_INTERFACE
     } IRowsetBookmarkVtbl;
 
@@ -14173,23 +14173,23 @@ EXTERN_C const IID IID_IRowsetBookmark;
         CONST_VTBL struct IRowsetBookmarkVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define IRowsetBookmark_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define IRowsetBookmark_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define IRowsetBookmark_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define IRowsetBookmark_PositionOnBookmark(This,hChapter,cbBookmark,pBookmark)	\
-    ( (This)->lpVtbl -> PositionOnBookmark(This,hChapter,cbBookmark,pBookmark) ) 
+    ( (This)->lpVtbl -> PositionOnBookmark(This,hChapter,cbBookmark,pBookmark) )
 
 #endif /* COBJMACROS */
 
@@ -14203,7 +14203,7 @@ EXTERN_C const IID IID_IRowsetBookmark;
 
 
 /* interface __MIDL_itf_oledb_0000_0082 */
-/* [local] */ 
+/* [local] */
 
 #endif // OLEDBVER >= 0x0260
 //@@@- V2.6
@@ -14306,7 +14306,7 @@ EXTERN_C const IID IID_IRowsetBookmark;
 // IID_IRowsetBookmark 			= {0x0c733ac2,0x2a1c,0x11ce,{0xad,0xe5,0x00,0xaa,0x00,0x44,0x77,0x3d}}
 #endif // OLEDBVER >= 0x0260
 //@@@- V2.6
-#include <poppack.h>     // restore original structure packing
+#include <PopPack.h>     // restore original structure packing
 
 
 extern RPC_IF_HANDLE __MIDL_itf_oledb_0000_0082_v0_0_c_ifspec;
@@ -14315,49 +14315,49 @@ extern RPC_IF_HANDLE __MIDL_itf_oledb_0000_0082_v0_0_s_ifspec;
 #ifdef OLEDBPROXY
 /* Additional Prototypes for ALL interfaces */
 
-unsigned long             __RPC_USER  BSTR_UserSize(     unsigned long *, unsigned long            , BSTR * ); 
-unsigned char * __RPC_USER  BSTR_UserMarshal(  unsigned long *, unsigned char *, BSTR * ); 
-unsigned char * __RPC_USER  BSTR_UserUnmarshal(unsigned long *, unsigned char *, BSTR * ); 
-void                      __RPC_USER  BSTR_UserFree(     unsigned long *, BSTR * ); 
+unsigned long             __RPC_USER  BSTR_UserSize(     unsigned long *, unsigned long            , BSTR * );
+unsigned char * __RPC_USER  BSTR_UserMarshal(  unsigned long *, unsigned char *, BSTR * );
+unsigned char * __RPC_USER  BSTR_UserUnmarshal(unsigned long *, unsigned char *, BSTR * );
+void                      __RPC_USER  BSTR_UserFree(     unsigned long *, BSTR * );
 
-unsigned long             __RPC_USER  LPSAFEARRAY_UserSize(     unsigned long *, unsigned long            , LPSAFEARRAY * ); 
-unsigned char * __RPC_USER  LPSAFEARRAY_UserMarshal(  unsigned long *, unsigned char *, LPSAFEARRAY * ); 
-unsigned char * __RPC_USER  LPSAFEARRAY_UserUnmarshal(unsigned long *, unsigned char *, LPSAFEARRAY * ); 
-void                      __RPC_USER  LPSAFEARRAY_UserFree(     unsigned long *, LPSAFEARRAY * ); 
+unsigned long             __RPC_USER  LPSAFEARRAY_UserSize(     unsigned long *, unsigned long            , LPSAFEARRAY * );
+unsigned char * __RPC_USER  LPSAFEARRAY_UserMarshal(  unsigned long *, unsigned char *, LPSAFEARRAY * );
+unsigned char * __RPC_USER  LPSAFEARRAY_UserUnmarshal(unsigned long *, unsigned char *, LPSAFEARRAY * );
+void                      __RPC_USER  LPSAFEARRAY_UserFree(     unsigned long *, LPSAFEARRAY * );
 
-unsigned long             __RPC_USER  VARIANT_UserSize(     unsigned long *, unsigned long            , VARIANT * ); 
-unsigned char * __RPC_USER  VARIANT_UserMarshal(  unsigned long *, unsigned char *, VARIANT * ); 
-unsigned char * __RPC_USER  VARIANT_UserUnmarshal(unsigned long *, unsigned char *, VARIANT * ); 
-void                      __RPC_USER  VARIANT_UserFree(     unsigned long *, VARIANT * ); 
+unsigned long             __RPC_USER  VARIANT_UserSize(     unsigned long *, unsigned long            , VARIANT * );
+unsigned char * __RPC_USER  VARIANT_UserMarshal(  unsigned long *, unsigned char *, VARIANT * );
+unsigned char * __RPC_USER  VARIANT_UserUnmarshal(unsigned long *, unsigned char *, VARIANT * );
+void                      __RPC_USER  VARIANT_UserFree(     unsigned long *, VARIANT * );
 
-unsigned long             __RPC_USER  BSTR_UserSize64(     unsigned long *, unsigned long            , BSTR * ); 
-unsigned char * __RPC_USER  BSTR_UserMarshal64(  unsigned long *, unsigned char *, BSTR * ); 
-unsigned char * __RPC_USER  BSTR_UserUnmarshal64(unsigned long *, unsigned char *, BSTR * ); 
-void                      __RPC_USER  BSTR_UserFree64(     unsigned long *, BSTR * ); 
+unsigned long             __RPC_USER  BSTR_UserSize64(     unsigned long *, unsigned long            , BSTR * );
+unsigned char * __RPC_USER  BSTR_UserMarshal64(  unsigned long *, unsigned char *, BSTR * );
+unsigned char * __RPC_USER  BSTR_UserUnmarshal64(unsigned long *, unsigned char *, BSTR * );
+void                      __RPC_USER  BSTR_UserFree64(     unsigned long *, BSTR * );
 
-unsigned long             __RPC_USER  LPSAFEARRAY_UserSize64(     unsigned long *, unsigned long            , LPSAFEARRAY * ); 
-unsigned char * __RPC_USER  LPSAFEARRAY_UserMarshal64(  unsigned long *, unsigned char *, LPSAFEARRAY * ); 
-unsigned char * __RPC_USER  LPSAFEARRAY_UserUnmarshal64(unsigned long *, unsigned char *, LPSAFEARRAY * ); 
-void                      __RPC_USER  LPSAFEARRAY_UserFree64(     unsigned long *, LPSAFEARRAY * ); 
+unsigned long             __RPC_USER  LPSAFEARRAY_UserSize64(     unsigned long *, unsigned long            , LPSAFEARRAY * );
+unsigned char * __RPC_USER  LPSAFEARRAY_UserMarshal64(  unsigned long *, unsigned char *, LPSAFEARRAY * );
+unsigned char * __RPC_USER  LPSAFEARRAY_UserUnmarshal64(unsigned long *, unsigned char *, LPSAFEARRAY * );
+void                      __RPC_USER  LPSAFEARRAY_UserFree64(     unsigned long *, LPSAFEARRAY * );
 
-unsigned long             __RPC_USER  VARIANT_UserSize64(     unsigned long *, unsigned long            , VARIANT * ); 
-unsigned char * __RPC_USER  VARIANT_UserMarshal64(  unsigned long *, unsigned char *, VARIANT * ); 
-unsigned char * __RPC_USER  VARIANT_UserUnmarshal64(unsigned long *, unsigned char *, VARIANT * ); 
-void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, VARIANT * ); 
+unsigned long             __RPC_USER  VARIANT_UserSize64(     unsigned long *, unsigned long            , VARIANT * );
+unsigned char * __RPC_USER  VARIANT_UserMarshal64(  unsigned long *, unsigned char *, VARIANT * );
+unsigned char * __RPC_USER  VARIANT_UserUnmarshal64(unsigned long *, unsigned char *, VARIANT * );
+void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, VARIANT * );
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IAccessor_AddRefAccessor_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IAccessor_AddRefAccessor_Proxy(
     IAccessor * This,
     /* [in] */ HACCESSOR hAccessor,
     /* [unique][out][in] */ DBREFCOUNT *pcRefCount);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IAccessor_AddRefAccessor_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IAccessor_AddRefAccessor_Stub(
     IAccessor * This,
     /* [in] */ HACCESSOR hAccessor,
     /* [unique][out][in] */ __RPC__inout_opt DBREFCOUNT *pcRefCount,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IAccessor_CreateAccessor_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IAccessor_CreateAccessor_Proxy(
     IAccessor * This,
     /* [in] */ DBACCESSORFLAGS dwAccessorFlags,
     /* [in] */ DBCOUNTITEM cBindings,
@@ -14367,7 +14367,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][out] */ DBBINDSTATUS rgStatus[  ]);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IAccessor_CreateAccessor_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IAccessor_CreateAccessor_Stub(
     IAccessor * This,
     /* [in] */ DBACCESSORFLAGS dwAccessorFlags,
     /* [in] */ DBCOUNTITEM cBindings,
@@ -14377,7 +14377,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][unique][out][in] */ __RPC__inout_ecount_full_opt(( ULONG  )cBindings) DBBINDSTATUS *rgStatus,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IAccessor_GetBindings_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IAccessor_GetBindings_Proxy(
     IAccessor * This,
     /* [in] */ HACCESSOR hAccessor,
     /* [out] */ DBACCESSORFLAGS *pdwAccessorFlags,
@@ -14385,7 +14385,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][size_is][out] */ DBBINDING **prgBindings);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IAccessor_GetBindings_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IAccessor_GetBindings_Stub(
     IAccessor * This,
     /* [in] */ HACCESSOR hAccessor,
     /* [out] */ __RPC__out DBACCESSORFLAGS *pdwAccessorFlags,
@@ -14393,19 +14393,19 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(( ULONG  )*pcBindings) DBBINDING **prgBindings,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IAccessor_ReleaseAccessor_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IAccessor_ReleaseAccessor_Proxy(
     IAccessor * This,
     /* [in] */ HACCESSOR hAccessor,
     /* [unique][out][in] */ DBREFCOUNT *pcRefCount);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IAccessor_ReleaseAccessor_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IAccessor_ReleaseAccessor_Stub(
     IAccessor * This,
     /* [in] */ HACCESSOR hAccessor,
     /* [unique][out][in] */ __RPC__inout_opt DBREFCOUNT *pcRefCount,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_GetProperties_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_GetProperties_Proxy(
     IRowsetInfo * This,
     /* [in] */ const ULONG cPropertyIDSets,
     /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
@@ -14413,7 +14413,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][size_is][out] */ DBPROPSET **prgPropertySets);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_GetProperties_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_GetProperties_Stub(
     IRowsetInfo * This,
     /* [in] */ ULONG cPropertyIDSets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertyIDSets) const DBPROPIDSET *rgPropertyIDSets,
@@ -14421,233 +14421,233 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*pcPropertySets) DBPROPSET **prgPropertySets,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_GetReferencedRowset_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_GetReferencedRowset_Proxy(
     IRowsetInfo * This,
     /* [in] */ DBORDINAL iOrdinal,
     /* [in] */ REFIID riid,
     /* [iid_is][out] */ IUnknown **ppReferencedRowset);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_GetReferencedRowset_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_GetReferencedRowset_Stub(
     IRowsetInfo * This,
     /* [in] */ DBORDINAL iOrdinal,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppReferencedRowset,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_GetSpecification_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_GetSpecification_Proxy(
     IRowsetInfo * This,
     /* [in] */ REFIID riid,
     /* [iid_is][out] */ IUnknown **ppSpecification);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_GetSpecification_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetInfo_GetSpecification_Stub(
     IRowsetInfo * This,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppSpecification,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IChapteredRowset_AddRefChapter_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IChapteredRowset_AddRefChapter_Proxy(
     IChapteredRowset * This,
     /* [in] */ HCHAPTER hChapter,
     /* [out] */ DBREFCOUNT *pcRefCount);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IChapteredRowset_AddRefChapter_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IChapteredRowset_AddRefChapter_Stub(
     IChapteredRowset * This,
     /* [in] */ HCHAPTER hChapter,
     /* [out] */ __RPC__out DBREFCOUNT *pcRefCount,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IChapteredRowset_ReleaseChapter_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IChapteredRowset_ReleaseChapter_Proxy(
     IChapteredRowset * This,
     /* [in] */ HCHAPTER hChapter,
     /* [out] */ DBREFCOUNT *pcRefCount);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IChapteredRowset_ReleaseChapter_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IChapteredRowset_ReleaseChapter_Stub(
     IChapteredRowset * This,
     /* [in] */ HCHAPTER hChapter,
     /* [out] */ __RPC__out DBREFCOUNT *pcRefCount,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IRowPosition_ClearRowPosition_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IRowPosition_ClearRowPosition_Proxy(
     IRowPosition * This);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_ClearRowPosition_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_ClearRowPosition_Stub(
     IRowPosition * This,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IRowPosition_GetRowPosition_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IRowPosition_GetRowPosition_Proxy(
     IRowPosition * This,
     /* [out] */ HCHAPTER *phChapter,
     /* [out] */ HROW *phRow,
     /* [out] */ DBPOSITIONFLAGS *pdwPositionFlags);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_GetRowPosition_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_GetRowPosition_Stub(
     IRowPosition * This,
     /* [out] */ __RPC__out HCHAPTER *phChapter,
     /* [out] */ __RPC__out HROW *phRow,
     /* [out] */ __RPC__out DBPOSITIONFLAGS *pdwPositionFlags,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IRowPosition_GetRowset_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IRowPosition_GetRowset_Proxy(
     IRowPosition * This,
     /* [in] */ REFIID riid,
     /* [iid_is][out] */ IUnknown **ppRowset);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_GetRowset_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_GetRowset_Stub(
     IRowPosition * This,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppRowset,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IRowPosition_Initialize_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IRowPosition_Initialize_Proxy(
     IRowPosition * This,
     /* [in] */ IUnknown *pRowset);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_Initialize_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_Initialize_Stub(
     IRowPosition * This,
     /* [in] */ __RPC__in_opt IUnknown *pRowset,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IRowPosition_SetRowPosition_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IRowPosition_SetRowPosition_Proxy(
     IRowPosition * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ HROW hRow,
     /* [in] */ DBPOSITIONFLAGS dwPositionFlags);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_SetRowPosition_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPosition_SetRowPosition_Stub(
     IRowPosition * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ HROW hRow,
     /* [in] */ DBPOSITIONFLAGS dwPositionFlags,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IRowPositionChange_OnRowPositionChange_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IRowPositionChange_OnRowPositionChange_Proxy(
     IRowPositionChange * This,
     /* [in] */ DBREASON eReason,
     /* [in] */ DBEVENTPHASE ePhase,
     /* [in] */ BOOL fCantDeny);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPositionChange_OnRowPositionChange_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowPositionChange_OnRowPositionChange_Stub(
     IRowPositionChange * This,
     /* [in] */ DBREASON eReason,
     /* [in] */ DBEVENTPHASE ePhase,
     /* [in] */ BOOL fCantDeny,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IViewRowset_GetSpecification_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IViewRowset_GetSpecification_Proxy(
     IViewRowset * This,
     /* [in] */ REFIID riid,
     /* [iid_is][out] */ IUnknown **ppObject);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewRowset_GetSpecification_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewRowset_GetSpecification_Stub(
     IViewRowset * This,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppObject,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IViewRowset_OpenViewRowset_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IViewRowset_OpenViewRowset_Proxy(
     IViewRowset * This,
     /* [in] */ IUnknown *pUnkOuter,
     /* [in] */ REFIID riid,
     /* [iid_is][out] */ IUnknown **ppRowset);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewRowset_OpenViewRowset_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewRowset_OpenViewRowset_Stub(
     IViewRowset * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppRowset,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IViewChapter_GetSpecification_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IViewChapter_GetSpecification_Proxy(
     IViewChapter * This,
     /* [in] */ REFIID riid,
     /* [iid_is][out] */ IUnknown **ppRowset);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewChapter_GetSpecification_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewChapter_GetSpecification_Stub(
     IViewChapter * This,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppRowset,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IViewChapter_OpenViewChapter_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IViewChapter_OpenViewChapter_Proxy(
     IViewChapter * This,
     /* [in] */ HCHAPTER hSource,
     /* [out] */ HCHAPTER *phViewChapter);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewChapter_OpenViewChapter_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewChapter_OpenViewChapter_Stub(
     IViewChapter * This,
     /* [in] */ HCHAPTER hSource,
     /* [out] */ __RPC__out HCHAPTER *phViewChapter,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IViewSort_GetSortOrder_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IViewSort_GetSortOrder_Proxy(
     IViewSort * This,
     /* [out] */ DBORDINAL *pcValues,
     /* [out] */ DBORDINAL *prgColumns[  ],
     /* [out] */ DBSORT *prgOrders[  ]);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewSort_GetSortOrder_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewSort_GetSortOrder_Stub(
     IViewSort * This,
     /* [out][in] */ __RPC__inout DBORDINAL *pcValues,
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(( ULONG  )*pcValues) DBORDINAL **prgColumns,
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(( ULONG  )*pcValues) DBSORT **prgOrders,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IViewSort_SetSortOrder_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IViewSort_SetSortOrder_Proxy(
     IViewSort * This,
     /* [in] */ DBORDINAL cValues,
     /* [size_is][in] */ const DBORDINAL rgColumns[  ],
     /* [size_is][in] */ const DBSORT rgOrders[  ]);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewSort_SetSortOrder_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewSort_SetSortOrder_Stub(
     IViewSort * This,
     /* [in] */ DBORDINAL cValues,
     /* [size_is][in] */ __RPC__in_ecount_full(( ULONG  )cValues) const DBORDINAL *rgColumns,
     /* [size_is][in] */ __RPC__in_ecount_full(( ULONG  )cValues) const DBSORT *rgOrders,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IViewFilter_GetFilterBindings_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IViewFilter_GetFilterBindings_Proxy(
     IViewFilter * This,
     /* [out] */ DBCOUNTITEM *pcBindings,
     /* [out] */ DBBINDING **prgBindings);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewFilter_GetFilterBindings_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IViewFilter_GetFilterBindings_Stub(
     IViewFilter * This,
     /* [out][in] */ __RPC__inout DBCOUNTITEM *pcBindings,
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(( ULONG  )*pcBindings) DBBINDING **prgBindings,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetView_CreateView_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetView_CreateView_Proxy(
     IRowsetView * This,
     /* [in] */ IUnknown *pUnkOuter,
     /* [in] */ REFIID riid,
     /* [iid_is][out] */ IUnknown **ppView);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetView_CreateView_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetView_CreateView_Stub(
     IRowsetView * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppView,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetView_GetView_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetView_GetView_Proxy(
     IRowsetView * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ REFIID riid,
@@ -14655,7 +14655,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [iid_is][out] */ IUnknown **ppView);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetView_GetView_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetView_GetView_Stub(
     IRowsetView * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ __RPC__in REFIID riid,
@@ -14663,19 +14663,19 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppView,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetIdentity_IsSameRow_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetIdentity_IsSameRow_Proxy(
     IRowsetIdentity * This,
     /* [in] */ HROW hThisRow,
     /* [in] */ HROW hThatRow);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetIdentity_IsSameRow_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetIdentity_IsSameRow_Stub(
     IRowsetIdentity * This,
     /* [in] */ HROW hThisRow,
     /* [in] */ HROW hThatRow,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_OnFieldChange_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_OnFieldChange_Proxy(
     IRowsetNotify * This,
     /* [in] */ IRowset *pRowset,
     /* [in] */ HROW hRow,
@@ -14686,7 +14686,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [in] */ BOOL fCantDeny);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_OnFieldChange_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_OnFieldChange_Stub(
     IRowsetNotify * This,
     /* [in] */ __RPC__in_opt IRowset *pRowset,
     /* [in] */ HROW hRow,
@@ -14696,7 +14696,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [in] */ DBEVENTPHASE ePhase,
     /* [in] */ BOOL fCantDeny);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_OnRowChange_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_OnRowChange_Proxy(
     IRowsetNotify * This,
     /* [in] */ IRowset *pRowset,
     /* [in] */ DBCOUNTITEM cRows,
@@ -14706,7 +14706,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [in] */ BOOL fCantDeny);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_OnRowChange_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_OnRowChange_Stub(
     IRowsetNotify * This,
     /* [in] */ __RPC__in_opt IRowset *pRowset,
     /* [in] */ DBCOUNTITEM cRows,
@@ -14715,7 +14715,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [in] */ DBEVENTPHASE ePhase,
     /* [in] */ BOOL fCantDeny);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_OnRowsetChange_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_OnRowsetChange_Proxy(
     IRowsetNotify * This,
     /* [in] */ IRowset *pRowset,
     /* [in] */ DBREASON eReason,
@@ -14723,22 +14723,22 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [in] */ BOOL fCantDeny);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_OnRowsetChange_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRowsetNotify_OnRowsetChange_Stub(
     IRowsetNotify * This,
     /* [in] */ __RPC__in_opt IRowset *pRowset,
     /* [in] */ DBREASON eReason,
     /* [in] */ DBEVENTPHASE ePhase,
     /* [in] */ BOOL fCantDeny);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ICommand_Cancel_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ICommand_Cancel_Proxy(
     ICommand * This);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommand_Cancel_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommand_Cancel_Stub(
     ICommand * This,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ICommand_Execute_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ICommand_Execute_Proxy(
     ICommand * This,
     /* [in] */ IUnknown *pUnkOuter,
     /* [in] */ REFIID riid,
@@ -14747,7 +14747,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [iid_is][out] */ IUnknown **ppRowset);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommand_Execute_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommand_Execute_Stub(
     ICommand * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in REFIID riid,
@@ -14763,19 +14763,19 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [unique][out][in] */ __RPC__inout_opt DBROWCOUNT *pcRowsAffected,
     /* [iid_is][unique][out][in] */ __RPC__deref_opt_inout_opt IUnknown **ppRowset);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ICommand_GetDBSession_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ICommand_GetDBSession_Proxy(
     ICommand * This,
     /* [in] */ REFIID riid,
     /* [iid_is][out] */ IUnknown **ppSession);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommand_GetDBSession_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommand_GetDBSession_Stub(
     ICommand * This,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppSession,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IMultipleResults_GetResult_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IMultipleResults_GetResult_Proxy(
     IMultipleResults * This,
     /* [in] */ IUnknown *pUnkOuter,
     /* [in] */ DBRESULTFLAG lResultFlag,
@@ -14784,7 +14784,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [iid_is][out] */ IUnknown **ppRowset);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IMultipleResults_GetResult_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IMultipleResults_GetResult_Stub(
     IMultipleResults * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ DBRESULTFLAG lResultFlag,
@@ -14793,39 +14793,39 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [iid_is][unique][out][in] */ __RPC__deref_opt_inout_opt IUnknown **ppRowset,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IConvertType_CanConvert_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IConvertType_CanConvert_Proxy(
     IConvertType * This,
     /* [in] */ DBTYPE wFromType,
     /* [in] */ DBTYPE wToType,
     /* [in] */ DBCONVERTFLAGS dwConvertFlags);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IConvertType_CanConvert_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IConvertType_CanConvert_Stub(
     IConvertType * This,
     /* [in] */ DBTYPE wFromType,
     /* [in] */ DBTYPE wToType,
     /* [in] */ DBCONVERTFLAGS dwConvertFlags,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ICommandPrepare_Prepare_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ICommandPrepare_Prepare_Proxy(
     ICommandPrepare * This,
     /* [in] */ ULONG cExpectedRuns);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandPrepare_Prepare_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandPrepare_Prepare_Stub(
     ICommandPrepare * This,
     /* [in] */ ULONG cExpectedRuns,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ICommandPrepare_Unprepare_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ICommandPrepare_Unprepare_Proxy(
     ICommandPrepare * This);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandPrepare_Unprepare_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandPrepare_Unprepare_Stub(
     ICommandPrepare * This,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ICommandProperties_GetProperties_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ICommandProperties_GetProperties_Proxy(
     ICommandProperties * This,
     /* [in] */ const ULONG cPropertyIDSets,
     /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
@@ -14833,7 +14833,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][size_is][out] */ DBPROPSET **prgPropertySets);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandProperties_GetProperties_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandProperties_GetProperties_Stub(
     ICommandProperties * This,
     /* [in] */ const ULONG cPropertyIDSets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertyIDSets) const DBPROPIDSET *rgPropertyIDSets,
@@ -14841,13 +14841,13 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*pcPropertySets) DBPROPSET **prgPropertySets,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ICommandProperties_SetProperties_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ICommandProperties_SetProperties_Proxy(
     ICommandProperties * This,
     /* [in] */ ULONG cPropertySets,
     /* [size_is][unique][out][in] */ DBPROPSET rgPropertySets[  ]);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandProperties_SetProperties_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandProperties_SetProperties_Stub(
     ICommandProperties * This,
     /* [in] */ ULONG cPropertySets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertySets) DBPROPSET *rgPropertySets,
@@ -14855,40 +14855,40 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][out] */ __RPC__out_ecount_full(cTotalProps) DBPROPSTATUS *rgPropStatus,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ICommandText_GetCommandText_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ICommandText_GetCommandText_Proxy(
     ICommandText * This,
     /* [out][in] */ GUID *pguidDialect,
-    /* [out] */ 
+    /* [out] */
     __deref_out  LPOLESTR *ppwszCommand);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandText_GetCommandText_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandText_GetCommandText_Stub(
     ICommandText * This,
     /* [unique][out][in] */ __RPC__inout_opt GUID *pguidDialect,
     /* [out] */ __RPC__deref_out_opt LPOLESTR *ppwszCommand,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ICommandText_SetCommandText_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ICommandText_SetCommandText_Proxy(
     ICommandText * This,
     /* [in] */ REFGUID rguidDialect,
     /* [unique][in] */ LPCOLESTR pwszCommand);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandText_SetCommandText_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandText_SetCommandText_Stub(
     ICommandText * This,
     /* [in] */ __RPC__in REFGUID rguidDialect,
     /* [unique][in] */ __RPC__in_opt LPCOLESTR pwszCommand,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_GetParameterInfo_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_GetParameterInfo_Proxy(
     ICommandWithParameters * This,
     /* [out][in] */ DB_UPARAMS *pcParams,
     /* [size_is][size_is][out] */ DBPARAMINFO **prgParamInfo,
-    /* [out] */ 
+    /* [out] */
     __deref_out_z_opt  OLECHAR **ppNamesBuffer);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_GetParameterInfo_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_GetParameterInfo_Stub(
     ICommandWithParameters * This,
     /* [out][in] */ __RPC__inout DB_UPARAMS *pcParams,
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(( ULONG  )*pcParams) DBPARAMINFO **prgParamInfo,
@@ -14897,47 +14897,47 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][size_is][unique][out][in] */ __RPC__deref_opt_inout_ecount_full_opt(( ULONG  )*pcbNamesBuffer) OLECHAR **ppNamesBuffer,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_MapParameterNames_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_MapParameterNames_Proxy(
     ICommandWithParameters * This,
     /* [in] */ DB_UPARAMS cParamNames,
     /* [size_is][in] */ const OLECHAR *rgParamNames[  ],
     /* [size_is][out] */ DB_LPARAMS rgParamOrdinals[  ]);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_MapParameterNames_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_MapParameterNames_Stub(
     ICommandWithParameters * This,
     /* [in] */ DB_UPARAMS cParamNames,
     /* [size_is][in] */ __RPC__in_ecount_full(( ULONG  )cParamNames) LPCOLESTR *rgParamNames,
     /* [size_is][out] */ __RPC__out_ecount_full(( ULONG  )cParamNames) DB_LPARAMS *rgParamOrdinals,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_SetParameterInfo_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_SetParameterInfo_Proxy(
     ICommandWithParameters * This,
     /* [in] */ DB_UPARAMS cParams,
     /* [size_is][unique][in] */ const DB_UPARAMS rgParamOrdinals[  ],
     /* [size_is][unique][in] */ const DBPARAMBINDINFO rgParamBindInfo[  ]);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_SetParameterInfo_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICommandWithParameters_SetParameterInfo_Stub(
     ICommandWithParameters * This,
     /* [in] */ DB_UPARAMS cParams,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(( ULONG  )cParams) const DB_UPARAMS *rgParamOrdinals,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(( ULONG  )cParams) const DBPARAMBINDINFO *rgParamBindInfo,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IColumnsRowset_GetAvailableColumns_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IColumnsRowset_GetAvailableColumns_Proxy(
     IColumnsRowset * This,
     /* [out][in] */ DBORDINAL *pcOptColumns,
     /* [size_is][size_is][out] */ DBID **prgOptColumns);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsRowset_GetAvailableColumns_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsRowset_GetAvailableColumns_Stub(
     IColumnsRowset * This,
     /* [out][in] */ __RPC__inout DBORDINAL *pcOptColumns,
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(( ULONG  )*pcOptColumns) DBID **prgOptColumns,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IColumnsRowset_GetColumnsRowset_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IColumnsRowset_GetColumnsRowset_Proxy(
     IColumnsRowset * This,
     /* [in] */ IUnknown *pUnkOuter,
     /* [in] */ DBORDINAL cOptColumns,
@@ -14948,7 +14948,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [iid_is][out] */ IUnknown **ppColRowset);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsRowset_GetColumnsRowset_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsRowset_GetColumnsRowset_Stub(
     IColumnsRowset * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ DBORDINAL cOptColumns,
@@ -14961,15 +14961,15 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][out] */ __RPC__out_ecount_full(( ULONG  )cTotalProps) DBPROPSTATUS *rgPropStatus,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IColumnsInfo_GetColumnInfo_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IColumnsInfo_GetColumnInfo_Proxy(
     IColumnsInfo * This,
     /* [out][in] */ DBORDINAL *pcColumns,
     /* [size_is][size_is][out] */ DBCOLUMNINFO **prgInfo,
-    /* [out] */ 
+    /* [out] */
     __deref_out_z_opt  OLECHAR **ppStringsBuffer);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsInfo_GetColumnInfo_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsInfo_GetColumnInfo_Stub(
     IColumnsInfo * This,
     /* [out][in] */ __RPC__inout DBORDINAL *pcColumns,
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(( ULONG  )*pcColumns) DBCOLUMNINFO **prgInfo,
@@ -14979,49 +14979,49 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][size_is][unique][out][in] */ __RPC__deref_opt_inout_ecount_full_opt(( ULONG  )*pcbStringsBuffer) OLECHAR **ppStringsBuffer,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IColumnsInfo_MapColumnIDs_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IColumnsInfo_MapColumnIDs_Proxy(
     IColumnsInfo * This,
     /* [in] */ DBORDINAL cColumnIDs,
     /* [size_is][in] */ const DBID rgColumnIDs[  ],
     /* [size_is][out] */ DBORDINAL rgColumns[  ]);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsInfo_MapColumnIDs_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsInfo_MapColumnIDs_Stub(
     IColumnsInfo * This,
     /* [in] */ DBORDINAL cColumnIDs,
     /* [size_is][in] */ __RPC__in_ecount_full(( ULONG  )cColumnIDs) const DBID *rgColumnIDs,
     /* [size_is][out] */ __RPC__out_ecount_full(( ULONG  )cColumnIDs) DBORDINAL *rgColumns,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBCreateCommand_CreateCommand_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBCreateCommand_CreateCommand_Proxy(
     IDBCreateCommand * This,
     /* [in] */ IUnknown *pUnkOuter,
     /* [in] */ REFIID riid,
     /* [iid_is][out] */ IUnknown **ppCommand);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBCreateCommand_CreateCommand_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBCreateCommand_CreateCommand_Stub(
     IDBCreateCommand * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppCommand,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBCreateSession_CreateSession_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBCreateSession_CreateSession_Proxy(
     IDBCreateSession * This,
     /* [in] */ IUnknown *pUnkOuter,
     /* [in] */ REFIID riid,
     /* [iid_is][out] */ IUnknown **ppDBSession);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBCreateSession_CreateSession_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBCreateSession_CreateSession_Stub(
     IDBCreateSession * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppDBSession,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ISourcesRowset_GetSourcesRowset_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ISourcesRowset_GetSourcesRowset_Proxy(
     ISourcesRowset * This,
     /* [in] */ IUnknown *pUnkOuter,
     /* [in] */ REFIID riid,
@@ -15030,7 +15030,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [iid_is][out] */ IUnknown **ppSourcesRowset);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ISourcesRowset_GetSourcesRowset_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ISourcesRowset_GetSourcesRowset_Stub(
     ISourcesRowset * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in REFIID riid,
@@ -15041,7 +15041,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][out] */ __RPC__out_ecount_full(cTotalProps) DBPROPSTATUS *rgPropStatus,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBProperties_GetProperties_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBProperties_GetProperties_Proxy(
     IDBProperties * This,
     /* [in] */ ULONG cPropertyIDSets,
     /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
@@ -15049,7 +15049,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][size_is][out] */ DBPROPSET **prgPropertySets);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBProperties_GetProperties_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBProperties_GetProperties_Stub(
     IDBProperties * This,
     /* [in] */ ULONG cPropertyIDSets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertyIDSets) const DBPROPIDSET *rgPropertyIDSets,
@@ -15057,17 +15057,17 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*pcPropertySets) DBPROPSET **prgPropertySets,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBProperties_GetPropertyInfo_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBProperties_GetPropertyInfo_Proxy(
     IDBProperties * This,
     /* [in] */ ULONG cPropertyIDSets,
     /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
     /* [out][in] */ ULONG *pcPropertyInfoSets,
     /* [size_is][size_is][out] */ DBPROPINFOSET **prgPropertyInfoSets,
-    /* [out] */ 
+    /* [out] */
     __deref_out_z_opt  OLECHAR **ppDescBuffer);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBProperties_GetPropertyInfo_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBProperties_GetPropertyInfo_Stub(
     IDBProperties * This,
     /* [in] */ ULONG cPropertyIDSets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertyIDSets) const DBPROPIDSET *rgPropertyIDSets,
@@ -15079,13 +15079,13 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][size_is][unique][out][in] */ __RPC__deref_opt_inout_ecount_full_opt(*pcbDescBuffer) OLECHAR **ppDescBuffer,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBProperties_SetProperties_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBProperties_SetProperties_Proxy(
     IDBProperties * This,
     /* [in] */ ULONG cPropertySets,
     /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ]);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBProperties_SetProperties_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBProperties_SetProperties_Stub(
     IDBProperties * This,
     /* [in] */ ULONG cPropertySets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertySets) DBPROPSET *rgPropertySets,
@@ -15093,44 +15093,44 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][out] */ __RPC__out_ecount_full(cTotalProps) DBPROPSTATUS *rgPropStatus,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBInitialize_Initialize_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBInitialize_Initialize_Proxy(
     IDBInitialize * This);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBInitialize_Initialize_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBInitialize_Initialize_Stub(
     IDBInitialize * This,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBInitialize_Uninitialize_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBInitialize_Uninitialize_Proxy(
     IDBInitialize * This);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBInitialize_Uninitialize_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBInitialize_Uninitialize_Stub(
     IDBInitialize * This,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBInfo_GetKeywords_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBInfo_GetKeywords_Proxy(
     IDBInfo * This,
-    /* [out] */ 
+    /* [out] */
     __deref_out  LPOLESTR *ppwszKeywords);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBInfo_GetKeywords_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBInfo_GetKeywords_Stub(
     IDBInfo * This,
     /* [unique][out][in] */ __RPC__deref_opt_inout_opt LPOLESTR *ppwszKeywords,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBInfo_GetLiteralInfo_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBInfo_GetLiteralInfo_Proxy(
     IDBInfo * This,
     /* [in] */ ULONG cLiterals,
     /* [size_is][in] */ const DBLITERAL rgLiterals[  ],
     /* [out][in] */ ULONG *pcLiteralInfo,
     /* [size_is][size_is][out] */ DBLITERALINFO **prgLiteralInfo,
-    /* [out] */ 
+    /* [out] */
     __deref_out_z  OLECHAR **ppCharBuffer);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBInfo_GetLiteralInfo_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBInfo_GetLiteralInfo_Stub(
     IDBInfo * This,
     /* [in] */ ULONG cLiterals,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cLiterals) const DBLITERAL *rgLiterals,
@@ -15143,7 +15143,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][size_is][unique][out][in] */ __RPC__deref_opt_inout_ecount_full_opt(*pcbCharBuffer) OLECHAR **ppCharBuffer,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_CreateDataSource_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_CreateDataSource_Proxy(
     IDBDataSourceAdmin * This,
     /* [in] */ ULONG cPropertySets,
     /* [size_is][out][in] */ DBPROPSET rgPropertySets[  ],
@@ -15152,7 +15152,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [iid_is][out] */ IUnknown **ppDBSession);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_CreateDataSource_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_CreateDataSource_Stub(
     IDBDataSourceAdmin * This,
     /* [in] */ ULONG cPropertySets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertySets) DBPROPSET *rgPropertySets,
@@ -15163,25 +15163,25 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][out] */ __RPC__out_ecount_full(cTotalProps) DBPROPSTATUS *rgPropStatus,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_DestroyDataSource_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_DestroyDataSource_Proxy(
     IDBDataSourceAdmin * This);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_DestroyDataSource_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_DestroyDataSource_Stub(
     IDBDataSourceAdmin * This,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_GetCreationProperties_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_GetCreationProperties_Proxy(
     IDBDataSourceAdmin * This,
     /* [in] */ ULONG cPropertyIDSets,
     /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
     /* [out][in] */ ULONG *pcPropertyInfoSets,
     /* [size_is][size_is][out] */ DBPROPINFOSET **prgPropertyInfoSets,
-    /* [out] */ 
+    /* [out] */
     __deref_out_z_opt  OLECHAR **ppDescBuffer);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_GetCreationProperties_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_GetCreationProperties_Stub(
     IDBDataSourceAdmin * This,
     /* [in] */ ULONG cPropertyIDSets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertyIDSets) const DBPROPIDSET *rgPropertyIDSets,
@@ -15193,39 +15193,39 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][size_is][unique][out][in] */ __RPC__deref_opt_inout_ecount_full_opt(*pcbDescBuffer) OLECHAR **ppDescBuffer,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_ModifyDataSource_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_ModifyDataSource_Proxy(
     IDBDataSourceAdmin * This,
     /* [in] */ ULONG cPropertySets,
     /* [size_is][in] */ DBPROPSET rgPropertySets[  ]);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_ModifyDataSource_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBDataSourceAdmin_ModifyDataSource_Stub(
     IDBDataSourceAdmin * This,
     /* [in] */ ULONG cPropertySets,
     /* [size_is][in] */ __RPC__in_ecount_full(cPropertySets) DBPROPSET *rgPropertySets,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_OnLowResource_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_OnLowResource_Proxy(
     IDBAsynchNotify * This,
     /* [in] */ DB_DWRESERVE dwReserved);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_OnLowResource_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_OnLowResource_Stub(
     IDBAsynchNotify * This,
     /* [in] */ DB_DWRESERVE dwReserved);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_OnProgress_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_OnProgress_Proxy(
     IDBAsynchNotify * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ DBASYNCHOP eOperation,
     /* [in] */ DBCOUNTITEM ulProgress,
     /* [in] */ DBCOUNTITEM ulProgressMax,
     /* [in] */ DBASYNCHPHASE eAsynchPhase,
-    /* [in] */ 
+    /* [in] */
     __in_opt  LPOLESTR pwszStatusText);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_OnProgress_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_OnProgress_Stub(
     IDBAsynchNotify * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ DBASYNCHOP eOperation,
@@ -15234,46 +15234,46 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [in] */ DBASYNCHPHASE eAsynchPhase,
     /* [string][unique][in] */ __RPC__in_opt LPOLESTR pwszStatusText);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_OnStop_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_OnStop_Proxy(
     IDBAsynchNotify * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ DBASYNCHOP eOperation,
     /* [in] */ HRESULT hrStatus,
-    /* [in] */ 
+    /* [in] */
     __in_opt  LPOLESTR pwszStatusText);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_OnStop_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchNotify_OnStop_Stub(
     IDBAsynchNotify * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ DBASYNCHOP eOperation,
     /* [in] */ HRESULT hrStatus,
     /* [string][unique][in] */ __RPC__in_opt LPOLESTR pwszStatusText);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBAsynchStatus_Abort_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBAsynchStatus_Abort_Proxy(
     IDBAsynchStatus * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ DBASYNCHOP eOperation);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchStatus_Abort_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchStatus_Abort_Stub(
     IDBAsynchStatus * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ DBASYNCHOP eOperation,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBAsynchStatus_GetStatus_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBAsynchStatus_GetStatus_Proxy(
     IDBAsynchStatus * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ DBASYNCHOP eOperation,
     /* [out] */ DBCOUNTITEM *pulProgress,
     /* [out] */ DBCOUNTITEM *pulProgressMax,
     /* [out] */ DBASYNCHPHASE *peAsynchPhase,
-    /* [out] */ 
+    /* [out] */
     __deref_opt_inout_opt  LPOLESTR *ppwszStatusText);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchStatus_GetStatus_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBAsynchStatus_GetStatus_Stub(
     IDBAsynchStatus * This,
     /* [in] */ HCHAPTER hChapter,
     /* [in] */ DBASYNCHOP eOperation,
@@ -15283,7 +15283,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [unique][out][in] */ __RPC__deref_opt_inout_opt LPOLESTR *ppwszStatusText,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ISessionProperties_GetProperties_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ISessionProperties_GetProperties_Proxy(
     ISessionProperties * This,
     /* [in] */ ULONG cPropertyIDSets,
     /* [size_is][in] */ const DBPROPIDSET rgPropertyIDSets[  ],
@@ -15291,7 +15291,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][size_is][out] */ DBPROPSET **prgPropertySets);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ISessionProperties_GetProperties_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ISessionProperties_GetProperties_Stub(
     ISessionProperties * This,
     /* [in] */ ULONG cPropertyIDSets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertyIDSets) const DBPROPIDSET *rgPropertyIDSets,
@@ -15299,13 +15299,13 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*pcPropertySets) DBPROPSET **prgPropertySets,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ISessionProperties_SetProperties_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ISessionProperties_SetProperties_Proxy(
     ISessionProperties * This,
     /* [in] */ ULONG cPropertySets,
     /* [size_is][unique][out][in] */ DBPROPSET rgPropertySets[  ]);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ISessionProperties_SetProperties_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ISessionProperties_SetProperties_Stub(
     ISessionProperties * This,
     /* [in] */ ULONG cPropertySets,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(cPropertySets) DBPROPSET *rgPropertySets,
@@ -15313,7 +15313,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][out] */ __RPC__out_ecount_full(cTotalProps) DBPROPSTATUS *rgPropStatus,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IIndexDefinition_CreateIndex_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IIndexDefinition_CreateIndex_Proxy(
     IIndexDefinition * This,
     /* [in] */ DBID *pTableID,
     /* [in] */ DBID *pIndexID,
@@ -15324,7 +15324,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [out] */ DBID **ppIndexID);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IIndexDefinition_CreateIndex_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IIndexDefinition_CreateIndex_Stub(
     IIndexDefinition * This,
     /* [in] */ __RPC__in DBID *pTableID,
     /* [unique][in] */ __RPC__in_opt DBID *pIndexID,
@@ -15337,19 +15337,19 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][out] */ __RPC__out_ecount_full(cTotalProps) DBPROPSTATUS *rgPropStatus,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IIndexDefinition_DropIndex_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IIndexDefinition_DropIndex_Proxy(
     IIndexDefinition * This,
     /* [unique][in] */ DBID *pTableID,
     /* [unique][in] */ DBID *pIndexID);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IIndexDefinition_DropIndex_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IIndexDefinition_DropIndex_Stub(
     IIndexDefinition * This,
     /* [unique][in] */ __RPC__in_opt DBID *pTableID,
     /* [unique][in] */ __RPC__in_opt DBID *pIndexID,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ITableDefinition_CreateTable_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ITableDefinition_CreateTable_Proxy(
     ITableDefinition * This,
     /* [in] */ IUnknown *pUnkOuter,
     /* [in] */ DBID *pTableID,
@@ -15362,7 +15362,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [iid_is][out] */ IUnknown **ppRowset);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITableDefinition_CreateTable_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITableDefinition_CreateTable_Stub(
     ITableDefinition * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [unique][in] */ __RPC__in_opt DBID *pTableID,
@@ -15378,24 +15378,24 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [out] */ __RPC__out BOOL *pfTableCreated,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ITableDefinition_DropTable_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ITableDefinition_DropTable_Proxy(
     ITableDefinition * This,
     /* [unique][in] */ DBID *pTableID);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITableDefinition_DropTable_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITableDefinition_DropTable_Stub(
     ITableDefinition * This,
     /* [unique][in] */ __RPC__in_opt DBID *pTableID,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ITableDefinition_AddColumn_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ITableDefinition_AddColumn_Proxy(
     ITableDefinition * This,
     /* [in] */ DBID *pTableID,
     /* [out][in] */ DBCOLUMNDESC *pColumnDesc,
     /* [out] */ DBID **ppColumnID);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITableDefinition_AddColumn_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITableDefinition_AddColumn_Stub(
     ITableDefinition * This,
     /* [in] */ __RPC__in DBID *pTableID,
     /* [in] */ __RPC__in DBCOLUMNDESC *pColumnDesc,
@@ -15404,19 +15404,19 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][out] */ __RPC__out_ecount_full(cTotalProps) DBPROPSTATUS *rgPropStatus,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ITableDefinition_DropColumn_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ITableDefinition_DropColumn_Proxy(
     ITableDefinition * This,
     /* [unique][in] */ DBID *pTableID,
     /* [unique][in] */ DBID *pColumnID);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITableDefinition_DropColumn_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITableDefinition_DropColumn_Stub(
     ITableDefinition * This,
     /* [unique][in] */ __RPC__in_opt DBID *pTableID,
     /* [unique][in] */ __RPC__in_opt DBID *pColumnID,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IOpenRowset_OpenRowset_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IOpenRowset_OpenRowset_Proxy(
     IOpenRowset * This,
     /* [in] */ IUnknown *pUnkOuter,
     /* [unique][in] */ DBID *pTableID,
@@ -15427,7 +15427,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [iid_is][out] */ IUnknown **ppRowset);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IOpenRowset_OpenRowset_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IOpenRowset_OpenRowset_Stub(
     IOpenRowset * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [unique][in] */ __RPC__in_opt DBID *pTableID,
@@ -15440,7 +15440,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][out] */ __RPC__out_ecount_full(cTotalProps) DBPROPSTATUS *rgPropStatus,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBSchemaRowset_GetRowset_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBSchemaRowset_GetRowset_Proxy(
     IDBSchemaRowset * This,
     /* [in] */ IUnknown *pUnkOuter,
     /* [in] */ REFGUID rguidSchema,
@@ -15452,7 +15452,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [iid_is][out] */ IUnknown **ppRowset);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBSchemaRowset_GetRowset_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBSchemaRowset_GetRowset_Stub(
     IDBSchemaRowset * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in REFGUID rguidSchema,
@@ -15466,21 +15466,21 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][out] */ __RPC__out_ecount_full(cTotalProps) DBPROPSTATUS *rgPropStatus,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IDBSchemaRowset_GetSchemas_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IDBSchemaRowset_GetSchemas_Proxy(
     IDBSchemaRowset * This,
     /* [out][in] */ ULONG *pcSchemas,
     /* [size_is][size_is][out] */ GUID **prgSchemas,
     /* [size_is][size_is][out] */ ULONG **prgRestrictionSupport);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBSchemaRowset_GetSchemas_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IDBSchemaRowset_GetSchemas_Stub(
     IDBSchemaRowset * This,
     /* [out][in] */ __RPC__inout ULONG *pcSchemas,
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*pcSchemas) GUID **prgSchemas,
     /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*pcSchemas) ULONG **prgRestrictionSupport,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IErrorRecords_AddErrorRecord_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IErrorRecords_AddErrorRecord_Proxy(
     IErrorRecords * This,
     /* [in] */ ERRORINFO *pErrorInfo,
     /* [in] */ DWORD dwLookupID,
@@ -15489,7 +15489,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [in] */ DWORD dwDynamicErrorID);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_AddErrorRecord_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_AddErrorRecord_Stub(
     IErrorRecords * This,
     /* [in] */ __RPC__in ERRORINFO *pErrorInfo,
     /* [in] */ DWORD dwLookupID,
@@ -15498,69 +15498,69 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [in] */ DWORD dwDynamicErrorID,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetBasicErrorInfo_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetBasicErrorInfo_Proxy(
     IErrorRecords * This,
     /* [in] */ ULONG ulRecordNum,
     /* [out] */ ERRORINFO *pErrorInfo);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetBasicErrorInfo_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetBasicErrorInfo_Stub(
     IErrorRecords * This,
     /* [in] */ ULONG ulRecordNum,
     /* [out] */ __RPC__out ERRORINFO *pErrorInfo,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetCustomErrorObject_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetCustomErrorObject_Proxy(
     IErrorRecords * This,
     /* [in] */ ULONG ulRecordNum,
     /* [in] */ REFIID riid,
     /* [iid_is][out] */ IUnknown **ppObject);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetCustomErrorObject_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetCustomErrorObject_Stub(
     IErrorRecords * This,
     /* [in] */ ULONG ulRecordNum,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppObject,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetErrorInfo_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetErrorInfo_Proxy(
     IErrorRecords * This,
     /* [in] */ ULONG ulRecordNum,
     /* [in] */ LCID lcid,
     /* [out] */ IErrorInfo **ppErrorInfo);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetErrorInfo_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetErrorInfo_Stub(
     IErrorRecords * This,
     /* [in] */ ULONG ulRecordNum,
     /* [in] */ LCID lcid,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfo,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetErrorParameters_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetErrorParameters_Proxy(
     IErrorRecords * This,
     /* [in] */ ULONG ulRecordNum,
     /* [out] */ DISPPARAMS *pdispparams);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetErrorParameters_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetErrorParameters_Stub(
     IErrorRecords * This,
     /* [in] */ ULONG ulRecordNum,
     /* [out] */ __RPC__out DISPPARAMS *pdispparams,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetRecordCount_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetRecordCount_Proxy(
     IErrorRecords * This,
     /* [out] */ ULONG *pcRecords);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetRecordCount_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorRecords_GetRecordCount_Stub(
     IErrorRecords * This,
     /* [out] */ __RPC__out ULONG *pcRecords,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IErrorLookup_GetErrorDescription_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IErrorLookup_GetErrorDescription_Proxy(
     IErrorLookup * This,
     /* [in] */ HRESULT hrError,
     /* [in] */ DWORD dwLookupID,
@@ -15570,7 +15570,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [out] */ BSTR *pbstrDescription);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorLookup_GetErrorDescription_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorLookup_GetErrorDescription_Stub(
     IErrorLookup * This,
     /* [in] */ HRESULT hrError,
     /* [in] */ DWORD dwLookupID,
@@ -15580,7 +15580,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [out] */ __RPC__deref_out_opt BSTR *pbstrDescription,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IErrorLookup_GetHelpInfo_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IErrorLookup_GetHelpInfo_Proxy(
     IErrorLookup * This,
     /* [in] */ HRESULT hrError,
     /* [in] */ DWORD dwLookupID,
@@ -15589,7 +15589,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [out] */ DWORD *pdwHelpContext);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorLookup_GetHelpInfo_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorLookup_GetHelpInfo_Stub(
     IErrorLookup * This,
     /* [in] */ HRESULT hrError,
     /* [in] */ DWORD dwLookupID,
@@ -15598,51 +15598,51 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [out] */ __RPC__out DWORD *pdwHelpContext,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IErrorLookup_ReleaseErrors_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IErrorLookup_ReleaseErrors_Proxy(
     IErrorLookup * This,
     /* [in] */ const DWORD dwDynamicErrorID);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorLookup_ReleaseErrors_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IErrorLookup_ReleaseErrors_Stub(
     IErrorLookup * This,
     /* [in] */ const DWORD dwDynamicErrorID,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ISQLErrorInfo_GetSQLInfo_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ISQLErrorInfo_GetSQLInfo_Proxy(
     ISQLErrorInfo * This,
     /* [out] */ BSTR *pbstrSQLState,
     /* [out] */ LONG *plNativeError);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ISQLErrorInfo_GetSQLInfo_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ISQLErrorInfo_GetSQLInfo_Stub(
     ISQLErrorInfo * This,
     /* [out] */ __RPC__deref_out_opt BSTR *pbstrSQLState,
     /* [out] */ __RPC__out LONG *plNativeError,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IGetDataSource_GetDataSource_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IGetDataSource_GetDataSource_Proxy(
     IGetDataSource * This,
     /* [in] */ REFIID riid,
     /* [iid_is][out] */ IUnknown **ppDataSource);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IGetDataSource_GetDataSource_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IGetDataSource_GetDataSource_Stub(
     IGetDataSource * This,
     /* [in] */ __RPC__in REFIID riid,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppDataSource,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ITransactionLocal_GetOptionsObject_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ITransactionLocal_GetOptionsObject_Proxy(
     ITransactionLocal * This,
     /* [out] */ ITransactionOptions **ppOptions);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionLocal_GetOptionsObject_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionLocal_GetOptionsObject_Stub(
     ITransactionLocal * This,
     /* [out] */ __RPC__deref_out_opt ITransactionOptions **ppOptions,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ITransactionLocal_StartTransaction_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ITransactionLocal_StartTransaction_Proxy(
     ITransactionLocal * This,
     /* [in] */ ISOLEVEL isoLevel,
     /* [in] */ ULONG isoFlags,
@@ -15650,7 +15650,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [out] */ ULONG *pulTransactionLevel);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionLocal_StartTransaction_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionLocal_StartTransaction_Stub(
     ITransactionLocal * This,
     /* [in] */ ISOLEVEL isoLevel,
     /* [in] */ ULONG isoFlags,
@@ -15658,17 +15658,17 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [unique][out][in] */ __RPC__inout_opt ULONG *pulTransactionLevel,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ITransactionJoin_GetOptionsObject_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ITransactionJoin_GetOptionsObject_Proxy(
     ITransactionJoin * This,
     /* [out] */ ITransactionOptions **ppOptions);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionJoin_GetOptionsObject_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionJoin_GetOptionsObject_Stub(
     ITransactionJoin * This,
     /* [out] */ __RPC__deref_out_opt ITransactionOptions **ppOptions,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ITransactionJoin_JoinTransaction_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ITransactionJoin_JoinTransaction_Proxy(
     ITransactionJoin * This,
     /* [in] */ IUnknown *punkTransactionCoord,
     /* [in] */ ISOLEVEL isoLevel,
@@ -15676,7 +15676,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [in] */ ITransactionOptions *pOtherOptions);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionJoin_JoinTransaction_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionJoin_JoinTransaction_Stub(
     ITransactionJoin * This,
     /* [unique][in] */ __RPC__in_opt IUnknown *punkTransactionCoord,
     /* [in] */ ISOLEVEL isoLevel,
@@ -15684,19 +15684,19 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [in] */ __RPC__in_opt ITransactionOptions *pOtherOptions,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ITransactionObject_GetTransactionObject_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ITransactionObject_GetTransactionObject_Proxy(
     ITransactionObject * This,
     /* [in] */ ULONG ulTransactionLevel,
     /* [out] */ ITransaction **ppTransactionObject);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionObject_GetTransactionObject_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ITransactionObject_GetTransactionObject_Stub(
     ITransactionObject * This,
     /* [in] */ ULONG ulTransactionLevel,
     /* [out] */ __RPC__deref_out_opt ITransaction **ppTransactionObject,
     /* [out] */ __RPC__deref_out_opt IErrorInfo **ppErrorInfoRem);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IScopedOperations_Copy_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IScopedOperations_Copy_Proxy(
     IScopedOperations * This,
     /* [in] */ DBCOUNTITEM cRows,
     /* [size_is][in] */ LPCOLESTR rgpwszSourceURLs[  ],
@@ -15704,13 +15704,13 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [in] */ DWORD dwCopyFlags,
     /* [unique][in] */ IAuthenticate *pAuthenticate,
     /* [size_is][out][in] */ DBSTATUS rgdwStatus[  ],
-    /* [size_is][out] */ 
+    /* [size_is][out] */
     __inout_ecount_opt(cRows)  LPOLESTR rgpwszNewURLs[  ],
-    /* [out] */ 
+    /* [out] */
     __deref_out_z_opt  OLECHAR **ppStringsBuffer);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IScopedOperations_Copy_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IScopedOperations_Copy_Stub(
     IScopedOperations * This,
     /* [in] */ DBCOUNTITEM cRows,
     /* [size_is][in] */ __RPC__in_ecount_full(( ULONG  )cRows) LPCOLESTR *rgpwszSourceURLs,
@@ -15722,7 +15722,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [out][in] */ __RPC__inout ULONG *pcbStringsBuffer,
     /* [size_is][size_is][unique][out][in] */ __RPC__deref_opt_inout_ecount_full_opt(*pcbStringsBuffer) OLECHAR **ppStringsBuffer);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IScopedOperations_Move_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IScopedOperations_Move_Proxy(
     IScopedOperations * This,
     /* [in] */ DBCOUNTITEM cRows,
     /* [size_is][in] */ LPCOLESTR rgpwszSourceURLs[  ],
@@ -15730,13 +15730,13 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [in] */ DWORD dwMoveFlags,
     /* [unique][in] */ IAuthenticate *pAuthenticate,
     /* [size_is][out][in] */ DBSTATUS rgdwStatus[  ],
-    /* [size_is][out] */ 
+    /* [size_is][out] */
     __inout_ecount_opt(cRows)  LPOLESTR rgpwszNewURLs[  ],
-    /* [out] */ 
+    /* [out] */
     __deref_out_z_opt  OLECHAR **ppStringsBuffer);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IScopedOperations_Move_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IScopedOperations_Move_Stub(
     IScopedOperations * This,
     /* [in] */ DBCOUNTITEM cRows,
     /* [size_is][in] */ __RPC__in_ecount_full(( ULONG  )cRows) LPCOLESTR *rgpwszSourceURLs,
@@ -15748,7 +15748,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [out][in] */ __RPC__inout ULONG *pcbStringsBuffer,
     /* [size_is][size_is][unique][out][in] */ __RPC__deref_opt_inout_ecount_full_opt(*pcbStringsBuffer) OLECHAR **ppStringsBuffer);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IScopedOperations_Delete_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IScopedOperations_Delete_Proxy(
     IScopedOperations * This,
     /* [in] */ DBCOUNTITEM cRows,
     /* [size_is][in] */ LPCOLESTR rgpwszURLs[  ],
@@ -15756,14 +15756,14 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [size_is][out][in] */ DBSTATUS rgdwStatus[  ]);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IScopedOperations_Delete_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IScopedOperations_Delete_Stub(
     IScopedOperations * This,
     /* [in] */ DBCOUNTITEM cRows,
     /* [size_is][in] */ __RPC__in_ecount_full(( ULONG  )cRows) LPCOLESTR *rgpwszURLs,
     /* [in] */ DWORD dwDeleteFlags,
     /* [size_is][out] */ __RPC__out_ecount_full(( ULONG  )cRows) DBSTATUS *rgdwStatus);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IScopedOperations_OpenRowset_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IScopedOperations_OpenRowset_Proxy(
     IScopedOperations * This,
     /* [in] */ IUnknown *pUnkOuter,
     /* [unique][in] */ DBID *pTableID,
@@ -15774,7 +15774,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [iid_is][out] */ IUnknown **ppRowset);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IScopedOperations_OpenRowset_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IScopedOperations_OpenRowset_Stub(
     IScopedOperations * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [unique][in] */ __RPC__in_opt DBID *pTableID,
@@ -15786,7 +15786,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [in] */ ULONG cTotalProps,
     /* [size_is][out] */ __RPC__out_ecount_full(cTotalProps) DBPROPSTATUS *rgPropStatus);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IBindResource_Bind_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IBindResource_Bind_Proxy(
     IBindResource * This,
     /* [in] */ IUnknown *pUnkOuter,
     /* [in] */ LPCOLESTR pwszURL,
@@ -15799,7 +15799,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [iid_is][out] */ IUnknown **ppUnk);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IBindResource_Bind_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IBindResource_Bind_Stub(
     IBindResource * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in LPCOLESTR pwszURL,
@@ -15813,7 +15813,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [unique][out][in] */ __RPC__inout_opt DBBINDURLSTATUS *pdwBindStatus,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppUnk);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE ICreateRow_CreateRow_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE ICreateRow_CreateRow_Proxy(
     ICreateRow * This,
     /* [unique][in] */ IUnknown *pUnkOuter,
     /* [in] */ LPCOLESTR pwszURL,
@@ -15823,12 +15823,12 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [unique][in] */ IAuthenticate *pAuthenticate,
     /* [unique][out][in] */ DBIMPLICITSESSION *pImplSession,
     /* [unique][out][in] */ DBBINDURLSTATUS *pdwBindStatus,
-    /* [out] */ 
+    /* [out] */
     __deref_opt_out_opt  LPOLESTR *ppwszNewURL,
     /* [iid_is][out] */ IUnknown **ppUnk);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE ICreateRow_CreateRow_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE ICreateRow_CreateRow_Stub(
     ICreateRow * This,
     /* [in] */ __RPC__in_opt IUnknown *pUnkOuter,
     /* [in] */ __RPC__in LPCOLESTR pwszURL,
@@ -15843,7 +15843,7 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [unique][out][in] */ __RPC__deref_opt_inout_opt LPOLESTR *ppwszNewURL,
     /* [iid_is][out] */ __RPC__deref_out_opt IUnknown **ppUnk);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IColumnsInfo2_GetRestrictedColumnInfo_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IColumnsInfo2_GetRestrictedColumnInfo_Proxy(
     IColumnsInfo2 * This,
     /* [in] */ DBORDINAL cColumnIDMasks,
     /* [size_is][in] */ const DBID rgColumnIDMasks[  ],
@@ -15851,11 +15851,11 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [out][in] */ DBORDINAL *pcColumns,
     /* [size_is][size_is][out] */ DBID **prgColumnIDs,
     /* [size_is][size_is][out] */ DBCOLUMNINFO **prgColumnInfo,
-    /* [out] */ 
+    /* [out] */
     __deref_out_z_opt  OLECHAR **ppStringsBuffer);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsInfo2_GetRestrictedColumnInfo_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IColumnsInfo2_GetRestrictedColumnInfo_Stub(
     IColumnsInfo2 * This,
     /* [in] */ DBORDINAL cColumnIDMasks,
     /* [size_is][unique][in] */ __RPC__in_ecount_full_opt(( ULONG  )cColumnIDMasks) const DBID *rgColumnIDMasks,
@@ -15868,14 +15868,14 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
     /* [out][in] */ __RPC__inout DBLENGTH *pcbStringsBuffer,
     /* [size_is][size_is][unique][out][in] */ __RPC__deref_opt_inout_ecount_full_opt(( ULONG  )*pcbStringsBuffer) OLECHAR **ppStringsBuffer);
 
-/* [local] */ HRESULT STDMETHODCALLTYPE IRegisterProvider_GetURLMapping_Proxy( 
+/* [local] */ HRESULT STDMETHODCALLTYPE IRegisterProvider_GetURLMapping_Proxy(
     IRegisterProvider * This,
     /* [in] */ LPCOLESTR pwszURL,
     /* [in] */ DB_DWRESERVE dwReserved,
     /* [out] */ CLSID *pclsidProvider);
 
 
-/* [call_as] */ HRESULT STDMETHODCALLTYPE IRegisterProvider_GetURLMapping_Stub( 
+/* [call_as] */ HRESULT STDMETHODCALLTYPE IRegisterProvider_GetURLMapping_Stub(
     IRegisterProvider * This,
     /* [in] */ __RPC__in LPCOLESTR pwszURL,
     /* [in] */ DB_DWRESERVE dwReserved,
@@ -15891,6 +15891,3 @@ void                      __RPC_USER  VARIANT_UserFree64(     unsigned long *, V
 #endif
 
 #endif
-
-
-

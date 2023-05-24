@@ -1,15 +1,15 @@
 //****************************************************************************
 //  File:       APPAVCAP.H
-//  Content:    
+//  Content:
 //     Network audio/video application capability interface. Provides
 //     data structures for adding, removing, enumerating, prioritizing,
 //     and enabling/disabling codecs independently for send/receive.
 //
 //  Copyright (c) Microsoft Corporation 1999-2002, All rights reserved
 //
-// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF 
-// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
-// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A 
+// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
 // PARTICULAR PURPOSE.
 //****************************************************************************
 
@@ -20,7 +20,7 @@
 #include <mmreg.h>
 #include <msacm.h>
 
-#include <pshpack8.h> /* Assume 8 byte packing throughout */
+#include <PshPack8.h> /* Assume 8 byte packing throughout */
 
 // For use as dimension for variable size arrays
 #define VARIABLE_DIM 1
@@ -66,11 +66,11 @@ typedef struct BasicAudCapInfo
 	UINT uAvgBitrate;			// @field The average bitrate for this codec
 	WORD wCPUUtilizationEncode;	// @field % of Pentium 90Mhz needed for compress
 	WORD wCPUUtilizationDecode;	// @field % of Pentium 90Mhz needed for decompress
-	
+
 	BOOL bSendEnabled;			// @field OK to use this format for sending
 	BOOL bRecvEnabled;			// @field OK to use this format for receiving
 	WORD wSortIndex;			// @field The ordered position of this entry
-								// in the capability table. Can be used as input only 
+								// in the capability table. Can be used as input only
 								// in ReorderFormats
 }BASIC_AUDCAP_INFO, *PBASIC_AUDCAP_INFO, AUDCAP_INFO, *PAUDCAP_INFO;
 
@@ -119,9 +119,9 @@ typedef struct BasicVidCapInfo
 								// in the capability table.
 
 	// video format details
-	VIDEO_SIZES enumVideoSize;	// @field The video size for this format. Different video sizes for 
-								// the same formats must be added as separate formats 
-    BITMAPINFOHEADER bih;		// @field The BITMAPINFOHEADER sturcture for the video 
+	VIDEO_SIZES enumVideoSize;	// @field The video size for this format. Different video sizes for
+								// the same formats must be added as separate formats
+    BITMAPINFOHEADER bih;		// @field The BITMAPINFOHEADER sturcture for the video
 								// size in enumVideosize
 	UINT uFrameRate;			// @field Number of frames per second
 	DWORD dwBitsPerSample;		// @field number of bits per sample for this format. Must
@@ -140,8 +140,7 @@ typedef struct _vidcapinfolist
 	VIDCAP_INFO	aFormats[VARIABLE_DIM];	// @field cFormats VIDCAP_INFO structures
 } VIDCAP_INFO_LIST, *PVIDCAP_INFO_LIST;
 
-#include <poppack.h> /* End byte packing */
+#include <PopPack.h> /* End byte packing */
 
 
 #endif	//#ifndef _APPAVCAP_H
-

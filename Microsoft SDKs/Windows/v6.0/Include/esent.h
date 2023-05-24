@@ -45,9 +45,9 @@ extern "C" {
 
 
 #if defined(_M_AMD64) || defined(_M_IA64)
-#include <pshpack8.h>
+#include <PshPack8.h>
 #else
-#include <pshpack4.h>
+#include <PshPack4.h>
 #endif
 
 
@@ -701,7 +701,7 @@ typedef struct
 
 
 
-#include <pshpack1.h>
+#include <PshPack1.h>
 #define JET_MAX_COMPUTERNAME_LENGTH 15
 
 typedef struct	{
@@ -768,7 +768,7 @@ typedef struct
 	unsigned long	genHigh;
 	} JET_BKINFO;
 
-#include <poppack.h>
+#include <PopPack.h>
 
 typedef struct {
 	unsigned long	ulVersion;		//	version of DAE the db created (see ulDAEVersion)
@@ -4801,12 +4801,10 @@ JetOSSnapshotEnd(
 
 #endif	/* _JET_NOPROTOTYPES */
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #ifdef	__cplusplus
 }
 #endif
 
 #endif	/* _JET_INCLUDED */
-
-

@@ -1,17 +1,17 @@
 //****************************************************************************
 //  File: CODECS.H
-//  Content:    
-//              
+//  Content:
+//
 //
 //  Copyright (c) Microsoft Corporation 1999-2002.  All Rights Reserved
 //
-// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF 
-// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
-// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A 
+// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
 // PARTICULAR PURPOSE.
 //****************************************************************************
 
-#include <pshpack8.h> /* Assume 8 byte packing throughout */
+#include <PshPack8.h> /* Assume 8 byte packing throughout */
 #include "appavcap.h"
 
 /*
@@ -128,4 +128,4 @@ DEFINE_GUID(IID_IInstallAudioCodecs, 0x8ed14cc2, 0x7a1f, 0x11d0, 0x92, 0xf6, 0x0
 // {8ED14CC3-7A1F-11d0-92F6-00A0C922E6B2}
 DEFINE_GUID(IID_IInstallVideoCodecs, 0x8ed14cc3, 0x7a1f, 0x11d0, 0x92, 0xf6, 0x0, 0xa0, 0xc9, 0x22, 0xe6, 0xb2);
 
-#include <poppack.h> /* End byte packing */
+#include <PopPack.h> /* End byte packing */

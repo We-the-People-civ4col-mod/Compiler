@@ -5,9 +5,9 @@
 #define __oledbguid_h__
 
 #ifdef _WIN64
-#include <pshpack8.h>	// 8-byte structure packing
+#include <PshPack8.h>	// 8-byte structure packing
 #else
-#include <pshpack2.h>	// 2-byte structure packing
+#include <PshPack2.h>	// 2-byte structure packing
 #endif
 
 #ifndef UNALIGNED
@@ -21,7 +21,7 @@
 #if _MSC_VER >= 1100 && (!defined(SHx) || (defined(SHx) && _MSC_VER >= 1200))
 #define OLEDBDECLSPEC __declspec(selectany)
 #else
-#define OLEDBDECLSPEC 
+#define OLEDBDECLSPEC
 #endif //_MSC_VER
 typedef unsigned long DBKIND;
 
@@ -33,22 +33,22 @@ enum DBKINDENUM
 	DBKIND_PGUID_NAME	= ( DBKIND_NAME + 1 ) ,
 	DBKIND_PGUID_PROPID	= ( DBKIND_PGUID_NAME + 1 ) ,
 	DBKIND_PROPID	= ( DBKIND_PGUID_PROPID + 1 ) ,
-	DBKIND_GUID	= ( DBKIND_PROPID + 1 ) 
+	DBKIND_GUID	= ( DBKIND_PROPID + 1 )
     } ;
 typedef struct tagDBID
     {
-    union 
+    union
         {
         GUID guid;
         GUID *pguid;
-         /* Empty union arm */ 
+         /* Empty union arm */
         } 	uGuid;
     DBKIND eKind;
-    union 
+    union
         {
         wchar_t* pwszName;
         unsigned long ulPropid;
-         /* Empty union arm */ 
+         /* Empty union arm */
         } 	uName;
     } 	DBID;
 
@@ -275,31 +275,31 @@ extern const GUID DBPROPSET_INDEXALL;
 extern const GUID DBPROPSET_TABLEALL;
 extern const GUID DBPROPSET_TRUSTEEALL;
 extern const GUID DBPROPSET_CONSTRAINTALL;
-extern const GUID DBGUID_DSO;    
+extern const GUID DBGUID_DSO;
 extern const GUID DBGUID_SESSION;
-extern const GUID DBGUID_ROWSET; 
-extern const GUID DBGUID_ROW;    
+extern const GUID DBGUID_ROWSET;
+extern const GUID DBGUID_ROW;
 extern const GUID DBGUID_COMMAND;
-extern const GUID DBGUID_STREAM; 
-extern const DBID DBROWCOL_ROWURL;		        
-extern const DBID DBROWCOL_PARSENAME;            
-extern const DBID DBROWCOL_PARENTNAME;           
-extern const DBID DBROWCOL_ABSOLUTEPARSENAME;    
-extern const DBID DBROWCOL_ISHIDDEN;             
-extern const DBID DBROWCOL_ISREADONLY;           
-extern const DBID DBROWCOL_CONTENTTYPE;          
-extern const DBID DBROWCOL_CONTENTCLASS;         
-extern const DBID DBROWCOL_CONTENTLANGUAGE;      
-extern const DBID DBROWCOL_CREATIONTIME;         
-extern const DBID DBROWCOL_LASTACCESSTIME;       
-extern const DBID DBROWCOL_LASTWRITETIME;        
-extern const DBID DBROWCOL_STREAMSIZE;           
-extern const DBID DBROWCOL_ISCOLLECTION;         
-extern const DBID DBROWCOL_ISSTRUCTUREDDOCUMENT; 
-extern const DBID DBROWCOL_DEFAULTDOCUMENT;      
-extern const DBID DBROWCOL_DISPLAYNAME;          
-extern const DBID DBROWCOL_ISROOT;               
-extern const DBID DBROWCOL_DEFAULTSTREAM;        
+extern const GUID DBGUID_STREAM;
+extern const DBID DBROWCOL_ROWURL;
+extern const DBID DBROWCOL_PARSENAME;
+extern const DBID DBROWCOL_PARENTNAME;
+extern const DBID DBROWCOL_ABSOLUTEPARSENAME;
+extern const DBID DBROWCOL_ISHIDDEN;
+extern const DBID DBROWCOL_ISREADONLY;
+extern const DBID DBROWCOL_CONTENTTYPE;
+extern const DBID DBROWCOL_CONTENTCLASS;
+extern const DBID DBROWCOL_CONTENTLANGUAGE;
+extern const DBID DBROWCOL_CREATIONTIME;
+extern const DBID DBROWCOL_LASTACCESSTIME;
+extern const DBID DBROWCOL_LASTWRITETIME;
+extern const DBID DBROWCOL_STREAMSIZE;
+extern const DBID DBROWCOL_ISCOLLECTION;
+extern const DBID DBROWCOL_ISSTRUCTUREDDOCUMENT;
+extern const DBID DBROWCOL_DEFAULTDOCUMENT;
+extern const DBID DBROWCOL_DISPLAYNAME;
+extern const DBID DBROWCOL_ISROOT;
+extern const DBID DBROWCOL_DEFAULTSTREAM;
 extern const GUID DBGUID_CONTAINEROBJECT;
 extern const GUID DBSCHEMA_ASSERTIONS;
 extern const GUID DBSCHEMA_CATALOGS;
@@ -421,7 +421,6 @@ extern const GUID DBGUID_LIKE_OFS;
 extern const GUID DBGUID_LIKE_MAPI;
 #endif // DBINITCONSTANTS
 
-#include <poppack.h>     // restore original structure packing
+#include <PopPack.h>     // restore original structure packing
 
 #endif // __oledbguid_h__
-

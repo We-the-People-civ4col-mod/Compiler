@@ -50,9 +50,9 @@
 
 
 #ifdef _WIN64
-#include <pshpack8.h>
+#include <PshPack8.h>
 #else
-#include <pshpack4.h>
+#include <PshPack4.h>
 #endif
 
 #ifdef __cplusplus
@@ -229,7 +229,7 @@ typedef struct _PROPSHEETPAGEA_V4
 
     HANDLE           hActCtx;
 
-    union 
+    union
     {
         HBITMAP     hbmHeader;
         LPCSTR      pszbmHeader;
@@ -275,7 +275,7 @@ typedef struct _PROPSHEETPAGEW_V4
 
     HANDLE            hActCtx;
 
-    union 
+    union
     {
         HBITMAP     hbmHeader;
         LPCWSTR     pszbmHeader;
@@ -487,7 +487,7 @@ typedef int (CALLBACK *PFNPROPSHEETCALLBACK)(HWND, UINT, LPARAM);
             LPCPROPSHEETPAGEA ppsp;     \
             HPROPSHEETPAGE *phpage;     \
         } DUMMYUNIONNAME3;              \
-        PFNPROPSHEETCALLBACK pfnCallback;   
+        PFNPROPSHEETCALLBACK pfnCallback;
 
 typedef struct _PROPSHEETHEADERA_V1
 {
@@ -499,13 +499,13 @@ typedef const PROPSHEETHEADERA_V1 *LPCPROPSHEETHEADERA_V1;
 typedef struct _PROPSHEETHEADERA_V2
 {
     PROPSHEETHEADERA_V1_FIELDS
-    union 
+    union
     {
         HBITMAP hbmWatermark;
         LPCSTR pszbmWatermark;
     } DUMMYUNIONNAME4;
     HPALETTE hplWatermark;
-    union 
+    union
     {
         HBITMAP hbmHeader;     // Header  bitmap shares the palette with watermark
         LPCSTR pszbmHeader;
@@ -536,7 +536,7 @@ typedef const PROPSHEETHEADERA_V2 *LPCPROPSHEETHEADERA_V2;
             LPCPROPSHEETPAGEW ppsp;     \
             HPROPSHEETPAGE *phpage;     \
         } DUMMYUNIONNAME3;              \
-        PFNPROPSHEETCALLBACK pfnCallback;  
+        PFNPROPSHEETCALLBACK pfnCallback;
 
 typedef struct _PROPSHEETHEADERW_V1
 {
@@ -548,13 +548,13 @@ typedef const PROPSHEETHEADERW_V1 *LPCPROPSHEETHEADERW_V1;
 typedef struct _PROPSHEETHEADERW_V2
 {
     PROPSHEETHEADERW_V1_FIELDS
-    union 
+    union
     {
         HBITMAP hbmWatermark;
         LPCWSTR pszbmWatermark;
     } DUMMYUNIONNAME4;
     HPALETTE hplWatermark;
-    union 
+    union
     {
         HBITMAP hbmHeader;     // Header  bitmap shares the palette with watermark
         LPCWSTR pszbmHeader;
@@ -964,9 +964,7 @@ typedef struct _PSHNOTIFY
 }
 #endif
 
-#include <poppack.h>
+#include <PopPack.h>
 
 
 #endif  // _PRSHT_H_
-
-

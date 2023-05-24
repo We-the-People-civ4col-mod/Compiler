@@ -20,7 +20,7 @@ extern "C"
 {
 #endif
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -244,7 +244,7 @@ typedef struct DRIVER_VER_MAJORMINOR_
 {
     DWORD           dwMajor;
     DWORD           dwMinor;
-    
+
 } DRIVER_VER_MAJORMINOR;
 
 typedef struct DRIVER_VER_INFO_
@@ -264,16 +264,16 @@ typedef struct DRIVER_VER_INFO_
     DRIVER_VER_MAJORMINOR               sOSVersionLow;          // IN - OPTIONAL: lowest compatible version
     DRIVER_VER_MAJORMINOR               sOSVersionHigh;         // IN - OPTIONAL: highest compatible version
 
-    DWORD                               dwBuildNumberLow;       // IN - OPTIONAL: added to sOSVersionLow as 
+    DWORD                               dwBuildNumberLow;       // IN - OPTIONAL: added to sOSVersionLow as
                                                                 //      third node for finer version granularity
-    DWORD                               dwBuildNumberHigh;      // IN - OPTIONAL: added to sOSVersionHigh as 
+    DWORD                               dwBuildNumberHigh;      // IN - OPTIONAL: added to sOSVersionHigh as
                                                                 //      third node for finer version granularity
 
     //
     // NOTES:
     // 1. dwPlatform _must_ be set to a non-zero value in order for proper version checking to be done.
     // 2. dwVersion is no longer used, sOSVersionLow and sOsVersionhigh have taken its place
-    // 3. If dwBuildNumberLow and dwBuildNumberHigh are 0, they are unused.  Otherwise, they are considered 
+    // 3. If dwBuildNumberLow and dwBuildNumberHigh are 0, they are unused.  Otherwise, they are considered
     //    to be extensions of sOSVersionLow and sOSVersionHigh respectively.  Make special note of this when
     //    reading note 4.
     // 4. If you are validating against a single OS version, then set both sOSVersionLow and sOSVersion high,
@@ -283,7 +283,7 @@ typedef struct DRIVER_VER_INFO_
 
 } DRIVER_VER_INFO, *PDRIVER_VER_INFO;
 
-#include <poppack.h>
+#include <PopPack.h>
 
 
 #ifdef __cplusplus
@@ -291,4 +291,3 @@ typedef struct DRIVER_VER_INFO_
 #endif
 
 #endif // SOFTPUB_H
-

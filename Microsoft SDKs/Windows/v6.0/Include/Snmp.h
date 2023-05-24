@@ -37,7 +37,7 @@ extern "C" {
 //                                                                           //
 ///////////////////////////////////////////////////////////////////////////////
 
-#include <pshpack4.h>
+#include <PshPack4.h>
 
 typedef struct {
     BYTE * stream;
@@ -96,7 +96,7 @@ typedef struct {
     UINT          len;
 } SnmpVarBindList;
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #ifndef _INC_WINSNMP
 
@@ -667,4 +667,3 @@ SnmpUtilDbgPrint(
 #endif
 
 #endif // _INC_SNMP
-

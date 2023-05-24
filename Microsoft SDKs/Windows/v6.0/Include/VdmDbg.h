@@ -24,7 +24,7 @@ Abstract:
 extern "C" {
 #endif
 
-#include <pshpack4.h>
+#include <PshPack4.h>
 
 #define STATUS_VDM_EVENT    STATUS_SEGMENT_NOTIFICATION
 
@@ -364,7 +364,7 @@ typedef DWORD (CALLBACK* DEBUGEVENTPROC)( LPDEBUG_EVENT, LPVOID );
 #define DW3(x) (x.ExceptionInformation[2])
 #define DW4(x) (x.ExceptionInformation[3])
 
-#include <poppack.h>
+#include <PopPack.h>
 
 
 BOOL
@@ -699,4 +699,3 @@ typedef BOOL  (WINAPI *VDMGETADDREXPRESSIONPROC)(LPSTR, LPSTR, PWORD, PDWORD, PW
 #endif
 
 #endif // _VDMDBG_
-

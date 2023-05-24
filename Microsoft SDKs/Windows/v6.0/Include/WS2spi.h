@@ -1,12 +1,12 @@
 //$TAG BIZDEV
-//  $IPCategory:     
+//  $IPCategory:
 //  $DealPointID:    118736
 //  $AgreementName:  berkeley software distribution license
 //  $AgreementType:  oss license
 //  $ExternalOrigin: regents of the university of california
 //$ENDTAG
 
-//$TAG ENGR 
+//$TAG ENGR
 //  $Owner:    vadime
 //  $Module:   published_inc
 //
@@ -45,7 +45,7 @@
  */
 
 #if !defined(_WIN64)
-#include <pshpack4.h>
+#include <PshPack4.h>
 #endif
 
 #define WSPDESCRIPTION_LEN 255
@@ -885,7 +885,7 @@ typedef struct _WSC_PROVIDER_AUDIT_INFO {
 __control_entrypoint(DllExport)
 int
 WSPAPI
-WSCSetProviderInfo( 
+WSCSetProviderInfo(
     __in LPGUID lpProviderId,
     __in WSC_PROVIDER_INFO_TYPE InfoType,
     __in_bcount(InfoSize) PBYTE Info,
@@ -897,7 +897,7 @@ WSCSetProviderInfo(
 __control_entrypoint(DllExport)
 int
 WSPAPI
-WSCGetProviderInfo( 
+WSCGetProviderInfo(
     __in LPGUID lpProviderId,
     __in WSC_PROVIDER_INFO_TYPE InfoType,
     __out_bcount_part(*InfoSize, *InfoSize) PBYTE Info,
@@ -911,7 +911,7 @@ WSCGetProviderInfo(
 __control_entrypoint(DllExport)
 int
 WSPAPI
-WSCSetProviderInfo32( 
+WSCSetProviderInfo32(
     __in LPGUID lpProviderId,
     __in WSC_PROVIDER_INFO_TYPE InfoType,
     __in_bcount(InfoSize) PBYTE Info,
@@ -923,7 +923,7 @@ WSCSetProviderInfo32(
 __control_entrypoint(DllExport)
 int
 WSPAPI
-WSCGetProviderInfo32( 
+WSCGetProviderInfo32(
     __in LPGUID lpProviderId,
     __in WSC_PROVIDER_INFO_TYPE InfoType,
     __out_bcount_part(*InfoSize, *InfoSize) PBYTE Info,
@@ -1079,10 +1079,10 @@ __control_entrypoint(DispatchTable)
 int
 WSPAPI
 WPUCompleteOverlappedRequest (
-    SOCKET s, 	
-    LPWSAOVERLAPPED lpOverlapped, 	
-    DWORD dwError, 	
-    DWORD cbTransferred, 	
+    SOCKET s,
+    LPWSAOVERLAPPED lpOverlapped,
+    DWORD dwError,
+    DWORD cbTransferred,
     LPINT lpErrno
 );
 
@@ -1445,7 +1445,7 @@ VOID
     LPWSAQUERYSET2W lpqsRegInfo,
     WSAESETSERVICEOP essOperation,
     DWORD dwControlFlags,
-    LPVOID lpvClientSessionArg 
+    LPVOID lpvClientSessionArg
     );
 
 typedef
@@ -1455,15 +1455,15 @@ VOID
     LPVOID pvClientSessionArg
     );
 
-typedef struct _NSPV2_ROUTINE {  
+typedef struct _NSPV2_ROUTINE {
     DWORD cbSize;
     DWORD dwMajorVersion;
     DWORD dwMinorVersion;
     LPNSPV2STARTUP NSPv2Startup;
     LPNSPV2CLEANUP NSPv2Cleanup;
-    LPNSPV2LOOKUPSERVICEBEGIN NSPv2LookupServiceBegin;  
+    LPNSPV2LOOKUPSERVICEBEGIN NSPv2LookupServiceBegin;
     LPNSPV2LOOKUPSERVICENEXTEX NSPv2LookupServiceNextEx;
-    LPNSPV2LOOKUPSERVICEEND NSPv2LookupServiceEnd;  
+    LPNSPV2LOOKUPSERVICEEND NSPv2LookupServiceEnd;
     LPNSPV2SETSERVICEEX NSPv2SetServiceEx;
     LPNSPV2CLIENTSESSIONRUNDOWN NSPv2ClientSessionRundown;
 } NSPV2_ROUTINE, *PNSPV2_ROUTINE, *LPNSPV2_ROUTINE;
@@ -1489,9 +1489,7 @@ INT WSAAPI WSAProviderCompleteAsyncCall(
 #endif
 
 #if !defined(_WIN64)
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 #endif  /* _WINSOCK2SPI_ */
-
-

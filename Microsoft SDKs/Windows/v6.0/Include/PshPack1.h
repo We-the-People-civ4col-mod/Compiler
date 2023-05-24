@@ -4,7 +4,7 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 
 Module Name:
 
-    pshpack1.h
+    PshPack1.h
 
 Abstract:
 
@@ -12,10 +12,10 @@ Abstract:
     automatic alignment of structure fields.)  An include file is needed
     because various compilers do this in different ways.  For Microsoft
     compatible compilers, this files uses the push option to the pack pragma
-    so that the poppack.h include file can restore the previous packing
+    so that the PopPack.h include file can restore the previous packing
     reliably.
 
-    The file poppack.h is the complement to this file.
+    The file PopPack.h is the complement to this file.
 
 --*/
 
@@ -31,4 +31,3 @@ Abstract:
 #pragma pack(1)
 #endif
 #endif // ! (defined(lint) || defined(RC_INVOKED))
-

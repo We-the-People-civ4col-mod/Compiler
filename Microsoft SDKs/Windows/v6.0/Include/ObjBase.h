@@ -38,7 +38,7 @@
 #pragma once
 #endif
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 #ifdef _MAC
 #ifndef _WLM_NOFORCE_LIBS
@@ -234,11 +234,11 @@
 //
 extern "C++"
 {
-    template<typename T> void** IID_PPV_ARGS_Helper(T** pp) 
+    template<typename T> void** IID_PPV_ARGS_Helper(T** pp)
     {
         // make sure everyone derives from IUnknown
         static_cast<IUnknown*>(*pp);
-        
+
         return reinterpret_cast<void**>(pp);
     }
 }
@@ -624,7 +624,7 @@ WINOLEAPI CoDisconnectContext(DWORD dwTimeout);
 WINOLEAPI CoInitializeSecurity(
                     __in_opt PSECURITY_DESCRIPTOR    pSecDesc,
                     __in LONG                        cAuthSvc,
-                    __in_ecount_opt(cAuthSvc) 
+                    __in_ecount_opt(cAuthSvc)
                          SOLE_AUTHENTICATION_SERVICE *asAuthSvc,
                     __in_opt void                    *pReserved1,
                     __in DWORD                        dwAuthnLevel,
@@ -699,10 +699,10 @@ WINOLEAPI CoSwitchCallContext( __in_opt IUnknown *pNewObject, __deref_out IUnkno
 
 /* helper for creating instances */
 
-WINOLEAPI CoCreateInstance(__in     REFCLSID rclsid, 
+WINOLEAPI CoCreateInstance(__in     REFCLSID rclsid,
                            __in_opt LPUNKNOWN pUnkOuter,
-                           __in     DWORD dwClsContext, 
-                           __in     REFIID riid, 
+                           __in     DWORD dwClsContext,
+                           __in     REFIID riid,
                            __deref_out LPVOID FAR* ppv);
 
 
@@ -1007,8 +1007,7 @@ WINOLEAPI CreateStdProgressIndicator(__in HWND hwndParent,
 
 
 #ifndef RC_INVOKED
-#include <poppack.h>
+#include <PopPack.h>
 #endif // RC_INVOKED
 
 #endif     // __OBJBASE_H__
-

@@ -15,7 +15,7 @@
 
 #ifndef NOSHLWAPI
 
-#include <SpecStrings.h>
+#include <specstrings.h>
 #include <objbase.h>
 #include <shtypes.h>
 
@@ -45,7 +45,7 @@ typedef interface IInternetHostSecurityManager IInternetHostSecurityManager;
 #endif // WINSHLWAPI
 
 #ifdef _WIN32
-#include <pshpack8.h>
+#include <PshPack8.h>
 #endif
 
 #if defined(DEPRECATE_SUPPORTED)
@@ -2430,12 +2430,10 @@ __inline LPWSTR PathSkipRootW(__in LPWSTR pszPath)
 #endif
 
 #ifdef _WIN32
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 #endif
 
 
 #endif  // _INC_SHLWAPI
-
-

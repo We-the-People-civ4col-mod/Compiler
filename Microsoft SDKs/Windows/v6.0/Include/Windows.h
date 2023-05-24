@@ -152,22 +152,22 @@ Abstract:
 #include <stdarg.h>
 #endif /* RC_INVOKED */
 
-#include <windef.h>
-#include <winbase.h>
-#include <wingdi.h>
-#include <winuser.h>
+#include <WinDef.h>
+#include <WinBase.h>
+#include <WinGDI.h>
+#include <WinUser.h>
 #if !defined(_MAC) || defined(_WIN32NLS)
-#include <winnls.h>
+#include <WinNls.h>
 #endif
 #ifndef _MAC
-#include <wincon.h>
-#include <winver.h>
+#include <WinCon.h>
+#include <WinVer.h>
 #endif
 #if !defined(_MAC) || defined(_WIN32REG)
-#include <winreg.h>
+#include <WinReg.h>
 #endif
 #ifndef _MAC
-#include <winnetwk.h>
+#include <WinNetWk.h>
 #endif
 
 #ifndef WIN32_LEAN_AND_MEAN
@@ -183,18 +183,18 @@ Abstract:
 #endif
 #include <shellapi.h>
 #ifndef _MAC
-#include <winperf.h>
-#include <winsock.h>
+#include <WinPerf.h>
+#include <WinSock.h>
 #endif
 #ifndef NOCRYPT
-#include <wincrypt.h>
-#include <winefs.h>
-#include <winscard.h>
+#include <WinXrypt.h>
+#include <WinEFS.h>
+#include <WinSCard.h>
 #endif
 
 #ifndef NOGDI
 #ifndef _MAC
-#include <winspool.h>
+#include <WinSpool.h>
 #ifdef INC_OLE1
 #include <ole.h>
 #else
@@ -205,7 +205,7 @@ Abstract:
 #endif /* !NOGDI */
 #endif /* WIN32_LEAN_AND_MEAN */
 
-#include <stralign.h>
+#include <StrAlign.h>
 
 #ifdef _MAC
 #include <winwlm.h>
@@ -218,16 +218,16 @@ Abstract:
 
 #ifndef _MAC
 #ifndef NOSERVICE
-#include <winsvc.h>
+#include <WinSvc.h>
 #endif
 
 #if(WINVER >= 0x0400)
 #ifndef NOMCX
-#include <mcx.h>
+#include <Mcx.h>
 #endif /* NOMCX */
 
 #ifndef NOIME
-#include <imm.h>
+#include <Imm.h>
 #endif
 #endif /* WINVER >= 0x0400 */
 #endif
@@ -249,5 +249,3 @@ Abstract:
 
 #endif /* _INC_WINDOWS */
 #endif /* _WINDOWS_ */
-
-

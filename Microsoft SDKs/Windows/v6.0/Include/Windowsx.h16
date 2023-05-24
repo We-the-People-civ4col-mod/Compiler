@@ -11,7 +11,7 @@
 #ifndef _INC_WINDOWSX
 #define _INC_WINDOWSX
 
-#include "pshpack.h"    /* Assume byte packing throughout */
+#include "PshPack.h"    /* Assume byte packing throughout */
 
 #ifdef __cplusplus
 extern "C" {            /* Assume C declarations for C++ */
@@ -1199,11 +1199,10 @@ extern "C" {            /* Assume C declarations for C++ */
 #define GET_WM_VSCROLL_MPS(code, pos, hwnd)    \
         (WPARAM)(code), MAKELONG(pos, hwnd)
 
-#include "poppack.h"    /* Revert to default packing */
+#include "PopPack.h"    /* Revert to default packing */
 
 #ifdef __cplusplus
 }                       /* End of extern "C" { */
 #endif  /* __cplusplus */
 
 #endif  /* !_INC_WINDOWSX */
-

@@ -23,9 +23,9 @@ Abstract:
  */
 
 #if defined(_WIN64)
-#include <pshpack8.h>
+#include <PshPack8.h>
 #else
-#include <pshpack4.h>
+#include <PshPack4.h>
 #endif
 
 
@@ -199,7 +199,7 @@ WINHTTP_AUTOPROXY_OPTIONS;
 #define WINHTTP_AUTOPROXY_RUN_INPROCESS         0x00010000
 #define WINHTTP_AUTOPROXY_RUN_OUTPROCESS_ONLY   0x00020000
 //
-// Flags for dwAutoDetectFlags 
+// Flags for dwAutoDetectFlags
 //
 #define WINHTTP_AUTO_DETECT_TYPE_DHCP           0x00000001
 #define WINHTTP_AUTO_DETECT_TYPE_DNS_A          0x00000002
@@ -270,7 +270,7 @@ WINHTTP_CERTIFICATE_INFO;
 
 #ifdef _WS2DEF_
 
-typedef struct 
+typedef struct
 {
     DWORD cbSize;
     SOCKADDR_STORAGE LocalAddress;  // local ip, local port
@@ -318,7 +318,7 @@ WinHttpTimeToSystemTime
 
         // signs encountered, default is to not encode percent.
 
-   
+
 BOOLAPI
 WinHttpCrackUrl
 (
@@ -327,7 +327,7 @@ WinHttpCrackUrl
     __in DWORD dwFlags,
     __inout LPURL_COMPONENTS lpUrlComponents
 );
-    
+
 BOOLAPI
 WinHttpCreateUrl
 (
@@ -351,7 +351,7 @@ WinHttpCheckPlatform(void);
 WINHTTPAPI BOOL WINAPI WinHttpGetDefaultProxyConfiguration( IN OUT WINHTTP_PROXY_INFO * pProxyInfo);
 WINHTTPAPI BOOL WINAPI WinHttpSetDefaultProxyConfiguration( IN WINHTTP_PROXY_INFO * pProxyInfo);
 
-    
+
 WINHTTPAPI
 HINTERNET
 WINAPI
@@ -379,7 +379,7 @@ WinHttpCloseHandle
     IN HINTERNET hInternet
 );
 
-   
+
 WINHTTPAPI
 HINTERNET
 WINAPI
@@ -409,7 +409,7 @@ WinHttpWriteData
     IN DWORD dwNumberOfBytesToWrite,
     OUT LPDWORD lpdwNumberOfBytesWritten
 );
-    
+
 
 BOOLAPI
 WinHttpQueryDataAvailable
@@ -418,7 +418,7 @@ WinHttpQueryDataAvailable
     OUT __out_data_source(NETWORK) LPDWORD lpdwNumberOfBytesAvailable OPTIONAL
 );
 
-    
+
 BOOLAPI
 WinHttpQueryOption
 (
@@ -429,7 +429,7 @@ WinHttpQueryOption
 );
 
 #define WINHTTP_NO_CLIENT_CERT_CONTEXT NULL
-    
+
 BOOLAPI
 WinHttpSetOption
 (
@@ -441,7 +441,7 @@ WinHttpSetOption
 
 BOOLAPI
 WinHttpSetTimeouts
-(    
+(
     IN HINTERNET    hInternet,           // Session/Request handle.
     IN int          nResolveTimeout,
     IN int          nConnectTimeout,
@@ -542,7 +542,7 @@ WinHttpSetTimeouts
 #define WINHTTP_DISABLE_PASSPORT_AUTH    0x00000000
 #define WINHTTP_ENABLE_PASSPORT_AUTH     0x10000000
 #define WINHTTP_DISABLE_PASSPORT_KEYRING 0x20000000
-#define WINHTTP_ENABLE_PASSPORT_KEYRING  0x40000000	
+#define WINHTTP_ENABLE_PASSPORT_KEYRING  0x40000000
 
 
 // values for WINHTTP_OPTION_DISABLE_FEATURE
@@ -598,7 +598,7 @@ typedef struct tagWINHTTP_CREDS_EX
 #define WINHTTP_AUTH_SCHEME_PASSPORT   0x00000004
 #define WINHTTP_AUTH_SCHEME_DIGEST     0x00000008
 #define WINHTTP_AUTH_SCHEME_NEGOTIATE  0x00000010
-    
+
 // WinHttp supported Authentication Targets
 
 #define WINHTTP_AUTH_TARGET_SERVER 0x00000000
@@ -920,7 +920,7 @@ WinHttpSetStatusCallback
 //
 // prototypes
 //
-    
+
 WINHTTPAPI
 HINTERNET
 WINAPI
@@ -938,7 +938,7 @@ WinHttpOpenRequest
 // WinHttpOpenRequest prettifers for optional parameters
 #define WINHTTP_NO_REFERER             NULL
 #define WINHTTP_DEFAULT_ACCEPT_TYPES   NULL
-    
+
 BOOLAPI
 WinHttpAddRequestHeaders
 (
@@ -991,7 +991,7 @@ WinHttpAddRequestHeaders
 #define WINHTTP_ADDREQ_FLAG_REPLACE    0x80000000
 
 #define WINHTTP_IGNORE_REQUEST_TOTAL_LENGTH 0
-    
+
 BOOLAPI
 WinHttpSendRequest
 (
@@ -1011,23 +1011,23 @@ WinHttpSendRequest
 
 BOOLAPI WinHttpSetCredentials
 (
-    
-    IN HINTERNET   hRequest,        // HINTERNET handle returned by WinHttpOpenRequest.   
-    
-    
-    IN DWORD       AuthTargets,      // Only WINHTTP_AUTH_TARGET_SERVER and 
+
+    IN HINTERNET   hRequest,        // HINTERNET handle returned by WinHttpOpenRequest.
+
+
+    IN DWORD       AuthTargets,      // Only WINHTTP_AUTH_TARGET_SERVER and
                                     // WINHTTP_AUTH_TARGET_PROXY are supported
-                                    // in this version and they are mutually 
-                                    // exclusive 
-    
-    IN DWORD       AuthScheme,      // must be one of the supported Auth Schemes 
+                                    // in this version and they are mutually
+                                    // exclusive
+
+    IN DWORD       AuthScheme,      // must be one of the supported Auth Schemes
                                     // returned from WinHttpQueryAuthSchemes()
-    
-    IN LPCWSTR     pwszUserName,    // 1) NULL if default creds is to be used, in 
+
+    IN LPCWSTR     pwszUserName,    // 1) NULL if default creds is to be used, in
                                     // which case pszPassword will be ignored
-    
-    IN LPCWSTR     pwszPassword,    // 1) "" == Blank Password; 2)Parameter ignored 
-                                    // if pszUserName is NULL; 3) Invalid to pass in 
+
+    IN LPCWSTR     pwszPassword,    // 1) "" == Blank Password; 2)Parameter ignored
+                                    // if pszUserName is NULL; 3) Invalid to pass in
                                     // NULL if pszUserName is not NULL
     IN LPVOID      pAuthParams
 );
@@ -1035,19 +1035,19 @@ BOOLAPI WinHttpSetCredentials
 
 BOOLAPI WinHttpQueryAuthSchemes
 (
-    IN  HINTERNET   hRequest,             // HINTERNET handle returned by WinHttpOpenRequest   
+    IN  HINTERNET   hRequest,             // HINTERNET handle returned by WinHttpOpenRequest
     OUT LPDWORD     lpdwSupportedSchemes, // a bitmap of available Authentication Schemes
     OUT LPDWORD     lpdwFirstScheme,      // returns the first auth scheme returned by the server
-    OUT LPDWORD     pdwAuthTarget  
+    OUT LPDWORD     pdwAuthTarget
 );
 
 BOOLAPI WinHttpQueryAuthParams(
-    IN  HINTERNET   hRequest,        // HINTERNET handle returned by WinHttpOpenRequest   
+    IN  HINTERNET   hRequest,        // HINTERNET handle returned by WinHttpOpenRequest
     IN  DWORD       AuthScheme,
     OUT LPVOID*     pAuthParams      // Scheme-specific Advanced auth parameters
     );
 
-  
+
 WINHTTPAPI
 BOOL
 WINAPI
@@ -1064,7 +1064,7 @@ WinHttpQueryHeaders
 (
     IN     HINTERNET hRequest,
     IN     DWORD     dwInfoLevel,
-    IN     LPCWSTR   pwszName OPTIONAL, 
+    IN     LPCWSTR   pwszName OPTIONAL,
        OUT __out_data_source(NETWORK) LPVOID    lpBuffer OPTIONAL,
     IN OUT LPDWORD   lpdwBufferLength,
     IN OUT LPDWORD   lpdwIndex OPTIONAL
@@ -1089,7 +1089,7 @@ WinHttpGetProxyForUrl
     IN  HINTERNET                   hSession,
     IN  LPCWSTR                     lpcwszUrl,
     IN  WINHTTP_AUTOPROXY_OPTIONS * pAutoProxyOptions,
-    OUT WINHTTP_PROXY_INFO *        pProxyInfo  
+    OUT WINHTTP_PROXY_INFO *        pProxyInfo
 );
 
 
@@ -1215,9 +1215,7 @@ WinHttpGetIEProxyConfigForCurrentUser
  * Return packing to whatever it was before we
  * entered this file
  */
-#include <poppack.h>
+#include <PopPack.h>
 
 
 #endif // !defined(_WINHTTPX_)
-
-

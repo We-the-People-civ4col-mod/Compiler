@@ -22,7 +22,7 @@ Revision History:
 #endif
 
 #include <windows.h>
-#include <winsvc.h>
+#include <WinSvc.h>
 #include <clusapi.h>
 #include <stdio.h>
 
@@ -1206,7 +1206,7 @@ ResUtilGetEnvironmentWithNetName(
 
 typedef LPVOID
 (WINAPI * PRESUTIL_GET_ENVIRONMENT_WITH_NET_NAME)(
-    __in HRESOURCE hResource 
+    __in HRESOURCE hResource
     );
 
 DWORD
@@ -1632,7 +1632,7 @@ ResUtilGetResourceDependentIPAddressProps(
     __inout DWORD *pcch_Network
     );
 
-typedef 
+typedef
 __success( return == ERROR_SUCCESS )
 DWORD
 (WINAPI * PRESUTIL_GET_RESOURCE_DEPENDENTIP_ADDRESS_PROPS)(
@@ -1772,4 +1772,3 @@ ResUtilGetClusterRoleState(
 
 
 #endif // ifdef _RESAPI_DEFINES_
-

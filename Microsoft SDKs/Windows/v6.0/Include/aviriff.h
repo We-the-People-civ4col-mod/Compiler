@@ -20,7 +20,7 @@
 
 // all structures in this file are packed on word boundaries
 //
-#include <pshpack2.h>
+#include <PshPack2.h>
 
 /*
  * heres the general layout of an AVI riff file (new format)
@@ -193,7 +193,7 @@ typedef struct _avioldindex {
       #define AVIIF_LIST       0x00000001
       #define AVIIF_KEYFRAME   0x00000010
       #endif
-     
+
       #define AVIIF_NO_TIME    0x00000100
       #define AVIIF_COMPRESSOR 0x0FFF0000  // unused?
       DWORD   dwOffset;    // offset of riff chunk header for the data
@@ -283,7 +283,7 @@ typedef struct _avisuperindex {
    FOURCC   fcc;               // 'indx'
    UINT     cb;                // size of this structure
    WORD     wLongsPerEntry;    // ==4
-   BYTE     bIndexSubType;     // ==0 (frame index) or AVI_INDEX_SUB_2FIELD 
+   BYTE     bIndexSubType;     // ==0 (frame index) or AVI_INDEX_SUB_2FIELD
    BYTE     bIndexType;        // ==AVI_INDEX_OF_INDEXES
    DWORD    nEntriesInUse;     // offset of next unused entry in aIndex
    DWORD    dwChunkId;         // chunk ID of chunks being indexed, (i.e. RGB8)
@@ -397,7 +397,6 @@ typedef struct _avifieldindex_chunk {
 } AVIFIELDINDEX, * PAVIFIELDINDEX;
 
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #endif
-

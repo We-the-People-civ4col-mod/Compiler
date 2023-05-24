@@ -58,10 +58,10 @@ Compiler switches:
 
 // If this is the first file included __RPC_WIN64__ is not defined yet.
 #if defined(_M_IA64) || defined(_M_AMD64)
-#include <pshpack8.h>
+#include <PshPack8.h>
 #endif
 
-#include <basetsd.h>
+#include <BaseTsd.h>
 
 #ifndef INC_OLE2
 #define INC_OLE2
@@ -643,10 +643,9 @@ ULONG STDMETHODCALLTYPE CStdStubBuffer2_Release(IRpcStubBuffer *This) \
 #endif // WIN32 or _WIN64_
 
 #if defined(_M_IA64) || defined(_M_AMD64)
-#include <poppack.h>
+#include <PopPack.h>
 #endif
 
 #endif // __RPCPROXY_H__
 
 #endif // _KRPCENV_
-

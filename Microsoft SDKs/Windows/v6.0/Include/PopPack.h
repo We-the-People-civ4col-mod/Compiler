@@ -4,7 +4,7 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 
 Module Name:
 
-    poppack.h
+    PopPack.h
 
 Abstract:
 
@@ -12,7 +12,7 @@ Abstract:
     automatic alignment of structure fields.)  An include file is needed
     because various compilers do this in different ways.
 
-    poppack.h is the complement to pshpack?.h.  An inclusion of poppack.h
+    PopPack.h is the complement to pshpack?.h.  An inclusion of PopPack.h
     MUST ALWAYS be preceded by an inclusion of one of pshpack?.h, in one-to-one
     correspondence.
 
@@ -34,4 +34,3 @@ Abstract:
 #pragma pack()
 #endif
 #endif // ! (defined(lint) || defined(RC_INVOKED))
-

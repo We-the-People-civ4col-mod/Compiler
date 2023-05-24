@@ -29,7 +29,7 @@ extern "C" {
 #endif
 
 #ifndef NOGDI
-#include <wingdi.h>
+#include <WinGDI.h>
 #endif
 
 typedef struct _COORD {
@@ -1079,5 +1079,3 @@ GetConsoleAliasExesW(
 #endif
 
 #endif // _WINCON_
-
-

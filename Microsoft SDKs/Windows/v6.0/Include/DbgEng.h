@@ -22,7 +22,7 @@ typedef struct _MEMORY_BASIC_INFORMATION64* PMEMORY_BASIC_INFORMATION64;
 #endif
 
 #ifndef __specstrings
-// Should include SpecStrings.h to get proper definitions.
+// Should include specstrings.h to get proper definitions.
 #define __in
 #define __in_opt
 #define __in_bcount(x)
@@ -15879,4 +15879,3 @@ public:
 #endif // #ifdef __cplusplus
 
 #endif // #ifndef __DBGENG_H__
-

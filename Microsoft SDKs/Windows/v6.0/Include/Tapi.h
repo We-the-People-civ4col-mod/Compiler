@@ -41,7 +41,7 @@ Notes:
 
 #include <windows.h>
 #if WIN32
-#include <basetsd.h>
+#include <BaseTsd.h>
 #endif
 
 #if (TAPI_CURRENT_VERSION >= 0x00020002)
@@ -5280,5 +5280,3 @@ TAPIERROR_FORMATMESSAGE - macro to convert a TAPI error constant
 #pragma pack()
 
 #endif // TAPI_H
-
-

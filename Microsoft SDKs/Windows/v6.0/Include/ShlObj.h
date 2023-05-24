@@ -104,7 +104,7 @@
 extern "C" {            /* Assume C declarations for C++ */
 #endif /* __cplusplus */
 
-#include <pshpack1.h>   /* Assume byte packing throughout */
+#include <PshPack1.h>   /* Assume byte packing throughout */
 
 //===========================================================================
 //
@@ -873,7 +873,7 @@ typedef IFileViewerSite * LPFILEVIEWERSITE;
 //
 //===========================================================================
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 typedef struct
 {
@@ -892,7 +892,7 @@ typedef struct
 
 } FVSHOWINFO, *LPFVSHOWINFO;
 
-#include <poppack.h>        /* Return to byte packing */
+#include <PopPack.h>        /* Return to byte packing */
 
     // Define File View Show Info Flags.
 #define FVSIF_RECT      0x00000001      // The rect variable has valid data.
@@ -1289,7 +1289,7 @@ STDAPI SHGetKnownFolderPath(REFKNOWNFOLDERID rfid,
 #define FCSM_LOGO                   0x00000020
 #define FCSM_FLAGS                  0x00000040
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 // Used by SHGetSetFolderCustomSettings
 typedef struct
@@ -1323,7 +1323,7 @@ typedef struct
                                          // Ignored if dwReadWrite is FCS_READ
 } SHFOLDERCUSTOMSETTINGS, *LPSHFOLDERCUSTOMSETTINGS;
 
-#include <poppack.h>        /* Return to byte packing */
+#include <PopPack.h>        /* Return to byte packing */
 
 // Gets/Sets the Folder Custom Settings for pszPath based on dwReadWrite. dwReadWrite can be FCS_READ/FCS_WRITE/FCS_FORCEWRITE
 SHSTDAPI SHGetSetFolderCustomSettings(__inout LPSHFOLDERCUSTOMSETTINGS pfcs, LPCWSTR pszPath, DWORD dwReadWrite);
@@ -1339,7 +1339,7 @@ SHSTDAPI SHGetSetFolderCustomSettings(__inout LPSHFOLDERCUSTOMSETTINGS pfcs, LPC
 
 typedef int (CALLBACK* BFFCALLBACK)(HWND hwnd, UINT uMsg, LPARAM lParam, LPARAM lpData);
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 typedef struct _browseinfoA {
     HWND        hwndOwner;
@@ -1363,7 +1363,7 @@ typedef struct _browseinfoW {
     int          iImage;                        // output var: where to return the Image index.
 } BROWSEINFOW, *PBROWSEINFOW, *LPBROWSEINFOW;
 
-#include <poppack.h>        /* Return to byte packing */
+#include <PopPack.h>        /* Return to byte packing */
 
 #ifdef UNICODE
 #define BROWSEINFO      BROWSEINFOW
@@ -1838,7 +1838,7 @@ typedef IThumbnailCapture * LPTHUMBNAILCAPTURE;
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K && NTDDI_VERSION < NTDDI_LONGHORN)
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 typedef struct _EnumImageStoreDATAtag
 {
@@ -1846,7 +1846,7 @@ typedef struct _EnumImageStoreDATAtag
     FILETIME  ftTimeStamp;
 } ENUMSHELLIMAGESTOREDATA, * PENUMSHELLIMAGESTOREDATA;
 
-#include <poppack.h>        /* Return to byte packing */
+#include <PopPack.h>        /* Return to byte packing */
 
 #undef  INTERFACE
 #define INTERFACE   IEnumShellImageStore
@@ -1936,7 +1936,7 @@ typedef IShellImageStore * LPSHELLIMAGESTORE;
 #define ISFBVIEWMODE_LOGOS        0x0003
 #endif
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 typedef struct {
     DWORD       dwMask;       // [in] ISFB_MASK mask of valid fields from crBkgnd on
@@ -1951,7 +1951,7 @@ typedef struct {
     PIDLIST_ABSOLUTE pidl;      // [out]
 } BANDINFOSFB, *PBANDINFOSFB;
 
-#include <poppack.h>        /* Return to byte packing */
+#include <PopPack.h>        /* Return to byte packing */
 
 #undef INTERFACE
 #define INTERFACE IShellFolderBand
@@ -2330,7 +2330,7 @@ typedef IADesktopP2 * LPADESKTOPP2;
 #define MAX_COLUMN_NAME_LEN 80
 #define MAX_COLUMN_DESC_LEN 128
 
-#include <pshpack1.h>
+#include <PshPack1.h>
 
 typedef struct {
     SHCOLUMNID  scid;                           // OUT the unique identifier of this column
@@ -2343,9 +2343,9 @@ typedef struct {
 } SHCOLUMNINFO, *LPSHCOLUMNINFO;
 typedef const SHCOLUMNINFO* LPCSHCOLUMNINFO;
 
-#include <poppack.h>        /* Return to default */
+#include <PopPack.h>        /* Return to default */
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 typedef struct {
     ULONG   dwFlags;              // initialization flags
@@ -2365,7 +2365,7 @@ typedef struct {
 } SHCOLUMNDATA, *LPSHCOLUMNDATA;
 typedef const SHCOLUMNDATA* LPCSHCOLUMNDATA;
 
-#include <poppack.h>        /* Return to byte packing */
+#include <PopPack.h>        /* Return to byte packing */
 
 #undef INTERFACE
 #define INTERFACE IColumnProvider
@@ -2438,7 +2438,7 @@ DECLARE_INTERFACE_IID_(IColumnProvider, IUnknown, "E8025004-1C42-11d2-BE2C-00A0C
 #define DVASPECT_COPY           3 // use to indicate format is a "Copy" of the data (FILECONTENTS, FILEDESCRIPTOR, etc)
 #define DVASPECT_LINK           4 // use to indicate format is a "Shortcut" to the data (FILECONTENTS, FILEDESCRIPTOR, etc)
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 //
 // format of CF_NETRESOURCE
 //
@@ -2446,7 +2446,7 @@ typedef struct _NRESARRAY {     // anr
     UINT cItems;
     NETRESOURCE nr[1];
 } NRESARRAY, * LPNRESARRAY;
-#include <poppack.h>        /* Return to byte packing */
+#include <PopPack.h>        /* Return to byte packing */
 
 //
 // format of CF_IDLIST
@@ -2858,14 +2858,14 @@ SHSTDAPI SHGetInstanceExplorer(__out IUnknown **ppunk);
 #define SHDID_MOBILE_DEVICE         21  // PDA/PalmPC
 #endif
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 typedef struct _SHDESCRIPTIONID {
     DWORD   dwDescriptionId;
     CLSID   clsid;
 } SHDESCRIPTIONID, *LPSHDESCRIPTIONID;
 
-#include <poppack.h>        /* Return to byte packing */
+#include <PopPack.h>        /* Return to byte packing */
 
 // these delegate to IShellFolder2::GetDetailsEx()
 
@@ -3485,7 +3485,7 @@ enum tagOPEN_AS_INFO_FLAGS {
 typedef int OPEN_AS_INFO_FLAGS;
 
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 typedef struct _openasinfo
 {
@@ -3497,7 +3497,7 @@ typedef struct _openasinfo
     OPEN_AS_INFO_FLAGS oaifInFlags; // [in] input flags from OPEN_AS_INFO_FLAGS enumeration
 } OPENASINFO, * POPENASINFO;
 
-#include <poppack.h>        /* Return to byte packing */
+#include <PopPack.h>        /* Return to byte packing */
 
 SHSTDAPI SHOpenWithDialog(__in HWND hwndParent, __in const OPENASINFO* poainfo);
 
@@ -3640,7 +3640,7 @@ DECLARE_INTERFACE_IID_(IShellFolderViewCB, IUnknown, "2047E320-F2A9-11CE-AE65-08
 };
 
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 #define QCMINFO_PLACE_BEFORE    0
 #define QCMINFO_PLACE_AFTER     1
@@ -3995,7 +3995,7 @@ typedef const SFV_SETITEMPOS *PCSFV_SETITEMPOS;
 #define SFVM_SETPOINTS           0x00000017
 #define ShellFolderView_SetPoints(_hwnd, _pdtobj) \
         (void)SHShellFolderView_Message(_hwnd, SFVM_SETPOINTS, (LPARAM)(_pdtobj))
-#include <poppack.h>        /* Return to byte packing */
+#include <PopPack.h>        /* Return to byte packing */
 SHSTDAPI_(IContextMenu *) SHFind_InitMenuPopup(HMENU hmenu, HWND hwndOwner, UINT idCmdFirst, UINT idCmdLast);
 SHSTDAPI SHCreateShellFolderViewEx(LPCSFV pcsfv, __out IShellView ** ppsv);
 
@@ -4474,8 +4474,8 @@ SHSTDAPI SHCreateFileExtractIconW(LPCWSTR pszFile, DWORD dwFileAttributes, REFII
 #else
 #define SHCreateFileExtractIcon  SHCreateFileExtractIconA
 #endif // !UNICODE
-#include <pshpack8.h>
-#include <poppack.h>        /* Return to byte packing */
+#include <PshPack8.h>
+#include <PopPack.h>        /* Return to byte packing */
 SHSTDAPI SHLimitInputEdit(HWND hwndEdit, IShellFolder *psf);
 STDAPI SHGetAttributesFromDataObject(IDataObject *pdo, DWORD dwAttributeMask, __out_opt DWORD *pdwAttributes, __out_opt UINT *pcItems);
 #endif  // NTDDI_WINXP
@@ -4515,7 +4515,7 @@ SHSTDAPI_(BOOL)SHRunControlPanel(LPCWSTR lpcszCmdLine, HWND hwndMsgParent);
 
 SHSTDAPI_(int) PickIconDlg(HWND hwnd, __inout_ecount(cchIconPath) LPWSTR pszIconPath, UINT cchIconPath, __inout_opt int *piIconIndex);
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 typedef struct tagAAMENUFILENAME
 {
@@ -4533,7 +4533,7 @@ typedef struct tagAASHELLMENUITEM
   LPWSTR psz;           // text to use if no file
 } AASHELLMENUITEM, *LPAASHELLMENUITEM;
 
-#include <poppack.h>        /* Return to byte packing */
+#include <PopPack.h>        /* Return to byte packing */
 
 
 #if (_WIN32_IE >= _WIN32_IE_IE70)
@@ -4557,11 +4557,10 @@ SHDOCAPI DoPrivacyDlg(HWND hwndOwner, __in LPWSTR pszUrl, __in IEnumPrivacyRecor
 #endif  // _WIN32_IE_XP
 
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #ifdef __cplusplus
 }
 #endif  /* __cplusplus */
 
 #endif // _SHLOBJ_H_
-

@@ -6,7 +6,7 @@ cpp_quote( "" )
 import "oaidl.idl";
 import "ocidl.idl";
 
-cpp_quote( "#include <SpecStrings.h>" )
+cpp_quote( "#include <specstrings.h>" )
 
 #ifndef ALGIDDEF
 #define ALGIDDEF
@@ -634,9 +634,3 @@ interface IEnumDpxContainerDirectoryEntries : IUnknown
 
     HRESULT GetCount( [out] UINT * pItemCount );
 }
-
-
-
-
-
-

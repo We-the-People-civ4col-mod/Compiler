@@ -89,7 +89,7 @@ DECLARE_HANDLE(SAFER_LEVEL_HANDLE);
 // Code image information structure passed to SaferIdentifyLevel.
 //
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 typedef struct _SAFER_CODE_PROPERTIES
 {
@@ -179,7 +179,7 @@ typedef struct _SAFER_CODE_PROPERTIES
 
 } SAFER_CODE_PROPERTIES, *PSAFER_CODE_PROPERTIES;
 
-#include <poppack.h>
+#include <PopPack.h>
 
 
 //
@@ -249,20 +249,20 @@ typedef enum _SAFER_POLICY_INFO_CLASS
     // Control Flags for safer policy scope.
     //
 
-    SaferPolicyScopeFlags, 
-    
+    SaferPolicyScopeFlags,
+
     //
     // Flags which indicate "audit" or "block client UI" rules
-    // 
-    
+    //
+
     SaferPolicyDefaultLevelFlags,
 
     //
     // Flag which indicates if certificate rules are applied in CreateProcess
-    // 
-    
+    //
+
     SaferPolicyAuthenticodeEnabled
-    
+
 } SAFER_POLICY_INFO_CLASS;
 
 
@@ -320,7 +320,7 @@ typedef enum _SAFER_OBJECT_INFO_CLASS
 // Structures and enums used by the SaferGet/SetLevelInformation APIs.
 //
 
-#include <pshpack8.h>
+#include <PshPack8.h>
 
 typedef enum _SAFER_IDENTIFICATION_TYPES
 {
@@ -495,7 +495,7 @@ typedef struct _SAFER_URLZONE_IDENTIFICATION
 } SAFER_URLZONE_IDENTIFICATION, *PSAFER_URLZONE_IDENTIFICATION;
 
 
-#include <poppack.h>
+#include <PopPack.h>
 
 //
 // Functions related to querying and setting the global policy
@@ -609,6 +609,3 @@ SaferiIsExecutableFileType(
 }
 #endif
 #endif
-
-
-

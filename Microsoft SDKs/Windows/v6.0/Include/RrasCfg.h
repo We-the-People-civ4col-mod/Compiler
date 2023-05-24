@@ -10,7 +10,7 @@
 /* Compiler settings for rrascfg.idl:
     Oicf (OptLev=i2), W1, Zp8, env=Win32 (32b run), ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data , no_format_optimization
-    VC __declspec() decoration level: 
+    VC __declspec() decoration level:
          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
          DECLSPEC_UUID(), MIDL_INTERFACE()
 */
@@ -37,7 +37,7 @@
 #ifndef __rrascfg_h__
 #define __rrascfg_h__
 
-/* Forward Declarations */ 
+/* Forward Declarations */
 
 #ifndef __IRouterProtocolConfig_FWD_DEFINED__
 #define __IRouterProtocolConfig_FWD_DEFINED__
@@ -64,19 +64,19 @@ typedef interface IEAPProviderConfig IEAPProviderConfig;
 
 
 /* header files for imported files */
-#include "basetsd.h"
+#include "BaseTsd.h"
 #include "wtypes.h"
 #include "unknwn.h"
 
 #ifdef __cplusplus
 extern "C"{
-#endif 
+#endif
 
 void __RPC_FAR * __RPC_USER MIDL_user_allocate(size_t);
-void __RPC_USER MIDL_user_free( void __RPC_FAR * ); 
+void __RPC_USER MIDL_user_free( void __RPC_FAR * );
 
 /* interface __MIDL_itf_rrascfg_0000 */
-/* [local] */ 
+/* [local] */
 
 //=--------------------------------------------------------------------------=
 // RRasCfg.h
@@ -88,7 +88,7 @@ void __RPC_USER MIDL_user_free( void __RPC_FAR * );
 // THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
 // PARTICULAR PURPOSE.
 //=--------------------------------------------------------------------------=
- 
+
 typedef BYTE __RPC_FAR *PBYTE;
 
 
@@ -100,18 +100,18 @@ extern RPC_IF_HANDLE __MIDL_itf_rrascfg_0000_v0_0_s_ifspec;
 #define __IRouterProtocolConfig_INTERFACE_DEFINED__
 
 /* interface IRouterProtocolConfig */
-/* [unique][local][uuid][object] */ 
+/* [unique][local][uuid][object] */
 
 
 EXTERN_C const IID IID_IRouterProtocolConfig;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("66A2DB16-D706-11D0-A37B-00C04FC9DA04")
     IRouterProtocolConfig : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE AddProtocol( 
+        virtual HRESULT STDMETHODCALLTYPE AddProtocol(
             /* [string][in] */ LPCOLESTR pszMachineName,
             /* [in] */ DWORD dwTransportId,
             /* [in] */ DWORD dwProtocolId,
@@ -119,8 +119,8 @@ EXTERN_C const IID IID_IRouterProtocolConfig;
             /* [in] */ DWORD dwFlags,
             /* [in] */ IUnknown __RPC_FAR *pRouter,
             /* [in] */ ULONG_PTR uReserved1) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE RemoveProtocol( 
+
+        virtual HRESULT STDMETHODCALLTYPE RemoveProtocol(
             /* [string][in] */ LPCOLESTR pszMachineName,
             /* [in] */ DWORD dwTransportId,
             /* [in] */ DWORD dwProtocolId,
@@ -128,27 +128,27 @@ EXTERN_C const IID IID_IRouterProtocolConfig;
             /* [in] */ DWORD dwFlags,
             /* [in] */ IUnknown __RPC_FAR *pRouter,
             /* [in] */ ULONG_PTR uReserved1) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IRouterProtocolConfigVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )(
             IRouterProtocolConfig __RPC_FAR * This,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )(
             IRouterProtocolConfig __RPC_FAR * This);
-        
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )(
             IRouterProtocolConfig __RPC_FAR * This);
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *AddProtocol )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *AddProtocol )(
             IRouterProtocolConfig __RPC_FAR * This,
             /* [string][in] */ LPCOLESTR pszMachineName,
             /* [in] */ DWORD dwTransportId,
@@ -157,8 +157,8 @@ EXTERN_C const IID IID_IRouterProtocolConfig;
             /* [in] */ DWORD dwFlags,
             /* [in] */ IUnknown __RPC_FAR *pRouter,
             /* [in] */ ULONG_PTR uReserved1);
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *RemoveProtocol )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *RemoveProtocol )(
             IRouterProtocolConfig __RPC_FAR * This,
             /* [string][in] */ LPCOLESTR pszMachineName,
             /* [in] */ DWORD dwTransportId,
@@ -167,7 +167,7 @@ EXTERN_C const IID IID_IRouterProtocolConfig;
             /* [in] */ DWORD dwFlags,
             /* [in] */ IUnknown __RPC_FAR *pRouter,
             /* [in] */ ULONG_PTR uReserved1);
-        
+
         END_INTERFACE
     } IRouterProtocolConfigVtbl;
 
@@ -176,7 +176,7 @@ EXTERN_C const IID IID_IRouterProtocolConfig;
         CONST_VTBL struct IRouterProtocolConfigVtbl __RPC_FAR *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
@@ -204,7 +204,7 @@ EXTERN_C const IID IID_IRouterProtocolConfig;
 
 
 
-HRESULT STDMETHODCALLTYPE IRouterProtocolConfig_AddProtocol_Proxy( 
+HRESULT STDMETHODCALLTYPE IRouterProtocolConfig_AddProtocol_Proxy(
     IRouterProtocolConfig __RPC_FAR * This,
     /* [string][in] */ LPCOLESTR pszMachineName,
     /* [in] */ DWORD dwTransportId,
@@ -222,7 +222,7 @@ void __RPC_STUB IRouterProtocolConfig_AddProtocol_Stub(
     DWORD *_pdwStubPhase);
 
 
-HRESULT STDMETHODCALLTYPE IRouterProtocolConfig_RemoveProtocol_Proxy( 
+HRESULT STDMETHODCALLTYPE IRouterProtocolConfig_RemoveProtocol_Proxy(
     IRouterProtocolConfig __RPC_FAR * This,
     /* [string][in] */ LPCOLESTR pszMachineName,
     /* [in] */ DWORD dwTransportId,
@@ -245,7 +245,7 @@ void __RPC_STUB IRouterProtocolConfig_RemoveProtocol_Stub(
 
 
 /* interface __MIDL_itf_rrascfg_0011 */
-/* [local] */ 
+/* [local] */
 
 #define DeclareIRouterProtocolConfigMembers(IPURE) \
 	STDMETHOD(AddProtocol)(THIS_ LPCOLESTR pszMachineName,\
@@ -262,7 +262,7 @@ void __RPC_STUB IRouterProtocolConfig_RemoveProtocol_Stub(
 						 DWORD dwFlags,\
 						 IUnknown *pRouter,\
 						 ULONG_PTR uReserved2) IPURE;\
- 
+
 
 
 extern RPC_IF_HANDLE __MIDL_itf_rrascfg_0011_v0_0_c_ifspec;
@@ -272,89 +272,89 @@ extern RPC_IF_HANDLE __MIDL_itf_rrascfg_0011_v0_0_s_ifspec;
 #define __IAuthenticationProviderConfig_INTERFACE_DEFINED__
 
 /* interface IAuthenticationProviderConfig */
-/* [unique][local][uuid][object] */ 
+/* [unique][local][uuid][object] */
 
 
 EXTERN_C const IID IID_IAuthenticationProviderConfig;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("66A2DB17-D706-11D0-A37B-00C04FC9DA04")
     IAuthenticationProviderConfig : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE Initialize( 
+        virtual HRESULT STDMETHODCALLTYPE Initialize(
             /* [string][in] */ LPCOLESTR pszMachineName,
             /* [out] */ ULONG_PTR __RPC_FAR *puConnectionParam) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Uninitialize( 
+
+        virtual HRESULT STDMETHODCALLTYPE Uninitialize(
             /* [in] */ ULONG_PTR uConnectionParam) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Configure( 
+
+        virtual HRESULT STDMETHODCALLTYPE Configure(
             /* [in] */ ULONG_PTR uConnectionParam,
             /* [in] */ HWND hWnd,
             /* [in] */ DWORD dwFlags,
             /* [in] */ ULONG_PTR uReserved1,
             /* [in] */ ULONG_PTR uReserved2) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Activate( 
+
+        virtual HRESULT STDMETHODCALLTYPE Activate(
             /* [in] */ ULONG_PTR uConnectionParam,
             /* [in] */ ULONG_PTR uReserved1,
             /* [in] */ ULONG_PTR uReserved2) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Deactivate( 
+
+        virtual HRESULT STDMETHODCALLTYPE Deactivate(
             /* [in] */ ULONG_PTR uConnectionParam,
             /* [in] */ ULONG_PTR uReserved1,
             /* [in] */ ULONG_PTR uReserved2) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IAuthenticationProviderConfigVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )(
             IAuthenticationProviderConfig __RPC_FAR * This,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )(
             IAuthenticationProviderConfig __RPC_FAR * This);
-        
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )(
             IAuthenticationProviderConfig __RPC_FAR * This);
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Initialize )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Initialize )(
             IAuthenticationProviderConfig __RPC_FAR * This,
             /* [string][in] */ LPCOLESTR pszMachineName,
             /* [out] */ ULONG_PTR __RPC_FAR *puConnectionParam);
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Uninitialize )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Uninitialize )(
             IAuthenticationProviderConfig __RPC_FAR * This,
             /* [in] */ ULONG_PTR uConnectionParam);
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Configure )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Configure )(
             IAuthenticationProviderConfig __RPC_FAR * This,
             /* [in] */ ULONG_PTR uConnectionParam,
             /* [in] */ HWND hWnd,
             /* [in] */ DWORD dwFlags,
             /* [in] */ ULONG_PTR uReserved1,
             /* [in] */ ULONG_PTR uReserved2);
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Activate )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Activate )(
             IAuthenticationProviderConfig __RPC_FAR * This,
             /* [in] */ ULONG_PTR uConnectionParam,
             /* [in] */ ULONG_PTR uReserved1,
             /* [in] */ ULONG_PTR uReserved2);
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Deactivate )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Deactivate )(
             IAuthenticationProviderConfig __RPC_FAR * This,
             /* [in] */ ULONG_PTR uConnectionParam,
             /* [in] */ ULONG_PTR uReserved1,
             /* [in] */ ULONG_PTR uReserved2);
-        
+
         END_INTERFACE
     } IAuthenticationProviderConfigVtbl;
 
@@ -363,7 +363,7 @@ EXTERN_C const IID IID_IAuthenticationProviderConfig;
         CONST_VTBL struct IAuthenticationProviderConfigVtbl __RPC_FAR *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
@@ -400,7 +400,7 @@ EXTERN_C const IID IID_IAuthenticationProviderConfig;
 
 
 
-HRESULT STDMETHODCALLTYPE IAuthenticationProviderConfig_Initialize_Proxy( 
+HRESULT STDMETHODCALLTYPE IAuthenticationProviderConfig_Initialize_Proxy(
     IAuthenticationProviderConfig __RPC_FAR * This,
     /* [string][in] */ LPCOLESTR pszMachineName,
     /* [out] */ ULONG_PTR __RPC_FAR *puConnectionParam);
@@ -413,7 +413,7 @@ void __RPC_STUB IAuthenticationProviderConfig_Initialize_Stub(
     DWORD *_pdwStubPhase);
 
 
-HRESULT STDMETHODCALLTYPE IAuthenticationProviderConfig_Uninitialize_Proxy( 
+HRESULT STDMETHODCALLTYPE IAuthenticationProviderConfig_Uninitialize_Proxy(
     IAuthenticationProviderConfig __RPC_FAR * This,
     /* [in] */ ULONG_PTR uConnectionParam);
 
@@ -425,7 +425,7 @@ void __RPC_STUB IAuthenticationProviderConfig_Uninitialize_Stub(
     DWORD *_pdwStubPhase);
 
 
-HRESULT STDMETHODCALLTYPE IAuthenticationProviderConfig_Configure_Proxy( 
+HRESULT STDMETHODCALLTYPE IAuthenticationProviderConfig_Configure_Proxy(
     IAuthenticationProviderConfig __RPC_FAR * This,
     /* [in] */ ULONG_PTR uConnectionParam,
     /* [in] */ HWND hWnd,
@@ -441,7 +441,7 @@ void __RPC_STUB IAuthenticationProviderConfig_Configure_Stub(
     DWORD *_pdwStubPhase);
 
 
-HRESULT STDMETHODCALLTYPE IAuthenticationProviderConfig_Activate_Proxy( 
+HRESULT STDMETHODCALLTYPE IAuthenticationProviderConfig_Activate_Proxy(
     IAuthenticationProviderConfig __RPC_FAR * This,
     /* [in] */ ULONG_PTR uConnectionParam,
     /* [in] */ ULONG_PTR uReserved1,
@@ -455,7 +455,7 @@ void __RPC_STUB IAuthenticationProviderConfig_Activate_Stub(
     DWORD *_pdwStubPhase);
 
 
-HRESULT STDMETHODCALLTYPE IAuthenticationProviderConfig_Deactivate_Proxy( 
+HRESULT STDMETHODCALLTYPE IAuthenticationProviderConfig_Deactivate_Proxy(
     IAuthenticationProviderConfig __RPC_FAR * This,
     /* [in] */ ULONG_PTR uConnectionParam,
     /* [in] */ ULONG_PTR uReserved1,
@@ -474,7 +474,7 @@ void __RPC_STUB IAuthenticationProviderConfig_Deactivate_Stub(
 
 
 /* interface __MIDL_itf_rrascfg_0013 */
-/* [local] */ 
+/* [local] */
 
 #define DeclareIAuthenticationProviderConfigMembers(IPURE) \
 	STDMETHOD(Initialize)(THIS_ \
@@ -499,7 +499,7 @@ void __RPC_STUB IAuthenticationProviderConfig_Deactivate_Stub(
 						ULONG_PTR uConnectionParam, \
 						   ULONG_PTR uReserved1, \
 						   ULONG_PTR uReserved2) IPURE; \
- 
+
 
 
 extern RPC_IF_HANDLE __MIDL_itf_rrascfg_0013_v0_0_c_ifspec;
@@ -509,89 +509,89 @@ extern RPC_IF_HANDLE __MIDL_itf_rrascfg_0013_v0_0_s_ifspec;
 #define __IAccountingProviderConfig_INTERFACE_DEFINED__
 
 /* interface IAccountingProviderConfig */
-/* [unique][local][uuid][object] */ 
+/* [unique][local][uuid][object] */
 
 
 EXTERN_C const IID IID_IAccountingProviderConfig;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("66A2DB18-D706-11D0-A37B-00C04FC9DA04")
     IAccountingProviderConfig : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE Initialize( 
+        virtual HRESULT STDMETHODCALLTYPE Initialize(
             /* [string][in] */ LPCOLESTR pszMachineName,
             /* [out] */ ULONG_PTR __RPC_FAR *puConnectionParam) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Uninitialize( 
+
+        virtual HRESULT STDMETHODCALLTYPE Uninitialize(
             /* [in] */ ULONG_PTR uConnectionParam) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Configure( 
+
+        virtual HRESULT STDMETHODCALLTYPE Configure(
             /* [in] */ ULONG_PTR uConnectionParam,
             /* [in] */ HWND hWnd,
             /* [in] */ DWORD dwFlags,
             /* [in] */ ULONG_PTR uReserved1,
             /* [in] */ ULONG_PTR uReserved2) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Activate( 
+
+        virtual HRESULT STDMETHODCALLTYPE Activate(
             /* [in] */ ULONG_PTR uConnectionParam,
             /* [in] */ ULONG_PTR uReserved1,
             /* [in] */ ULONG_PTR uReserved2) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Deactivate( 
+
+        virtual HRESULT STDMETHODCALLTYPE Deactivate(
             /* [in] */ ULONG_PTR uConnectionParam,
             /* [in] */ ULONG_PTR uReserved1,
             /* [in] */ ULONG_PTR uReserved2) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IAccountingProviderConfigVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )(
             IAccountingProviderConfig __RPC_FAR * This,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )(
             IAccountingProviderConfig __RPC_FAR * This);
-        
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )(
             IAccountingProviderConfig __RPC_FAR * This);
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Initialize )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Initialize )(
             IAccountingProviderConfig __RPC_FAR * This,
             /* [string][in] */ LPCOLESTR pszMachineName,
             /* [out] */ ULONG_PTR __RPC_FAR *puConnectionParam);
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Uninitialize )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Uninitialize )(
             IAccountingProviderConfig __RPC_FAR * This,
             /* [in] */ ULONG_PTR uConnectionParam);
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Configure )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Configure )(
             IAccountingProviderConfig __RPC_FAR * This,
             /* [in] */ ULONG_PTR uConnectionParam,
             /* [in] */ HWND hWnd,
             /* [in] */ DWORD dwFlags,
             /* [in] */ ULONG_PTR uReserved1,
             /* [in] */ ULONG_PTR uReserved2);
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Activate )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Activate )(
             IAccountingProviderConfig __RPC_FAR * This,
             /* [in] */ ULONG_PTR uConnectionParam,
             /* [in] */ ULONG_PTR uReserved1,
             /* [in] */ ULONG_PTR uReserved2);
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Deactivate )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Deactivate )(
             IAccountingProviderConfig __RPC_FAR * This,
             /* [in] */ ULONG_PTR uConnectionParam,
             /* [in] */ ULONG_PTR uReserved1,
             /* [in] */ ULONG_PTR uReserved2);
-        
+
         END_INTERFACE
     } IAccountingProviderConfigVtbl;
 
@@ -600,7 +600,7 @@ EXTERN_C const IID IID_IAccountingProviderConfig;
         CONST_VTBL struct IAccountingProviderConfigVtbl __RPC_FAR *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
@@ -637,7 +637,7 @@ EXTERN_C const IID IID_IAccountingProviderConfig;
 
 
 
-HRESULT STDMETHODCALLTYPE IAccountingProviderConfig_Initialize_Proxy( 
+HRESULT STDMETHODCALLTYPE IAccountingProviderConfig_Initialize_Proxy(
     IAccountingProviderConfig __RPC_FAR * This,
     /* [string][in] */ LPCOLESTR pszMachineName,
     /* [out] */ ULONG_PTR __RPC_FAR *puConnectionParam);
@@ -650,7 +650,7 @@ void __RPC_STUB IAccountingProviderConfig_Initialize_Stub(
     DWORD *_pdwStubPhase);
 
 
-HRESULT STDMETHODCALLTYPE IAccountingProviderConfig_Uninitialize_Proxy( 
+HRESULT STDMETHODCALLTYPE IAccountingProviderConfig_Uninitialize_Proxy(
     IAccountingProviderConfig __RPC_FAR * This,
     /* [in] */ ULONG_PTR uConnectionParam);
 
@@ -662,7 +662,7 @@ void __RPC_STUB IAccountingProviderConfig_Uninitialize_Stub(
     DWORD *_pdwStubPhase);
 
 
-HRESULT STDMETHODCALLTYPE IAccountingProviderConfig_Configure_Proxy( 
+HRESULT STDMETHODCALLTYPE IAccountingProviderConfig_Configure_Proxy(
     IAccountingProviderConfig __RPC_FAR * This,
     /* [in] */ ULONG_PTR uConnectionParam,
     /* [in] */ HWND hWnd,
@@ -678,7 +678,7 @@ void __RPC_STUB IAccountingProviderConfig_Configure_Stub(
     DWORD *_pdwStubPhase);
 
 
-HRESULT STDMETHODCALLTYPE IAccountingProviderConfig_Activate_Proxy( 
+HRESULT STDMETHODCALLTYPE IAccountingProviderConfig_Activate_Proxy(
     IAccountingProviderConfig __RPC_FAR * This,
     /* [in] */ ULONG_PTR uConnectionParam,
     /* [in] */ ULONG_PTR uReserved1,
@@ -692,7 +692,7 @@ void __RPC_STUB IAccountingProviderConfig_Activate_Stub(
     DWORD *_pdwStubPhase);
 
 
-HRESULT STDMETHODCALLTYPE IAccountingProviderConfig_Deactivate_Proxy( 
+HRESULT STDMETHODCALLTYPE IAccountingProviderConfig_Deactivate_Proxy(
     IAccountingProviderConfig __RPC_FAR * This,
     /* [in] */ ULONG_PTR uConnectionParam,
     /* [in] */ ULONG_PTR uReserved1,
@@ -711,7 +711,7 @@ void __RPC_STUB IAccountingProviderConfig_Deactivate_Stub(
 
 
 /* interface __MIDL_itf_rrascfg_0015 */
-/* [local] */ 
+/* [local] */
 
 #define DeclareIAccountingProviderConfigMembers(IPURE) \
 	STDMETHOD(Initialize)(THIS_ \
@@ -735,7 +735,7 @@ void __RPC_STUB IAccountingProviderConfig_Deactivate_Stub(
 						ULONG_PTR uConnectionParam, \
 						   ULONG_PTR uReserved1, \
 						   ULONG_PTR uReserved2) IPURE; \
- 
+
 
 
 extern RPC_IF_HANDLE __MIDL_itf_rrascfg_0015_v0_0_c_ifspec;
@@ -745,34 +745,34 @@ extern RPC_IF_HANDLE __MIDL_itf_rrascfg_0015_v0_0_s_ifspec;
 #define __IEAPProviderConfig_INTERFACE_DEFINED__
 
 /* interface IEAPProviderConfig */
-/* [unique][local][uuid][object] */ 
+/* [unique][local][uuid][object] */
 
 
 EXTERN_C const IID IID_IEAPProviderConfig;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("66A2DB19-D706-11D0-A37B-00C04FC9DA04")
     IEAPProviderConfig : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE Initialize( 
+        virtual HRESULT STDMETHODCALLTYPE Initialize(
             /* [string][in] */ LPCOLESTR pszMachineName,
             /* [in] */ DWORD dwEapTypeId,
             /* [out] */ ULONG_PTR __RPC_FAR *puConnectionParam) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Uninitialize( 
+
+        virtual HRESULT STDMETHODCALLTYPE Uninitialize(
             /* [in] */ DWORD dwEapTypeId,
             /* [in] */ ULONG_PTR uConnectionParam) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE ServerInvokeConfigUI( 
+
+        virtual HRESULT STDMETHODCALLTYPE ServerInvokeConfigUI(
             /* [in] */ DWORD dwEapTypeId,
             /* [in] */ ULONG_PTR uConnectionParam,
             /* [in] */ HWND hWnd,
             /* [in] */ ULONG_PTR uReserved1,
             /* [in] */ ULONG_PTR uReserved2) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE RouterInvokeConfigUI( 
+
+        virtual HRESULT STDMETHODCALLTYPE RouterInvokeConfigUI(
             /* [in] */ DWORD dwEapTypeId,
             /* [in] */ ULONG_PTR uConnectionParam,
             /* [in] */ HWND hwndParent,
@@ -781,8 +781,8 @@ EXTERN_C const IID IID_IEAPProviderConfig;
             /* [in] */ DWORD dwSizeOfConnectionDataIn,
             /* [size_is][size_is][out] */ BYTE __RPC_FAR *__RPC_FAR *ppConnectionDataOut,
             /* [out] */ DWORD __RPC_FAR *pdwSizeOfConnectionDataOut) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE RouterInvokeCredentialsUI( 
+
+        virtual HRESULT STDMETHODCALLTYPE RouterInvokeCredentialsUI(
             /* [in] */ DWORD dwEapTypeId,
             /* [in] */ ULONG_PTR uConnectionParam,
             /* [in] */ HWND hwndParent,
@@ -793,46 +793,46 @@ EXTERN_C const IID IID_IEAPProviderConfig;
             /* [in] */ DWORD dwSizeOfUserDataIn,
             /* [size_is][size_is][out] */ BYTE __RPC_FAR *__RPC_FAR *ppUserDataOut,
             /* [out] */ DWORD __RPC_FAR *pdwSizeOfUserDataOut) = 0;
-        
+
     };
-    
+
 #else 	/* C style interface */
 
     typedef struct IEAPProviderConfigVtbl
     {
         BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *QueryInterface )(
             IEAPProviderConfig __RPC_FAR * This,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ void __RPC_FAR *__RPC_FAR *ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )( 
+
+        ULONG ( STDMETHODCALLTYPE __RPC_FAR *AddRef )(
             IEAPProviderConfig __RPC_FAR * This);
-        
-        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )( 
+
+        ULONG ( STDMETHODCALLTYPE __RPC_FAR *Release )(
             IEAPProviderConfig __RPC_FAR * This);
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Initialize )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Initialize )(
             IEAPProviderConfig __RPC_FAR * This,
             /* [string][in] */ LPCOLESTR pszMachineName,
             /* [in] */ DWORD dwEapTypeId,
             /* [out] */ ULONG_PTR __RPC_FAR *puConnectionParam);
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Uninitialize )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *Uninitialize )(
             IEAPProviderConfig __RPC_FAR * This,
             /* [in] */ DWORD dwEapTypeId,
             /* [in] */ ULONG_PTR uConnectionParam);
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *ServerInvokeConfigUI )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *ServerInvokeConfigUI )(
             IEAPProviderConfig __RPC_FAR * This,
             /* [in] */ DWORD dwEapTypeId,
             /* [in] */ ULONG_PTR uConnectionParam,
             /* [in] */ HWND hWnd,
             /* [in] */ ULONG_PTR uReserved1,
             /* [in] */ ULONG_PTR uReserved2);
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *RouterInvokeConfigUI )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *RouterInvokeConfigUI )(
             IEAPProviderConfig __RPC_FAR * This,
             /* [in] */ DWORD dwEapTypeId,
             /* [in] */ ULONG_PTR uConnectionParam,
@@ -842,8 +842,8 @@ EXTERN_C const IID IID_IEAPProviderConfig;
             /* [in] */ DWORD dwSizeOfConnectionDataIn,
             /* [size_is][size_is][out] */ BYTE __RPC_FAR *__RPC_FAR *ppConnectionDataOut,
             /* [out] */ DWORD __RPC_FAR *pdwSizeOfConnectionDataOut);
-        
-        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *RouterInvokeCredentialsUI )( 
+
+        HRESULT ( STDMETHODCALLTYPE __RPC_FAR *RouterInvokeCredentialsUI )(
             IEAPProviderConfig __RPC_FAR * This,
             /* [in] */ DWORD dwEapTypeId,
             /* [in] */ ULONG_PTR uConnectionParam,
@@ -855,7 +855,7 @@ EXTERN_C const IID IID_IEAPProviderConfig;
             /* [in] */ DWORD dwSizeOfUserDataIn,
             /* [size_is][size_is][out] */ BYTE __RPC_FAR *__RPC_FAR *ppUserDataOut,
             /* [out] */ DWORD __RPC_FAR *pdwSizeOfUserDataOut);
-        
+
         END_INTERFACE
     } IEAPProviderConfigVtbl;
 
@@ -864,7 +864,7 @@ EXTERN_C const IID IID_IEAPProviderConfig;
         CONST_VTBL struct IEAPProviderConfigVtbl __RPC_FAR *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
@@ -901,7 +901,7 @@ EXTERN_C const IID IID_IEAPProviderConfig;
 
 
 
-HRESULT STDMETHODCALLTYPE IEAPProviderConfig_Initialize_Proxy( 
+HRESULT STDMETHODCALLTYPE IEAPProviderConfig_Initialize_Proxy(
     IEAPProviderConfig __RPC_FAR * This,
     /* [string][in] */ LPCOLESTR pszMachineName,
     /* [in] */ DWORD dwEapTypeId,
@@ -915,7 +915,7 @@ void __RPC_STUB IEAPProviderConfig_Initialize_Stub(
     DWORD *_pdwStubPhase);
 
 
-HRESULT STDMETHODCALLTYPE IEAPProviderConfig_Uninitialize_Proxy( 
+HRESULT STDMETHODCALLTYPE IEAPProviderConfig_Uninitialize_Proxy(
     IEAPProviderConfig __RPC_FAR * This,
     /* [in] */ DWORD dwEapTypeId,
     /* [in] */ ULONG_PTR uConnectionParam);
@@ -928,7 +928,7 @@ void __RPC_STUB IEAPProviderConfig_Uninitialize_Stub(
     DWORD *_pdwStubPhase);
 
 
-HRESULT STDMETHODCALLTYPE IEAPProviderConfig_ServerInvokeConfigUI_Proxy( 
+HRESULT STDMETHODCALLTYPE IEAPProviderConfig_ServerInvokeConfigUI_Proxy(
     IEAPProviderConfig __RPC_FAR * This,
     /* [in] */ DWORD dwEapTypeId,
     /* [in] */ ULONG_PTR uConnectionParam,
@@ -944,7 +944,7 @@ void __RPC_STUB IEAPProviderConfig_ServerInvokeConfigUI_Stub(
     DWORD *_pdwStubPhase);
 
 
-HRESULT STDMETHODCALLTYPE IEAPProviderConfig_RouterInvokeConfigUI_Proxy( 
+HRESULT STDMETHODCALLTYPE IEAPProviderConfig_RouterInvokeConfigUI_Proxy(
     IEAPProviderConfig __RPC_FAR * This,
     /* [in] */ DWORD dwEapTypeId,
     /* [in] */ ULONG_PTR uConnectionParam,
@@ -963,7 +963,7 @@ void __RPC_STUB IEAPProviderConfig_RouterInvokeConfigUI_Stub(
     DWORD *_pdwStubPhase);
 
 
-HRESULT STDMETHODCALLTYPE IEAPProviderConfig_RouterInvokeCredentialsUI_Proxy( 
+HRESULT STDMETHODCALLTYPE IEAPProviderConfig_RouterInvokeCredentialsUI_Proxy(
     IEAPProviderConfig __RPC_FAR * This,
     /* [in] */ DWORD dwEapTypeId,
     /* [in] */ ULONG_PTR uConnectionParam,
@@ -989,7 +989,7 @@ void __RPC_STUB IEAPProviderConfig_RouterInvokeCredentialsUI_Stub(
 
 
 /* interface __MIDL_itf_rrascfg_0017 */
-/* [local] */ 
+/* [local] */
 
 #define DeclareIEAPProviderConfigMembers(IPURE) \
 	STDMETHOD(Initialize)(THIS_ \
@@ -1025,7 +1025,7 @@ void __RPC_STUB IEAPProviderConfig_RouterInvokeCredentialsUI_Stub(
  	DWORD   	dwSizeOfUserDataIn, \
  	BYTE**  	ppUserDataOut, \
  	DWORD*  	pdwSizeOfUserDataOut) IPURE; \
- 
+
 
 
 extern RPC_IF_HANDLE __MIDL_itf_rrascfg_0017_v0_0_c_ifspec;
@@ -1040,6 +1040,3 @@ extern RPC_IF_HANDLE __MIDL_itf_rrascfg_0017_v0_0_s_ifspec;
 #endif
 
 #endif
-
-
-

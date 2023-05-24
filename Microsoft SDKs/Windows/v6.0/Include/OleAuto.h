@@ -18,7 +18,7 @@
 
 // Set packing to 8 for ISV, and Win95 support
 #ifndef RC_INVOKED
-#include <pshpack8.h>
+#include <PshPack8.h>
 #endif // RC_INVOKED
 
 //  Definition of the OLE Automation APIs, and macros.
@@ -204,7 +204,7 @@ WINOLEAUTAPI BstrFromVector (__in SAFEARRAY *psa, __out BSTR *pbstr);
 #endif
 
 // SOUTHASIA START
-/* SOUTHASIA 
+/* SOUTHASIA
  * For VarBstrFromDate only - forces years to be 4 digits rather than shortening
  * to 2-digits when the years is in the date window.
  */
@@ -392,55 +392,55 @@ WINOLEAUTAPI VarBoolFromUI4(ULONG ulIn, __out VARIANT_BOOL *pboolOut);
 WINOLEAUTAPI VarBoolFromUI8(ULONG64 i64In, __out VARIANT_BOOL FAR* pboolOut);
 WINOLEAUTAPI VarBoolFromDec(__in const DECIMAL *pdecIn, __out VARIANT_BOOL *pboolOut);
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromUI1(
     __in BYTE bIn,
     __out CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromI2(
     __in SHORT uiIn,
     __out CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromI4(
     __in LONG lIn,
     __out CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromI8(
     __in LONG64 i64In,
     __out CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromR4(
     __in FLOAT fltIn,
     __out CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromR8(
     __in DOUBLE dblIn,
     __out CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromDate(
     __in DATE dateIn,
     __out CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromCy(
     __in CY cyIn,
     __out CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromStr(
     __in LPCOLESTR strIn,
     __in LCID lcid,
@@ -448,38 +448,38 @@ VarI1FromStr(
     __out CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromDisp(
     __in IDispatch *pdispIn,
     __in LCID lcid,
     __out CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromBool(
     __in VARIANT_BOOL boolIn,
     __out CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromUI2(
     __in USHORT uiIn,
     __out CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromUI4(
     __in ULONG ulIn,
     __out CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromUI8(
     __in ULONG64 i64In,
     __out CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromDec(
     __in const DECIMAL *pdecIn,
     __out CHAR *pcOut
@@ -793,10 +793,10 @@ STDAPI VarR8Round(__in double dblIn, __in int cDecimals, __out double *pdblResul
 #define VARCMP_NULL 3
 
 // VT_HARDTYPE tells the compare routine that the argument is a literal or
-// otherwise declared of that specific type.  It causes comparison rules to 
+// otherwise declared of that specific type.  It causes comparison rules to
 // change. For example, if a hard-type string is compared to a variant (not hard
-// -type) number, the number is converted to string.  If a hard-type number is 
-// compared to a variant string, the string is converted to number.  If they're 
+// -type) number, the number is converted to string.  If a hard-type number is
+// compared to a variant string, the string is converted to number.  If they're
 // both variant, then number < string.
 #define VT_HARDTYPE VT_RESERVED
 
@@ -822,7 +822,7 @@ WINOLEAUTAPI VarUdateFromDate(__in DATE dateIn, __in ULONG dwFlags, __out UDATE 
 
 /* API to retrieve the secondary(altername) month names
    Useful for Hijri, Polish and Russian alternate month names
-*/   
+*/
 WINOLEAUTAPI GetAltMonthNames(LCID lcid, __deref_out_ecount_opt(13) LPOLESTR * * prgp);
 
 /*---------------------------------------------------------------------*/
@@ -831,81 +831,81 @@ WINOLEAUTAPI GetAltMonthNames(LCID lcid, __deref_out_ecount_opt(13) LPOLESTR * *
 
 WINOLEAUTAPI VarFormat(
 	__in LPVARIANT pvarIn,
-	__in_opt LPOLESTR pstrFormat, 
-	int iFirstDay, 
-	int iFirstWeek, 
-	ULONG dwFlags, 
+	__in_opt LPOLESTR pstrFormat,
+	int iFirstDay,
+	int iFirstWeek,
+	ULONG dwFlags,
 	__out BSTR *pbstrOut
 	);
-	
+
 WINOLEAUTAPI VarFormatDateTime(
-	__in LPVARIANT pvarIn, 
-	int iNamedFormat, 
-	ULONG dwFlags, 
+	__in LPVARIANT pvarIn,
+	int iNamedFormat,
+	ULONG dwFlags,
 	__out BSTR *pbstrOut
 	);
-	
+
 WINOLEAUTAPI VarFormatNumber(
-	__in LPVARIANT pvarIn, 
-	int iNumDig, 
-	int iIncLead, 
-	int iUseParens, 
-	int iGroup, 
-	ULONG dwFlags, 
+	__in LPVARIANT pvarIn,
+	int iNumDig,
+	int iIncLead,
+	int iUseParens,
+	int iGroup,
+	ULONG dwFlags,
 	__out BSTR *pbstrOut
 	);
-	
+
 WINOLEAUTAPI VarFormatPercent(
-	__in LPVARIANT pvarIn, 
-	int iNumDig, 
-	int iIncLead, 
-	int iUseParens, 
-	int iGroup, 
-	ULONG dwFlags, 
+	__in LPVARIANT pvarIn,
+	int iNumDig,
+	int iIncLead,
+	int iUseParens,
+	int iGroup,
+	ULONG dwFlags,
 	__out BSTR *pbstrOut
 	);
-	
+
 WINOLEAUTAPI VarFormatCurrency(
-	__in LPVARIANT pvarIn, 
-	int iNumDig, 
-	int iIncLead,  
-	int iUseParens, 
-	int iGroup, 
-	ULONG dwFlags, 
+	__in LPVARIANT pvarIn,
+	int iNumDig,
+	int iIncLead,
+	int iUseParens,
+	int iGroup,
+	ULONG dwFlags,
 	__out BSTR *pbstrOut
 	);
 
 WINOLEAUTAPI VarWeekdayName(
-	int iWeekday, 
-	int fAbbrev, 
-	int iFirstDay, 
-	ULONG dwFlags, 
+	int iWeekday,
+	int fAbbrev,
+	int iFirstDay,
+	ULONG dwFlags,
 	__out BSTR *pbstrOut
 	);
-	
+
 WINOLEAUTAPI VarMonthName(
-	int iMonth, 
-	int fAbbrev, 
-	ULONG dwFlags, 
+	int iMonth,
+	int fAbbrev,
+	ULONG dwFlags,
 	__out BSTR *pbstrOut
 	);
 
 WINOLEAUTAPI VarFormatFromTokens(
-	__in LPVARIANT pvarIn, 
-	__in_opt LPOLESTR pstrFormat, 
-	LPBYTE pbTokCur, 
-	ULONG dwFlags, 
-	__out BSTR *pbstrOut, 
+	__in LPVARIANT pvarIn,
+	__in_opt LPOLESTR pstrFormat,
+	LPBYTE pbTokCur,
+	ULONG dwFlags,
+	__out BSTR *pbstrOut,
 	LCID lcid
 	);
-	
+
 WINOLEAUTAPI VarTokenizeFormatString(
-	__in_opt LPOLESTR pstrFormat, 
-	__inout LPBYTE rgbTok, 
-	int cbTok, 
-	int iFirstDay, 
-	int iFirstWeek, 
-	LCID lcid, 
+	__in_opt LPOLESTR pstrFormat,
+	__inout LPBYTE rgbTok,
+	int cbTok,
+	int iFirstDay,
+	int iFirstWeek,
+	LCID lcid,
 	__in_opt int *pcbActual
 	);
 
@@ -989,7 +989,7 @@ typedef enum tagREGKIND
 } REGKIND;
 
 
-// Constants for specifying format in which TLB should be loaded 
+// Constants for specifying format in which TLB should be loaded
 // (the default format is 32-bit on WIN32 and 64-bit on WIN64)
 #define LOAD_TLB_AS_32BIT	0x20
 #define LOAD_TLB_AS_64BIT	0x40
@@ -1024,15 +1024,15 @@ WINOLEAUTAPI UnRegisterTypeLib(REFGUID libID, WORD wVerMajor,
 WINOLEAUTAPI RegisterTypeLibForUser(ITypeLib *ptlib,__in OLECHAR  *szFullPath,
 			__in_opt OLECHAR  *szHelpDir);
 
-/* Removes type library information that was registered by using RegisterTypeLibForUser. 
+/* Removes type library information that was registered by using RegisterTypeLibForUser.
 */
 WINOLEAUTAPI UnRegisterTypeLibForUser(
     REFGUID         libID,
-    WORD   wMajorVerNum, 
-    WORD   wMinorVerNum, 
-    LCID            lcid, 
+    WORD   wMajorVerNum,
+    WORD   wMinorVerNum,
+    LCID            lcid,
     SYSKIND         syskind);
-			
+
 WINOLEAUTAPI CreateTypeLib(SYSKIND syskind, LPCOLESTR szFile,
             ICreateTypeLib ** ppctlib);
 
@@ -1073,10 +1073,10 @@ typedef struct tagINTERFACEDATA {
  * return it coerced to the given target VARTYPE (vtTarg).
  */
 WINOLEAUTAPI DispGetParam(
-	__in DISPPARAMS * pdispparams, 
+	__in DISPPARAMS * pdispparams,
 	UINT position,
-	VARTYPE vtTarg, 
-	__out VARIANT * pvarResult, 
+	VARTYPE vtTarg,
+	__out VARIANT * pvarResult,
 	__out_opt UINT * puArgErr
 	);
 
@@ -1234,8 +1234,7 @@ WINOLEAUTAPI_(void) ClearCustData(LPCUSTDATA pCustData);
 #define V_DECIMALREF(X)  V_UNION(X, pdecVal)
 
 #ifndef RC_INVOKED
-#include <poppack.h>
+#include <PopPack.h>
 #endif // RC_INVOKED
 
 #endif     // __OLEAUTO_H__
-

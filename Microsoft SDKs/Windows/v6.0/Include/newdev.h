@@ -15,7 +15,7 @@ Abstract:
 #ifndef _INC_NEWDEV
 #define _INC_NEWDEV
 
-#include <pshpack1.h>   // Assume byte packing throughout
+#include <PshPack1.h>   // Assume byte packing throughout
 #include <setupapi.h>   // for HDEVINFO, PSP_DEVINFO_DATA, and PSP_DRVINFO_DATA
 
 #ifdef __cplusplus
@@ -103,7 +103,7 @@ DiInstallDriverW(
     __in      DWORD Flags,
     __out_opt PBOOL NeedReboot
     );
-    
+
 BOOL
 DiInstallDriverA(
     __in      HWND hwndParent,
@@ -152,8 +152,6 @@ DiRollbackDriver(
 }
 #endif
 
-#include <poppack.h>
+#include <PopPack.h>
 
 #endif // _INC_NEWDEV
-
-

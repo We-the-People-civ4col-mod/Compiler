@@ -1,6 +1,6 @@
 /**************************************************************************
 *                                                                         *
-* wingdi.h -- GDI procedure declarations, constant definitions and macros *
+* WinGDI.h -- GDI procedure declarations, constant definitions and macros *
 *                                                                         *
 * Copyright (c) Microsoft Corp. All rights reserved.                      *
 *                                                                         *
@@ -566,13 +566,13 @@ typedef struct tagBITMAP
     LPVOID      bmBits;
   } BITMAP, *PBITMAP, NEAR *NPBITMAP, FAR *LPBITMAP;
 
-#include <pshpack1.h>
+#include <PshPack1.h>
 typedef struct tagRGBTRIPLE {
         BYTE    rgbtBlue;
         BYTE    rgbtGreen;
         BYTE    rgbtRed;
 } RGBTRIPLE, *PRGBTRIPLE, NEAR *NPRGBTRIPLE, FAR *LPRGBTRIPLE;
-#include <poppack.h>
+#include <PopPack.h>
 
 typedef struct tagRGBQUAD {
         BYTE    rgbBlue;
@@ -791,7 +791,7 @@ typedef struct tagBITMAPCOREINFO {
     RGBTRIPLE           bmciColors[1];
 } BITMAPCOREINFO, FAR *LPBITMAPCOREINFO, *PBITMAPCOREINFO;
 
-#include <pshpack2.h>
+#include <PshPack2.h>
 typedef struct tagBITMAPFILEHEADER {
         WORD    bfType;
         DWORD   bfSize;
@@ -799,7 +799,7 @@ typedef struct tagBITMAPFILEHEADER {
         WORD    bfReserved2;
         DWORD   bfOffBits;
 } BITMAPFILEHEADER, FAR *LPBITMAPFILEHEADER, *PBITMAPFILEHEADER;
-#include <poppack.h>
+#include <PopPack.h>
 
 #define MAKEPOINTS(l)       (*((POINTS FAR *)&(l)))
 
@@ -861,7 +861,7 @@ typedef struct tagMETAFILEPICT
     HMETAFILE   hMF;
   } METAFILEPICT, FAR *LPMETAFILEPICT;
 
-#include <pshpack2.h>
+#include <PshPack2.h>
 typedef struct tagMETAHEADER
 {
     WORD        mtType;
@@ -875,7 +875,7 @@ typedef struct tagMETAHEADER
 typedef struct tagMETAHEADER UNALIGNED *PMETAHEADER;
 typedef struct tagMETAHEADER UNALIGNED FAR *LPMETAHEADER;
 
-#include <poppack.h>
+#include <PopPack.h>
 
 /* Enhanced Metafile structures */
 typedef struct tagENHMETARECORD
@@ -941,7 +941,7 @@ typedef struct tagENHMETAHEADER
 
 #ifndef _TEXTMETRIC_DEFINED
 #define _TEXTMETRIC_DEFINED
-#include <pshpack4.h>
+#include <PshPack4.h>
 typedef struct tagTEXTMETRICA
 {
     LONG        tmHeight;
@@ -999,7 +999,7 @@ typedef PTEXTMETRICA PTEXTMETRIC;
 typedef NPTEXTMETRICA NPTEXTMETRIC;
 typedef LPTEXTMETRICA LPTEXTMETRIC;
 #endif // UNICODE
-#include <poppack.h>
+#include <PopPack.h>
 #endif // !_TEXTMETRIC_DEFINED
 
 /* ntmFlags field flags */
@@ -1016,7 +1016,7 @@ typedef LPTEXTMETRICA LPTEXTMETRIC;
 #define NTM_TYPE1           0x00100000
 #define NTM_DSIG            0x00200000
 
-#include <pshpack4.h>
+#include <PshPack4.h>
 typedef struct tagNEWTEXTMETRICA
 {
     LONG        tmHeight;
@@ -1082,7 +1082,7 @@ typedef PNEWTEXTMETRICA PNEWTEXTMETRIC;
 typedef NPNEWTEXTMETRICA NPNEWTEXTMETRIC;
 typedef LPNEWTEXTMETRICA LPNEWTEXTMETRIC;
 #endif // UNICODE
-#include <poppack.h>
+#include <PopPack.h>
 
 #if(WINVER >= 0x0400)
 typedef struct tagNEWTEXTMETRICEXA
@@ -2515,7 +2515,7 @@ typedef struct _ABCFLOAT {
 #ifndef NOTEXTMETRIC
 
 #ifdef _MAC
-#include "pshpack4.h"
+#include "PshPack4.h"
 #endif
 typedef struct _OUTLINETEXTMETRICA {
     UINT    otmSize;
@@ -2598,7 +2598,7 @@ typedef LPOUTLINETEXTMETRICA LPOUTLINETEXTMETRIC;
 #endif // UNICODE
 
 #ifdef _MAC
-#include "poppack.h"
+#include "PopPack.h"
 #endif
 
 #endif /* NOTEXTMETRIC */
@@ -5425,5 +5425,3 @@ WINGDIAPI DWORD WINAPI wglSwapMultipleBuffers(UINT, CONST WGLSWAP *);
 #endif
 
 #endif /* _WINGDI_ */
-
-
