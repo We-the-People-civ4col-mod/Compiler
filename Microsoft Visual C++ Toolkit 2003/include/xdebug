@@ -74,7 +74,7 @@ public:
 	template<class _Other>
 		struct rebind
 		{	// convert _DebugHeapAllocator<_Ty> to _DebugHeapAllocator<_Other>
-		typedef typename _DebugHeapAllocator<_Other> other;
+		typedef typename std::_DebugHeapAllocator<_Other> other;
 		};
 
 	allocator<_Ty>::pointer allocate(allocator<_Ty>::size_type _Count, const void *)
